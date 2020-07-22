@@ -1,0 +1,77 @@
+# These resources will start by default.
+start mapmanager
+start chat
+start spawnmanager
+start sessionmanager
+start fivem
+start hardcap
+start rconlog
+start scoreboard
+start playernames
+
+# ESX Core
+start essentialmode
+start es_ui
+start async
+start esplugin_mysql
+start es_admin2
+start es_extended
+
+# ESX Base
+start instance
+start cron
+start skinchanger
+start esx_skin
+start esx_menu_default
+start esx_menu_list
+start esx_menu_dialog
+start esx_phone
+start esx_addonaccount
+start esx_addoninventory
+start esx_datastore
+start esx_society
+start esx_service
+start esx_billing
+start esx_license
+start esx_identity
+start esx_kashacters
+
+# ESX Jobs
+start esx_jobs
+start esx_joblisting
+start esx_taxijob
+start esx_mechanicjob
+start esx_policejob
+start esx_property
+start esx_realestateagentjob
+start esx_bankerjob
+start esx_ambulancejob
+start esx_vehicleshop
+
+# Other ESX scripts
+start es_camera
+start esx_status
+start esx_basicneeds
+start esx_optionalneeds
+start esx_shops
+start esx_clotheshop
+start esx_accessories
+start esx_barbershop
+start esx_boat
+start esx_lscustom
+start esx_weaponshop
+start esx_holdup
+start esx_drugs
+start esx_cruisecontrol
+start esx_animations
+start esx_garage
+start esx_rpchat
+start esx_sit
+start esx_voice
+start esx_atm
+start esx_dmvschool
+
+# Adds-On
+start simpleCarHUD
+start ocrp_postal_map
+start loadingScreen
