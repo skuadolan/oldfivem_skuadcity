@@ -12,7 +12,9 @@ server.txt > server.cfg
 2. Mendownload XAMPP di websitenya terlebih dahulu: https://www.apachefriends.org/index.html
 3. Kemudian install semua aplikasinya
 4. Extract-lah repository ini pada partisi yang diinginkan (menggunakan extract file..)
+```
 # How to running
+```
 1. Buka aplikasi XAMPP
 2. Run lah service Mysql
 3. Lalu buka foldernya dan run (double click) startServer.bat
