@@ -14,8 +14,8 @@ server.txt > server.cfg
 4. Extract-lah repository ini pada partisi yang diinginkan (menggunakan extract file..)
 # How to running
 1. Buka aplikasi XAMPP
-2. Run lah service Apache dan Mysql
+2. Run lah service Mysql
 3. Lalu buka foldernya dan run (double click) startServer.bat
-4. Kemudian buka FiveM, pada kolom serach inputkan IP 127.0.0.1
+4. Kemudian buka FiveM, pada kolom search inputkan IP 127.0.0.1
 5. Lalu connect
 ```
