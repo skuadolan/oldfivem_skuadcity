@@ -11,10 +11,10 @@ start playernames
 
 # ESX Core
 start essentialmode
+start es_admin2
 start es_ui
 start async
 start esplugin_mysql
-start es_admin2
 start es_extended
 
 # ESX Base
@@ -72,6 +72,5 @@ start esx_atm
 start esx_dmvschool
 
 # Adds-On
-start simpleCarHUD
 start ocrp_postal_map
 start loadingScreen
