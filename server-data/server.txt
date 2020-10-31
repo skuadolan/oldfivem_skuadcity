@@ -35,11 +35,11 @@ sv_scriptHookAllowed 0
 # - sets tags "drifting, cars, racing"
 # Or:
 # - sets tags "roleplay, military, tanks"
-sets tags "roleplay indonesia,rp indonesia,skuad,skuad City"
+sets tags "roleplay indonesia, rp indonesia ,skuad , skuadolan, skuad city, roleplay"
 
 # A valid locale identifier for your server's primary language.
 # For example "en-US", "fr-CA", "nl-NL", "de-DE", "en-GB", "pt-BR"
-sets locale "root-AQ" 
+sets locale "root-AQ", "en-US", "id-IDN"
 # please DO replace root-AQ on the line ABOVE with a real language! :)
 
 # Set an optional server info and connecting banner image url.
@@ -48,7 +48,7 @@ sets locale "root-AQ"
 #sets banner_connecting "http://url.to/image.png"
 
 # Set your server's hostname
-sv_hostname "Skuad City"
+sv_hostname "SKUAD City"
 
 # Nested configs!
 #exec server_internal.cfg
@@ -67,11 +67,12 @@ set temp_convar "hey world!"
 #sv_authMaxVariance 1
 #sv_authMinTrust 5
 
+exec permission.cfg
+
 # Add system admins
 add_ace group.admin command allow # allow all commands
 add_ace group.admin command.quit deny # but don't allow quit
-#add_principal identifier.fivem:1 group.admin
-add_principal identifier.steam:110000134a401f0 group.admin # add the admin to the group
+add_principal identifier.fivem:1 group.admin # add the admin to the group
 
 # Hide player endpoints in external log output.
 sv_endpointprivacy true

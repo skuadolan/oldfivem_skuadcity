@@ -31,10 +31,10 @@ start esx_addoninventory
 start esx_datastore
 start esx_society
 start esx_service
-start esx_billing
+start esx_billing # F7 In-Game
 start esx_license
 start esx_identity
-start esx_kashacters
+#start esx_kashacters > Multiple Account Char
 
 # ESX Jobs
 start esx_jobs
@@ -55,7 +55,7 @@ start esx_basicneeds
 start esx_optionalneeds
 start esx_shops
 start esx_clotheshop
-start esx_accessories
+start esx_accessories # K Button
 start esx_barbershop
 start esx_boat
 start esx_lscustom
@@ -67,10 +67,11 @@ start esx_animations
 start esx_garage
 start esx_rpchat
 start esx_sit
-start esx_voice
 start esx_atm
 start esx_dmvschool
 
 # Adds-On
 start ocrp_postal_map
 start loadingScreen
+start Makez_status
+start chat-theme-civlifechat
