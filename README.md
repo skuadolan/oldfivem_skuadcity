@@ -17,6 +17,8 @@ server.txt > server.cfg
 7. New > Open > Run Script
 3. Kemudian install semua aplikasinya
 4. Extract-lah repository ini pada partisi yang diinginkan (menggunakan extract file..)
+5. Download file server https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/ (windows version) file server di ekstrak here didalam folder server
+6. Pada folder server-data, rename folder local menjadi [local]
 ```
 # How to running
 ```

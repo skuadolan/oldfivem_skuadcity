@@ -51,6 +51,7 @@ start esx_vehicleshop
 # Other ESX scripts
 start es_camera
 start esx_status
+#start esx_voice > emilia_statusvoice
 start esx_basicneeds
 start esx_optionalneeds
 start esx_shops
@@ -62,7 +63,6 @@ start esx_lscustom
 start esx_weaponshop
 start esx_holdup
 start esx_drugs
-start esx_cruisecontrol
 start esx_animations
 start esx_garage
 start esx_rpchat
@@ -71,7 +71,7 @@ start esx_atm
 start esx_dmvschool
 
 # Adds-On
-start ocrp_postal_map
-start loadingScreen
-start Makez_status
 start chat-theme-civlifechat
+start loadingScreen
+start ocrp_postal_map
+start emilia_statusvoice
