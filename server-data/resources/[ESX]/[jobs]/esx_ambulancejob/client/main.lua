@@ -29,10 +29,15 @@ Citizen.CreateThread(function()
 	ESX.PlayerData = ESX.GetPlayerData()
 end)
 
-RegisterNetEvent('esx:playerLoaded')
-AddEventHandler('esx:playerLoaded', function(xPlayer)
-	ESX.PlayerData = xPlayer
-	PlayerLoaded = true
+Citizen.CreateThread(function()
+	RegisterNetEvent('esx:playerLoaded')
+	AddEventHandler('esx:playerLoaded', function (xPlayer)
+		while ESX == nil do
+			Citizen.Wait(0)
+		end
+		ESX.PlayerData = xPlayer
+		PlayerLoaded = true
+	end)
 end)
 
 RegisterNetEvent('esx:setJob')
@@ -40,20 +45,6 @@ AddEventHandler('esx:setJob', function(job)
 	ESX.PlayerData.job = job
 end)
 
--- Kascharacters
-RegisterNetEvent('esx_ambulancejob:multicharacter')
-AddEventHandler('esx_ambulancejob:multicharacter', function()
-	IsDead = false
-
-		ESX.TriggerServerCallback('esx_ambulancejob:getDeathStatus', function(isDead)
-			if isDead and Config.AntiCombatLog then
-				ESX.ShowNotification(_U('combatlog_message'))
-				RemoveItemsAfterRPDeath()
-			end
-		end)
-end)
-
---[[
 AddEventHandler('playerSpawned', function()
 	IsDead = false
 
@@ -73,7 +64,6 @@ AddEventHandler('playerSpawned', function()
 		end)
 	end
 end)
-]]--
 
 -- Create blips
 Citizen.CreateThread(function()
@@ -167,10 +157,9 @@ function StartDistressSignal()
 			timer = timer - 30
 
 			SetTextFont(4)
-			SetTextProportional(1)
 			SetTextScale(0.45, 0.45)
 			SetTextColour(185, 185, 185, 255)
-			SetTextDropShadow(0, 0, 0, 0, 255)
+			SetTextDropshadow(0, 0, 0, 0, 255)
 			SetTextEdge(1, 0, 0, 0, 255)
 			SetTextDropShadow()
 			SetTextOutline()
@@ -208,7 +197,6 @@ end
 
 function DrawGenericTextThisFrame()
 	SetTextFont(4)
-	SetTextProportional(0)
 	SetTextScale(0.0, 0.5)
 	SetTextColour(255, 255, 255, 255)
 	SetTextDropshadow(0, 0, 0, 0, 255)
@@ -353,7 +341,7 @@ function RespawnPed(ped, coords, heading)
 	SetEntityCoordsNoOffset(ped, coords.x, coords.y, coords.z, false, false, false, true)
 	NetworkResurrectLocalPlayer(coords.x, coords.y, coords.z, heading, true, false)
 	SetPlayerInvincible(ped, false)
-	TriggerEvent('esx_ambulancejob:multicharacter', coords.x, coords.y, coords.z)
+	TriggerEvent('playerSpawned', coords.x, coords.y, coords.z)
 	ClearPedBloodDamage(ped)
 
 	ESX.UI.Menu.CloseAll()

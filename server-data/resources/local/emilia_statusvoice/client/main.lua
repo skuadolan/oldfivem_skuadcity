@@ -185,12 +185,12 @@ Citizen.CreateThread(function()
 end)
 
 -- Hide a minimap
---Citizen.CreateThread(function()
---	while true do
---		Wait(100)
---		DisplayRadar(false)
---	end
---end)
+Citizen.CreateThread(function()
+	while true do
+		Wait(100)
+		DisplayRadar(false)
+	end
+end)
 
 Citizen.CreateThread(function()
     local minimap = RequestScaleformMovie("minimap")

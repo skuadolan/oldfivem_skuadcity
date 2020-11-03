@@ -13,8 +13,8 @@ body {
     position: absolute;
     left: 350px; /* Default: 350px */
     bottom: 20px; /* Default: 20px */
-    left: 32.0%; /* (18.2% Right Side of Map) | (82.0% Right Side of Screen) | (2.7% Above Map)  */
-    bottom: 0.75%; /* (0.85% Default-Fix for all 16:9 resolutions) | (21.0% Above Map) */
+    left: 43.75%; /* (43.75% Right Side of Map) | (82.0% Right Side of Screen) | (2.7% Above Map)  */
+    bottom: 2.75%; /* (0.85% Default-Fix for all 16:9 resolutions) | (21.0% Above Map) */
 }
 
 #status_list {
