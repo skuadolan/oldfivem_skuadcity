@@ -145,7 +145,7 @@ Citizen.CreateThread(function()
                     local speed = currSpeed*3.6
                     local speedColor = (speed >= speedLimit) and speedColorOver or speedColorUnder
                     drawTxt(("%.3d"):format(math.ceil(speed)), 2, speedColor, 0.8, screenPosX + 0.000, screenPosY + 0.000)
-                    drawTxt("KM/H", 2, speedColorText, 0.4, screenPosX + 0.030, screenPosY + 0.018)
+                    drawTxt("KMH", 2, speedColorText, 0.4, screenPosX + 0.030, screenPosY + 0.018)
                 end
                 
                 -- Draw fuel gauge
