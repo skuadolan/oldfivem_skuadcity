@@ -25,13 +25,13 @@ start esx_skin
 start esx_menu_default
 start esx_menu_list
 start esx_menu_dialog
-start esx_phone
+start esx_phone # F1 Button
 start esx_addonaccount
-start esx_addoninventory
+start esx_addoninventory # F2 Button
 start esx_datastore
 start esx_society
 start esx_service
-start esx_billing # F7 In-Game
+start esx_billing # F7 Button
 start esx_license
 start esx_identity
 #start esx_kashacters > Multiple Account Char
@@ -41,7 +41,7 @@ start esx_jobs
 start esx_joblisting
 start esx_taxijob
 start esx_mechanicjob
-start esx_policejob
+start esx_policejob # F6 Button
 start esx_property
 start esx_realestateagentjob
 start esx_bankerjob
@@ -49,21 +49,21 @@ start esx_ambulancejob
 start esx_vehicleshop
 
 # Other ESX scripts
-start es_camera
+#start es_camera
 start esx_status
 #start esx_voice > emilia_statusvoice
 start esx_basicneeds
 start esx_optionalneeds
 start esx_shops
 start esx_clotheshop
-start esx_accessories # K Button
+start esx_accessories # M Button
 start esx_barbershop
 start esx_boat
 start esx_lscustom
 start esx_weaponshop
 start esx_holdup
 start esx_drugs
-start esx_animations
+start esx_animations # F3 Button
 start esx_cruisecontrol
 start esx_garage
 start esx_rpchat
@@ -77,5 +77,9 @@ start ocrp_postal_map
 start emilia_statusvoice
 start RealisticVehicleFailure
 start LegacyFuel
-start SimpleCarHUD
+start SimpleCarHUD # B and capslock in car
 start No-NPC
+start carremote # F5 and N in car out car F5 to remote
+start MF_VehSales
+start Ruby_Shops
+start iFruit
