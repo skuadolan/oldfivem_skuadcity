@@ -39,14 +39,20 @@ start esx_identity
 # ESX Jobs
 start esx_jobs
 start esx_joblisting
-start esx_taxijob
-start esx_mechanicjob
+start esx_taxijob # F6 Button
+start esx_mechanicjob # F6 Button
 start esx_policejob # F6 Button
 start esx_property
 start esx_realestateagentjob
 start esx_bankerjob
-start esx_ambulancejob
+start esx_ambulancejob # F6 Button
+
+#ESX Shops
 start esx_vehicleshop
+start esx_shops
+start esx_clotheshop
+start esx_barbershop
+start esx_weaponshop
 
 # Other ESX scripts
 #start es_camera
@@ -54,13 +60,9 @@ start esx_status
 #start esx_voice > emilia_statusvoice
 start esx_basicneeds
 start esx_optionalneeds
-start esx_shops
-start esx_clotheshop
 start esx_accessories # M Button
-start esx_barbershop
 start esx_boat
 start esx_lscustom
-start esx_weaponshop
 start esx_holdup
 start esx_drugs
 start esx_animations # F3 Button
@@ -71,7 +73,7 @@ start esx_sit
 start esx_atm
 start esx_dmvschool
 
-# Adds-On
+# Adds-On Base
 start loadingScreen
 start ocrp_postal_map
 start emilia_statusvoice
@@ -83,4 +85,18 @@ start carremote # F5 and N in car out car F5 to remote
 start MF_VehSales
 start Ruby_Shops
 start iFruit
+
+# Phillbox Hospital
+start i_ilev
+start med_props
+start pillnew
+start proppill
+start v_corp
+
+#Other Phillbox
+#start Phillbox2
+
+#Map Adds-On
 start paletoutdoor
+start tolKanan
+start parkirPhillbox
