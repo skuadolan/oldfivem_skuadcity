@@ -80,7 +80,7 @@ start emilia_statusvoice
 start RealisticVehicleFailure
 start LegacyFuel
 start SimpleCarHUD # B and capslock in car
-start No-NPC
+#start No-NPC
 start carremote # F5 and N in car out car F5 to remote
 start MF_VehSales
 start Ruby_Shops

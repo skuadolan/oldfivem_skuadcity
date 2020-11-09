@@ -4,7 +4,7 @@ endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
 
 # Set connection MYSQL-async
-set mysql_connection_string "server=localhost;database=essentialmode;userid=root;"
+set mysql_connection_string "server=localhost;database=essentialmode;userid=skuadcity;password=nomercy021"
  
 # Disable Couchdb from essentialmode
 set es_enableCustomData 1
@@ -48,7 +48,7 @@ sets locale "root-AQ", "en-US", "id-IDN"
 #sets banner_connecting "http://url.to/image.png"
 
 # Set your server's hostname
-sv_hostname "SKUAD City"
+sv_hostname "SKUAD CITY"
 
 # Nested configs!
 #exec server_internal.cfg
@@ -60,7 +60,7 @@ load_server_icon skd.png
 set temp_convar "hey world!"
 
 # Uncomment this line if you do not want your server to be listed in the server browser.
-#sv_master1 ""
+sv_master1 ""
 
 # Want to only allow players authenticated with a third-party provider like Steam?
 # Don't forget Social Club is a third party provider too!
@@ -72,17 +72,17 @@ exec permission.cfg
 # Add system admins
 add_ace group.admin command allow # allow all commands
 add_ace group.admin command.quit deny # but don't allow quit
-add_principal identifier.fivem:1 group.admin # add the admin to the group
+add_principal identifier.steam:110000134a401f0 group.admin # add the admin to the group
 
 # Hide player endpoints in external log output.
 sv_endpointprivacy true
 
 # Server player slot limit (must be between 1 and 32)
-sv_maxclients 1
+sv_maxclients 21
 
 # Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
 # -> replace "" with the key
 set steam_webApiKey "C75B6ED2B2E060C9F28EDF5456862272"
 
 # License key for your server (https://keymaster.fivem.net)
-sv_licenseKey "dggqg5crqdtqb3srym7kfbxzeifkbkvm"
+sv_licenseKey "ezziczdbvcssf6dobilf8c1zcsssr9pb"
