@@ -265,7 +265,7 @@ INSERT IGNORE INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALU
 	('slaughtered_chicken', 'slaughtered chicken', 20, 0, 1),
 	('stone', 'stone', 7, 0, 1),
 	('washed_stone', 'washed stone', 7, 0, 1),
-	('water', 'Water', 30, 0, 1),
+	('water', 'Water', 20, 0, 1),
 	('wood', 'wood', 20, 0, 1),
 	('wool', 'wool', 40, 0, 1);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;

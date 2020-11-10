@@ -85,4 +85,4 @@ sv_maxclients 21
 set steam_webApiKey "C75B6ED2B2E060C9F28EDF5456862272"
 
 # License key for your server (https://keymaster.fivem.net)
-sv_licenseKey "s3iw4nierdwt4izyh9wolsbhd4e17z1f" #Offline
+sv_licenseKey "" #Offline
