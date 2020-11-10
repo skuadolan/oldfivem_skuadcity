@@ -3,7 +3,9 @@ ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 if Config.EnableESXService then
-	TriggerEvent('esx_service:activateService', 'police', Config.MaxInService)
+	if Config.MaxInService ~= -1 then
+		TriggerEvent('esx_service:activateService', 'police', Config.MaxInService)
+	end
 end
 
 TriggerEvent('esx_phone:registerNumber', 'police', _U('alert_police'), true, true)
@@ -16,7 +18,7 @@ AddEventHandler('esx_policejob:confiscatePlayerItem', function(target, itemType,
 	local targetXPlayer = ESX.GetPlayerFromId(target)
 
 	if sourceXPlayer.job.name ~= 'police' then
-		print(('esx_policejob: %s attempted to confiscate!'):format(xPlayer.identifier))
+		print(('esx_policejob: %s attempted to confiscate!'):format(sourceXPlayer.identifier))
 		return
 	end
 
@@ -27,10 +29,15 @@ AddEventHandler('esx_policejob:confiscatePlayerItem', function(target, itemType,
 		-- does the target player have enough in their inventory?
 		if targetItem.count > 0 and targetItem.count <= amount then
 
-			targetXPlayer.removeInventoryItem(itemName, amount)
-			sourceXPlayer.addInventoryItem   (itemName, amount)
-			sourceXPlayer.showNotification(_U('you_confiscated', amount, sourceItem.label, targetXPlayer.name))
-			targetXPlayer.showNotification(_U('got_confiscated', amount, sourceItem.label, sourceXPlayer.name))
+			-- can the player carry the said amount of x item?
+			if sourceXPlayer.canCarryItem(itemName, sourceItem.count) then
+				targetXPlayer.removeInventoryItem(itemName, amount)
+				sourceXPlayer.addInventoryItem   (itemName, amount)
+				sourceXPlayer.showNotification(_U('you_confiscated', amount, sourceItem.label, targetXPlayer.name))
+				targetXPlayer.showNotification(_U('got_confiscated', amount, sourceItem.label, sourceXPlayer.name))
+			else
+				sourceXPlayer.showNotification(_U('quantity_invalid'))
+			end
 		else
 			sourceXPlayer.showNotification(_U('quantity_invalid'))
 		end
@@ -107,9 +114,14 @@ AddEventHandler('esx_policejob:getStockItem', function(itemName, count)
 		-- is there enough in the society?
 		if count > 0 and inventoryItem.count >= count then
 
-			inventory.removeItem(itemName, count)
-			xPlayer.addInventoryItem(itemName, count)
-			xPlayer.showNotification(_U('have_withdrawn', count, inventoryItem.label))
+			-- can the player carry the said amount of x item?
+			if xPlayer.canCarryItem(itemName, count) then
+				inventory.removeItem(itemName, count)
+				xPlayer.addInventoryItem(itemName, count)
+				xPlayer.showNotification(_U('have_withdrawn', count, inventoryItem.label))
+			else
+				xPlayer.showNotification(_U('quantity_invalid'))
+			end
 		else
 			xPlayer.showNotification(_U('quantity_invalid'))
 		end
@@ -163,16 +175,16 @@ ESX.RegisterServerCallback('esx_policejob:getOtherPlayerData', function(source, 
 			if status then
 				data.drunk = ESX.Math.Round(status.percent)
 			end
-
-			if Config.EnableLicenses then
-				TriggerEvent('esx_license:getLicenses', target, function(licenses)
-					data.licenses = licenses
-					cb(data)
-				end)
-			else
-				cb(data)
-			end
 		end)
+
+		if Config.EnableLicenses then
+			TriggerEvent('esx_license:getLicenses', target, function(licenses)
+				data.licenses = licenses
+				cb(data)
+			end)
+		else
+			cb(data)
+		end
 	end
 end)
 
@@ -197,47 +209,22 @@ ESX.RegisterServerCallback('esx_policejob:getVehicleInfos', function(source, cb,
 			if xPlayer then
 				retrivedInfo.owner = xPlayer.getName()
 				cb(retrivedInfo)
-			else
-				MySQL.Async.fetchAll('SELECT name, firstname, lastname FROM users WHERE identifier = @identifier',  {
+			elseif Config.EnableESXIdentity then
+				MySQL.Async.fetchAll('SELECT firstname, lastname FROM users WHERE identifier = @identifier',  {
 					['@identifier'] = result[1].owner
 				}, function(result2)
 					if result2[1] then
-						if Config.EnableESXIdentity then
-							retrivedInfo.owner = ('%s %s'):format(result2[1].firstname, result2[1].lastname)
-						else
-							retrivedInfo.owner = result2[1].name
-						end
-
+						retrivedInfo.owner = ('%s %s'):format(result2[1].firstname, result2[1].lastname)
 						cb(retrivedInfo)
 					else
 						cb(retrivedInfo)
 					end
 				end)
+			else
+				cb(retrivedInfo)
 			end
 		else
 			cb(retrivedInfo)
-		end
-	end)
-end)
-
-ESX.RegisterServerCallback('esx_policejob:getVehicleFromPlate', function(source, cb, plate)
-	MySQL.Async.fetchAll('SELECT owner FROM owned_vehicles WHERE plate = @plate', {
-		['@plate'] = plate
-	}, function(result)
-		if result[1] then
-			MySQL.Async.fetchAll('SELECT name, firstname, lastname FROM users WHERE identifier = @identifier',  {
-				['@identifier'] = result[1].owner
-			}, function(result2)
-
-				if Config.EnableESXIdentity then
-					cb(('%s %s'):format(result2[1].firstname, result2[1].lastname), true)
-				else
-					cb(result2[1].name, true)
-				end
-
-			end)
-		else
-			cb(_U('unknown'), false)
 		end
 	end)
 end)

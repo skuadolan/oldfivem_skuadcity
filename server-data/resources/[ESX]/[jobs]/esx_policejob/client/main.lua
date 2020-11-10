@@ -78,7 +78,7 @@ function OpenCloakroomMenu()
 		cleanPlayer(playerPed)
 
 		if data.current.value == 'citizen_wear' then
-			if Config.EnableNonFreemodePeds then
+			if Config.EnableCustomPeds then
 				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
 					local isMale = skin.sex == 0
 
@@ -124,25 +124,41 @@ function OpenCloakroomMenu()
 			ESX.TriggerServerCallback('esx_service:isInService', function(isInService)
 				if not isInService then
 
-					ESX.TriggerServerCallback('esx_service:enableService', function(canTakeService, maxInService, inServiceCount)
-						if not canTakeService then
-							ESX.ShowNotification(_U('service_max', inServiceCount, maxInService))
-						else
-							awaitService = true
-							playerInService = true
+					if Config.MaxInService == -1 then
+						ESX.TriggerServerCallback('esx_service:enableService', function(canTakeService, maxInService, inServiceCount)
+							if not canTakeService then
+								ESX.ShowNotification(_U('service_max', inServiceCount, maxInService))
+							else
+								awaitService = true
+								playerInService = true
 
-							local notification = {
-								title    = _U('service_anonunce'),
-								subject  = '',
-								msg      = _U('service_in_announce', GetPlayerName(PlayerId())),
-								iconType = 1
-							}
+								local notification = {
+									title    = _U('service_anonunce'),
+									subject  = '',
+									msg      = _U('service_in_announce', GetPlayerName(PlayerId())),
+									iconType = 1
+								}
 
-							TriggerServerEvent('esx_service:notifyAllInService', notification, 'police')
-							TriggerEvent('esx_policejob:updateBlip')
-							ESX.ShowNotification(_U('service_in'))
-						end
-					end, 'police')
+								TriggerServerEvent('esx_service:notifyAllInService', notification, 'police')
+								TriggerEvent('esx_policejob:updateBlip')
+								ESX.ShowNotification(_U('service_in'))
+							end
+						end, 'police')
+					else 
+						awaitService = true
+						playerInService = true
+
+						local notification = {
+							title    = _U('service_anonunce'),
+							subject  = '',
+							msg      = _U('service_in_announce', GetPlayerName(PlayerId())),
+							iconType = 1
+						}
+
+						TriggerServerEvent('esx_service:notifyAllInService', notification, 'police')
+						TriggerEvent('esx_policejob:updateBlip')
+						ESX.ShowNotification(_U('service_in'))
+					end
 
 				else
 					awaitService = true
@@ -400,7 +416,7 @@ function OpenIdentityCardMenu(player)
 	ESX.TriggerServerCallback('esx_policejob:getOtherPlayerData', function(data)
 		local elements = {
 			{label = _U('name', data.name)},
-			{label = _U('job', ('%s - %s'):format(data.job.label, data.job.grade_label))}
+			{label = _U('job', ('%s - %s'):format(data.job, data.grade))}
 		}
 
 		if Config.EnableESXIdentity then
@@ -479,7 +495,7 @@ function OpenBodySearchMenu(player)
 		}, function(data, menu)
 			if data.current.value then
 				TriggerServerEvent('esx_policejob:confiscatePlayerItem', GetPlayerServerId(player), data.current.itemType, data.current.value, data.current.amount)
-				OpenBodySearchMenu(player)
+				menu.close()
 			end
 		end, function(data, menu)
 			menu.close()
@@ -543,17 +559,28 @@ function LookupVehicle()
 		title = _U('search_database_title'),
 	}, function(data, menu)
 		local length = string.len(data.value)
-		if data.value == nil or length < 2 or length > 13 then
+		if not data.value or length < 2 or length > 8 then
 			ESX.ShowNotification(_U('search_database_error_invalid'))
 		else
-			ESX.TriggerServerCallback('esx_policejob:getVehicleFromPlate', function(owner, found)
-				if found then
-					ESX.ShowNotification(_U('search_database_found', owner))
+			ESX.TriggerServerCallback('esx_policejob:getVehicleInfos', function(retrivedInfo)
+				local elements = {{label = _U('plate', retrivedInfo.plate)}}
+				menu.close()
+
+				if not retrivedInfo.owner then
+					table.insert(elements, {label = _U('owner_unknown')})
 				else
-					ESX.ShowNotification(_U('search_database_error_not_found'))
+					table.insert(elements, {label = _U('owner', retrivedInfo.owner)})
 				end
+
+				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_infos', {
+					title    = _U('vehicle_info'),
+					align    = 'top-left',
+					elements = elements
+				}, nil, function(data2, menu2)
+					menu2.close()
+				end)
 			end, data.value)
-			menu.close()
+
 		end
 	end, function(data, menu)
 		menu.close()
@@ -620,7 +647,7 @@ function OpenVehicleInfosMenu(vehicleData)
 	ESX.TriggerServerCallback('esx_policejob:getVehicleInfos', function(retrivedInfo)
 		local elements = {{label = _U('plate', retrivedInfo.plate)}}
 
-		if retrivedInfo.owner == nil then
+		if not retrivedInfo.owner then
 			table.insert(elements, {label = _U('owner_unknown')})
 		else
 			table.insert(elements, {label = _U('owner', retrivedInfo.owner)})
@@ -699,7 +726,6 @@ end
 function OpenBuyWeaponsMenu()
 	local elements = {}
 	local playerPed = PlayerPedId()
-	PlayerData = ESX.GetPlayerData()
 
 	for k,v in ipairs(Config.AuthorizedWeapons[ESX.PlayerData.job.grade_name]) do
 		local weaponNum, weapon = ESX.GetWeapon(v.weapon)
@@ -836,7 +862,7 @@ function OpenGetStocksMenu()
 			}, function(data2, menu2)
 				local count = tonumber(data2.value)
 
-				if count == nil then
+				if not count then
 					ESX.ShowNotification(_U('quantity_invalid'))
 				else
 					menu2.close()
@@ -883,7 +909,7 @@ function OpenPutStocksMenu()
 			}, function(data2, menu2)
 				local count = tonumber(data2.value)
 
-				if count == nil then
+				if not count then
 					ESX.ShowNotification(_U('quantity_invalid'))
 				else
 					menu2.close()
@@ -1126,7 +1152,7 @@ AddEventHandler('esx_policejob:OutVehicle', function()
 
 	if IsPedSittingInAnyVehicle(playerPed) then
 		local vehicle = GetVehiclePedIsIn(playerPed, false)
-		TaskLeaveVehicle(playerPed, vehicle, 16)
+		TaskLeaveVehicle(playerPed, vehicle, 64)
 	end
 end)
 
@@ -1224,7 +1250,7 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.Cloakrooms[i])
 
 					if distance < Config.DrawDistance then
-						DrawMarker(20, v.Cloakrooms[i], 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						DrawMarker(Config.MarkerType.Cloakrooms, v.Cloakrooms[i], 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
 						letSleep = false
 
 						if distance < Config.MarkerSize.x then
@@ -1237,7 +1263,7 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.Armories[i])
 
 					if distance < Config.DrawDistance then
-						DrawMarker(21, v.Armories[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						DrawMarker(Config.MarkerType.Armories, v.Armories[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
 						letSleep = false
 
 						if distance < Config.MarkerSize.x then
@@ -1250,7 +1276,7 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.Vehicles[i].Spawner)
 
 					if distance < Config.DrawDistance then
-						DrawMarker(36, v.Vehicles[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						DrawMarker(Config.MarkerType.Vehicles, v.Vehicles[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
 						letSleep = false
 
 						if distance < Config.MarkerSize.x then
@@ -1263,7 +1289,7 @@ Citizen.CreateThread(function()
 					local distance =  #(playerCoords - v.Helicopters[i].Spawner)
 
 					if distance < Config.DrawDistance then
-						DrawMarker(34, v.Helicopters[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						DrawMarker(Config.MarkerType.Helicopters, v.Helicopters[i].Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
 						letSleep = false
 
 						if distance < Config.MarkerSize.x then
@@ -1277,7 +1303,7 @@ Citizen.CreateThread(function()
 						local distance = #(playerCoords - v.BossActions[i])
 
 						if distance < Config.DrawDistance then
-							DrawMarker(22, v.BossActions[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+							DrawMarker(Config.MarkerType.BossActions, v.BossActions[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
 							letSleep = false
 
 							if distance < Config.MarkerSize.x then

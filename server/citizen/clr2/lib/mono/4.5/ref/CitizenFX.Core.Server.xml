@@ -7096,27 +7096,27 @@
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.SET_PED_COMPONENT_VARIATION">
             <summary>
-            This native is used to set component variation on a ped. Components, drawables and textures IDs are related to the ped model. 
+            This native is used to set component variation on a ped. Components, drawables and textures IDs are related to the ped model.
             
             ### MP Freemode list of components
             
-            **0**: Face  
-            **1**: Mask  
-            **2**: Hair  
-            **3**: Torso  
-            **4**: Leg  
-            **5**: Parachute / bag  
-            **6**: Shoes  
-            **7**: Accessory  
-            **8**: Undershirt  
-            **9**: Kevlar  
-            **10**: Badge  
-            **11**: Torso 2  
+            **0**: Face\
+            **1**: Mask\
+            **2**: Hair\
+            **3**: Torso\
+            **4**: Leg\
+            **5**: Parachute / bag\
+            **6**: Shoes\
+            **7**: Accessory\
+            **8**: Undershirt\
+            **9**: Kevlar\
+            **10**: Badge\
+            **11**: Torso 2
             
             ### Related and useful natives
             
-            [GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS](#_0x27561561732A7842)  
-            [GET_NUMBER_OF_PED_TEXTURE_VARIATIONS](#_0x8F7156A3142A6BAD)  
+            [GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS](#\_0x27561561732A7842)\
+            [GET_NUMBER_OF_PED_TEXTURE_VARIATIONS](#\_0x8F7156A3142A6BAD)
             
             [List of component/props ID](gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
             </summary>
@@ -7225,20 +7225,20 @@
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.SET_PED_PROP_INDEX">
             <summary>
-            This native is used to set prop variation on a ped. Components, drawables and textures IDs are related to the ped model. 
+            This native is used to set prop variation on a ped. Components, drawables and textures IDs are related to the ped model.
             
             ### MP Freemode list of props
             
-            **0**: Hat  
-            **1**: Glass  
-            **2**: Ear  
-            **6**: Watch  
-            **7**: Bracelet  
+            **0**: Hat\
+            **1**: Glass\
+            **2**: Ear\
+            **6**: Watch\
+            **7**: Bracelet
             
             ### Related and useful natives
             
-            [GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS](#_0x5FAF9754E789FB47)  
-            [GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS](#_0xA6E7F1CEB523E171)  
+            [GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS](#\_0x5FAF9754E789FB47)\
+            [GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS](#\_0xA6E7F1CEB523E171)
             
             [List of component/props ID](gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
             </summary>
@@ -7265,7 +7265,7 @@
             <summary>
             **Known values**
             
-            `PRF_PreventGoingIntoStillInVehicleState` = 236 _(fanatic2.c)_
+            `PRF_PreventGoingIntoStillInVehicleState` = 236 *(fanatic2.c)*
             </summary>
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.SET_PED_TO_RAGDOLL">
@@ -7581,15 +7581,15 @@
             <summary>
             Adds a rectangular blip for the specified coordinates/area.
             
-            It is recommended to use [SET_BLIP_ROTATION](#_0xF87683CDF73C3F6E) and [SET_BLIP_COLOUR](#_0x03D7FB09E75D6B7E) to make the blip not rotate along with the camera.
+            It is recommended to use [SET_BLIP_ROTATION](#\_0xF87683CDF73C3F6E) and [SET_BLIP_COLOUR](#\_0x03D7FB09E75D6B7E) to make the blip not rotate along with the camera.
             
-            By default, the blip will show as a _regular_ blip with the specified color/sprite if it is outside of the minimap view.
+            By default, the blip will show as a *regular* blip with the specified color/sprite if it is outside of the minimap view.
             
             Example image:
             ![minimap](https://w.wew.wtf/pdcjig.png)
             ![big map](https://w.wew.wtf/zgcjcm.png)
             
-            (Native name is _likely_ to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
+            (Native name is *likely* to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
             </summary>
         </member>
         <member name="F:CitizenFX.Core.Native.Hash._SET_PED_EYE_COLOR">
@@ -7642,12 +7642,12 @@
         <member name="M:CitizenFX.Core.Native.API.AddBlipForArea(System.Single,System.Single,System.Single,System.Single,System.Single)">
             <summary>
             Adds a rectangular blip for the specified coordinates/area.
-            It is recommended to use [SET_BLIP_ROTATION](#_0xF87683CDF73C3F6E) and [SET_BLIP_COLOUR](#_0x03D7FB09E75D6B7E) to make the blip not rotate along with the camera.
-            By default, the blip will show as a _regular_ blip with the specified color/sprite if it is outside of the minimap view.
+            It is recommended to use [SET_BLIP_ROTATION](#\_0xF87683CDF73C3F6E) and [SET_BLIP_COLOUR](#\_0x03D7FB09E75D6B7E) to make the blip not rotate along with the camera.
+            By default, the blip will show as a *regular* blip with the specified color/sprite if it is outside of the minimap view.
             Example image:
             ![minimap](https://w.wew.wtf/pdcjig.png)
             ![big map](https://w.wew.wtf/zgcjcm.png)
-            (Native name is _likely_ to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
+            (Native name is *likely* to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
             </summary>
             <param name="x">
             The X coordinate of the center of the blip.
@@ -8640,21 +8640,21 @@
             <summary>
             This native is used to set component variation on a ped. Components, drawables and textures IDs are related to the ped model.
             ### MP Freemode list of components
-            **0**: Face
-            **1**: Mask
-            **2**: Hair
-            **3**: Torso
-            **4**: Leg
-            **5**: Parachute / bag
-            **6**: Shoes
-            **7**: Accessory
-            **8**: Undershirt
-            **9**: Kevlar
-            **10**: Badge
+            **0**: Face\
+            **1**: Mask\
+            **2**: Hair\
+            **3**: Torso\
+            **4**: Leg\
+            **5**: Parachute / bag\
+            **6**: Shoes\
+            **7**: Accessory\
+            **8**: Undershirt\
+            **9**: Kevlar\
+            **10**: Badge\
             **11**: Torso 2
             ### Related and useful natives
-            [GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS](#_0x27561561732A7842)
-            [GET_NUMBER_OF_PED_TEXTURE_VARIATIONS](#_0x8F7156A3142A6BAD)
+            [GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS](#\_0x27561561732A7842)\
+            [GET_NUMBER_OF_PED_TEXTURE_VARIATIONS](#\_0x8F7156A3142A6BAD)
             [List of component/props ID](gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
             </summary>
             <param name="ped">
@@ -8825,14 +8825,14 @@
             <summary>
             This native is used to set prop variation on a ped. Components, drawables and textures IDs are related to the ped model.
             ### MP Freemode list of props
-            **0**: Hat
-            **1**: Glass
-            **2**: Ear
-            **6**: Watch
+            **0**: Hat\
+            **1**: Glass\
+            **2**: Ear\
+            **6**: Watch\
             **7**: Bracelet
             ### Related and useful natives
-            [GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS](#_0x5FAF9754E789FB47)
-            [GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS](#_0xA6E7F1CEB523E171)
+            [GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS](#\_0x5FAF9754E789FB47)\
+            [GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS](#\_0xA6E7F1CEB523E171)
             [List of component/props ID](gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
             </summary>
             <param name="ped">
@@ -8870,7 +8870,7 @@
         <member name="M:CitizenFX.Core.Native.API.SetPedResetFlag(System.Int32,System.Int32,System.Boolean)">
             <summary>
             **Known values**
-            `PRF_PreventGoingIntoStillInVehicleState` = 236 _(fanatic2.c)_
+            `PRF_PreventGoingIntoStillInVehicleState` = 236 *(fanatic2.c)*
             </summary>
         </member>
         <member name="M:CitizenFX.Core.Native.API.SetPedToRagdoll(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
@@ -8883,12 +8883,6 @@
             </summary>
             <param name="time1">
             Time(ms) Ped is in ragdoll mode; only applies to ragdoll types 0 and not 1.
-            </param>
-            <param name="p4">
-            :
-            </param>
-            <param name="p5">
-            :
             </param>
         </member>
         <member name="M:CitizenFX.Core.Native.API.SetPedToRagdollWithFall(System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">

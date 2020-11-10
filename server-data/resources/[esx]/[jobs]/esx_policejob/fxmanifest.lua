@@ -1,4 +1,6 @@
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+fx_version 'adamant'
+
+game 'gta5'
 
 description 'ESX Police Job'
 
@@ -15,6 +17,9 @@ server_scripts {
 	'locales/fi.lua',
 	'locales/es.lua',
 	'locales/sv.lua',
+	'locales/ko.lua',
+	'locales/cs.lua',
+	'locales/nl.lua',
 	'config.lua',
 	'server/main.lua'
 }
@@ -29,6 +34,9 @@ client_scripts {
 	'locales/fi.lua',
 	'locales/es.lua',
 	'locales/sv.lua',
+	'locales/ko.lua',
+	'locales/cs.lua',
+	'locales/nl.lua',
 	'config.lua',
 	'client/main.lua',
 	'client/vehicle.lua'
@@ -36,5 +44,6 @@ client_scripts {
 
 dependencies {
 	'es_extended',
-	'esx_billing'
+	'esx_billing',
+	'esx_vehicleshop'
 }
