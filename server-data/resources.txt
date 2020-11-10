@@ -53,16 +53,16 @@ start esx_shops
 start esx_clotheshop
 start esx_barbershop
 start esx_weaponshop
+start esx_lscustom
 
 # Other ESX scripts
-#start es_camera
+start es_camera
 start esx_status
-#start esx_voice > emilia_statusvoice
+#start esx_voice # emilia_statusvoice
 start esx_basicneeds
 start esx_optionalneeds
 start esx_accessories # M Button
 start esx_boat
-start esx_lscustom
 start esx_holdup
 start esx_drugs
 start esx_animations # F3 Button
@@ -72,6 +72,10 @@ start esx_rpchat
 start esx_sit
 start esx_atm
 start esx_dmvschool
+start esx_boilerplate
+start esx_migrate
+#start esx_whitelist
+#start esx_whitelistEnhanced
 
 # Adds-On Base
 start loadingScreen
