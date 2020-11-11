@@ -7,6 +7,7 @@ start fivem
 start hardcap
 start rconlog
 start scoreboard
+start vMenu # `/~ Button
 start playernames
 
 # ESX Core
@@ -61,11 +62,9 @@ start esx_status
 #start esx_voice # emilia_statusvoice
 start esx_basicneeds
 start esx_optionalneeds
-start esx_accessories # M Button
 start esx_boat
 start esx_holdup
 start esx_drugs
-start esx_animations # F3 Button
 start esx_cruisecontrol
 start esx_garage
 start esx_rpchat
@@ -76,19 +75,8 @@ start esx_boilerplate
 start esx_migrate
 #start esx_whitelist
 #start esx_whitelistEnhanced
-
-# Adds-On Base
-start loadingScreen
-start ocrp_postal_map
-start emilia_statusvoice
-start RealisticVehicleFailure
-start LegacyFuel
-start SimpleCarHUD # B and capslock in car
-#start No-NPC
-start carremote # F5 and N in car out car F5 to remote
-start MF_VehSales
-start Ruby_Shops
-start iFruit
+start esx_realparking
+start esx_vehiclesRent
 
 # Phillbox Hospital
 start i_ilev
@@ -104,3 +92,35 @@ start v_corp
 start paletoutdoor
 start tolKanan
 start parkirPhillbox
+start fbiMLO
+start paletomedical
+start Ruby_Shops
+start iFruit
+
+#Robberry
+start genesis-bankHoldup
+start genesis-thermal
+start InteractSound
+start props
+
+#Vehicle
+start bmci #BMW M5 F90
+
+# Adds-On Base
+start loadingScreen
+start ocrp_postal_map
+start emilia_statusvoice
+start RealisticVehicleFailure
+start LegacyFuel
+start SimpleCarHUD # B and capslock in car
+start No-NPC
+start carremote # F5 and N in car out car F5 to remote
+start MF_VehSales
+start CarryPeople # /carry
+start vk_handsup # X Button
+start hostageplayer #/th
+start dpclothing # M Button
+start dpemotes # F3 Button
+start esx_weapon-pull-out
+#start rp-radio
+start pd_doorlock

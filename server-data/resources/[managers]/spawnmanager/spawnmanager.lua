@@ -147,7 +147,7 @@ end
 -- sets a callback to execute instead of 'native' spawning when trying to auto-spawn
 function setAutoSpawnCallback(cb)
     autoSpawnCallback = cb
-    autoSpawnEnabled = true
+    autoSpawnEnabled = false
 end
 
 -- function as existing in original R* scripts
@@ -322,6 +322,9 @@ function spawnPlayer(spawnIdx, cb)
         if cb then
             cb(spawn)
         end
+
+        NetworkSetFriendlyFireOption(true)
+        SetCanAttackFriendly(playerPed, true, true)
 
         spawnLock = false
     end)

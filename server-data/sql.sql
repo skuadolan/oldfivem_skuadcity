@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   `money` double NOT NULL,
   `owner` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
 INSERT IGNORE INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_datastore_owner_name` (`owner`,`name`),
   KEY `index_datastore_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
 INSERT IGNORE INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
@@ -588,7 +588,7 @@ CREATE TABLE IF NOT EXISTS `user_inventory` (
   `item` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 /*!40000 ALTER TABLE `user_inventory` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user_inventory` ENABLE KEYS */;
@@ -772,7 +772,7 @@ INSERT IGNORE INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('9F', 'ninef', 65000, 'sports'),
 	('9F Cabrio', 'ninef2', 80000, 'sports'),
 	('Omnis', 'omnis', 35000, 'sports'),
-	('Oppressor', 'oppressor', 3524500, 'super'),
+	('Oppressor', 'oppressor', 10000000000, 'super'),
 	('Oracle XS', 'oracle2', 35000, 'coupes'),
 	('Osiris', 'osiris', 160000, 'super'),
 	('Panto', 'panto', 10000, 'compacts'),
@@ -872,7 +872,8 @@ INSERT IGNORE INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Zion Cabrio', 'zion2', 45000, 'coupes'),
 	('Zombie', 'zombiea', 9500, 'motorcycles'),
 	('Zombie Luxuary', 'zombieb', 12000, 'motorcycles'),
-	('Z-Type', 'ztype', 220000, 'sportsclassics');
+	('Z-Type', 'ztype', 220000, 'sportsclassics'),
+	('BMW M5 F90', 'bmci', 5340000, 'importcars');
 /*!40000 ALTER TABLE `vehicles` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
@@ -893,7 +894,8 @@ INSERT IGNORE INTO `vehicle_categories` (`name`, `label`) VALUES
 	('sportsclassics', 'Sports Classics'),
 	('super', 'Super'),
 	('suvs', 'SUVs'),
-	('vans', 'Vans');
+	('vans', 'Vans'),
+	('importcars', 'Import Cars');
 /*!40000 ALTER TABLE `vehicle_categories` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `vehicle_sold` (
@@ -960,6 +962,50 @@ INSERT IGNORE INTO `weashops` (`id`, `zone`, `item`, `price`) VALUES
 	(39, 'BlackWeashop', 'WEAPON_RAILGUN', 50000),
 	(40, 'BlackWeashop', 'WEAPON_STICKYBOMB', 500);
 /*!40000 ALTER TABLE `weashops` ENABLE KEYS */;
+
+CREATE TABLE `car_parking`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `owner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `plate` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
+  `time` bigint(20) NOT NULL,
+  `parking` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+INSERT INTO `items`(`name`, `label`, `limit`) VALUES ('parkingcard', 'Parking Card', -1);
+
+CREATE TABLE IF NOT EXISTS `dpkeybinds` (
+  `id` varchar(50) NULL DEFAULT NULL,
+  `keybind1` varchar(50) NULL DEFAULT "num4",
+  `emote1` varchar(255) NULL DEFAULT "",
+  `keybind2` varchar(50) NULL DEFAULT "num5",
+  `emote2` varchar(255) NULL DEFAULT "",
+  `keybind3` varchar(50) NULL DEFAULT "num6",
+  `emote3` varchar(255) NULL DEFAULT "",
+  `keybind4` varchar(50) NULL DEFAULT "num7",
+  `emote4` varchar(255) NULL DEFAULT "",
+  `keybind5` varchar(50) NULL DEFAULT "num8",
+  `emote5` varchar(255) NULL DEFAULT "",
+  `keybind6` varchar(50) NULL DEFAULT "num9",
+  `emote6` varchar(255) NULL DEFAULT ""
+) ENGINE=InnoDB COLLATE=latin1_swedish_ci;
+
+INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
+('hackerDevice', 'Hacking Device', 5, 0, 1);
+
+INSERT INTO `addon_account` (name, label, shared) VALUES
+  ('vault_black_money', 'Money Vault', 0),
+  ('society_police_black_money', 'Police Black Money', 1)
+;
+
+INSERT INTO `addon_inventory` (name, label, shared) VALUES
+  ('vault', 'Vault', 0)
+;
+
+INSERT INTO `datastore` (name, label, shared) VALUES
+  ('vault', 'Vault', 0)
+;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

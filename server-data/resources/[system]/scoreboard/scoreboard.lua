@@ -5,7 +5,7 @@ Citizen.CreateThread(function()
     while true do
         Wait(0)
 
-        if IsControlPressed(0, 27)--[[ INPUT_PHONE ]] then
+        if IsControlPressed(0, 20)--[[ INPUT_MULTIPLAYER_INFO ]] then
             if not listOn then
                 local players = {}
                 local ptable = GetActivePlayers()
