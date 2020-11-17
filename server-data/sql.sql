@@ -964,7 +964,7 @@ INSERT IGNORE INTO `weashops` (`id`, `zone`, `item`, `price`) VALUES
 	(40, 'BlackWeashop', 'WEAPON_STICKYBOMB', 500);
 /*!40000 ALTER TABLE `weashops` ENABLE KEYS */;
 
-CREATE TABLE `car_parking`  (
+CREATE TABLE IF NOT EXISTS `car_parking`  (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `owner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `plate` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
