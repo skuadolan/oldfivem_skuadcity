@@ -873,7 +873,8 @@ INSERT IGNORE INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Zombie', 'zombiea', 9500, 'motorcycles'),
 	('Zombie Luxuary', 'zombieb', 12000, 'motorcycles'),
 	('Z-Type', 'ztype', 220000, 'sportsclassics'),
-	('BMW M5 F90', 'bmci', 5340000, 'importcars');
+	('BMW M5 F90', 'bmci', 5340000, 'importcars'),
+	('Nissan Skyline GT-R R34', 'r34', 5230000, 'importcars');
 /*!40000 ALTER TABLE `vehicles` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
@@ -992,7 +993,8 @@ CREATE TABLE IF NOT EXISTS `dpkeybinds` (
 ) ENGINE=InnoDB COLLATE=latin1_swedish_ci;
 
 INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
-('hackerDevice', 'Hacking Device', 5, 0, 1);
+('hackerDevice', 'Hacking Device', 5, 0, 1),
+('drill', 'Drill', 5, 0, 1);
 
 INSERT INTO `addon_account` (name, label, shared) VALUES
   ('vault_black_money', 'Money Vault', 0),
@@ -1006,6 +1008,18 @@ INSERT INTO `addon_inventory` (name, label, shared) VALUES
 INSERT INTO `datastore` (name, label, shared) VALUES
   ('vault', 'Vault', 0)
 ;
+
+ALTER TABLE `users`
+
+  ADD COLUMN `jail` LONGTEXT NULL;
+
+ALTER TABLE `owned_vehicles`
+ADD `insurance` int(11) NOT NULL DEFAULT 0;
+
+INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
+('net_cracker', 'Net Cracker', 2, 0, 1),
+('thermite', 'Thermite Bomb', 5, 0, 1);
+
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

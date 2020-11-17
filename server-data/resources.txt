@@ -57,7 +57,6 @@ start esx_weaponshop
 start esx_lscustom
 
 # Other ESX scripts
-start es_camera
 start esx_status
 #start esx_voice # emilia_statusvoice
 start esx_basicneeds
@@ -76,7 +75,6 @@ start esx_migrate
 #start esx_whitelist
 #start esx_whitelistEnhanced
 start esx_realparking
-start esx_vehiclesRent
 
 # Phillbox Hospital
 start i_ilev
@@ -92,19 +90,17 @@ start v_corp
 start paletoutdoor
 start tolKanan
 start parkirPhillbox
-start fbiMLO
 start paletomedical
 start Ruby_Shops
 start iFruit
+start paletofire
 
 #Robberry
-start genesis-bankHoldup
-start genesis-thermal
-start InteractSound
-start props
+
 
 #Vehicle
 start bmci #BMW M5 F90
+start r34 #Nissan Skyline GT-R R34
 
 # Adds-On Base
 start loadingScreen
@@ -121,6 +117,7 @@ start vk_handsup # X Button
 start hostageplayer #/th
 start dpclothing # M Button
 start dpemotes # F3 Button
-start esx_weapon-pull-out
 #start rp-radio
 start pd_doorlock
+start mythic_notify
+start progressBars-1.0

@@ -19,6 +19,16 @@ Config.DoorList = {
 		}
 	},
 
+	-- Bank Paris
+	{
+		objHash = GetHashKey('v_ilev_bk_gate2_pris'),
+		objCoords  = vector3(261.99899291992, 221.50576782227, 106.68346405029),
+		textCoords = vector3(261.99899291992, 221.50576782227, 107.68346405029),
+		authorizedJobs = { 'police' },
+		locked = true,
+		maxDistance = 12
+	},
+
 	-- To locker room & roof
 	{
 		objHash = GetHashKey('v_ilev_ph_gendoor004'),
