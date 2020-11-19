@@ -8,116 +8,120 @@ start hardcap
 start rconlog
 start scoreboard
 start vMenu # `/~ Button
-start playernames
 
 # ESX Core
-start essentialmode
-start es_admin2
-start es_ui
-start async
-start esplugin_mysql
-start es_extended
+start extendedmode
 
 # ESX Base
-start instance
-start cron
-start skinchanger
-start esx_skin
 start esx_menu_default
 start esx_menu_list
 start esx_menu_dialog
-start esx_phone # F1 Button
+
+start async
+start skinchanger
+start esx_skin
+
+# ESX Shops
+start esx_advancedvehicleshop
+start esx_advancedweaponshop
+start esx_licenseshop
+start esx_clotheshop
+start esx_barbershop
+start esx_shops
+
+# Other ESX scripts
+start esx_advancedgarage
+start esx_status
+start instance
+start cron
 start esx_addonaccount
 start esx_addoninventory # F2 Button
 start esx_datastore
 start esx_society
-start esx_service
-start esx_billing # F7 Button
-start esx_license
-start esx_identity
-#start esx_kashacters > Multiple Account Char
-
-# ESX Jobs
-start esx_jobs
-start esx_joblisting
-start esx_taxijob # F6 Button
-start esx_mechanicjob # F6 Button
-start esx_policejob # F6 Button
 start esx_property
-start esx_realestateagentjob
-start esx_bankerjob
-start esx_ambulancejob # F6 Button
-
-#ESX Shops
-start esx_vehicleshop
-start esx_shops
-start esx_clotheshop
-start esx_barbershop
-start esx_weaponshop
-start esx_lscustom
-
-# Other ESX scripts
-start esx_status
-#start esx_voice # emilia_statusvoice
-start esx_basicneeds
-start esx_optionalneeds
-start esx_boat
-start esx_holdup
-start esx_drugs
-start esx_cruisecontrol
-start esx_garage
 start esx_rpchat
-start esx_sit
-start esx_atm
-start esx_dmvschool
-start esx_boilerplate
-start esx_migrate
-#start esx_whitelist
 #start esx_whitelistEnhanced
+#start esx_kashacters # Multiple char
+start esx_service
+start esx_cruisecontrol
+start esx_license
+start esx_dmvschool
+start esx_boat
+start esx_optionalneeds
+start esx_billing # F7 Button
+start esx_basicneeds
+start esx_atm
+start esx_boilerplate
+start esx_sit
+start esx_phone # F1 Button
+start esx_voice
+#start esx_whitelist
+start essentialmode
+start es_admin2
+start esplugin_mysql
+start esx_migrate
 start esx_realparking
 
-# Phillbox Hospital
+# ESX Jobs
+start esx_ambulancejob # F6 Button
+start esx_policejob # F6 Button
+start esx_holdup
+start esx_taxijob # F6 Button
+start esx_mechanicjob # F6 Button
+start esx_lscustom
+start esx_jobs
+start esx_drugs
+start esx_joblisting
+start esx_bankerjob # F6 Button
+start esx_realestateagentjob # F6 Button
+
+
+start esx_identity
+###################################
+# Adds-On Base
+start progressBars-1.0
+start mythic_notify
+
+start SimpleCarHUD # B and capslock in car
+start LegacyFuel
+start RealisticVehicleFailure
+start No-NPC
+start MF_VehSales
+start loadingScreen
+start emilia_statusvoice
+start dpemotes # F3 Button and L tu layot
+start discordConnect
+start carremote # F5 and N in car && out car F5 to remote
+start CarryPeople # /carry
+start dpclothing # M Button
+start hostageplayer #/th /takehostage
+start pd_doorlock
+#start rp-radio #Need mumble voip
+start vk_handsup # X Button
+
+
+# Map Adds-On
+#Phillbox Hospital
 start i_ilev
 start med_props
 start pillnew
 start proppill
 start v_corp
+start parkirPhillbox
 
 #Other Phillbox
 #start Phillbox2
 
-#Map Adds-On
+start iFruit
+start Ruby_Shops
+start ocrp_postal_map
+start paletofire
+start paletomedical
 start paletoutdoor
 start tolKanan
-start parkirPhillbox
-start paletomedical
-start Ruby_Shops
-start iFruit
-start paletofire
 
-#Robberry
+# Robberry
 
 
-#Vehicle
-start bmci #BMW M5 F90
-start r34 #Nissan Skyline GT-R R34
-
-# Adds-On Base
-start loadingScreen
-start ocrp_postal_map
-start emilia_statusvoice
-start RealisticVehicleFailure
-start LegacyFuel
-start SimpleCarHUD # B and capslock in car
-start No-NPC
-start carremote # F5 and N in car out car F5 to remote
-start MF_VehSales
-start CarryPeople # /carry
-start vk_handsup # X Button
-start hostageplayer #/th
-start dpclothing # M Button
-start dpemotes # F3 Button
-#start rp-radio
-start pd_doorlock
-start mythic_notify
-start progressBars-1.0
+# Vehicle
+start bmci # BMW M5 F90

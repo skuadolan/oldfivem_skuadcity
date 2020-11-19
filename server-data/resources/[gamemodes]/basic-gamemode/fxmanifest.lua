@@ -1,4 +1,4 @@
-resource_type 'gametype' { name = 'Roleplay, PvP' }
+resource_type 'gametype' { name = 'Freeroam, Roleplay, PvP,' }
 
 client_script 'basic_client.lua'
 

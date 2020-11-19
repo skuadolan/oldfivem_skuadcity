@@ -6,6 +6,6 @@ Config.HotkeyEngine       = 306   -- Sencondary N Hotkey For Turning Engine On/O
 Config.SwitchDistance     = 3     -- How Close You Need To Be To Switch Connected Vehicles
 Config.MaxRemoteRange     = 30    -- Set max range that the remote will work.
 Config.MaxAlarmDistance   = 50    -- Set max distance the alarm audio can be heard from
-Config.MaxAlarmVolume     = .25   -- Set max volume for the alarm audio
+Config.MaxAlarmVolume     = 1   -- Set max volume for the alarm audio
 Config.MaxFobBeepDistance = 10    -- Set max distance the fob beep audio can be heard from
 Config.MaxFobBeepVolume   = .20   -- Set max volume for the fob beep audio

@@ -322,6 +322,7 @@ function spawnPlayer(spawnIdx, cb)
         if cb then
             cb(spawn)
         end
+
         spawnLock = false
     end)
 end
@@ -337,9 +338,6 @@ Citizen.CreateThread(function()
 
         local playerPed = PlayerPedId()
 
-        NetworkSetFriendlyFireOption(true)
-        SetCanAttackFriendly(playerPed, true, false)
-
         if playerPed and playerPed ~= -1 then
             -- check if we want to autospawn
             if autoSpawnEnabled then
@@ -350,6 +348,7 @@ Citizen.CreateThread(function()
                         else
                             spawnPlayer()
                         end
+
                         respawnForced = false
                     end
                 end

@@ -6,16 +6,23 @@ endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
 
 # Set connection MYSQL-async
-#set mysql_connection_string "server=localhost;database=essentialmode;userid=skuadcity;password=nomercy021" #Online
-set mysql_connection_string "server=localhost;database=essentialmode;userid=root" #Offline
+set mysql_connection_string "server=localhost;database=es_extended;userid=root" #Offline
  
 # Disable Couchdb from essentialmode
 set es_enableCustomData 1
+
+# Give es_extended access to commands
+add_principal group.admin group.user
+add_ace resource.es_extended command.add_ace allow
+add_ace resource.es_extended command.add_principal allow
+add_ace resource.es_extended command.remove_principal allow
+add_ace resource.es_extended command.stop allow
  
 # Mysql/Base
 start mysql-async
 
 # Resources
+setr esx_MenuAlign "top-right"
 exec resources.cfg
 
 #Fix Errors
@@ -85,8 +92,7 @@ sv_maxclients 21
 
 # Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
 # -> replace "" with the key
-set steam_webApiKey "C75B6ED2B2E060C9F28EDF5456862272"
+set steam_webApiKey ""
 
 # License key for your server (https://keymaster.fivem.net)
-#sv_licenseKey "ezziczdbvcssf6dobilf8c1zcsssr9pb" #Online
 sv_licenseKey "s3iw4nierdwt4izyh9wolsbhd4e17z1f" #Offline
