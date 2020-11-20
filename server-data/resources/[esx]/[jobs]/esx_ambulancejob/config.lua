@@ -123,6 +123,96 @@ Config.Hospitals = {
 			}
 		}
 
+	},
+
+	PhillBoxHospital = {
+		Blip = {
+			coords = vector3(296.64, -583.9, 43.14),
+			sprite = 61,
+			scale  = 1.2,
+			color  = 2
+		},
+
+		AmbulanceActions = {
+			vector3(314.2, -603.52, 43.29)
+		},
+
+		Pharmacies = {
+			vector3(310.4, -599.23, 43.29)
+		},
+
+		Vehicles = {
+			{
+				Spawner = vector3(299.5, -572.24, 43.26),
+				InsideShop = vector3(292.89, -582.05, 49.75),
+				Marker = { type = 36, x = 1.0, y = 1.0, z = 1.0, r = 100, g = 50, b = 200, a = 100, rotate = true },
+				SpawnPoints = {
+					{ coords = vector3(290.8, -583.09, 43.16), heading = 340.21, radius = 4.0 },
+					{ coords = vector3(287.97, -589.74, 43.13), heading = 327.84, radius = 4.0 },
+					{ coords = vector3(285.83, -596.6, 43.15), heading = 338.73, radius = 6.0 }
+				}
+			}
+		},
+
+		Helicopters = {
+			{
+				Spawner = vector3(342.08, -580.88, 74.17),
+				InsideShop = vector3(313.76, -578.54, 94.48),
+				Marker = { type = 34, x = 1.5, y = 1.5, z = 1.5, r = 100, g = 150, b = 150, a = 100, rotate = true },
+				SpawnPoints = {
+					{ coords = vector3(352.3, -588.24, 74.17), heading = 72.65, radius = 10.0 }
+				}
+			}
+		},
+
+		FastTravels = {
+			{
+				From = vector3(321.82, -576.06, 45.75),
+				To = { coords = vector3(339.54, -584.72, 74.17), heading = 0.0 },
+				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			},
+			{
+				From = vector3(334.51, -583.22, 74.06),
+				To = { coords = vector3(328.01, -578.14, 43.28), heading = 0.0 },
+				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			},
+			{
+				From = vector3(320.12, -579.33, 40.81),
+				To = { coords = vector3(327, -578.36, 28.45), heading = 0.0 },
+				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			},
+			{
+				From = vector3(322.22, -576.07, 30.93),
+				To = { coords = vector3(326.77, -581.88, 43.28), heading = 0.0 },
+				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			},
+			{
+				From = vector3(328.79, -603.11, 41.49),
+				To = { coords = vector3(331.26, -596.1, 28.9), heading = 0.0 },
+				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			},
+			{
+				From = vector3(328.85, -603.73, 30.7),
+				To = { coords = vector3(328.64, -598.62, 43.29), heading = 0.0 },
+				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			}
+		},
+
+		FastTravelsPrompt = {
+			{
+				From = vector3(237.4, -1373.8, 26.0),
+				To = { coords = vector3(251.9, -1363.3, 38.5), heading = 0.0 },
+				Marker = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false },
+				Prompt = _U('fast_travel')
+			},
+
+			{
+				From = vector3(256.5, -1357.7, 36.0),
+				To = { coords = vector3(235.4, -1372.8, 26.3), heading = 0.0 },
+				Marker = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false },
+				Prompt = _U('fast_travel')
+			}
+		}
 	}
 }
 

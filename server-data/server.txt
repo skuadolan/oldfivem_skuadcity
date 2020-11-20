@@ -11,27 +11,32 @@ set mysql_connection_string "server=localhost;database=es_extended;userid=root" 
 # Disable Couchdb from essentialmode
 set es_enableCustomData 1
 
+exec permission.cfg
+
+# Give Essentialmode access to commands
+add_ace resource.essentialmode command.sets allow
+add_ace resource.essentialmode command.add_principal allow
+add_ace resource.essentialmode command.add_ace allow
+
 # Give es_extended access to commands
 add_principal group.admin group.user
 add_ace resource.es_extended command.add_ace allow
 add_ace resource.es_extended command.add_principal allow
 add_ace resource.es_extended command.remove_principal allow
 add_ace resource.es_extended command.stop allow
- 
+
 # Mysql/Base
 start mysql-async
+start essentialmode
+start es_admin2
+start esplugin_mysql
 
 # Resources
-setr esx_MenuAlign "top-right"
+setr esx_MenuAlign "top-left"
 exec resources.cfg
 
 #Fix Errors
 restart sessionmanager
-
-# Give Essentialmode access to commands
-add_ace resource.essentialmode command.sets allow
-add_ace resource.essentialmode command.add_principal allow
-add_ace resource.essentialmode command.add_ace allow
 
 # This allows players to use scripthook based plugins such as lambda menu.
 # Set this to 0 to disallow scripthook.
@@ -76,8 +81,6 @@ sv_master1 ""
 # Don't forget Social Club is a third party provider too!
 #sv_authMaxVariance 1
 #sv_authMinTrust 5
-
-exec permission.cfg
 
 # Add system admins
 add_ace group.admin command allow # allow all commands

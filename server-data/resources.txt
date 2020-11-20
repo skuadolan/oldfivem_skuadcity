@@ -28,6 +28,7 @@ start esx_licenseshop
 start esx_clotheshop
 start esx_barbershop
 start esx_shops
+start esx_vehicleshop
 
 # Other ESX scripts
 start esx_advancedgarage
@@ -56,9 +57,6 @@ start esx_sit
 start esx_phone # F1 Button
 start esx_voice
 #start esx_whitelist
-start essentialmode
-start es_admin2
-start esplugin_mysql
 start esx_migrate
 start esx_realparking
 
