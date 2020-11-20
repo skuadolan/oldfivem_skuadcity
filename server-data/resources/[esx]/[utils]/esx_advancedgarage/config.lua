@@ -7,7 +7,7 @@ Config.Main = {
 	ParkVehicles = true, -- true = Automatically Park all Vehicles in Garage on Server/Script Restart | false = Opposite of true but players will have to go to Pound to get their Vehicle Back.
 	KickCheaters = true, -- true = Kick Player that tries to Cheat Garage by changing Vehicle Hash/Plate.
 	CustomKickMsg = false, -- true = Sets Custom Kick Message for those that try to Cheat. Note: "Config.KickPossibleCheaters" must be true.
-	GiveSocMoney = false, -- true = Gives money to society_mechanic. Note: REQUIRES esx_mechanicjob.
+	GiveSocMoney = true, -- true = Gives money to society_mechanic. Note: REQUIRES esx_mechanicjob.
 	DamageMult = true, -- true = Costs more to Store a Broken/Damaged Vehicle.
 	MultAmount = 5, -- Higher Number = Higher Repair Price.
 	RenameVehs = false, -- true = Allows Players to Rename their Vehicles.
@@ -94,7 +94,7 @@ Config.Cars = {
 }
 
 Config.Pvt = {
-	Garages = false, -- Set to true if using esx_property & want Private Car Garages for Properties
+	Garages = true, -- Set to true if using esx_property & want Private Car Garages for Properties
 	Markers = {
 		Points = {Type = 1, r = 0, g = 255, b = 0, x = 1.5, y = 1.5, z = 1.0}, -- Green Color / Standard Size Circle.
 		Delete = {Type = 1, r = 255, g = 0, b = 0, x = 5.0, y = 5.0, z = 1.0} -- Red Color / Big Size Circle.

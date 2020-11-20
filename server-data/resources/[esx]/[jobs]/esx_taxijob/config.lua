@@ -7,7 +7,7 @@ Config.MinimumDistance            = 3000 -- Minimum NPC job destination distance
 
 Config.MaxInService               = -1 -- How much people can be in service at once?
 Config.EnablePlayerManagement     = true -- Enable society managing.
-Config.EnableSocietyOwnedVehicles = true
+Config.EnableSocietyOwnedVehicles = false
 
 Config.Locale                     = 'en'
 
