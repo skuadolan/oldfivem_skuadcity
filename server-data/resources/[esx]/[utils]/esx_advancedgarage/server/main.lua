@@ -252,20 +252,6 @@ ESX.RegisterServerCallback('esx_advancedgarage:getOwnedVehicles', function(sourc
 				end
 				cb(ownedBikes)
 			end)
-		elseif type == 'importcars' then
-			local ownedHaul = {}
-			MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner AND Type = @Type AND job = @job AND category = @category', {
-				['@owner'] = xPlayer.identifier,
-				['@Type'] = 'car',
-				['@job'] = 'civ',
-				['@category'] = 'importcars'
-			}, function(data)
-				for _,v in pairs(data) do
-					local vehicle = json.decode(v.vehicle)
-					table.insert(ownedHaul, {vehicle = vehicle, plate = v.plate, vehName = v.name, stored = v.stored})
-				end
-				cb(ownedHaul)
-			end)
 		elseif type == 'compacts' then
 			local ownedCompacts = {}
 			MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner AND Type = @Type AND job = @job AND category = @category', {
@@ -363,6 +349,20 @@ ESX.RegisterServerCallback('esx_advancedgarage:getOwnedVehicles', function(sourc
 					table.insert(ownedSports, {vehicle = vehicle, plate = v.plate, vehName = v.name, stored = v.stored})
 				end
 				cb(ownedSports)
+			end)
+		elseif type == 'importcars' then
+			local ownedImportCars = {}
+			MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner AND Type = @Type AND job = @job AND category = @category', {
+				['@owner'] = xPlayer.identifier,
+				['@Type'] = 'car',
+				['@job'] = 'civ',
+				['@category'] = 'importcars'
+			}, function(data)
+				for _,v in pairs(data) do
+					local vehicle = json.decode(v.vehicle)
+					table.insert(ownedImportCars, {vehicle = vehicle, plate = v.plate, vehName = v.name, stored = v.stored})
+				end
+				cb(ownedImportCars)
 			end)
 		elseif type == 'sportsclassics' then
 			local ownedSportsClassics = {}

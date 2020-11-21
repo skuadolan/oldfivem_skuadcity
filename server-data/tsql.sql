@@ -291,6 +291,8 @@ CREATE TABLE IF NOT EXISTS `jobs` (
 	PRIMARY KEY (`name`)
 );
 
+ALTER TABLE jobs add whitelisted BOOLEAN NOT NULL DEFAULT FALSE;
+
 
 CREATE TABLE IF NOT EXISTS `dpkeybinds` (
   `id` varchar(50) NULL DEFAULT NULL,
@@ -310,7 +312,7 @@ CREATE TABLE IF NOT EXISTS `dpkeybinds` (
 
 
 
-INSERT INTO `jobs` (name, label) VALUES ('unemployed','Unemployed');
+INSERT INTO `jobs` (name, label, whitelisted) VALUES ('unemployed','Unemployed', 0);
 
 
 INSERT INTO `addon_account` (name, label, shared) VALUES
@@ -332,13 +334,13 @@ INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_
 	('ambulance',3,'boss','EMT Supervisor',75000,'{\"tshirt_2\":0,\"hair_color_1\":5,\"glasses_2\":3,\"shoes\":9,\"torso_2\":3,\"hair_color_2\":0,\"pants_1\":24,\"glasses_1\":4,\"hair_1\":2,\"sex\":0,\"decals_2\":0,\"tshirt_1\":15,\"helmet_1\":8,\"helmet_2\":0,\"arms\":92,\"face\":19,\"decals_1\":60,\"torso_1\":13,\"hair_2\":0,\"skin\":34,\"pants_2\":5}','{\"tshirt_2\":3,\"decals_2\":0,\"glasses\":0,\"hair_1\":2,\"torso_1\":73,\"shoes\":1,\"hair_color_2\":0,\"glasses_1\":19,\"skin\":13,\"face\":6,\"pants_2\":5,\"tshirt_1\":75,\"pants_1\":37,\"helmet_1\":57,\"torso_2\":0,\"arms\":14,\"sex\":1,\"glasses_2\":0,\"decals_1\":0,\"hair_2\":0,\"helmet_2\":0,\"hair_color_1\":0}')
 ;
 
-INSERT INTO `jobs` (name, label) VALUES
-	('ambulance','EMS')
+INSERT INTO `jobs` (name, label, whitelisted) VALUES
+	('ambulance','EMS', 1)
 ;
 
-INSERT INTO `items` (name, label, weight) VALUES
-	('bandage','Bandage', 2),
-	('medikit','Medikit', 2)
+INSERT INTO `items` (name, label, weight, `limit`) VALUES
+	('bandage','Bandage', 2, 30),
+	('medikit','Medikit', 2, 25)
 ;
 
 ALTER TABLE `users`
@@ -358,8 +360,8 @@ INSERT INTO `addon_inventory` (name, label, shared) VALUES
 	('society_police', 'Police', 1)
 ;
 
-INSERT INTO `jobs` (name, label) VALUES
-	('police', 'LSPD')
+INSERT INTO `jobs` (name, label, whitelisted) VALUES
+	('police', 'LSPD', 1)
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
@@ -380,58 +382,58 @@ CREATE TABLE IF NOT EXISTS `fine_types` (
 );
 
 INSERT INTO `fine_types` (label, amount, category) VALUES
-	('Usage abusif du klaxon',30,0),
-	('Franchir une ligne continue',40,0),
-	('Circulation à contresens',250,0),
-	('Demi-tour non autorisé',250,0),
-	('Circulation hors-route',170,0),
-	('Non-respect des distances de sécurité',30,0),
-	('Arrêt dangereux / interdit',150,0),
-	('Stationnement gênant / interdit',70,0),
-	('Non respect  de la priorité à droite',70,0),
-	('Non-respect à un véhicule prioritaire',90,0),
-	('Non-respect d\'un stop',105,0),
-	('Non-respect d\'un feu rouge',130,0),
-	('Dépassement dangereux',100,0),
-	('Véhicule non en état',100,0),
-	('Conduite sans permis',1500,0),
-	('Délit de fuite',800,0),
-	('Excès de vitesse < 5 kmh',90,0),
-	('Excès de vitesse 5-15 kmh',120,0),
-	('Excès de vitesse 15-30 kmh',180,0),
-	('Excès de vitesse > 30 kmh',300,0),
-	('Entrave de la circulation',110,1),
-	('Dégradation de la voie publique',90,1),
-	('Trouble à l\'ordre publique',90,1),
-	('Entrave opération de police',130,1),
-	('Insulte envers / entre civils',75,1),
-	('Outrage à agent de police',110,1),
-	('Menace verbale ou intimidation envers civil',90,1),
-	('Menace verbale ou intimidation envers policier',150,1),
-	('Manifestation illégale',250,1),
-	('Tentative de corruption',1500,1),
-	('Arme blanche sortie en ville',120,2),
-	('Arme léthale sortie en ville',300,2),
-	('Port d\'arme non autorisé (défaut de license)',600,2),
-	('Port d\'arme illégal',700,2),
-	('Pris en flag lockpick',300,2),
-	('Vol de voiture',1800,2),
-	('Vente de drogue',1500,2),
-	('Fabriquation de drogue',1500,2),
-	('Possession de drogue',650,2),
-	('Prise d\'ôtage civil',1500,2),
-	('Prise d\'ôtage agent de l\'état',2000,2),
-	('Braquage particulier',650,2),
-	('Braquage magasin',650,2),
-	('Braquage de banque',1500,2),
-	('Tir sur civil',2000,3),
-	('Tir sur agent de l\'état',2500,3),
-	('Tentative de meurtre sur civil',3000,3),
-	('Tentative de meurtre sur agent de l\'état',5000,3),
-	('Meurtre sur civil',10000,3),
-	('Meurte sur agent de l\'état',30000,3),
-	('Meurtre involontaire',1800,3),
-	('Escroquerie à l\'entreprise',2000,2)
+	('Misuse of a horn', 30, 0),
+	('Illegally Crossing a continuous Line', 40, 0),
+	('Driving on the wrong side of the road', 250, 0),
+	('Illegal U-Turn', 250, 0),
+	('Illegally Driving Off-road', 170, 0),
+	('Refusing a Lawful Command', 30, 0),
+	('Illegally Stopping a Vehicle', 150, 0),
+	('Illegal Parking', 70, 0),
+	('Failing to Yield to the right', 70, 0),
+	('Failure to comply with Vehicle Information', 90, 0),
+	('Failing to stop at a Stop Sign ', 105, 0),
+	('Failing to stop at a Red Light', 130, 0),
+	('Illegal Passing', 100, 0),
+	('Driving an illegal Vehicle', 100, 0),
+	('Driving without a License', 1500, 0),
+	('Hit and Run', 800, 0),
+	('Exceeding Speeds Over < 5 mph', 90, 0),
+	('Exceeding Speeds Over 5-15 mph', 120, 0),
+	('Exceeding Speeds Over 15-30 mph', 180, 0),
+	('Exceeding Speeds Over > 30 mph', 300, 0),
+	('Impeding traffic flow', 110, 1),
+	('Public Intoxication', 90, 1),
+	('Disorderly conduct', 90, 1),
+	('Obstruction of Justice', 130, 1),
+	('Insults towards Civilans', 75, 1),
+	('Disrespecting of an LEO', 110, 1),
+	('Verbal Threat towards a Civilan', 90, 1),
+	('Verbal Threat towards an LEO', 150, 1),
+	('Providing False Information', 250, 1),
+	('Attempt of Corruption', 1500, 1),
+	('Brandishing a weapon in city Limits', 120, 2),
+	('Brandishing a Lethal Weapon in city Limits', 300, 2),
+	('No Firearms License', 600, 2),
+	('Possession of an Illegal Weapon', 700, 2),
+	('Possession of Burglary Tools', 300, 2),
+	('Grand Theft Auto', 1800, 2),
+	('Intent to Sell/Distrube of an illegal Substance', 1500, 2),
+	('Frabrication of an Illegal Substance', 1500, 2),
+	('Possession of an Illegal Substance ', 650, 2),
+	('Kidnapping of a Civilan', 1500, 2),
+	('Kidnapping of an LEO', 2000, 2),
+	('Robbery', 650, 2),
+	('Armed Robbery of a Store', 650, 2),
+	('Armed Robbery of a Bank', 1500, 2),
+	('Assault on a Civilian', 2000, 3),
+	('Assault of an LEO', 2500, 3),
+	('Attempt of Murder of a Civilian', 3000, 3),
+	('Attempt of Murder of an LEO', 5000, 3),
+	('Murder of a Civilian', 10000, 3),
+	('Murder of an LEO', 30000, 3),
+	('Involuntary manslaughter', 1800, 3),
+	('Fraud', 2000, 2)
 ;
 
 INSERT INTO `licenses` (`type`, `label`) VALUES
@@ -675,7 +677,8 @@ INSERT INTO `vs_car_categories` (name, label) VALUES
 	('suvs','SUVs'),
 	('vans','Vans'),
 	('motorcycles','Motorcycles'),
-	('importcars','Import Cars')
+	('importcars','Import Cars'),
+	('importmotorcycles','Import Motorcycles')
 ;
 
 CREATE TABLE IF NOT EXISTS `vs_cars` (
@@ -926,6 +929,9 @@ INSERT INTO `vs_cars` (name, model, price, category) VALUES
 	('Woflsbane','wolfsbane',9000,'motorcycles'),
 	('Zombie','zombiea',9500,'motorcycles'),
 	('Zombie Luxuary','zombieb',12000,'motorcycles'),
+	('Itali GTO', 'italigto', 5320000, 'importcars'),
+	('Tyrant', 'tyrant', 7780000, 'importcars'),
+	('Itali GTB S2', 'italigtb2', 6230000, 'importcars'),
 	('BMW M5 F90','bmci',5730000,'importcars')
 ;
 
@@ -1059,8 +1065,8 @@ INSERT INTO `addon_inventory` (name, label, shared) VALUES
 	('society_taxi', 'Taxi', 1)
 ;
 
-INSERT INTO `jobs` (name, label) VALUES
-	('taxi', 'Taxi')
+INSERT INTO `jobs` (name, label, whitelisted) VALUES
+	('taxi', 'Taxi', 0)
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
@@ -1083,8 +1089,8 @@ INSERT INTO `datastore` (name, label, shared) VALUES
 	('society_mechanic', 'Mechanic', 1)
 ;
 
-INSERT INTO `jobs` (name, label) VALUES
-	('mechanic', 'Mechanic')
+INSERT INTO `jobs` (name, label, whitelisted) VALUES
+	('mechanic', 'Mechanic', 1)
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
@@ -1095,13 +1101,13 @@ INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_
 	('mechanic',4,'boss','Boss',75000,'{}','{}')
 ;
 
-INSERT INTO `items` (name, label, weight) VALUES
-	('gazbottle', 'bouteille de gaz', 2),
-	('fixtool', 'outils réparation', 2),
-	('carotool', 'outils carosserie', 2),
-	('blowpipe', 'Chalumeaux', 2),
-	('fixkit', 'Kit réparation', 3),
-	('carokit', 'Kit carosserie', 3)
+INSERT INTO `items` (name, label, weight, `limit`) VALUES
+	('gazbottle', 'Gas Cylinder', 2, 25),
+	('fixtool', 'Repair Tools', 2, 5),
+	('carotool', 'Bodywork Tools', 2, 10),
+	('blowpipe', 'Torches', 2, 10),
+	('fixkit', 'Repair Kit', 3, 5),
+	('carokit', 'Body Kit', 3, 10)
 ;
 
 CREATE TABLE IF NOT EXISTS `weaponshops` (
@@ -1203,15 +1209,15 @@ ALTER TABLE `users`
 ;
 
 INSERT INTO `addon_account` (name, label, shared) VALUES
-  ('property_black_money','Argent Sale Propriété',0)
+  ('property_black_money','Argent Sale Property',0)
 ;
 
 INSERT INTO `addon_inventory` (name, label, shared) VALUES
-  ('property','Propriété',0)
+  ('property','Property',0)
 ;
 
 INSERT INTO `datastore` (name, label, shared) VALUES
-  ('property','Propriété',0)
+  ('property','Property',0)
 ;
 
 
@@ -1297,14 +1303,14 @@ INSERT INTO `addon_account` (name, label, shared) VALUES
 	('caution', 'Caution', 0)
 ;
 
-INSERT INTO `jobs` (name, label) VALUES
-	('slaughterer', 'Abatteur'),
-	('fisherman', 'Pêcheur'),
-	('miner', 'Mineur'),
-	('lumberjack', 'Bûcheron'),
-	('fueler', 'Raffineur'),
-	('reporter', 'Journaliste'),
-	('tailor', 'Couturier')
+INSERT INTO `jobs` (name, label, whitelisted) VALUES
+	('slaughterer', 'Feller', 0),
+	('fisherman', 'Fisherman', 0),
+	('miner', 'Miner', 0),
+	('lumberjack', 'Lumberjack', 0),
+	('fueler', 'Refiner', 0),
+	('reporter', 'Journalist', 0),
+	('tailor', 'Dressmaker', 0)
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
@@ -1317,32 +1323,32 @@ INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_
 	('slaughterer',0,'employee','employee',15000,'{\"age_1\":0,\"glasses_2\":0,\"beard_1\":5,\"decals_2\":0,\"beard_4\":0,\"shoes_2\":0,\"tshirt_2\":0,\"lipstick_2\":0,\"hair_2\":0,\"arms\":67,\"pants_1\":36,\"skin\":29,\"eyebrows_2\":0,\"shoes\":10,\"helmet_1\":-1,\"lipstick_1\":0,\"helmet_2\":0,\"hair_color_1\":0,\"glasses\":0,\"makeup_4\":0,\"makeup_1\":0,\"hair_1\":2,\"bproof_1\":0,\"bags_1\":0,\"mask_1\":0,\"lipstick_3\":0,\"chain_1\":0,\"eyebrows_4\":0,\"sex\":0,\"torso_1\":56,\"beard_2\":6,\"shoes_1\":12,\"decals_1\":0,\"face\":19,\"lipstick_4\":0,\"tshirt_1\":15,\"mask_2\":0,\"age_2\":0,\"eyebrows_3\":0,\"chain_2\":0,\"glasses_1\":0,\"ears_1\":-1,\"bags_2\":0,\"ears_2\":0,\"torso_2\":0,\"bproof_2\":0,\"makeup_2\":0,\"eyebrows_1\":0,\"makeup_3\":0,\"pants_2\":0,\"beard_3\":0,\"hair_color_2\":4}','{\"age_1\":0,\"glasses_2\":0,\"beard_1\":5,\"decals_2\":0,\"beard_4\":0,\"shoes_2\":0,\"tshirt_2\":0,\"lipstick_2\":0,\"hair_2\":0,\"arms\":72,\"pants_1\":45,\"skin\":29,\"eyebrows_2\":0,\"shoes\":10,\"helmet_1\":-1,\"lipstick_1\":0,\"helmet_2\":0,\"hair_color_1\":0,\"glasses\":0,\"makeup_4\":0,\"makeup_1\":0,\"hair_1\":2,\"bproof_1\":0,\"bags_1\":0,\"mask_1\":0,\"lipstick_3\":0,\"chain_1\":0,\"eyebrows_4\":0,\"sex\":1,\"torso_1\":49,\"beard_2\":6,\"shoes_1\":24,\"decals_1\":0,\"face\":19,\"lipstick_4\":0,\"tshirt_1\":9,\"mask_2\":0,\"age_2\":0,\"eyebrows_3\":0,\"chain_2\":0,\"glasses_1\":5,\"ears_1\":-1,\"bags_2\":0,\"ears_2\":0,\"torso_2\":0,\"bproof_2\":0,\"makeup_2\":0,\"eyebrows_1\":0,\"makeup_3\":0,\"pants_2\":0,\"beard_3\":0,\"hair_color_2\":4}')
 ;
 
-INSERT INTO `items` (`name`, `label`, `weight`) VALUES
-	('alive_chicken', 'Poulet vivant', 1),
-	('slaughtered_chicken', 'Poulet abattu', 1),
-	('packaged_chicken', 'Poulet en barquette', 1),
-	('fish', 'Poisson', 1),
-	('stone', 'Pierre', 1),
-	('washed_stone', 'Pierre Lavée', 1),
-	('copper', 'Cuivre', 1),
-	('iron', 'Fer', 1),
-	('gold', 'Or', 1),
-	('diamond', 'Diamant', 1),
-	('wood', 'Bois', 1),
-	('cutted_wood', 'Bois coupé', 1),
-	('packaged_plank', 'Paquet de planches', 1),
-	('petrol', 'Pétrole', 1),
-	('petrol_raffin', 'Pétrole Raffiné', 1),
-	('essence', 'Essence', 1),
-	('wool', 'Laine', 1),
-	('fabric', 'Tissu', 1),
-	('clothe', 'Vêtement', 1)
+INSERT INTO `items` (`name`, `label`, `weight`, `limit`) VALUES
+	('alive_chicken', 'Live Chicken', 1, 100),
+	('slaughtered_chicken', 'Slaughtered Chicken', 1, 100),
+	('packaged_chicken', 'Chicken in a Tray', 1, 100),
+	('fish', 'Fish', 1, 100),
+	('stone', 'Stone', 1, 100),
+	('washed_stone', 'Washed Stone', 1, 100),
+	('copper', 'Copper', 1, 100),
+	('iron', 'Iron', 1, 100),
+	('gold', 'Gold', 1, 100),
+	('diamond', 'Diamond', 1, 100),
+	('wood', 'Wood', 1, 100),
+	('cutted_wood', 'Cut Wood', 1, 100),
+	('packaged_plank', 'Pack of Boards', 1, 100),
+	('petrol', 'Oil', 1, 100),
+	('petrol_raffin', 'Refined Petroleum', 1, 100),
+	('essence', 'Gasoline', 1, 100),
+	('wool', 'Wool', 1, 100),
+	('fabric', 'Tissue', 1, 100),
+	('clothe', 'Cloth', 1, 100)
 ;
 
 
-INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
-	('cannabis', 'Cannabis', 3, 0, 1),
-	('marijuana', 'Marijuana', 2, 0, 1)
+INSERT INTO `items` (`name`, `label`, `weight`, `limit`, `rare`, `can_remove`) VALUES
+	('cannabis', 'Cannabis', 3, 100, 0, 1),
+	('marijuana', 'Marijuana', 2, 100, 0, 1)
 ;
 
 INSERT INTO `licenses` (`type`, `label`) VALUES
@@ -1351,10 +1357,10 @@ INSERT INTO `licenses` (`type`, `label`) VALUES
 
 
 INSERT INTO `licenses` (`type`, `label`) VALUES
-	('dmv', 'Code de la route'),
-	('drive', 'Permis de conduire'),
-	('drive_bike', 'Permis moto'),
-	('drive_truck', 'Permis camion')
+	('dmv', 'Traffic Laws'),
+	('drive', "Driver's license"),
+	('drive_bike', 'Motorcycle Licence'),
+	('drive_truck', 'Truck License')
 ;
 
 ALTER TABLE `users`
@@ -1369,8 +1375,8 @@ INSERT INTO `licenses` (`type`, `label`) VALUES
 	('boat', 'Boat License')
 ;
 
-INSERT INTO `items` (`name`, `label`, `weight`) VALUES
-	('beer', 'Beer', 1)
+INSERT INTO `items` (`name`, `label`, `weight`, `limit`) VALUES
+	('beer', 'Beer', 1, 25)
 ;
 
 INSERT INTO `shops` (store, item, price) VALUES
@@ -1379,9 +1385,9 @@ INSERT INTO `shops` (store, item, price) VALUES
 	('LTDgasoline', 'beer', 45)
 ;
 
-INSERT INTO `items` (`name`, `label`, `weight`) VALUES
-	('bread', 'Bread', 1),
-	('water', 'Water', 1)
+INSERT INTO `items` (`name`, `label`, `weight`, `limit`) VALUES
+	('bread', 'Bread', 1, 45),
+	('water', 'Water', 1, 40)
 ;
 
 
@@ -1398,16 +1404,13 @@ ALTER TABLE `users`
 	ADD COLUMN `phone_number` INT(11) NULL,
 	ADD UNIQUE INDEX `index_users_phone_number` (`phone_number`);
 
-
-ALTER TABLE jobs add whitelisted BOOLEAN NOT NULL DEFAULT FALSE;
-
 INSERT INTO `addon_account` (name, label, shared) VALUES
 	('society_banker','Banker',1),
 	('bank_savings','Bank Savings',0)
 ;
 
-INSERT INTO `jobs` (name, label) VALUES
-	('banker','Banker')
+INSERT INTO `jobs` (name, label, whitelisted) VALUES
+	('banker','Banker', 0)
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
@@ -1424,8 +1427,8 @@ INSERT INTO `addon_account` (name, label, shared) VALUES
 	('society_realestateagent','Agent',1)
 ;
 
-INSERT INTO `jobs` (name, label) VALUES
-	('realestateagent','Agent')
+INSERT INTO `jobs` (name, label, whitelisted) VALUES
+	('realestateagent','Agent', 0)
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
@@ -1448,8 +1451,8 @@ INSERT INTO `addon_inventory` (name, label, shared) VALUES
 	('society_cardealer','Cardealer',1)
 ;
 
-INSERT INTO `jobs` (name, label) VALUES
-	('cardealer','Cardealer')
+INSERT INTO `jobs` (name, label, whitelisted) VALUES
+	('cardealer','Cardealer', 0)
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
@@ -1471,7 +1474,8 @@ INSERT INTO `vehicle_categories` (name, label) VALUES
 	('super', 'Super'),
 	('suvs', 'SUVs'),
 	('vans', 'Vans'),
-	('importcars', 'Import Cars')
+	('importcars', 'Import Cars'),
+	('importmotorcycles','Import Motorcycles')
 ;
 
 INSERT INTO `vehicles` (name, model, price, category) VALUES
@@ -1713,6 +1717,9 @@ INSERT INTO `vehicles` (name, model, price, category) VALUES
 	('Revolter', 'revolter', 1610000, 'sports'),
 	('Sentinel3', 'sentinel3', 650000, 'sports'),
 	('Hustler', 'hustler', 625000, 'muscle'),
+	('Itali GTO', 'italigto', 5320000, 'importcars'),
+	('Tyrant', 'tyrant', 7780000, 'importcars'),
+	('Itali GTB S2', 'italigtb2', 6230000, 'importcars'),
 	('BMW M5 F90','bmci',5730000,'importcars')
 ;
 

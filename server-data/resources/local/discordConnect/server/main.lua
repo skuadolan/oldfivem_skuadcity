@@ -158,6 +158,6 @@ end
 -----------------------------
 ---- System Start Alert -----
 -----------------------------
-sendToDiscord(Config.WebhooksUrl.System, Config.SystemAvatar, 'Started\n:robot:', '\n\nCara masuk ke dalam kota SKUAD CITY\nTekan F8 pada lobby Fivem, lalu ketik:connect cfx.re/join/b6q6v4\nLalu ENTER!!\nSemoga suka ya!!\n\nFiveM server webhook manager started by **JLDiscord**', 16318463)
+sendToDiscord(Config.WebhooksUrl.System, Config.SystemAvatar, 'Started\n:robot:', '\n\nCara masuk ke dalam kota SKUAD CITY\nTekan F8 pada lobby Fivem\nlalu ketik: connect cfx.re/join/b6q6v4\nLalu ENTER!!\nSemoga suka ya!!\n\nFiveM server webhook manager started by **JLDiscord**', 16318463)
 
 print('^5JalalLinuX ^7: ^1'..GetCurrentResourceName()..'^7 started ^2successfully^7... (^3https://jalallinux.ir)^7')

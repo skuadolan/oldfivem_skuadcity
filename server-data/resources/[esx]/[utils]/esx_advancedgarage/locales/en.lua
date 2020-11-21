@@ -52,6 +52,8 @@ Locales['en'] = {
 	['supers'] = 'Supers',
 	['suvs'] = 'SUVs',
 	['vans'] = 'Vans',
+	['importcars'] = 'Import Cars',
+	['importmotorcycles'] = 'Import Motorcycles'
 
 	-- Notifications
 	['custom_kick'] = 'INPUT CUSTOM KICK MESSAGE',

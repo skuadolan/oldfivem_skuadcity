@@ -30,8 +30,10 @@ function takeHostage()
 				canTakeHostage = true 
 				foundWeapon = GetHashKey(hostageAllowedWeapons[i])
 				break
-			end 					
+			end 
+			break					
 		end
+		break
 	end
 
 	if not canTakeHostage then 
