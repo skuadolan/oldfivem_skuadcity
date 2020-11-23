@@ -364,6 +364,20 @@ ESX.RegisterServerCallback('esx_advancedgarage:getOwnedVehicles', function(sourc
 				end
 				cb(ownedImportCars)
 			end)
+		elseif type == 'importmotorcycles' then
+			local ownedImportMotorcycles = {}
+			MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner AND Type = @Type AND job = @job AND category = @category', {
+				['@owner'] = xPlayer.identifier,
+				['@Type'] = 'car',
+				['@job'] = 'civ',
+				['@category'] = 'importmotorcycles'
+			}, function(data)
+				for _,v in pairs(data) do
+					local vehicle = json.decode(v.vehicle)
+					table.insert(ownedImportMotorcycles, {vehicle = vehicle, plate = v.plate, vehName = v.name, stored = v.stored})
+				end
+				cb(ownedImportMotorcycles)
+			end)
 		elseif type == 'sportsclassics' then
 			local ownedSportsClassics = {}
 			MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner AND Type = @Type AND job = @job AND category = @category', {
