@@ -87,7 +87,7 @@ start MF_VehSales
 start loadingScreen
 start emilia_statusvoice
 start dpemotes # F3 Button and L tu layot
-#start discordConnect
+start discordConnect
 start carremote # F5 and N in car && out car F5 to remote
 start CarryPeople # /carry
 start dpclothing # M Button
@@ -120,9 +120,9 @@ start tolKanan
 
 
 # Vehicle Whitelist
-
+start pjr
+start patrol
 
 # Vehicle Public
 start bmci # BMW M5 F90
 start skyline
-start pjr

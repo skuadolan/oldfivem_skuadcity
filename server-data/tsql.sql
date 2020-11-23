@@ -526,7 +526,8 @@ INSERT INTO `vs_police` (id, name, model, price, category) VALUES
 	(8,'Police Cruiser','police2',750,'lieutenant'),
 	(9,'Police Cruiser','police',500,'boss'),
 	(10,'Police Cruiser','police2',750,'boss'),
-	(11,'Maverick','polmav',1000,'boss')
+	(11,'Maverick','polmav',1000,'boss'),
+	(12,'PJR','pjr',1000,'officer')
 ;
 
 CREATE TABLE IF NOT EXISTS `vs_mecano_categories` (
@@ -921,7 +922,7 @@ INSERT INTO `vs_cars` (name, model, price, category) VALUES
 	('Sanctus','sanctus',25000,'motorcycles'),
 	('Scorcher (velo)','scorcher',280,'motorcycles'),
 	('Sovereign','sovereign',22000,'motorcycles'),
-	('Shotaro Concept','shotaro',320000,'motorcycles'),
+	('Shotaro Concept','shotaro',7800000,'importmotorcycles'),
 	('Thrust','thrust',24000,'motorcycles'),
 	('Tri bike (velo)','tribike3',520,'motorcycles'),
 	('Vader','vader',7200,'motorcycles'),
@@ -932,7 +933,8 @@ INSERT INTO `vs_cars` (name, model, price, category) VALUES
 	('Itali GTO', 'italigto', 5320000, 'importcars'),
 	('Tyrant', 'tyrant', 7780000, 'importcars'),
 	('Itali GTB S2', 'italigtb2', 6230000, 'importcars'),
-	('BMW M5 F90','bmci',5730000,'importcars')
+	('BMW M5 F90','bmci',5730000,'importcars'),
+	('Nissan Skyline R34 GT-R','skyline',5370000,'importcars')
 ;
 
 CREATE TABLE IF NOT EXISTS `vs_truck_categories` (
@@ -1010,7 +1012,7 @@ CREATE TABLE IF NOT EXISTS `vs_vips` (
 );
 
 INSERT INTO `vs_vips` (name, model, price, category) VALUES
-	('Shotaro','shotaro',30000,'motorcycles')
+	('Shotaro Concept','shotaro',7800000,'importmotorcycles')
 ;
 
 CREATE TABLE IF NOT EXISTS `vs_vipboat_categories` (
@@ -1682,7 +1684,7 @@ INSERT INTO `vehicles` (name, model, price, category) VALUES
 	('Sanctus','sanctus',25000,'motorcycles'),
 	('Scorcher (velo)','scorcher',280,'motorcycles'),
 	('Sovereign','sovereign',22000,'motorcycles'),
-	('Shotaro Concept','shotaro',320000,'motorcycles'),
+	('Shotaro Concept','shotaro',7800000,'importmotorcycles'),
 	('Thrust','thrust',24000,'motorcycles'),
 	('Tri bike (velo)','tribike3',520,'motorcycles'),
 	('Vader','vader',7200,'motorcycles'),

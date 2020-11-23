@@ -130,12 +130,12 @@ Config.AuthorizedVehicles = {
 		recruit = {},
 
 		officer = {
-			{model = 'police3', price = 20000}
+			{model = 'patrol', price = 20000}
 		},
 
 		sergeant = {
-			{model = 'policet', price = 18500},
-			{model = 'policeb', price = 30500}
+			{model = 'pjr', price = 18500},
+			{model = 'patrol', price = 30500}
 		},
 
 		lieutenant = {
