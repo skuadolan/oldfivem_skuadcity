@@ -3,7 +3,7 @@
 <CHandlingDataMgr>
   <HandlingData>
     <Item type="CHandlingData">
-      <handlingName>SKYLINE</handlingName>
+      <handlingName>skyline</handlingName>
       <fMass value="1700.000000" />
       <fInitialDragCoeff value="9.500000" />
       <fPercentSubmerged value="85.000000" />
@@ -11,17 +11,17 @@
       <vecInertiaMultiplier x="1.000000" y="1.000000" z="1.300000" />
       <fDriveBiasFront value="0.300000" />
       <nInitialDriveGears value="6" />
-      <fInitialDriveForce value="0.330000" />
+      <fInitialDriveForce value="0.999000" />
       <fDriveInertia value="1.000000" />
       <fClutchChangeRateScaleUpShift value="2.200000" />
       <fClutchChangeRateScaleDownShift value="2.200000" />
-      <fInitialDriveMaxFlatVel value="152.000000" />
-      <fBrakeForce value="0.500000" />
+      <fInitialDriveMaxFlatVel value="210.000000" />
+      <fBrakeForce value="3.500000" />
       <fBrakeBiasFront value="0.700000" />
-      <fHandBrakeForce value="0.600000" />
+      <fHandBrakeForce value="3.600000" />
       <fSteeringLock value="30.000000" />
-      <fTractionCurveMax value="2.700000" />
-      <fTractionCurveMin value="2.500000" />
+      <fTractionCurveMax value="4.700000" />
+      <fTractionCurveMin value="4.500000" />
       <fTractionCurveLateral value="22.500000" />
       <fTractionSpringDeltaMax value="0.150000" />
       <fLowSpeedTractionLossMult value="1.800000" />

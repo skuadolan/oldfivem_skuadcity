@@ -19,7 +19,7 @@ add_ace resource.essentialmode command.add_principal allow
 add_ace resource.essentialmode command.add_ace allow
 
 # Give es_extended access to commands
-add_principal group.admin group.user
+add_principal group.admin group.moderator
 add_ace resource.es_extended command.add_ace allow
 add_ace resource.es_extended command.add_principal allow
 add_ace resource.es_extended command.remove_principal allow

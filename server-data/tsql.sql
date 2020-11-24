@@ -35,6 +35,20 @@ CREATE TABLE IF NOT EXISTS `users` (
 	PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
+CREATE TABLE IF NOT EXISTS `characters` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `firstname` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `lastname` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `dateofbirth` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `sex` varchar(1) COLLATE utf8mb4_bin NOT NULL DEFAULT 'M',
+  `height` varchar(128) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+/*!40000 ALTER TABLE `characters` DISABLE KEYS */;
+/*!40000 ALTER TABLE `characters` ENABLE KEYS */;
+
 CREATE TABLE IF NOT EXISTS `whitelist` (
 	`identifier` varchar(40) NOT NULL,
 
@@ -679,7 +693,8 @@ INSERT INTO `vs_car_categories` (name, label) VALUES
 	('vans','Vans'),
 	('motorcycles','Motorcycles'),
 	('importcars','Import Cars'),
-	('importmotorcycles','Import Motorcycles')
+	('importmotorcycles','Import Motorcycles'),
+	('donate','Donate')
 ;
 
 CREATE TABLE IF NOT EXISTS `vs_cars` (
@@ -1477,7 +1492,8 @@ INSERT INTO `vehicle_categories` (name, label) VALUES
 	('suvs', 'SUVs'),
 	('vans', 'Vans'),
 	('importcars', 'Import Cars'),
-	('importmotorcycles','Import Motorcycles')
+	('importmotorcycles','Import Motorcycles'),
+	('donate','Donate')
 ;
 
 INSERT INTO `vehicles` (name, model, price, category) VALUES
