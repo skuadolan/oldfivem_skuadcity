@@ -54,11 +54,7 @@ Locales['en'] = {
 	['vans'] = 'Vans',
 	['importcars'] = 'Import Cars',
 	['importmotorcycles'] = 'Import Motorcycles',
-<<<<<<< Updated upstream
-	['donate'] = 'Rare',
-=======
-	['donate'] = 'Rare Donate',
->>>>>>> Stashed changes
+	['donate'] = 'Donate Rare',
 
 	-- Notifications
 	['custom_kick'] = 'INPUT CUSTOM KICK MESSAGE',
