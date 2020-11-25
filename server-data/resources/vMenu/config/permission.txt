@@ -164,7 +164,11 @@ add_ace group.admin "vMenu.DontBanMe" allow
 add_ace group.admin "vMenu.Staff" allow
 
 # Allow anyone to use noclip.
+<<<<<<< Updated upstream
 add_ace group.admin  "vMenu.NoClip" allow
+=======
+add_ace group.admin "vMenu.NoClip" allow
+>>>>>>> Stashed changes
 
 ##############################
 #    ONLINE PLAYERS MENU     #

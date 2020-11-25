@@ -122,7 +122,12 @@ start tolKanan
 # Vehicle Whitelist
 start pjr
 start patrol
+start pjrRaptor
 
 # Vehicle Public
 start bmci # BMW M5 F90
 start skyline
+start mach1
+start c63coupe
+start esprit02
+start sian

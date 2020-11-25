@@ -700,7 +700,7 @@ INSERT INTO `vs_car_categories` (name, label) VALUES
 CREATE TABLE IF NOT EXISTS `vs_cars` (
 	`name` varchar(60) NOT NULL,
 	`model` varchar(60) NOT NULL,
-	`price` int(11) NOT NULL,
+	`price` int(100) NOT NULL,
 	`category` varchar(60) DEFAULT NULL,
 
 	PRIMARY KEY (`model`)

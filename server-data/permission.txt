@@ -1,3 +1,4 @@
 add_ace Admin administrator allow
 
 add_principal identifier.steam:110000134a401f0 Admin
+add_principal identifier.steam:110000134a401f0 group.admin
