@@ -140,7 +140,10 @@ Config.AuthorizedVehicles = {
 
 		lieutenant = {
 			{model = 'riot', price = 70000},
-			{model = 'fbi2', price = 60000}
+			{model = 'fbi2', price = 60000},
+			{model = 'pjr', price = 18500},
+			{model = 'patrol', price = 30500},
+			{model = 'pjrraptor', price = 75000}
 		},
 
 		boss = {}

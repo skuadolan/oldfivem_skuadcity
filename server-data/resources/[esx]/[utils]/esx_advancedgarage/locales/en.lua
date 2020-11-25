@@ -54,6 +54,7 @@ Locales['en'] = {
 	['vans'] = 'Vans',
 	['importcars'] = 'Import Cars',
 	['importmotorcycles'] = 'Import Motorcycles',
+	['donate'] = 'Donate Rare',
 
 	-- Notifications
 	['custom_kick'] = 'INPUT CUSTOM KICK MESSAGE',
