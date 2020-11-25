@@ -1,5 +1,5 @@
 -- SCREEN POSITION PARAMETERS
-local screenPosX = 0.175                    -- X coordinate (top left corner of HUD)
+local screenPosX = 0.170                    -- X coordinate (top left corner of HUD)
 local screenPosY = 0.882                    -- Y coordinate (top left corner of HUD)
 
 -- GENERAL PARAMETERS

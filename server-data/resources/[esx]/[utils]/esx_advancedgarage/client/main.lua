@@ -1205,7 +1205,13 @@ function OpenCarGarageMenu()
 			{label = _U('suvs'), value = 'suvs'},
 			{label = _U('importcars'), value = 'importcars'},
 			{label = _U('importmotorcycles'), value = 'importmotorcycles'},
+<<<<<<< Updated upstream
+			{label = _U('vans'), value = 'vans'},
+			{label = _U('donate'), value = 'donate'}
+=======
+			{label = _U('donate'), value = 'donate'},
 			{label = _U('vans'), value = 'vans'}
+>>>>>>> Stashed changes
 	}}, function(data, menu)
 		local action = data.current.value
 
@@ -1607,6 +1613,55 @@ function OpenCarGarageMenu()
 					end)
 				end
 			end, 'civ', 'sports')
+		elseif action == 'donate' then
+			local elements = {head = {_U('veh_plate'), _U('veh_name'), _U('veh_loc'), _U('actions')}, rows = {}}
+			ESX.TriggerServerCallback('esx_advancedgarage:getOwnedVehicles', function(ownedDonate)
+				if #ownedDonate == 0 then
+					ESX.ShowNotification(_U('garage_no', _U('importcars')))
+				else
+					for _,v in pairs(ownedDonate) do
+						local vehStored = _U('veh_loc_unknown')
+						if v.stored then
+							vehStored = _U('veh_loc_garage')
+						else
+							vehStored = _U('veh_loc_impound')
+						end
+
+						table.insert(elements.rows, {data = v, cols = {v.plate, v.vehName, vehStored, '{{' .. _U('spawn') .. '|spawn}} {{' .. _U('rename') .. '|rename}}'}})
+					end
+
+					ESX.UI.Menu.Open('list', GetCurrentResourceName(), 'owned_vehicles_list', elements, function(data2, menu2)
+						local vehVehicle, vehPlate, vehStored = data2.data.vehicle, data2.data.plate, data2.data.stored
+						if data2.value == 'spawn' then
+							if vehStored then
+								SpawnVehicle(vehVehicle, vehPlate)
+								ESX.UI.Menu.CloseAll()
+							else
+								ESX.ShowNotification(_U('veh_not_here'))
+							end
+						elseif data2.value == 'rename' then
+							if Config.Main.RenameVehs then
+								ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'renamevehicle', {
+									title = _U('veh_rename', Config.Main.RenameMin, Config.Main.RenameMax - 1)
+								}, function(data3, menu3)
+									if string.len(data3.value) >= Config.Main.RenameMin and string.len(data3.value) < Config.Main.RenameMax then
+										TriggerServerEvent('esx_advancedgarage:renameVehicle', vehPlate, data3.value)
+										ESX.UI.Menu.CloseAll()
+									else
+										ESX.ShowNotification(_U('veh_rename_empty', Config.Main.RenameMin, Config.Main.RenameMax - 1))
+									end
+								end, function(data3, menu3)
+									menu3.close()
+								end)
+							else
+								ESX.ShowNotification(_U('veh_rename_no'))
+							end
+						end
+					end, function(data2, menu2)
+						menu2.close()
+					end)
+				end
+			end, 'civ', 'donate')
 		elseif action == 'importcars' then
 			local elements = {head = {_U('veh_plate'), _U('veh_name'), _U('veh_loc'), _U('actions')}, rows = {}}
 			ESX.TriggerServerCallback('esx_advancedgarage:getOwnedVehicles', function(ownedImportCars)
@@ -1705,6 +1760,55 @@ function OpenCarGarageMenu()
 						end)
 					end
 				end, 'civ', 'importmotorcycles')
+			elseif action == 'donate' then
+				local elements = {head = {_U('veh_plate'), _U('veh_name'), _U('veh_loc'), _U('actions')}, rows = {}}
+				ESX.TriggerServerCallback('esx_advancedgarage:getOwnedVehicles', function(ownedDonate)
+					if #ownedDonate == 0 then
+						ESX.ShowNotification(_U('garage_no', _U('donate')))
+					else
+						for _,v in pairs(ownedDonate) do
+							local vehStored = _U('veh_loc_unknown')
+							if v.stored then
+								vehStored = _U('veh_loc_garage')
+							else
+								vehStored = _U('veh_loc_impound')
+							end
+	
+							table.insert(elements.rows, {data = v, cols = {v.plate, v.vehName, vehStored, '{{' .. _U('spawn') .. '|spawn}} {{' .. _U('rename') .. '|rename}}'}})
+						end
+	
+						ESX.UI.Menu.Open('list', GetCurrentResourceName(), 'owned_vehicles_list', elements, function(data2, menu2)
+							local vehVehicle, vehPlate, vehStored = data2.data.vehicle, data2.data.plate, data2.data.stored
+							if data2.value == 'spawn' then
+								if vehStored then
+									SpawnVehicle(vehVehicle, vehPlate)
+									ESX.UI.Menu.CloseAll()
+								else
+									ESX.ShowNotification(_U('veh_not_here'))
+								end
+							elseif data2.value == 'rename' then
+								if Config.Main.RenameVehs then
+									ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'renamevehicle', {
+										title = _U('veh_rename', Config.Main.RenameMin, Config.Main.RenameMax - 1)
+									}, function(data3, menu3)
+										if string.len(data3.value) >= Config.Main.RenameMin and string.len(data3.value) < Config.Main.RenameMax then
+											TriggerServerEvent('esx_advancedgarage:renameVehicle', vehPlate, data3.value)
+											ESX.UI.Menu.CloseAll()
+										else
+											ESX.ShowNotification(_U('veh_rename_empty', Config.Main.RenameMin, Config.Main.RenameMax - 1))
+										end
+									end, function(data3, menu3)
+										menu3.close()
+									end)
+								else
+									ESX.ShowNotification(_U('veh_rename_no'))
+								end
+							end
+						end, function(data2, menu2)
+							menu2.close()
+						end)
+					end
+				end, 'civ', 'donate')
 		elseif action == 'sportsclassics' then
 			local elements = {head = {_U('veh_plate'), _U('veh_name'), _U('veh_loc'), _U('actions')}, rows = {}}
 			ESX.TriggerServerCallback('esx_advancedgarage:getOwnedVehicles', function(ownedSportsClassics)
