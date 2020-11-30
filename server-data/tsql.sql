@@ -694,11 +694,7 @@ INSERT INTO `vs_car_categories` (name, label) VALUES
 	('motorcycles','Motorcycles'),
 	('importcars','Import Cars'),
 	('importmotorcycles','Import Motorcycles'),
-<<<<<<< Updated upstream
-	('donate','Donate')
-=======
 	('donate', 'Donate')
->>>>>>> Stashed changes
 ;
 
 CREATE TABLE IF NOT EXISTS `vs_cars` (
@@ -1522,11 +1518,7 @@ INSERT INTO `vehicle_categories` (name, label) VALUES
 	('vans', 'Vans'),
 	('importcars', 'Import Cars'),
 	('importmotorcycles','Import Motorcycles'),
-<<<<<<< Updated upstream
-	('donate','Donate')
-=======
 	('donate', 'Donate')
->>>>>>> Stashed changes
 ;
 
 INSERT INTO `vehicles` (name, model, price, category) VALUES
