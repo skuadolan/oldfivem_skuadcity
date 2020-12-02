@@ -1,6 +1,6 @@
 -- SCREEN POSITION PARAMETERS
-local screenPosX = 0.170                    -- X coordinate (top left corner of HUD)
-local screenPosY = 0.882                    -- Y coordinate (top left corner of HUD)
+local screenPosX = 0.180                    -- X coordinate (top left corner of HUD)
+local screenPosY = 0.790                    -- Y coordinate (top left corner of HUD)
 
 -- GENERAL PARAMETERS
 local enableController = true               -- Enable controller inputs
