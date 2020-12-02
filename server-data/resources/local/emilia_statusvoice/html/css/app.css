@@ -13,7 +13,7 @@ body {
     position: absolute;
     left: 360px; /* Default: 360px */
     bottom: 20px; /* Default: 20px */
-    left: 47.00%; /* (43.75% Right Side of Map) | (82.0% Right Side of Screen) | (2.7% Above Map)  */
+    left: 41.00%; /* (43.75% Right Side of Map) | (82.0% Right Side of Screen) | (2.7% Above Map)  */
     bottom: 2.75%; /* (0.85% Default-Fix for all 16:9 resolutions) | (21.0% Above Map) */
 }
 
