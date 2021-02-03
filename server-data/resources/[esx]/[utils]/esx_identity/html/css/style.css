@@ -3,6 +3,7 @@ body {
 	overflow: hidden;
 	display: none;
 	color: #000000;
+	width: 100%;
 }
 
 .dialog {
@@ -11,9 +12,8 @@ body {
 	position      	: absolute;
 	margin-left: auto;
 	margin-right: auto; 
-	top				: 30.0%;
 	padding: 10px;
-	left            : 50%; /* à 50%/50% du parent référent */
+	left: 50%;
 	transform       : translate(-50%); /* décalage de 50% de sa propre taille */
 	background-color: #B7B7B7;
 	border-radius   : 4px;

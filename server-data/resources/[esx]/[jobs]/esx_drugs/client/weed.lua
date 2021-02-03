@@ -169,16 +169,16 @@ function GenerateWeedCoords()
 
 		local weedCoordX, weedCoordY
 
-		math.randomseed(GetGameTimer())
-		local modX = math.random(-90, 90)
+		--[[math.randomseed(GetGameTimer())
+		local modX = math.random(-90, 90)]]
 
 		Citizen.Wait(100)
 
-		math.randomseed(GetGameTimer())
-		local modY = math.random(-90, 90)
+		--[[math.randomseed(GetGameTimer())
+		local modY = math.random(-90, 90)]]
 
-		weedCoordX = Config.CircleZones.WeedField.coords.x + modX
-		weedCoordY = Config.CircleZones.WeedField.coords.y + modY
+		weedCoordX = 2216.47 --[[Config.CircleZones.WeedField.coords.x + modX]]
+		weedCoordY = 5579.78 --[[Config.CircleZones.WeedField.coords.y + modY]]
 
 		local coordZ = GetCoordZ(weedCoordX, weedCoordY)
 		local coord = vector3(weedCoordX, weedCoordY, coordZ)
