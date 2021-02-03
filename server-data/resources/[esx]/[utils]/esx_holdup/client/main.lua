@@ -78,7 +78,7 @@ AddEventHandler('esx_holdup:startTimer', function()
 	end)
 end)
 
-Citizen.CreateThread(function()
+--[[Citizen.CreateThread(function()
 	for k,v in pairs(Stores) do
 		local blip = AddBlipForCoord(v.position.x, v.position.y, v.position.z)
 		SetBlipSprite(blip, 156)
@@ -89,7 +89,7 @@ Citizen.CreateThread(function()
 		AddTextComponentString(_U('shop_robbery'))
 		EndTextCommandSetBlipName(blip)
 	end
-end)
+end)]]
 
 Citizen.CreateThread(function()
 	while true do

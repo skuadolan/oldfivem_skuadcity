@@ -7,7 +7,7 @@ endpoint_add_udp "0.0.0.0:30120"
 
 # Set connection MYSQL-async
 set mysql_connection_string "server=localhost;database=es_extended;userid=root" #Offline
-
+ 
 # Disable Couchdb from essentialmode
 set es_enableCustomData 1
 
@@ -19,7 +19,7 @@ add_ace resource.essentialmode command.add_principal allow
 add_ace resource.essentialmode command.add_ace allow
 
 # Give es_extended access to commands
-add_principal group.admin group.moderator
+add_principal group.admin group.user
 add_ace resource.es_extended command.add_ace allow
 add_ace resource.es_extended command.add_principal allow
 add_ace resource.es_extended command.remove_principal allow
@@ -91,7 +91,7 @@ add_principal identifier.steam:110000134a401f0 group.admin # add the admin to th
 sv_endpointprivacy true
 
 # Server player slot limit (must be between 1 and 32)
-sv_maxclients 21
+sv_maxclients 5
 
 # Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
 # -> replace "" with the key
