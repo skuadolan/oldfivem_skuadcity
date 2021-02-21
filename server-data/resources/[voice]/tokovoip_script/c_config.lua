@@ -18,18 +18,18 @@ TokoVoipConfig = {
 	radioClickMaxChannel = 100, -- Set the max amount of radio channels that will have local radio clicks enabled
 	radioAnim = true, -- Enable or disable the radio animation
 	radioEnabled = true, -- Enable or disable using the radio
-	wsServer = "103.152.118.27:33250", -- Address of the websocket server
+	wsServer = "103.152.119.142:33250", -- Address of the websocket server
 
 	plugin_data = {
 		-- TeamSpeak channel name used by the voip
 		-- If the TSChannelWait is enabled, players who are currently in TSChannelWait will be automatically moved
 		-- to the TSChannel once everything is running
-		TSChannel = "skuadcity",
-		TSPassword = "skuad021", -- TeamSpeak channel password (can be empty)
+		TSChannel = "SKUADCITY",
+		TSPassword = "__skuad021", -- TeamSpeak channel password (can be empty)
 
 		-- Optional: TeamSpeak waiting channel name, players wait in this channel and will be moved to the TSChannel automatically
 		-- If the TSChannel is public and people can join directly, you can leave this empty and not use the auto-move
-		TSChannelWait = "Lobby", -- You NEED tokovoip in the wait channel name!
+		TSChannelWait = "LOBBY", -- You NEED tokovoip in the wait channel name!
 
 		-- Blocking screen informations
 		TSServer = "SKUADCITY | SILAHKAN HUBUNGI ADMIN JIKA BERMASALAH! | bit.ly/joinSKUAD", -- TeamSpeak server address to be displayed on blocking screen

@@ -1,0 +1,4 @@
+*.cfg
+/cache/
+/resources/\[local\]/
+/discordConnect/config.json

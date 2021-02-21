@@ -104,6 +104,21 @@ Config.Hospitals = {
 				From = vector3(317.9, -1476.1, 28.9),
 				To = {coords = vector3(238.6, -1368.4, 23.5), heading = 0.0},
 				Marker = {type = 1, x = 1.5, y = 1.5, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = false}
+			},
+
+			
+
+			-- POLICE FAST TRAVELS --
+			{
+				From = vector3(470.16, -987.27, 32.95),
+				To = {coords = vector3(465.53, -984.14, 43.69), heading = 84.9},
+				Marker = {type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false}
+			},
+
+			{
+				From = vector3(469.77, -983.02, 40.95),
+				To = {coords = vector3(463.19, -985.91, 30.69), heading = 93.28},
+				Marker = {type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false}
 			}
 		},
 
