@@ -1,7 +1,7 @@
 # SKUAD CITY (Freeroam, Roleplay, PvP)
 # How to Use
-Jika kalian bingung dengan pemakaian dari repository ini. 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4raNxr9cPMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Jika kalian bingung dengan pemakaian dari repository ini, Silahkan tonton video <a href="https://www.youtube.com/watch?v=4raNxr9cPMY" target="_blank">ini</a>. 
+
 1. <a href="https://fivem.net/" target="_blank">Download</a> FIVEM di websitenya terlebih dahulu: 
 2. <a href="https://www.apachefriends.org/index.html" target="_blank">Download</a> XAMPP di websitenya terlebih dahulu: 
 3. <a href="https://www.heidisql.com/download.php?download=installer" target="_blank">Download</a> HeidiSql di websitenya terlebih dahulu: 
