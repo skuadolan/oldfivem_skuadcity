@@ -28,6 +28,10 @@ Locales['en'] = {
 
   -- Lumber Jack job
   ['lj_locker_room'] = 'lumberjack\'s Locker Room',
+  ['lj_treesfield'] = 'trees field',
+  ['lj_trees'] = 'trees',
+  ['lj_cuttrees'] = 'press ~INPUT_PICKUP~ to cut tree.',
+  ['lj_pickuptrees'] = 'press ~INPUT_PICKUP~ to retrieve tree.',
   ['lj_mapblip'] = 'wood pile',
   ['lj_wood'] = 'wood',
   ['lj_pickup'] = 'press ~INPUT_PICKUP~ to retrieve wood.',

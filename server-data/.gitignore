@@ -1,7 +1,2 @@
-*.cfg
 /cache/
-/resources/\[local\]/
-/resources/vMenu/config/permission.txt
 /db/
-server.txt
-permission.txt
