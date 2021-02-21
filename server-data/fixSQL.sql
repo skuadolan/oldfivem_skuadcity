@@ -63,9 +63,6 @@ INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(5, 'society_police', 0, NULL),
 	(6, 'society_realestateagent', 0, NULL),
 	(7, 'society_taxi', 0, NULL),
-	(8, 'bank_savings', 0, 'steam:110000134a401f0'),
-	(9, 'property_black_money', 0, 'steam:110000134a401f0'),
-	(10, 'caution', 0, 'steam:110000134a401f0'),
 	(11, 'society_mafia', 0, NULL),
 	(12, 'society_rebel', 0, NULL);
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
@@ -161,14 +158,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `sex` varchar(1) COLLATE utf8mb4_bin NOT NULL DEFAULT 'M',
   `height` varchar(128) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
--- Dumping data for table skuadcity.characters: ~2 rows (approximately)
-/*!40000 ALTER TABLE `characters` DISABLE KEYS */;
-INSERT INTO `characters` (`id`, `identifier`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`) VALUES
-	(1, 'steam:110000134a401f0', 'Dian', 'Nugroho', '07/11/2000', 'm', '162'),
-	(2, 'steam:110000134a401f0', 'Dian', 'Nugroho', '2000-07-11', 'm', '162');
-/*!40000 ALTER TABLE `characters` ENABLE KEYS */;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumping structure for table skuadcity.datastore
 CREATE TABLE IF NOT EXISTS `datastore` (
@@ -208,7 +198,6 @@ INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(2, 'society_mechanic', NULL, '{}'),
 	(3, 'society_police', NULL, '{}'),
 	(4, 'society_taxi', NULL, '{}'),
-	(5, 'property', 'steam:110000134a401f0', '{}'),
 	(6, 'society_mafia', NULL, '{}'),
 	(7, 'society_rebel', NULL, '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
@@ -229,12 +218,6 @@ CREATE TABLE IF NOT EXISTS `dpkeybinds` (
   `keybind6` varchar(50) DEFAULT 'num9',
   `emote6` varchar(255) DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Dumping data for table skuadcity.dpkeybinds: ~1 rows (approximately)
-/*!40000 ALTER TABLE `dpkeybinds` DISABLE KEYS */;
-INSERT INTO `dpkeybinds` (`id`, `keybind1`, `emote1`, `keybind2`, `emote2`, `keybind3`, `emote3`, `keybind4`, `emote4`, `keybind5`, `emote5`, `keybind6`, `emote6`) VALUES
-	('steam:110000134a401f0', 'num4', '', 'num5', '', 'num6', '', 'num7', '', 'num8', '', 'num9', '');
-/*!40000 ALTER TABLE `dpkeybinds` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.fine_types
 CREATE TABLE IF NOT EXISTS `fine_types` (
@@ -302,48 +285,6 @@ INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 	(52, 'Fraud', 2000, 2);
 /*!40000 ALTER TABLE `fine_types` ENABLE KEYS */;
 
--- Dumping structure for table skuadcity.fine_types_mafia
-CREATE TABLE IF NOT EXISTS `fine_types_mafia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `label` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
-  `amount` int(11) DEFAULT NULL,
-  `category` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
--- Dumping data for table skuadcity.fine_types_mafia: ~7 rows (approximately)
-/*!40000 ALTER TABLE `fine_types_mafia` DISABLE KEYS */;
-INSERT INTO `fine_types_mafia` (`id`, `label`, `amount`, `category`) VALUES
-	(1, 'Raket', 3000, 0),
-	(2, 'Raket', 5000, 0),
-	(3, 'Raket', 10000, 1),
-	(4, 'Raket', 20000, 1),
-	(5, 'Raket', 50000, 2),
-	(6, 'Raket', 150000, 3),
-	(7, 'Raket', 350000, 3);
-/*!40000 ALTER TABLE `fine_types_mafia` ENABLE KEYS */;
-
--- Dumping structure for table skuadcity.fine_types_rebel
-CREATE TABLE IF NOT EXISTS `fine_types_rebel` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `label` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
-  `amount` int(11) DEFAULT NULL,
-  `category` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
--- Dumping data for table skuadcity.fine_types_rebel: ~7 rows (approximately)
-/*!40000 ALTER TABLE `fine_types_rebel` DISABLE KEYS */;
-INSERT INTO `fine_types_rebel` (`id`, `label`, `amount`, `category`) VALUES
-	(1, 'Raket', 3000, 0),
-	(2, 'Raket', 5000, 0),
-	(3, 'Raket', 10000, 1),
-	(4, 'Raket', 20000, 1),
-	(5, 'Raket', 50000, 2),
-	(6, 'Raket', 150000, 3),
-	(7, 'Raket', 350000, 3);
-/*!40000 ALTER TABLE `fine_types_rebel` ENABLE KEYS */;
-
 -- Dumping structure for table skuadcity.items
 CREATE TABLE IF NOT EXISTS `items` (
   `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
@@ -358,25 +299,18 @@ CREATE TABLE IF NOT EXISTS `items` (
 -- Dumping data for table skuadcity.items: ~55 rows (approximately)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 INSERT INTO `items` (`name`, `label`, `weight`, `limit`, `rare`, `can_remove`) VALUES
-	('SteelScrap', 'เศษเหล็ก', 1, 100, 0, 1),
 	('alive_chicken', 'Live Chicken', 1, 100, 0, 1),
-	('appleun', 'แอปเปิ้ล', 1, 30, 0, 1),
 	('bandage', 'Bandage', 2, 30, 0, 1),
 	('beer', 'Beer', 1, 25, 0, 1),
 	('blowpipe', 'Torches', 2, 10, 0, 1),
 	('bread', 'Bread', 1, 45, 0, 1),
-	('cactus', 'แคคตัส', 1, 30, 0, 1),
 	('cannabis', 'Cannabis', 3, 100, 0, 1),
 	('carokit', 'Body Kit', 3, 10, 0, 1),
 	('carotool', 'Bodywork Tools', 2, 10, 0, 1),
-	('cloth', 'ผ้าหนังสัตว์', 1, 20, 0, 1),
 	('clothe', 'Cloth', 1, 100, 0, 1),
 	('copper', 'Copper', 1, 100, 0, 1),
 	('cutted_wood', 'Cut Wood', 1, 100, 0, 1),
 	('diamond', 'Diamond', 1, 100, 0, 1),
-	('echinopsis', 'นูเปต้า', 1, 30, 0, 1),
-	('eggpn', 'ไข่แพค', 1, 30, 0, 1),
-	('eggun', 'ไข่', 1, 30, 0, 1),
 	('essence', 'Gasoline', 1, 100, 0, 1),
 	('fabric', 'Tissue', 1, 100, 0, 1),
 	('fish', 'Fish', 1, 100, 0, 1),
@@ -385,26 +319,14 @@ INSERT INTO `items` (`name`, `label`, `weight`, `limit`, `rare`, `can_remove`) V
 	('gazbottle', 'Gas Cylinder', 2, 25, 0, 1),
 	('gold', 'Gold', 1, 100, 0, 1),
 	('hackerDevice', 'Hacking Device', 1, 5, 0, 1),
-	('hatchet_lj', 'ขวานตัดไม้', 1, 1, 0, 1),
-	('herbpn', 'ยาสมุนไพร', 1, 30, 0, 1),
-	('herbun', 'สมุนไพรดิบ', 1, 30, 0, 1),
 	('iron', 'Iron', 1, 100, 0, 1),
-	('leather', 'หนังสัตว์', 1, 20, 0, 1),
 	('marijuana', 'Marijuana', 2, 100, 0, 1),
 	('medikit', 'Medikit', 2, 25, 0, 1),
-	('mushroomun', 'เห็ด', 1, 30, 0, 1),
-	('oapple', 'น้ำแอปเปิ้ล', 1, 30, 0, 1),
-	('omushroom', 'เห็ดแพค', 1, 30, 0, 1),
-	('orange', 'ผลส้ม', 1, 30, 0, 1),
-	('orangep', 'น้ำส้ม', 1, 30, 0, 1),
 	('packaged_chicken', 'Chicken in a Tray', 1, 100, 0, 1),
 	('packaged_plank', 'Pack of Boards', 1, 100, 0, 1),
 	('parkingcard', 'Parking Card', 1, -1, 0, 1),
 	('petrol', 'Oil', 1, 100, 0, 1),
 	('petrol_raffin', 'Refined Petroleum', 1, 100, 0, 1),
-	('pro_wood', 'ไม้แปรรูป', 1, 100, 0, 1),
-	('pumpkino', 'ครีมฟักทอง', 1, 30, 0, 1),
-	('pumpkinun', 'ฟักทอง', 1, 30, 0, 1),
 	('repairkit', 'Repairkit', 1, 3, 0, 1),
 	('slaughtered_chicken', 'Slaughtered Chicken', 1, 100, 0, 1),
 	('stone', 'Stone', 1, 100, 0, 1),
@@ -431,22 +353,16 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('cardealer', 'Cardealer', 0),
 	('fisherman', 'Fisherman', 0),
 	('fueler', 'Refiner', 0),
-	('gopostal', 'Correios', 0),
 	('lumberjack', 'Lumberjack', 0),
-	('mafia', 'Mafia', 1),
 	('mechanic', 'Mechanic', 0),
 	('miner', 'Miner', 0),
 	('police', 'LSPD', 0),
-	('ranger', '📬parkranger', 0),
 	('realestateagent', 'Agent', 0),
-	('rebel', 'Rebel', 1),
 	('reporter', 'Journalist', 0),
-	('security', 'security', 0),
 	('slaughterer', 'Feller', 0),
 	('tailor', 'Dressmaker', 0),
 	('taxi', 'Taxi', 0),
 	('textil', 'Couturier', 0),
-	('traffic', 'trafficofficer', 0),
 	('trucker', 'Trucker', 0),
 	('unemployed', 'Unemployed', 0);
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
@@ -462,7 +378,7 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
   `skin_male` longtext COLLATE utf8mb4_bin NOT NULL,
   `skin_female` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumping data for table skuadcity.job_grades: ~53 rows (approximately)
 /*!40000 ALTER TABLE `job_grades` DISABLE KEYS */;
@@ -507,19 +423,7 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 	(38, 'cardealer', 1, 'novice', 'Novice', 35000, '{}', '{}'),
 	(39, 'cardealer', 2, 'experienced', 'Experienced', 45000, '{}', '{}'),
 	(40, 'cardealer', 3, 'boss', 'Boss', 75000, '{}', '{}'),
-	(41, 'trucker', 0, 'employee', 'Employee', 200, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}'),
-	(42, 'mafia', 0, 'soldato', 'Ptite-Frappe', 1500, '{}', '{}'),
-	(43, 'mafia', 1, 'capo', 'Capo', 1800, '{}', '{}'),
-	(44, 'mafia', 2, 'consigliere', 'Consigliere', 2100, '{}', '{}'),
-	(45, 'mafia', 3, 'boss', 'Parain', 2700, '{}', '{}'),
-	(46, 'ranger', 0, 'employee', 'Valores', 200, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}'),
-	(47, 'rebel', 0, 'soldato', 'Ptite-Frappe', 1500, '{}', '{}'),
-	(48, 'rebel', 1, 'capo', 'Capo', 1800, '{}', '{}'),
-	(49, 'rebel', 2, 'consigliere', 'Consigliere', 2100, '{}', '{}'),
-	(50, 'rebel', 3, 'boss', 'Parain', 2700, '{}', '{}'),
-	(51, 'security', 0, 'employee', 'Security', 200, '{"tshirt_1":60,"torso_1":130,"arms":31,"pants_1":25,"glasses_1":0,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":0,"shoes":63,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":65}', '{"tshirt_1":60,"torso_1":0,"arms":68,"pants_1":25,"glasses_1":0,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":0,"shoes":63,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":65}'),
-	(52, 'traffic', 0, 'employee', 'Valores', 200, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}'),
-	(53, 'gopostal', 0, 'employee', 'Sedex', 200, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}');
+	(41, 'trucker', 0, 'employee', 'Employee', 200, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}');
 /*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.licenses
@@ -595,8 +499,6 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
 
 -- Dumping data for table skuadcity.owned_vehicles: ~1 rows (approximately)
 /*!40000 ALTER TABLE `owned_vehicles` DISABLE KEYS */;
-INSERT INTO `owned_vehicles` (`owner`, `plate`, `vehicle`, `type`, `job`, `category`, `name`, `stored`) VALUES
-	('steam:110000134a401f0', 'ZGE 386', '{"modSpoilers":-1,"modGrille":-1,"modVanityPlate":-1,"modRearBumper":-1,"plateIndex":1,"windowTint":-1,"tyreSmokeColor":[255,255,255],"modTrunk":-1,"modPlateHolder":-1,"modTurbo":false,"modTrimA":-1,"modBackWheels":-1,"wheelColor":156,"pearlescentColor":4,"modFrame":-1,"modTrimB":-1,"modAirFilter":-1,"modDial":-1,"color1":4,"modSmokeEnabled":false,"modOrnaments":-1,"modTank":-1,"xenonColor":255,"modEngineBlock":-1,"modArmor":-1,"modAPlate":-1,"modExhaust":-1,"plate":"ZGE 386","modHorns":-1,"dirtLevel":5.0,"bodyHealth":1000.0,"extras":[],"modFrontBumper":-1,"modEngine":-1,"modStruts":-1,"modBrakes":-1,"wheels":0,"modDashboard":-1,"color2":12,"modSpeakers":-1,"modLivery":-1,"modSeats":-1,"modRightFender":-1,"modHydrolic":-1,"fuelLevel":64.1,"modFender":-1,"modArchCover":-1,"modAerials":-1,"modWindows":-1,"engineHealth":1000.0,"model":2117711508,"modXenon":false,"modSuspension":-1,"modSideSkirt":-1,"modDoorSpeaker":-1,"modFrontWheels":-1,"neonColor":[255,0,255],"modHood":-1,"modRoof":-1,"neonEnabled":[false,false,false,false],"modShifterLeavers":-1,"modSteeringWheel":-1,"modTransmission":-1}', 'car', 'civ', 'donate', 'Nissan Skyline R34 GT-R', 1);
 /*!40000 ALTER TABLE `owned_vehicles` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.properties
@@ -787,8 +689,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- Dumping data for table skuadcity.users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`identifier`, `license`, `money`, `name`, `bank`, `accounts`, `group`, `permission_level`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `is_dead`, `skin`, `status`, `last_property`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `phone_number`) VALUES
-	('steam:110000134a401f0', 'license:298453a7f76c12b1f88947612fb8152999d7e270', -2146483647, '', 0, '{"money":9997852516353,"bank":0,"black_money":0}', 'user', 0, '{"wood":15,"hatchet_lj":1}', 'police', 4, '{"WEAPON_FLASHLIGHT":{"ammo":100}}', '{"x":447.7,"heading":152.1,"z":30.7,"y":-984.5}', 0, '{"sun_1":0,"pants_2":0,"chest_2":0,"age_2":0,"bags_2":0,"bodyb_1":0,"tshirt_2":0,"bodyb_2":0,"sun_2":0,"mask_2":0,"decals_1":0,"makeup_1":0,"chain_1":0,"lipstick_1":0,"beard_1":0,"hair_2":0,"arms_2":0,"glasses_2":0,"helmet_1":-1,"decals_2":0,"hair_1":0,"hair_color_1":0,"blush_2":0,"ears_2":0,"moles_2":0,"skin":0,"bags_1":0,"ears_1":-1,"glasses_1":0,"mask_1":0,"chest_3":0,"age_1":0,"eyebrows_4":0,"makeup_2":0,"chain_2":0,"beard_2":0,"face":0,"helmet_2":0,"complexion_1":0,"sex":0,"watches_2":0,"blemishes_1":0,"hair_color_2":0,"complexion_2":0,"bracelets_2":0,"eyebrows_1":0,"eyebrows_3":0,"shoes_1":0,"blemishes_2":0,"beard_3":0,"torso_2":0,"blush_3":0,"tshirt_1":0,"pants_1":0,"bproof_2":0,"lipstick_3":0,"makeup_3":0,"shoes_2":0,"arms":0,"eye_color":0,"lipstick_4":0,"eyebrows_2":0,"chest_1":0,"watches_1":-1,"moles_1":0,"beard_4":0,"blush_1":0,"bracelets_1":-1,"lipstick_2":0,"bproof_1":0,"torso_1":0,"makeup_4":0}', '[{"percent":87.06,"val":870600,"name":"hunger"},{"percent":90.295,"val":902950,"name":"thirst"},{"percent":0.0,"val":0,"name":"drunk"}]', NULL, 'Dian', 'Nugroho', '2000-07-11', 'm', 162, 14891);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.user_contacts
@@ -826,7 +726,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.vehicles: ~268 rows (approximately)
+-- Dumping data for table skuadcity.vehicles: ~265 rows (approximately)
 /*!40000 ALTER TABLE `vehicles` DISABLE KEYS */;
 INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Akuma', 'AKUMA', 7500, 'motorcycles'),
@@ -1284,7 +1184,7 @@ CREATE TABLE IF NOT EXISTS `vs_cars` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.vs_cars: ~268 rows (approximately)
+-- Dumping data for table skuadcity.vs_cars: ~265 rows (approximately)
 /*!40000 ALTER TABLE `vs_cars` DISABLE KEYS */;
 INSERT INTO `vs_cars` (`name`, `model`, `price`, `category`) VALUES
 	('Akuma', 'AKUMA', 7500, 'motorcycles'),
@@ -1761,7 +1661,7 @@ CREATE TABLE IF NOT EXISTS `vs_vips` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.vs_vips: ~1 rows (approximately)
+-- Dumping data for table skuadcity.vs_vips: ~3 rows (approximately)
 /*!40000 ALTER TABLE `vs_vips` DISABLE KEYS */;
 INSERT INTO `vs_vips` (`name`, `model`, `price`, `category`) VALUES
 	('Deluxo', 'deluxo', 2147483647, 'donate'),
