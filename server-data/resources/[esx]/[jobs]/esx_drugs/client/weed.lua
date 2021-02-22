@@ -49,11 +49,11 @@ end)
 function ProcessWeed(xCannabis)
 	isProcessing = true
 	ESX.ShowNotification(_U('weed_processingstarted'))
-	TriggerServerEvent('esx_drugs:processCannabis')
-	if(xCannabis<3) then
-		xCannabis=0
+  TriggerServerEvent('esx_drugs:processCannabis')
+	if(xCannabis <= 3) then
+		xCannabis = 0
 	end
-	local timeLeft = (Config.Delays.WeedProcessing * xCannabis) / 1000
+  local timeLeft = (Config.Delays.WeedProcessing * xCannabis) / 1000
 	local playerPed = PlayerPedId()
 
 	while timeLeft > 0 do
@@ -169,16 +169,16 @@ function GenerateWeedCoords()
 
 		local weedCoordX, weedCoordY
 
-		--[[math.randomseed(GetGameTimer())
-		local modX = math.random(-90, 90)]]
+		math.randomseed(GetGameTimer())
+		local modX = math.random(-90, 90)
 
 		Citizen.Wait(100)
 
-		--[[math.randomseed(GetGameTimer())
-		local modY = math.random(-90, 90)]]
+		math.randomseed(GetGameTimer())
+		local modY = math.random(-90, 90)
 
-		weedCoordX = 2216.47 --[[Config.CircleZones.WeedField.coords.x + modX]]
-		weedCoordY = 5579.78 --[[Config.CircleZones.WeedField.coords.y + modY]]
+		weedCoordX = Config.CircleZones.WeedField.coords.x + modX
+		weedCoordY = Config.CircleZones.WeedField.coords.y + modY
 
 		local coordZ = GetCoordZ(weedCoordX, weedCoordY)
 		local coord = vector3(weedCoordX, weedCoordY, coordZ)

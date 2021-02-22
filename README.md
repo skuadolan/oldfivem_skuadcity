@@ -24,3 +24,42 @@ User: root > Password: (Menyesuaikan) > Open > Run script
 4. Kemudian buka FiveM, pada loby FiveM tekan F8 pada keyboard lalu ketik: connect localhost
 5. Lalu tekan ENTER!!
 ```
+
+# KEYBIND / HOTKEY
+```
+F1 = Membuka handphone
+F2 = Membuka Inventory
+F3 = Membuka Menu Emoticon
+F5 = Mengambil remote kendaraan (Mengunci kendaraan dari luar dan dari dalam)
+*jarak untuk mengunci kendaraan jangan terlalu menempel dengan kendaraan
+F6 =  Menu untuk whitelist (EMS, LSPD, Mechanic, Taxi)
+F7 = Membuka Bill / Invoice pembayaran
+F8 = Terminal FiveM
+
+KONDISI BERJALAN (DI LUAR KENDARAAN)
+
+1 - 9 = Mengambil senjata dengan cepat
+TAB = Membuka radial menu senjata
+Q = Bersembunyi di balik tembok
+E = Untuk mengakses menu di shop, atm dan lain - lain (HASH = [38])
+R = Reload senjata (HASH = [45])
+T = Membuka chat (HASH = [245])
+F = Masuk dan keluar kendaraan (HASH = [75])
+B = Untuk pura - pura pingsan (HASH = [29])
+Z = Membuka scoreboard list player online (HASH = [20])
+X = Mengangkat tangan (HASH = [323])
+C = Camera pihak ke-3
+V = Mengubah sudut pandang camera
+M = Melepas dan memakai pakaian
+P/Esc = Membuka Map
+
+KONDISI DI DALAM KENDARAAN
+
+CAPSLOCK = Untuk mengunci limit kecepatan kendaraan
+Q = Radio
+H = Menyalakan dan mematikan lampu
+E = Klakson (HASH = [38])
+U = Memakai sabuk pengaman (HASH = [303])
+B = Menghidupkan dan menyalakan mesin kendaraan (HASH = [29])
+X = Menunduk di dalam mobil
+```
