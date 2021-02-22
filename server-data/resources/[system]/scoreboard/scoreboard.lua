@@ -22,7 +22,7 @@ Citizen.CreateThread(function()
                 listOn = true
                 while listOn do
                     Wait(0)
-                    if(IsControlPressed(0, 27) == false) then
+                    if(IsControlPressed(0, 20) == false) then
                         listOn = false
                         SendNUIMessage({
                             meta = 'close'
