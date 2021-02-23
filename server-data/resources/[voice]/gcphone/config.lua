@@ -19,10 +19,10 @@ Config.FixePhone = {
 Config.KeyOpenClose = 288 -- F1
 Config.KeyTakeCall  = 38  -- E
 
-Config.UseMumbleVoIP = false -- Use Frazzle's Mumble-VoIP Resource (Recommended!) https://github.com/FrazzIe/mumble-voip
-Config.UseTokoVoIP   = false
+Config.UseMumbleVoIP = true -- Use Frazzle's Mumble-VoIP Resource (Recommended!) https://github.com/FrazzIe/mumble-voip
+Config.UseTokoVoIP   = true
 
-Config.ShowNumberNotification = false -- Show Number or Contact Name when you receive new SMS
+Config.ShowNumberNotification = true -- Show Number or Contact Name when you receive new SMS
 
 Config.ShareRealtimeGPSDefaultTimeInMs = 1000 * 60 -- Set default realtime GPS sharing expiration time in milliseconds
 Config.ShareRealtimeGPSJobTimer = 10 -- Default Job GPS Timer (Minutes)

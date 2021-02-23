@@ -10,18 +10,18 @@ Config.Main = {
 }
 
 Config.Ambulance = {
-	Shop = false, -- true = Use Ambulance Shop | false = Does Opposite
-	Blips = false, -- true = Use Ambulance Blip | false = Does Opposite
+	Shop = true, -- true = Use Ambulance Shop | false = Does Opposite
+	Blips = true, -- true = Use Ambulance Blip | false = Does Opposite
 	Blip = {Coords = vector3(371.66, -1611.45, 28.29), Sprite = 326, Color = 1, Display = 4, Scale = 1.0},
-	License = true, -- Requires License to Buy Ambulance Vehicles.
+	License = false, -- Requires License to Buy Ambulance Vehicles.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
 }
 
 Config.Police = {
-	Shop = false, -- true = Use Police Shop | false = Does Opposite
-	Blips = false, -- true = Use Police Blip | false = Does Opposite
+	Shop = true, -- true = Use Police Shop | false = Does Opposite
+	Blips = true, -- true = Use Police Blip | false = Does Opposite
 	Blip = {Coords = vector3(374.14, -1608.57, 28.29), Sprite = 326, Color = 3, Display = 4, Scale = 1.0},
-	License = true, -- Requires License to Buy Police Vehicles.
+	License = false, -- Requires License to Buy Police Vehicles.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
 }
 
@@ -31,7 +31,7 @@ Config.Divisions = {
 		Heli2 = 'firehawk'
 	},
 	Police = {
-		Heli1 = 'polmav'
+		Heli1 = 'polmavid'
 	}
 }
 
@@ -39,7 +39,7 @@ Config.Mechanic = {
 	Shop = true, -- true = Use Mechanic Shop | false = Does Opposite
 	Blips = true, -- true = Use Mechanic Blip | false = Does Opposite
 	Blip = {Coords = vector3(-321.87, -137.64, 38.01), Sprite = 326, Color = 17, Display = 4, Scale = 1.0},
-	License = true, -- Requires License to Buy Mechanic Vehicles.
+	License = false, -- Requires License to Buy Mechanic Vehicles.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
 }
 
@@ -47,7 +47,7 @@ Config.Aircraft = {
 	Shop = true, -- true = Use Aircraft Shop | false = Does Opposite
 	Blips = true, -- true = Use Aircraft Blip | false = Does Opposite
 	Blip = {Coords = vector3(-940.0, -2963.1, 18.8), Sprite = 90, Color = 4, Display = 4, Scale = 1.0},
-	License = true, -- Requires License to Buy Aircrafts.
+	License = false, -- Requires License to Buy Aircrafts.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
 }
 
@@ -55,7 +55,7 @@ Config.Boat = {
 	Shop = true, -- true = Use Boat Shop | false = Does Opposite
 	Blips = true, -- true = Use Boat Blip | false = Does Opposite
 	Blip = {Coords = vector3(-714.3, -1297.3, 4.1), Sprite = 410, Color = 3, Display = 4, Scale = 1.0},
-	License = true, -- Requires License to Buy Boats.
+	License = false, -- Requires License to Buy Boats.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
 }
 
@@ -71,7 +71,7 @@ Config.Truck = {
 	Shop = true, -- true = Use Truck Shop | false = Does Opposite
 	Blips = true, -- true = Use Truck Blip | false = Does Opposite
 	Blip = {Coords = vector3(900.4, -1155.0, 24.1), Sprite = 67, Color = 2, Display = 4, Scale = 1.0},
-	License = true, -- Requires License to Buy Trucks.
+	License = false, -- Requires License to Buy Trucks.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
 }
 
