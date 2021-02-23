@@ -6,7 +6,12 @@ endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
 
 # Set connection MYSQL-async
+<<<<<<< Updated upstream:server-data/server.txt
 set mysql_connection_string "server=localhost;database=es_extended;userid=root" #Offline
+=======
+set mysql_connection_string "server=localhost;database=skuadcity;userid=skuad;password=__skuad021" #Online
+#set mysql_connection_string "server=localhost;database=skuadcity;userid=root" #Offline
+>>>>>>> Stashed changes:server-data/server.cfg
  
 # Disable Couchdb from essentialmode
 set es_enableCustomData 1
@@ -98,4 +103,9 @@ sv_maxclients 5
 set steam_webApiKey ""
 
 # License key for your server (https://keymaster.fivem.net)
+<<<<<<< Updated upstream:server-data/server.txt
 sv_licenseKey "s3iw4nierdwt4izyh9wolsbhd4e17z1f" #Offline
+=======
+sv_licenseKey "ezziczdbvcssf6dobilf8c1zcsssr9pb" #Online
+#sv_licenseKey "s3iw4nierdwt4izyh9wolsbhd4e17z1f" #Offline
+>>>>>>> Stashed changes:server-data/server.cfg

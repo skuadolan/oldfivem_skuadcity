@@ -82,7 +82,7 @@ start mythic_notify
 start SimpleCarHUD # B and capslock in car
 start LegacyFuel
 start RealisticVehicleFailure
-start No-NPC
+#start No-NPC
 start MF_VehSales
 start loadingScreen
 start emilia_statusvoice
@@ -96,9 +96,19 @@ start pd_doorlock
 #start rp-radio #Need mumble voip
 start vk_handsup # X Button
 start chat-theme-civlifechat
+<<<<<<< Updated upstream:server-data/resources.txt
+=======
+start gcphone
+start simpledrift
+>>>>>>> Stashed changes:server-data/resources.cfg
 
 start esx_repairkit
 
+<<<<<<< Updated upstream:server-data/resources.txt
+=======
+# Robbery
+
+>>>>>>> Stashed changes:server-data/resources.cfg
 
 # Robbery
 start esx_atmRobbery
@@ -111,6 +121,8 @@ start esx_TruckRobbery
 
 
 # Map Adds-On
+start bob74_ipl
+
 #Phillbox Hospital
 start i_ilev
 start med_props
