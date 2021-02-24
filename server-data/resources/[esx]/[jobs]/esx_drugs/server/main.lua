@@ -56,7 +56,7 @@ end)
 RegisterServerEvent('esx_drugs:pickedUpCannabis')
 AddEventHandler('esx_drugs:pickedUpCannabis', function()
 	local xPlayer = ESX.GetPlayerFromId(source)
-	local cime = math.random(5,10)
+	local cime = 1 --math.random(5,10)
 
 	if xPlayer.canCarryItem('cannabis', cime) then
 		xPlayer.addInventoryItem('cannabis', cime)

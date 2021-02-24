@@ -11,7 +11,7 @@ Config.Main = {
 
 Config.Ambulance = {
 	Shop = true, -- true = Use Ambulance Shop | false = Does Opposite
-	Blips = true, -- true = Use Ambulance Blip | false = Does Opposite
+	Blips = false, -- true = Use Ambulance Blip | false = Does Opposite
 	Blip = {Coords = vector3(371.66, -1611.45, 28.29), Sprite = 326, Color = 1, Display = 4, Scale = 1.0},
 	License = false, -- Requires License to Buy Ambulance Vehicles.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
@@ -19,7 +19,7 @@ Config.Ambulance = {
 
 Config.Police = {
 	Shop = true, -- true = Use Police Shop | false = Does Opposite
-	Blips = true, -- true = Use Police Blip | false = Does Opposite
+	Blips = false, -- true = Use Police Blip | false = Does Opposite
 	Blip = {Coords = vector3(374.14, -1608.57, 28.29), Sprite = 326, Color = 3, Display = 4, Scale = 1.0},
 	License = false, -- Requires License to Buy Police Vehicles.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
@@ -37,7 +37,7 @@ Config.Divisions = {
 
 Config.Mechanic = {
 	Shop = true, -- true = Use Mechanic Shop | false = Does Opposite
-	Blips = true, -- true = Use Mechanic Blip | false = Does Opposite
+	Blips = false, -- true = Use Mechanic Blip | false = Does Opposite
 	Blip = {Coords = vector3(-321.87, -137.64, 38.01), Sprite = 326, Color = 17, Display = 4, Scale = 1.0},
 	License = false, -- Requires License to Buy Mechanic Vehicles.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back

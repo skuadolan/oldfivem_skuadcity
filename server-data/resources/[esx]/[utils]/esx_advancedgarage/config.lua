@@ -3,14 +3,14 @@ Config.Locale = 'en'
 
 Config.Main = {
 	DrawDistance = 20, -- Draw Distance to Markers.
-	Commands = false, -- Will allow players to do /getproperties instead of having to log out & back in to see Private Garages.
+	Commands = true, -- Will allow players to do /getproperties instead of having to log out & back in to see Private Garages.
 	ParkVehicles = true, -- true = Automatically Park all Vehicles in Garage on Server/Script Restart | false = Opposite of true but players will have to go to Pound to get their Vehicle Back.
 	KickCheaters = true, -- true = Kick Player that tries to Cheat Garage by changing Vehicle Hash/Plate.
 	CustomKickMsg = false, -- true = Sets Custom Kick Message for those that try to Cheat. Note: "Config.KickPossibleCheaters" must be true.
 	GiveSocMoney = true, -- true = Gives money to society_mechanic. Note: REQUIRES esx_mechanicjob.
 	DamageMult = true, -- true = Costs more to Store a Broken/Damaged Vehicle.
 	MultAmount = 5, -- Higher Number = Higher Repair Price.
-	RenameVehs = false, -- true = Allows Players to Rename their Vehicles.
+	RenameVehs = true, -- true = Allows Players to Rename their Vehicles.
 	RenameMin = 4, -- Minimum Characters
 	RenameMax = 61, -- Max Characters + 1 (If you want Max Characters to be 45 then set it 46)
 	TruckShop = true -- true = Using esx_advancedvehicleshop Truck Dealership
@@ -25,7 +25,7 @@ Config.Blips = {
 }
 
 Config.Ambulance = {
-	Garages = false, -- true = Allows use of Ambulance Garages.
+	Garages = true, -- true = Allows use of Ambulance Garages.
 	Pounds = true, -- true = Allows use of Ambulance Pounds.
 	Blips = false, -- true = Use Ambulance Blips.
 	PoundP = 80, -- How much it Costs to get Vehicles from Ambulance Pound.
@@ -37,7 +37,7 @@ Config.Ambulance = {
 }
 
 Config.Police = {
-	Garages = false, -- true = Allows use of Police Garages.
+	Garages = true, -- true = Allows use of Police Garages.
 	Pounds = true, -- true = Allows use of Police Pounds.
 	Blips = false, -- true = Use Police Blips.
 	PoundP = 80, -- How much it Costs to get Vehicles from Police Pound.
@@ -49,7 +49,7 @@ Config.Police = {
 }
 
 Config.Mechanic = {
-	Garages = false, -- true = Allows use of Mechanic Garages.
+	Garages = true, -- true = Allows use of Mechanic Garages.
 	Pounds = true, -- true = Allows use of Mechanic Pounds.
 	Blips = false, -- true = Use Mechanic Blips.
 	PoundP = 150, -- How much it Costs to get Vehicles from Mechanic Pound.

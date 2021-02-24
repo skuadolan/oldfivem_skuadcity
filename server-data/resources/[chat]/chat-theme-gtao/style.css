@@ -1,3 +1,15 @@
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+.color-0{color: #ffffff;}
+.color-1{color: #ff4444;}
+.color-2{color: #99cc00;}
+.color-3{color: #ffbb33;}
+.color-4{color: #0099cc;}
+.color-5{color: #33b5e5;}
+.color-6{color: #aa66cc;}
+.color-8{color: #cc0000;}
+.color-9{color: #cc0068;}
+    src: url("../BarlowCondensed.ttf");
+
 * {
     font-family: inherit;
 }
@@ -12,7 +24,7 @@
 
     background: inherit !important;
 
-    text-align: right;
+    text-align: left;
 
     left: auto;
 
@@ -74,7 +86,7 @@
 
     background: inherit !important;
 
-    text-align: right;
+    text-align: left;
 
     top: auto;
     left: auto;
@@ -93,7 +105,7 @@
 
 .chat-input .prefix {
     margin: 0;
-    margin-left: 0.7%;
+    margin-left: 0.5%;
     margin-top: -0.1%;
     line-height: 2.8vh;
 }
