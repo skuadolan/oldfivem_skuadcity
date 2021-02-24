@@ -37,7 +37,7 @@ em {
   position: absolute;
   left: 15px;
   width: fit-content;
-  height: fit-content;
+  height: 10%;
   background-color: rgba(255, 255, 255, 0);
   -webkit-animation-duration: 2s;
 }
@@ -47,7 +47,7 @@ em {
 .chat-messages {
   position: relative;
   width: max-content;
-  height: min-content;
+  height: 10%;
   font-size: 1.0rem;
 
   overflow-x: hidden;
@@ -61,7 +61,8 @@ em {
 
   top: 45%;
   left: 19px;
-  width: 38%;
+  width: fit-content;
+  max-width: 45%;
 
   box-sizing: border-box;
 }

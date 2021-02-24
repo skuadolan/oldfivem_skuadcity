@@ -57,7 +57,7 @@ function UpdatePlayerTable(connectedPlayers)
 	local ems, police, taxi, mechanic, cardealer, estate, players = 0, 0, 0, 0, 0, 0, 0
 
 	for k,v in pairs(connectedPlayers) do
-		table.insert(formattedPlayerList, ('<tr><td>%s</td><td>%s</td><td>%s</td></tr>'):format(v.identifier, v.playerId, v.ping))
+		table.insert(formattedPlayerList, ('<tr><td>%s</td><td>%s</td><td>%s</td></tr>'):format(v.name, v.playerId, v.ping))
 		players = players + 1
 
 		if v.job == 'ambulance' then
@@ -94,14 +94,14 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
-		if IsControlPressed(0, 56)--[[ INPUT_MULTIPLAYER_INFO ]] then
+		if IsControlPressed(0, 57)--[[ INPUT_MULTIPLAYER_INFO ]] then
             if not listOn then
 				SendNUIMessage({action = 'enable'})
 
                 listOn = true
                 while listOn do
                     Wait(0)
-                    if(IsControlPressed(0, 56) == false) then
+                    if(IsControlPressed(0, 57) == false) then
                         listOn = false
 						SendNUIMessage({action = 'disable'})
                         break

@@ -4,7 +4,7 @@ Config.DrawDistance               = 20.0 -- How close do you need to be in order
 
 Config.Marker                     = {type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false}
 
-Config.ReviveReward               = 1500  -- Revive reward, set to 0 if you don't want it enabled
+Config.ReviveReward               = 1750  -- Revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- Enable anti-combat logging? (Removes Items when a player logs back after intentionally logging out while dead.)
 Config.LoadIpl                    = true -- Disable if you're using fivem-ipl or other IPL loaders
 
@@ -20,7 +20,7 @@ Config.RemoveCashAfterRPDeath     = false
 Config.RemoveItemsAfterRPDeath    = false
 
 -- Let the player pay for respawning early, only if he can afford it.
-Config.EarlyRespawnFine           = false
+Config.EarlyRespawnFine           = true
 Config.EarlyRespawnFineAmount     = 7500
 
 Config.RespawnPoint = {coords = vector3(341.0, -1397.3, 32.5), heading = 48.5}

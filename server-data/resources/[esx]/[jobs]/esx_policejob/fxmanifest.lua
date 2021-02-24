@@ -44,5 +44,6 @@ client_scripts {
 
 dependencies {
 	'es_extended',
-	'esx_billing'
+	'esx_billing',
+	'esx_advancedvehicleshop'
 }
