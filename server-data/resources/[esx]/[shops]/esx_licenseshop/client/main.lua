@@ -213,7 +213,7 @@ AddEventHandler('onResourceStop', function(resource)
 end)
 
 -- Blips
-Citizen.CreateThread(function()
+--[[Citizen.CreateThread(function()
 	if Config.UseBlips then
 		for k,v in pairs(Config.Zones) do
 			for i=1, #v.Coords, 1 do
@@ -231,7 +231,7 @@ Citizen.CreateThread(function()
 			end
 		end
 	end
-end)
+end)]]
 
 -- Enter / Exit marker events & Draw Markers
 Citizen.CreateThread(function()

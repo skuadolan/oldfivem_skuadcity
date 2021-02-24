@@ -405,7 +405,7 @@ CreateThread(function()
 	end
 end)
 
-CreateThread(function()
+--[[CreateThread(function()
 	while true do
 		Wait(0)
 
@@ -415,7 +415,7 @@ CreateThread(function()
 			end
 		end
 	end
-end)
+end)]]
 
 -- Disable wanted level
 if Config.DisableWantedLevel then

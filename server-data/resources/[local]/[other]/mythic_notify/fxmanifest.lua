@@ -16,10 +16,18 @@ files {
 
 client_scripts {
 	'client/main.lua',
+	'client/depracated.lua'
 }
 
 exports {
 	'SendAlert',
-	'SendUniqueAlert',
 	'PersistentAlert',
+
+	
+--[[ WARNING: These are depracated and may be removed at a future date, Suggest not using it ]]--
+	'DoShortHudText',
+	'DoHudText',
+	'DoLongHudText',
+	'DoCustomHudText',
+	'PersistentHudText'
 }
