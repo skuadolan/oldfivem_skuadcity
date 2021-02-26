@@ -14,7 +14,7 @@ RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
 	ESX.TriggerServerCallback('esx_property:getProperties', function(properties)
 		Config.Properties = properties
-		CreateBlips()
+		--CreateBlips()
 	end)
 
 	ESX.TriggerServerCallback('esx_property:getOwnedProperties', function(result)
@@ -28,7 +28,7 @@ end)
 RegisterNetEvent('esx_property:sendProperties')
 AddEventHandler('esx_property:sendProperties', function(properties)
 	Config.Properties = properties
-	CreateBlips()
+	--CreateBlips()
 
 	ESX.TriggerServerCallback('esx_property:getOwnedProperties', function(result)
 		for k,v in ipairs(result) do
@@ -44,7 +44,7 @@ function DrawSub(text, time)
 	EndTextCommandPrint(time, 1)
 end
 
-function CreateBlips()
+--[[function CreateBlips()
 	for i=1, #Config.Properties, 1 do
 		local property = Config.Properties[i]
 
@@ -61,7 +61,7 @@ function CreateBlips()
 			EndTextCommandSetBlipName(Blips[property.name])
 		end
 	end
-end
+end]]
 
 function GetProperties()
 	return Config.Properties

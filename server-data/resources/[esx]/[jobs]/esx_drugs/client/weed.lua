@@ -50,7 +50,7 @@ function ProcessWeed(xCannabis)
 	isProcessing = true
 	ESX.ShowNotification(_U('weed_processingstarted'))
   TriggerServerEvent('esx_drugs:processCannabis')
-	if(xCannabis <= 3) then
+	if(xCannabis <= 2) then
 		xCannabis = 0
 	end
   local timeLeft = (Config.Delays.WeedProcessing * xCannabis) / 1000

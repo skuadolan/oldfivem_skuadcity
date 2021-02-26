@@ -3,7 +3,7 @@ Config.DrawDistance = 100.0
 Config.Locale       = 'en'
 Config.Jobs         = {}
 
-Config.MaxCaution = 10000 -- the max caution allowed
+Config.MaxCaution = 100000 -- the max caution allowed
 
 Config.PublicZones = {
 
@@ -12,7 +12,7 @@ Config.PublicZones = {
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,
-		Blip  = true,
+		Blip  = false,
 		Name  = _U('reporter_name'),
 		Type  = "teleport",
 		Hint  = _U('public_enter'),
@@ -24,7 +24,7 @@ Config.PublicZones = {
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,
-		Blip  = true,
+		Blip  = false,
 		Name  = _U('reporter_name'),
 		Type  = "teleport",
 		Hint  = _U('public_leave'),

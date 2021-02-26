@@ -13,11 +13,11 @@ Config.EnableLicenses             = true -- Enable if you're using esx_license.
 Config.EnableHandcuffTimer        = true -- Enable handcuff timer? will unrestrain player after the time ends.
 Config.HandcuffTimer              = 10 * 60000 -- 10 minutes.
 
-Config.EnableJobBlip              = false -- Enable blips for cops on duty, requires esx_society.
+Config.EnableJobBlip              = true -- Enable blips for cops on duty, requires esx_society.
 Config.EnableCustomPeds           = false -- Enable custom peds in cloak room? See Config.CustomPeds below to customize peds.
 
-Config.EnableESXService           = false -- Enable esx service?
-Config.MaxInService               = -1 -- How much people can be in service at once?
+Config.EnableESXService           = true -- Enable esx service?
+Config.MaxInService               = 1 -- How much people can be in service at once?
 
 Config.Locale                     = 'en'
 
@@ -38,7 +38,7 @@ Config.PoliceStations = {
 		},
 
 		Armories = {
-			vector3(451.7, -980.1, 30.6)
+			vector3(461.07, -980.11, 29.74)
 		},
 
 		Vehicles = {

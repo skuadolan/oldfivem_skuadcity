@@ -140,7 +140,7 @@ AddEventHandler('onResourceStop', function(resource)
 end)
 
 -- Create Blips
---[[Citizen.CreateThread(function()
+Citizen.CreateThread(function()
 	for k,v in pairs(Config.Zones) do
 		if v.Legal then
 			for i = 1, #v.Locations, 1 do
@@ -158,7 +158,7 @@ end)
 			end
 		end
 	end
-end)]]
+end)
 
 -- Display markers
 Citizen.CreateThread(function()

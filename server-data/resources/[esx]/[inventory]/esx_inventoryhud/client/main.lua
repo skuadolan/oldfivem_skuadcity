@@ -396,10 +396,10 @@ Citizen.CreateThread(
                 DisableControlAction(0, 257, true) -- Attack 2
                 DisableControlAction(0, 25, true) -- Aim
                 DisableControlAction(0, 263, true) -- Melee Attack 1
-                DisableControlAction(0, Keys["W"], false) -- W
-                DisableControlAction(0, Keys["A"], false) -- A
-                DisableControlAction(0, 31, false) -- S (fault in Keys table!)
-                DisableControlAction(0, 30, false) -- D (fault in Keys table!)
+                DisableControlAction(0, Keys["W"], true) -- W
+                DisableControlAction(0, Keys["A"], true) -- A
+                DisableControlAction(0, 31, true) -- S (fault in Keys table!)
+                DisableControlAction(0, 30, true) -- D (fault in Keys table!)
 
                 DisableControlAction(0, Keys["R"], true) -- Reload
                 DisableControlAction(0, Keys["SPACE"], true) -- Jump
@@ -417,9 +417,9 @@ Citizen.CreateThread(
                 DisableControlAction(0, Keys["X"], true) -- Disable clearing animation
                 DisableControlAction(2, Keys["P"], true) -- Disable pause screen
 
-                DisableControlAction(0, 59, false) -- Disable steering in vehicle
-                DisableControlAction(0, 71, false) -- Disable driving forward in vehicle
-                DisableControlAction(0, 72, false) -- Disable reversing in vehicle
+                DisableControlAction(0, 59, true) -- Disable steering in vehicle
+                DisableControlAction(0, 71, true) -- Disable driving forward in vehicle
+                DisableControlAction(0, 72, true) -- Disable reversing in vehicle
 
                 DisableControlAction(2, Keys["LEFTCTRL"], true) -- Disable going stealth
 
