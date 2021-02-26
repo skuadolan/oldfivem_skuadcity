@@ -185,7 +185,7 @@ ESX.RegisterServerCallback('esx_advancedweaponshop:buyWeapon', function(source, 
 				if Config.UseDirty then
 					if xPlayer.getAccount('black_money').money >= price then
 						xPlayer.removeAccountMoney('black_money', price)
-						xPlayer.addWeapon(weaponName, 4500)
+						xPlayer.addWeapon(weaponName, 24)
 
 						cb(true)
 					else
@@ -195,7 +195,7 @@ ESX.RegisterServerCallback('esx_advancedweaponshop:buyWeapon', function(source, 
 				else
 					if xPlayer.getMoney() >= price then
 						xPlayer.removeMoney(price)
-						xPlayer.addWeapon(weaponName, 3200)
+						xPlayer.addWeapon(weaponName, 24)
 
 						cb(true)
 					else
@@ -206,7 +206,7 @@ ESX.RegisterServerCallback('esx_advancedweaponshop:buyWeapon', function(source, 
 			else
 				if xPlayer.getMoney() >= price then
 					xPlayer.removeMoney(price)
-					xPlayer.addWeapon(weaponName, 3200)
+					xPlayer.addWeapon(weaponName, 24)
 
 					cb(true)
 				else

@@ -6,7 +6,7 @@ Config.DrawDistance = 10
 Config.MarkerInfo = {Type = 1, r = 102, g = 102, b = 204, x = 2.0, y = 2.0, z = 1.0}
 Config.BlipLicenseShop = {Sprite = 408, Color = 0, Display = 2, Scale = 1.0}
 
-Config.UseBlips = true -- true = Use License Shop Blips
+Config.UseBlips = false -- true = Use License Shop Blips
 Config.RequireDMV = false -- If true then it will require players to have Drivers Permit to buy other Licenses | false does the Opposite.
 Config.AdvancedVehicleShop = true -- Set to true if using esx_advancedvehicleshop
 Config.AdvancedWeaponShop = true -- Set to true if using esx_advancedweaponshop
@@ -16,28 +16,27 @@ Config.Drugs = true -- Set to true if using esx_drugs
 Config.WeaponShop = true -- Set to true if using esx_weaponshop
 
 Config.Prices = {
-	Aircraft = 100000,
-	Boating = 50000,
-	Melee = 10000,
-	Handgun = 10000,
-	SMG = 1000000,
-	Shotgun = 500000,
-	Assault = 2500000,
-	LMG = 1000000,
-	Sniper = 1500000,
-	Commercial = 300000,
-	Drivers = 150000,
-	DriversP = 75000,
-	Motorcycle = 225000,
-	Weed = 75000,
-	Weapon = 1000000
+	Aircraft = 1000000,
+	Boating = 750000,
+	Melee = 1000000,
+	Handgun = 1750000,
+	SMG = 1500000,
+	Shotgun = 2750000,
+	Assault = 4500000,
+	LMG = 7500000,
+	Sniper = 15000000,
+	Commercial = 4500000,
+	Drivers = 1500000,
+	DriversP = 1000000,
+	Motorcycle = 1500000,
+	Weed = 10000000,
+	Weapon = 10000000
 }
 
 Config.Zones = {
 	LicenseShops = {
 		Coords = {
-			vector3(241.0, -1378.9, 32.7),
-			vector3(438.68, -980.16, 29.69)
+			vector3(-2166.4, 5197.22, 16.06)
 		}
 	}
 }

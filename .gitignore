@@ -1,12 +1,11 @@
 # Build and Release Folders
 server/
-bin-debug/
-bin-release/
+.server/
+./server/
 [Oo]bj/
 [Bb]in/
 
 # Other files and folders
-.settings/
 
 # Executables
 *.swf

@@ -8,7 +8,7 @@ Config.Type          = 1
 Config.Locale        = 'en'
 
 Config.LicenseEnable = true -- only turn this on if you are using esx_license
-Config.LicensePrice  = 1000000
+Config.LicensePrice  = 1750000
 
 Config.Zones = {
 
@@ -16,15 +16,17 @@ Config.Zones = {
 		Legal = true,
 		Items = {},
 		Locations = {
-			vector3(-664.66, -935.21, 20.8),
-			vector3(812.83, -2157.4, 28.6),
-			vector3(1691.56, 3757.68, 33.7),
-			vector3(-332.19, 6081.88, 30.4),
-			vector3(252.99, -47.47, 68.9),
-			vector3(19.18, -1106.24, 28.8),
-			vector3(2570.55, 294.42, 107.7),
-			vector3(-1119.63, 2696.74, 17.5),
-			vector3(845.1, -1033.45, 27.1)
+			vector3(-662.1, -935.3, 20.8),
+			vector3(810.2, -2157.3, 28.6),
+			vector3(1693.4, 3759.5, 33.7),
+			vector3(-330.2, 6083.8, 30.4),
+			vector3(252.3, -50.0, 68.9),
+			vector3(22.0, -1107.2, 28.8),
+			vector3(2567.6, 294.3, 107.7),
+			vector3(-1117.5, 2698.6, 17.5),
+			vector3(842.4, -1033.4, 27.1),
+			vector3(-1306.2, -394.0, 35.6),
+			vector3(-3171.97, 1087.4, 19.84)
 		}
 	},
 
@@ -32,7 +34,7 @@ Config.Zones = {
 		Legal = false,
 		Items = {},
 		Locations = {
-			vector3(-1305.62, -391.61, 35.6)
+			--vector3(-1305.62, -391.61, 35.6)
 		}
 	}
 

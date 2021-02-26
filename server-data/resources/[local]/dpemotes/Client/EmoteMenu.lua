@@ -1,6 +1,6 @@
 TriggerServerEvent("dp:CheckVersion")
 
-rightPosition = {x = 1450, y = 100}
+rightPosition = {x = 1450, y = 300}
 leftPosition = {x = 0, y = 100}
 menuPosition = {x = 0, y = 200}
 

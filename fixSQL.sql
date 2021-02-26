@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   KEY `index_addon_account_data_account_name` (`account_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.addon_account_data: ~7 rows (approximately)
+-- Dumping data for table skuadcity.addon_account_data: ~10 rows (approximately)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
 INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(1, 'society_cardealer', 0, NULL),
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `addon_inventory` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.addon_inventory: ~5 rows (approximately)
+-- Dumping data for table skuadcity.addon_inventory: ~6 rows (approximately)
 /*!40000 ALTER TABLE `addon_inventory` DISABLE KEYS */;
 INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
 	('property', 'Property', 0),
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `sex` varchar(1) COLLATE utf8mb4_bin NOT NULL DEFAULT 'M',
   `height` varchar(128) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumping data for table skuadcity.characters: ~0 rows (approximately)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `datastore` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.datastore: ~4 rows (approximately)
+-- Dumping data for table skuadcity.datastore: ~5 rows (approximately)
 /*!40000 ALTER TABLE `datastore` DISABLE KEYS */;
 INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
 	('property', 'Property', 0),
@@ -283,54 +283,80 @@ INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 	(52, 'Fraud', 2000, 2);
 /*!40000 ALTER TABLE `fine_types` ENABLE KEYS */;
 
+-- Dumping structure for table skuadcity.glovebox_inventory
+CREATE TABLE IF NOT EXISTS `glovebox_inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `plate` varchar(8) NOT NULL,
+  `data` text NOT NULL,
+  `owned` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `plate` (`plate`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table skuadcity.glovebox_inventory: ~0 rows (approximately)
+/*!40000 ALTER TABLE `glovebox_inventory` DISABLE KEYS */;
+/*!40000 ALTER TABLE `glovebox_inventory` ENABLE KEYS */;
+
 -- Dumping structure for table skuadcity.items
 CREATE TABLE IF NOT EXISTS `items` (
-  `name` varchar(50) NOT NULL,
-  `label` varchar(50) NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
+  `label` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `weight` int(11) NOT NULL DEFAULT 1,
+  `limit` int(11) NOT NULL DEFAULT 30,
   `rare` tinyint(4) NOT NULL DEFAULT 0,
   `can_remove` tinyint(4) NOT NULL DEFAULT 1,
-  `limit` int(11) DEFAULT NULL,
   PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.items: ~34 rows (approximately)
+-- Dumping data for table skuadcity.items: ~46 rows (approximately)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`, `limit`) VALUES
-	('alive_chicken', 'Live Chicken', 5, 0, 1, 100),
-	('bandage', 'Bandage', 2, 0, 1, 30),
-	('beer', 'Beer', 1, 0, 1, 25),
-	('blowpipe', 'Torches', 2, 0, 1, 10),
-	('bread', 'Bread', 1, 0, 1, 30),
-	('cannabis', 'Cannabis', 3, 0, 1, 99),
-	('carokit', 'Body Kit', 3, 0, 1, 10),
-	('carotool', 'Bodywork Tools', 2, 0, 1, 10),
-	('clothe', 'Cloth', 1, 0, 1, 100),
-	('copper', 'Copper', 1, 0, 1, 100),
-	('cutted_wood', 'Cut Wood', 1, 0, 1, 100),
-	('diamond', 'Diamond', 1, 0, 1, 100),
-	('essence', 'Gasoline', 1, 0, 1, 100),
-	('fabric', 'Tissue', 1, 0, 1, 100),
-	('fish', 'Fish', 1, 0, 1, 100),
-	('fixkit', 'Repair Kit', 3, 0, 1, 10),
-	('fixtool', 'Repair Tools', 2, 0, 1, 10),
-	('gazbottle', 'Gas Cylinder', 2, 0, 1, 25),
-	('gold', 'Gold', 1, 0, 1, 100),
-	('iron', 'Iron', 1, 0, 1, 100),
-	('marijuana', 'Marijuana', 5, 0, 1, 100),
-	('medikit', 'Medikit', 2, 0, 1, 25),
-	('packaged_chicken', 'Chicken in a Tray', 1, 0, 1, 100),
-	('packaged_plank', 'Pack of Boards', 1, 0, 1, 100),
-	('parkingcard', 'Parking Card', 1, 0, 1, -1),
-	('petrol', 'Oil', 1, 0, 1, 100),
-	('petrol_raffin', 'Refined Petroleum', 1, 0, 1, 100),
-	('phone', 'Phone', 40, 0, 1, 1),
-	('slaughtered_chicken', 'Slaughtered Chicken', 1, 0, 1, 100),
-	('stone', 'Stone', 1, 0, 1, 100),
-	('washed_stone', 'Washed Stone', 1, 0, 1, 100),
-	('water', 'Water', 1, 0, 1, 40),
-	('wood', 'Wood', 1, 0, 1, 100),
-	('wool', 'Wool', 1, 0, 1, 100);
+INSERT INTO `items` (`name`, `label`, `weight`, `limit`, `rare`, `can_remove`) VALUES
+	('HeavyArmor', 'Heavy Body Armor', 1, 3, 0, 1),
+	('MedArmor', 'Medium Body Armor', 1, 3, 0, 1),
+	('SmallArmor', 'Light Body Armor', 1, 3, 0, 1),
+	('alive_chicken', 'Live Chicken', 5, 100, 0, 1),
+	('arAmmo', 'Assault Rifle Ammo Box', 1, 5, 0, 1),
+	('bandage', 'Bandage', 2, 30, 0, 1),
+	('beer', 'Beer', 1, 25, 0, 1),
+	('blowpipe', 'Torches', 2, 10, 0, 1),
+	('bread', 'Bread', 1, 30, 0, 1),
+	('cannabis', 'Cannabis', 3, 99, 0, 1),
+	('carokit', 'Body Kit', 3, 10, 0, 1),
+	('carotool', 'Bodywork Tools', 2, 10, 0, 1),
+	('clothe', 'Cloth', 1, 100, 0, 1),
+	('copper', 'Copper', 1, 100, 0, 1),
+	('cutted_wood', 'Cut Wood', 1, 100, 0, 1),
+	('diamond', 'Diamond', 1, 100, 0, 1),
+	('essence', 'Gasoline', 1, 100, 0, 1),
+	('fabric', 'Tissue', 1, 100, 0, 1),
+	('fish', 'Fish', 1, 100, 0, 1),
+	('fixkit', 'Repair Kit', 3, 10, 0, 1),
+	('fixtool', 'Repair Tools', 2, 10, 0, 1),
+	('flashlight', 'Lampe', 1, -1, 0, 1),
+	('gazbottle', 'Gas Cylinder', 2, 25, 0, 1),
+	('gold', 'Gold', 1, 100, 0, 1),
+	('grip', 'Poignée', 1, -1, 0, 1),
+	('iron', 'Iron', 1, 100, 0, 1),
+	('marijuana', 'Marijuana', 5, 100, 0, 1),
+	('medikit', 'Medikit', 2, 25, 0, 1),
+	('mgAmmo', 'Maching Gun Ammo Box', 1, 5, 0, 1),
+	('pAmmo', 'Pistol Ammo Box', 1, 5, 0, 1),
+	('packaged_chicken', 'Chicken in a Tray', 1, 100, 0, 1),
+	('packaged_plank', 'Pack of Boards', 1, 100, 0, 1),
+	('parkingcard', 'Parking Card', 1, -1, 0, 1),
+	('petrol', 'Oil', 1, 100, 0, 1),
+	('petrol_raffin', 'Refined Petroleum', 1, 100, 0, 1),
+	('phone', 'Phone', 40, 1, 0, 1),
+	('radio', 'Radio', 2, 0, 1, 30),
+	('sgAmmo', 'Shotgun Ammo Box', 1, 5, 0, 1),
+	('silencieux', 'Silencieux', 1, -1, 0, 1),
+	('slaughtered_chicken', 'Slaughtered Chicken', 1, 100, 0, 1),
+	('stone', 'Stone', 1, 100, 0, 1),
+	('washed_stone', 'Washed Stone', 1, 100, 0, 1),
+	('water', 'Water', 1, 40, 0, 1),
+	('wood', 'Wood', 1, 100, 0, 1),
+	('wool', 'Wool', 1, 100, 0, 1),
+	('yusuf', 'Skin de luxe', 1, -1, 0, 1);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.jobs
@@ -341,7 +367,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.jobs: ~17 rows (approximately)
+-- Dumping data for table skuadcity.jobs: ~20 rows (approximately)
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
 INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('ambulance', 'EMS', 0),
@@ -352,6 +378,9 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('lumberjack', 'Lumberjack', 0),
 	('mechanic', 'Mechanic', 0),
 	('miner', 'Miner', 0),
+	('offambulance', 'Off-Duty', 0),
+	('offmechanic', 'Off-Duty', 0),
+	('offpolice', 'Off-Duty', 0),
 	('police', 'LSPD', 0),
 	('realestateagent', 'Agent', 0),
 	('reporter', 'Journalist', 0),
@@ -374,9 +403,9 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
   `skin_male` longtext COLLATE utf8mb4_bin NOT NULL,
   `skin_female` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.job_grades: ~41 rows (approximately)
+-- Dumping data for table skuadcity.job_grades: ~55 rows (approximately)
 /*!40000 ALTER TABLE `job_grades` DISABLE KEYS */;
 INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
 	(1, 'ambulance', 0, 'ambulance', 'Jr. EMT', 25000, '{"tshirt_2":0,"hair_color_1":5,"glasses_2":3,"shoes":9,"torso_2":3,"hair_color_2":0,"pants_1":24,"glasses_1":4,"hair_1":2,"sex":0,"decals_2":0,"tshirt_1":15,"helmet_1":8,"helmet_2":0,"arms":92,"face":19,"decals_1":60,"torso_1":13,"hair_2":0,"skin":34,"pants_2":5}', '{"tshirt_2":3,"decals_2":0,"glasses":0,"hair_1":2,"torso_1":73,"shoes":1,"hair_color_2":0,"glasses_1":19,"skin":13,"face":6,"pants_2":5,"tshirt_1":75,"pants_1":37,"helmet_1":57,"torso_2":0,"arms":14,"sex":1,"glasses_2":0,"decals_1":0,"hair_2":0,"helmet_2":0,"hair_color_1":0}'),
@@ -419,7 +448,21 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 	(38, 'cardealer', 1, 'novice', 'Novice', 35000, '{}', '{}'),
 	(39, 'cardealer', 2, 'experienced', 'Experienced', 45000, '{}', '{}'),
 	(40, 'cardealer', 3, 'boss', 'Boss', 75000, '{}', '{}'),
-	(41, 'trucker', 0, 'employee', 'Employee', 200, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}');
+	(41, 'trucker', 0, 'employee', 'Employee', 200, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}'),
+	(42, 'offpolice', 0, 'recruit', 'Recruit', 12, '{}', '{}'),
+	(43, 'offpolice', 1, 'officer', 'Officer', 24, '{}', '{}'),
+	(44, 'offpolice', 2, 'sergeant', 'Sergeant', 36, '{}', '{}'),
+	(45, 'offpolice', 3, 'lieutenant', 'Lieutenant', 48, '{}', '{}'),
+	(46, 'offpolice', 4, 'boss', 'Boss', 0, '{}', '{}'),
+	(47, 'offambulance', 0, 'ambulance', 'Ambulance', 12, '{}', '{}'),
+	(48, 'offambulance', 1, 'doctor', 'Doctor', 24, '{}', '{}'),
+	(49, 'offambulance', 2, 'chief_doctor', 'Chef', 36, '{}', '{}'),
+	(50, 'offambulance', 3, 'boss', 'Boss', 48, '{}', '{}'),
+	(51, 'offmechanic', 0, 'recrue', 'Recrue', 12, '{}', '{}'),
+	(52, 'offmechanic', 1, 'novice', 'Novice', 24, '{}', '{}'),
+	(53, 'offmechanic', 2, 'experimente', 'Experienced', 36, '{}', '{}'),
+	(54, 'offmechanic', 3, 'chief', 'Leader', 48, '{}', '{}'),
+	(55, 'offmechanic', 4, 'boss', 'Boss', 0, '{}', '{}');
 /*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.licenses
@@ -484,12 +527,12 @@ CREATE TABLE IF NOT EXISTS `owned_properties` (
 CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   `owner` varchar(40) COLLATE utf8mb4_bin NOT NULL,
   `plate` varchar(12) COLLATE utf8mb4_bin NOT NULL,
-  `vehicle` longtext COLLATE utf8mb4_bin,
+  `vehicle` longtext COLLATE utf8mb4_bin DEFAULT NULL,
   `type` varchar(20) COLLATE utf8mb4_bin NOT NULL DEFAULT 'car',
   `job` varchar(20) COLLATE utf8mb4_bin NOT NULL DEFAULT 'civ',
   `category` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   `name` varchar(60) COLLATE utf8mb4_bin NOT NULL DEFAULT 'Unknown',
-  `stored` tinyint(1) NOT NULL DEFAULT '0',
+  `stored` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
@@ -535,7 +578,7 @@ CREATE TABLE IF NOT EXISTS `phone_messages` (
   `isRead` int(11) NOT NULL DEFAULT 0,
   `owner` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table skuadcity.phone_messages: 0 rows
 /*!40000 ALTER TABLE `phone_messages` DISABLE KEYS */;
@@ -682,20 +725,26 @@ CREATE TABLE IF NOT EXISTS `shops` (
   `item` varchar(100) NOT NULL,
   `price` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table skuadcity.shops: ~9 rows (approximately)
 /*!40000 ALTER TABLE `shops` DISABLE KEYS */;
-INSERT INTO `shops` (`id`, `store`, `item`, `price`) VALUES
-	(1, 'TwentyFourSeven', 'beer', 45),
-	(2, 'RobsLiquor', 'beer', 45),
-	(3, 'LTDgasoline', 'beer', 45),
-	(4, 'TwentyFourSeven', 'bread', 30),
-	(5, 'TwentyFourSeven', 'water', 15),
-	(6, 'RobsLiquor', 'bread', 30),
-	(7, 'RobsLiquor', 'water', 15),
-	(8, 'LTDgasoline', 'bread', 30),
-	(9, 'LTDgasoline', 'water', 15);
+INSERT INTO `shops` (`store`, `item`, `price`) VALUES
+	('TwentyFourSeven', 'beer', 45),
+	('TwentyFourSeven', 'bread', 30),
+	('TwentyFourSeven', 'water', 15),
+	('TwentyFourSeven', 'phone', 1000),
+	('TwentyFourSeven', 'radio', 300),
+	('RobsLiquor', 'beer', 45),
+	('RobsLiquor', 'bread', 30),
+	('RobsLiquor', 'water', 15),
+	('RobsLiquor', 'phone', 1000),
+	('RobsLiquor', 'radio', 300),
+	('LTDgasoline', 'beer', 45),
+	('LTDgasoline', 'bread', 30),
+	('LTDgasoline', 'water', 15),
+	('LTDgasoline', 'phone', 1000),
+	('LTDgasoline', 'radio', 300);
 /*!40000 ALTER TABLE `shops` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.society_moneywash
@@ -710,6 +759,20 @@ CREATE TABLE IF NOT EXISTS `society_moneywash` (
 -- Dumping data for table skuadcity.society_moneywash: ~0 rows (approximately)
 /*!40000 ALTER TABLE `society_moneywash` DISABLE KEYS */;
 /*!40000 ALTER TABLE `society_moneywash` ENABLE KEYS */;
+
+-- Dumping structure for table skuadcity.trunk_inventory
+CREATE TABLE IF NOT EXISTS `trunk_inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `plate` varchar(8) NOT NULL,
+  `data` text NOT NULL,
+  `owned` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `plate` (`plate`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table skuadcity.trunk_inventory: ~0 rows (approximately)
+/*!40000 ALTER TABLE `trunk_inventory` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trunk_inventory` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.twitter_accounts
 CREATE TABLE IF NOT EXISTS `twitter_accounts` (
@@ -811,7 +874,7 @@ CREATE TABLE IF NOT EXISTS `user_licenses` (
   `type` varchar(60) NOT NULL,
   `owner` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table skuadcity.user_licenses: ~0 rows (approximately)
 /*!40000 ALTER TABLE `user_licenses` DISABLE KEYS */;
@@ -1872,7 +1935,7 @@ CREATE TABLE IF NOT EXISTS `weashops` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
 
--- Dumping data for table skuadcity.weashops: ~8 rows (approximately)
+-- Dumping data for table skuadcity.weashops: ~79 rows (approximately)
 /*!40000 ALTER TABLE `weashops` DISABLE KEYS */;
 INSERT INTO `weashops` (`id`, `zone`, `item`, `price`, `category`) VALUES
 	(1, 'GunShop', 'GADGET_PARACHUTE', 800, 'melee'),
@@ -1955,24 +2018,6 @@ INSERT INTO `weashops` (`id`, `zone`, `item`, `price`, `category`) VALUES
 	(78, 'GunShop', 'WEAPON_MARKSMANRIFLE', 3800, 'sniper'),
 	(79, 'GunShop', 'WEAPON_HEAVYSNIPER', 9900, 'sniper');
 /*!40000 ALTER TABLE `weashops` ENABLE KEYS */;
-
-CREATE TABLE IF NOT EXISTS `glovebox_inventory` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `plate` varchar(8) NOT NULL,
-  `data` text NOT NULL,
-  `owned` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `plate` (`plate`)
-);
-
-CREATE TABLE IF NOT EXISTS `trunk_inventory` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `plate` varchar(8) NOT NULL,
-  `data` text NOT NULL,
-  `owned` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `plate` (`plate`)
-);
 
 -- Dumping structure for table skuadcity.whitelist
 CREATE TABLE IF NOT EXISTS `whitelist` (

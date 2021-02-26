@@ -21,12 +21,12 @@ Config = {
 -- Use a 512 x 128 image!
 -- NOte this might cause an issue of the image getting stuck on peoples screens
 	CustomMenuEnabled = false,
-	MenuImage = "https://i.imgur.com/kgzvDwQ.png",
+	MenuImage = "https://dianadi021.github.io/assets/content/icon/skd.png",
 -- You can change the menu position here
-	MenuPosition = "left", -- (left, right)
+	MenuPosition = "right", -- (left, right)
 -- You can disable the Ragdoll keybinding here.
 	RagdollEnabled = true,
-	RagdollKeybind = 81, -- Get the button number here https://docs.fivem.net/game-references/controls/
+	RagdollKeybind = 83, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can disable the Facial Expressions menu here.
 	ExpressionsEnabled = true,
 -- You can disable the Walking Styles menu here.
