@@ -36,13 +36,11 @@ Config.Hospitals = {
 		},
 
 		AmbulanceActions = {
-			vector3(314.2, -603.52, 42.30),
-			vector3(339.15, -582.00, 27.95)
+			vector3(298.97, -598.46, 42.34)
 		},
 
 		Pharmacies = {
-			vector3(310.50, -598.90, 42.30),
-			vector3(338.15, -585.90, 27.95)
+			vector3(307.12, -600.96, 42.28)
 		},
 
 		Vehicles = {
@@ -71,33 +69,13 @@ Config.Hospitals = {
 
 		FastTravels = {
 			{
-				From = vector3(321.82, -576.06, 44.88),
-				To = { coords = vector3(339.54, -584.72, 74.17), heading = 0.0 },
+				From = vector3(331.95, -595.64, 42.34),
+				To = { coords = vector3(341.79, -585.17, 74.17), heading = 237.65 },
 				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			},
 			{
-				From = vector3(334.51, -583.22, 73.06),
-				To = { coords = vector3(328.01, -578.14, 43.28), heading = 0.0 },
-				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
-			},
-			{
-				From = vector3(320.12, -579.33, 39.75),
-				To = { coords = vector3(327, -578.36, 28.45), heading = 0.0 },
-				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
-			},
-			{
-				From = vector3(322.22, -576.07, 29.88),
-				To = { coords = vector3(326.77, -581.88, 43.28), heading = 0.0 },
-				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
-			},
-			{
-				From = vector3(328.87, -603.75, 40.37),
-				To = { coords = vector3(330.65, -597.70, 28.9), heading = 37.88 },
-				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
-			},
-			{
-				From = vector3(328.85, -603.73, 29.67),
-				To = { coords = vector3(328.64, -598.62, 43.29), heading = 0.0 },
+				From = vector3(339.17, -583.94, 73.22),
+				To = { coords = vector3(330.18, -594.91, 43.28), heading = 59.83 },
 				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			}
 		},

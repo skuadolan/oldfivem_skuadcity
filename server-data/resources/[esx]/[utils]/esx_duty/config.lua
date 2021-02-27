@@ -13,14 +13,14 @@ Config.Zones = {
   },
 
   AmbulanceDuty = {
-    Pos = { x = -321.54, y = -138.25, z = 38.06 },
+    Pos = { x = 310.72, y = -595.62, z = 42.46 },
     Size = { x = 1.5, y = 1.5, z = 1.5 },
     Color = { r = 0, g = 255, b = 0 },
     Type = 27,
   },
 
   MechanicDuty = {
-    Pos = { x = 305.49, y = -597.88, z = 42.35 },
+    Pos = { x = -321.94, y = -138.02, z = 38.13 },
     Size = { x = 1.5, y = 1.5, z = 1.5 },
     Color = { r = 0, g = 255, b = 0 },
     Type = 27,

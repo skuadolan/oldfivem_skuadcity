@@ -24,13 +24,13 @@ function getIdentity(source)
 	end
 end
 
- AddEventHandler('chatMessage', function(source, name, message)
+--[[ AddEventHandler('chatMessage', function(source, name, message)
       if string.sub(message, 1, string.len("/")) ~= "/" then
           local name = getIdentity(source)
 		TriggerClientEvent("sendProximityMessageMe", -1, source, name.firstname, message)
       end
       CancelEvent()
-  end)
+  end)]]
   
   -- TriggerEvent('es:addCommand', 'me', function(source, args, user)
   --    local name = getIdentity(source)

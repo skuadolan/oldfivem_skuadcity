@@ -83,7 +83,7 @@ function Process(action, start, tick, finish)
                     if tick ~= nil then
                         tick()
                     end
-                    if IsControlJustPressed(0, 178) and mythic_action.canCancel then
+                    if IsControlJustPressed(0, 323) and mythic_action.canCancel then
                         TriggerEvent("mythic_progbar:client:cancel")
                     end
 

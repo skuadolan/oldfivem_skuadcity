@@ -7,13 +7,13 @@ Config.Accounts = {
 	money = _U('account_money')
 }
 
-Config.StartingAccountMoney = {bank = 0}
+Config.StartingAccountMoney = {money = 50000}
 
 Config.EnableSocietyPayouts = false -- pay from the society account that the player is employed at? Requirement: esx_society
 Config.DisableWantedLevel   = true
 Config.EnableHud            = false -- enable the default hud? Display current job and accounts (black, bank & cash)
 Config.EnablePvP            = true -- enable pvp?
-Config.MaxWeight            = 2400   -- the max inventory weight without backpack(this is in grams, not kg!)
+Config.MaxWeight            = 240000   -- the max inventory weight without backpack(this is in grams, not kg!)
 
 Config.PaycheckInterval     = 21 * 60000 -- how often to recieve pay checks in milliseconds
 

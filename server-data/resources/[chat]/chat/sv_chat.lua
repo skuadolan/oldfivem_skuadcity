@@ -7,7 +7,7 @@ RegisterServerEvent('_chat:messageEntered')
 RegisterServerEvent('chat:clear')
 RegisterServerEvent('__cfx_internal:commandFallback')
 
-AddEventHandler('_chat:messageEntered', function(author, color, message)
+--[[AddEventHandler('_chat:messageEntered', function(author, color, message)
     if not message or not author then
         return
     end
@@ -19,7 +19,7 @@ AddEventHandler('_chat:messageEntered', function(author, color, message)
     end
 
     --print(author .. '^7: ' .. message .. '^7')
-end)
+end)]]
 
 AddEventHandler('__cfx_internal:commandFallback', function(command)
     local name = GetPlayerName(source)
