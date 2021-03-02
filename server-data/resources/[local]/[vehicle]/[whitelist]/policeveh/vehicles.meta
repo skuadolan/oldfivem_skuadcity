@@ -151,8 +151,8 @@
 <Item>
       <modelName>pjr</modelName>
       <txdName>pjr</txdName>
-      <handlingId>POLICE</handlingId>
-      <gameName>POLICE</gameName>
+      <handlingId>POLICE3</handlingId>
+      <gameName>POLICE3</gameName>
       <vehicleMakeName>PJR</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
       <expressionName>null</expressionName>
@@ -160,7 +160,7 @@
       <animConvRoofName>null</animConvRoofName>
       <animConvRoofWindowsAffected />
       <ptfxAssetName>null</ptfxAssetName>
-      <audioNameHash>police</audioNameHash>
+      <audioNameHash>police3</audioNameHash>
       <layout>LAYOUT_STANDARD</layout>
       <coverBoundOffsets>POLICE_COVER_OFFSET_INFO</coverBoundOffsets>
       <explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
@@ -277,8 +277,8 @@
     <Item>
       <modelName>patrol</modelName>
       <txdName>patrol</txdName>
-      <handlingId>POLICE</handlingId>
-      <gameName>POLICE</gameName>
+      <handlingId>POLICE3</handlingId>
+      <gameName>POLICE3</gameName>
       <vehicleMakeName>PJR</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
       <expressionName>null</expressionName>
@@ -286,7 +286,7 @@
       <animConvRoofName>null</animConvRoofName>
       <animConvRoofWindowsAffected />
       <ptfxAssetName>null</ptfxAssetName>
-      <audioNameHash>police</audioNameHash>
+      <audioNameHash>police3</audioNameHash>
       <layout>LAYOUT_STANDARD</layout>
       <coverBoundOffsets>POLICE_COVER_OFFSET_INFO</coverBoundOffsets>
       <explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
