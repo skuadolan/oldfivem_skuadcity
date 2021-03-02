@@ -45,7 +45,7 @@ Config.Mechanic = {
 
 Config.Aircraft = {
 	Shop = true, -- true = Use Aircraft Shop | false = Does Opposite
-	Blips = true, -- true = Use Aircraft Blip | false = Does Opposite
+	Blips = false, -- true = Use Aircraft Blip | false = Does Opposite
 	Blip = {Coords = vector3(-940.0, -2963.1, 18.8), Sprite = 90, Color = 4, Display = 4, Scale = 1.0},
 	License = false, -- Requires License to Buy Aircrafts.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
@@ -78,7 +78,7 @@ Config.Truck = {
 -- You will need to setup your own callback for VIP Shop
 Config.VIP = {
 	Shop = true, -- true = Use VIP Shop | false = Does Opposite
-	Blips = true, -- true = Use VIP Blip | false = Does Opposite
+	Blips = false, -- true = Use VIP Blip | false = Does Opposite
 	Blip = {Coords = vector3(-32.75, -1656.01, 28.49), Sprite = 326, Color = 5, Display = 4, Scale = 1.0},
 	License = true, -- Requires License to Buy VIP Vehicles.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back

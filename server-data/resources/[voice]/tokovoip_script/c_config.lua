@@ -1,4 +1,13 @@
 TokoVoipConfig = {
+	channels = {
+		{name = "EMS Radio", subscribers = {}},
+		{name = "Police Radio", subscribers = {}},
+		{name = "Police/EMS Shared Radio", subscribers = {}},
+		{name = "Private 1", subscribers = {}},
+		{name = "Private 2", subscribers = {}},
+		{name = "Public", subscribers = {}},
+	},
+
 	refreshRate = 100, -- Rate at which the data is sent to the TSPlugin
 	networkRefreshRate = 2000, -- Rate at which the network data is updated/reset on the local ped
 	playerListRefreshRate = 5000, -- Rate at which the playerList is updated

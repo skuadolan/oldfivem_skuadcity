@@ -845,7 +845,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `dateofbirth` varchar(10) COLLATE utf8mb4_bin DEFAULT NULL,
   `sex` varchar(1) COLLATE utf8mb4_bin DEFAULT NULL,
   `height` int(11) DEFAULT NULL,
-  `phone_number` int(11) DEFAULT NULL,
+  `phone_number` char(12) DEFAULT 0,
   PRIMARY KEY (`identifier`),
   UNIQUE KEY `index_users_phone_number` (`phone_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

@@ -7,7 +7,7 @@ Config.Accounts = {
 	money = _U('account_money')
 }
 
-Config.StartingAccountMoney = {money = 50000}
+Config.StartingAccountMoney = {bank = 50000}
 
 Config.EnableSocietyPayouts = false -- pay from the society account that the player is employed at? Requirement: esx_society
 Config.DisableWantedLevel   = true

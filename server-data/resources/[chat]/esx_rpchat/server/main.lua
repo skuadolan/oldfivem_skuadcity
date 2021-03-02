@@ -83,7 +83,7 @@ end, false)
     })
 end, false)
 
-        RegisterCommand('ooc', function(source, args, rawCommand)
+    RegisterCommand('ooc', function(source, args, rawCommand)
     local playerName = GetPlayerName(source)
     local msg = rawCommand:sub(5)
     local name = getIdentity(source)
