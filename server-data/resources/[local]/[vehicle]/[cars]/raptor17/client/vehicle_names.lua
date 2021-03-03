@@ -1,0 +1,18 @@
+Citizen.CreateThread(function()
+	
+	AddTextEntry('0x4949A7F8', 'BMW')
+	
+	AddTextEntry('0x7EFF8F58', 'KTM')
+	AddTextEntry('0x87AC38BA', 'Harley Davidson')
+	AddTextEntry('0x631F22C7', 'Honda')
+	AddTextEntry('0x671B0341', 'Kawasaki')
+	AddTextEntry('0x1901B4C3', 'Suzuki')
+	AddTextEntry('0x5031FBB5', 'Yamaha')
+	AddTextEntry('0x6400C100', 'Ducati')
+	AddTextEntry('0xAFE4B8FD', 'Bimota')
+	AddTextEntry('0xB48BE841', 'CBR1000RR 2017')
+	AddTextEntry('0xB88B7625', 'MV Agusta')
+	AddTextEntry('0xDA6F6F18', 'Husqvarna')
+	AddTextEntry('0xEC158048', 'Confederate')
+	AddTextEntry('0xF7D4D5CC', 'Aprilia')
+end)
