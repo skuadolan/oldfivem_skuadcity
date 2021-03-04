@@ -186,6 +186,15 @@ Citizen.CreateThread(
   end
 )
 
+
+RegisterNetEvent("esx_inventoryhud_trunk:openTrunk")
+AddEventHandler("esx_inventoryhud_trunk:openTrunk", function(_myPhoneNumber)
+  if (GetGameTimer() - GUI.Time) > 1000 then
+    openmenuvehicle()
+    GUI.Time = GetGameTimer()
+  end
+end)
+
 Citizen.CreateThread(
   function()
     while true do

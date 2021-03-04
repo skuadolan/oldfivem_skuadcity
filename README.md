@@ -35,31 +35,49 @@ F5 = Mengambil remote kendaraan (Mengunci kendaraan dari luar dan dari dalam)
 F6 =  Menu untuk whitelist (EMS, LSPD, Mechanic, Taxi)
 F7 = Membuka Bill / Invoice pembayaran
 F8 = Terminal FiveM
+F9 = Menu KTP/Licensi
+F10 = Membuka Scoreboard
+F12 = Screenshot steam
+LEFTSHIFT + TAB = Membuka Radio
+
 
 KONDISI BERJALAN (DI LUAR KENDARAAN)
-
-1 - 9 = Mengambil senjata dengan cepat
-TAB = Membuka radial menu senjata
+1 - 8 = Mengambil senjata dengan cepat
+-/_ = Prone
+=/+ = Pura pura pingsan
+TAB(Tahan) = Membuka radial menu senjata
 Q = Bersembunyi di balik tembok
 E = Untuk mengakses menu di shop, atm dan lain - lain (HASH = [38])
-R = Reload senjata (HASH = [45])
+R = Reload senjata (HASH = [45]) /  Memukul
 T = Membuka chat (HASH = [245])
-F = Masuk dan keluar kendaraan (HASH = [75])
-B = Untuk pura - pura pingsan (HASH = [29])
-Z = Membuka scoreboard list player online (HASH = [20])
-X = Mengangkat tangan (HASH = [323])
-C = Camera pihak ke-3
-V = Mengubah sudut pandang camera
-M = Melepas dan memakai pakaian
+U = Membuka bagasi kendaraan
 P/Esc = Membuka Map
+CAPSLOCK = Berbicara radio/phone
+F = Masuk dan keluar kendaraan (HASH = [75])
+G = Crossarm
+Z = Mengganti mode bicara (HASH = [20])
+X = Mengangkat tangan (HASH = [323])
+C = Flip camera
+V = Mengubah sudut pandang camera
+B = Menunjuk
+M = Melepas dan memakai pakaian
+LEFTCTRL = Berjongkok
+Space = Loncat
+W/A/S/D = Berjalan
+
 
 KONDISI DI DALAM KENDARAAN
-
-CAPSLOCK = Untuk mengunci limit kecepatan kendaraan
-Q = Radio
-H = Menyalakan dan mematikan lampu
+~ = Menghidupkan dan mematikan kendaraan
+TAB = Membuka radial menu senjata
+Q = Memilih Radio
 E = Klakson (HASH = [38])
-U = Memakai sabuk pengaman (HASH = [303])
-B = Menghidupkan dan menyalakan mesin kendaraan (HASH = [29])
+R = Sinematik camera
+[ = Mengganti senjata
+CAPSLOCK = Untuk mengunci limit kecepatan kendaraan
+H = Menyalakan dan mematikan lampu
+SHIFT(Tahan) = Drift mobil
+W/A/S/D = Berjalan
 X = Menunduk di dalam mobil
+B = Menggunakan sabuk pengaman
+</> = Mengganti radio
 ```

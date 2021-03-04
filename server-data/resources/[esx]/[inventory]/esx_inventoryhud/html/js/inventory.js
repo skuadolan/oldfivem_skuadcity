@@ -4,7 +4,7 @@ var disabledFunction = null;
 
 window.addEventListener("message", function (event) {
     if (event.data.action == "display") {
-        type = event.data.type
+        type = event.data.type;
         disabled = false;
 
         if (type === "normal") {
@@ -13,7 +13,11 @@ window.addEventListener("message", function (event) {
             $(".info-div").show();
         } else if (type === "property") {
             $(".info-div").hide();
+        } else if (type === "storage") {
+            $(".info-div").hide();
         } else if (type === "player") {
+            $(".info-div").show();
+        } else if (type === "shop") {
             $(".info-div").show();
         }
 
@@ -24,6 +28,8 @@ window.addEventListener("message", function (event) {
         $(".item").remove();
         $("#otherInventory").html("<div id=\"noSecondInventoryMessage\"></div>");
         $("#noSecondInventoryMessage").html(invLocale.secondInventoryNotAvailable);
+    } else if (event.data.action == "setType") {
+        type = event.data.type;
     } else if (event.data.action == "setItems") {
         inventorySetup(event.data.itemList);
 
@@ -34,7 +40,8 @@ window.addEventListener("message", function (event) {
             revert: 'invalid',
             start: function (event, ui) {
                 if (disabled) {
-                    return false;
+                    $(this).stop();
+                    return;
                 }
 
                 $(this).css('background-image', 'none');
@@ -69,7 +76,7 @@ window.addEventListener("message", function (event) {
         $("#nearPlayers").html("");
 
         $.each(event.data.players, function (index, player) {
-            $("#nearPlayers").append('<button class="nearbyPlayerButton" data-player="' + player.player + '">' + player + ' (' + player.player + ')</button>');
+            $("#nearPlayers").append('<button class="nearbyPlayerButton" data-player="' + player.player + '">ID ' + player.player + '</button>');
         });
 
         $("#dialog").dialog("open");
@@ -87,15 +94,28 @@ window.addEventListener("message", function (event) {
 });
 
 function closeInventory() {
-    $.post("http://esx_inventoryhud/NUIFocusOff", JSON.stringify({}));
+    $.post("http://esx_inventoryhud/NUIFocusOff", JSON.stringify({
+        type: type
+    }));
 }
 
 function inventorySetup(items) {
     $("#playerInventory").html("");
     $.each(items, function (index, item) {
-        count = setCount(item);
+        count = setCount(item, false);
 
-        $("#playerInventory").append('<div class="slot"><div id="item-' + index + '" class="item" style = "background-image: url(\'img/items/' + item.name + '.png\')">' +
+        var bgColor = "none";
+        if (item.rare !== undefined) {
+            if (item.rare == 1) {
+                bgColor = "rgba(205, 127, 50, 0.4)";
+            } else if (item.rare == 2) {
+                bgColor = "rgba(192, 192, 192, 0.4)";
+            } else if (item.rare == 3) {
+                bgColor = "rgba(218, 165, 32, 0.4)";
+            }
+        }
+
+        $("#playerInventory").append('<div class="slot" style="background-color: ' + bgColor + ';"><div id="item-' + index + '" class="item" style = "background-image: url(\'img/items/' + item.name + '.png\')">' +
             '<div class="item-count">' + count + '</div> <div class="item-name">' + item.label + '</div> </div ><div class="item-name-bg"></div></div>');
         $('#item-' + index).data('item', item);
         $('#item-' + index).data('inventory', "main");
@@ -105,9 +125,19 @@ function inventorySetup(items) {
 function secondInventorySetup(items) {
     $("#otherInventory").html("");
     $.each(items, function (index, item) {
-        count = setCount(item);
+        count = setCount(item, true);
 
-        $("#otherInventory").append('<div class="slot"><div id="itemOther-' + index + '" class="item" style = "background-image: url(\'img/items/' + item.name + '.png\')">' +
+        var bgColor = "none";
+        if (item.rare !== undefined) {
+            if (item.rare == 1) {
+                bgColor = "rgba(205, 127, 50, 0.4)";
+            } else if (item.rare == 2) {
+                bgColor = "rgba(192, 192, 192, 0.4)";
+            } else if (item.rare == 3) {
+                bgColor = "rgba(218, 165, 32, 0.4)";
+            }
+        }
+        $("#otherInventory").append('<div class="slot" style="background-color: ' + bgColor + ';"><div id="itemOther-' + index + '" class="item" style = "background-image: url(\'img/items/' + item.name + '.png\')">' +
             '<div class="item-count">' + count + '</div> <div class="item-name">' + item.label + '</div> </div ><div class="item-name-bg"></div></div>');
         $('#itemOther-' + index).data('item', item);
         $('#itemOther-' + index).data('inventory', "second");
@@ -150,12 +180,17 @@ function disableInventory(ms) {
     }
 }
 
-function setCount(item) {
+function setCount(item, second) {
+    if (second && type === "shop") {
+        return "$" + formatMoney(item.price);
+    }
+
     count = item.count
 
     if (item.limit > 0) {
-        count = item.count + " / " + item.limit
+        count = item.count + " / " + item.limit;
     }
+
 
     if (item.type === "item_weapon") {
         if (count == 0) {
@@ -222,6 +257,27 @@ $(document).ready(function () {
         }
     });
 
+    $('#playerInventory').on('dblclick', '.item', function () {
+        itemData = $(this).data("item");
+
+        if (itemData == undefined || itemData.usable == undefined) {
+            return;
+        }
+
+        itemInventory = $(this).data("inventory");
+
+        if (itemInventory == undefined || itemInventory == "second") {
+            return;
+        }
+
+        if (itemData.usable) {
+            disableInventory(300);
+            $.post("http://esx_inventoryhud/UseItem", JSON.stringify({
+                item: itemData
+            }));
+        }
+    });
+
     $('#give').droppable({
         hoverClass: 'hoverControl',
         drop: function (event, ui) {
@@ -282,9 +338,21 @@ $(document).ready(function () {
                     item: itemData,
                     number: parseInt($("#count").val())
                 }));
+            } else if (type === "shop" && itemInventory === "second") {
+                disableInventory(500);
+                $.post("http://esx_inventoryhud/BuyItem", JSON.stringify({
+                    item: itemData,
+                    number: parseInt($("#count").val())
+                }));
             } else if (type === "property" && itemInventory === "second") {
                 disableInventory(500);
                 $.post("http://esx_inventoryhud/TakeFromProperty", JSON.stringify({
+                    item: itemData,
+                    number: parseInt($("#count").val())
+                }));
+            } else if (type === "storage" && itemInventory === "second") {
+                disableInventory(500);
+                $.post("http://esx_inventoryhud/TakeFromStorage", JSON.stringify({
                     item: itemData,
                     number: parseInt($("#count").val())
                 }));
@@ -312,6 +380,12 @@ $(document).ready(function () {
             } else if (type === "property" && itemInventory === "main") {
                 disableInventory(500);
                 $.post("http://esx_inventoryhud/PutIntoProperty", JSON.stringify({
+                    item: itemData,
+                    number: parseInt($("#count").val())
+                }));
+            } else if (type === "storage" && itemInventory === "main") {
+                disableInventory(500);
+                $.post("http://esx_inventoryhud/PutIntoStorage", JSON.stringify({
                     item: itemData,
                     number: parseInt($("#count").val())
                 }));

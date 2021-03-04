@@ -591,14 +591,14 @@ Citizen.CreateThread(function()
 	end
 end)
 
-Citizen.CreateThread(function()
+--[[Citizen.CreateThread(function()
   while true do
     Wait(0)
-    if IsControlPressed(0, Keys["F9"]) then
+    if IsControlPressed(0, Keys["F2"]) then
       OpenCivilianActionsMenu()
     end
   end
-end)
+end)]]
 
 -- Bälte
 
@@ -704,3 +704,8 @@ end)
 RegisterCommand("shuff", function(source, args, raw) --change command here
     TriggerEvent("SeatShuffle")
 end, false)
+
+RegisterNetEvent("esx_jsidmenu:openId")
+AddEventHandler("esx_jsidmenu:openId", function(_myPhoneNumber)
+  OpenCivilianActionsMenu()
+end)

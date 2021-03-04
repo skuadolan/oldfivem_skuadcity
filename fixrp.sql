@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server version:               10.4.17-MariaDB - mariadb.org binary distribution
--- Server OS:                    Win64
+-- Host:                         103.152.119.142
+-- Server version:               10.4.18-MariaDB-1:10.4.18+maria~focal - mariadb.org binary distribution
+-- Server OS:                    debian-linux-gnu
 -- HeidiSQL Version:             11.1.0.6116
 -- --------------------------------------------------------
 
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `addon_account` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.addon_account: ~10 rows (approximately)
+-- Dumping data for table skuadcity.addon_account: ~12 rows (approximately)
 /*!40000 ALTER TABLE `addon_account` DISABLE KEYS */;
 INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
 	('bank_savings', 'Bank Savings', 0),
@@ -34,9 +34,11 @@ INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
 	('society_ambulance', 'Ambulance', 1),
 	('society_banker', 'Banker', 1),
 	('society_cardealer', 'Cardealer', 1),
+	('society_mafia', 'Mafia', 1),
 	('society_mechanic', 'Mechanic', 1),
 	('society_police', 'Police', 1),
 	('society_realestateagent', 'Agent', 1),
+	('society_rebel', 'Rebel', 1),
 	('society_taxi', 'Taxi', 1);
 /*!40000 ALTER TABLE `addon_account` ENABLE KEYS */;
 
@@ -49,18 +51,35 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.addon_account_data: ~7 rows (approximately)
+-- Dumping data for table skuadcity.addon_account_data: ~24 rows (approximately)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
 INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(1, 'society_cardealer', 0, NULL),
 	(2, 'society_police', 0, NULL),
 	(3, 'society_ambulance', 0, NULL),
-	(4, 'society_mechanic', 0, NULL),
+	(4, 'society_mechanic', 288706, NULL),
 	(5, 'society_taxi', 0, NULL),
 	(6, 'society_realestateagent', 0, NULL),
-	(7, 'society_banker', 0, NULL);
+	(7, 'society_banker', 0, NULL),
+	(8, 'society_mafia', 0, NULL),
+	(9, 'society_rebel', 0, NULL),
+	(10, 'bank_savings', 0, 'steam:110000134a401f0'),
+	(11, 'caution', 0, 'steam:110000134a401f0'),
+	(12, 'property_black_money', 0, 'steam:110000134a401f0'),
+	(13, 'bank_savings', 0, 'steam:110000140625c76'),
+	(14, 'caution', 0, 'steam:110000140625c76'),
+	(15, 'property_black_money', 0, 'steam:110000140625c76'),
+	(16, 'bank_savings', 0, 'steam:1100001437d433b'),
+	(17, 'caution', 0, 'steam:1100001437d433b'),
+	(18, 'property_black_money', 0, 'steam:1100001437d433b'),
+	(19, 'bank_savings', 0, 'steam:11000013dcdf20b'),
+	(20, 'caution', 0, 'steam:11000013dcdf20b'),
+	(21, 'property_black_money', 0, 'steam:11000013dcdf20b'),
+	(22, 'bank_savings', 0, 'steam:11000013d89e9ee'),
+	(23, 'caution', 0, 'steam:11000013d89e9ee'),
+	(24, 'property_black_money', 0, 'steam:11000013d89e9ee');
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.addon_inventory
@@ -71,14 +90,16 @@ CREATE TABLE IF NOT EXISTS `addon_inventory` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.addon_inventory: ~6 rows (approximately)
+-- Dumping data for table skuadcity.addon_inventory: ~8 rows (approximately)
 /*!40000 ALTER TABLE `addon_inventory` DISABLE KEYS */;
 INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
 	('property', 'Property', 0),
 	('society_ambulance', 'EMS', 1),
 	('society_cardealer', 'Cardealer', 1),
+	('society_mafia', 'Mafia', 1),
 	('society_mechanic', 'Mechanic', 1),
 	('society_police', 'Police', 1),
+	('society_rebel', 'Rebel', 1),
 	('society_taxi', 'Taxi', 1);
 /*!40000 ALTER TABLE `addon_inventory` ENABLE KEYS */;
 
@@ -152,10 +173,17 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `sex` varchar(1) COLLATE utf8mb4_bin NOT NULL DEFAULT 'M',
   `height` varchar(128) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.characters: ~0 rows (approximately)
+-- Dumping data for table skuadcity.characters: ~6 rows (approximately)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
+INSERT INTO `characters` (`id`, `identifier`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`) VALUES
+	(1, 'steam:110000134a401f0', 'Dian', 'Nugroho', '2000-07-11', 'm', '172'),
+	(2, 'steam:110000140625c76', 'Cencen', 'Kim', '2003-05-21', 'm', '170'),
+	(3, 'steam:11000013dcdf20b', 'Hakim ', 'Kim', '20002-07-30', 'm', '188'),
+	(4, 'steam:1100001437d433b', 'Lyon', 'Bisa', '2000-04-14', 'm', '172'),
+	(5, 'steam:11000013d89e9ee', 'Alex', 'Junior', '1999-02-18', 'm', '180'),
+	(6, 'steam:11000013dcdf20b', 'Hakim', 'KIm', '2000-03-07', 'm', '188');
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.datastore
@@ -166,13 +194,15 @@ CREATE TABLE IF NOT EXISTS `datastore` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.datastore: ~5 rows (approximately)
+-- Dumping data for table skuadcity.datastore: ~7 rows (approximately)
 /*!40000 ALTER TABLE `datastore` DISABLE KEYS */;
 INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
 	('property', 'Property', 0),
 	('society_ambulance', 'EMS', 1),
+	('society_mafia', 'Mafia', 1),
 	('society_mechanic', 'Mechanic', 1),
 	('society_police', 'Police', 1),
+	('society_rebel', 'Rebel', 1),
 	('society_taxi', 'Taxi', 1);
 /*!40000 ALTER TABLE `datastore` ENABLE KEYS */;
 
@@ -185,15 +215,22 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.datastore_data: ~4 rows (approximately)
+-- Dumping data for table skuadcity.datastore_data: ~11 rows (approximately)
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
 INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(1, 'society_police', NULL, '{}'),
 	(2, 'society_ambulance', NULL, '{}'),
 	(3, 'society_mechanic', NULL, '{}'),
-	(4, 'society_taxi', NULL, '{}');
+	(4, 'society_taxi', NULL, '{}'),
+	(5, 'society_mafia', NULL, '{}'),
+	(6, 'society_rebel', NULL, '{}'),
+	(7, 'property', 'steam:110000134a401f0', '{}'),
+	(8, 'property', 'steam:110000140625c76', '{}'),
+	(9, 'property', 'steam:1100001437d433b', '{"dressing":[{"skin":{"bags_2":0,"sun_1":0,"lipstick_4":0,"torso_1":241,"chest_3":0,"mask_1":0,"blemishes_2":0,"glasses_2":2,"arms_2":0,"bproof_1":0,"blush_2":0,"chest_2":10,"chest_1":1,"bproof_2":0,"ears_2":0,"sex":0,"pants_1":12,"tshirt_2":0,"complexion_2":0,"eyebrows_2":0,"complexion_1":0,"makeup_4":0,"blush_3":0,"chain_1":1,"eyebrows_4":0,"pants_2":12,"eyebrows_3":0,"shoes_2":0,"age_1":0,"lipstick_2":0,"beard_1":9,"bodyb_2":0,"eyebrows_1":0,"decals_1":0,"hair_color_1":29,"moles_1":0,"hair_1":66,"beard_3":0,"beard_4":0,"bracelets_2":0,"beard_2":10,"face":24,"makeup_1":0,"bodyb_1":0,"hair_2":0,"glasses_1":15,"eye_color":0,"arms":19,"hair_color_2":0,"torso_2":2,"watches_1":4,"lipstick_1":0,"sun_2":0,"blemishes_1":0,"tshirt_1":15,"ears_1":-1,"mask_2":0,"bags_1":0,"shoes_1":29,"decals_2":0,"chain_2":0,"lipstick_3":0,"skin":9,"helmet_2":0,"makeup_2":0,"helmet_1":-1,"bracelets_1":0,"blush_1":0,"watches_2":0,"makeup_3":0,"age_2":0,"moles_2":0},"label":"police"},{"label":"policee","skin":{"bags_2":0,"sun_1":0,"lipstick_4":0,"torso_1":55,"sun_2":0,"mask_1":0,"decals_2":3,"glasses_2":2,"arms_2":0,"bproof_1":11,"blush_2":0,"chest_2":10,"chest_1":1,"makeup_3":0,"ears_2":0,"sex":0,"pants_1":28,"tshirt_2":0,"complexion_2":0,"eyebrows_2":0,"complexion_1":0,"makeup_4":0,"blush_3":0,"chain_1":0,"eyebrows_4":0,"pants_2":0,"eyebrows_3":0,"shoes_2":4,"age_1":0,"lipstick_2":0,"beard_1":9,"mask_2":0,"eyebrows_1":0,"decals_1":8,"hair_color_1":29,"moles_1":0,"hair_1":66,"beard_3":0,"beard_4":0,"bracelets_2":0,"beard_2":10,"chest_3":0,"makeup_1":0,"torso_2":0,"hair_2":0,"bodyb_1":0,"glasses_1":15,"helmet_2":2,"hair_color_2":0,"face":24,"arms":41,"lipstick_1":0,"bodyb_2":0,"lipstick_3":0,"tshirt_1":58,"ears_1":2,"watches_1":4,"bags_1":0,"blemishes_1":0,"shoes_1":32,"chain_2":0,"bproof_2":1,"skin":9,"blemishes_2":0,"eye_color":0,"helmet_1":58,"bracelets_1":0,"blush_1":0,"watches_2":0,"makeup_2":0,"age_2":0,"moles_2":0}},{"skin":{"bags_2":0,"sun_1":0,"lipstick_4":0,"torso_1":55,"chest_3":0,"mask_1":116,"blemishes_2":0,"glasses_2":2,"arms_2":0,"bproof_1":11,"blush_2":0,"tshirt_1":58,"chest_1":1,"bproof_2":1,"ears_2":0,"sex":0,"pants_1":28,"tshirt_2":0,"complexion_2":0,"eyebrows_2":0,"complexion_1":0,"makeup_4":0,"blush_3":0,"chain_1":0,"eyebrows_4":0,"pants_2":0,"eyebrows_3":0,"shoes_2":4,"face":24,"lipstick_2":0,"beard_1":9,"bodyb_2":0,"eyebrows_1":0,"decals_1":8,"watches_1":4,"moles_1":0,"hair_1":66,"beard_3":0,"beard_4":0,"bracelets_2":0,"beard_2":10,"torso_2":0,"makeup_1":0,"lipstick_3":0,"hair_2":0,"makeup_3":0,"hair_color_1":29,"bodyb_1":0,"hair_color_2":0,"glasses_1":15,"mask_2":18,"lipstick_1":0,"age_1":0,"sun_2":0,"chest_2":10,"shoes_1":32,"ears_1":2,"bags_1":0,"arms":41,"blemishes_1":0,"chain_2":0,"decals_2":3,"skin":9,"eye_color":0,"helmet_2":2,"helmet_1":58,"bracelets_1":0,"blush_1":0,"watches_2":0,"makeup_2":0,"age_2":0,"moles_2":0},"label":"policee real"}]}'),
+	(10, 'property', 'steam:11000013dcdf20b', '{}'),
+	(11, 'property', 'steam:11000013d89e9ee', '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.dpkeybinds
@@ -283,6 +320,48 @@ INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 	(52, 'Fraud', 2000, 2);
 /*!40000 ALTER TABLE `fine_types` ENABLE KEYS */;
 
+-- Dumping structure for table skuadcity.fine_types_mafia
+CREATE TABLE IF NOT EXISTS `fine_types_mafia` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `label` varchar(255) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table skuadcity.fine_types_mafia: ~7 rows (approximately)
+/*!40000 ALTER TABLE `fine_types_mafia` DISABLE KEYS */;
+INSERT INTO `fine_types_mafia` (`id`, `label`, `amount`, `category`) VALUES
+	(1, 'Raket', 3000, 0),
+	(2, 'Raket', 5000, 0),
+	(3, 'Raket', 10000, 1),
+	(4, 'Raket', 20000, 1),
+	(5, 'Raket', 50000, 2),
+	(6, 'Raket', 150000, 3),
+	(7, 'Raket', 350000, 3);
+/*!40000 ALTER TABLE `fine_types_mafia` ENABLE KEYS */;
+
+-- Dumping structure for table skuadcity.fine_types_rebel
+CREATE TABLE IF NOT EXISTS `fine_types_rebel` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `label` varchar(255) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table skuadcity.fine_types_rebel: ~7 rows (approximately)
+/*!40000 ALTER TABLE `fine_types_rebel` DISABLE KEYS */;
+INSERT INTO `fine_types_rebel` (`id`, `label`, `amount`, `category`) VALUES
+	(1, 'Raket', 3000, 0),
+	(2, 'Raket', 5000, 0),
+	(3, 'Raket', 10000, 1),
+	(4, 'Raket', 20000, 1),
+	(5, 'Raket', 50000, 2),
+	(6, 'Raket', 150000, 3),
+	(7, 'Raket', 350000, 3);
+/*!40000 ALTER TABLE `fine_types_rebel` ENABLE KEYS */;
+
 -- Dumping structure for table skuadcity.glovebox_inventory
 CREATE TABLE IF NOT EXISTS `glovebox_inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -308,7 +387,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.items: ~46 rows (approximately)
+-- Dumping data for table skuadcity.items: ~56 rows (approximately)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 INSERT INTO `items` (`name`, `label`, `weight`, `limit`, `rare`, `can_remove`) VALUES
 	('HeavyArmor', 'Heavy Body Armor', 1, 3, 0, 1),
@@ -324,6 +403,8 @@ INSERT INTO `items` (`name`, `label`, `weight`, `limit`, `rare`, `can_remove`) V
 	('carokit', 'Body Kit', 3, 10, 0, 1),
 	('carotool', 'Bodywork Tools', 2, 10, 0, 1),
 	('clothe', 'Cloth', 1, 100, 0, 1),
+	('coke', 'Coke', 1, 100, 0, 1),
+	('coke_pooch', 'bag of coke', 1, 100, 0, 1),
 	('copper', 'Copper', 1, 100, 0, 1),
 	('cutted_wood', 'Cut Wood', 1, 100, 0, 1),
 	('diamond', 'Diamond', 1, 100, 0, 1),
@@ -339,21 +420,29 @@ INSERT INTO `items` (`name`, `label`, `weight`, `limit`, `rare`, `can_remove`) V
 	('iron', 'Iron', 1, 100, 0, 1),
 	('marijuana', 'Marijuana', 5, 100, 0, 1),
 	('medikit', 'Medikit', 2, 25, 0, 1),
+	('meth', 'Meth', 1, 100, 0, 1),
+	('meth_pooch', 'bag of meth', 1, 100, 0, 1),
 	('mgAmmo', 'Maching Gun Ammo Box', 1, 5, 0, 1),
+	('moonshine', 'Straight Moonshine', 1, 100, 0, 1),
+	('moonshine_pooch', 'Bottled Moonshine', 1, 100, 0, 1),
+	('opium', 'Opium', 1, 100, 0, 1),
+	('opium_pooch', 'bag of opium', 1, 100, 0, 1),
 	('pAmmo', 'Pistol Ammo Box', 1, 5, 0, 1),
 	('packaged_chicken', 'Chicken in a Tray', 1, 100, 0, 1),
 	('packaged_plank', 'Pack of Boards', 1, 100, 0, 1),
 	('parkingcard', 'Parking Card', 1, -1, 0, 1),
 	('petrol', 'Oil', 1, 100, 0, 1),
 	('petrol_raffin', 'Refined Petroleum', 1, 100, 0, 1),
-	('phone', 'Phone', 40, 1, 0, 1),
-	('radio', 'Radio', 2, 0, 1, 30),
+	('phone', 'Phone', 2, 5, 0, 1),
+	('radio', 'Radio', 2, 5, 1, 1),
 	('sgAmmo', 'Shotgun Ammo Box', 1, 5, 0, 1),
 	('silencieux', 'Silencieux', 1, -1, 0, 1),
 	('slaughtered_chicken', 'Slaughtered Chicken', 1, 100, 0, 1),
 	('stone', 'Stone', 1, 100, 0, 1),
 	('washed_stone', 'Washed Stone', 1, 100, 0, 1),
 	('water', 'Water', 1, 40, 0, 1),
+	('weed', 'Weed', 1, 100, 0, 1),
+	('weed_pooch', 'bag of weed', 1, 100, 0, 1),
 	('wood', 'Wood', 1, 100, 0, 1),
 	('wool', 'Wool', 1, 100, 0, 1),
 	('yusuf', 'Skin de luxe', 1, -1, 0, 1);
@@ -367,7 +456,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table skuadcity.jobs: ~20 rows (approximately)
+-- Dumping data for table skuadcity.jobs: ~25 rows (approximately)
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
 INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('ambulance', 'EMS', 0),
@@ -375,19 +464,24 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('cardealer', 'Cardealer', 0),
 	('fisherman', 'Fisherman', 0),
 	('fueler', 'Refiner', 0),
+	('gopostal', 'Correios', 0),
 	('lumberjack', 'Lumberjack', 0),
+	('mafia', 'Mafia', 1),
 	('mechanic', 'Mechanic', 0),
 	('miner', 'Miner', 0),
-	('offambulance', 'Off-Duty', 0),
-	('offmechanic', 'Off-Duty', 0),
-	('offpolice', 'Off-Duty', 0),
+	('offambulance', 'Off-Duty', 1),
+	('offmechanic', 'Off-Duty', 1),
+	('offpolice', 'Off-Duty', 1),
 	('police', 'LSPD', 0),
+	('ranger', 'Park Ranger', 0),
 	('realestateagent', 'Agent', 0),
+	('rebel', 'Rebel', 1),
 	('reporter', 'Journalist', 0),
 	('slaughterer', 'Feller', 0),
 	('tailor', 'Dressmaker', 0),
 	('taxi', 'Taxi', 0),
 	('textil', 'Couturier', 0),
+	('traffic', 'Traffic Officer', 0),
 	('trucker', 'Trucker', 0),
 	('unemployed', 'Unemployed', 0);
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
@@ -403,9 +497,9 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
   `skin_male` longtext COLLATE utf8mb4_bin NOT NULL,
   `skin_female` longtext COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.job_grades: ~55 rows (approximately)
+-- Dumping data for table skuadcity.job_grades: ~70 rows (approximately)
 /*!40000 ALTER TABLE `job_grades` DISABLE KEYS */;
 INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
 	(1, 'ambulance', 0, 'ambulance', 'Jr. EMT', 25000, '{"tshirt_2":0,"hair_color_1":5,"glasses_2":3,"shoes":9,"torso_2":3,"hair_color_2":0,"pants_1":24,"glasses_1":4,"hair_1":2,"sex":0,"decals_2":0,"tshirt_1":15,"helmet_1":8,"helmet_2":0,"arms":92,"face":19,"decals_1":60,"torso_1":13,"hair_2":0,"skin":34,"pants_2":5}', '{"tshirt_2":3,"decals_2":0,"glasses":0,"hair_1":2,"torso_1":73,"shoes":1,"hair_color_2":0,"glasses_1":19,"skin":13,"face":6,"pants_2":5,"tshirt_1":75,"pants_1":37,"helmet_1":57,"torso_2":0,"arms":14,"sex":1,"glasses_2":0,"decals_1":0,"hair_2":0,"helmet_2":0,"hair_color_1":0}'),
@@ -417,23 +511,23 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 	(7, 'police', 2, 'sergeant', 'Sergent', 35000, '{}', '{}'),
 	(8, 'police', 3, 'lieutenant', 'Lieutenant', 45000, '{}', '{}'),
 	(9, 'police', 4, 'boss', 'Commandant', 75000, '{}', '{}'),
-	(10, 'taxi', 0, 'recrue', 'Recrue', 1500, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
-	(11, 'taxi', 1, 'novice', 'Novice', 3500, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
-	(12, 'taxi', 2, 'experimente', 'Experienced', 4500, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
-	(13, 'taxi', 3, 'uber', 'Uber Cabby', 7500, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
-	(14, 'taxi', 4, 'boss', 'Lead Cabby', 15000, '{"hair_2":0,"hair_color_2":0,"torso_1":29,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":1,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":4,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(10, 'taxi', 0, 'recrue', 'Recrue', 15000, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(11, 'taxi', 1, 'novice', 'Novice', 25000, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(12, 'taxi', 2, 'experimente', 'Experienced', 35000, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(13, 'taxi', 3, 'uber', 'Uber Cabby', 45000, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(14, 'taxi', 4, 'boss', 'Lead Cabby', 75000, '{"hair_2":0,"hair_color_2":0,"torso_1":29,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":1,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":4,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
 	(15, 'mechanic', 0, 'recrue', 'Recrue', 15000, '{}', '{}'),
 	(16, 'mechanic', 1, 'novice', 'Novice', 25000, '{}', '{}'),
 	(17, 'mechanic', 2, 'experimente', 'Experienced', 35000, '{}', '{}'),
 	(18, 'mechanic', 3, 'chief', 'Leader', 45000, '{}', '{}'),
 	(19, 'mechanic', 4, 'boss', 'Boss', 75000, '{}', '{}'),
-	(20, 'lumberjack', 0, 'employee', 'employee', 45000, '{}', '{}'),
-	(21, 'fisherman', 0, 'employee', 'employee', 45000, '{}', '{}'),
-	(22, 'fueler', 0, 'employee', 'employee', 45000, '{}', '{}'),
-	(23, 'reporter', 0, 'employee', 'employee', 45000, '{}', '{}'),
-	(24, 'tailor', 0, 'employee', 'employee', 45000, '{"mask_1":0,"arms":1,"glasses_1":0,"hair_color_2":4,"makeup_1":0,"face":19,"glasses":0,"mask_2":0,"makeup_3":0,"skin":29,"helmet_2":0,"lipstick_4":0,"sex":0,"torso_1":24,"makeup_2":0,"bags_2":0,"chain_2":0,"ears_1":-1,"bags_1":0,"bproof_1":0,"shoes_2":0,"lipstick_2":0,"chain_1":0,"tshirt_1":0,"eyebrows_3":0,"pants_2":0,"beard_4":0,"torso_2":0,"beard_2":6,"ears_2":0,"hair_2":0,"shoes_1":36,"tshirt_2":0,"beard_3":0,"hair_1":2,"hair_color_1":0,"pants_1":48,"helmet_1":-1,"bproof_2":0,"eyebrows_4":0,"eyebrows_2":0,"decals_1":0,"age_2":0,"beard_1":5,"shoes":10,"lipstick_1":0,"eyebrows_1":0,"glasses_2":0,"makeup_4":0,"decals_2":0,"lipstick_3":0,"age_1":0}', '{"mask_1":0,"arms":5,"glasses_1":5,"hair_color_2":4,"makeup_1":0,"face":19,"glasses":0,"mask_2":0,"makeup_3":0,"skin":29,"helmet_2":0,"lipstick_4":0,"sex":1,"torso_1":52,"makeup_2":0,"bags_2":0,"chain_2":0,"ears_1":-1,"bags_1":0,"bproof_1":0,"shoes_2":1,"lipstick_2":0,"chain_1":0,"tshirt_1":23,"eyebrows_3":0,"pants_2":0,"beard_4":0,"torso_2":0,"beard_2":6,"ears_2":0,"hair_2":0,"shoes_1":42,"tshirt_2":4,"beard_3":0,"hair_1":2,"hair_color_1":0,"pants_1":36,"helmet_1":-1,"bproof_2":0,"eyebrows_4":0,"eyebrows_2":0,"decals_1":0,"age_2":0,"beard_1":5,"shoes":10,"lipstick_1":0,"eyebrows_1":0,"glasses_2":0,"makeup_4":0,"decals_2":0,"lipstick_3":0,"age_1":0}'),
-	(25, 'miner', 0, 'employee', 'employee', 45000, '{"tshirt_2":1,"ears_1":8,"glasses_1":15,"torso_2":0,"ears_2":2,"glasses_2":3,"shoes_2":1,"pants_1":75,"shoes_1":51,"bags_1":0,"helmet_2":0,"pants_2":7,"torso_1":71,"tshirt_1":59,"arms":2,"bags_2":0,"helmet_1":0}', '{}'),
-	(26, 'slaughterer', 0, 'employee', 'employee', 45000, '{"age_1":0,"glasses_2":0,"beard_1":5,"decals_2":0,"beard_4":0,"shoes_2":0,"tshirt_2":0,"lipstick_2":0,"hair_2":0,"arms":67,"pants_1":36,"skin":29,"eyebrows_2":0,"shoes":10,"helmet_1":-1,"lipstick_1":0,"helmet_2":0,"hair_color_1":0,"glasses":0,"makeup_4":0,"makeup_1":0,"hair_1":2,"bproof_1":0,"bags_1":0,"mask_1":0,"lipstick_3":0,"chain_1":0,"eyebrows_4":0,"sex":0,"torso_1":56,"beard_2":6,"shoes_1":12,"decals_1":0,"face":19,"lipstick_4":0,"tshirt_1":15,"mask_2":0,"age_2":0,"eyebrows_3":0,"chain_2":0,"glasses_1":0,"ears_1":-1,"bags_2":0,"ears_2":0,"torso_2":0,"bproof_2":0,"makeup_2":0,"eyebrows_1":0,"makeup_3":0,"pants_2":0,"beard_3":0,"hair_color_2":4}', '{"age_1":0,"glasses_2":0,"beard_1":5,"decals_2":0,"beard_4":0,"shoes_2":0,"tshirt_2":0,"lipstick_2":0,"hair_2":0,"arms":72,"pants_1":45,"skin":29,"eyebrows_2":0,"shoes":10,"helmet_1":-1,"lipstick_1":0,"helmet_2":0,"hair_color_1":0,"glasses":0,"makeup_4":0,"makeup_1":0,"hair_1":2,"bproof_1":0,"bags_1":0,"mask_1":0,"lipstick_3":0,"chain_1":0,"eyebrows_4":0,"sex":1,"torso_1":49,"beard_2":6,"shoes_1":24,"decals_1":0,"face":19,"lipstick_4":0,"tshirt_1":9,"mask_2":0,"age_2":0,"eyebrows_3":0,"chain_2":0,"glasses_1":5,"ears_1":-1,"bags_2":0,"ears_2":0,"torso_2":0,"bproof_2":0,"makeup_2":0,"eyebrows_1":0,"makeup_3":0,"pants_2":0,"beard_3":0,"hair_color_2":4}'),
+	(20, 'lumberjack', 0, 'employee', 'employee', 30000, '{}', '{}'),
+	(21, 'fisherman', 0, 'employee', 'employee', 30000, '{}', '{}'),
+	(22, 'fueler', 0, 'employee', 'employee', 30000, '{}', '{}'),
+	(23, 'reporter', 0, 'employee', 'employee', 30000, '{}', '{}'),
+	(24, 'tailor', 0, 'employee', 'employee', 30000, '{"mask_1":0,"arms":1,"glasses_1":0,"hair_color_2":4,"makeup_1":0,"face":19,"glasses":0,"mask_2":0,"makeup_3":0,"skin":29,"helmet_2":0,"lipstick_4":0,"sex":0,"torso_1":24,"makeup_2":0,"bags_2":0,"chain_2":0,"ears_1":-1,"bags_1":0,"bproof_1":0,"shoes_2":0,"lipstick_2":0,"chain_1":0,"tshirt_1":0,"eyebrows_3":0,"pants_2":0,"beard_4":0,"torso_2":0,"beard_2":6,"ears_2":0,"hair_2":0,"shoes_1":36,"tshirt_2":0,"beard_3":0,"hair_1":2,"hair_color_1":0,"pants_1":48,"helmet_1":-1,"bproof_2":0,"eyebrows_4":0,"eyebrows_2":0,"decals_1":0,"age_2":0,"beard_1":5,"shoes":10,"lipstick_1":0,"eyebrows_1":0,"glasses_2":0,"makeup_4":0,"decals_2":0,"lipstick_3":0,"age_1":0}', '{"mask_1":0,"arms":5,"glasses_1":5,"hair_color_2":4,"makeup_1":0,"face":19,"glasses":0,"mask_2":0,"makeup_3":0,"skin":29,"helmet_2":0,"lipstick_4":0,"sex":1,"torso_1":52,"makeup_2":0,"bags_2":0,"chain_2":0,"ears_1":-1,"bags_1":0,"bproof_1":0,"shoes_2":1,"lipstick_2":0,"chain_1":0,"tshirt_1":23,"eyebrows_3":0,"pants_2":0,"beard_4":0,"torso_2":0,"beard_2":6,"ears_2":0,"hair_2":0,"shoes_1":42,"tshirt_2":4,"beard_3":0,"hair_1":2,"hair_color_1":0,"pants_1":36,"helmet_1":-1,"bproof_2":0,"eyebrows_4":0,"eyebrows_2":0,"decals_1":0,"age_2":0,"beard_1":5,"shoes":10,"lipstick_1":0,"eyebrows_1":0,"glasses_2":0,"makeup_4":0,"decals_2":0,"lipstick_3":0,"age_1":0}'),
+	(25, 'miner', 0, 'employee', 'employee', 30000, '{"tshirt_2":1,"ears_1":8,"glasses_1":15,"torso_2":0,"ears_2":2,"glasses_2":3,"shoes_2":1,"pants_1":75,"shoes_1":51,"bags_1":0,"helmet_2":0,"pants_2":7,"torso_1":71,"tshirt_1":59,"arms":2,"bags_2":0,"helmet_1":0}', '{}'),
+	(26, 'slaughterer', 0, 'employee', 'employee', 30000, '{"age_1":0,"glasses_2":0,"beard_1":5,"decals_2":0,"beard_4":0,"shoes_2":0,"tshirt_2":0,"lipstick_2":0,"hair_2":0,"arms":67,"pants_1":36,"skin":29,"eyebrows_2":0,"shoes":10,"helmet_1":-1,"lipstick_1":0,"helmet_2":0,"hair_color_1":0,"glasses":0,"makeup_4":0,"makeup_1":0,"hair_1":2,"bproof_1":0,"bags_1":0,"mask_1":0,"lipstick_3":0,"chain_1":0,"eyebrows_4":0,"sex":0,"torso_1":56,"beard_2":6,"shoes_1":12,"decals_1":0,"face":19,"lipstick_4":0,"tshirt_1":15,"mask_2":0,"age_2":0,"eyebrows_3":0,"chain_2":0,"glasses_1":0,"ears_1":-1,"bags_2":0,"ears_2":0,"torso_2":0,"bproof_2":0,"makeup_2":0,"eyebrows_1":0,"makeup_3":0,"pants_2":0,"beard_3":0,"hair_color_2":4}', '{"age_1":0,"glasses_2":0,"beard_1":5,"decals_2":0,"beard_4":0,"shoes_2":0,"tshirt_2":0,"lipstick_2":0,"hair_2":0,"arms":72,"pants_1":45,"skin":29,"eyebrows_2":0,"shoes":10,"helmet_1":-1,"lipstick_1":0,"helmet_2":0,"hair_color_1":0,"glasses":0,"makeup_4":0,"makeup_1":0,"hair_1":2,"bproof_1":0,"bags_1":0,"mask_1":0,"lipstick_3":0,"chain_1":0,"eyebrows_4":0,"sex":1,"torso_1":49,"beard_2":6,"shoes_1":24,"decals_1":0,"face":19,"lipstick_4":0,"tshirt_1":9,"mask_2":0,"age_2":0,"eyebrows_3":0,"chain_2":0,"glasses_1":5,"ears_1":-1,"bags_2":0,"ears_2":0,"torso_2":0,"bproof_2":0,"makeup_2":0,"eyebrows_1":0,"makeup_3":0,"pants_2":0,"beard_3":0,"hair_color_2":4}'),
 	(27, 'banker', 0, 'advisor', 'Advisor', 15000, '{}', '{}'),
 	(28, 'banker', 1, 'banker', 'Banker', 25000, '{}', '{}'),
 	(29, 'banker', 2, 'business_banker', 'Business Banker', 35000, '{}', '{}'),
@@ -448,21 +542,36 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 	(38, 'cardealer', 1, 'novice', 'Novice', 35000, '{}', '{}'),
 	(39, 'cardealer', 2, 'experienced', 'Experienced', 45000, '{}', '{}'),
 	(40, 'cardealer', 3, 'boss', 'Boss', 75000, '{}', '{}'),
-	(41, 'trucker', 0, 'employee', 'Employee', 200, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}'),
-	(42, 'offpolice', 0, 'recruit', 'Recruit', 12, '{}', '{}'),
-	(43, 'offpolice', 1, 'officer', 'Officer', 24, '{}', '{}'),
-	(44, 'offpolice', 2, 'sergeant', 'Sergeant', 36, '{}', '{}'),
-	(45, 'offpolice', 3, 'lieutenant', 'Lieutenant', 48, '{}', '{}'),
+	(41, 'trucker', 0, 'employee', 'Employee', 30000, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}'),
+	(42, 'offpolice', 0, 'recruit', 'Recruit', 0, '{}', '{}'),
+	(43, 'offpolice', 1, 'officer', 'Officer', 0, '{}', '{}'),
+	(44, 'offpolice', 2, 'sergeant', 'Sergeant', 0, '{}', '{}'),
+	(45, 'offpolice', 3, 'lieutenant', 'Lieutenant', 0, '{}', '{}'),
 	(46, 'offpolice', 4, 'boss', 'Boss', 0, '{}', '{}'),
-	(47, 'offambulance', 0, 'ambulance', 'Ambulance', 12, '{}', '{}'),
-	(48, 'offambulance', 1, 'doctor', 'Doctor', 24, '{}', '{}'),
-	(49, 'offambulance', 2, 'chief_doctor', 'Chef', 36, '{}', '{}'),
-	(50, 'offambulance', 3, 'boss', 'Boss', 48, '{}', '{}'),
-	(51, 'offmechanic', 0, 'recrue', 'Recrue', 12, '{}', '{}'),
-	(52, 'offmechanic', 1, 'novice', 'Novice', 24, '{}', '{}'),
-	(53, 'offmechanic', 2, 'experimente', 'Experienced', 36, '{}', '{}'),
-	(54, 'offmechanic', 3, 'chief', 'Leader', 48, '{}', '{}'),
-	(55, 'offmechanic', 4, 'boss', 'Boss', 0, '{}', '{}');
+	(47, 'offambulance', 0, 'ambulance', 'Ambulance', 0, '{}', '{}'),
+	(48, 'offambulance', 1, 'doctor', 'Doctor', 0, '{}', '{}'),
+	(49, 'offambulance', 2, 'chief_doctor', 'Chef', 0, '{}', '{}'),
+	(50, 'offambulance', 3, 'boss', 'Boss', 0, '{}', '{}'),
+	(51, 'offmechanic', 0, 'recrue', 'Recrue', 0, '{}', '{}'),
+	(52, 'offmechanic', 1, 'novice', 'Novice', 0, '{}', '{}'),
+	(53, 'offmechanic', 2, 'experimente', 'Experienced', 0, '{}', '{}'),
+	(54, 'offmechanic', 3, 'chief', 'Leader', 0, '{}', '{}'),
+	(55, 'offmechanic', 4, 'boss', 'Boss', 0, '{}', '{}'),
+	(56, 'traffic', 0, 'employee', 'Valores', 30000, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}'),
+	(57, 'rebel', 0, 'soldato', 'Ptite-Frappe', 25000, '{}', '{}'),
+	(58, 'rebel', 1, 'capo', 'Capo', 35000, '{}', '{}'),
+	(59, 'rebel', 2, 'consigliere', 'Consigliere', 45000, '{}', '{}'),
+	(60, 'rebel', 3, 'boss', 'Parain', 75000, '{}', '{}'),
+	(61, 'mafia', 0, 'soldato', 'Ptite-Frappe', 25000, '{}', '{}'),
+	(62, 'mafia', 1, 'capo', 'Capo', 35000, '{}', '{}'),
+	(63, 'mafia', 2, 'consigliere', 'Consigliere', 45000, '{}', '{}'),
+	(64, 'mafia', 3, 'boss', 'Parain', 75000, '{}', '{}'),
+	(65, 'ranger', 0, 'employee', 'Valores', 30000, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}'),
+	(66, 'mafia', 0, 'soldato', 'Ptite-Frappe', 25000, '{}', '{}'),
+	(67, 'mafia', 1, 'capo', 'Capo', 35000, '{}', '{}'),
+	(68, 'mafia', 2, 'consigliere', 'Consigliere', 45000, '{}', '{}'),
+	(69, 'mafia', 3, 'boss', 'Parain', 75000, '{}', '{}'),
+	(70, 'gopostal', 0, 'employee', 'Sedex', 30000, '{"tshirt_1":59,"torso_1":89,"arms":31,"pants_1":36,"glasses_1":19,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":2,"glasses_2":0,"torso_2":1,"shoes":35,"hair_1":0,"skin":0,"sex":0,"glasses_1":19,"pants_2":0,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":5}', '{"tshirt_1":36,"torso_1":0,"arms":68,"pants_1":30,"glasses_1":15,"decals_2":0,"hair_color_2":0,"helmet_2":0,"hair_color_1":0,"face":27,"glasses_2":0,"torso_2":11,"shoes":26,"hair_1":5,"skin":0,"sex":1,"glasses_1":15,"pants_2":2,"hair_2":0,"decals_1":0,"tshirt_2":0,"helmet_1":19}');
 /*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.licenses
@@ -538,6 +647,8 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
 
 -- Dumping data for table skuadcity.owned_vehicles: ~0 rows (approximately)
 /*!40000 ALTER TABLE `owned_vehicles` DISABLE KEYS */;
+INSERT INTO `owned_vehicles` (`owner`, `plate`, `vehicle`, `type`, `job`, `category`, `name`, `stored`) VALUES
+	('steam:1100001437d433b', 'FDB 708', '{"neonColor":[255,0,255],"modExhaust":-1,"dirtLevel":0.0,"color1":147,"modRoof":-1,"modGrille":-1,"model":-893593888,"modAirFilter":-1,"extras":[],"modFrontWheels":18,"modEngine":1,"modAPlate":-1,"modSpoilers":-1,"modArchCover":-1,"modRightFender":-1,"modSpeakers":-1,"modTank":-1,"wheelColor":0,"modTrimA":-1,"modLivery":-1,"color2":0,"modArmor":4,"modTrunk":-1,"modFender":-1,"modFrame":-1,"modHood":-1,"modTurbo":1,"neonEnabled":[false,false,false,false],"modRearBumper":-1,"modHorns":-1,"modShifterLeavers":-1,"modFrontBumper":-1,"modSeats":-1,"modXenon":false,"bodyHealth":1000.0,"modSuspension":3,"modSteeringWheel":-1,"modStruts":-1,"wheels":0,"modBackWheels":-1,"modWindows":-1,"fuelLevel":64.6,"modDial":-1,"pearlescentColor":3,"modHydrolic":-1,"windowTint":1,"modAerials":-1,"modEngineBlock":-1,"engineHealth":1000.0,"modPlateHolder":-1,"modDashboard":-1,"xenonColor":255,"tyreSmokeColor":[65,211,244],"plateIndex":4,"modSmokeEnabled":1,"modOrnaments":-1,"modDoorSpeaker":-1,"modVanityPlate":-1,"modTrimB":-1,"modSideSkirt":-1,"modTransmission":2,"plate":"FDB 708","modBrakes":2}', 'car', 'civ', 'importcars', 'Mercedes-Benz C63', 1);
 /*!40000 ALTER TABLE `owned_vehicles` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.phone_app_chat
@@ -614,7 +725,7 @@ CREATE TABLE IF NOT EXISTS `properties` (
   `room_menu` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   `price` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumping data for table skuadcity.properties: ~82 rows (approximately)
 /*!40000 ALTER TABLE `properties` DISABLE KEYS */;
@@ -691,16 +802,16 @@ INSERT INTO `properties` (`id`, `name`, `label`, `entering`, `exit`, `inside`, `
 	(70, 'MBWPowerBrokerIce', 'MBW Power Broker Ice', NULL, '{"x":-1392.74,"y":-480.18,"z":71.14}', '{"x":-1389.43,"y":-479.01,"z":71.14}', NULL, '["ex_sm_15_office_03a"]', 'MazeBankWest', 0, 1, 0, '{"x":-1390.76,"y":-479.22,"z":72.04}', 2700000),
 	(71, 'MBWPowerBrokerConvservative', 'MBW Power Broker Convservative', NULL, '{"x":-1392.74,"y":-480.18,"z":71.14}', '{"x":-1389.43,"y":-479.01,"z":71.14}', NULL, '["ex_sm_15_office_03b"]', 'MazeBankWest', 0, 1, 0, '{"x":-1390.76,"y":-479.22,"z":72.04}', 2700000),
 	(72, 'MBWPowerBrokerPolished', 'MBW Power Broker Polished', NULL, '{"x":-1392.74,"y":-480.18,"z":71.14}', '{"x":-1389.43,"y":-479.01,"z":71.14}', NULL, '["ex_sm_15_office_03c"]', 'MazeBankWest', 0, 1, 0, '{"x":-1390.76,"y":-479.22,"z":72.04}', 2700000),
-	(100, 'MedEndApartment1', 'Medium Apartment 1', '{"y":3107.56,"z":41.49,"x":240.6}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":3100.77,"z":41.49,"x":240.21}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
-	(101, 'MedEndApartment2', 'Medium Apartment 2', '{"y":3169.1,"z":41.81,"x":246.7}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":3163.97,"z":41.82,"x":245.83}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
-	(102, 'MedEndApartment3', 'Medium Apartment 3', '{"y":2667.22,"z":39.06,"x":980.38}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":2668.77,"z":39.06,"x":986.38}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
-	(103, 'MedEndApartment4', 'Medium Apartment 4', '{"y":3031.08,"z":42.89,"x":195.85}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":3031.39,"z":42.27,"x":200.68}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
-	(104, 'MedEndApartment5', 'Medium Apartment 5', '{"y":4642.17,"z":42.88,"x":1724.43}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":4637.34,"z":42.31,"x":1724.27}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
-	(105, 'MedEndApartment6', 'Medium Apartment 6', '{"y":4739.73,"z":40.99,"x":1664.98}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":4740.93,"z":41.08,"x":1670.92}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
-	(106, 'MedEndApartment7', 'Medium Apartment 7', '{"y":6577.19,"z":31.74,"x":12.57}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":6572.61,"z":31.72,"x":16.93}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
-	(107, 'MedEndApartment8', 'Medium Apartment 8', '{"y":6190.84,"z":30.73,"x":-374.31}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":6186.58,"z":30.52,"x":-372.65}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
-	(108, 'MedEndApartment9', 'Medium Apartment 9', '{"y":6597.56,"z":30.86,"x":-27.06}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":6601.55,"z":30.44,"x":-30.55}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
-	(109, 'MedEndApartment10', 'Medium Apartment 10', '{"y":6340.1,"z":28.84,"x":-367.33}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":6336.97,"z":28.84,"x":-371.3}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000);
+	(73, 'MedEndApartment1', 'Medium Apartment 1', '{"y":3107.56,"z":41.49,"x":240.6}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":3100.77,"z":41.49,"x":240.21}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
+	(74, 'MedEndApartment2', 'Medium Apartment 2', '{"y":3169.1,"z":41.81,"x":246.7}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":3163.97,"z":41.82,"x":245.83}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
+	(75, 'MedEndApartment3', 'Medium Apartment 3', '{"y":2667.22,"z":39.06,"x":980.38}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":2668.77,"z":39.06,"x":986.38}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
+	(76, 'MedEndApartment4', 'Medium Apartment 4', '{"y":3031.08,"z":42.89,"x":195.85}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":3031.39,"z":42.27,"x":200.68}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
+	(77, 'MedEndApartment5', 'Medium Apartment 5', '{"y":4642.17,"z":42.88,"x":1724.43}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":4637.34,"z":42.31,"x":1724.27}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
+	(78, 'MedEndApartment6', 'Medium Apartment 6', '{"y":4739.73,"z":40.99,"x":1664.98}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":4740.93,"z":41.08,"x":1670.92}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
+	(79, 'MedEndApartment7', 'Medium Apartment 7', '{"y":6577.19,"z":31.74,"x":12.57}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":6572.61,"z":31.72,"x":16.93}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
+	(80, 'MedEndApartment8', 'Medium Apartment 8', '{"y":6190.84,"z":30.73,"x":-374.31}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":6186.58,"z":30.52,"x":-372.65}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
+	(81, 'MedEndApartment9', 'Medium Apartment 9', '{"y":6597.56,"z":30.86,"x":-27.06}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":6601.55,"z":30.44,"x":-30.55}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000),
+	(82, 'MedEndApartment10', 'Medium Apartment 10', '{"y":6340.1,"z":28.84,"x":-367.33}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":6336.97,"z":28.84,"x":-371.3}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000);
 /*!40000 ALTER TABLE `properties` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.rented_vehicles
@@ -768,10 +879,12 @@ CREATE TABLE IF NOT EXISTS `trunk_inventory` (
   `owned` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `plate` (`plate`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table skuadcity.trunk_inventory: ~0 rows (approximately)
 /*!40000 ALTER TABLE `trunk_inventory` DISABLE KEYS */;
+INSERT INTO `trunk_inventory` (`id`, `plate`, `data`, `owned`) VALUES
+	(1, 'JZZ 155 ', '{"coffre":[]}', 0);
 /*!40000 ALTER TABLE `trunk_inventory` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.twitter_accounts
@@ -845,13 +958,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `dateofbirth` varchar(10) COLLATE utf8mb4_bin DEFAULT NULL,
   `sex` varchar(1) COLLATE utf8mb4_bin DEFAULT NULL,
   `height` int(11) DEFAULT NULL,
-  `phone_number` int(11) DEFAULT NULL,
+  `phone_number` char(12) COLLATE utf8mb4_bin DEFAULT '0',
   PRIMARY KEY (`identifier`),
   UNIQUE KEY `index_users_phone_number` (`phone_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.users: ~0 rows (approximately)
+-- Dumping data for table skuadcity.users: ~5 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`identifier`, `license`, `money`, `name`, `bank`, `accounts`, `group`, `permission_level`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `is_dead`, `skin`, `status`, `last_property`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `phone_number`) VALUES
+	('steam:110000134a401f0', 'license:298453a7f76c12b1f88947612fb8152999d7e270', 45000, '', 0, '{"money":45000,"black_money":0,"bank":2000}', 'superadmin', 0, '{"phone":1,"wood":2}', 'police', 2, '[]', '{"x":429.5,"heading":219.5,"y":-1019.8,"z":28.9}', 0, '{"lipstick_4":0,"eyebrows_2":0,"blemishes_1":0,"blemishes_2":0,"moles_1":0,"sex":0,"helmet_2":0,"beard_2":0,"makeup_4":0,"makeup_2":0,"skin":0,"arms":0,"sun_1":0,"makeup_3":0,"glasses_1":0,"watches_2":0,"pants_2":0,"eyebrows_1":0,"sun_2":0,"pants_1":0,"age_2":0,"lipstick_2":0,"hair_1":0,"hair_2":0,"beard_1":0,"bodyb_2":0,"eyebrows_3":0,"glasses_2":0,"chest_2":0,"bodyb_1":0,"arms_2":0,"beard_3":0,"chest_1":0,"helmet_1":-1,"complexion_2":0,"chain_1":0,"tshirt_2":0,"decals_1":0,"decals_2":0,"lipstick_3":0,"eyebrows_4":0,"shoes_1":0,"ears_1":-1,"torso_1":0,"bracelets_1":-1,"moles_2":0,"tshirt_1":0,"age_1":0,"bracelets_2":0,"mask_2":0,"ears_2":0,"shoes_2":0,"blush_2":0,"eye_color":0,"mask_1":0,"makeup_1":0,"complexion_1":0,"chest_3":0,"watches_1":-1,"bags_2":0,"chain_2":0,"blush_3":0,"hair_color_2":0,"bproof_1":0,"blush_1":0,"face":0,"torso_2":0,"lipstick_1":0,"hair_color_1":0,"beard_4":0,"bags_1":0,"bproof_2":0}', '[{"name":"hunger","percent":49.93,"val":499300},{"name":"thirst","percent":49.9475,"val":499475},{"name":"drunk","percent":0.0,"val":0}]', NULL, 'Dian', 'Nugroho', '2000-07-11', 'm', 172, '776-7322'),
+	('steam:11000013d89e9ee', 'license:e0da3d0499bee7c675c6f45f13f3bcd95866e6d5', 999933, '', 0, '{"black_money":0,"bank":110000,"money":999933}', 'user', 0, '{"phone":1,"marijuana":6,"bread":19,"water":19,"cannabis":1}', 'unemployed', 0, '{"WEAPON_PISTOL50":{"ammo":3333},"WEAPON_REVOLVER_MK2":{"ammo":30},"WEAPON_REVOLVER":{"ammo":2233}}', '{"heading":159.7,"x":2330.3,"y":2570.6,"z":46.8}', 0, '{"blush_2":3,"eyebrows_2":9,"blemishes_1":0,"blemishes_2":0,"moles_1":0,"sex":0,"helmet_2":4,"beard_2":4,"makeup_4":0,"makeup_2":0,"blush_3":0,"chest_3":0,"sun_1":0,"makeup_3":0,"glasses_1":5,"watches_2":0,"pants_2":5,"bags_1":0,"shoes_2":3,"pants_1":24,"age_2":0,"lipstick_2":0,"hair_1":47,"hair_2":0,"bproof_2":0,"bodyb_2":0,"eyebrows_3":0,"glasses_2":0,"chest_2":0,"bodyb_1":0,"arms_2":0,"beard_3":0,"chest_1":0,"helmet_1":109,"complexion_2":0,"chain_1":0,"ears_2":0,"decals_1":0,"decals_2":0,"lipstick_3":0,"eyebrows_4":0,"shoes_1":20,"ears_1":0,"bracelets_1":-1,"moles_2":0,"bags_2":0,"age_1":0,"bracelets_2":0,"mask_2":28,"beard_1":10,"lipstick_4":0,"face":31,"arms":4,"mask_1":0,"makeup_1":0,"complexion_1":0,"eye_color":3,"watches_1":-1,"tshirt_1":22,"chain_2":0,"skin":0,"hair_color_2":0,"tshirt_2":4,"blush_1":3,"beard_4":0,"torso_2":7,"lipstick_1":0,"hair_color_1":0,"sun_2":0,"torso_1":25,"eyebrows_1":30}', '[{"percent":56.48,"val":564800,"name":"hunger"},{"percent":59.86,"val":598600,"name":"thirst"},{"percent":0.0,"val":0,"name":"drunk"}]', NULL, 'Alex', 'Junior', '1999-02-18', 'm', 180, '268-6903'),
+	('steam:11000013dcdf20b', 'license:c9532d84a2c418475ffb512a5cc201d7e8d7415e', 10, '', 0, '{"money":10,"black_money":0,"bank":215000}', 'superadmin', 0, '[]', 'mechanic', 0, '[]', '{"heading":350.5,"x":253.5,"y":-570.9,"z":60.6}', 1, '{"blush_2":0,"eye_color":0,"blemishes_1":0,"blemishes_2":0,"moles_1":0,"sex":0,"helmet_2":0,"beard_2":10,"makeup_4":0,"makeup_2":0,"blush_3":0,"arms":0,"sun_1":0,"makeup_3":0,"glasses_1":0,"watches_2":0,"pants_2":0,"bags_1":0,"sun_2":0,"pants_1":12,"age_2":0,"lipstick_2":0,"hair_1":48,"hair_2":0,"beard_1":8,"bodyb_2":0,"eyebrows_3":0,"glasses_2":0,"chest_2":0,"bodyb_1":0,"arms_2":0,"beard_3":0,"chest_1":0,"helmet_1":-1,"complexion_2":0,"chain_1":0,"tshirt_2":0,"decals_1":0,"decals_2":0,"lipstick_3":0,"eyebrows_4":0,"shoes_1":1,"ears_1":-1,"ears_2":0,"bracelets_1":-1,"moles_2":0,"tshirt_1":1,"age_1":0,"bracelets_2":0,"mask_2":0,"skin":0,"lipstick_4":0,"eyebrows_2":9,"bags_2":0,"mask_1":0,"makeup_1":0,"complexion_1":0,"torso_1":58,"watches_1":-1,"chest_3":0,"chain_2":0,"bproof_2":0,"hair_color_2":0,"bproof_1":0,"blush_1":0,"beard_4":0,"torso_2":0,"lipstick_1":0,"hair_color_1":0,"shoes_2":0,"eyebrows_1":12,"face":8}', '[{"name":"hunger","percent":49.96,"val":499600},{"name":"thirst","percent":49.97,"val":499700},{"name":"drunk","percent":0.0,"val":0}]', NULL, 'Hakim', 'KIm', '2000-03-07', 'm', 188, '280-0476'),
+	('steam:110000140625c76', 'license:65475385c7fd602451e6cb4811a2197673a29880', 98049959, '', 0, '{"money":10000000000,"black_money":9029,"bank":755000}', 'superadmin', 0, '[]', 'police', 4, '{"WEAPON_FLAREGUN":{"ammo":0}}', '{"heading":348.6,"x":255.2,"y":-605.7,"z":42.7}', 0, '{"blush_2":0,"eyebrows_2":0,"blemishes_1":0,"blemishes_2":0,"moles_1":0,"sex":0,"helmet_2":0,"beard_2":0,"makeup_4":0,"makeup_2":0,"blush_3":0,"chest_3":0,"sun_1":0,"makeup_3":0,"glasses_1":5,"beard_4":0,"pants_2":0,"bags_1":0,"sun_2":0,"pants_1":26,"age_2":0,"lipstick_2":0,"torso_1":187,"hair_2":5,"beard_1":0,"bodyb_2":0,"eyebrows_3":0,"glasses_2":0,"chest_2":0,"bodyb_1":0,"arms_2":0,"beard_3":0,"chest_1":0,"helmet_1":-1,"complexion_2":0,"chain_1":0,"tshirt_2":0,"decals_1":0,"decals_2":0,"lipstick_3":0,"eyebrows_4":0,"shoes_1":32,"ears_1":-1,"face":45,"bracelets_1":-1,"moles_2":0,"tshirt_1":15,"age_1":0,"bracelets_2":0,"mask_2":0,"ears_2":0,"bags_2":0,"hair_1":13,"lipstick_4":0,"mask_1":0,"makeup_1":0,"complexion_1":0,"eye_color":0,"watches_1":-1,"eyebrows_1":0,"chain_2":0,"bproof_2":0,"hair_color_2":0,"bproof_1":0,"blush_1":0,"skin":0,"torso_2":0,"lipstick_1":0,"hair_color_1":57,"arms":20,"watches_2":0,"shoes_2":4}', '[{"name":"hunger","percent":98.92999999999999,"val":989300},{"name":"thirst","percent":99.1975,"val":991975},{"name":"drunk","percent":0.0,"val":0}]', NULL, 'Cencen', 'Kim', '2003-05-21', 'm', 170, '712-5818'),
+	('steam:1100001437d433b', 'license:4d7b789aa5d9a7076fa754ce187f2866e6b54560', 5357944, '', 0, '{"money":5357944,"black_money":8258,"bank":485000}', 'user', 0, '[]', 'police', 4, '{"WEAPON_PISTOL50":{"ammo":3243},"WEAPON_MACHINEPISTOL":{"ammo":92},"WEAPON_REVOLVER":{"ammo":300}}', '{"heading":106.8,"x":1701.2,"y":3252.2,"z":40.1}', 0, '{"lipstick_4":0,"eye_color":0,"blemishes_1":0,"blemishes_2":0,"moles_1":0,"sex":0,"helmet_2":2,"beard_2":10,"makeup_4":0,"makeup_2":0,"skin":9,"arms":41,"sun_1":0,"makeup_3":0,"glasses_1":15,"watches_2":0,"pants_2":0,"eyebrows_1":0,"shoes_2":4,"pants_1":28,"age_2":0,"lipstick_2":0,"torso_1":55,"hair_2":0,"beard_1":9,"bodyb_2":0,"eyebrows_3":0,"glasses_2":2,"chest_2":10,"bodyb_1":0,"arms_2":0,"beard_3":0,"chest_1":1,"helmet_1":58,"complexion_2":0,"chain_1":0,"tshirt_2":0,"decals_1":8,"decals_2":3,"lipstick_3":0,"eyebrows_4":0,"shoes_1":32,"ears_1":2,"tshirt_1":58,"bracelets_1":0,"moles_2":0,"bags_2":0,"age_1":0,"bracelets_2":0,"mask_2":18,"face":24,"chest_3":0,"beard_4":0,"blush_3":0,"mask_1":116,"makeup_1":0,"complexion_1":0,"blush_2":0,"watches_1":4,"eyebrows_2":0,"chain_2":0,"sun_2":0,"hair_color_2":0,"bproof_1":11,"blush_1":0,"ears_2":0,"torso_2":0,"lipstick_1":0,"hair_color_1":29,"bags_1":0,"bproof_2":1,"hair_1":66}', '[{"name":"hunger","percent":31.71,"val":317100},{"name":"thirst","percent":36.2825,"val":362825},{"name":"drunk","percent":0.0,"val":0}]', NULL, 'Lyon', 'Bisa', '2000-04-14', 'm', 172, '175-5263');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.user_contacts
@@ -1197,33 +1316,33 @@ CREATE TABLE IF NOT EXISTS `vs_aircrafts` (
 -- Dumping data for table skuadcity.vs_aircrafts: ~27 rows (approximately)
 /*!40000 ALTER TABLE `vs_aircrafts` DISABLE KEYS */;
 INSERT INTO `vs_aircrafts` (`name`, `model`, `price`, `category`) VALUES
-	('Alpha Z1', 'alphaz1', 1121000, 'planes'),
-	('Besra', 'besra', 1000000, 'planes'),
-	('Buzzard', 'buzzard2', 500000, 'helis'),
-	('Cuban 800', 'cuban800', 240000, 'planes'),
-	('Dodo', 'dodo', 500000, 'planes'),
-	('Duster', 'duster', 175000, 'planes'),
-	('Frogger', 'frogger', 800000, 'helis'),
-	('Havok', 'havok', 250000, 'helis'),
-	('Howard NX25', 'howard', 975000, 'planes'),
-	('Luxor', 'luxor', 1500000, 'planes'),
-	('Luxor Deluxe ', 'luxor2', 1750000, 'planes'),
-	('Mammatus', 'mammatus', 300000, 'planes'),
-	('Maverick', 'maverick', 750000, 'helis'),
-	('Ultra Light', 'microlight', 50000, 'planes'),
-	('Nimbus', 'nimbus', 900000, 'planes'),
-	('Rogue', 'rogue', 1000000, 'planes'),
-	('Sea Breeze', 'seabreeze', 850000, 'planes'),
-	('Sea Sparrow', 'seasparrow', 815000, 'helis'),
-	('Shamal', 'shamal', 1150000, 'planes'),
-	('Mallard', 'stunt', 250000, 'planes'),
-	('SuperVolito', 'supervolito', 1000000, 'helis'),
-	('SuperVolito Carbon', 'supervolito2', 1250000, 'helis'),
-	('Swift', 'swift', 1000000, 'helis'),
-	('Swift Deluxe', 'swift2', 1250000, 'helis'),
-	('Velum', 'velum2', 450000, 'planes'),
-	('Vestra', 'vestra', 950000, 'planes'),
-	('Volatus', 'volatus', 1250000, 'helis');
+	('Alpha Z1', 'alphaz1', 112100000, 'planes'),
+	('Besra', 'besra', 100000000, 'planes'),
+	('Buzzard', 'buzzard2', 50000000, 'helis'),
+	('Cuban 800', 'cuban800', 24000000, 'planes'),
+	('Dodo', 'dodo', 50000000, 'planes'),
+	('Duster', 'duster', 175000000, 'planes'),
+	('Frogger', 'frogger', 80000000, 'helis'),
+	('Havok', 'havok', 25000000, 'helis'),
+	('Howard NX25', 'howard', 97500000, 'planes'),
+	('Luxor', 'luxor', 150000000, 'planes'),
+	('Luxor Deluxe ', 'luxor2', 175000000, 'planes'),
+	('Mammatus', 'mammatus', 30000000, 'planes'),
+	('Maverick', 'maverick', 75000000, 'helis'),
+	('Ultra Light', 'microlight', 50000000, 'planes'),
+	('Nimbus', 'nimbus', 90000000, 'planes'),
+	('Rogue', 'rogue', 10000000, 'planes'),
+	('Sea Breeze', 'seabreeze', 85000000, 'planes'),
+	('Sea Sparrow', 'seasparrow', 81500000, 'helis'),
+	('Shamal', 'shamal', 11500000, 'planes'),
+	('Mallard', 'stunt', 25000000, 'planes'),
+	('SuperVolito', 'supervolito', 100000000, 'helis'),
+	('SuperVolito Carbon', 'supervolito2', 125000000, 'helis'),
+	('Swift', 'swift', 100000000, 'helis'),
+	('Swift Deluxe', 'swift2', 125000000, 'helis'),
+	('Velum', 'velum2', 45000000, 'planes'),
+	('Vestra', 'vestra', 95000000, 'planes'),
+	('Volatus', 'volatus', 125000000, 'helis');
 /*!40000 ALTER TABLE `vs_aircrafts` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.vs_aircraft_categories
@@ -1333,9 +1452,11 @@ CREATE TABLE IF NOT EXISTS `vs_cars` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.vs_cars: ~265 rows (approximately)
+-- Dumping data for table skuadcity.vs_cars: ~272 rows (approximately)
 /*!40000 ALTER TABLE `vs_cars` DISABLE KEYS */;
 INSERT INTO `vs_cars` (`name`, `model`, `price`, `category`) VALUES
+	('Nissan Skyline GT-R34 1999', '2f2fgtr34', 2147483647, 'donate'),
+	('Mitsubishi Lancer Evolution VII 2002', '2f2fmle7', 2147483647, 'donate'),
 	('Akuma', 'AKUMA', 7500, 'motorcycles'),
 	('Adder', 'adder', 900000, 'supers'),
 	('Alpha', 'alpha', 60000, 'sports'),
@@ -1397,8 +1518,6 @@ INSERT INTO `vs_cars` (`name`, `model`, `price`, `category`) VALUES
 	('Cyclone', 'cyclone', 1890000, 'supers'),
 	('Daemon', 'daemon', 11500, 'motorcycles'),
 	('Daemon High', 'daemon2', 13500, 'motorcycles'),
-	('DB S2', 'deathbike2', 1785000, 'importmotorcycles'),
-	('DB S3', 'deathbike3', 2145000, 'importmotorcycles'),
 	('Defiler', 'defiler', 9800, 'motorcycles'),
 	('Deviant', 'deviant', 2145000, 'importcars'),
 	('Diablous S2', 'diablous2', 1354000, 'importmotorcycles'),
@@ -1432,6 +1551,11 @@ INSERT INTO `vs_cars` (`name`, `model`, `price`, `category`) VALUES
 	('Fixter (velo)', 'fixter', 225, 'motorcycles'),
 	('Flash GT', 'flashgt', 1354000, 'importcars'),
 	('FMJ', 'fmj', 185000, 'supers'),
+	('Mitsubishi Lancer Evolution VII 2002', 'fnflan', 2147483647, 'donate'),
+	('Mitsubishi Eclipse GSX 1995', 'fnfmits', 2147483647, 'donate'),
+	('Toyota Supra MK IV 1994', 'fnfmk4', 2147483647, 'donate'),
+	('Mazda RX-7 VeilSide 1994', 'fnfrx7', 2147483647, 'donate'),
+	('Mazda RX-7 1994', 'fnfrx7dom', 2147483647, 'donate'),
 	('Fhantom', 'fq2', 17000, 'suvs'),
 	('Fugitive', 'fugitive', 12000, 'sedans'),
 	('Furore GT', 'furoregt', 45000, 'sports'),
@@ -1457,8 +1581,8 @@ INSERT INTO `vs_cars` (`name`, `model`, `price`, `category`) VALUES
 	('Intruder', 'intruder', 7500, 'sedans'),
 	('Issi', 'issi2', 10000, 'compacts'),
 	('Issi S3', 'issi3', 3458000, 'importcars'),
-	('Itali GTB S2', 'italigtb2', 6230000, 'importcars'),
-	('Itali GTO', 'italigto', 5320000, 'importcars'),
+	('Itali GTB S2', 'italigtb2', 3230000, 'importcars'),
+	('Itali GTO', 'italigto', 3320000, 'importcars'),
 	('Jackal', 'jackal', 38000, 'coupes'),
 	('Jester', 'jester', 65000, 'sports'),
 	('Jester(Racecar)', 'jester2', 135000, 'sports'),
@@ -1543,6 +1667,8 @@ INSERT INTO `vs_cars` (`name`, `model`, `price`, `category`) VALUES
 	('Seven 70', 'seven70', 39500, 'sports'),
 	('ETR1', 'sheava', 220000, 'supers'),
 	('Shotaro Concept', 'shotaro', 7800000, 'importmotorcycles'),
+	('Lamborghini Sian 2012', 'sian', 2147483647, 'donate'),
+	('Nissan Silvia 1997', 'silvias15', 2147483647, 'donate'),
 	('Slam Van', 'slamvan3', 11500, 'muscles'),
 	('Sovereign', 'sovereign', 22000, 'motorcycles'),
 	('Specter S2', 'specter2', 2354000, 'importcars'),
@@ -1724,7 +1850,7 @@ CREATE TABLE IF NOT EXISTS `vs_trucks` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.vs_trucks: ~0 rows (approximately)
+-- Dumping data for table skuadcity.vs_trucks: ~28 rows (approximately)
 /*!40000 ALTER TABLE `vs_trucks` DISABLE KEYS */;
 INSERT INTO `vs_trucks` (`name`, `model`, `price`, `category`) VALUES
 	('Airport Bus', 'airbus', 50000, 'trans'),
@@ -1764,7 +1890,7 @@ CREATE TABLE IF NOT EXISTS `vs_truck_categories` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.vs_truck_categories: ~0 rows (approximately)
+-- Dumping data for table skuadcity.vs_truck_categories: ~4 rows (approximately)
 /*!40000 ALTER TABLE `vs_truck_categories` DISABLE KEYS */;
 INSERT INTO `vs_truck_categories` (`name`, `label`) VALUES
 	('box', 'Boxed Trucks'),
@@ -1810,7 +1936,7 @@ CREATE TABLE IF NOT EXISTS `vs_vips` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.vs_vips: ~0 rows (approximately)
+-- Dumping data for table skuadcity.vs_vips: ~3 rows (approximately)
 /*!40000 ALTER TABLE `vs_vips` DISABLE KEYS */;
 INSERT INTO `vs_vips` (`name`, `model`, `price`, `category`) VALUES
 	('Deluxo', 'deluxo', 2147483647, 'donate'),
@@ -1841,29 +1967,29 @@ CREATE TABLE IF NOT EXISTS `weaponshops` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table skuadcity.weaponshops: ~0 rows (approximately)
+-- Dumping data for table skuadcity.weaponshops: ~20 rows (approximately)
 /*!40000 ALTER TABLE `weaponshops` DISABLE KEYS */;
 INSERT INTO `weaponshops` (`id`, `zone`, `item`, `price`, `category`) VALUES
-	(1, 'BlackWeashop', 'WEAPON_GRENADE', 650, 'melee'),
-	(2, 'BlackShop', 'WEAPON_BZGAS', 500, 'melee'),
-	(3, 'BlackShop', 'WEAPON_SMOKEGRENADE', 500, 'melee'),
-	(4, 'BlackShop', 'WEAPON_MOLOTOV', 150, 'melee'),
-	(5, 'BlackWeashop', 'WEAPON_FIREEXTINGUISHER', 100, 'melee'),
-	(6, 'BlackWeashop', 'WEAPON_STICKYBOMB', 500, 'melee'),
-	(7, 'BlackShop', 'WEAPON_SNSPISTOL', 450, 'handgun'),
-	(8, 'BlackShop', 'WEAPON_VINTAGEPISTOL', 900, 'handgun'),
-	(9, 'BlackShop', 'WEAPON_PISTOL', 1050, 'handgun'),
-	(10, 'BlackShop', 'WEAPON_MICROSMG', 2700, 'smg'),
-	(11, 'BlackShop', 'WEAPON_MINISMG', 2400, 'smg'),
-	(12, 'BlackShop', 'WEAPON_SMG', 4800, 'smg'),
-	(13, 'BlackShop', 'WEAPON_PUMPSHOTGUN', 1050, 'shotgun'),
-	(14, 'BlackShop', 'WEAPON_SAWNOFFSHOTGUN', 1500, 'shotgun'),
-	(15, 'BlackShop', 'WEAPON_DBSHOTGUN', 1350, 'shotgun'),
-	(16, 'BlackShop', 'WEAPON_ASSAULTRIFLE', 3600, 'assault'),
-	(17, 'BlackShop', 'WEAPON_CARBINERIFLE', 7200, 'assault'),
-	(18, 'BlackWeashop', 'WEAPON_FIREWORK', 20000, 'lmg'),
-	(19, 'BlackWeashop', 'WEAPON_MINIGUN', 45000, 'lmg'),
-	(20, 'BlackWeashop', 'WEAPON_RAILGUN', 50000, 'lmg');
+	(1, 'BlackWeashop', 'WEAPON_GRENADE', 65000, 'melee'),
+	(2, 'BlackShop', 'WEAPON_BZGAS', 50000, 'melee'),
+	(3, 'BlackShop', 'WEAPON_SMOKEGRENADE', 50000, 'melee'),
+	(4, 'BlackShop', 'WEAPON_MOLOTOV', 15000, 'melee'),
+	(5, 'BlackWeashop', 'WEAPON_FIREEXTINGUISHER', 10000, 'melee'),
+	(6, 'BlackWeashop', 'WEAPON_STICKYBOMB', 50000, 'melee'),
+	(7, 'BlackShop', 'WEAPON_SNSPISTOL', 45000, 'handgun'),
+	(8, 'BlackShop', 'WEAPON_VINTAGEPISTOL', 90000, 'handgun'),
+	(9, 'BlackShop', 'WEAPON_PISTOL', 105000, 'handgun'),
+	(10, 'BlackShop', 'WEAPON_MICROSMG', 270000, 'smg'),
+	(11, 'BlackShop', 'WEAPON_MINISMG', 240000, 'smg'),
+	(12, 'BlackShop', 'WEAPON_SMG', 480000, 'smg'),
+	(13, 'BlackShop', 'WEAPON_PUMPSHOTGUN', 105000, 'shotgun'),
+	(14, 'BlackShop', 'WEAPON_SAWNOFFSHOTGUN', 150000, 'shotgun'),
+	(15, 'BlackShop', 'WEAPON_DBSHOTGUN', 135000, 'shotgun'),
+	(16, 'BlackShop', 'WEAPON_ASSAULTRIFLE', 360000, 'assault'),
+	(17, 'BlackShop', 'WEAPON_CARBINERIFLE', 720000, 'assault'),
+	(18, 'BlackWeashop', 'WEAPON_FIREWORK', 2000000, 'lmg'),
+	(19, 'BlackWeashop', 'WEAPON_MINIGUN', 4500000, 'lmg'),
+	(20, 'BlackWeashop', 'WEAPON_RAILGUN', 5000000, 'lmg');
 /*!40000 ALTER TABLE `weaponshops` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.weashops
@@ -1874,70 +2000,69 @@ CREATE TABLE IF NOT EXISTS `weashops` (
   `price` int(11) NOT NULL,
   `category` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
--- Dumping data for table skuadcity.weashops: ~0 rows (approximately)
+-- Dumping data for table skuadcity.weashops: ~58 rows (approximately)
 /*!40000 ALTER TABLE `weashops` DISABLE KEYS */;
 INSERT INTO `weashops` (`id`, `zone`, `item`, `price`, `category`) VALUES
-	(1, 'GunShop', 'GADGET_PARACHUTE', 800, 'melee'),
-	(2, 'GunShop', 'WEAPON_FLASHLIGHT', 25, 'melee'),
-	(3, 'GunShop', 'WEAPON_MACHETE', 20, 'melee'),
-	(4, 'GunShop', 'WEAPON_BAT', 20, 'melee'),
-	(5, 'GunShop', 'WEAPON_NIGHTSTICK', 15, 'melee'),
-	(6, 'GunShop', 'WEAPON_KNIFE', 30, 'melee'),
-	(7, 'GunShop', 'WEAPON_HAMMER', 5, 'melee'),
-	(8, 'GunShop', 'WEAPON_GOLFCLUB', 40, 'melee'),
-	(9, 'GunShop', 'WEAPON_CROWBAR', 15, 'melee'),
-	(10, 'GunShop', 'WEAPON_DAGGER', 15, 'melee'),
-	(11, 'GunShop', 'WEAPON_KNUCKLE', 25, 'melee'),
-	(12, 'GunShop', 'WEAPON_HATCHET', 20, 'melee'),
-	(13, 'GunShop', 'WEAPON_SWITCHBLADE', 25, 'melee'),
-	(14, 'GunShop', 'WEAPON_POOLCUE', 10, 'melee'),
-	(15, 'GunShop', 'WEAPON_WRENCH', 40, 'melee'),
-	(16, 'GunShop', 'WEAPON_BOTTLE', 10, 'melee'),
-	(17, 'GunShop', 'WEAPON_BATTLEAXE', 125, 'melee'),
-	(18, 'GunShop', 'WEAPON_GRENADE', 500, 'melee'),
-	(19, 'GunShop', 'WEAPON_BALL', 25, 'melee'),
-	(20, 'GunShop', 'WEAPON_SNOWBALL', 25, 'melee'),
-	(21, 'GunShop', 'WEAPON_BZGAS', 250, 'melee'),
-	(22, 'GunShop', 'WEAPON_SMOKEGRENADE', 250, 'melee'),
-	(23, 'GunShop', 'WEAPON_FLARE', 100, 'melee'),
-	(24, 'GunShop', 'WEAPON_FIREEXTINGUISHER', 100, 'melee'),
-	(25, 'GunShop', 'WEAPON_FLAREGUN', 500, 'handgun'),
-	(26, 'GunShop', 'WEAPON_STUNGUN', 500, 'handgun'),
-	(27, 'GunShop', 'WEAPON_SNSPISTOL', 150, 'handgun'),
-	(28, 'GunShop', 'WEAPON_VINTAGEPISTOL', 300, 'handgun'),
-	(29, 'GunShop', 'WEAPON_PISTOL', 350, 'handgun'),
-	(30, 'GunShop', 'WEAPON_COMBATPISTOL', 400, 'handgun'),
-	(31, 'GunShop', 'WEAPON_PISTOL50', 1500, 'handgun'),
-	(32, 'GunShop', 'WEAPON_HEAVYPISTOL', 550, 'handgun'),
-	(33, 'GunShop', 'WEAPON_REVOLVER', 1300, 'handgun'),
-	(34, 'GunShop', 'WEAPON_APPISTOL', 2700, 'handgun'),
-	(35, 'GunShop', 'WEAPON_MICROSMG', 900, 'smg'),
-	(36, 'GunShop', 'WEAPON_MINISMG', 800, 'smg'),
-	(37, 'GunShop', 'WEAPON_SMG', 1600, 'smg'),
-	(38, 'GunShop', 'WEAPON_MACHINEPISTOL', 1300, 'smg'),
-	(39, 'GunShop', 'WEAPON_ASSAULTSMG', 1400, 'smg'),
-	(40, 'GunShop', 'WEAPON_COMBATPDW', 1500, 'smg'),
-	(41, 'GunShop', 'WEAPON_PUMPSHOTGUN', 350, 'shotgun'),
-	(42, 'GunShop', 'WEAPON_SAWNOFFSHOTGUN', 500, 'shotgun'),
-	(43, 'GunShop', 'WEAPON_DBSHOTGUN', 450, 'shotgun'),
-	(44, 'GunShop', 'WEAPON_HEAVYSHOTGUN', 1000, 'shotgun'),
-	(45, 'GunShop', 'WEAPON_ASSAULTSHOTGUN', 1100, 'shotgun'),
-	(46, 'GunShop', 'WEAPON_MUSKET', 225, 'assault'),
-	(47, 'GunShop', 'WEAPON_ASSAULTRIFLE', 1200, 'assault'),
-	(48, 'GunShop', 'WEAPON_CARBINERIFLE', 2400, 'assault'),
-	(49, 'GunShop', 'WEAPON_BULLPUPRIFLE', 1200, 'assault'),
-	(50, 'GunShop', 'WEAPON_SPECIALCARBINE', 5200, 'assault'),
-	(51, 'GunShop', 'WEAPON_COMPACTRIFLE', 750, 'assault'),
-	(52, 'GunShop', 'WEAPON_ADVANCEDRIFLE', 2000, 'assault'),
-	(53, 'GunShop', 'WEAPON_FIREWORK', 18000, 'lmg'),
-	(54, 'GunShop', 'WEAPON_GUSENBERG', 4280, 'lmg'),
-	(55, 'GunShop', 'WEAPON_MG', 8250, 'lmg'),
-	(56, 'GunShop', 'WEAPON_COMBATMG', 13950, 'lmg'),
-	(57, 'GunShop', 'WEAPON_SNIPERRIFLE', 2000, 'sniper'),
-	(58, 'GunShop', 'WEAPON_MARKSMANRIFLE', 3800, 'sniper'),
-	(59, 'GunShop', 'WEAPON_HEAVYSNIPER', 9900, 'sniper');
+	(1, 'GunShop', 'GADGET_PARACHUTE', 80000, 'melee'),
+	(2, 'GunShop', 'WEAPON_FLASHLIGHT', 2500, 'melee'),
+	(3, 'GunShop', 'WEAPON_MACHETE', 2000, 'melee'),
+	(4, 'GunShop', 'WEAPON_BAT', 2000, 'melee'),
+	(5, 'GunShop', 'WEAPON_NIGHTSTICK', 1500, 'melee'),
+	(6, 'GunShop', 'WEAPON_KNIFE', 3000, 'melee'),
+	(7, 'GunShop', 'WEAPON_HAMMER', 500, 'melee'),
+	(8, 'GunShop', 'WEAPON_GOLFCLUB', 4000, 'melee'),
+	(9, 'GunShop', 'WEAPON_CROWBAR', 1500, 'melee'),
+	(10, 'GunShop', 'WEAPON_DAGGER', 1500, 'melee'),
+	(11, 'GunShop', 'WEAPON_KNUCKLE', 2500, 'melee'),
+	(12, 'GunShop', 'WEAPON_HATCHET', 2000, 'melee'),
+	(13, 'GunShop', 'WEAPON_SWITCHBLADE', 2500, 'melee'),
+	(14, 'GunShop', 'WEAPON_POOLCUE', 1000, 'melee'),
+	(15, 'GunShop', 'WEAPON_WRENCH', 4000, 'melee'),
+	(16, 'GunShop', 'WEAPON_BOTTLE', 1000, 'melee'),
+	(17, 'GunShop', 'WEAPON_BATTLEAXE', 12500, 'melee'),
+	(18, 'GunShop', 'WEAPON_GRENADE', 50000, 'melee'),
+	(19, 'GunShop', 'WEAPON_BALL', 2500, 'melee'),
+	(20, 'GunShop', 'WEAPON_SNOWBALL', 2500, 'melee'),
+	(21, 'GunShop', 'WEAPON_BZGAS', 25000, 'melee'),
+	(22, 'GunShop', 'WEAPON_SMOKEGRENADE', 25000, 'melee'),
+	(23, 'GunShop', 'WEAPON_FLARE', 10000, 'melee'),
+	(24, 'GunShop', 'WEAPON_FIREEXTINGUISHER', 10000, 'melee'),
+	(25, 'GunShop', 'WEAPON_FLAREGUN', 50000, 'handgun'),
+	(26, 'GunShop', 'WEAPON_STUNGUN', 50000, 'handgun'),
+	(27, 'GunShop', 'WEAPON_SNSPISTOL', 15000, 'handgun'),
+	(28, 'GunShop', 'WEAPON_VINTAGEPISTOL', 30000, 'handgun'),
+	(29, 'GunShop', 'WEAPON_PISTOL', 35000, 'handgun'),
+	(30, 'GunShop', 'WEAPON_COMBATPISTOL', 40000, 'handgun'),
+	(31, 'GunShop', 'WEAPON_PISTOL50', 150000, 'handgun'),
+	(32, 'GunShop', 'WEAPON_HEAVYPISTOL', 55000, 'handgun'),
+	(33, 'GunShop', 'WEAPON_REVOLVER', 130000, 'handgun'),
+	(34, 'GunShop', 'WEAPON_APPISTOL', 270000, 'handgun'),
+	(35, 'GunShop', 'WEAPON_MICROSMG', 90000, 'smg'),
+	(36, 'GunShop', 'WEAPON_MINISMG', 80000, 'smg'),
+	(37, 'GunShop', 'WEAPON_SMG', 160000, 'smg'),
+	(38, 'GunShop', 'WEAPON_MACHINEPISTOL', 130000, 'smg'),
+	(39, 'GunShop', 'WEAPON_ASSAULTSMG', 140000, 'smg'),
+	(40, 'GunShop', 'WEAPON_COMBATPDW', 150000, 'smg'),
+	(41, 'GunShop', 'WEAPON_PUMPSHOTGUN', 35000, 'shotgun'),
+	(42, 'GunShop', 'WEAPON_SAWNOFFSHOTGUN', 50000, 'shotgun'),
+	(43, 'GunShop', 'WEAPON_DBSHOTGUN', 45000, 'shotgun'),
+	(44, 'GunShop', 'WEAPON_HEAVYSHOTGUN', 100000, 'shotgun'),
+	(45, 'GunShop', 'WEAPON_ASSAULTSHOTGUN', 110000, 'shotgun'),
+	(46, 'GunShop', 'WEAPON_MUSKET', 22500, 'assault'),
+	(47, 'GunShop', 'WEAPON_ASSAULTRIFLE', 120000, 'assault'),
+	(48, 'GunShop', 'WEAPON_CARBINERIFLE', 240000, 'assault'),
+	(49, 'GunShop', 'WEAPON_BULLPUPRIFLE', 120000, 'assault'),
+	(50, 'GunShop', 'WEAPON_SPECIALCARBINE', 520000, 'assault'),
+	(51, 'GunShop', 'WEAPON_COMPACTRIFLE', 75000, 'assault'),
+	(52, 'GunShop', 'WEAPON_ADVANCEDRIFLE', 200000, 'assault'),
+	(53, 'GunShop', 'WEAPON_GUSENBERG', 428000, 'lmg'),
+	(54, 'GunShop', 'WEAPON_MG', 825000, 'lmg'),
+	(55, 'GunShop', 'WEAPON_COMBATMG', 139500, 'lmg'),
+	(56, 'GunShop', 'WEAPON_SNIPERRIFLE', 200000, 'sniper'),
+	(57, 'GunShop', 'WEAPON_MARKSMANRIFLE', 380000, 'sniper'),
+	(58, 'GunShop', 'WEAPON_HEAVYSNIPER', 990000, 'sniper');
 /*!40000 ALTER TABLE `weashops` ENABLE KEYS */;
 
 -- Dumping structure for table skuadcity.whitelist

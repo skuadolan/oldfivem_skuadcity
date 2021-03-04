@@ -94,13 +94,13 @@ AddEventHandler('esx_drugs:processCannabis', function()
 		local xCannabis = xPlayer.getInventoryItem('cannabis')
 		local can = true
 		outofbound = false
-    if xCannabis.count >= 2 then
+    if xCannabis.count >= 3 then
       while outofbound == false and can do
 				if playersProcessingCannabis[_source] == nil then
 					playersProcessingCannabis[_source] = ESX.SetTimeout(Config.Delays.WeedProcessing , function()
-            if xCannabis.count >= 2 then
-              if xPlayer.canSwapItem('cannabis', 2, 'marijuana', 1) then
-                xPlayer.removeInventoryItem('cannabis', 2)
+            if xCannabis.count >= 3 then
+              if xPlayer.canSwapItem('cannabis', 3, 'marijuana', 1) then
+                xPlayer.removeInventoryItem('cannabis', 3)
                 xPlayer.addInventoryItem('marijuana', 1)
 								xPlayer.showNotification(_U('weed_processed'))
 							else

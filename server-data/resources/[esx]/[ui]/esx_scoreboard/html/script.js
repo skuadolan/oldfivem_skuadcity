@@ -2,10 +2,10 @@ $(function() {
 	window.addEventListener('message', function(event) {
 		switch (event.data.action) {
 			case 'enable':
-				$('#wrap').fadeIn();
+				$('#wrap').show();
 				break;
 			case 'disable':
-			$('#wrap').fadeOut();
+			$('#wrap').hide();
 			break;
 
 			case 'toggleID':

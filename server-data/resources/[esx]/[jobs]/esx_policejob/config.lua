@@ -38,7 +38,7 @@ Config.PoliceStations = {
 		},
 
 		Armories = {
-			vector3(461.07, -980.11, 29.74)
+			vector3(461.07, -980.11, 30.69)
 		},
 
 		Vehicles = {
@@ -127,38 +127,54 @@ Config.AuthorizedWeapons = {
 
 Config.AuthorizedVehicles = {
 	car = {
-		recruit = {},
+		recruit = {
+			{model = 'pjr', price = 20000},
+			{model = 'patrol', price = 20000}
+		},
 
 		officer = {
-			{model = 'police3', price = 20000}
+			{model = 'pjr', price = 20000},
+			{model = 'pjrRaptor', price = 20000},
+			{model = 'patrol', price = 20000}
 		},
 
 		sergeant = {
-			{model = 'policet', price = 18500},
-			{model = 'policeb', price = 30500}
+			{model = 'pjr', price = 20000},
+			{model = 'pjrRaptor', price = 20000},
+			{model = 'patrol', price = 20000},
+			{model = 'riotid', price = 20000}
 		},
 
 		lieutenant = {
-			{model = 'riot', price = 70000},
-			{model = 'fbi2', price = 60000}
+			{model = 'pjr', price = 20000},
+			{model = 'pjrRaptor', price = 20000},
+			{model = 'patrol', price = 20000},
+			{model = 'riotid', price = 20000},
+			{model = 'fbi2', price = 20000}
 		},
 
 		boss = {}
 	},
 
 	helicopter = {
-		recruit = {},
+		recruit = {
+			{model = 'polmavid', props = {modLivery = 0}, price = 200000}
+		},
 
-		officer = {},
+		officer = {
+			{model = 'polmavid', props = {modLivery = 0}, price = 200000}
+		},
 
-		sergeant = {},
+		sergeant = {
+			{model = 'polmavid', props = {modLivery = 0}, price = 200000}
+		},
 
 		lieutenant = {
-			{model = 'polmav', props = {modLivery = 0}, price = 200000}
+			{model = 'polmavid', props = {modLivery = 0}, price = 200000}
 		},
 
 		boss = {
-			{model = 'polmav', props = {modLivery = 0}, price = 100000}
+			{model = 'polmavid', props = {modLivery = 0}, price = 200000}
 		}
 	}
 }

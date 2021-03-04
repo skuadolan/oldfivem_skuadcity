@@ -15,7 +15,11 @@ AddEventHandler('_chat:messageEntered', function(author, color, message)
     TriggerEvent('chatMessage', source, author, message)
 
     if not WasEventCanceled() then
-        TriggerClientEvent('chatMessage', -1, author,  { 255, 255, 255 }, message)
+        TriggerClientEvent('chat:addMessage', -1, {
+            template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(41, 41, 41, 0.6); border-radius: 3px;"><i class="fas fa-globe"></i> {0}:<br> {1}</div>',
+            args = { author, message }
+        })
+        --TriggerClientEvent('chatMessage', -1, author,  { 255, 255, 255 }, message)
     end
 
     --print(author .. '^7: ' .. message .. '^7')

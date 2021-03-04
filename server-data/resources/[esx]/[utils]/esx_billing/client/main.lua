@@ -40,13 +40,20 @@ function ShowBillsMenu()
 	end)
 end
 
+RegisterNetEvent("esx_billing:openBillings")
+AddEventHandler("esx_billing:openBillings", function(_myPhoneNumber)
+    if not isDead and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'billing') then
+		ShowBillsMenu()
+	end
+end)
+
 RegisterCommand('showbills', function()
 	if not isDead and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'billing') then
 		ShowBillsMenu()
 	end
 end, false)
 
-RegisterKeyMapping('showbills', _U('keymap_showbills'), 'keyboard', 'F7')
+--RegisterKeyMapping('showbills', _U('keymap_showbills'), 'keyboard', 'F7')
 
 AddEventHandler('esx:onPlayerDeath', function() isDead = true end)
 AddEventHandler('esx:onPlayerSpawn', function(spawn) isDead = false end)

@@ -25,7 +25,7 @@ Config.Blips = {
 }
 
 Config.Ambulance = {
-	Garages = true, -- true = Allows use of Ambulance Garages.
+	Garages = false, -- true = Allows use of Ambulance Garages.
 	Pounds = true, -- true = Allows use of Ambulance Pounds.
 	Blips = false, -- true = Use Ambulance Blips.
 	PoundP = 45000, -- How much it Costs to get Vehicles from Ambulance Pound.
@@ -37,8 +37,8 @@ Config.Ambulance = {
 }
 
 Config.Police = {
-	Garages = true, -- true = Allows use of Police Garages.
-	Pounds = true, -- true = Allows use of Police Pounds.
+	Garages = false, -- true = Allows use of Police Garages.
+	Pounds = false, -- true = Allows use of Police Pounds.
 	Blips = false, -- true = Use Police Blips.
 	PoundP = 45000, -- How much it Costs to get Vehicles from Police Pound.
 	Markers = {
@@ -49,7 +49,7 @@ Config.Police = {
 }
 
 Config.Mechanic = {
-	Garages = true, -- true = Allows use of Mechanic Garages.
+	Garages = false, -- true = Allows use of Mechanic Garages.
 	Pounds = true, -- true = Allows use of Mechanic Pounds.
 	Blips = false, -- true = Use Mechanic Blips.
 	PoundP = 45000, -- How much it Costs to get Vehicles from Mechanic Pound.
