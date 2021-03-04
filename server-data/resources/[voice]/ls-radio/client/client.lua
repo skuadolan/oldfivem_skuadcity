@@ -139,7 +139,8 @@ end)
 -- net eventy
 
 RegisterNetEvent('ls-radio:use')
-AddEventHandler('ls-radio:use', function()
+AddEventHandler('ls-radio:use', function(source)
+  TriggerEvent('esx_inventoryhud:doClose', source)
   enableRadio(true)
 end)
 
