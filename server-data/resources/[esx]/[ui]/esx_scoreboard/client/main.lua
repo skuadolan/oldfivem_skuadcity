@@ -94,14 +94,14 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
-		if IsControlPressed(0, 57)--[[ INPUT_MULTIPLAYER_INFO ]] then
+		if IsControlPressed(0, 344)--[[ INPUT_MULTIPLAYER_INFO ]] then
             if not listOn then
 				SendNUIMessage({action = 'enable'})
 
                 listOn = true
                 while listOn do
                     Wait(0)
-                    if(IsControlPressed(0, 57) == false) then
+                    if(IsControlPressed(0, 344) == false) then
                         listOn = false
 						SendNUIMessage({action = 'disable'})
                         break

@@ -343,6 +343,11 @@ function StopSoundJS (sound)
   SendNUIMessage({ event = 'stopSound', sound = sound})
 end
 
+RegisterNetEvent("gcPhone:openPhone")
+AddEventHandler("gcPhone:openPhone", function(_myPhoneNumber)
+    TooglePhone()
+end)
+
 RegisterNetEvent("gcPhone:forceOpenPhone")
 AddEventHandler("gcPhone:forceOpenPhone", function(_myPhoneNumber)
   if menuIsOpen == false then
