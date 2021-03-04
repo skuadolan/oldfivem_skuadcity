@@ -1,6 +1,8 @@
-server/
-./server/
-/server/
+/server/*
+./server/*
+server/*
+
+
 
 # Build and Release Folders
 [Oo]bj/
