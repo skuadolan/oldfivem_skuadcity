@@ -1,3 +1,7 @@
+server/
+./server/
+/server/
+
 # Build and Release Folders
 [Oo]bj/
 [Bb]in/
