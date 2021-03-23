@@ -1,0 +1,21 @@
+[
+  {
+    "name": "dianadi021",
+    "master": true,
+    "password_hash": "$2a$11$PLKszFaO41mgdInXStd1cuFE4uPmTV/l8TeUWPkXkU/Iwaaja.jzC",
+    "providers": {
+      "citizenfx": {
+        "id": "dianadi021",
+        "identifier": "steam:110000134a401f0",
+        "data": {
+          "nameid": "https://forum.cfx.re/internal/user/192461",
+          "name": "dianadi021",
+          "profile": "https://forum.cfx.re/u/dianadi021",
+          "picture": "https://forum.cfx.re/user_avatar/forum.cfx.re/dianadi021/256/85195_2.png",
+          "sub": "88bba56b0382d98ec479b028e31ad563496b5a59d57af92b71a9f6ab278f356c"
+        }
+      }
+    },
+    "permissions": []
+  }
+]

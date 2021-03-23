@@ -1,0 +1,1 @@
+..\..\server\FXServer.exe +set serverProfile "default" +exec server.cfg

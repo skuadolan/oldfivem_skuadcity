@@ -1,0 +1,45 @@
+{
+  "global": {
+    "serverName": "[New]SKUAD CITY",
+    "language": "en"
+  },
+  "logger": {},
+  "monitor": {
+    "restarterSchedule": [],
+    "restarterScheduleWarnings": [
+      30,
+      15,
+      10,
+      5,
+      4,
+      3,
+      2,
+      1
+    ]
+  },
+  "statsCollector": {},
+  "playerController": {
+    "onJoinCheckBan": true,
+    "onJoinCheckWhitelist": false,
+    "minSessionTime": 15,
+    "whitelistRejectionMessage": "You are not yet whitelisted in this server.\nPlease join http://discord.io/skuadcity.\nYour ID: <id>",
+    "wipePendingWLOnStart": true
+  },
+  "authenticator": {},
+  "webServer": {},
+  "discordBot": {
+    "enabled": true,
+    "token": "NzM5MDI0OTgxNTA1MDgxNDA0.XyUcpg.iE93adtSwqWkZNCGcx3YUZ99SOw",
+    "announceChannel": "778367422222565386",
+    "prefix": "/",
+    "statusMessage": "**IP:** `[New]SKUAD CITY:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
+  },
+  "fxRunner": {
+    "serverDataPath": "D:/Project/FiveM/[new]skuadcity/txData/server-data/",
+    "cfgPath": "D:/Project/FiveM/[new]skuadcity/txData/server-data/server.cfg",
+    "commandLine": "",
+    "onesync": "on",
+    "autostart": true,
+    "quiet": false
+  }
+}

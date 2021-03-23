@@ -1,6 +1,0 @@
-Citizen.CreateThread(function()
-        AddTextEntry('0xE05FBF04', 'Nissan Skyline GT-R34 1999')
-        AddTextEntry('0x330752B0', 'Nissan Skyline GT-R34 1999')
-        AddTextEntry('0xD96D05AF', '1999 Nissan Skyline GT-R34')
-        AddTextEntry('0x5A00F0DA', '1999 Nissan Skyline GT-R34')
-    end)

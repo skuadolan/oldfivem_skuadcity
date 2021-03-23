@@ -1,0 +1,482 @@
+
+================================================================
+======== FXServer starting - 3/23/2021, 08:19:15
+================================================================
+Creating script environments for _cfx_internal
+Found new resource async in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//async
+Found new resource cron in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//cron
+Found new resource esplugin_mysql in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//esplugin_mysql
+Found new resource essentialmode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//essentialmode
+Found new resource esx_adminplus in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//esx_adminplus
+Found new resource extendedmode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//extendedmode
+Found new resource gcphone in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//gcphone
+Found new resource loadingscreen in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//loadingscreen
+Found new resource mysql-async in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//mysql-async
+Found new resource simpledrift in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//simpledrift
+Found new resource skinchanger in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//skinchanger
+Found new resource vMenu in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//vMenu
+Found new resource monitor in D:\Project\FiveM\[new]skuadcity\server\citizen/system_resources//monitor
+Found new resource webadmin in D:\Project\FiveM\[new]skuadcity\server\citizen/system_resources//webadmin
+Found new resource basic-gamemode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gamemodes]/basic-gamemode
+Found new resource chat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/chat
+Found new resource chat-theme-gtao in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/chat-theme-gtao
+Found new resource player-data in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/player-data
+Found new resource playernames in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/playernames
+Found new resource bob74_ipl in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/bob74_ipl
+Found new resource mapmanager in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[managers]/mapmanager
+Found new resource spawnmanager in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[managers]/spawnmanager
+Found new resource baseevents in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/baseevents
+Found new resource hardcap in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/hardcap
+Found new resource rconlog in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/rconlog
+Found new resource runcode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/runcode
+Found new resource scoreboard in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/scoreboard
+Found new resource sessionmanager in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/sessionmanager
+Found new resource sessionmanager-rdr3 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/sessionmanager-rdr3
+Found new resource example-loadscreen in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[test]/example-loadscreen
+Found new resource fivem in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[test]/fivem
+Found new resource esx_bikerjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[badside]/esx_bikerjob
+Found new resource esx_carteljob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[badside]/esx_carteljob
+Found new resource esx_drugs in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[badside]/esx_drugs
+Found new resource esx_gangjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[badside]/esx_gangjob
+Found new resource esx_illegal in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[badside]/esx_illegal
+Found new resource esx_mafiajob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[badside]/esx_mafiajob
+Found new resource esx_ambulancejob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_ambulancejob
+Found new resource esx_bankerjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_bankerjob
+Found new resource esx_gopostal in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_gopostal
+Found new resource esx_jobs in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_jobs
+Found new resource esx_mechanicjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_mechanicjob
+Found new resource esx_policejob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_policejob
+Found new resource esx_realestateagentjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_realestateagentjob
+Found new resource esx_taxijob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_taxijob
+Found new resource esx_truckerjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_truckerjob
+Found new resource esx_holdup in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[robbery]/esx_holdup
+Found new resource esx_barbershop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_barbershop
+Found new resource esx_boat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_boat
+Found new resource esx_clotheshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_clotheshop
+Found new resource esx_lscustom in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_lscustom
+Found new resource esx_shops in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_shops
+Found new resource esx_tattooshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_tattooshop
+Found new resource esx_vehicleshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_vehicleshop
+Found new resource esx_weaponshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_weaponshop
+Found new resource esx_menu_default in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[ui]/esx_menu_default
+Found new resource esx_menu_dialog in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[ui]/esx_menu_dialog
+Found new resource esx_menu_list in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[ui]/esx_menu_list
+Found new resource esx_scoreboard in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[ui]/esx_scoreboard
+Found new resource esx-checkdeathcause in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx-checkdeathcause
+Found new resource esx-qalle-jail in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx-qalle-jail
+Found new resource esx_accessories in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_accessories
+Found new resource esx_addonaccount in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_addonaccount
+Found new resource esx_addoninventory in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_addoninventory
+Found new resource esx_advancedgarage in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_advancedgarage
+Found new resource esx_alerts in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_alerts
+Found new resource esx_basicneeds in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_basicneeds
+Found new resource esx_billing in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_billing
+Found new resource esx_boilerplate in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_boilerplate
+Found new resource esx_cruisecontrol in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_cruisecontrol
+Found new resource esx_datastore in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_datastore
+Found new resource esx_dmvschool in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_dmvschool
+Found new resource esx_doorlock in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_doorlock
+Found new resource esx_duty in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_duty
+Found new resource esx_eden_jail in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_eden_jail
+Found new resource esx_giveownedcar in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_giveownedcar
+Found new resource esx_identity in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_identity
+Found new resource esx_jobchat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_jobchat
+Found new resource esx_joblisting in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_joblisting
+Found new resource esx_jsidmenu in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_jsidmenu
+Found new resource esx_license in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_license
+Found new resource esx_licenseshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_licenseshop
+Found new resource esx_migrate in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_migrate
+Found new resource esx_optionalneeds in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_optionalneeds
+Found new resource esx_plasticsurgery in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_plasticsurgery
+Found new resource esx_property in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_property
+Found new resource esx_repairkit in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_repairkit
+Found new resource esx_service in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_service
+Found new resource esx_skin in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_skin
+Found new resource esx_society in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_society
+Found new resource esx_status in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_status
+Found new resource esx_teleports in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_teleports
+Found new resource esx_turbo in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_turbo
+Found new resource instance in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/instance
+Found new resource fivem-map-hipster in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gamemodes]/[maps]/fivem-map-hipster
+Found new resource fivem-map-skater in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gamemodes]/[maps]/fivem-map-skater
+Found new resource redm-map-one in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gamemodes]/[maps]/redm-map-one
+Found new resource money in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/money
+Found new resource money-fountain in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/money-fountain
+Found new resource money-fountain-example-map in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/money-fountain-example-map
+Found new resource ped-money-drops in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/ped-money-drops
+Found new resource dpclothing in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[dp]/dpclothing
+Found new resource dpemotes in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[dp]/dpemotes
+Found new resource hudmobil in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/hudmobil
+Found new resource jsfour-idcard in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/jsfour-idcard
+Found new resource mythic_interiors in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/mythic_interiors
+Found new resource mythic_notify in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/mythic_notify
+Found new resource mythic_progbar in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/mythic_progbar
+Found new resource trew_hud_ui in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/trew_hud_ui
+Found new resource esx_inventoryhud in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[inventory]/esx_inventoryhud
+Found new resource esx_inventoryhud_glovebox in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[inventory]/esx_inventoryhud_glovebox
+Found new resource esx_inventoryhud_trunk in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[inventory]/esx_inventoryhud_trunk
+Found new resource lsrp-motels in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/lsrp-motels
+Found new resource esx_animasisenjata in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_animasisenjata
+Found new resource esx_balapliar in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_balapliar
+Found new resource esx_dokumen in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_dokumen
+Found new resource esx_kontrak in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_kontrak
+Found new resource esx_pedagang in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_pedagang
+Found new resource esx_punggungsenjata in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_punggungsenjata
+Found new resource LegacyFuel in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/LegacyFuel
+Found new resource MF_VehSales in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/MF_VehSales
+Found new resource monster_vault in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/monster_vault
+Found new resource new_banking in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/new_banking
+Found new resource No-NPC in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/No-NPC
+Found new resource pNotify in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/pNotify
+Found new resource progressBars in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/progressBars
+Found new resource RealisticVehicleFailure in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/RealisticVehicleFailure
+Found new resource RichPresence in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/RichPresence
+Found new resource SimpleCarHUD in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/SimpleCarHUD
+Found new resource svehiclelocks in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/svehiclelocks
+Found new resource vehicle-control in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/vehicle-control
+Found new resource WeaponCustomMods in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/WeaponCustomMods
+Found new resource Weaponry in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/Weaponry
+Found new resource webpack in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/[builders]/webpack
+Found new resource yarn in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/[builders]/yarn
+Creating script environments for sessionmanager
+Started resource sessionmanager
+Creating script environments for monitor
+[txAdminClientJS] Logger started
+[txAdminClientLUA] Version 3.3.0 starting...
+Started resource monitor
+Creating script environments for mapmanager
+Started resource mapmanager
+Creating script environments for chat
+Started resource chat
+Started resource spawnmanager
+Creating script environments for hardcap
+Started resource hardcap
+Creating script environments for essentialmode
+Instantiated instance of script SQLite.Main.
+You can reopen the server GUI using the command svgui.
+Started resource essentialmode
+Creating script environments for mysql-async
+Started resource mysql-async
+Creating script environments for extendedmode
+[ExtendedMode] [INFO] Starting up...
+Started gametype extendedmode
+Started resource extendedmode
+Creating script environments for esplugin_mysql
+Started resource esplugin_mysql
+Creating script environments for esx_inventoryhud
+Started resource esx_inventoryhud
+Creating script environments for esx_inventoryhud_glovebox
+Started resource esx_inventoryhud_glovebox
+Creating script environments for esx_inventoryhud_trunk
+Started resource esx_inventoryhud_trunk
+Creating script environments for cron
+Started resource cron
+Started resource skinchanger
+Creating script environments for instance
+Started resource instance
+Started resource esx_menu_default
+Started resource esx_menu_dialog
+Started resource esx_menu_list
+Creating script environments for esx_datastore
+Started resource esx_datastore
+Creating script environments for esx_identity
+Started resource esx_identity
+Creating script environments for esx_skin
+Started resource esx_skin
+Creating script environments for esx_status
+Started resource esx_status
+Creating script environments for esx_basicneeds
+Started resource esx_basicneeds
+Creating script environments for esx_billing
+Started resource esx_billing
+Creating script environments for esx_addoninventory
+Started resource esx_addoninventory
+Creating script environments for esx_addonaccount
+Started resource esx_addonaccount
+Creating script environments for esx_society
+Started resource esx_society
+Creating script environments for esx_license
+Started resource esx_license
+Creating script environments for esx_service
+Started resource esx_service
+Creating script environments for esx_property
+Started resource esx_property
+Creating script environments for esx_advancedgarage
+Started resource esx_advancedgarage
+Creating script environments for esx_vehicleshop
+Started resource esx_vehicleshop
+Creating script environments for esx_jobs
+Started resource esx_jobs
+Creating script environments for esx_joblisting
+Started resource esx_joblisting
+Creating script environments for esx_policejob
+Started resource esx_policejob
+Creating script environments for esx_ambulancejob
+Started resource esx_ambulancejob
+Creating script environments for esx_mechanicjob
+Started resource esx_mechanicjob
+Creating script environments for esx_taxijob
+Started resource esx_taxijob
+Creating script environments for esx_lscustom
+Started resource esx_lscustom
+Creating script environments for esx_shops
+Started resource esx_shops
+Creating script environments for esx_weaponshop
+Started resource esx_weaponshop
+Creating script environments for esx_clotheshop
+Started resource esx_clotheshop
+Creating script environments for esx_barbershop
+Started resource esx_barbershop
+Creating script environments for esx_drugs
+Started resource esx_drugs
+Creating script environments for esx_holdup
+Started resource esx_holdup
+Creating script environments for esx_accessories
+Started resource esx_accessories
+Creating script environments for esx_alerts
+Started resource esx_alerts
+Creating script environments for esx_dmvschool
+Started resource esx_dmvschool
+Creating script environments for esx_doorlock
+Started resource esx_doorlock
+Creating script environments for esx_duty
+Started resource esx_duty
+Creating script environments for esx_eden_jail
+Started resource esx_eden_jail
+Creating script environments for esx_giveownedcar
+Started resource esx_giveownedcar
+Creating script environments for esx_jobchat
+Started resource esx_jobchat
+Creating script environments for jsfour-idcard
+Started resource jsfour-idcard
+Creating script environments for esx_jsidmenu
+Started resource esx_jsidmenu
+Creating script environments for esx_licenseshop
+Started resource esx_licenseshop
+Creating script environments for esx_migrate
+Error loading script server.lua in resource esx_migrate: @esx_migrate/server.lua:7: attempt to call a nil value (global '_U')
+stack traceback:
+	@esx_migrate/server.lua:7: in main chunk
+Failed to load script server.lua.
+Started resource esx_migrate
+Creating script environments for esx_plasticsurgery
+Started resource esx_plasticsurgery
+Creating script environments for esx_repairkit
+Started resource esx_repairkit
+Creating script environments for esx_scoreboard
+Started resource esx_scoreboard
+Creating script environments for esx_tattooshop
+Started resource esx_tattooshop
+Started resource esx_teleports
+Creating script environments for esx_turbo
+Started resource esx_turbo
+Started resource esx-checkdeathcause
+Creating script environments for esx-qalle-jail
+Started resource esx-qalle-jail
+Creating script environments for esx_boat
+Started resource esx_boat
+Creating script environments for esx_boilerplate
+Started resource esx_boilerplate
+Started resource esx_cruisecontrol
+Creating script environments for esx_optionalneeds
+Started resource esx_optionalneeds
+Started resource esx_animasisenjata
+Creating script environments for esx_balapliar
+Started resource esx_balapliar
+Creating script environments for esx_dokumen
+Started resource esx_dokumen
+Creating script environments for esx_kontrak
+Started resource esx_kontrak
+Creating script environments for esx_pedagang
+Started resource esx_pedagang
+Started resource esx_punggungsenjata
+Creating script environments for esx_bikerjob
+Started resource esx_bikerjob
+Creating script environments for esx_carteljob
+Started resource esx_carteljob
+Creating script environments for esx_gangjob
+Started resource esx_gangjob
+Creating script environments for esx_illegal
+Started resource esx_illegal
+Creating script environments for esx_mafiajob
+Started resource esx_mafiajob
+Creating script environments for esx_bankerjob
+Started resource esx_bankerjob
+Creating script environments for esx_gopostal
+Started resource esx_gopostal
+Creating script environments for esx_realestateagentjob
+Started resource esx_realestateagentjob
+Creating script environments for esx_truckerjob
+Started resource esx_truckerjob
+Started resource bob74_ipl
+Creating script environments for esx_adminplus
+Started resource esx_adminplus
+Couldn't find resource Nonpc.
+Creating script environments for gcphone
+Started resource gcphone
+Started resource loadingscreen
+Started resource simpledrift
+Creating script environments for LegacyFuel
+Started resource LegacyFuel
+Started resource mythic_notify
+Creating script environments for monster_vault
+Started resource monster_vault
+Started resource mythic_progbar
+Started resource mythic_interiors
+Started resource pNotify
+Started resource progressBars
+Creating script environments for lsrp-motels
+Started resource lsrp-motels
+Creating script environments for new_banking
+Started resource new_banking
+Creating script environments for svehiclelocks
+Started resource svehiclelocks
+Creating script environments for vehicle-control
+Started resource vehicle-control
+Asset WeaponCustomMods/w_sb_compactsmg.ytd uses 24.0 MiB of physical memory.
+Asset WeaponCustomMods/w_sb_compactsmg.ytd uses 24.0 MiB of physical memory.
+Asset WeaponCustomMods/w_sb_compactsmg_boxmag.ytd uses 24.0 MiB of physical memory.
+Asset WeaponCustomMods/w_sb_compactsmg_boxmag.ytd uses 24.0 MiB of physical memory.
+Asset WeaponCustomMods/w_sb_compactsmg_mag1.ytd uses 24.0 MiB of physical memory.
+Asset WeaponCustomMods/w_sb_compactsmg_mag1.ytd uses 24.0 MiB of physical memory.
+Asset WeaponCustomMods/w_sb_compactsmg_mag2.ytd uses 24.0 MiB of physical memory.
+Asset WeaponCustomMods/w_sb_compactsmg_mag2.ytd uses 24.0 MiB of physical memory.
+Started resource WeaponCustomMods
+Creating script environments for MF_VehSales
+Started resource MF_VehSales
+Started resource No-NPC
+Creating script environments for RealisticVehicleFailure
+Started resource RealisticVehicleFailure
+Started resource RichPresence
+Started resource SimpleCarHUD
+Started resource Weaponry
+Creating script environments for hudmobil
+Started resource hudmobil
+Creating script environments for trew_hud_ui
+Started resource trew_hud_ui
+Started resource dpclothing
+Creating script environments for dpemotes
+Started resource dpemotes
+Creating script environments for vMenu
+Instantiated instance of script vMenuServer.BanManager.
+Instantiated instance of script vMenuServer.MainServer.
+Started resource vMenu
+Authenticating server license key...
+[mysql-async] [SUCCESS] Database server connection established.
+[ExtendedMode] [INFO] Checking your database...
+Performing version check against: https://api.kanersps.pw/em/version?version=6.4.2&uuid=ed8c1852-5e38-4138-8a38-6c0108a67d41
+
+[txAdminClientLUA] Threads and commands set up. All Ready.
+esx_advancedgarage: Parking Vehicles on restart is currently set to false.
+
+
+########################
+## RepairKit Resource
+##
+## Current Version: 3.1
+## Newest Version: 3.1
+##
+## Up to date!
+########################
+
+
+MF_VehSales: Started
+server thread hitch warning: timer interval of 220 milliseconds
+[ExtendedMode] [INFO] Your database is using the 'newesx' storage format, starting...
+[ExtendedMode] [INFO] ExtendedMode has been initialized
+SCRIPT ERROR: @esx_society/server/main.lua:26: attempt to index a nil value (field '?')
+> fn (@mysql-async/lib/MySQL.lua:226)
+[ExtendedMode] [WARNING] Ignoring job grades for "ranger" due to missing job
+[ExtendedMode] [WARNING] Ignoring job "textil" due to no job grades found
+
+[EssentialMode] Current version: 6.4.2
+[EssentialMode] Updater version: 6.4.2
+
+[EssentialMode] Everything is nice and updated!
+
+Advertisement: Want to have EssentialMode pre-installed on a good and affordable server host? Go to the following link: https://zap-hosting.com/EssentialMode
+Server license key authentication succeeded. Welcome!
+        fff                          
+  cccc ff   xx  xx     rr rr    eee  
+cc     ffff   xx       rrr  r ee   e 
+cc     ff     xx   ... rr     eeeee  
+ ccccc ff   xx  xx ... rr      eeeee 
+                                     
+Authenticated with cfx.re Nucleus: https://dianadi021-k38elr.users.cfx.re/
+-- [server notice: tebex_not_set]
+================
+Monetize your server using Tebex! Visit https://tebex.io/fivem for more info.
+================
+
+server thread hitch warning: timer interval of 152 milliseconds
+sync thread hitch warning: timer interval of 145 milliseconds
+server thread hitch warning: timer interval of 183 milliseconds
+sync thread hitch warning: timer interval of 117 milliseconds
+sync thread hitch warning: timer interval of 202 milliseconds
+network thread hitch warning: timer interval of 202 milliseconds
+server thread hitch warning: timer interval of 209 milliseconds
+sync thread hitch warning: timer interval of 199 milliseconds
+network thread hitch warning: timer interval of 200 milliseconds
+server thread hitch warning: timer interval of 274 milliseconds
+sync thread hitch warning: timer interval of 206 milliseconds
+network thread hitch warning: timer interval of 205 milliseconds
+server thread hitch warning: timer interval of 173 milliseconds
+sync thread hitch warning: timer interval of 528 milliseconds
+network thread hitch warning: timer interval of 528 milliseconds
+server thread hitch warning: timer interval of 653 milliseconds
+sync thread hitch warning: timer interval of 279 milliseconds
+network thread hitch warning: timer interval of 279 milliseconds
+server thread hitch warning: timer interval of 331 milliseconds
+sync thread hitch warning: timer interval of 251 milliseconds
+network thread hitch warning: timer interval of 252 milliseconds
+sync thread hitch warning: timer interval of 224 milliseconds
+network thread hitch warning: timer interval of 224 milliseconds
+server thread hitch warning: timer interval of 252 milliseconds
+sync thread hitch warning: timer interval of 112 milliseconds
+sync thread hitch warning: timer interval of 119 milliseconds
+sync thread hitch warning: timer interval of 138 milliseconds
+server thread hitch warning: timer interval of 209 milliseconds
+sync thread hitch warning: timer interval of 129 milliseconds
+sync thread hitch warning: timer interval of 121 milliseconds
+sync thread hitch warning: timer interval of 104 milliseconds
+sync thread hitch warning: timer interval of 173 milliseconds
+network thread hitch warning: timer interval of 179 milliseconds
+server thread hitch warning: timer interval of 245 milliseconds
+server thread hitch warning: timer interval of 160 milliseconds
+sync thread hitch warning: timer interval of 109 milliseconds
+server thread hitch warning: timer interval of 151 milliseconds
+server thread hitch warning: timer interval of 162 milliseconds
+sync thread hitch warning: timer interval of 106 milliseconds
+server thread hitch warning: timer interval of 206 milliseconds
+sync thread hitch warning: timer interval of 107 milliseconds
+server thread hitch warning: timer interval of 175 milliseconds
+server thread hitch warning: timer interval of 164 milliseconds
+Connecting: R`
+server thread hitch warning: timer interval of 253 milliseconds
+server thread hitch warning: timer interval of 154 milliseconds
+server thread hitch warning: timer interval of 162 milliseconds
+sync thread hitch warning: timer interval of 102 milliseconds
+server thread hitch warning: timer interval of 198 milliseconds
+sync thread hitch warning: timer interval of 162 milliseconds
+server thread hitch warning: timer interval of 178 milliseconds
+sync thread hitch warning: timer interval of 126 milliseconds
+server thread hitch warning: timer interval of 172 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+server thread hitch warning: timer interval of 2601 milliseconds
+server thread hitch warning: timer interval of 465 milliseconds
+server thread hitch warning: timer interval of 233 milliseconds
+[MariaDB:10.5.9-MariaDB] [WARNING] [esx_billing] [243ms] SELECT amount, id, label FROM billing WHERE identifier = ? : ["steam:110000134a401f0"]
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+Stopping resource hudmobil
+server thread hitch warning: timer interval of 155 milliseconds
+server thread hitch warning: timer interval of 155 milliseconds
+sync thread hitch warning: timer interval of 108 milliseconds
+server thread hitch warning: timer interval of 160 milliseconds
+sync thread hitch warning: timer interval of 103 milliseconds
+server thread hitch warning: timer interval of 169 milliseconds
+sync thread hitch warning: timer interval of 108 milliseconds
+server thread hitch warning: timer interval of 153 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+sync thread hitch warning: timer interval of 128 milliseconds
+server thread hitch warning: timer interval of 155 milliseconds
+[ExtendedMode] [INFO] Automatically saved all player data
