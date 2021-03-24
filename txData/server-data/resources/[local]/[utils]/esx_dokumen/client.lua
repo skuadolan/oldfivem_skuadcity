@@ -50,29 +50,16 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-
-end)
-
-Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
 
-        if UI_MOUSE_FOCUS == true then
-
-            
-            if IsControlJustReleased(0, 142) then -- MeleeAttackAlternate
-                --SendNUIMessage({type = "click"})
-
-            end
-            
-        end
 
         if IsControlJustReleased(0, Config.MenuKey) and GetLastInputMethod(2) then
             Menu.hidden = false
             OpenMainMenu()
 
             
-            SetNuiFocus(true, true)
+            SetNuiFocus(false, false)
 			SendNUIMessage({
         		type = "ShowDocument",
         		enable = true

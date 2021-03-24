@@ -51,26 +51,17 @@ AddEventHandler('esx_holdup:robberyStarted', function(currentStore)
 		if not rob then
 			if cops >= Config.PoliceNumberRequired then
 				rob = true
-				local store = store.nameOfStore
-				
 
 				for i=1, #xPlayers, 1 do
 					local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-					
-					
-					--if xPlayer.job.name == 'police' then
-					TriggerClientEvent('esx:showNotification', xPlayers[i], _U('rob_in_prog', store.nameOfStore))
-					TriggerClientEvent('esx_holdup:setBlip', xPlayers[i], Stores[currentStore].position)
-					--end
+					if xPlayer.job.name == 'police' then
+						TriggerClientEvent('esx:showNotification', xPlayers[i], _U('rob_in_prog', store.nameOfStore))
+						TriggerClientEvent('esx_holdup:setBlip', xPlayers[i], Stores[currentStore].position)
+					end
 				end
 
-				TriggerClientEvent('chat:addMessage', -1, {
-					template = '<div class="chat-message-jel"><b>BERITA | TELAH TERJADI PERAMPOKAN  DI </b> {1}</b></div>',
-					args = { playerName, store }
-				})
-
-				TriggerClientEvent('mythic_notify:client:SendAlert', xPlayer.source, { type = 'inform', text = 'Memulai Perampokan'})
-				TriggerClientEvent('mythic_notify:client:SendAlert', xPlayer.source, { type = 'inform', text = 'Alarm Berbunyi'})
+				TriggerClientEvent('esx:showNotification', _source, _U('started_to_rob', store.nameOfStore))
+				TriggerClientEvent('esx:showNotification', _source, _U('alarm_triggered'))
 				
 				TriggerClientEvent('esx_holdup:currentlyRobbing', _source, currentStore)
 				TriggerClientEvent('esx_holdup:startTimer', _source)
@@ -95,7 +86,7 @@ AddEventHandler('esx_holdup:robberyStarted', function(currentStore)
 								xPlayer = ESX.GetPlayerFromId(xPlayers[i])
 
 								if xPlayer.job.name == 'police' then
-									TriggerClientEvent('mythic_notify:client:SendAlert', xPlayer.source, { type = 'inform', text = 'Perampokan Berhasil'})
+									TriggerClientEvent('esx:showNotification', xPlayers[i], _U('robbery_complete_at', store.nameOfStore))
 									TriggerClientEvent('esx_holdup:killBlip', xPlayers[i])
 								end
 							end

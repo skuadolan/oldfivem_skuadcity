@@ -4,16 +4,16 @@ Config = {
 	Debug = false,						-- Enables logging and on screen display of what your character is wearing.
 	GUI = {
 		Position = {x = 0.65, y = 0.5},	-- 0.5 is the middle!
-		AllowInCars = false,			-- Allow the GUI in cars?
+		AllowInCars = true,			-- Allow the GUI in cars?
 		AllowWhenRagdolled = false,			-- Allow the GUI when ragdolled?
 		Enabled = true, 				-- You can turn the gui off here, the base commands will still work.
-		Key = GetKey("["), 				-- Change the GUI key here.
+		Key = GetKey("M"), 				-- Change the GUI key here.
 		Sound = true,					-- You can disable sound in the GUI here.
 		TextColor = {255,255,255},
 		TextOutline = true,
 		TextFont = 0,					-- Change font, useful for other languages.
 		TextSize = 0.21,				-- Change the text size below buttons here, useful for other languages.
-		Toggle = false,					-- Change the keybind from toggling the window open, or just holding it to open it.
+		Toggle = true,					-- Change the keybind from toggling the window open, or just holding it to open it.
 	}
 }
 

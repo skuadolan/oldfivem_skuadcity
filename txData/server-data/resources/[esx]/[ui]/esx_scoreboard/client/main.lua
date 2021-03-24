@@ -166,7 +166,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
-		if IsControlJustReleased(0, Keys['F5']) and IsInputDisabled(0) then
+		if IsControlJustReleased(0, Keys['F10']) and IsInputDisabled(0) then
 			PlaySoundFrontend(-1, "NAV", "HUD_AMMO_SHOP_SOUNDSET", 1)
 			ToggleScoreBoard()
 			Citizen.Wait(200)

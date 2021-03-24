@@ -1,7 +1,7 @@
 Locales['en'] = {
   ['shop_robbery'] = 'shop Robbery',
   ['press_to_rob'] = 'press ~INPUT_CONTEXT~ to ~o~rob~s~ ~b~%s~s~',
-  ['robbery_timer'] = 'robbery: ~r~%s~s~ seconds remaning',
+  ['robbery_timer'] = 'store robbery: ~r~%s~s~ seconds remaning',
   ['recently_robbed'] = 'this store was recently been robbed. Please wait ~y~%s~s~ seconds until you can rob again',
   ['rob_in_prog'] = '~r~robbery in progress at ~b~%s~s~',
   ['started_to_rob'] = 'you started to rob ~y~%s~s~',

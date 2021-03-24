@@ -761,6 +761,7 @@ RegisterCommand('toggleui', function()
 		SendNUIMessage({ action = 'element', task = 'disable', value = 'bank' })
 		SendNUIMessage({ action = 'element', task = 'disable', value = 'blackMoney' })
 		SendNUIMessage({ action = 'element', task = 'disable', value = 'wallet' })
+		SendNUIMessage({ action = 'setLogo', task = 'disable', value = Config.serverLogo })
 	else
 		if (Config.ui.showJob == true) then
 			SendNUIMessage({ action = 'element', task = 'enable', value = 'job' })
@@ -776,6 +777,9 @@ RegisterCommand('toggleui', function()
 		end
 		if (Config.ui.showWalletMoney == true) then
 			SendNUIMessage({ action = 'element', task = 'enable', value = 'wallet' })
+		end
+		if (Config.ui.serverLogo == true) then
+			SendNUIMessage({ action = 'setLogo', task = 'enable', value = Config.serverLogo })
 		end
 	end
 
@@ -797,7 +801,7 @@ end)
 
 Citizen.CreateThread(function()
 	local minimap = RequestScaleformMovie("minimap")
-	SetRadarBigmapEnabled(false, false)
+	SetRadarBigmapEnabled(true, false)
 	Wait(0)
 	SetRadarBigmapEnabled(false, false)
 	while true do

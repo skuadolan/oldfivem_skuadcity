@@ -31,7 +31,7 @@
     "enabled": true,
     "token": "NzM5MDI0OTgxNTA1MDgxNDA0.XyUcpg.iE93adtSwqWkZNCGcx3YUZ99SOw",
     "announceChannel": "778367422222565386",
-    "prefix": "/",
+    "prefix": "~",
     "statusMessage": "**IP:** `[New]SKUAD CITY:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {

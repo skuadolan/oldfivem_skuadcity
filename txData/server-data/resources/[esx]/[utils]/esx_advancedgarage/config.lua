@@ -30,7 +30,7 @@ Config.PoundWait = 5 -- How many Minutes someone must wait before Opening Pound 
 Config.UseJPoundTimer = false -- true = Uses Job Pound Timer
 Config.JPoundWait = 2.5 -- How many Minutes someone must wait before Opening Job Pound Menu Again.
 
-Config.UseDamageMult = true -- true = Costs more to Store a Broken/Damaged Vehicle.
+Config.UseDamageMult = false -- true = Costs more to Store a Broken/Damaged Vehicle.
 Config.DamageMult = 21 -- Higher Number = Higher Repair Price.
 
 Config.UsingAdvancedVehicleShop = false -- Set to true if using esx_advancedvehicleshop
