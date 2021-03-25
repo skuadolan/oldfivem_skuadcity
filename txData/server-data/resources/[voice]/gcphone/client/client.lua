@@ -808,3 +808,8 @@ RegisterNUICallback('takePhoto', function(data, cb)
   Citizen.Wait(1000)
   PhonePlayAnim('text', false, true)
 end)
+
+RegisterNetEvent("gcPhone:openPhone") -- For opening the emote menu from another resource.
+AddEventHandler("gcPhone:openPhone", function()
+  TooglePhone()
+end)

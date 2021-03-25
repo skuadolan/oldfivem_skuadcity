@@ -216,7 +216,7 @@ AddEventHandler('esx_realestateagentjob:hasExitedMarker', function(zone)
 end)
 
 -- Create Blips
-Citizen.CreateThread(function()
+--[[Citizen.CreateThread(function()
 	local blip = AddBlipForCoord(Config.Zones.OfficeEnter.Pos.x, Config.Zones.OfficeEnter.Pos.y, Config.Zones.OfficeEnter.Pos.z)
 
 	SetBlipSprite (blip, 357)
@@ -228,7 +228,7 @@ Citizen.CreateThread(function()
 	BeginTextCommandSetBlipName('STRING')
 	AddTextComponentSubstringPlayerName(_U('realtors'))
 	EndTextCommandSetBlipName(blip)
-end)
+end)]]
 
 -- Display markers
 Citizen.CreateThread(function()

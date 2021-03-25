@@ -300,3 +300,29 @@ function dump(o)
     return tostring(o)
   end
 end
+
+RegisterNetEvent("esx_inventoryhud_trunk:openTrunk") -- For opening the emote menu from another resource.
+AddEventHandler("esx_inventoryhud_trunk:openTrunk", function()
+  exports['mythic_progbar']:Progress({
+    name = "inventoryhud_trunk",
+    duration = 1000,
+    label = 'Membuka Bagasi',
+    useWhileDead = true,
+    canCancel = true,
+    controlDisables = {
+    disableMovement = true,
+    disableCarMovement = true,
+    disableMouse = false,
+    disableCombat = true,
+    },
+    animation = {
+        animDict = "mini@repair",
+        anim = "fixing_a_player",
+        flags = 49,
+    },
+}, function(cancelled)
+    if not cancelled then
+        openmenuvehicle()
+    end
+end)
+end)

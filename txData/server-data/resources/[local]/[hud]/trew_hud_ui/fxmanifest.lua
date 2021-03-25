@@ -126,7 +126,8 @@ client_scripts {
 	'locales/es.lua',
 	'config.lua',
 	'client/client.lua',
-	'client/hansolo.lua'
+	'client/hansolo.lua',
+	'SimpleCarHUD/SimpleCarHUD_cl.lua'
 }
 
 server_scripts {

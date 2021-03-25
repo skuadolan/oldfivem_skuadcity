@@ -12,6 +12,8 @@ client_script {
     'handsup/handsup.lua',
     'helicam/heli-cl.lua',
     'injury/injury.lua',
+    'kors/client.lua',
+    'korscommand/client.lua',
     'nonpc/main.lua',
     'pb/cl_piggyback.lua',
     'robb/client.lua',
@@ -26,7 +28,7 @@ client_script {
     'nogrip.lua',
     --'nohelmet.lua',
     'servername.lua',
-    'watermark-cl.lua'
+    'watermark-cl.lua',
 }
 
 server_script {

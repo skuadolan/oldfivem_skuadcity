@@ -49,7 +49,7 @@ RegisterNUICallback('openmenu', function(data)
     elseif data.id == 'dance' then
         TriggerEvent("dp:RecieveMenu")
     elseif data.id == 'id' then
-        TriggerEvent("esx_jsidmenu:openId")
+        TriggerEvent("esx_jsidmenu:OpenCivilianActionsMenu")
     elseif data.id == 'work' then
         TriggerEvent("esx_inventoryhud_trunk:openTrunk")
     elseif data.id == 'phone' then

@@ -1,6 +1,6 @@
 
 ================================================================
-======== FXServer starting - 3/24/2021, 12:30:38
+======== FXServer starting - 3/26/2021, 04:38:01
 ================================================================
 Creating script environments for _cfx_internal
 Found new resource async in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//async
@@ -54,11 +54,11 @@ Found new resource esx_realestateagentjob in D:/Project\FiveM\[new]skuadcity\txD
 Found new resource esx_taxijob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_taxijob
 Found new resource esx_truckerjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_truckerjob
 Found new resource esx_holdup in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[robbery]/esx_holdup
-Found new resource esx_holdupbank in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[robbery]/esx_holdupbank
 Found new resource esx_barbershop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_barbershop
 Found new resource esx_boat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_boat
 Found new resource esx_clotheshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_clotheshop
 Found new resource esx_lscustom in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_lscustom
+Found new resource esx_shops in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_shops
 Found new resource esx_tattooshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_tattooshop
 Found new resource esx_vehicleshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_vehicleshop
 Found new resource esx_weaponshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_weaponshop
@@ -135,8 +135,6 @@ Found new resource esx_dokumen in D:/Project\FiveM\[new]skuadcity\txData\server-
 Found new resource esx_kontrak in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_kontrak
 Found new resource esx_pedagang in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_pedagang
 Found new resource esx_punggungsenjata in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_punggungsenjata
-Found new resource kors in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/kors
-Found new resource korscommand in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/korscommand
 Found new resource LegacyFuel in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/LegacyFuel
 Found new resource MF_VehSales in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/MF_VehSales
 Found new resource monster_vault in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/monster_vault
@@ -195,6 +193,12 @@ Started resource esx_menu_list
 Creating script environments for esx_datastore
 Started resource esx_datastore
 Creating script environments for esx_identity
+Error loading script server/main.lua in resource esx_identity: @es_extended/locale.lua:5: attempt to index a nil value (global 'Config')
+stack traceback:
+	@es_extended/locale.lua:5: in function '_'
+	@es_extended/locale.lua:20: in function '_U'
+	@esx_identity/server/main.lua:167: in main chunk
+Failed to load script server/main.lua.
 Started resource esx_identity
 Creating script environments for esx_skin
 Started resource esx_skin
@@ -243,14 +247,7 @@ Started resource esx_barbershop
 Creating script environments for esx_drugs
 Started resource esx_drugs
 Creating script environments for esx_holdup
-Error loading script config.lua in resource esx_holdup: @esx_holdup/config.lua:19: bad argument #1 to 'random' (interval is empty)
-stack traceback:
-	[C]: in function 'math.random'
-	@esx_holdup/config.lua:19: in main chunk
-Failed to load script config.lua.
 Started resource esx_holdup
-Creating script environments for esx_holdupbank
-Started resource esx_holdupbank
 Creating script environments for esx_accessories
 Started resource esx_accessories
 Creating script environments for esx_alerts
@@ -346,6 +343,8 @@ Creating script environments for LegacyFuel
 Started resource LegacyFuel
 Creating script environments for monster_vault
 Started resource monster_vault
+Creating script environments for nfw_wep
+Started resource nfw_wep
 Creating script environments for lsrp-motels
 Started resource lsrp-motels
 Creating script environments for new_banking
@@ -369,10 +368,6 @@ Creating script environments for bisik
 Started resource bisik
 Creating script environments for skd_core
 Started resource skd_core
-Started resource korscommand
-Started resource kors
-Creating script environments for nfw_wep
-Started resource nfw_wep
 Creating script environments for carremote
 Started resource carremote
 Creating script environments for trew_hud_ui
@@ -405,19 +400,18 @@ esx_advancedgarage: Parking Vehicles on restart is currently set to false.
 
 
 MF_VehSales: Started
-server thread hitch warning: timer interval of 259 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [extendedmode] [186ms] SELECT TABLE_NAME AS 't', COLUMN_NAME AS 'c' FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'users' or TABLE_NAME = 'user_inventory' or TABLE_NAME = 'user_accounts' : []
+server thread hitch warning: timer interval of 255 milliseconds
+[MariaDB:10.5.9-MariaDB] [WARNING] [extendedmode] [189ms] SELECT TABLE_NAME AS 't', COLUMN_NAME AS 'c' FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'users' or TABLE_NAME = 'user_inventory' or TABLE_NAME = 'user_accounts' : []
 [ExtendedMode] [INFO] Your database is using the 'newesx' storage format, starting...
 [ExtendedMode] [INFO] ExtendedMode has been initialized
-SCRIPT ERROR: @esx_society/server/main.lua:26: attempt to index a nil value (field '?')
-> fn (@mysql-async/lib/MySQL.lua:226)
-[ExtendedMode] [WARNING] Ignoring job grades for "ranger" due to missing job
-[ExtendedMode] [WARNING] Ignoring job "textil" due to no job grades found
+
+[EssentialMode] Current version: 6.4.2
+[EssentialMode] Updater version: 6.4.2
+
+[EssentialMode] Everything is nice and updated!
+
+Advertisement: Want to have EssentialMode pre-installed on a good and affordable server host? Go to the following link: https://zap-hosting.com/EssentialMode
 Server license key authentication succeeded. Welcome!
-[EssentialMode] Updater version: UPDATER UNAVAILABLE
-[EssentialMode] This could be your internet connection or that the update server is not running. This won't impact the server
-
-
         fff                          
   cccc ff   xx  xx     rr rr    eee  
 cc     ffff   xx       rrr  r ee   e 
@@ -430,279 +424,544 @@ Authenticated with cfx.re Nucleus: https://dianadi021-k38elr.users.cfx.re/
 Monetize your server using Tebex! Visit https://tebex.io/fivem for more info.
 ================
 
-server thread hitch warning: timer interval of 157 milliseconds
-You can reopen the server GUI using the command svgui.
-sync thread hitch warning: timer interval of 113 milliseconds
-server thread hitch warning: timer interval of 156 milliseconds
-sync thread hitch warning: timer interval of 136 milliseconds
-server thread hitch warning: timer interval of 267 milliseconds
-sync thread hitch warning: timer interval of 167 milliseconds
-sync thread hitch warning: timer interval of 219 milliseconds
-sync thread hitch warning: timer interval of 126 milliseconds
-server thread hitch warning: timer interval of 272 milliseconds
-sync thread hitch warning: timer interval of 102 milliseconds
-server thread hitch warning: timer interval of 203 milliseconds
-sync thread hitch warning: timer interval of 147 milliseconds
-sync thread hitch warning: timer interval of 224 milliseconds
-server thread hitch warning: timer interval of 308 milliseconds
-sync thread hitch warning: timer interval of 107 milliseconds
-server thread hitch warning: timer interval of 178 milliseconds
-sync thread hitch warning: timer interval of 121 milliseconds
-server thread hitch warning: timer interval of 303 milliseconds
-sync thread hitch warning: timer interval of 218 milliseconds
-sync thread hitch warning: timer interval of 321 milliseconds
-server thread hitch warning: timer interval of 343 milliseconds
-sync thread hitch warning: timer interval of 339 milliseconds
-server thread hitch warning: timer interval of 363 milliseconds
-sync thread hitch warning: timer interval of 159 milliseconds
-network thread hitch warning: timer interval of 458 milliseconds
-sync thread hitch warning: timer interval of 207 milliseconds
-network thread hitch warning: timer interval of 207 milliseconds
-server thread hitch warning: timer interval of 219 milliseconds
-sync thread hitch warning: timer interval of 113 milliseconds
-sync thread hitch warning: timer interval of 103 milliseconds
-sync thread hitch warning: timer interval of 128 milliseconds
-sync thread hitch warning: timer interval of 107 milliseconds
-server thread hitch warning: timer interval of 190 milliseconds
-server thread hitch warning: timer interval of 193 milliseconds
-sync thread hitch warning: timer interval of 115 milliseconds
-server thread hitch warning: timer interval of 156 milliseconds
-server thread hitch warning: timer interval of 181 milliseconds
-server thread hitch warning: timer interval of 166 milliseconds
-server thread hitch warning: timer interval of 159 milliseconds
-sync thread hitch warning: timer interval of 106 milliseconds
-server thread hitch warning: timer interval of 239 milliseconds
-sync thread hitch warning: timer interval of 114 milliseconds
-sync thread hitch warning: timer interval of 115 milliseconds
-server thread hitch warning: timer interval of 174 milliseconds
-sync thread hitch warning: timer interval of 141 milliseconds
-server thread hitch warning: timer interval of 177 milliseconds
-sync thread hitch warning: timer interval of 109 milliseconds
-sync thread hitch warning: timer interval of 187 milliseconds
-sync thread hitch warning: timer interval of 143 milliseconds
-server thread hitch warning: timer interval of 387 milliseconds
-sync thread hitch warning: timer interval of 175 milliseconds
-server thread hitch warning: timer interval of 280 milliseconds
-sync thread hitch warning: timer interval of 151 milliseconds
-sync thread hitch warning: timer interval of 138 milliseconds
-server thread hitch warning: timer interval of 209 milliseconds
-sync thread hitch warning: timer interval of 122 milliseconds
-server thread hitch warning: timer interval of 204 milliseconds
-sync thread hitch warning: timer interval of 228 milliseconds
-server thread hitch warning: timer interval of 270 milliseconds
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 231 milliseconds
-server thread hitch warning: timer interval of 267 milliseconds
-sync thread hitch warning: timer interval of 186 milliseconds
-sync thread hitch warning: timer interval of 191 milliseconds
-server thread hitch warning: timer interval of 230 milliseconds
-sync thread hitch warning: timer interval of 191 milliseconds
-sync thread hitch warning: timer interval of 134 milliseconds
-server thread hitch warning: timer interval of 325 milliseconds
-sync thread hitch warning: timer interval of 123 milliseconds
-sync thread hitch warning: timer interval of 108 milliseconds
-sync thread hitch warning: timer interval of 200 milliseconds
-server thread hitch warning: timer interval of 356 milliseconds
-sync thread hitch warning: timer interval of 146 milliseconds
-server thread hitch warning: timer interval of 285 milliseconds
-sync thread hitch warning: timer interval of 195 milliseconds
-sync thread hitch warning: timer interval of 388 milliseconds
-server thread hitch warning: timer interval of 400 milliseconds
-sync thread hitch warning: timer interval of 162 milliseconds
-server thread hitch warning: timer interval of 199 milliseconds
-sync thread hitch warning: timer interval of 126 milliseconds
-server thread hitch warning: timer interval of 201 milliseconds
-sync thread hitch warning: timer interval of 119 milliseconds
-server thread hitch warning: timer interval of 193 milliseconds
-sync thread hitch warning: timer interval of 101 milliseconds
-sync thread hitch warning: timer interval of 204 milliseconds
-Connecting: R`
-sync thread hitch warning: timer interval of 108 milliseconds
-server thread hitch warning: timer interval of 377 milliseconds
-sync thread hitch warning: timer interval of 175 milliseconds
-server thread hitch warning: timer interval of 197 milliseconds
-sync thread hitch warning: timer interval of 112 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 208 milliseconds
-sync thread hitch warning: timer interval of 182 milliseconds
-sync thread hitch warning: timer interval of 170 milliseconds
-server thread hitch warning: timer interval of 276 milliseconds
-sync thread hitch warning: timer interval of 107 milliseconds
 server thread hitch warning: timer interval of 164 milliseconds
-sync thread hitch warning: timer interval of 156 milliseconds
-server thread hitch warning: timer interval of 212 milliseconds
-sync thread hitch warning: timer interval of 114 milliseconds
-server thread hitch warning: timer interval of 170 milliseconds
-sync thread hitch warning: timer interval of 136 milliseconds
-server thread hitch warning: timer interval of 174 milliseconds
-sync thread hitch warning: timer interval of 144 milliseconds
-server thread hitch warning: timer interval of 209 milliseconds
-sync thread hitch warning: timer interval of 119 milliseconds
-server thread hitch warning: timer interval of 274 milliseconds
-sync thread hitch warning: timer interval of 154 milliseconds
-server thread hitch warning: timer interval of 227 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-server thread hitch warning: timer interval of 182 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-server thread hitch warning: timer interval of 159 milliseconds
-sync thread hitch warning: timer interval of 121 milliseconds
-server thread hitch warning: timer interval of 194 milliseconds
-sync thread hitch warning: timer interval of 126 milliseconds
-server thread hitch warning: timer interval of 173 milliseconds
+sync thread hitch warning: timer interval of 112 milliseconds
+server thread hitch warning: timer interval of 195 milliseconds
+sync thread hitch warning: timer interval of 168 milliseconds
+sync thread hitch warning: timer interval of 297 milliseconds
+server thread hitch warning: timer interval of 399 milliseconds
 sync thread hitch warning: timer interval of 131 milliseconds
-network thread hitch warning: timer interval of 182 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-sync thread hitch warning: timer interval of 118 milliseconds
-sync thread hitch warning: timer interval of 130 milliseconds
-server thread hitch warning: timer interval of 315 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-server thread hitch warning: timer interval of 184 milliseconds
-sync thread hitch warning: timer interval of 103 milliseconds
-server thread hitch warning: timer interval of 198 milliseconds
-sync thread hitch warning: timer interval of 174 milliseconds
-network thread hitch warning: timer interval of 175 milliseconds
-server thread hitch warning: timer interval of 221 milliseconds
-sync thread hitch warning: timer interval of 237 milliseconds
-network thread hitch warning: timer interval of 238 milliseconds
-server thread hitch warning: timer interval of 245 milliseconds
-sync thread hitch warning: timer interval of 103 milliseconds
-server thread hitch warning: timer interval of 184 milliseconds
-server thread hitch warning: timer interval of 162 milliseconds
-sync thread hitch warning: timer interval of 127 milliseconds
-server thread hitch warning: timer interval of 193 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 188 milliseconds
-sync thread hitch warning: timer interval of 133 milliseconds
-network thread hitch warning: timer interval of 162 milliseconds
-sync thread hitch warning: timer interval of 111 milliseconds
-server thread hitch warning: timer interval of 245 milliseconds
-sync thread hitch warning: timer interval of 188 milliseconds
-network thread hitch warning: timer interval of 185 milliseconds
-server thread hitch warning: timer interval of 262 milliseconds
-server thread hitch warning: timer interval of 181 milliseconds
-sync thread hitch warning: timer interval of 118 milliseconds
-sync thread hitch warning: timer interval of 149 milliseconds
-server thread hitch warning: timer interval of 192 milliseconds
-server thread hitch warning: timer interval of 191 milliseconds
-server thread hitch warning: timer interval of 190 milliseconds
-sync thread hitch warning: timer interval of 124 milliseconds
-server thread hitch warning: timer interval of 228 milliseconds
-sync thread hitch warning: timer interval of 190 milliseconds
-network thread hitch warning: timer interval of 191 milliseconds
-server thread hitch warning: timer interval of 178 milliseconds
-server thread hitch warning: timer interval of 235 milliseconds
-sync thread hitch warning: timer interval of 163 milliseconds
-network thread hitch warning: timer interval of 164 milliseconds
-server thread hitch warning: timer interval of 295 milliseconds
-network thread hitch warning: timer interval of 155 milliseconds
-sync thread hitch warning: timer interval of 146 milliseconds
-server thread hitch warning: timer interval of 175 milliseconds
-network thread hitch warning: timer interval of 194 milliseconds
-sync thread hitch warning: timer interval of 212 milliseconds
-server thread hitch warning: timer interval of 230 milliseconds
-sync thread hitch warning: timer interval of 150 milliseconds
-sync thread hitch warning: timer interval of 103 milliseconds
-server thread hitch warning: timer interval of 179 milliseconds
-sync thread hitch warning: timer interval of 125 milliseconds
-server thread hitch warning: timer interval of 177 milliseconds
-sync thread hitch warning: timer interval of 132 milliseconds
-server thread hitch warning: timer interval of 189 milliseconds
-server thread hitch warning: timer interval of 200 milliseconds
-sync thread hitch warning: timer interval of 121 milliseconds
+server thread hitch warning: timer interval of 164 milliseconds
+sync thread hitch warning: timer interval of 138 milliseconds
 server thread hitch warning: timer interval of 169 milliseconds
-server thread hitch warning: timer interval of 152 milliseconds
-sync thread hitch warning: timer interval of 102 milliseconds
-server thread hitch warning: timer interval of 177 milliseconds
-sync thread hitch warning: timer interval of 110 milliseconds
-server thread hitch warning: timer interval of 168 milliseconds
-sync thread hitch warning: timer interval of 114 milliseconds
-server thread hitch warning: timer interval of 207 milliseconds
-sync thread hitch warning: timer interval of 520 milliseconds
-server thread hitch warning: timer interval of 572 milliseconds
+sync thread hitch warning: timer interval of 180 milliseconds
+sync thread hitch warning: timer interval of 144 milliseconds
+server thread hitch warning: timer interval of 219 milliseconds
+sync thread hitch warning: timer interval of 168 milliseconds
+server thread hitch warning: timer interval of 181 milliseconds
+sync thread hitch warning: timer interval of 169 milliseconds
+server thread hitch warning: timer interval of 190 milliseconds
+sync thread hitch warning: timer interval of 133 milliseconds
+server thread hitch warning: timer interval of 151 milliseconds
+sync thread hitch warning: timer interval of 117 milliseconds
+server thread hitch warning: timer interval of 157 milliseconds
+sync thread hitch warning: timer interval of 106 milliseconds
+server thread hitch warning: timer interval of 163 milliseconds
+sync thread hitch warning: timer interval of 106 milliseconds
+sync thread hitch warning: timer interval of 120 milliseconds
+server thread hitch warning: timer interval of 154 milliseconds
+sync thread hitch warning: timer interval of 112 milliseconds
+server thread hitch warning: timer interval of 179 milliseconds
+sync thread hitch warning: timer interval of 103 milliseconds
+sync thread hitch warning: timer interval of 135 milliseconds
+server thread hitch warning: timer interval of 263 milliseconds
+sync thread hitch warning: timer interval of 250 milliseconds
+sync thread hitch warning: timer interval of 242 milliseconds
+server thread hitch warning: timer interval of 293 milliseconds
+sync thread hitch warning: timer interval of 228 milliseconds
+server thread hitch warning: timer interval of 342 milliseconds
+sync thread hitch warning: timer interval of 200 milliseconds
+sync thread hitch warning: timer interval of 146 milliseconds
+server thread hitch warning: timer interval of 249 milliseconds
 sync thread hitch warning: timer interval of 108 milliseconds
-server thread hitch warning: timer interval of 172 milliseconds
-sync thread hitch warning: timer interval of 184 milliseconds
-server thread hitch warning: timer interval of 221 milliseconds
+sync thread hitch warning: timer interval of 102 milliseconds
+sync thread hitch warning: timer interval of 218 milliseconds
+server thread hitch warning: timer interval of 291 milliseconds
+sync thread hitch warning: timer interval of 193 milliseconds
+server thread hitch warning: timer interval of 231 milliseconds
+sync thread hitch warning: timer interval of 133 milliseconds
+server thread hitch warning: timer interval of 196 milliseconds
+sync thread hitch warning: timer interval of 128 milliseconds
+sync thread hitch warning: timer interval of 106 milliseconds
+server thread hitch warning: timer interval of 152 milliseconds
+sync thread hitch warning: timer interval of 106 milliseconds
+sync thread hitch warning: timer interval of 126 milliseconds
 sync thread hitch warning: timer interval of 122 milliseconds
-server thread hitch warning: timer interval of 253 milliseconds
-sync thread hitch warning: timer interval of 266 milliseconds
-server thread hitch warning: timer interval of 319 milliseconds
-sync thread hitch warning: timer interval of 226 milliseconds
-sync thread hitch warning: timer interval of 150 milliseconds
-server thread hitch warning: timer interval of 191 milliseconds
-sync thread hitch warning: timer interval of 123 milliseconds
-server thread hitch warning: timer interval of 153 milliseconds
+sync thread hitch warning: timer interval of 116 milliseconds
+server thread hitch warning: timer interval of 167 milliseconds
+sync thread hitch warning: timer interval of 107 milliseconds
+server thread hitch warning: timer interval of 175 milliseconds
+sync thread hitch warning: timer interval of 124 milliseconds
+You can reopen the server GUI using the command svgui.
+server thread hitch warning: timer interval of 178 milliseconds
+sync thread hitch warning: timer interval of 118 milliseconds
+sync thread hitch warning: timer interval of 142 milliseconds
+sync thread hitch warning: timer interval of 121 milliseconds
+server thread hitch warning: timer interval of 233 milliseconds
+sync thread hitch warning: timer interval of 152 milliseconds
+server thread hitch warning: timer interval of 206 milliseconds
+sync thread hitch warning: timer interval of 127 milliseconds
+sync thread hitch warning: timer interval of 131 milliseconds
+server thread hitch warning: timer interval of 193 milliseconds
+sync thread hitch warning: timer interval of 140 milliseconds
+server thread hitch warning: timer interval of 181 milliseconds
+sync thread hitch warning: timer interval of 106 milliseconds
+sync thread hitch warning: timer interval of 130 milliseconds
+server thread hitch warning: timer interval of 190 milliseconds
+sync thread hitch warning: timer interval of 112 milliseconds
+server thread hitch warning: timer interval of 196 milliseconds
+sync thread hitch warning: timer interval of 115 milliseconds
+sync thread hitch warning: timer interval of 107 milliseconds
+sync thread hitch warning: timer interval of 140 milliseconds
+sync thread hitch warning: timer interval of 139 milliseconds
+server thread hitch warning: timer interval of 202 milliseconds
+sync thread hitch warning: timer interval of 101 milliseconds
+sync thread hitch warning: timer interval of 113 milliseconds
+server thread hitch warning: timer interval of 197 milliseconds
 sync thread hitch warning: timer interval of 141 milliseconds
-server thread hitch warning: timer interval of 207 milliseconds
-server thread hitch warning: timer interval of 184 milliseconds
-server thread hitch warning: timer interval of 155 milliseconds
-server thread hitch warning: timer interval of 155 milliseconds
-server thread hitch warning: timer interval of 173 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-server thread hitch warning: timer interval of 168 milliseconds
+sync thread hitch warning: timer interval of 184 milliseconds
+server thread hitch warning: timer interval of 214 milliseconds
+sync thread hitch warning: timer interval of 200 milliseconds
+server thread hitch warning: timer interval of 320 milliseconds
+sync thread hitch warning: timer interval of 144 milliseconds
+sync thread hitch warning: timer interval of 111 milliseconds
+sync thread hitch warning: timer interval of 136 milliseconds
+server thread hitch warning: timer interval of 156 milliseconds
+sync thread hitch warning: timer interval of 114 milliseconds
+sync thread hitch warning: timer interval of 126 milliseconds
+server thread hitch warning: timer interval of 193 milliseconds
+sync thread hitch warning: timer interval of 119 milliseconds
+sync thread hitch warning: timer interval of 120 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+sync thread hitch warning: timer interval of 106 milliseconds
+server thread hitch warning: timer interval of 151 milliseconds
+server thread hitch warning: timer interval of 171 milliseconds
+sync thread hitch warning: timer interval of 118 milliseconds
+server thread hitch warning: timer interval of 234 milliseconds
+sync thread hitch warning: timer interval of 131 milliseconds
+server thread hitch warning: timer interval of 156 milliseconds
+server thread hitch warning: timer interval of 247 milliseconds
+sync thread hitch warning: timer interval of 116 milliseconds
+sync thread hitch warning: timer interval of 152 milliseconds
+server thread hitch warning: timer interval of 196 milliseconds
+network thread hitch warning: timer interval of 166 milliseconds
+sync thread hitch warning: timer interval of 159 milliseconds
+server thread hitch warning: timer interval of 235 milliseconds
+network thread hitch warning: timer interval of 172 milliseconds
+sync thread hitch warning: timer interval of 169 milliseconds
+server thread hitch warning: timer interval of 189 milliseconds
+sync thread hitch warning: timer interval of 164 milliseconds
+network thread hitch warning: timer interval of 168 milliseconds
+server thread hitch warning: timer interval of 188 milliseconds
+sync thread hitch warning: timer interval of 107 milliseconds
+sync thread hitch warning: timer interval of 104 milliseconds
+server thread hitch warning: timer interval of 186 milliseconds
+sync thread hitch warning: timer interval of 109 milliseconds
+server thread hitch warning: timer interval of 185 milliseconds
+sync thread hitch warning: timer interval of 117 milliseconds
+sync thread hitch warning: timer interval of 144 milliseconds
+sync thread hitch warning: timer interval of 130 milliseconds
+server thread hitch warning: timer interval of 288 milliseconds
+server thread hitch warning: timer interval of 164 milliseconds
+server thread hitch warning: timer interval of 166 milliseconds
+server thread hitch warning: timer interval of 153 milliseconds
+sync thread hitch warning: timer interval of 160 milliseconds
+server thread hitch warning: timer interval of 200 milliseconds
+sync thread hitch warning: timer interval of 143 milliseconds
+server thread hitch warning: timer interval of 162 milliseconds
 server thread hitch warning: timer interval of 158 milliseconds
+sync thread hitch warning: timer interval of 119 milliseconds
+server thread hitch warning: timer interval of 191 milliseconds
+sync thread hitch warning: timer interval of 152 milliseconds
+server thread hitch warning: timer interval of 166 milliseconds
+sync thread hitch warning: timer interval of 194 milliseconds
+server thread hitch warning: timer interval of 198 milliseconds
+sync thread hitch warning: timer interval of 106 milliseconds
+server thread hitch warning: timer interval of 189 milliseconds
+sync thread hitch warning: timer interval of 134 milliseconds
+sync thread hitch warning: timer interval of 120 milliseconds
+server thread hitch warning: timer interval of 153 milliseconds
+sync thread hitch warning: timer interval of 108 milliseconds
+server thread hitch warning: timer interval of 202 milliseconds
+sync thread hitch warning: timer interval of 132 milliseconds
+sync thread hitch warning: timer interval of 135 milliseconds
+server thread hitch warning: timer interval of 187 milliseconds
+server thread hitch warning: timer interval of 173 milliseconds
+sync thread hitch warning: timer interval of 110 milliseconds
+Connecting: R`
+server thread hitch warning: timer interval of 171 milliseconds
+sync thread hitch warning: timer interval of 119 milliseconds
+server thread hitch warning: timer interval of 157 milliseconds
 server thread hitch warning: timer interval of 153 milliseconds
 server thread hitch warning: timer interval of 203 milliseconds
-sync thread hitch warning: timer interval of 276 milliseconds
-server thread hitch warning: timer interval of 151 milliseconds
-sync thread hitch warning: timer interval of 110 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 115 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-sync thread hitch warning: timer interval of 168 milliseconds
-server thread hitch warning: timer interval of 209 milliseconds
-server thread hitch warning: timer interval of 2346 milliseconds
-server thread hitch warning: timer interval of 479 milliseconds
-server thread hitch warning: timer interval of 630 milliseconds
-server thread hitch warning: timer interval of 257 milliseconds
-sync thread hitch warning: timer interval of 102 milliseconds
-server thread hitch warning: timer interval of 187 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
 server thread hitch warning: timer interval of 160 milliseconds
-server thread hitch warning: timer interval of 153 milliseconds
+sync thread hitch warning: timer interval of 111 milliseconds
+sync thread hitch warning: timer interval of 147 milliseconds
+server thread hitch warning: timer interval of 187 milliseconds
+network thread hitch warning: timer interval of 158 milliseconds
+sync thread hitch warning: timer interval of 102 milliseconds
+sync thread hitch warning: timer interval of 144 milliseconds
+server thread hitch warning: timer interval of 161 milliseconds
+server thread hitch warning: timer interval of 164 milliseconds
+sync thread hitch warning: timer interval of 120 milliseconds
+sync thread hitch warning: timer interval of 117 milliseconds
+server thread hitch warning: timer interval of 242 milliseconds
+sync thread hitch warning: timer interval of 125 milliseconds
+server thread hitch warning: timer interval of 173 milliseconds
+sync thread hitch warning: timer interval of 102 milliseconds
+server thread hitch warning: timer interval of 175 milliseconds
+server thread hitch warning: timer interval of 182 milliseconds
+sync thread hitch warning: timer interval of 120 milliseconds
+server thread hitch warning: timer interval of 168 milliseconds
+sync thread hitch warning: timer interval of 109 milliseconds
+server thread hitch warning: timer interval of 166 milliseconds
+server thread hitch warning: timer interval of 161 milliseconds
+server thread hitch warning: timer interval of 198 milliseconds
+sync thread hitch warning: timer interval of 227 milliseconds
+network thread hitch warning: timer interval of 227 milliseconds
+server thread hitch warning: timer interval of 287 milliseconds
+sync thread hitch warning: timer interval of 139 milliseconds
+server thread hitch warning: timer interval of 178 milliseconds
+sync thread hitch warning: timer interval of 128 milliseconds
+server thread hitch warning: timer interval of 171 milliseconds
+network thread hitch warning: timer interval of 193 milliseconds
+sync thread hitch warning: timer interval of 265 milliseconds
+server thread hitch warning: timer interval of 362 milliseconds
+network thread hitch warning: timer interval of 215 milliseconds
+sync thread hitch warning: timer interval of 149 milliseconds
+sync thread hitch warning: timer interval of 132 milliseconds
+server thread hitch warning: timer interval of 223 milliseconds
+sync thread hitch warning: timer interval of 104 milliseconds
+sync thread hitch warning: timer interval of 120 milliseconds
+sync thread hitch warning: timer interval of 121 milliseconds
+server thread hitch warning: timer interval of 162 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+server thread hitch warning: timer interval of 2329 milliseconds
+server thread hitch warning: timer interval of 495 milliseconds
+server thread hitch warning: timer interval of 574 milliseconds
+SCRIPT ERROR: @ls-radio/server/server.lua:22: attempt to index a nil value
+server thread hitch warning: timer interval of 217 milliseconds
+Creating script environments for esx_shops
+Started resource esx_shops
+server thread hitch warning: timer interval of 255 milliseconds
+sync thread hitch warning: timer interval of 115 milliseconds
+server thread hitch warning: timer interval of 177 milliseconds
+sync thread hitch warning: timer interval of 115 milliseconds
+sync thread hitch warning: timer interval of 112 milliseconds
+server thread hitch warning: timer interval of 156 milliseconds
+server thread hitch warning: timer interval of 170 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+server thread hitch warning: timer interval of 171 milliseconds
+sync thread hitch warning: timer interval of 111 milliseconds
+server thread hitch warning: timer interval of 158 milliseconds
+sync thread hitch warning: timer interval of 125 milliseconds
+server thread hitch warning: timer interval of 161 milliseconds
+sync thread hitch warning: timer interval of 133 milliseconds
+server thread hitch warning: timer interval of 180 milliseconds
+sync thread hitch warning: timer interval of 143 milliseconds
+server thread hitch warning: timer interval of 222 milliseconds
+sync thread hitch warning: timer interval of 116 milliseconds
+server thread hitch warning: timer interval of 151 milliseconds
+sync thread hitch warning: timer interval of 106 milliseconds
 server thread hitch warning: timer interval of 152 milliseconds
+sync thread hitch warning: timer interval of 140 milliseconds
+server thread hitch warning: timer interval of 190 milliseconds
+sync thread hitch warning: timer interval of 155 milliseconds
+server thread hitch warning: timer interval of 228 milliseconds
+server thread hitch warning: timer interval of 189 milliseconds
+sync thread hitch warning: timer interval of 129 milliseconds
+server thread hitch warning: timer interval of 177 milliseconds
+sync thread hitch warning: timer interval of 115 milliseconds
+server thread hitch warning: timer interval of 152 milliseconds
+server thread hitch warning: timer interval of 178 milliseconds
 Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
 sync thread hitch warning: timer interval of 116 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-server thread hitch warning: timer interval of 204 milliseconds
-server thread hitch warning: timer interval of 201 milliseconds
-sync thread hitch warning: timer interval of 138 milliseconds
-sync thread hitch warning: timer interval of 102 milliseconds
-server thread hitch warning: timer interval of 300 milliseconds
-Stopping resource carremote
-Creating script environments for carremote
-Started resource carremote
-server thread hitch warning: timer interval of 219 milliseconds
-server thread hitch warning: timer interval of 209 milliseconds
-Stopping resource carremote
-Creating script environments for carremote
-Started resource carremote
-server thread hitch warning: timer interval of 287 milliseconds
-server thread hitch warning: timer interval of 151 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+server thread hitch warning: timer interval of 175 milliseconds
 [ExtendedMode] [INFO] Automatically saved all player data
+server thread hitch warning: timer interval of 188 milliseconds
+sync thread hitch warning: timer interval of 165 milliseconds
+sync thread hitch warning: timer interval of 112 milliseconds
+server thread hitch warning: timer interval of 184 milliseconds
+sync thread hitch warning: timer interval of 103 milliseconds
+server thread hitch warning: timer interval of 155 milliseconds
+server thread hitch warning: timer interval of 175 milliseconds
+server thread hitch warning: timer interval of 156 milliseconds
+server thread hitch warning: timer interval of 151 milliseconds
+server thread hitch warning: timer interval of 179 milliseconds
+sync thread hitch warning: timer interval of 126 milliseconds
+server thread hitch warning: timer interval of 199 milliseconds
+Stopping resource gcphone
+Creating script environments for gcphone
+Started resource gcphone
+server thread hitch warning: timer interval of 379 milliseconds
+server thread hitch warning: timer interval of 164 milliseconds
 Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+sync thread hitch warning: timer interval of 120 milliseconds
+server thread hitch warning: timer interval of 199 milliseconds
+sync thread hitch warning: timer interval of 138 milliseconds
 server thread hitch warning: timer interval of 229 milliseconds
-Argument count mismatch (passed 1, wanted 0)
+server thread hitch warning: timer interval of 170 milliseconds
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+SCRIPT ERROR: @extendedmode/server/functions.lua:256: attempt to call a nil value (field '?')
+> handler (@extendedmode/server/main.lua:417)
+server thread hitch warning: timer interval of 194 milliseconds
+server thread hitch warning: timer interval of 177 milliseconds
+sync thread hitch warning: timer interval of 139 milliseconds
+server thread hitch warning: timer interval of 199 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+Stopping resource esx_bikerjob
+Stopping resource esx_carteljob
+Stopping resource esx_gangjob
+Stopping resource esx_mafiajob
+Stopping resource esx_mechanicjob
+Stopping resource esx_policejob
+Stopping resource esx_billing
+Creating script environments for esx_billing
+Started resource esx_billing
+server thread hitch warning: timer interval of 245 milliseconds
+SCRIPT ERROR: @esx_service/server/main.lua:26: attempt to index a nil value (field '?')
+server thread hitch warning: timer interval of 172 milliseconds
+sync thread hitch warning: timer interval of 105 milliseconds
+server thread hitch warning: timer interval of 171 milliseconds
+sync thread hitch warning: timer interval of 109 milliseconds
+server thread hitch warning: timer interval of 168 milliseconds
+Stopping resource esx_billing
+Creating script environments for esx_billing
+Started resource esx_billing
+server thread hitch warning: timer interval of 219 milliseconds
+server thread hitch warning: timer interval of 199 milliseconds
+sync thread hitch warning: timer interval of 105 milliseconds
+sync thread hitch warning: timer interval of 128 milliseconds
+server thread hitch warning: timer interval of 179 milliseconds
+server thread hitch warning: timer interval of 171 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+Stopping resource esx_inventoryhud_trunk
+Creating script environments for esx_inventoryhud_trunk
+Started resource esx_inventoryhud_trunk
+server thread hitch warning: timer interval of 225 milliseconds
+[ExtendedMode] [INFO] Automatically saved all player data
+sync thread hitch warning: timer interval of 165 milliseconds
+server thread hitch warning: timer interval of 240 milliseconds
+server thread hitch warning: timer interval of 153 milliseconds
+sync thread hitch warning: timer interval of 105 milliseconds
+server thread hitch warning: timer interval of 222 milliseconds
+sync thread hitch warning: timer interval of 163 milliseconds
+server thread hitch warning: timer interval of 199 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+Stopping resource esx_jsidmenu
+Creating script environments for esx_jsidmenu
+Started resource esx_jsidmenu
+server thread hitch warning: timer interval of 247 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+server thread hitch warning: timer interval of 158 milliseconds
+sync thread hitch warning: timer interval of 138 milliseconds
+server thread hitch warning: timer interval of 258 milliseconds
+sync thread hitch warning: timer interval of 142 milliseconds
+sync thread hitch warning: timer interval of 134 milliseconds
+server thread hitch warning: timer interval of 187 milliseconds
+server thread hitch warning: timer interval of 210 milliseconds
+sync thread hitch warning: timer interval of 108 milliseconds
+server thread hitch warning: timer interval of 164 milliseconds
+server thread hitch warning: timer interval of 202 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+server thread hitch warning: timer interval of 194 milliseconds
+sync thread hitch warning: timer interval of 203 milliseconds
+server thread hitch warning: timer interval of 296 milliseconds
+sync thread hitch warning: timer interval of 153 milliseconds
+server thread hitch warning: timer interval of 229 milliseconds
+server thread hitch warning: timer interval of 163 milliseconds
+server thread hitch warning: timer interval of 201 milliseconds
+Stopping resource esx_inventoryhud_trunk
+Creating script environments for esx_inventoryhud_trunk
+Started resource esx_inventoryhud_trunk
+server thread hitch warning: timer interval of 243 milliseconds
+server thread hitch warning: timer interval of 183 milliseconds
+sync thread hitch warning: timer interval of 135 milliseconds
+server thread hitch warning: timer interval of 188 milliseconds
+sync thread hitch warning: timer interval of 135 milliseconds
+Stopping resource esx_inventoryhud_trunk
+Creating script environments for esx_inventoryhud_trunk
+Started resource esx_inventoryhud_trunk
+server thread hitch warning: timer interval of 260 milliseconds
+[MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_trunk] An error happens for query "INSERT INTO trunk_inventory(plate,data,owned) VALUES (?,'{}',?) : ["24EWT429",false]": ER_DUP_ENTRY: Duplicate entry '24EWT429' for key 'plate'
+sync thread hitch warning: timer interval of 131 milliseconds
+server thread hitch warning: timer interval of 185 milliseconds
+sync thread hitch warning: timer interval of 116 milliseconds
+[ExtendedMode] [INFO] Automatically saved all player data
+sync thread hitch warning: timer interval of 132 milliseconds
+server thread hitch warning: timer interval of 207 milliseconds
+sync thread hitch warning: timer interval of 144 milliseconds
+server thread hitch warning: timer interval of 197 milliseconds
+sync thread hitch warning: timer interval of 125 milliseconds
+server thread hitch warning: timer interval of 193 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+server thread hitch warning: timer interval of 179 milliseconds
+sync thread hitch warning: timer interval of 199 milliseconds
+server thread hitch warning: timer interval of 168 milliseconds
+server thread hitch warning: timer interval of 210 milliseconds
+sync thread hitch warning: timer interval of 137 milliseconds
+Stopping resource dpemotes
+Creating script environments for dpemotes
+Started resource dpemotes
+server thread hitch warning: timer interval of 445 milliseconds
+server thread hitch warning: timer interval of 161 milliseconds
+sync thread hitch warning: timer interval of 108 milliseconds
+server thread hitch warning: timer interval of 211 milliseconds
+sync thread hitch warning: timer interval of 116 milliseconds
+Stopping resource carremote
+Creating script environments for carremote
+Started resource carremote
+server thread hitch warning: timer interval of 269 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
 Stopping resource rgz_menu
 Started resource rgz_menu
+Stopping resource rgz_menu
+Started resource rgz_menu
+server thread hitch warning: timer interval of 190 milliseconds
+server thread hitch warning: timer interval of 170 milliseconds
+Stopping resource rgz_menu
+Started resource rgz_menu
+server thread hitch warning: timer interval of 169 milliseconds
+sync thread hitch warning: timer interval of 143 milliseconds
+server thread hitch warning: timer interval of 219 milliseconds
+sync thread hitch warning: timer interval of 124 milliseconds
+server thread hitch warning: timer interval of 154 milliseconds
 Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 138 milliseconds
-server thread hitch warning: timer interval of 166 milliseconds
+Stopping resource rgz_menu
+Started resource rgz_menu
+server thread hitch warning: timer interval of 210 milliseconds
+server thread hitch warning: timer interval of 200 milliseconds
+sync thread hitch warning: timer interval of 128 milliseconds
+server thread hitch warning: timer interval of 184 milliseconds
+sync thread hitch warning: timer interval of 147 milliseconds
+server thread hitch warning: timer interval of 197 milliseconds
+sync thread hitch warning: timer interval of 113 milliseconds
+server thread hitch warning: timer interval of 152 milliseconds
+server thread hitch warning: timer interval of 155 milliseconds
+sync thread hitch warning: timer interval of 122 milliseconds
+server thread hitch warning: timer interval of 192 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+server thread hitch warning: timer interval of 217 milliseconds
+sync thread hitch warning: timer interval of 153 milliseconds
+[ExtendedMode] [INFO] Automatically saved all player data
+sync thread hitch warning: timer interval of 101 milliseconds
+server thread hitch warning: timer interval of 160 milliseconds
+sync thread hitch warning: timer interval of 141 milliseconds
+server thread hitch warning: timer interval of 174 milliseconds
+server thread hitch warning: timer interval of 168 milliseconds
+sync thread hitch warning: timer interval of 118 milliseconds
+server thread hitch warning: timer interval of 210 milliseconds
+Stopping resource dpemotes
+Creating script environments for dpemotes
+Started resource dpemotes
+server thread hitch warning: timer interval of 408 milliseconds
+sync thread hitch warning: timer interval of 106 milliseconds
+Stopping resource dpemotes
+Creating script environments for dpemotes
+Started resource dpemotes
+server thread hitch warning: timer interval of 387 milliseconds
+server thread hitch warning: timer interval of 181 milliseconds
+Stopping resource dpemotes
+Creating script environments for dpemotes
+Started resource dpemotes
+server thread hitch warning: timer interval of 428 milliseconds
+Stopping resource dpemotes
+Creating script environments for dpemotes
+Started resource dpemotes
+server thread hitch warning: timer interval of 393 milliseconds
+Stopping resource dpemotes
+Creating script environments for dpemotes
+Started resource dpemotes
+server thread hitch warning: timer interval of 432 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+sync thread hitch warning: timer interval of 148 milliseconds
+server thread hitch warning: timer interval of 169 milliseconds
+server thread hitch warning: timer interval of 153 milliseconds
+Stopping resource SimpleCarHUD
+Started resource SimpleCarHUD
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_glovebox] An error happens for query "INSERT INTO glovebox_inventory(plate,data,owned) VALUES (?,'{}',?) : ["UNV 097 ",false]": ER_DUP_ENTRY: Duplicate entry 'UNV 097 ' for key 'plate'
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+sync thread hitch warning: timer interval of 131 milliseconds
+server thread hitch warning: timer interval of 191 milliseconds
+server thread hitch warning: timer interval of 159 milliseconds
+[ExtendedMode] [INFO] Automatically saved all player data
+server thread hitch warning: timer interval of 160 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+Stopping resource skd_core
+Creating script environments for skd_core
+Started resource skd_core
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+sync thread hitch warning: timer interval of 140 milliseconds
+server thread hitch warning: timer interval of 187 milliseconds
+sync thread hitch warning: timer interval of 123 milliseconds
+server thread hitch warning: timer interval of 155 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+Stopping resource esx_drugs
+Creating script environments for esx_drugs
+Started resource esx_drugs
+sync thread hitch warning: timer interval of 112 milliseconds
+server thread hitch warning: timer interval of 164 milliseconds
+Stopping resource skd_core
+Creating script environments for skd_core
+Started resource skd_core
+Stopping resource esx_drugs
+Creating script environments for esx_drugs
+Started resource esx_drugs
+server thread hitch warning: timer interval of 168 milliseconds
+Stopping resource esx_plasticsurgery
+Creating script environments for esx_plasticsurgery
+Started resource esx_plasticsurgery
+server thread hitch warning: timer interval of 178 milliseconds
+Performing version check against: https://api.kanersps.pw/em/version?version=6.4.2&uuid=ed8c1852-5e38-4138-8a38-6c0108a67d41
+
+[EssentialMode] Everything is nice and updated!
+
+Support the developers: Hey! Would you like to support the developers, go to https://www.patreon.com/gdevelopment and get some nifty rewards!
+[ExtendedMode] [INFO] Automatically saved all player data
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+Stopping resource esx_drugs
+Creating script environments for esx_drugs
+Started resource esx_drugs
+server thread hitch warning: timer interval of 170 milliseconds
+sync thread hitch warning: timer interval of 111 milliseconds
+server thread hitch warning: timer interval of 151 milliseconds
+sync thread hitch warning: timer interval of 121 milliseconds
+server thread hitch warning: timer interval of 151 milliseconds
+Stopping resource esx_realestateagentjob
+Creating script environments for esx_realestateagentjob
+= INFO = Enregistrement du telephone realestateagent => Clients
+= INFO = Registered number for realestateagent => Clients
+Started resource esx_realestateagentjob
+server thread hitch warning: timer interval of 224 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+sync thread hitch warning: timer interval of 145 milliseconds
+server thread hitch warning: timer interval of 179 milliseconds
+server thread hitch warning: timer interval of 169 milliseconds
+sync thread hitch warning: timer interval of 120 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[ExtendedMode] [INFO] Automatically saved all player data
+pcm1
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [166ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
+[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [153ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
+[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [157ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
+[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [169ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
+[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [161ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
+[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [156ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
+[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [152ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
 Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
 Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
 [ExtendedMode] [INFO] Automatically saved all player data
-server thread hitch warning: timer interval of 163 milliseconds
 Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 170 milliseconds
-server thread hitch warning: timer interval of 165 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-sync thread hitch warning: timer interval of 129 milliseconds
-server thread hitch warning: timer interval of 219 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 205 milliseconds
+Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
 Sending heartbeat to https://servers-ingress-live.fivem.net/ingress

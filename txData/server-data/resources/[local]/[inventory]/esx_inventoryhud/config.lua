@@ -29,7 +29,7 @@ Config.WeaponColor = 1
 Config.WeaponLiscence = {x = 12.47, y = -1105.5, z = 29.8}
 Config.LicensePrice = 1000000
 
-Config.Map = {
+--[[Config.Map = {
     {name="Lounge",color=27, id=93,x = -629.28, y = 223.93, z = 81.88},
     {name="Warung",color=2, id=52,x =373.875, y =325.896, z =100.319},
 	{name="Warung",color=2, id=52,x =2557.458, y =382.282, z =100.319},
@@ -53,9 +53,9 @@ Config.Map = {
 	{name="Warung",color=2, id=52,x =-707.501, y =-914.260, z =18.215},
 	{name="Warung",color=2, id=52,x =-1820.523, y =792.518, z =137.118},
 	{name="Warung",color=2, id=52,x =1698.388, y =4924.404, z =41.063}
-}
+}]]
 
-Config.Shops = {
+--[[Config.Shops = {
     RegularShop = {
         Locations = {
 			{x = 373.875,   y = 325.896,  	z = 102.566},
@@ -291,5 +291,5 @@ Config.Shops = {
 
         }
     },
-}
+}]]
 
