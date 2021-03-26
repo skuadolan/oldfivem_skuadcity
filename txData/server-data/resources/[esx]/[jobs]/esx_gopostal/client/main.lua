@@ -67,7 +67,11 @@ function MenuCloakRoom()
 		function(data, menu)
 			if data.current.value == 'citizen_wear' then
 				isInService = false
-				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)
+					TriggerEvent('skinchanger:loadSkin', skin)
+				end)
+				
+				--[[ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
 					  local model = nil
 
 					  if skin.sex == 0 or 1 then
@@ -87,11 +91,19 @@ function MenuCloakRoom()
 
 					  TriggerEvent('skinchanger:loadSkin', skin)
 					  TriggerEvent('esx:restoreLoadout')
-        end)
+        end)]]
       end
 			if data.current.value == 'job_wear' then
 				isInService = true
-				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)
+				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+					if skin.sex == 0 then
+						TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
+					else
+						TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
+					end
+				end)
+
+				--[[ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)
 
 					if skin.sex == 0 or 1 then
 					local model = GetHashKey("s_m_m_postal_01")
@@ -106,7 +118,7 @@ function MenuCloakRoom()
 				SetModelAsNoLongerNeeded(model)
 					end
 					
-				end)
+				end)]]
 
 			end	
 			menu.close()
@@ -597,7 +609,7 @@ Citizen.CreateThread(function()
   
 	SetBlipSprite (blip, 357)
 	SetBlipDisplay(blip, 4)
-	SetBlipScale  (blip, 1.2)
+	SetBlipScale  (blip, 0.95)
 	SetBlipColour (blip, 5)
 	SetBlipAsShortRange(blip, true)
 

@@ -50,6 +50,8 @@ RegisterNetEvent("esx:setJob")
 AddEventHandler("esx:setJob", function(job)
 	local PlayerData = ESX.GetPlayerData()
 	if PlayerData == nil then
+	    	PlayerData = ESX.GetPlayerData()
+    		PlayerData.job = job
 		print ('Handschoenenkastje kan beroep niet synchroniseren. Dit is niet erg.') -- Cannot sync job, not bad
 	else
 		print ('Handschoenenkastje heeft je beroep gesynchroniseerd.') -- Can sync job
@@ -133,7 +135,7 @@ function openmenuvehicle()
             end
         else
        
-            exports['b1g_notify']:Notify('false', _U("no_veh_nearby"))
+            exports['b1g_notify']:Notify('true', _U("no_veh_nearby"))
         end
         lastOpen = true
         GUI.Time = GetGameTimer()
@@ -141,7 +143,7 @@ function openmenuvehicle()
     else
       -- Not their vehicle
  
-            exports['b1g_notify']:Notify('false', _U("nacho_veh"))
+            exports['b1g_notify']:Notify('true', _U("nacho_veh"))
     end
   end
 end
@@ -196,7 +198,7 @@ function OpenCoffresInventoryMenu(plate, max, myVeh)
     function(inventory)
       text = _U("glovebox_info", plate, (inventory.weight / 100), (max / 100))
       data = {plate = plate, max = max, myVeh = myVeh, text = text}
-      TriggerEvent("esx_inventoryhud:openGloveboxInventory", data, inventory.blackMoney, inventory.cashMoney, inventory.items, inventory.weapons)
+      TriggerEvent("conde_inventory:openGloveboxInventory", data, inventory.blackMoney, inventory.cashMoney, inventory.items, inventory.weapons)
     end,
     plate
   )

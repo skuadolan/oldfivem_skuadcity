@@ -29,7 +29,7 @@ Config.mafiaStations = {
 		--	Coords  = vector3(425.1, -979.5, 30.7),
 			Sprite  = 60,
 			Display = 4,
-			Scale   = 1.2,
+			Scale   = 0.95,
 			Colour  = 29
 		},
 

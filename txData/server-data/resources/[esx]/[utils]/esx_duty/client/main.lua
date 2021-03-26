@@ -66,11 +66,13 @@ Citizen.CreateThread(function ()
             'offambulance',
             'offpolice',
             'offmechanic',
+            'offtaxi',
             'offpedagang',
             'pedagang',
             'mechanic',
             'police',
-            'ambulance'
+            'ambulance',
+            'taxi'
         }
 
         if CurrentAction ~= nil then

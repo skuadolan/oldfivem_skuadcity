@@ -10,7 +10,7 @@ Config.Locale = "en"
 Config.OpenKey = 303
 
 -- Limit, unit can be whatever you want. Originally grams (as average people can hold 25kg)
-Config.Weight = 2500000000
+Config.Weight = 1000
 
 -- Default weight for an item:
 -- weight == 0 : The item do not affect character inventory weight

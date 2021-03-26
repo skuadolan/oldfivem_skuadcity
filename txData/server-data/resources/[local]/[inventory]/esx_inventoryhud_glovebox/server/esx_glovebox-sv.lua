@@ -148,7 +148,8 @@ AddEventHandler(
 
     if type == "item_standard" then
       local targetItem = xPlayer.getInventoryItem(item)
-      if targetItem.weight == -1 or ((targetItem.count + count) <= 50) then
+	if xPlayer.canCarryItem(item, count) then
+      --if targetItem.weight == -1 or ((targetItem.count + count) <= 50) then
         TriggerEvent(
           "esx_glovebox:getSharedDataStore",
           plate,
@@ -166,7 +167,7 @@ AddEventHandler(
 
                   break
                 else
-				TriggerClientEvent('b1g_notify:client:Notify', _source, { type = 'true', text = _U("nacho_veh") })
+				TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'true', text = _U("nacho_veh") })
                 end
               end
             end
@@ -198,12 +199,12 @@ AddEventHandler(
 
             text = _U("glovebox_info", plate, (weight / 100), (max / 100))
             data = {plate = plate, max = max, myVeh = owned, text = text}
-            TriggerClientEvent("esx_inventoryhud:refreshGloveboxInventory", _source, data, blackMoney, cashMoney, items, weapons)
+            TriggerClientEvent("conde_inventory:refreshGloveboxInventory", _source, data, blackMoney, cashMoney, items, weapons)
           end
         )
       else
     
-				TriggerClientEvent('b1g_notify:client:Notify', _source, { type = 'false', text = _U("player_inv_no_space") })
+				TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'error', text = _U("player_inv_no_space") })
       end
     end
 
@@ -237,7 +238,7 @@ AddEventHandler(
 
             text = _U("glovebox_info", plate, (weight / 100), (max / 100))
             data = {plate = plate, max = max, myVeh = owned, text = text}
-            TriggerClientEvent("esx_inventoryhud:refreshGloveboxInventory", _source, data, blackMoney, items, weapons)
+            TriggerClientEvent("conde_inventory:refreshGloveboxInventory", _source, data, blackMoney, items, weapons)
           else
             TriggerClientEvent(
               "pNotify:SendNotification",
@@ -291,7 +292,7 @@ AddEventHandler(
 
             text = _U("glovebox_info", plate, (weight / 100), (max / 100))
             data = {plate = plate, max = max, myVeh = owned, text = text}
-            TriggerClientEvent("esx_inventoryhud:refreshGloveboxInventory", _source, data, blackMoney, cashMoney, items, weapons)
+            TriggerClientEvent("conde_inventory:refreshGloveboxInventory", _source, data, blackMoney, cashMoney, items, weapons)
           else
             TriggerClientEvent(
               "pNotify:SendNotification",
@@ -363,7 +364,7 @@ AddEventHandler(
 
           text = _U("glovebox_info", plate, (weight / 100), (max / 100))
           data = {plate = plate, max = max, myVeh = owned, text = text}
-          TriggerClientEvent("esx_inventoryhud:refreshGloveboxInventory", _source, data, blackMoney, cashMoney, items, weapons)
+          TriggerClientEvent("conde_inventory:refreshGloveboxInventory", _source, data, blackMoney, cashMoney, items, weapons)
         end
       )
     end
@@ -406,7 +407,7 @@ AddEventHandler(
             end
             if (getTotalInventoryWeight(plate) + (getItemWeight(item) * count)) > max then
    
-				TriggerClientEvent('b1g_notify:client:Notify', _source, { type = 'true', text = _U("insufficient_space") })
+				TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = _U("insufficient_space") })
             else
               -- Checks passed, storing the item.
               store.set("coffres", coffres)
@@ -424,7 +425,7 @@ AddEventHandler(
         )
       else
    
-				TriggerClientEvent('b1g_notify:client:Notify', _source, { type = 'true', text = _U("invalid_quantity") })
+				TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = _U("invalid_quantity") })
       end
     end
 
@@ -446,7 +447,7 @@ AddEventHandler(
 
             if (getTotalInventoryWeight(plate) + blackMoney[1].amount / 10) > max then
             
-				TriggerClientEvent('b1g_notify:client:Notify', _source, { type = 'true', text = _U("insufficient_space") })
+				TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = _U("insufficient_space") })
             else
               -- Checks passed. Storing the item.
               xPlayer.removeAccountMoney(item, count)
@@ -464,7 +465,7 @@ AddEventHandler(
         )
       else
 
-				TriggerClientEvent('b1g_notify:client:Notify', _source, { type = 'true', text = _U("invalid_amount") })
+				TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = _U("invalid_amount") })
       end
     end
 	
@@ -486,7 +487,7 @@ AddEventHandler(
 
             if (getTotalInventoryWeight(plate) + cashMoney[1].amount / 10) > max then
             
-				TriggerClientEvent('b1g_notify:client:Notify', _source, { type = 'true', text = _U("insufficient_space") })
+				TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = _U("insufficient_space") })
             else
               -- Checks passed. Storing the item.
               xPlayer.removeMoney(count)
@@ -503,7 +504,7 @@ AddEventHandler(
           end
         )
       else
-		TriggerClientEvent('b1g_notify:client:Notify', _source, { type = 'true', text = _U("invalid_amount") })
+		TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = _U("invalid_amount") })
       end
     end
 
@@ -528,7 +529,7 @@ AddEventHandler(
           )
           if (getTotalInventoryWeight(plate) + (getItemWeight(item))) > max then
    
-				TriggerClientEvent('b1g_notify:client:Notify', _source, { type = 'true', text = _U("invalid_amount") })
+				TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = _U("invalid_amount") })
           else
             store.set("weapons", storeWeapons)
             xPlayer.removeWeapon(item)
@@ -574,7 +575,7 @@ AddEventHandler(
 
         text = _U("glovebox_info", plate, (weight / 100), (max / 100))
         data = {plate = plate, max = max, myVeh = owned, text = text}
-        TriggerClientEvent("esx_inventoryhud:refreshGloveboxInventory", _source, data, blackMoney, cashMoney, items, weapons)
+        TriggerClientEvent("conde_inventory:refreshGloveboxInventory", _source, data, blackMoney, cashMoney, items, weapons)
       end
     )
   end

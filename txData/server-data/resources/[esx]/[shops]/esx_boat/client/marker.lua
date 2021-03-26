@@ -164,7 +164,7 @@ Citizen.CreateThread(function()
 			text   = _U('blip_garage'),
 			sprite = 356,
 			color  = 3,
-			scale  = 1.0
+			scale  = 0.95
 		})
 	end
 
@@ -174,7 +174,7 @@ Citizen.CreateThread(function()
 			text   = _U('blip_shop'),
 			sprite = 427,
 			color  = 3,
-			scale  = 1.0
+			scale  = 0.95
 		})
 	end
 

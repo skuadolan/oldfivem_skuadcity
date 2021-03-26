@@ -122,10 +122,10 @@ AddEventHandler('lsrp-motels:cancelRental', function(room)
         useWhileDead = false,
         canCancel = true,
         controlDisables = {
-                disableMovement = true,
+                disableMovement = false,
                 disableCarMovement = false,
                 disableMouse = false,
-                disableCombat = true,
+                disableCombat = false,
         },
         animation = {
             animDict = "missheistdockssetup1clipboard@idle_a",
@@ -137,6 +137,7 @@ anim = "idle_a",
 }, function(status)
         if not status then
             myMotel = false
+            TriggerEvent('kashactersC:ReloadCharacters')
         end
 end)
 end)
@@ -494,10 +495,10 @@ AddEventHandler('lsrp-motels:rentRoom', function(room)
         useWhileDead = false,
         canCancel = true,
         controlDisables = {
-                disableMovement = true,
+                disableMovement = false,
                 disableCarMovement = false,
                 disableMouse = false,
-                disableCombat = true,
+                disableCombat = false,
         },
         animation = {
             animDict = "missheistdockssetup1clipboard@idle_a",
@@ -507,9 +508,10 @@ anim = "idle_a",
             model = "prop_notepad_01"	
         }
 }, function(status)
-        if not status then
-
-        end
+    if not status then
+        inMotel = false
+        TriggerEvent('kashactersC:ReloadCharacters')
+    end
 end)
 
 end)

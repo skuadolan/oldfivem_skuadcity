@@ -18,11 +18,11 @@ Config.DeleteMarker = {Type = 27, r = 255, g = 0, b = 0, x = 5.0, y = 5.0, z = 1
 Config.PoundMarker = {Type = 27, r = 0, g = 0, b = 100, x = 1.5, y = 1.5, z = 1.0} -- Blue Color / Standard Size Circle.
 Config.JPoundMarker = {Type = 27, r = 255, g = 0, b = 0, x = 1.5, y = 1.5, z = 1.0} -- Red Color / Standard Size Circle.
 
-Config.GarageBlip = {Sprite = 290, Color = 38, Display = 2, Scale = 1.0} -- Public Garage Blip.
-Config.PGarageBlip = {Sprite = 290, Color = 53, Display = 2, Scale = 1.0} -- Private Garage Blip.
-Config.PoundBlip = {Sprite = 67, Color = 64, Display = 2, Scale = 1.0} -- Pound Blip.
-Config.JGarageBlip = {Sprite = 290, Color = 49, Display = 2, Scale = 1.0} -- Job Garage Blip.
-Config.JPoundBlip = {Sprite = 67, Color = 49, Display = 2, Scale = 1.0} -- Job Pound Blip.
+Config.GarageBlip = {Sprite = 290, Color = 38, Display = 2, Scale = 0.95} -- Public Garage Blip.
+Config.PGarageBlip = {Sprite = 290, Color = 53, Display = 2, Scale = 0.95} -- Private Garage Blip.
+Config.PoundBlip = {Sprite = 67, Color = 64, Display = 2, Scale = 0.95} -- Pound Blip.
+Config.JGarageBlip = {Sprite = 290, Color = 49, Display = 2, Scale = 0.95} -- Job Garage Blip.
+Config.JPoundBlip = {Sprite = 67, Color = 49, Display = 2, Scale = 0.95} -- Job Pound Blip.
 
 Config.UsePoundTimer = false -- true = Uses Pound Timer
 Config.PoundWait = 5 -- How many Minutes someone must wait before Opening Pound Menu Again.
@@ -31,7 +31,7 @@ Config.UseJPoundTimer = false -- true = Uses Job Pound Timer
 Config.JPoundWait = 2.5 -- How many Minutes someone must wait before Opening Job Pound Menu Again.
 
 Config.UseDamageMult = false -- true = Costs more to Store a Broken/Damaged Vehicle.
-Config.DamageMult = 21 -- Higher Number = Higher Repair Price.
+Config.DamageMult = 0 -- Higher Number = Higher Repair Price.
 
 Config.UsingAdvancedVehicleShop = false -- Set to true if using esx_advancedvehicleshop
 

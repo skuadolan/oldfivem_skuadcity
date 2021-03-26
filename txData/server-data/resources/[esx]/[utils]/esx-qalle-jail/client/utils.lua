@@ -187,16 +187,16 @@ function TeleportPlayer(pos)
 	end
 end
 
-Citizen.CreateThread(function()
+--[[Citizen.CreateThread(function()
 	local blip = AddBlipForCoord(Config.Teleports["Boiling Broke"]["x"], Config.Teleports["Boiling Broke"]["y"], Config.Teleports["Boiling Broke"]["z"])
 
     SetBlipSprite (blip, 188)
     SetBlipDisplay(blip, 4)
-    SetBlipScale  (blip, 0.8)
+    SetBlipScale  (blip, 0.95)
     SetBlipColour (blip, 49)
     SetBlipAsShortRange(blip, true)
 
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString('Boilingbroke Penitentiary')
     EndTextCommandSetBlipName(blip)
-end)
+end)]]

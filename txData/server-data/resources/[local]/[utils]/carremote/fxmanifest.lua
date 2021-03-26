@@ -43,4 +43,3 @@ files {
 }
 
 
-provide 'carremote'

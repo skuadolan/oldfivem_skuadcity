@@ -23,8 +23,8 @@ Config.RemoveCashAfterRPDeath     = false
 Config.RemoveItemsAfterRPDeath    = false
 
 -- Let the player pay for respawning early, only if he can afford it.
-Config.EarlyRespawnFine           = false
-Config.EarlyRespawnFineAmount     = 5000
+Config.EarlyRespawnFine           = true
+Config.EarlyRespawnFineAmount     = 7500
 
 Config.RespawnPoint = {coords = vector3(359.47, -597.37, 43.28), heading = 48.5}
 
@@ -35,7 +35,7 @@ Config.Hospitals = {
 		Blip = {
 			coords = vector3(296.03, -583.97, 43.15),
 			sprite = 61,
-			scale  = 1.2,
+			scale  = 0.95,
 			color  = 2
 		},
 

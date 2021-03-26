@@ -11,6 +11,8 @@ local entityWorld = nil
 local globalplate = nil
 local lastChecked = 0
 
+local currentVehicle, lockStatus, engineStatus, alarmStatus, lastVehicle, owner, sent
+
 Citizen.CreateThread(
   function()
     while ESX == nil do
@@ -300,6 +302,8 @@ function dump(o)
     return tostring(o)
   end
 end
+
+
 
 RegisterNetEvent("esx_inventoryhud_trunk:openTrunk") -- For opening the emote menu from another resource.
 AddEventHandler("esx_inventoryhud_trunk:openTrunk", function()

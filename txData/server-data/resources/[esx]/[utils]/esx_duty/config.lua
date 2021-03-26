@@ -32,4 +32,11 @@ Config.Zones = {
     Color = { r = 0, g = 255, b = 0 },
     Type = 27,
   },
+
+  TaxiDuty = {
+    Pos = { x = 899.92, y = -180.41, z = 73.86 },
+    Size = { x = 1.5, y = 1.5, z = 1.5 },
+    Color = { r = 0, g = 255, b = 0 },
+    Type = 27,
+  },
 }

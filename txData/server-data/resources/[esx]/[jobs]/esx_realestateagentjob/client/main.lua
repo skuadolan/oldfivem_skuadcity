@@ -221,7 +221,7 @@ end)
 
 	SetBlipSprite (blip, 357)
 	SetBlipDisplay(blip, 4)
-	SetBlipScale  (blip, 1.0)
+	SetBlipScale  (blip, 0.95)
 	SetBlipColour (blip, 59)
 	SetBlipAsShortRange(blip, true)
 

@@ -33,7 +33,7 @@ AddEventHandler('esx:setJob', function(job)
     PlayerData.job = job
 end)
 
-Citizen.CreateThread(function()
+--[[Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         player = GetPlayerPed(-1)
@@ -114,7 +114,7 @@ Citizen.CreateThread(function()
             end
         end
     end
-end)
+end)]]
 
 function OpenShopInv(shoptype)
     text = "TOKO"
