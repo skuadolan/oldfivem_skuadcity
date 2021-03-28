@@ -1,6 +1,6 @@
 {
   "global": {
-    "serverName": "[New]SKUAD CITY",
+    "serverName": "#SKUAD CITY ROLEPLAY INDONESIA",
     "language": "en"
   },
   "logger": {},
@@ -29,14 +29,14 @@
   "webServer": {},
   "discordBot": {
     "enabled": true,
-    "token": "NzM5MDI0OTgxNTA1MDgxNDA0.XyUcpg.iE93adtSwqWkZNCGcx3YUZ99SOw",
-    "announceChannel": "778367422222565386",
+    "token": "ODIzNTkwMzgwMTI5MDkxNjI3.YFjCUA.P1-nlmAe3MQ6xrstxNRvUg-f4mQ",
+    "announceChannel": "817382424563679242",
     "prefix": "~",
-    "statusMessage": "**IP:** `[New]SKUAD CITY:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
+    "statusMessage": "**Connect:** `skuad.club`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {
-    "serverDataPath": "D:/Project/FiveM/[new]skuadcity/txData/server-data/",
-    "cfgPath": "D:/Project/FiveM/[new]skuadcity/txData/server-data/server.cfg",
+    "serverDataPath": "~/skuadcity/txData/server-data/",
+    "cfgPath": "~/skuadcity/txData/server-data/server.cfg",
     "commandLine": "",
     "onesync": "on",
     "autostart": true,

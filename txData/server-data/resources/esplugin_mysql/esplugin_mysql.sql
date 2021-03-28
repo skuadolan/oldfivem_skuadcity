@@ -13,18 +13,31 @@
 
 
 -- Dumping database structure for essentialmode
-CREATE DATABASE IF NOT EXISTS `essentialmode` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */;
-USE `essentialmode`;
+CREATE DATABASE IF NOT EXISTS `es_extended`/*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */;
+USE `es_extended`;
 
 -- Dumping structure for table essentialmode.users
 CREATE TABLE IF NOT EXISTS `users` (
   `identifier` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `license` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
-  `money` int(11) DEFAULT NULL,
-  `bank` int(11) DEFAULT NULL,
-  `permission_level` int(11) DEFAULT NULL,
-  `group` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  
+  
   PRIMARY KEY (`identifier`)
+
+	`identifier` VARCHAR(60) NOT NULL,
+	`license` VARCHAR(60) DEFAULT NULL,
+	`money` int(11) DEFAULT NULL,
+  	`bank` int(11) DEFAULT NULL,
+	`accounts` LONGTEXT NULL DEFAULT NULL,
+	`group` VARCHAR(50) COLLATE utf8mb4_bin NULL DEFAULT 'user',
+	`permission_level` int(11) DEFAULT NULL,
+	`inventory` LONGTEXT NULL DEFAULT NULL,
+	`job` VARCHAR(20) NULL DEFAULT 'unemployed',
+	`job_grade` INT NULL DEFAULT 0,
+	`loadout` LONGTEXT NULL DEFAULT NULL,
+	`position` VARCHAR(255) NULL DEFAULT '{"x":-256.43,"y":-981.82,"z":31.2,"heading":205.8}',
+
+	PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Data exporting was unselected.

@@ -84,10 +84,6 @@ function TwitterPostTweet (username, password, message, sourcePlayer, realUser, 
       ['@message'] = message,
       ['@realUser'] = realUser
     }, function (id)
-      TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div class="chat-message-rpt"><b>{0}</b> | {1}</div>',
-        args = { "TWITTER", " @" .. username .. " : ".. message .. ' '}
-    })
       MySQL.Async.fetchAll('SELECT * from twitter_tweets WHERE id = @id', {
         ['@id'] = id
       }, function (tweets)
@@ -285,7 +281,7 @@ end)
 -- DIscord Webhook must be enabled in the config.lua
 AddEventHandler('gcPhone:twitter_newTweets', function (tweet)
   -- print(json.encode(tweet))
-  local discord_webhook = Config.Discord_Webhook
+  local discord_webhook = 'https://discord.com/api/webhooks/' -- Set Discord Webhook. See https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
   if discord_webhook == '' then
     return
   end
@@ -317,7 +313,7 @@ AddEventHandler('gcPhone:twitter_newTweets', function (tweet)
     data[1]['description'] = tweet.message
   end
 
-  if Config.UseDiscordLogging then
+  if Config.UseTwitterLogging then
     PerformHttpRequest(discord_webhook, function(err, text, headers) end, 'POST', PerformHttpRequest(discord_webhook, function(err, text, headers) print(err) end, 'POST', json.encode({username = "Twitter", embeds = data}), headers), headers)
   end
 end)

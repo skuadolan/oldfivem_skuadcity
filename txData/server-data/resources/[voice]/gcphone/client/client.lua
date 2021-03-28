@@ -27,7 +27,7 @@ local useMouse = false
 local ignoreFocus = false
 local takePhoto = false
 local hasFocus = false
---local TokoVoipID = nil
+local TokoVoipID = nil
 
 local PhoneInCall = {}
 local currentPlaySound = false
@@ -58,13 +58,6 @@ end)
 ----
 --Item Functions
 ----
-
---[[
-Opening of the phone linked to an item.
-Based on the solution given by HalCroves
-  https://forum.fivem.net/t/tutorial-for-gcphone-with-call-and-job-message-other/177904
-]]--
-
 function hasPhone(cb)
   cb(true)
 end
@@ -163,23 +156,40 @@ function styleBlip(blip, type, number, player)
   SetBlipScale(blip, 0.9)
 end
 
+local checkRate = 5000 -- every 5 seconds
+local gpsActive = false
 RegisterNetEvent('gcPhone:receiveLivePosition')
 AddEventHandler('gcPhone:receiveLivePosition', function(sourcePlayerServerId, timeoutInMilliseconds, sourceNumber, type)
   if (sourcePlayerServerId ~= nil and sourceNumber ~= nil) then
-    local blipId = sourceNumber
-    if (gpsBlips[blipId] ~= nil) then
-      RemoveBlip(gpsBlips[blipId])
-      gpsBlips[blipId] = nil
+    if (entityBlip ~= nil) then
+      RemoveBlip(entityBlip)
+      entityBlip = nil
     end
     local sourcePlayer = GetPlayerFromServerId(sourcePlayerServerId)
     local sourcePed = GetPlayerPed(sourcePlayer)
-    gpsBlips[blipId] = AddBlipForEntity(sourcePed)
-    styleBlip(gpsBlips[blipId], type, sourceNumber, sourcePlayer)
+    entityBlip = AddBlipForEntity(sourcePed)
+    styleBlip(entityBlip, type, sourceNumber, sourcePlayer)
+    gpsActive = true
     Citizen.SetTimeout(timeoutInMilliseconds, function()
-      SetBlipFlashes(gpsBlips[blipId], true)
+      SetBlipFlashes(entityBlip, true)
       Citizen.Wait(10000)
-      RemoveBlip(gpsBlips[blipId])
-      gpsBlips[blipId] = nil
+      RemoveBlip(entityBlip)
+      entityBlip = nil
+      gpsActive = false
+    end)
+    Citizen.CreateThread(function()
+      while Config.ItemRequired and gpsActive do
+        Citizen.Wait(checkRate)
+        hasPhone(function (hasPhone)
+          if hasPhone == false then
+            SetBlipFlashes(entityBlip, true)
+            Citizen.Wait(2000) -- 2 Seconds
+            RemoveBlip(entityBlip)
+            entityBlip = nil
+            gpsActive = false
+          end
+        end)
+      end
     end)
   end
 end)
@@ -271,7 +281,8 @@ end)
 
 Citizen.CreateThread(function ()
   local mod = 0
-  while true do 
+  while true do
+     
     local playerPed   = PlayerPedId()
     local coords      = GetEntityCoords(playerPed)
     local inRangeToActivePhone = false
@@ -320,6 +331,7 @@ Citizen.CreateThread(function ()
 end)
 
 function PlaySoundJS (sound, volume)
+  print("playSound")
   SendNUIMessage({ event = 'playSound', sound = sound, volume = volume })
 end
 
@@ -330,6 +342,11 @@ end
 function StopSoundJS (sound)
   SendNUIMessage({ event = 'stopSound', sound = sound})
 end
+
+RegisterNetEvent("gcPhone:openPhone")
+AddEventHandler("gcPhone:openPhone", function(_myPhoneNumber)
+    TooglePhone()
+end)
 
 RegisterNetEvent("gcPhone:forceOpenPhone")
 AddEventHandler("gcPhone:forceOpenPhone", function(_myPhoneNumber)
@@ -467,9 +484,16 @@ RegisterNetEvent("gcPhone:acceptCall")
 AddEventHandler("gcPhone:acceptCall", function(infoCall, initiator)
   if inCall == false and USE_RTC == false then
     inCall = true
+    if Config.UseMumbleVoIP then
+      exports["mumble-voip"]:SetCallChannel(infoCall.id+1)
+    elseif Config.UseTokoVoIP then
+      exports.tokovoip_script:addPlayerToRadio(infoCall.id + 120)
+      TokoVoipID = infoCall.id + 120
+    else
     NetworkSetVoiceChannel(infoCall.id + 1)
     NetworkSetTalkerProximity(0.0)
   end
+end
   if menuIsOpen == false then 
     TooglePhone()
   end
@@ -481,10 +505,20 @@ RegisterNetEvent("gcPhone:rejectCall")
 AddEventHandler("gcPhone:rejectCall", function(infoCall)
   if inCall == true then
     inCall = false
-    Citizen.InvokeNative(0xE036A705F989E049) --Hier mumble
-    NetworkSetTalkerProximity(2.5)
+    if Config.UseMumbleVoIP then
+      exports["mumble-voip"]:SetCallChannel(0)
+    elseif Config.UseTokoVoIP then
+      exports.tokovoip_script:removePlayerFromRadio(TokoVoipID)
+      TokoVoipID = nil
+    else
+      Citizen.InvokeNative(0xE036A705F989E049)
+      NetworkSetTalkerProximity(2.5)
+    end
   end
-  PhonePlayText()
+  local calling = isDoingCall()
+  if calling == true then
+    PhonePlayText()
+  end
   SendNUIMessage({event = 'rejectCall', infoCall = infoCall})
 end)
 
@@ -555,7 +589,12 @@ RegisterNUICallback('notififyUseRTC', function (use, cb)
   if USE_RTC == true and inCall == true then
     inCall = false
     Citizen.InvokeNative(0xE036A705F989E049)
-    NetworkSetTalkerProximity(2.5)
+    if Config.UseTokoVoIP then
+      exports.tokovoip_script:removePlayerFromRadio(TokoVoipID)
+      TokoVoipID = nil
+    else
+      NetworkSetTalkerProximity(2.5)
+    end
   end
   cb()
 end)
@@ -807,9 +846,4 @@ RegisterNUICallback('takePhoto', function(data, cb)
   end
   Citizen.Wait(1000)
   PhonePlayAnim('text', false, true)
-end)
-
-RegisterNetEvent("gcPhone:openPhone") -- For opening the emote menu from another resource.
-AddEventHandler("gcPhone:openPhone", function()
-  TooglePhone()
 end)

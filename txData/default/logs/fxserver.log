@@ -1,20 +1,22 @@
 
 ================================================================
-======== FXServer starting - 3/27/2021, 02:36:31
+======== FXServer starting - 3/28/2021, 21:44:06
 ================================================================
+Argument count mismatch (passed 4, wanted 2)
 Creating script environments for _cfx_internal
 Found new resource async in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//async
 Found new resource cron in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//cron
-Found new resource esplugin_mysql in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//esplugin_mysql
-Found new resource essentialmode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//essentialmode
 Found new resource esx_adminplus in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//esx_adminplus
-Found new resource extendedmode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//extendedmode
 Found new resource mysql-async in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//mysql-async
 Found new resource simpledrift in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//simpledrift
 Found new resource skinchanger in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//skinchanger
 Found new resource vMenu in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//vMenu
 Found new resource monitor in D:\Project\FiveM\[new]skuadcity\server\citizen/system_resources//monitor
 Found new resource webadmin in D:\Project\FiveM\[new]skuadcity\server\citizen/system_resources//webadmin
+Found new resource esplugin_mysql in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[essential]/esplugin_mysql
+Found new resource essentialmode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[essential]/essentialmode
+Found new resource es_admin2 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[essential]/es_admin2
+Found new resource extendedmode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[essential]/extendedmode
 Found new resource basic-gamemode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gamemodes]/basic-gamemode
 Found new resource chat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/chat
 Found new resource chat-theme-gtao in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/chat-theme-gtao
@@ -89,7 +91,6 @@ Found new resource esx_duty in D:/Project\FiveM\[new]skuadcity\txData\server-dat
 Found new resource esx_eden_jail in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_eden_jail
 Found new resource esx_giveownedcar in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_giveownedcar
 Found new resource esx_identity in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_identity
-Found new resource esx_jail in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_jail
 Found new resource esx_jobchat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_jobchat
 Found new resource esx_joblisting in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_joblisting
 Found new resource esx_jsidmenu in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_jsidmenu
@@ -117,25 +118,31 @@ Found new resource money in D:/Project\FiveM\[new]skuadcity\txData\server-data/r
 Found new resource money-fountain in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/money-fountain
 Found new resource money-fountain-example-map in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/money-fountain-example-map
 Found new resource ped-money-drops in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/ped-money-drops
+Found new resource JD_logs in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[dc]/JD_logs
 Found new resource dpclothing in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[dp]/dpclothing
 Found new resource dpemotes in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[dp]/dpemotes
 Found new resource jsfour-idcard in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/jsfour-idcard
-Found new resource meta_libs in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/meta_libs
 Found new resource mythic_interiors in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/mythic_interiors
 Found new resource mythic_notify in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/mythic_notify
 Found new resource mythic_progbar in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/mythic_progbar
-Found new resource pNotify in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/pNotify
-Found new resource progressBars in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/progressBars
 Found new resource rgz_menu in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/rgz_menu
 Found new resource trew_hud_ui in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/trew_hud_ui
 Found new resource esx_inventoryhud in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[inventory]/esx_inventoryhud
 Found new resource esx_inventoryhud_glovebox in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[inventory]/esx_inventoryhud_glovebox
 Found new resource esx_inventoryhud_trunk in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[inventory]/esx_inventoryhud_trunk
+Found new resource .git in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/.git
+Resource loading for .git failed:
+Could not open resource metadata file D:/Project/FiveM/[new]skuadcity/txData/server-data/resources//[local]/[maps]/.git/__resource.lua.
 Found new resource banner_anim in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/banner_anim
 Found new resource bob74_ipl in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/bob74_ipl
+Found new resource kantor-pedagang in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/kantor-pedagang
 Found new resource lsrp-motels in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/lsrp-motels
-Found new resource motels in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/motels
 Found new resource ocrp_postal_map in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/ocrp_postal_map
+Found new resource pertamina in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/pertamina
+Found new resource pillbox in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/pillbox
+Found new resource prisonlobbys in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/prisonlobbys
+Found new resource tolKanan in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/tolKanan
+Found new resource WeaponCustomMods in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[mods]/WeaponCustomMods
 Found new resource bisik in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/bisik
 Found new resource carcontrol in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/carcontrol
 Found new resource carremote in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/carremote
@@ -145,54 +152,58 @@ Found new resource esx_dokumen in D:/Project\FiveM\[new]skuadcity\txData\server-
 Found new resource esx_kontrak in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_kontrak
 Found new resource esx_punggungsenjata in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_punggungsenjata
 Found new resource ExM_Hunting in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/ExM_Hunting
-Found new resource fivem-drilling in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/fivem-drilling
 Found new resource LegacyFuel in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/LegacyFuel
 Found new resource MF_VehSales in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/MF_VehSales
 Found new resource mhacking in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/mhacking
-Found new resource monster_vault in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/monster_vault
 Found new resource new_banking in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/new_banking
-Found new resource OurStory_Morphine in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/OurStory_Morphine
 Found new resource RealisticVehicleFailure in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/RealisticVehicleFailure
-Found new resource svehiclelocks in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/svehiclelocks
 Found new resource vehicle-control in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/vehicle-control
-Found new resource weapon-holster in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/weapon-holster
-Found new resource WeaponCustomMods in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/WeaponCustomMods
 Found new resource webpack in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/[builders]/webpack
 Found new resource yarn in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/[builders]/yarn
-Found new resource t1ger_bankrobbery in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/[t1ger]/t1ger_bankrobbery
-Found new resource utk_fingerprint in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/[utk]/utk_fingerprint
-Found new resource utk_hackdependency in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/[utk]/utk_hackdependency
 Creating script environments for sessionmanager
 Started resource sessionmanager
 Creating script environments for monitor
 [txAdminClientJS] Logger started
 [txAdminClientLUA] Version 3.3.0 starting...
 Started resource monitor
+Argument count mismatch (passed 4, wanted 2)
+Creating script environments for essentialmode
+sync thread hitch warning: timer interval of 142 milliseconds
+sync thread hitch warning: timer interval of 151 milliseconds
+Instantiated instance of script SQLite.Main.
+Started resource essentialmode
+Creating script environments for mysql-async
+Started resource mysql-async
+Creating script environments for es_admin2
+Started resource es_admin2
+Creating script environments for esplugin_mysql
+Started resource esplugin_mysql
 Creating script environments for mapmanager
 Started resource mapmanager
 Creating script environments for chat
 Started resource chat
 Started resource spawnmanager
+Started gametype Freeroam
+Started resource basic-gamemode
+Started resource fivem
 Creating script environments for hardcap
 Started resource hardcap
-Creating script environments for essentialmode
-Instantiated instance of script SQLite.Main.
-Started resource essentialmode
-Creating script environments for mysql-async
-Started resource mysql-async
+Creating script environments for rconlog
+Started resource rconlog
+Creating script environments for async
+Started resource async
+Creating script environments for cron
+Started resource cron
+Changing gametype from basic-gamemode to extendedmode
+Stopping resource fivem
+Stopping resource basic-gamemode
 Creating script environments for extendedmode
 [ExtendedMode] [INFO] Starting up...
 Started gametype extendedmode
 Started resource extendedmode
-Creating script environments for esplugin_mysql
-Started resource esplugin_mysql
 Started resource mythic_notify
 Started resource mythic_progbar
 Started resource mythic_interiors
-Creating script environments for meta_libs
-Started resource meta_libs
-Started resource pNotify
-Started resource progressBars
 Started resource mhacking
 Creating script environments for esx_inventoryhud
 Started resource esx_inventoryhud
@@ -200,8 +211,6 @@ Creating script environments for esx_inventoryhud_glovebox
 Started resource esx_inventoryhud_glovebox
 Creating script environments for esx_inventoryhud_trunk
 Started resource esx_inventoryhud_trunk
-Creating script environments for cron
-Started resource cron
 Started resource skinchanger
 Creating script environments for instance
 Started resource instance
@@ -305,6 +314,7 @@ Creating script environments for esx_turbo
 Started resource esx_turbo
 Started resource esx-checkdeathcause
 Creating script environments for esx-qalle-jail
+sync thread hitch warning: timer interval of 105 milliseconds
 Started resource esx-qalle-jail
 Creating script environments for esx_boat
 Started resource esx_boat
@@ -317,10 +327,6 @@ Creating script environments for esx_sit
 Started resource esx_sit
 Creating script environments for esx_crafting
 Started resource esx_crafting
-Creating script environments for async
-Started resource async
-Creating script environments for esx_jail
-Started resource esx_jail
 Creating script environments for esx_showcommands
 Started resource esx_showcommands
 Creating script environments for esx_communityservice
@@ -355,14 +361,23 @@ Creating script environments for esx_truckerjob
 Started resource esx_truckerjob
 Creating script environments for ESX-qb-garbagejob
 Started resource ESX-qb-garbagejob
-Started resource utk_hackdependency
-Started resource utk_fingerprint
-Creating script environments for t1ger_bankrobbery
-Started resource t1ger_bankrobbery
 Started resource bob74_ipl
 Started resource ocrp_postal_map
+Started resource kantor-pedagang
+Started resource pertamina
+Asset pillbox/gabz_pillbox_textures_01.ytd uses 22.5 MiB of physical memory.
+Started resource pillbox
+Started resource prisonlobbys
+Started resource tolKanan
 Creating script environments for esx_adminplus
 Started resource esx_adminplus
+Creating script environments for saltychat
+Instantiated instance of script SaltyServer.VoiceManager.
+Started resource saltychat
+Creating script environments for esx_addons_gcphone
+Started resource esx_addons_gcphone
+Creating script environments for gcphone
+Started resource gcphone
 Creating script environments for es_camera
 Started resource es_camera
 Creating script environments for yarn
@@ -371,33 +386,14 @@ Creating script environments for webpack
 Started resource webpack
 Creating script environments for screenshot-basic
 Started resource screenshot-basic
-Creating script environments for saltychat
-Instantiated instance of script SaltyServer.VoiceManager.
-Started resource saltychat
-Creating script environments for esx_addons_gcphone
-Started resource esx_addons_gcphone
-Creating script environments for gcphone
-Started resource gcphone
 Creating script environments for ls-radio
 Started resource ls-radio
 Started resource simpledrift
 Creating script environments for LegacyFuel
 Started resource LegacyFuel
-Creating script environments for monster_vault
-Started resource monster_vault
-Started resource fivem-drilling
 Creating script environments for carremote
 Started resource carremote
 Started resource carcontrol
-Creating script environments for OurStory_Morphine
-Started resource OurStory_Morphine
-Started resource weapon-holster
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-Creating script environments for new_banking
-Started resource new_banking
-Creating script environments for svehiclelocks
-Started resource svehiclelocks
 Creating script environments for vehicle-control
 Started resource vehicle-control
 Asset WeaponCustomMods/w_sb_compactsmg.ytd uses 24.0 MiB of physical memory.
@@ -405,6 +401,10 @@ Asset WeaponCustomMods/w_sb_compactsmg_boxmag.ytd uses 24.0 MiB of physical memo
 Asset WeaponCustomMods/w_sb_compactsmg_mag1.ytd uses 24.0 MiB of physical memory.
 Asset WeaponCustomMods/w_sb_compactsmg_mag2.ytd uses 24.0 MiB of physical memory.
 Started resource WeaponCustomMods
+Creating script environments for lsrp-motels
+Started resource lsrp-motels
+Creating script environments for new_banking
+Started resource new_banking
 Creating script environments for MF_VehSales
 Started resource MF_VehSales
 Creating script environments for RealisticVehicleFailure
@@ -413,7 +413,6 @@ Creating script environments for bisik
 Started resource bisik
 Creating script environments for skd_core
 Started resource skd_core
-Started resource banner_anim
 Creating script environments for ExM_Hunting
 Started resource ExM_Hunting
 Creating script environments for trew_hud_ui
@@ -422,16 +421,24 @@ Started resource dpclothing
 Creating script environments for dpemotes
 Started resource dpemotes
 Started resource rgz_menu
+Creating script environments for JD_logs
+Started resource JD_logs
 Creating script environments for vMenu
+You can reopen the server GUI using the command svgui.
+sync thread hitch warning: timer interval of 107 milliseconds
 Instantiated instance of script vMenuServer.BanManager.
 Instantiated instance of script vMenuServer.MainServer.
 Started resource vMenu
+Stopping resource sessionmanager
+Creating script environments for sessionmanager
+Started resource sessionmanager
 Authenticating server license key...
-[mysql-async] [SUCCESS] Database server connection established.
-[ExtendedMode] [INFO] Checking your database...
-Performing version check against: https://api.kanersps.pw/em/version?version=6.4.2&uuid=ed8c1852-5e38-4138-8a38-6c0108a67d41
-
+[mysql-async] [ERROR] connect ETIMEDOUT
+Server license key authentication succeeded. Welcome!
 [txAdminClientLUA] Threads and commands set up. All Ready.
+Performing version check against: https://api.kanersps.pw/em/version?version=6.4.2&uuid=8dc78362-0de9-44d2-bebe-10d399d582dc
+
+[ExtendedMode] [INFO] Checking your database...
 esx_advancedgarage: Parking Vehicles on restart is currently set to false.
 
 
@@ -446,35 +453,29 @@ esx_advancedgarage: Parking Vehicles on restart is currently set to false.
 
 
 MF_VehSales: Started
-server thread hitch warning: timer interval of 683 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshop] [151ms] SELECT * FROM vehicle_categories : []
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [296ms] SELECT * FROM items : []
-[MariaDB:10.5.9-MariaDB] [WARNING] [extendedmode] [320ms] SELECT TABLE_NAME AS 't', COLUMN_NAME AS 'c' FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'users' or TABLE_NAME = 'user_inventory' or TABLE_NAME = 'user_accounts' : []
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [160ms] SELECT * FROM addon_account : []
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_joblisting] [162ms] SELECT name, label FROM jobs WHERE whitelisted = ? : [false]
+server thread hitch warning: timer interval of 1650 milliseconds
+
+
+-------------------------------------------------------
+JD_logs
+UPDATE: 1.1.6 AVAILABLE
+CHANGELOG: Fixed issue with Death logs.
+-------------------------------------------------------
+
+[MySQL] [WARNING] [esx_addoninventory] [1019ms] SELECT * FROM items : []
+[MySQL] [WARNING] [esx_addonaccount] [596ms] SELECT * FROM addon_account : []
+[MySQL] [WARNING] [esx_joblisting] [565ms] SELECT name, label FROM jobs WHERE whitelisted = ? : [false]
+[MySQL] [WARNING] [esx_shops] [482ms] SELECT * FROM shops LEFT JOIN items ON items.name = shops.item : []
+[MySQL] [WARNING] [esx_weaponshop] [486ms] SELECT * FROM weashops : []
+[MySQL] [WARNING] [esx_vehicleshop] [592ms] SELECT * FROM vehicle_categories : []
+[MySQL] [WARNING] [esx_boat] [497ms] UPDATE owned_vehicles SET `stored` = true WHERE `stored` = false AND type = ? : ["boat"]
+[MySQL] [WARNING] [extendedmode] [804ms] SELECT TABLE_NAME AS 't', COLUMN_NAME AS 'c' FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'users' or TABLE_NAME = 'user_inventory' or TABLE_NAME = 'user_accounts' : []
+[MySQL] [WARNING] [esx_datastore] [669ms] SELECT * FROM datastore : []
 [ExtendedMode] [INFO] Your database is using the 'newesx' storage format, starting...
 [ExtendedMode] [INFO] ExtendedMode has been initialized
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_society] [173ms] SELECT * FROM job_grades : []
-[MariaDB:10.5.9-MariaDB] [WARNING] [extendedmode] [229ms] SELECT * FROM job_grades : []
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [187ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["motels"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [184ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["caution"]
-sync thread hitch warning: timer interval of 118 milliseconds
-
-[EssentialMode] Current version: 6.4.2
-[EssentialMode] Updater version: 6.4.2
-
-[EssentialMode] Everything is nice and updated!
-
-Support the developers: Hey! Would you like to support the developers, go to https://www.patreon.com/gdevelopment and get some nifty rewards!
-Server license key authentication succeeded. Welcome!
-sync thread hitch warning: timer interval of 109 milliseconds
-sync thread hitch warning: timer interval of 145 milliseconds
-server thread hitch warning: timer interval of 323 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [433ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["society_cardealer"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [431ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_banker"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [428ms] SELECT * FROM datastore_data WHERE name = ? : ["society_gang"]
-sync thread hitch warning: timer interval of 296 milliseconds
-server thread hitch warning: timer interval of 239 milliseconds
+[MySQL] [WARNING] [esx_society] [669ms] SELECT * FROM jobs : []
+[MySQL] [WARNING] [esx_vehicleshop] [172ms] SELECT * FROM vehicles : []
+[MySQL] [WARNING] [esx_addoninventory] [168ms] SELECT * FROM addon_inventory : []
         fff                          
   cccc ff   xx  xx     rr rr    eee  
 cc     ffff   xx       rrr  r ee   e 
@@ -482,470 +483,34 @@ cc     ff     xx   ... rr     eeeee
  ccccc ff   xx  xx ... rr      eeeee 
                                      
 Authenticated with cfx.re Nucleus: https://dianadi021-k38elr.users.cfx.re/
-sync thread hitch warning: timer interval of 243 milliseconds
-server thread hitch warning: timer interval of 211 milliseconds
-sync thread hitch warning: timer interval of 128 milliseconds
-sync thread hitch warning: timer interval of 230 milliseconds
-server thread hitch warning: timer interval of 240 milliseconds
-sync thread hitch warning: timer interval of 109 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [518ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["society_cartel"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [585ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_biker"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [574ms] SELECT * FROM datastore_data WHERE name = ? : ["society_mafia"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_property] [587ms] SELECT * FROM properties : []
-sync thread hitch warning: timer interval of 114 milliseconds
 -- [server notice: tebex_not_set]
 ================
 Monetize your server using Tebex! Visit https://tebex.io/fivem for more info.
 ================
 
-sync thread hitch warning: timer interval of 123 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [256ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["society_gang"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [254ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_cardealer"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [250ms] SELECT * FROM datastore_data WHERE name = ? : ["society_mechanic"]
-sync thread hitch warning: timer interval of 106 milliseconds
-sync thread hitch warning: timer interval of 150 milliseconds
-server thread hitch warning: timer interval of 152 milliseconds
-sync thread hitch warning: timer interval of 104 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [271ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["society_mafia"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [268ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_cartel"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [263ms] SELECT * FROM datastore_data WHERE name = ? : ["society_police"]
-sync thread hitch warning: timer interval of 169 milliseconds
-server thread hitch warning: timer interval of 200 milliseconds
-sync thread hitch warning: timer interval of 247 milliseconds
-server thread hitch warning: timer interval of 289 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [549ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["society_mechanic"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [548ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_gang"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [547ms] SELECT * FROM datastore_data WHERE name = ? : ["society_taxi"]
-sync thread hitch warning: timer interval of 212 milliseconds
-server thread hitch warning: timer interval of 163 milliseconds
-server thread hitch warning: timer interval of 179 milliseconds
-sync thread hitch warning: timer interval of 243 milliseconds
-sync thread hitch warning: timer interval of 194 milliseconds
-server thread hitch warning: timer interval of 219 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [644ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["society_police"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [641ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_mafia"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [638ms] SELECT * FROM datastore_data WHERE name = ? : ["user_ears"]
-sync thread hitch warning: timer interval of 202 milliseconds
-server thread hitch warning: timer interval of 175 milliseconds
-sync thread hitch warning: timer interval of 146 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [168ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["society_taxi"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [162ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_mafia_black_money"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [159ms] SELECT * FROM datastore_data WHERE name = ? : ["user_glasses"]
-sync thread hitch warning: timer interval of 108 milliseconds
-sync thread hitch warning: timer interval of 118 milliseconds
-sync thread hitch warning: timer interval of 182 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [323ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_pedagang"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [320ms] SELECT * FROM datastore_data WHERE name = ? : ["user_mask"]
-server thread hitch warning: timer interval of 193 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 188 milliseconds
-sync thread hitch warning: timer interval of 101 milliseconds
-sync thread hitch warning: timer interval of 216 milliseconds
-sync thread hitch warning: timer interval of 121 milliseconds
-server thread hitch warning: timer interval of 328 milliseconds
-sync thread hitch warning: timer interval of 246 milliseconds
-server thread hitch warning: timer interval of 298 milliseconds
-sync thread hitch warning: timer interval of 181 milliseconds
-sync thread hitch warning: timer interval of 118 milliseconds
-sync thread hitch warning: timer interval of 155 milliseconds
-server thread hitch warning: timer interval of 560 milliseconds
-sync thread hitch warning: timer interval of 202 milliseconds
-server thread hitch warning: timer interval of 189 milliseconds
-sync thread hitch warning: timer interval of 102 milliseconds
-sync thread hitch warning: timer interval of 131 milliseconds
-server thread hitch warning: timer interval of 180 milliseconds
-sync thread hitch warning: timer interval of 191 milliseconds
-server thread hitch warning: timer interval of 191 milliseconds
-server thread hitch warning: timer interval of 166 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-sync thread hitch warning: timer interval of 108 milliseconds
-server thread hitch warning: timer interval of 225 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-server thread hitch warning: timer interval of 175 milliseconds
-server thread hitch warning: timer interval of 165 milliseconds
-server thread hitch warning: timer interval of 210 milliseconds
-sync thread hitch warning: timer interval of 112 milliseconds
-server thread hitch warning: timer interval of 174 milliseconds
-server thread hitch warning: timer interval of 157 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-sync thread hitch warning: timer interval of 109 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-sync thread hitch warning: timer interval of 101 milliseconds
-server thread hitch warning: timer interval of 174 milliseconds
-sync thread hitch warning: timer interval of 142 milliseconds
-server thread hitch warning: timer interval of 197 milliseconds
-sync thread hitch warning: timer interval of 178 milliseconds
-network thread hitch warning: timer interval of 201 milliseconds
-server thread hitch warning: timer interval of 263 milliseconds
-sync thread hitch warning: timer interval of 149 milliseconds
-server thread hitch warning: timer interval of 205 milliseconds
-server thread hitch warning: timer interval of 170 milliseconds
-sync thread hitch warning: timer interval of 109 milliseconds
-server thread hitch warning: timer interval of 169 milliseconds
-Connecting: R`
-server thread hitch warning: timer interval of 198 milliseconds
-sync thread hitch warning: timer interval of 133 milliseconds
-network thread hitch warning: timer interval of 234 milliseconds
-sync thread hitch warning: timer interval of 229 milliseconds
-sync thread hitch warning: timer interval of 147 milliseconds
-server thread hitch warning: timer interval of 418 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-server thread hitch warning: timer interval of 170 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-sync thread hitch warning: timer interval of 104 milliseconds
-server thread hitch warning: timer interval of 265 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-sync thread hitch warning: timer interval of 137 milliseconds
-server thread hitch warning: timer interval of 293 milliseconds
-sync thread hitch warning: timer interval of 146 milliseconds
-server thread hitch warning: timer interval of 178 milliseconds
-server thread hitch warning: timer interval of 151 milliseconds
-server thread hitch warning: timer interval of 198 milliseconds
-server thread hitch warning: timer interval of 175 milliseconds
-server thread hitch warning: timer interval of 211 milliseconds
-network thread hitch warning: timer interval of 182 milliseconds
-sync thread hitch warning: timer interval of 184 milliseconds
-server thread hitch warning: timer interval of 164 milliseconds
-sync thread hitch warning: timer interval of 157 milliseconds
-server thread hitch warning: timer interval of 162 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 2542 milliseconds
-server thread hitch warning: timer interval of 536 milliseconds
-server thread hitch warning: timer interval of 605 milliseconds
-pcm1
-server thread hitch warning: timer interval of 151 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [166ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [154ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [162ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [174ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [187ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [152ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [172ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [172ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [164ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [172ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [213ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [200ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [213ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [190ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [210ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [212ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [198ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [212ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [197ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [214ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [223ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [237ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [230ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [229ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [218ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [216ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [218ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [255ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [246ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [229ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [245ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [249ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [235ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [246ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [265ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [265ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [159ms] SELECT motel_id FROM lsrp_motels WHERE ident = ? : ["steam:110000134a401f0"]
-server thread hitch warning: timer interval of 318 milliseconds
-pcm1
-pcm1
-server thread hitch warning: timer interval of 166 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [183ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [175ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [164ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [160ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [190ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [159ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-pcm1
-pcm1
-pcm1
-pcm1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 139 milliseconds
-server thread hitch warning: timer interval of 178 milliseconds
-server thread hitch warning: timer interval of 173 milliseconds
-server thread hitch warning: timer interval of 163 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 185 milliseconds
-server thread hitch warning: timer interval of 194 milliseconds
-[ExtendedMode] [INFO] Automatically saved all player data
-sync thread hitch warning: timer interval of 151 milliseconds
-server thread hitch warning: timer interval of 200 milliseconds
-sync thread hitch warning: timer interval of 121 milliseconds
-server thread hitch warning: timer interval of 156 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource lsrp-motels
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-server thread hitch warning: timer interval of 277 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 187 milliseconds
-sync thread hitch warning: timer interval of 171 milliseconds
-server thread hitch warning: timer interval of 204 milliseconds
-sync thread hitch warning: timer interval of 122 milliseconds
-sync thread hitch warning: timer interval of 380 milliseconds
-server thread hitch warning: timer interval of 679 milliseconds
-sync thread hitch warning: timer interval of 473 milliseconds
-server thread hitch warning: timer interval of 403 milliseconds
-sync thread hitch warning: timer interval of 249 milliseconds
-sync thread hitch warning: timer interval of 139 milliseconds
-server thread hitch warning: timer interval of 296 milliseconds
-sync thread hitch warning: timer interval of 384 milliseconds
-server thread hitch warning: timer interval of 244 milliseconds
-sync thread hitch warning: timer interval of 161 milliseconds
-server thread hitch warning: timer interval of 165 milliseconds
-sync thread hitch warning: timer interval of 109 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-sync thread hitch warning: timer interval of 167 milliseconds
-sync thread hitch warning: timer interval of 132 milliseconds
-server thread hitch warning: timer interval of 293 milliseconds
-sync thread hitch warning: timer interval of 216 milliseconds
-server thread hitch warning: timer interval of 201 milliseconds
-sync thread hitch warning: timer interval of 121 milliseconds
-server thread hitch warning: timer interval of 219 milliseconds
-sync thread hitch warning: timer interval of 142 milliseconds
-sync thread hitch warning: timer interval of 191 milliseconds
-server thread hitch warning: timer interval of 251 milliseconds
-sync thread hitch warning: timer interval of 148 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 289 milliseconds
-sync thread hitch warning: timer interval of 106 milliseconds
-server thread hitch warning: timer interval of 196 milliseconds
-sync thread hitch warning: timer interval of 107 milliseconds
-server thread hitch warning: timer interval of 163 milliseconds
-server thread hitch warning: timer interval of 208 milliseconds
-server thread hitch warning: timer interval of 152 milliseconds
-sync thread hitch warning: timer interval of 180 milliseconds
-server thread hitch warning: timer interval of 256 milliseconds
-sync thread hitch warning: timer interval of 178 milliseconds
-server thread hitch warning: timer interval of 190 milliseconds
-server thread hitch warning: timer interval of 155 milliseconds
-server thread hitch warning: timer interval of 320 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-server thread hitch warning: timer interval of 173 milliseconds
-sync thread hitch warning: timer interval of 239 milliseconds
-server thread hitch warning: timer interval of 301 milliseconds
-sync thread hitch warning: timer interval of 139 milliseconds
-sync thread hitch warning: timer interval of 119 milliseconds
-server thread hitch warning: timer interval of 259 milliseconds
-sync thread hitch warning: timer interval of 169 milliseconds
-server thread hitch warning: timer interval of 173 milliseconds
-sync thread hitch warning: timer interval of 109 milliseconds
-sync thread hitch warning: timer interval of 174 milliseconds
-server thread hitch warning: timer interval of 328 milliseconds
-sync thread hitch warning: timer interval of 106 milliseconds
-server thread hitch warning: timer interval of 191 milliseconds
-sync thread hitch warning: timer interval of 122 milliseconds
-server thread hitch warning: timer interval of 152 milliseconds
-sync thread hitch warning: timer interval of 145 milliseconds
-server thread hitch warning: timer interval of 295 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 197 milliseconds
-server thread hitch warning: timer interval of 229 milliseconds
-sync thread hitch warning: timer interval of 160 milliseconds
-server thread hitch warning: timer interval of 199 milliseconds
-sync thread hitch warning: timer interval of 136 milliseconds
-server thread hitch warning: timer interval of 191 milliseconds
-sync thread hitch warning: timer interval of 123 milliseconds
-server thread hitch warning: timer interval of 215 milliseconds
-server thread hitch warning: timer interval of 166 milliseconds
-server thread hitch warning: timer interval of 157 milliseconds
-Connecting: R`
-server thread hitch warning: timer interval of 159 milliseconds
-sync thread hitch warning: timer interval of 110 milliseconds
-sync thread hitch warning: timer interval of 126 milliseconds
-server thread hitch warning: timer interval of 237 milliseconds
-sync thread hitch warning: timer interval of 145 milliseconds
-sync thread hitch warning: timer interval of 129 milliseconds
-server thread hitch warning: timer interval of 165 milliseconds
-server thread hitch warning: timer interval of 198 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-sync thread hitch warning: timer interval of 114 milliseconds
-server thread hitch warning: timer interval of 205 milliseconds
-sync thread hitch warning: timer interval of 137 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-pcm1
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [157ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [161ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [162ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [169ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [164ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [169ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [193ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [171ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [196ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [186ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [203ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [209ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [194ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [211ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [215ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [208ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [215ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [234ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [234ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [229ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [213ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [220ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [213ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [215ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [242ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [241ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [216ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [221ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [201ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [200ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [235ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [220ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [234ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [228ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [223ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [214ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [220ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-pcm1
-pcm1
-pcm1
-pcm1
-server thread hitch warning: timer interval of 199 milliseconds
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [158ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [166ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [175ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [155ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [195ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [205ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [211ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [231ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [220ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [197ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [150ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [162ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [159ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-[MariaDB:10.5.9-MariaDB] [WARNING] [lsrp-motels] [157ms] UPDATE users SET last_motel = NULL, last_motel_room = NULL WHERE identifier = ? : ["steam:110000134a401f0"]
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-You can reopen the server GUI using the command svgui.
-server thread hitch warning: timer interval of 158 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MariaDB:10.5.9-MariaDB] [ERROR] [esx_society] An error happens for query "SELECT * FROM society_moneywash : []": ER_NO_SUCH_TABLE: Table 'db_skuadcity.society_moneywash' doesn't exist
-SCRIPT ERROR: @esx_society/server/main.lua:356: attempt to get length of a nil value (local 'result')
-> ref (@esx_society/server/main.lua:356)
->  (@mysql-async/mysql-async.js:15543)
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 156 milliseconds
-server thread hitch warning: timer interval of 152 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 163 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource lsrp-motels
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-server thread hitch warning: timer interval of 270 milliseconds
-Stopping resource lsrp-motels
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-server thread hitch warning: timer interval of 270 milliseconds
-sync thread hitch warning: timer interval of 112 milliseconds
-server thread hitch warning: timer interval of 191 milliseconds
-sync thread hitch warning: timer interval of 101 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource lsrp-motels
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-server thread hitch warning: timer interval of 228 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource lsrp-motels
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-server thread hitch warning: timer interval of 206 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource lsrp-motels
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-server thread hitch warning: timer interval of 250 milliseconds
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 161 milliseconds
-server thread hitch warning: timer interval of 163 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource lsrp-motels
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-server thread hitch warning: timer interval of 247 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource lsrp-motels
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-server thread hitch warning: timer interval of 206 milliseconds
-Performing version check against: https://api.kanersps.pw/em/version?version=6.4.2&uuid=ed8c1852-5e38-4138-8a38-6c0108a67d41
+server thread hitch warning: timer interval of 454 milliseconds
+[EssentialMode] Updater version: UPDATER UNAVAILABLE
+[EssentialMode] This could be your internet connection or that the update server is not running. This won't impact the server
 
-[EssentialMode] Everything is nice and updated!
 
-Advertisement: Want to have EssentialMode pre-installed on a good and affordable server host? Go to the following link: https://zap-hosting.com/EssentialMode
-[ExtendedMode] [INFO] Automatically saved all player data
-Stopping resource lsrp-motels
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-server thread hitch warning: timer interval of 201 milliseconds
+server thread hitch warning: timer interval of 153 milliseconds
+server thread hitch warning: timer interval of 239 milliseconds
 server thread hitch warning: timer interval of 186 milliseconds
-sync thread hitch warning: timer interval of 125 milliseconds
-server thread hitch warning: timer interval of 162 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 151 milliseconds
-server thread hitch warning: timer interval of 184 milliseconds
-sync thread hitch warning: timer interval of 130 milliseconds
-server thread hitch warning: timer interval of 157 milliseconds
-server thread hitch warning: timer interval of 177 milliseconds
-sync thread hitch warning: timer interval of 119 milliseconds
-server thread hitch warning: timer interval of 197 milliseconds
 server thread hitch warning: timer interval of 156 milliseconds
+sync thread hitch warning: timer interval of 117 milliseconds
+server thread hitch warning: timer interval of 240 milliseconds
+Connecting: R`
+sync thread hitch warning: timer interval of 103 milliseconds
+sync thread hitch warning: timer interval of 121 milliseconds
+server thread hitch warning: timer interval of 229 milliseconds
+sync thread hitch warning: timer interval of 107 milliseconds
+sync thread hitch warning: timer interval of 102 milliseconds
+server thread hitch warning: timer interval of 167 milliseconds
+server thread hitch warning: timer interval of 151 milliseconds
+sync thread hitch warning: timer interval of 213 milliseconds
+server thread hitch warning: timer interval of 291 milliseconds
 Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 156 milliseconds
-server thread hitch warning: timer interval of 157 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-sync thread hitch warning: timer interval of 161 milliseconds
-server thread hitch warning: timer interval of 249 milliseconds
-sync thread hitch warning: timer interval of 145 milliseconds
-server thread hitch warning: timer interval of 187 milliseconds
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 127 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-sync thread hitch warning: timer interval of 163 milliseconds
-server thread hitch warning: timer interval of 228 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 152 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 178 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 165 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-sync thread hitch warning: timer interval of 122 milliseconds
-server thread hitch warning: timer interval of 212 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 162 milliseconds
+server thread hitch warning: timer interval of 2675 milliseconds
+server thread hitch warning: timer interval of 605 milliseconds
+server thread hitch warning: timer interval of 598 milliseconds
+server thread hitch warning: timer interval of 347 milliseconds

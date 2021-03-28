@@ -2,7 +2,7 @@ Config = {}
 
 Config.Locale = 'en'
 
-Config.serverLogo = 'https://dianadi021.github.io/assets/content/icon/skd.png'
+Config.serverLogo = 'https://dianadi021.github.io/assets/content/icon/skdc.png'
 
 Config.font = {
 	name 	= 'Montserrat',

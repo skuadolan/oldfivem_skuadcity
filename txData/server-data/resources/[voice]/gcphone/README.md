@@ -45,7 +45,7 @@
 
 - Screenshots/Selfies with already working upload server.
 
-- Easy installation instructions. Created for us by @Rocky_southpaw#7777
+- Easy installation instructions. Created for us by @ROCKY_southpaw#7777
 
   
 ## Configuration
@@ -71,7 +71,6 @@ ESX Addons GCPhone has been merged INTO the gcphone files for ease of use. **You
 Please put `ensure gcphone` before jobs.
 
 Example :
-
 ```
 ensure mysql-async
 
