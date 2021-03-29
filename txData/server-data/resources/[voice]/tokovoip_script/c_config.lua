@@ -5,7 +5,7 @@ TokoVoipConfig = {
 		{name = "Police/EMS Shared Radio", subscribers = {}},
 		{name = "Private 1", subscribers = {}},
 		{name = "Private 2", subscribers = {}},
-		{name = "Public", subscribers = {}},
+		{name = "Public", subscribers = {}}
 	},
 
 	refreshRate = 100, -- Rate at which the data is sent to the TSPlugin
@@ -33,7 +33,7 @@ TokoVoipConfig = {
 		-- TeamSpeak channel name used by the voip
 		-- If the TSChannelWait is enabled, players who are currently in TSChannelWait will be automatically moved
 		-- to the TSChannel once everything is running
-		TSChannel = "SKUADCITY",
+		TSChannel = "IN-GAME",
 		TSPassword = "__skuad021", -- TeamSpeak channel password (can be empty)
 
 		-- Optional: TeamSpeak waiting channel name, players wait in this channel and will be moved to the TSChannel automatically
@@ -41,8 +41,8 @@ TokoVoipConfig = {
 		TSChannelWait = "LOBBY", -- You NEED tokovoip in the wait channel name!
 
 		-- Blocking screen informations
-		TSServer = "SKUADCITY | SILAHKAN HUBUNGI ADMIN JIKA BERMASALAH! | bit.ly/joinSKUAD", -- TeamSpeak server address to be displayed on blocking screen
-		TSChannelSupport = "bit.ly/joinSKUAD", -- TeamSpeak support channel name displayed on blocking screen
+		TSServer = "#SKUAD CITY ROLEPLAY INDONESIA", -- TeamSpeak server address to be displayed on blocking screen
+		TSChannelSupport = "discord.io/skuadcity", -- TeamSpeak support channel name displayed on blocking screen
 		TSDownload = "https://voip.itokoyamato.net", -- Download link displayed on blocking screen
 		TSChannelWhitelist = { -- Black screen will not be displayed when users are in those TS channels
 			"Support 1",
