@@ -7,7 +7,7 @@ function SetData()
 
     local name = GetPlayerName(PlayerId())
     local id = GetPlayerServerId(PlayerId())
-    Citizen.InvokeNative(GetHashKey("ADD_TEXT_ENTRY"), 'FE_THDR_GTAO', "SKUAD CITY ROLEPLAY")
+    Citizen.InvokeNative(GetHashKey("ADD_TEXT_ENTRY"), 'FE_THDR_GTAO', "#SKUAD CITY ROLEPLAY INDONESIA")
 end
 
 Citizen.CreateThread(function()

@@ -58,25 +58,25 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_skuadcity.addon_account_data: ~14 rows (approximately)
+-- Dumping data for table db_skuadcity.addon_account_data: ~20 rows (approximately)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
-INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
-	(1, 'society_ambulance', 0, NULL),
-	(2, 'society_banker', 0, NULL),
-	(3, 'society_biker', 0, NULL),
-	(4, 'society_cardealer', 0, NULL),
-	(5, 'society_cartel', 0, NULL),
-	(6, 'society_gang', 0, NULL),
-	(7, 'society_mafia', 0, NULL),
-	(8, 'society_mafia_black_money', 0, NULL),
-	(9, 'society_mechanic', 0, NULL),
-	(10, 'society_pedagang', 0, NULL),
-	(11, 'society_police', 0, NULL),
-	(12, 'society_police_black_money', 0, NULL),
-	(13, 'society_realestateagent', 0, NULL),
-	(14, 'society_taxi', 0, NULL);
+INSERT INTO `addon_account_data` (`account_name`, `money`, `owner`) VALUES
+	('society_ambulance', 0, NULL),
+	('society_banker', 0, NULL),
+	('society_biker', 0, NULL),
+	('society_cardealer', 0, NULL),
+	('society_cartel', 0, NULL),
+	('society_gang', 0, NULL),
+	('society_mafia', 0, NULL),
+	('society_mafia_black_money', 0, NULL),
+	('society_mechanic', 0, NULL),
+	('society_pedagang', 0, NULL),
+	('society_police', 0, NULL),
+	('society_police_black_money', 0, NULL),
+	('society_realestateagent', 0, NULL),
+	('society_taxi', 0, NULL);
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.addon_inventory
@@ -199,19 +199,19 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_skuadcity.datastore_data: ~8 rows (approximately)
+-- Dumping data for table db_skuadcity.datastore_data: ~16 rows (approximately)
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
-INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
-	(1, 'society_ambulance', NULL, '{}'),
-	(2, 'society_biker', NULL, '{}'),
-	(3, 'society_cartel', NULL, '{}'),
-	(4, 'society_gang', NULL, '{}'),
-	(5, 'society_mafia', NULL, '{}'),
-	(6, 'society_mechanic', NULL, '{}'),
-	(7, 'society_police', NULL, '{}'),
-	(8, 'society_taxi', NULL, '{}');
+INSERT INTO `datastore_data` (`name`, `owner`, `data`) VALUES
+	('society_ambulance', NULL, '{}'),
+	('society_biker', NULL, '{}'),
+	('society_cartel', NULL, '{}'),
+	('society_gang', NULL, '{}'),
+	('society_mafia', NULL, '{}'),
+	('society_mechanic', NULL, '{}'),
+	('society_police', NULL, '{}'),
+	('society_taxi', NULL, '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.dpkeybinds
@@ -468,16 +468,16 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('fisherman', 'Nelayan', 0),
 	('fueler', 'Refiner', 0),
 	('gang', 'Gang', 1),
-	('garbage', 'Garbage Job', 0),
+	('garbage', 'Tukang Sampah', 0),
 	('gopostal', 'Kurir', 0),
 	('lumberjack', 'Lumberjack', 0),
-	('mafia', 'Mafia', 0),
+	('mafia', 'Mafia', 1),
 	('mechanic', 'Mekanik', 1),
 	('miner', 'Penambang', 0),
 	('offambulance', 'Off-Duty', 1),
 	('offpolice', 'Off-Duty', 1),
 	('offtaxi', 'Off-Duty', 1),
-	('pedagang', 'Pedagang', 1),
+	('pedagang', 'Pedagang', 0),
 	('police', 'Polisi', 1),
 	('realestateagent', 'Agent', 1),
 	('reporter', 'Jurnalis', 1),
@@ -696,9 +696,8 @@ CREATE TABLE IF NOT EXISTS `phone_messages` (
   `isRead` int(11) NOT NULL DEFAULT 0,
   `owner` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
--- Dumping data for table db_skuadcity.phone_messages: 0 rows
 /*!40000 ALTER TABLE `phone_messages` DISABLE KEYS */;
 /*!40000 ALTER TABLE `phone_messages` ENABLE KEYS */;
 
@@ -989,7 +988,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table db_skuadcity.users: ~0 rows (approximately)
+-- Dumping data for table db_skuadcity.users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
@@ -1026,7 +1025,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_skuadcity.vehicles: ~240 rows (approximately)
+-- Dumping data for table db_skuadcity.vehicles: ~235 rows (approximately)
 /*!40000 ALTER TABLE `vehicles` DISABLE KEYS */;
 INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Adder', 'adder', 900000, 'super'),
@@ -1089,7 +1088,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Daemon', 'daemon', 11500, 'motorcycles'),
 	('Daemon High', 'daemon2', 13500, 'motorcycles'),
 	('Defiler', 'defiler', 9800, 'motorcycles'),
-	('Deluxo', 'deluxo', 4721500, 'sportsclassics'),
 	('Dominator', 'dominator', 35000, 'muscle'),
 	('Double T', 'double', 28000, 'motorcycles'),
 	('Dubsta', 'dubsta', 45000, 'suvs'),
@@ -1168,7 +1166,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('9F', 'ninef', 65000, 'sports'),
 	('9F Cabrio', 'ninef2', 80000, 'sports'),
 	('Omnis', 'omnis', 35000, 'sports'),
-	('Oppressor', 'oppressor', 3524500, 'super'),
 	('Oracle XS', 'oracle2', 35000, 'coupes'),
 	('Osiris', 'osiris', 160000, 'super'),
 	('Panto', 'panto', 10000, 'compacts'),
@@ -1198,7 +1195,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('riata', 'riata', 380000, 'offroad'),
 	('Rocoto', 'rocoto', 45000, 'suvs'),
 	('Ruffian', 'ruffian', 6800, 'motorcycles'),
-	('Ruiner 2', 'ruiner2', 5745600, 'muscle'),
 	('Rumpo', 'rumpo', 15000, 'vans'),
 	('Rumpo Trail', 'rumpo3', 19500, 'vans'),
 	('Sabre Turbo', 'sabregt', 20000, 'muscle'),
@@ -1225,7 +1221,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Stinger GT', 'stingergt', 75000, 'sportsclassics'),
 	('Streiter', 'streiter', 500000, 'sports'),
 	('Stretch', 'stretch', 90000, 'sedans'),
-	('Stromberg', 'stromberg', 3185350, 'sports'),
 	('Sultan', 'sultan', 15000, 'sports'),
 	('Sultan RS', 'sultanrs', 65000, 'super'),
 	('Super Diamond', 'superd', 130000, 'sedans'),
@@ -1235,6 +1230,7 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Tailgater', 'tailgater', 30000, 'sedans'),
 	('Tampa', 'tampa', 16000, 'muscle'),
 	('Drift Tampa', 'tampa2', 80000, 'sports'),
+	('Taksi', 'taxi', 10000, 'workvehicles'),
 	('Thrust', 'thrust', 24000, 'motorcycles'),
 	('Tri bike (velo)', 'tribike3', 520, 'motorcycles'),
 	('Trophy Truck', 'trophytruck', 60000, 'offroad'),
@@ -1250,7 +1246,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Viseris', 'viseris', 875000, 'sportsclassics'),
 	('Visione', 'visione', 2250000, 'super'),
 	('Voltic', 'voltic', 90000, 'super'),
-	('Voltic 2', 'voltic2', 3830400, 'super'),
 	('Voodoo', 'voodoo', 7200, 'muscle'),
 	('Vortex', 'vortex', 9800, 'motorcycles'),
 	('Warrener', 'warrener', 4000, 'sedans'),
@@ -1270,6 +1265,56 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Zombie Luxuary', 'zombieb', 12000, 'motorcycles'),
 	('Z-Type', 'ztype', 220000, 'sportsclassics');
 /*!40000 ALTER TABLE `vehicles` ENABLE KEYS */;
+
+-- Dumping structure for table db_skuadcity.vehicles_import
+CREATE TABLE IF NOT EXISTS `vehicles_import` (
+  `name` varchar(60) NOT NULL,
+  `model` varchar(60) NOT NULL,
+  `price` int(11) NOT NULL,
+  `category` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`model`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_skuadcity.vehicles_import: ~0 rows (approximately)
+/*!40000 ALTER TABLE `vehicles_import` DISABLE KEYS */;
+INSERT INTO `vehicles_import` (`name`, `model`, `price`, `category`) VALUES
+	('Nissan Skyline R-34', '2f2fgtr34', 2147483647, 'donasi'),
+	('Mitsubishi Lancer Evolution VII 2002', '2f2fmle7', 2147483647, 'donate'),
+	('Nissan 350 ZDK', '350zdk', 7800000, 'racecars'),
+	('BMW M5 F90', 'bmci', 3730000, 'importcars'),
+	('Mercedes-Benz C63', 'c63coupe', 3352000, 'importcars'),
+	('Deviant', 'deviant', 2145000, 'importcars'),
+	('Diablous S2', 'diablous2', 1354000, 'importmotorcycles'),
+	('Elegy', 'elegy', 750000, 'importcars'),
+	('Entity S2', 'entity2', 1421000, 'importcars'),
+	('Lotus Espirit', 'esprit02', 2245000, 'importcars'),
+	('FCR S2', 'fcr2', 1421000, 'importmotorcycles'),
+	('Flash GT', 'flashgt', 1354000, 'importcars'),
+	('Mitsubishi Lancer Evolution VII 2002', 'fnflan', 2147483647, 'donate'),
+	('Mitsubishi Eclipse GSX 1995', 'fnfmits', 2147483647, 'donate'),
+	('Toyota Supra MK IV 1994', 'fnfmk4', 2147483647, 'donate'),
+	('Mazda RX-7 VeilSide 1994', 'fnfrx7', 2147483647, 'donate'),
+	('Mazda RX-7 1994', 'fnfrx7dom', 2147483647, 'donate'),
+	('Issi S3', 'issi3', 3458000, 'importcars'),
+	('Itali GTB S2', 'italigtb2', 3230000, 'importcars'),
+	('Itali GTO', 'italigto', 3320000, 'importcars'),
+	('Jester S3', 'jester3', 750000, 'importcars'),
+	('Ford Mustang Mach 1', 'mach1', 2245000, 'importcars'),
+	('Nero S2', 'nero2', 2421000, 'importcars'),
+	('penetrator', 'penetrator', 1421000, 'importcars'),
+	('Schlagen', 'schlagen', 2325000, 'importcars'),
+	('Shotaro Concept', 'shotaro', 5800000, 'racemotorcycles'),
+	('Lamborghini Sian 2012', 'sian', 2756000, 'importcars'),
+	('Nissan Silvia 1997', 'silvias15', 2147483647, 'donate'),
+	('Specter S2', 'specter2', 2354000, 'importcars'),
+	('Stafford', 'stafford', 2675000, 'importcars'),
+	('Taipan', 'taipan', 2675000, 'importcars'),
+	('Tempesta', 'tempesta', 1730000, 'importcars'),
+	('Tezeract', 'tezeract', 1458000, 'importcars'),
+	('Tyrant', 'tyrant', 2780000, 'importcars'),
+	('Vagner', 'vagner', 3421000, 'importcars'),
+	('XA21', 'xa21', 3354000, 'importcars');
+/*!40000 ALTER TABLE `vehicles_import` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.vehicle_categories
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
@@ -1291,8 +1336,26 @@ INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 	('sportsclassics', 'Sports Classics'),
 	('super', 'Super'),
 	('suvs', 'SUVs'),
-	('vans', 'Vans');
+	('vans', 'Vans'),
+	('workvehicles', 'Kendaraan Dinas');
 /*!40000 ALTER TABLE `vehicle_categories` ENABLE KEYS */;
+
+-- Dumping structure for table db_skuadcity.vehicle_import_categories
+CREATE TABLE IF NOT EXISTS `vehicle_import_categories` (
+  `name` varchar(60) NOT NULL,
+  `label` varchar(60) NOT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_skuadcity.vehicle_import_categories: ~1 rows (approximately)
+/*!40000 ALTER TABLE `vehicle_import_categories` DISABLE KEYS */;
+INSERT INTO `vehicle_import_categories` (`name`, `label`) VALUES
+	('donasi', 'Donasi'),
+	('importcars', 'Mobil Import'),
+	('importmotorcycles', 'Motor Import'),
+	('racecars', 'Mobil Balap'),
+	('racemotorcycles', 'Motor Balap');
+/*!40000 ALTER TABLE `vehicle_import_categories` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.vehicle_sold
 CREATE TABLE IF NOT EXISTS `vehicle_sold` (
@@ -1316,76 +1379,76 @@ CREATE TABLE IF NOT EXISTS `weashops` (
   `price` int(11) NOT NULL,
   `category` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_skuadcity.weashops: ~79 rows (approximately)
+-- Dumping data for table db_skuadcity.weashops: ~65 rows (approximately)
 /*!40000 ALTER TABLE `weashops` DISABLE KEYS */;
-INSERT INTO `weashops` (`zone`, `item`, `price`, `category`) VALUES
-	('GunShop', 'GADGET_PARACHUTE', 800, 'melee'),
-	('GunShop', 'WEAPON_FLASHLIGHT', 25, 'melee'),
-	('GunShop', 'WEAPON_MACHETE', 20, 'melee'),
-	('GunShop', 'WEAPON_BAT', 20, 'melee'),
-	('GunShop', 'WEAPON_NIGHTSTICK', 15, 'melee'),
-	('GunShop', 'WEAPON_KNIFE', 30, 'melee'),
-	('GunShop', 'WEAPON_HAMMER', 5, 'melee'),
-	('GunShop', 'WEAPON_GOLFCLUB', 40, 'melee'),
-	('BlackWeashop', 'WEAPON_CROWBAR', 15, 'melee'),
-	('GunShop', 'WEAPON_DAGGER', 15, 'melee'),
-	('GunShop', 'WEAPON_KNUCKLE', 25, 'melee'),
-	('GunShop', 'WEAPON_HATCHET', 20, 'melee'),
-	('GunShop', 'WEAPON_SWITCHBLADE', 25, 'melee'),
-	('GunShop', 'WEAPON_POOLCUE', 10, 'melee'),
-	('GunShop', 'WEAPON_WRENCH', 40, 'melee'),
-	('GunShop', 'WEAPON_BOTTLE', 10, 'melee'),
-	('GunShop', 'WEAPON_BATTLEAXE', 125, 'melee'),
-	('GunShop', 'WEAPON_BALL', 25, 'melee'),
-	('GunShop', 'WEAPON_SNOWBALL', 25, 'melee'),
-	('BlackShop', 'WEAPON_BZGAS', 500, 'melee'),
-	('BlackShop', 'WEAPON_SMOKEGRENADE', 500, 'melee'),
-	('GunShop', 'WEAPON_FIREEXTINGUISHER', 100, 'melee'),
-	('BlackWeashop', 'WEAPON_STICKYBOMB', 500, 'melee'),
-	('BlackShop', 'WEAPON_SNSPISTOL', 450, 'handgun'),
-	('BlackShop', 'WEAPON_VINTAGEPISTOL', 900, 'handgun'),
-	('GunShop', 'WEAPON_PISTOL', 350, 'handgun'),
-	('BlackWeashop', 'WEAPON_COMBATPISTOL', 400, 'handgun'),
-	('BlackWeashop', 'WEAPON_PISTOL50', 1500, 'handgun'),
-	('BlackWeashop', 'WEAPON_HEAVYPISTOL', 550, 'handgun'),
-	('BlackWeashop', 'WEAPON_REVOLVER', 1300, 'handgun'),
-	('BlackWeashop', 'WEAPON_APPISTOL', 2700, 'handgun'),
-	('BlackWeashop', 'WEAPON_MICROSMG', 900, 'smg'),
-	('BlackShop', 'WEAPON_MICROSMG', 2700, 'smg'),
-	('BlackWeashop', 'WEAPON_MINISMG', 800, 'smg'),
-	('BlackShop', 'WEAPON_MINISMG', 2400, 'smg'),
-	('BlackWeashop', 'WEAPON_SMG', 1600, 'smg'),
-	('BlackShop', 'WEAPON_SMG', 4800, 'smg'),
-	('BlackWeashop', 'WEAPON_MACHINEPISTOL', 1300, 'smg'),
-	('BlackWeashop', 'WEAPON_ASSAULTSMG', 1400, 'smg'),
-	('BlackWeashop', 'WEAPON_COMBATPDW', 1500, 'smg'),
-	('BlackWeashop', 'WEAPON_PUMPSHOTGUN', 350, 'shotgun'),
-	('BlackShop', 'WEAPON_PUMPSHOTGUN', 1050, 'shotgun'),
-	('BlackWeashop', 'WEAPON_SAWNOFFSHOTGUN', 500, 'shotgun'),
-	('BlackShop', 'WEAPON_SAWNOFFSHOTGUN', 1500, 'shotgun'),
-	('BlackWeashop', 'WEAPON_DBSHOTGUN', 450, 'shotgun'),
-	('BlackShop', 'WEAPON_DBSHOTGUN', 1350, 'shotgun'),
-	('BlackWeashop', 'WEAPON_HEAVYSHOTGUN', 1000, 'shotgun'),
-	('BlackWeashop', 'WEAPON_ASSAULTSHOTGUN', 1100, 'shotgun'),
-	('BlackWeashop', 'WEAPON_MUSKET', 225, 'assault'),
-	('BlackWeashop', 'WEAPON_ASSAULTRIFLE', 1200, 'assault'),
-	('BlackShop', 'WEAPON_ASSAULTRIFLE', 3600, 'assault'),
-	('BlackWeashop', 'WEAPON_CARBINERIFLE', 2400, 'assault'),
-	('BlackShop', 'WEAPON_CARBINERIFLE', 7200, 'assault'),
-	('BlackWeashop', 'WEAPON_BULLPUPRIFLE', 1200, 'assault'),
-	('BlackWeashop', 'WEAPON_SPECIALCARBINE', 5200, 'assault'),
-	('BlackWeashop', 'WEAPON_COMPACTRIFLE', 750, 'assault'),
-	('BlackWeashop', 'WEAPON_ADVANCEDRIFLE', 2000, 'assault'),
-	('BlackWeashop', 'WEAPON_FIREWORK', 20000, 'lmg'),
-	('BlackWeashop', 'WEAPON_GUSENBERG', 4280, 'lmg'),
-	('BlackWeashop', 'WEAPON_MG', 8250, 'lmg'),
-	('BlackWeashop', 'WEAPON_COMBATMG', 13950, 'lmg'),
-	('BlackWeashop', 'WEAPON_MINIGUN', 45000, 'lmg'),
-	('BlackWeashop', 'WEAPON_SNIPERRIFLE', 2000, 'sniper'),
-	('BlackWeashop', 'WEAPON_MARKSMANRIFLE', 3800, 'sniper'),
-	('BlackWeashop', 'WEAPON_HEAVYSNIPER', 9900, 'sniper');
+INSERT INTO `weashops` (`id`, `zone`, `item`, `price`, `category`) VALUES
+	(1, 'GunShop', 'GADGET_PARACHUTE', 800, 'melee'),
+	(2, 'GunShop', 'WEAPON_FLASHLIGHT', 25, 'melee'),
+	(3, 'GunShop', 'WEAPON_MACHETE', 20, 'melee'),
+	(4, 'GunShop', 'WEAPON_BAT', 20, 'melee'),
+	(5, 'GunShop', 'WEAPON_NIGHTSTICK', 15, 'melee'),
+	(6, 'GunShop', 'WEAPON_KNIFE', 30, 'melee'),
+	(7, 'GunShop', 'WEAPON_HAMMER', 5, 'melee'),
+	(8, 'GunShop', 'WEAPON_GOLFCLUB', 40, 'melee'),
+	(9, 'BlackWeashop', 'WEAPON_CROWBAR', 15, 'melee'),
+	(10, 'GunShop', 'WEAPON_DAGGER', 15, 'melee'),
+	(11, 'GunShop', 'WEAPON_KNUCKLE', 25, 'melee'),
+	(12, 'GunShop', 'WEAPON_HATCHET', 20, 'melee'),
+	(13, 'GunShop', 'WEAPON_SWITCHBLADE', 25, 'melee'),
+	(14, 'GunShop', 'WEAPON_POOLCUE', 10, 'melee'),
+	(15, 'GunShop', 'WEAPON_WRENCH', 40, 'melee'),
+	(16, 'GunShop', 'WEAPON_BOTTLE', 10, 'melee'),
+	(17, 'GunShop', 'WEAPON_BATTLEAXE', 125, 'melee'),
+	(18, 'GunShop', 'WEAPON_BALL', 25, 'melee'),
+	(19, 'GunShop', 'WEAPON_SNOWBALL', 25, 'melee'),
+	(20, 'BlackShop', 'WEAPON_BZGAS', 500, 'melee'),
+	(21, 'BlackShop', 'WEAPON_SMOKEGRENADE', 500, 'melee'),
+	(22, 'GunShop', 'WEAPON_FIREEXTINGUISHER', 100, 'melee'),
+	(23, 'BlackWeashop', 'WEAPON_STICKYBOMB', 500, 'melee'),
+	(24, 'BlackShop', 'WEAPON_SNSPISTOL', 450, 'handgun'),
+	(25, 'BlackShop', 'WEAPON_VINTAGEPISTOL', 900, 'handgun'),
+	(26, 'GunShop', 'WEAPON_PISTOL', 350, 'handgun'),
+	(27, 'BlackWeashop', 'WEAPON_COMBATPISTOL', 400, 'handgun'),
+	(28, 'BlackWeashop', 'WEAPON_PISTOL50', 1500, 'handgun'),
+	(29, 'BlackWeashop', 'WEAPON_HEAVYPISTOL', 550, 'handgun'),
+	(30, 'BlackWeashop', 'WEAPON_REVOLVER', 1300, 'handgun'),
+	(31, 'BlackWeashop', 'WEAPON_APPISTOL', 2700, 'handgun'),
+	(32, 'BlackWeashop', 'WEAPON_MICROSMG', 900, 'smg'),
+	(33, 'BlackShop', 'WEAPON_MICROSMG', 2700, 'smg'),
+	(34, 'BlackWeashop', 'WEAPON_MINISMG', 800, 'smg'),
+	(35, 'BlackShop', 'WEAPON_MINISMG', 2400, 'smg'),
+	(36, 'BlackWeashop', 'WEAPON_SMG', 1600, 'smg'),
+	(37, 'BlackShop', 'WEAPON_SMG', 4800, 'smg'),
+	(38, 'BlackWeashop', 'WEAPON_MACHINEPISTOL', 1300, 'smg'),
+	(39, 'BlackWeashop', 'WEAPON_ASSAULTSMG', 1400, 'smg'),
+	(40, 'BlackWeashop', 'WEAPON_COMBATPDW', 1500, 'smg'),
+	(41, 'BlackWeashop', 'WEAPON_PUMPSHOTGUN', 350, 'shotgun'),
+	(42, 'BlackShop', 'WEAPON_PUMPSHOTGUN', 1050, 'shotgun'),
+	(43, 'BlackWeashop', 'WEAPON_SAWNOFFSHOTGUN', 500, 'shotgun'),
+	(44, 'BlackShop', 'WEAPON_SAWNOFFSHOTGUN', 1500, 'shotgun'),
+	(45, 'BlackWeashop', 'WEAPON_DBSHOTGUN', 450, 'shotgun'),
+	(46, 'BlackShop', 'WEAPON_DBSHOTGUN', 1350, 'shotgun'),
+	(47, 'BlackWeashop', 'WEAPON_HEAVYSHOTGUN', 1000, 'shotgun'),
+	(48, 'BlackWeashop', 'WEAPON_ASSAULTSHOTGUN', 1100, 'shotgun'),
+	(49, 'BlackWeashop', 'WEAPON_MUSKET', 225, 'assault'),
+	(50, 'BlackWeashop', 'WEAPON_ASSAULTRIFLE', 1200, 'assault'),
+	(51, 'BlackShop', 'WEAPON_ASSAULTRIFLE', 3600, 'assault'),
+	(52, 'BlackWeashop', 'WEAPON_CARBINERIFLE', 2400, 'assault'),
+	(53, 'BlackShop', 'WEAPON_CARBINERIFLE', 7200, 'assault'),
+	(54, 'BlackWeashop', 'WEAPON_BULLPUPRIFLE', 1200, 'assault'),
+	(55, 'BlackWeashop', 'WEAPON_SPECIALCARBINE', 5200, 'assault'),
+	(56, 'BlackWeashop', 'WEAPON_COMPACTRIFLE', 750, 'assault'),
+	(57, 'BlackWeashop', 'WEAPON_ADVANCEDRIFLE', 2000, 'assault'),
+	(58, 'BlackWeashop', 'WEAPON_FIREWORK', 20000, 'lmg'),
+	(59, 'BlackWeashop', 'WEAPON_GUSENBERG', 4280, 'lmg'),
+	(60, 'BlackWeashop', 'WEAPON_MG', 8250, 'lmg'),
+	(61, 'BlackWeashop', 'WEAPON_COMBATMG', 13950, 'lmg'),
+	(62, 'BlackWeashop', 'WEAPON_MINIGUN', 45000, 'lmg'),
+	(63, 'BlackWeashop', 'WEAPON_SNIPERRIFLE', 2000, 'sniper'),
+	(64, 'BlackWeashop', 'WEAPON_MARKSMANRIFLE', 3800, 'sniper'),
+	(65, 'BlackWeashop', 'WEAPON_HEAVYSNIPER', 9900, 'sniper');
 /*!40000 ALTER TABLE `weashops` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

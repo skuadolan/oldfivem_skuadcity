@@ -35,8 +35,8 @@
     "statusMessage": "**Connect:** `skuad.club`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {
-    "serverDataPath": "~/skuadcity/txData/server-data/",
-    "cfgPath": "~/skuadcity/txData/server-data/server.cfg",
+    "serverDataPath": "D:/Project/FiveM/[new]skuadcity/txData/server-data/",
+    "cfgPath": "D:/Project/FiveM/[new]skuadcity//txData/server-data/server.cfg",
     "commandLine": "",
     "onesync": "on",
     "autostart": true,

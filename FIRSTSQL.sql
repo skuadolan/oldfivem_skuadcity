@@ -58,25 +58,25 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_skuadcity.addon_account_data: ~14 rows (approximately)
+-- Dumping data for table db_skuadcity.addon_account_data: ~20 rows (approximately)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
-INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
-	(1, 'society_ambulance', 0, NULL),
-	(2, 'society_banker', 0, NULL),
-	(3, 'society_biker', 0, NULL),
-	(4, 'society_cardealer', 0, NULL),
-	(5, 'society_cartel', 0, NULL),
-	(6, 'society_gang', 0, NULL),
-	(7, 'society_mafia', 0, NULL),
-	(8, 'society_mafia_black_money', 0, NULL),
-	(9, 'society_mechanic', 0, NULL),
-	(10, 'society_pedagang', 0, NULL),
-	(11, 'society_police', 0, NULL),
-	(12, 'society_police_black_money', 0, NULL),
-	(13, 'society_realestateagent', 0, NULL),
-	(14, 'society_taxi', 0, NULL);
+INSERT INTO `addon_account_data` (`account_name`, `money`, `owner`) VALUES
+	('society_ambulance', 0, NULL),
+	('society_banker', 0, NULL),
+	('society_biker', 0, NULL),
+	('society_cardealer', 0, NULL),
+	('society_cartel', 0, NULL),
+	('society_gang', 0, NULL),
+	('society_mafia', 0, NULL),
+	('society_mafia_black_money', 0, NULL),
+	('society_mechanic', 0, NULL),
+	('society_pedagang', 0, NULL),
+	('society_police', 0, NULL),
+	('society_police_black_money', 0, NULL),
+	('society_realestateagent', 0, NULL),
+	('society_taxi', 0, NULL);
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.addon_inventory
@@ -199,19 +199,19 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_skuadcity.datastore_data: ~8 rows (approximately)
+-- Dumping data for table db_skuadcity.datastore_data: ~16 rows (approximately)
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
-INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
-	(1, 'society_ambulance', NULL, '{}'),
-	(2, 'society_biker', NULL, '{}'),
-	(3, 'society_cartel', NULL, '{}'),
-	(4, 'society_gang', NULL, '{}'),
-	(5, 'society_mafia', NULL, '{}'),
-	(6, 'society_mechanic', NULL, '{}'),
-	(7, 'society_police', NULL, '{}'),
-	(8, 'society_taxi', NULL, '{}');
+INSERT INTO `datastore_data` (`name`, `owner`, `data`) VALUES
+	('society_ambulance', NULL, '{}'),
+	('society_biker', NULL, '{}'),
+	('society_cartel', NULL, '{}'),
+	('society_gang', NULL, '{}'),
+	('society_mafia', NULL, '{}'),
+	('society_mechanic', NULL, '{}'),
+	('society_police', NULL, '{}'),
+	('society_taxi', NULL, '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.dpkeybinds
@@ -468,16 +468,16 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('fisherman', 'Nelayan', 0),
 	('fueler', 'Refiner', 0),
 	('gang', 'Gang', 1),
-	('garbage', 'Garbage Job', 0),
+	('garbage', 'Tukang Sampah', 0),
 	('gopostal', 'Kurir', 0),
 	('lumberjack', 'Lumberjack', 0),
-	('mafia', 'Mafia', 0),
+	('mafia', 'Mafia', 1),
 	('mechanic', 'Mekanik', 1),
 	('miner', 'Penambang', 0),
 	('offambulance', 'Off-Duty', 1),
 	('offpolice', 'Off-Duty', 1),
 	('offtaxi', 'Off-Duty', 1),
-	('pedagang', 'Pedagang', 1),
+	('pedagang', 'Pedagang', 0),
 	('police', 'Polisi', 1),
 	('realestateagent', 'Agent', 1),
 	('reporter', 'Jurnalis', 1),
@@ -623,7 +623,7 @@ CREATE TABLE IF NOT EXISTS `lsrp_motels` (
   PRIMARY KEY (`id`),
   KEY `motel_id` (`motel_id`),
   KEY `ident` (`ident`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table db_skuadcity.lsrp_motels: ~0 rows (approximately)
 /*!40000 ALTER TABLE `lsrp_motels` DISABLE KEYS */;
@@ -665,7 +665,7 @@ CREATE TABLE IF NOT EXISTS `phone_app_chat` (
   `message` varchar(255) NOT NULL,
   `time` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Dumping data for table db_skuadcity.phone_app_chat: ~0 rows (approximately)
 /*!40000 ALTER TABLE `phone_app_chat` DISABLE KEYS */;
@@ -680,7 +680,7 @@ CREATE TABLE IF NOT EXISTS `phone_calls` (
   `time` timestamp NOT NULL DEFAULT current_timestamp(),
   `accepts` int(11) NOT NULL COMMENT 'Appels accepter ou pas',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Dumping data for table db_skuadcity.phone_calls: ~0 rows (approximately)
 /*!40000 ALTER TABLE `phone_calls` DISABLE KEYS */;
@@ -698,7 +698,6 @@ CREATE TABLE IF NOT EXISTS `phone_messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
--- Dumping data for table db_skuadcity.phone_messages: 0 rows
 /*!40000 ALTER TABLE `phone_messages` DISABLE KEYS */;
 /*!40000 ALTER TABLE `phone_messages` ENABLE KEYS */;
 
@@ -709,7 +708,7 @@ CREATE TABLE IF NOT EXISTS `phone_users_contacts` (
   `number` varchar(10) CHARACTER SET utf8mb4 DEFAULT NULL,
   `display` varchar(64) CHARACTER SET utf8mb4 NOT NULL DEFAULT '-1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table db_skuadcity.phone_users_contacts: 0 rows
 /*!40000 ALTER TABLE `phone_users_contacts` DISABLE KEYS */;
@@ -725,7 +724,7 @@ CREATE TABLE IF NOT EXISTS `playermotels` (
   `weapons` longtext NOT NULL,
   `dirtymoney` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_skuadcity.playermotels: ~0 rows (approximately)
 /*!40000 ALTER TABLE `playermotels` DISABLE KEYS */;
@@ -871,29 +870,29 @@ CREATE TABLE IF NOT EXISTS `shops` (
   `item` varchar(100) NOT NULL,
   `price` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
--- Dumping data for table db_skuadcity.shops: ~12 rows (approximately)
+-- Dumping data for table db_skuadcity.shops: ~18 rows (approximately)
 /*!40000 ALTER TABLE `shops` DISABLE KEYS */;
-INSERT INTO `shops` (`store`, `item`, `price`) VALUES
-	('TwentyFourSeven', 'beer', 45),
-	('TwentyFourSeven', 'bread', 30),
-	('TwentyFourSeven', 'water', 15),
-	('TwentyFourSeven', 'phone', 100),
-	('TwentyFourSeven', 'radio', 75),
-	('RobsLiquor', 'beer', 45),
-	('RobsLiquor', 'bread', 30),
-	('RobsLiquor', 'water', 15),
-	('RobsLiquor', 'phone', 100),
-	('RobsLiquor', 'radio', 75),
-	('LTDgasoline', 'bread', 30),
-	('LTDgasoline', 'water', 15),
-	('LTDgasoline', 'beer', 45),
-	('LTDgasoline', 'phone', 100),
-	('LTDgasoline', 'radio', 75),
-	('Market', 'cola', 100),
-	('Market', 'vegetables', 100),
-	('Market', 'meat', 100);
+INSERT INTO `shops` (`id`, `store`, `item`, `price`) VALUES
+	(1, 'TwentyFourSeven', 'beer', 45),
+	(2, 'TwentyFourSeven', 'bread', 30),
+	(3, 'TwentyFourSeven', 'water', 15),
+	(4, 'TwentyFourSeven', 'phone', 100),
+	(5, 'TwentyFourSeven', 'radio', 75),
+	(6, 'RobsLiquor', 'beer', 45),
+	(7, 'RobsLiquor', 'bread', 30),
+	(8, 'RobsLiquor', 'water', 15),
+	(9, 'RobsLiquor', 'phone', 100),
+	(10, 'RobsLiquor', 'radio', 75),
+	(11, 'LTDgasoline', 'bread', 30),
+	(12, 'LTDgasoline', 'water', 15),
+	(13, 'LTDgasoline', 'beer', 45),
+	(14, 'LTDgasoline', 'phone', 100),
+	(15, 'LTDgasoline', 'radio', 75),
+	(16, 'Market', 'cola', 100),
+	(17, 'Market', 'vegetables', 100),
+	(18, 'Market', 'meat', 100);
 /*!40000 ALTER TABLE `shops` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.trunk_inventory
@@ -918,7 +917,7 @@ CREATE TABLE IF NOT EXISTS `twitter_accounts` (
   `avatar_url` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Dumping data for table db_skuadcity.twitter_accounts: ~0 rows (approximately)
 /*!40000 ALTER TABLE `twitter_accounts` DISABLE KEYS */;
@@ -951,7 +950,7 @@ CREATE TABLE IF NOT EXISTS `twitter_tweets` (
   PRIMARY KEY (`id`),
   KEY `FK_twitter_tweets_twitter_accounts` (`authorId`),
   CONSTRAINT `FK_twitter_tweets_twitter_accounts` FOREIGN KEY (`authorId`) REFERENCES `twitter_accounts` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table db_skuadcity.twitter_tweets: ~0 rows (approximately)
 /*!40000 ALTER TABLE `twitter_tweets` DISABLE KEYS */;
@@ -989,7 +988,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table db_skuadcity.users: ~0 rows (approximately)
+-- Dumping data for table db_skuadcity.users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
@@ -1026,7 +1025,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_skuadcity.vehicles: ~240 rows (approximately)
+-- Dumping data for table db_skuadcity.vehicles: ~235 rows (approximately)
 /*!40000 ALTER TABLE `vehicles` DISABLE KEYS */;
 INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Adder', 'adder', 900000, 'super'),
@@ -1089,7 +1088,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Daemon', 'daemon', 11500, 'motorcycles'),
 	('Daemon High', 'daemon2', 13500, 'motorcycles'),
 	('Defiler', 'defiler', 9800, 'motorcycles'),
-	('Deluxo', 'deluxo', 4721500, 'sportsclassics'),
 	('Dominator', 'dominator', 35000, 'muscle'),
 	('Double T', 'double', 28000, 'motorcycles'),
 	('Dubsta', 'dubsta', 45000, 'suvs'),
@@ -1168,7 +1166,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('9F', 'ninef', 65000, 'sports'),
 	('9F Cabrio', 'ninef2', 80000, 'sports'),
 	('Omnis', 'omnis', 35000, 'sports'),
-	('Oppressor', 'oppressor', 3524500, 'super'),
 	('Oracle XS', 'oracle2', 35000, 'coupes'),
 	('Osiris', 'osiris', 160000, 'super'),
 	('Panto', 'panto', 10000, 'compacts'),
@@ -1198,7 +1195,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('riata', 'riata', 380000, 'offroad'),
 	('Rocoto', 'rocoto', 45000, 'suvs'),
 	('Ruffian', 'ruffian', 6800, 'motorcycles'),
-	('Ruiner 2', 'ruiner2', 5745600, 'muscle'),
 	('Rumpo', 'rumpo', 15000, 'vans'),
 	('Rumpo Trail', 'rumpo3', 19500, 'vans'),
 	('Sabre Turbo', 'sabregt', 20000, 'muscle'),
@@ -1225,7 +1221,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Stinger GT', 'stingergt', 75000, 'sportsclassics'),
 	('Streiter', 'streiter', 500000, 'sports'),
 	('Stretch', 'stretch', 90000, 'sedans'),
-	('Stromberg', 'stromberg', 3185350, 'sports'),
 	('Sultan', 'sultan', 15000, 'sports'),
 	('Sultan RS', 'sultanrs', 65000, 'super'),
 	('Super Diamond', 'superd', 130000, 'sedans'),
@@ -1235,6 +1230,7 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Tailgater', 'tailgater', 30000, 'sedans'),
 	('Tampa', 'tampa', 16000, 'muscle'),
 	('Drift Tampa', 'tampa2', 80000, 'sports'),
+	('Taksi', 'taxi', 10000, 'workvehicles'),
 	('Thrust', 'thrust', 24000, 'motorcycles'),
 	('Tri bike (velo)', 'tribike3', 520, 'motorcycles'),
 	('Trophy Truck', 'trophytruck', 60000, 'offroad'),
@@ -1250,7 +1246,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Viseris', 'viseris', 875000, 'sportsclassics'),
 	('Visione', 'visione', 2250000, 'super'),
 	('Voltic', 'voltic', 90000, 'super'),
-	('Voltic 2', 'voltic2', 3830400, 'super'),
 	('Voodoo', 'voodoo', 7200, 'muscle'),
 	('Vortex', 'vortex', 9800, 'motorcycles'),
 	('Warrener', 'warrener', 4000, 'sedans'),
@@ -1270,6 +1265,56 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Zombie Luxuary', 'zombieb', 12000, 'motorcycles'),
 	('Z-Type', 'ztype', 220000, 'sportsclassics');
 /*!40000 ALTER TABLE `vehicles` ENABLE KEYS */;
+
+-- Dumping structure for table db_skuadcity.vehicles_import
+CREATE TABLE IF NOT EXISTS `vehicles_import` (
+  `name` varchar(60) NOT NULL,
+  `model` varchar(60) NOT NULL,
+  `price` int(11) NOT NULL,
+  `category` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`model`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_skuadcity.vehicles_import: ~0 rows (approximately)
+/*!40000 ALTER TABLE `vehicles_import` DISABLE KEYS */;
+INSERT INTO `vehicles_import` (`name`, `model`, `price`, `category`) VALUES
+	('Nissan Skyline R-34', '2f2fgtr34', 2147483647, 'donasi'),
+	('Mitsubishi Lancer Evolution VII 2002', '2f2fmle7', 2147483647, 'donate'),
+	('Nissan 350 ZDK', '350zdk', 7800000, 'racecars'),
+	('BMW M5 F90', 'bmci', 3730000, 'importcars'),
+	('Mercedes-Benz C63', 'c63coupe', 3352000, 'importcars'),
+	('Deviant', 'deviant', 2145000, 'importcars'),
+	('Diablous S2', 'diablous2', 1354000, 'importmotorcycles'),
+	('Elegy', 'elegy', 750000, 'importcars'),
+	('Entity S2', 'entity2', 1421000, 'importcars'),
+	('Lotus Espirit', 'esprit02', 2245000, 'importcars'),
+	('FCR S2', 'fcr2', 1421000, 'importmotorcycles'),
+	('Flash GT', 'flashgt', 1354000, 'importcars'),
+	('Mitsubishi Lancer Evolution VII 2002', 'fnflan', 2147483647, 'donate'),
+	('Mitsubishi Eclipse GSX 1995', 'fnfmits', 2147483647, 'donate'),
+	('Toyota Supra MK IV 1994', 'fnfmk4', 2147483647, 'donate'),
+	('Mazda RX-7 VeilSide 1994', 'fnfrx7', 2147483647, 'donate'),
+	('Mazda RX-7 1994', 'fnfrx7dom', 2147483647, 'donate'),
+	('Issi S3', 'issi3', 3458000, 'importcars'),
+	('Itali GTB S2', 'italigtb2', 3230000, 'importcars'),
+	('Itali GTO', 'italigto', 3320000, 'importcars'),
+	('Jester S3', 'jester3', 750000, 'importcars'),
+	('Ford Mustang Mach 1', 'mach1', 2245000, 'importcars'),
+	('Nero S2', 'nero2', 2421000, 'importcars'),
+	('penetrator', 'penetrator', 1421000, 'importcars'),
+	('Schlagen', 'schlagen', 2325000, 'importcars'),
+	('Shotaro Concept', 'shotaro', 5800000, 'racemotorcycles'),
+	('Lamborghini Sian 2012', 'sian', 2756000, 'importcars'),
+	('Nissan Silvia 1997', 'silvias15', 2147483647, 'donate'),
+	('Specter S2', 'specter2', 2354000, 'importcars'),
+	('Stafford', 'stafford', 2675000, 'importcars'),
+	('Taipan', 'taipan', 2675000, 'importcars'),
+	('Tempesta', 'tempesta', 1730000, 'importcars'),
+	('Tezeract', 'tezeract', 1458000, 'importcars'),
+	('Tyrant', 'tyrant', 2780000, 'importcars'),
+	('Vagner', 'vagner', 3421000, 'importcars'),
+	('XA21', 'xa21', 3354000, 'importcars');
+/*!40000 ALTER TABLE `vehicles_import` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.vehicle_categories
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
@@ -1291,8 +1336,26 @@ INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 	('sportsclassics', 'Sports Classics'),
 	('super', 'Super'),
 	('suvs', 'SUVs'),
-	('vans', 'Vans');
+	('vans', 'Vans'),
+	('workvehicles', 'Kendaraan Dinas');
 /*!40000 ALTER TABLE `vehicle_categories` ENABLE KEYS */;
+
+-- Dumping structure for table db_skuadcity.vehicle_import_categories
+CREATE TABLE IF NOT EXISTS `vehicle_import_categories` (
+  `name` varchar(60) NOT NULL,
+  `label` varchar(60) NOT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_skuadcity.vehicle_import_categories: ~1 rows (approximately)
+/*!40000 ALTER TABLE `vehicle_import_categories` DISABLE KEYS */;
+INSERT INTO `vehicle_import_categories` (`name`, `label`) VALUES
+	('donasi', 'Donasi'),
+	('importcars', 'Mobil Import'),
+	('importmotorcycles', 'Motor Import'),
+	('racecars', 'Mobil Balap'),
+	('racemotorcycles', 'Motor Balap');
+/*!40000 ALTER TABLE `vehicle_import_categories` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.vehicle_sold
 CREATE TABLE IF NOT EXISTS `vehicle_sold` (
