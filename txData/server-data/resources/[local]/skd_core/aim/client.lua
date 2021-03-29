@@ -13,7 +13,7 @@
 
 local global_wait 		= 300 			-- Don't change this
 local disable_reticle 	= true			-- Change this to false if you want a reticle
-local camera_shake 		= 0.1			-- Set this between 0.0-1.0 
+local camera_shake 		= 0.3			-- Set this between 0.0-1.0 
 local scopedWeapons 	= {				-- Scoped weapons (Add's reticle back for them)
 	100416529, 205991906, 177293209, 3342088282, -952879014 
 }
@@ -115,7 +115,7 @@ Citizen.CreateThread(function()
 
 		--Disables first person driveby as the recoil doesn't work properly during this.
 		if GetFollowVehicleCamViewMode() == 4 and IsPedInAnyVehicle(ped) then
-		    SetPlayerCanDoDriveBy(PlayerId(), false)
+		    SetPlayerCanDoDriveBy(PlayerId(), true)
 		else
 			SetPlayerCanDoDriveBy(PlayerId(), true)
 		end

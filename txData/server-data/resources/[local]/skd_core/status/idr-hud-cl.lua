@@ -37,7 +37,7 @@ local Addition = 0.0
 
 local HudStage = 1
 
---oxygenTank = 100.0
+
 
 opacity = 0
 
@@ -65,7 +65,7 @@ Citizen.CreateThread(function()
 end)
 
 
-oxygenTank = 25.0
+oxygenTank = 100.0
 
 RegisterNetEvent("RemoveOxyTank")
 AddEventHandler("RemoveOxyTank",function()
@@ -248,11 +248,11 @@ Citizen.CreateThread(function()
 
 
 			if oxygenTank > 0 and IsPedSwimmingUnderWater(GetPlayerPed(-1)) then
-				SetPedDiesInWater(GetPlayerPed(-1), false)
+				SetPedDiesInWater(GetPlayerPed(-1), true)
 				if oxygenTank > 25.0 then
-					oxygenTank = oxygenTank - 0.001
+					oxygenTank = oxygenTank - 0.1
 				else
-					oxygenTank = oxygenTank - 0.01
+					oxygenTank = oxygenTank - 0.0172
 				end
 			else
 				SetPedDiesInWater(GetPlayerPed(-1), true)
@@ -275,17 +275,22 @@ Citizen.CreateThread(function()
 			end
 
 
-			if not IsPedSwimmingUnderWater( GetPlayerPed(-1) ) and oxygenTank < 25.0 then
-				oxygenTank = oxygenTank + 0.01
-				if oxygenTank > 25.0 then
-					oxygenTank = 25.0
+			if not IsPedSwimmingUnderWater( GetPlayerPed(-1) ) then
+				if oxygenTank >= 100.0 then
+					oxygenTank = 100.0
+				else
+					if oxygenTank < 25.0 then
+						oxygenTank = oxygenTank + 0.0172
+					else
+						oxygenTank = oxygenTank + 0.1
+					end
 				end
 			end
 
 			if oxygenTank > 25.0 and not oxyOn then
 				oxyOn = false
 
-			elseif oxyOn and oxygenTank <= 25.0 then
+			elseif oxyOn and oxygenTank < 25.0 then
 				oxyOn = true
 			end
 
@@ -315,7 +320,7 @@ Citizen.CreateThread(function()
 			local varSet = 0.06938 * (health / 100)
 
 			drawRct(0.016, 0.97, 0.06938,0.01,190,190,190,80)
-			drawRct(0.016, 0.97, varSet,0.01,255,0,0,177)
+			drawRct(0.016, 0.97, varSet,0.01,60,179,113,177)
 
 
 
@@ -325,7 +330,7 @@ Citizen.CreateThread(function()
 			local varSet = 0.06938 * (armor / 100)
 
 			drawRct(0.0865, 0.97, 0.06938,0.01,190,190,190,80)
-			drawRct(0.0865, 0.97, varSet,0.01,120,120,255,177)
+			drawRct(0.0865, 0.97, varSet,0.01,0, 153, 255,177)
 
 			if hunger < 0 then
 				hunger = 0

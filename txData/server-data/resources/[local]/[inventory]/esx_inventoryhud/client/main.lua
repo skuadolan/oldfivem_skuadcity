@@ -667,22 +667,6 @@ Citizen.CreateThread(function()
                     
                 end
             end
-            if IsDisabledControlJustReleased(1, Keys['6']) then
-                if fastWeapons[6] ~= nil then
-                    if string.find(fastWeapons[6],"WEAPON_") then
-                        if GetSelectedPedWeapon(GetPlayerPed(-1)) == GetHashKey(fastWeapons[6]) then
-                            SetCurrentPedWeapon(GetPlayerPed(-1), "WEAPON_UNARMED",true)
-                        else
-                            SetCurrentPedWeapon(GetPlayerPed(-1), fastWeapons[6],true)
-                        end
-                    else
-                        TriggerServerEvent("esx:useItem", fastWeapons[6])
-                        Citizen.Wait(250)
-                        loadPlayerInventory()
-                    end
-                    
-                end
-            end
         end
 end)
 

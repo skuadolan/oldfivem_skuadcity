@@ -84,7 +84,7 @@ AddEventHandler('es_db:updateUser', function(identifier, new, callback)
 				cLength = cLength + 1
 			end
 
-			MySQL.Async.execute('UPDATE users SET ' .. updateString .. ' WHERE `identifier`=@identifier', params, function(rowsChanged)
+			MySQL.Async.execute('UPDATE users SET ' .. updateString .. ' WHERE `identifier`='.. updateString ..'', params, function(rowsChanged)
 				if callback then
 					callback(true)
 				end

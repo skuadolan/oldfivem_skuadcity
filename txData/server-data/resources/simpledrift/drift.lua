@@ -13,14 +13,14 @@ local toggle = 118 -- Numpad 9
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(250)
-		if IsControlJustPressed(1, 118) then
+		--[[if IsControlJustPressed(1, 118) then
 			driftmode = not driftmode
 			if driftmode then
 				TriggerEvent("chatMessage", 'DRIFT', { 255,255,255}, '^2ON')
 			else
 				TriggerEvent("chatMessage", 'DRIFT', { 255,255,255}, '^1OFF')
 			end
-		end
+		end]]
 
 		if driftmode then
 			if IsPedInAnyVehicle(GetPed(), false) then
@@ -29,8 +29,10 @@ Citizen.CreateThread(function()
 					if CarSpeed <= drift_speed_limit then  
 						if IsControlPressed(1, 21) then
 							SetVehicleReduceGrip(GetCar(), true)
+							TriggerEvent("chatMessage", 'DRIFT', { 255,255,255}, '^2ON')
 						else
 							SetVehicleReduceGrip(GetCar(), false)
+							TriggerEvent("chatMessage", 'DRIFT', { 255,255,255}, '^1OFF')
 						end
 					end
 				end

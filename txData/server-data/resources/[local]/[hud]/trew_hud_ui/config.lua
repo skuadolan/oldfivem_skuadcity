@@ -35,7 +35,7 @@ Config.vehicle = {
 
 	keys = {
 		seatbelt 	= 'B',
-		cruiser		= 'CAPS',
+		cruiser		= 'TAB',
 		signalLeft	= 'LEFT',
 		signalRight	= 'RIGHT',
 		signalBoth	= 'DOWN',
@@ -43,7 +43,7 @@ Config.vehicle = {
 }
 
 Config.ui = {
-	showServerLogo		= true,
+	showServerLogo		= false,
 
 	showJob		 		= true,
 

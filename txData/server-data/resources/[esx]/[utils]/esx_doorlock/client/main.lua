@@ -61,8 +61,7 @@ local maxDistance = 1.25
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-		local playerCoords = GetEntityCoords(GetPlayerPed(-1))
-		local sleep = true
+		local playerCoords, awayFromDoors = GetEntityCoords(GetPlayerPed(-1)), true
 
 		for k,doorID in ipairs(Config.Doors) do
 			local distance
@@ -77,7 +76,7 @@ Citizen.CreateThread(function()
 				maxDistance = doorID.distance
 			end
 			if distance < 50 then
-				sleep = false
+				awayFromDoors = false
 				if doorID.doors then
 					for _,v in ipairs(doorID.doors) do
 						FreezeEntityPosition(v.object, doorID.locked)
@@ -96,7 +95,7 @@ Citizen.CreateThread(function()
 			end
 
 			if distance < maxDistance then
-				sleep = false
+				awayFromDoors = false
 				if doorID.size then
 					size = doorID.size
 				end
@@ -143,8 +142,8 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		if sleep then
-			Citizen.Wait(50)
+		if awayFromDoors then
+			Citizen.Wait(1000)
 		end
 	end
 end)
@@ -181,12 +180,10 @@ end
 RegisterNetEvent('lockpick:vehicleUse')
 AddEventHandler('lockpick:vehicleUse', function()
 	local ped = GetPlayerPed(-1)
-	local sleep = true
 	local pos = GetEntityCoords(ped)
 	for k, v in pairs(Config.Doors) do
 		local dist = GetDistanceBetweenCoords(pos, Config.Doors[k].textCoords.x, Config.Doors[k].textCoords.y, Config.Doors[k].textCoords.z)
 		if dist < 1.5 then
-			sleep = false
 			if Config.Doors[k].pickable then
 				if Config.Doors[k].locked then
 					closestDoorKey, closestDoorValue = k, v
@@ -198,9 +195,6 @@ AddEventHandler('lockpick:vehicleUse', function()
 				TriggerEvent('notification', 'The door has too strong a lock!', 2)
 			end
 		end
-	end
-	if sleep then
-		Citizen.Wait(50)
 	end
 end)
 

@@ -92,7 +92,7 @@ div.separator { display: block; clear: both; width: 100%; }
 .info.vehicle #speedometer { position: relative; width: 270px; height: 130px; }
 .info.vehicle #speedometer svg { position: absolute; top: 0; left: 50%; transform: translate(-50%,0) rotate(138deg); width: 130px; }
 
-.info.vehicle #speedometer svg circle { display: block; fill: transparent; stroke-width: 5px; stroke-linecap: round; stroke-dasharray: 283; stroke-dashoffset: 75; transform-origin: 50% 50%; }
+.info.vehicle #speedometer svg circle { display: none; fill: transparent; stroke-width: 5px; stroke-linecap: round; stroke-dasharray: 283; stroke-dashoffset: 75; transform-origin: 50% 50%; }
 .info.vehicle #speedometer svg circle.mask { stroke: rgba(0,0,0,0.35); }
 .info.vehicle #speedometer svg circle.speed { stroke: url(#speed-gradient); stroke-dashoffset: 180; }
 .info.vehicle #speedometer svg:first-child { z-index: 11; }
@@ -106,9 +106,9 @@ div.separator { display: block; clear: both; width: 100%; }
 
 
 .info.vehicle #speedometer #vehicle-speed { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; color: #FFF;}
-.info.vehicle #speedometer #vehicle-speed span { display: block; font-weight: 900; font-size: 30px; text-shadow: 0px 1px 1px rgba(0,0,0,0.75); }
+.info.vehicle #speedometer #vehicle-speed span { display: none; font-weight: 900; font-size: 30px; text-shadow: 0px 1px 1px rgba(0,0,0,0.75); }
 
- .info.vehicle #speedometer #vehicle-speed strong { display: inline-block; font-size: 10px; font-weight: 900; padding: 2px 5px; border-radius: 100px; text-shadow: 0px 1px 1px rgba(0,0,0,0.75); transition: all 150ms linear; }
+ .info.vehicle #speedometer #vehicle-speed strong { display: none; font-size: 10px; font-weight: 900; padding: 2px 5px; border-radius: 100px; text-shadow: 0px 1px 1px rgba(0,0,0,0.75); transition: all 150ms linear; }
  .info.vehicle #speedometer #vehicle-speed strong.on { background: #18b70b; }
 
 .info.vehicle #speedometer #vehicle-gear,

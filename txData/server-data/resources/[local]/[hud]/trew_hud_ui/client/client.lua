@@ -107,7 +107,7 @@ local seatbeltIsOn = false
 local currSpeed = 0.0
 local prevVelocity = {x = 0.0, y = 0.0, z = 0.0}
 
---[[Citizen.CreateThread(function()
+Citizen.CreateThread(function()
 	while true do
 		Wait(200)
 		local player = PlayerPedId()
@@ -123,7 +123,7 @@ local prevVelocity = {x = 0.0, y = 0.0, z = 0.0}
 			end
 
 			-- Vehicle Speed
-			local vehicleSpeedSource = GetEntitySpeed(vehicle)
+			--[[local vehicleSpeedSource = GetEntitySpeed(vehicle)
 			local vehicleSpeed
 			if Config.vehicle.speedUnit == 'MPH' then
 				vehicleSpeed = math.ceil(vehicleSpeedSource * 2.237)
@@ -150,7 +150,7 @@ local prevVelocity = {x = 0.0, y = 0.0, z = 0.0}
 				vehicleGear = 'N'
 			elseif vehicleSpeed > 0 and vehicleGear == 0 then
 				vehicleGear = 'R'
-			end
+			end]]
 
 			-- Vehicle Lights
 			local vehicleVal,vehicleLights,vehicleHighlights  = GetVehicleLightsState(vehicle)
@@ -247,7 +247,7 @@ local prevVelocity = {x = 0.0, y = 0.0, z = 0.0}
 
 		SendNUIMessage(vehicleInfo)
 	end
-end)]]
+end)
 
 
 
@@ -478,6 +478,7 @@ Citizen.CreateThread(function()
 
 					for keyTwo,valueTwo in pairs(AllWeapons[key]) do
 						if weapon == GetHashKey('weapon_'..keyTwo) then
+							DisplayAmmoThisFrame(false)	
 							status['weapon'] = keyTwo
 
 

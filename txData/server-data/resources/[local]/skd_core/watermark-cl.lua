@@ -1,13 +1,11 @@
 -- CONFIG --
 
 -- The watermark text --
-servername = "SKUAD CITY ROLEPLAY"
-website = "skuad.club"
+servername = "#SKUAD CITY ROLEPLAY INDONEISA"
 
 -- The x and y offset (starting at the top left corner) --
 -- Default: 0.005, 0.001
-offset = {x = 0.180, y = 0.9}
-poss = {x = 0.180, y = 0.93}
+offset = {x = 0.855, y = 0.0}
 
 -- Text RGB Color --
 -- Default: 64, 64, 64 (gray)
@@ -20,7 +18,7 @@ alpha = 255
 -- Text scale
 -- Default: 0.4
 -- NOTE: Number needs to be a float (so instead of 1 do 1.0)
-scale = 0.5
+scale = 0.45
 
 -- Text Font --
 -- 0 - 5 possible
@@ -44,7 +42,7 @@ Citizen.CreateThread(function()
 
 		SetTextFont(font)
 		SetTextScale(scale, scale)
-		SetTextWrap(0.0, 0.95)
+		SetTextWrap(0.0, 1.0)
 		SetTextCentre(false)
 		SetTextDropshadow(2, 2, 0, 0, 0)
 		SetTextEdge(1, 0, 0, 0, 205)
@@ -53,27 +51,6 @@ Citizen.CreateThread(function()
 		DrawText(offset.x, offset.y)
 	end
 end)
-
---[[Citizen.CreateThread(function()
-	while true do
-		Wait(1)
-
-		if bringontherainbows then
-			rgb = RGBRainbow(1)
-		end
-		SetTextColour(rgb.r, rgb.g, rgb.b, alpha)
-
-		SetTextFont(font)
-		SetTextScale(scale, scale)
-		SetTextWrap(0.0, 0.95)
-		SetTextCentre(false)
-		SetTextDropshadow(2, 2, 0, 0, 0)
-		SetTextEdge(1, 0, 0, 0, 205)
-		SetTextEntry("STRING")
-		AddTextComponentString(website)
-		DrawText(poss.x, poss.y)
-	end
-end)]]
 
 -- By ash
 function RGBRainbow(frequency)

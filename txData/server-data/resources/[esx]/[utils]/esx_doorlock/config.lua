@@ -33,16 +33,6 @@ Config.Doors = {
 		pickable = false,
 		distance = 1.5,
 	},
-	-- pedagang
-	{
-		objName = 'v_ilev_ra_door2',
-		objCoords  = vector3(-629.02, 229.51, 81.81),
-		textCoords = vector3(-629.17, 229.51, 81.88),
-		authorizedJobs = { 'pedagang' },
-		locked = true,
-		distance = 2.5,
-		size = 0.5
-	},
 	-- Rooftop
 	{
 		objName = 'v_ilev_gtdoor02',
@@ -1027,7 +1017,77 @@ Config.Doors = {
 		distance = 2.0,
 		size = 2
 	},
-	
+	----------------
+	-- Pacific Bank
+	----------------
+	-- First Door
+	{
+		text = '(Use Lockpick)',
+		objName = 'hei_v_ilev_bk_gate_pris',			
+		objCoords  = vector3(257.41, 220.25, 106.4),
+		textCoords = vector3(257.41, 220.25, 106.4),
+		authorizedJobs = { 'police' },
+		objYaw = -20.0,
+		locking = false,
+		locked = true,
+		pickable = true,
+		distance = 1.5,
+		size = 2
+	},
+	-- Second Door
+	{
+		objName = 'hei_v_ilev_bk_gate2_pris',
+		objCoords  = vector3(261.83, 221.39, 106.41),
+		textCoords = vector3(261.83, 221.39, 106.41),
+		authorizedJobs = { 'police' },
+		objYaw = -110.0,
+		locking = false,
+		locked = true,
+		pickable = false,
+		distance = 1.5,
+		size = 2
+	},
+	-- Office to gate door
+	{
+		text = '(Use Lockpick)',
+		objName = 'v_ilev_bk_door',
+		objCoords  = vector3(265.19, 217.84, 110.28),
+		textCoords = vector3(265.19, 217.84, 110.28),
+		authorizedJobs = { 'police' },
+		objYaw = -20.0,
+		locking = false,
+		locked = true,
+		pickable = true,
+		distance = 1.5,
+		size = 2
+	},
+
+	-- First safe Door
+	{
+		objName = 'hei_v_ilev_bk_safegate_pris',
+		objCoords  = vector3(252.98, 220.65, 101.8),
+		textCoords = vector3(252.98, 220.65, 101.8),
+		authorizedJobs = { 'police' },
+		objYaw = 160.0,
+		locking = false,
+		locked = true,
+		pickable = false,
+		distance = 1.5,
+		size = 2
+	},
+	-- Second safe Door
+	{
+		objName = 'hei_v_ilev_bk_safegate_pris',
+		objCoords  = vector3(261.68, 215.62, 101.81),
+		textCoords = vector3(261.68, 215.62, 101.81),
+		authorizedJobs = { 'police' },
+		objYaw = -110.0,
+		locking = false,
+		locked = true,
+		pickable = false,
+		distance = 1.5,
+		size = 2
+	},
 
 	----------------
 	-- Fleeca Banks
@@ -1125,22 +1185,11 @@ Config.Doors = {
 	},
 	-----
 	-- Police front gate
-
-	{
-		objName = 'prop_Gate_military_01',
-		objYaw = -90.0,
-		objCoords  = vector3(419.679932, -1021.26758, 28.1229725),
-		textCoords = vector3(419.68, -1021.27, 29.12),
-		authorizedJobs = { 'police' },
-		locked = true,
-		distance = 14,
-		size = 2
-	},
 	-----
-	--[[{
-		objName = 'prop_Gate_military_0',
+	{
+		objName = 'prop_facgate_07b',
 		objYaw = -90.0,
-		objCoords  = vector3(419.68, -1021.27, 29.12),
+		objCoords  = vector3(419.99, -1025.0, 28.99),
 		textCoords = vector3(419.9, -1021.04, 30.5),
 		authorizedJobs = { 'police' },
 		locking = false,
@@ -1148,7 +1197,7 @@ Config.Doors = {
 		pickable = false,
 		distance = 20,
 		size = 2
-	},]]
+	},
 	-----
 	-- Luxury Cars
 	-----
@@ -1224,7 +1273,7 @@ Config.Doors = {
 		objName = 'apa_prop_apa_cutscene_doorb',
 		objCoords  = vector3(-21.71276, -1392.778, 29.63847),		
 		textCoords = vector3(-22.31276, -1392.778, 29.63847),
-		authorizedJobs = { 'theb' },
+		authorizedJobs = { 'cardealer' },
 		objYaw = -180.0,
 		locking = false,
 		locked = true,
@@ -1237,7 +1286,7 @@ Config.Doors = {
 		objName = 'apa_prop_apa_cutscene_doorb',
 		objCoords  = vector3(-32.67987, -1392.064, 29.63847),		
 		textCoords = vector3(-32.10987, -1392.064, 29.63847),
-		authorizedJobs = { 'theb' },
+		authorizedJobs = { 'cardealer' },
 		objYaw = 0.0,
 		locking = false,
 		locked = true,
@@ -1250,7 +1299,7 @@ Config.Doors = {
 		objName = 'apa_prop_apa_cutscene_doorb',
 		objCoords  = vector3(-24.22668, -1403.067, 29.63847),				
 		textCoords = vector3(-24.22668, -1402.537, 29.63847),
-		authorizedJobs = { 'theb' },
+		authorizedJobs = { 'cardealer' },
 		objYaw = 90.0,
 		locking = false,
 		locked = true,
@@ -1263,7 +1312,7 @@ Config.Doors = {
 		objName = 'apa_prop_apa_cutscene_doorb',
 		objCoords  = vector3(-21.27107, -1406.845, 29.63847),			
 		textCoords = vector3(-21.27107, -1406.245, 29.63847),
-		authorizedJobs = { 'theb' },
+		authorizedJobs = { 'cardealer' },
 		objYaw = 90.0,
 		locking = false,
 		locked = true,
@@ -1276,7 +1325,7 @@ Config.Doors = {
 		objName = 'prop_com_gar_door_01',
 		objCoords  = vector3(-21.04025, -1410.734, 30.51094),			
 		textCoords = vector3(-21.04025, -1410.734, 30.51094),
-		authorizedJobs = { 'theb' },
+		authorizedJobs = { 'cardealer' },
 		locking = false,
 		locked = true,
 		pickable = false,
@@ -1417,7 +1466,7 @@ Config.Doors = {
 
 	{
 		textCoords = vector3(348.56, -587.38, 44.28),
-		authorizedJobs = { 'ambulance', 'offambulance'},
+		authorizedJobs = { 'police', 'ambulance', 'offambulance', 'fib'},
 		locking = false,
 		locked = true,
 		pickable = false,
@@ -1442,7 +1491,7 @@ Config.Doors = {
 		objName = 'gabz_pillbox_singledoor',
 		objCoords = vector3(308.5733, -597.5756, 43.28403),
 		textCoords = vector3(308.5733, -597.5756, 43.28403),
-		authorizedJobs = { 'ambulance', 'offambulance'},
+		authorizedJobs = { 'police', 'ambulance', 'offambulance', 'fib'},
 		locking = false,
 		locked = true,
 		pickable = false,
@@ -1454,7 +1503,7 @@ Config.Doors = {
 		objName = 'gabz_pillbox_singledoor',
 		objCoords = vector3(340.1134, -586.6057, 44.28398),
 		textCoords = vector3(340.1134, -586.6057, 44.28398),
-		authorizedJobs = { 'ambulance', 'offambulance'},
+		authorizedJobs = { 'police', 'ambulance', 'offambulance', 'fib'},
 		locking = false,
 		locked = true,
 		pickable = false,
@@ -1466,7 +1515,7 @@ Config.Doors = {
 		objName = 'gabz_pillbox_singledoor',
 		objCoords = vector3(360.9867, -589.8188, 44.28403),
 		textCoords = vector3(360.9867, -589.8188, 44.28403),
-		authorizedJobs = { 'ambulance', 'offambulance'},
+		authorizedJobs = { 'police', 'ambulance', 'offambulance', 'fib'},
 		locking = false,
 		locked = true,
 		pickable = false,
@@ -1477,7 +1526,7 @@ Config.Doors = {
 	-- Pillbox Surgery #1
 	{
 		textCoords = vector3(313.35, -571.63, 44.29),
-		authorizedJobs = { 'ambulance', 'offambulance'},
+		authorizedJobs = { 'police', 'ambulance', 'offambulance', 'fib'},
 		locking = false,
 		locked = true,
 		pickable = false,
@@ -1548,7 +1597,7 @@ Config.Doors = {
 
 	{
 		textCoords = vector3(319.2, -573.24, 44.29),
-		authorizedJobs = { 'ambulance', 'offambulance'},
+		authorizedJobs = { 'police', 'ambulance', 'offambulance', 'fib'},
 		locking = false,
 		locked = true,
 		pickable = false,
@@ -1571,7 +1620,7 @@ Config.Doors = {
 
 	{
 		textCoords = vector3(324.44, -575.64, 44.29),
-		authorizedJobs = { 'ambulance', 'offambulance'},
+		authorizedJobs = { 'police', 'ambulance', 'offambulance', 'fib'},
 		locking = false,
 		locked = true,
 		pickable = false,
