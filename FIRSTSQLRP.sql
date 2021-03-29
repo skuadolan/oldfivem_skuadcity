@@ -1275,14 +1275,20 @@ CREATE TABLE IF NOT EXISTS `vehicles_import` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_skuadcity.vehicles_import: ~0 rows (approximately)
+-- Dumping data for table db_skuadcity.vehicles_import: ~36 rows (approximately)
 /*!40000 ALTER TABLE `vehicles_import` DISABLE KEYS */;
 INSERT INTO `vehicles_import` (`name`, `model`, `price`, `category`) VALUES
-	('Nissan Skyline R-34', '2f2fgtr34', 2147483647, 'donasi'),
-	('Mitsubishi Lancer Evolution VII 2002', '2f2fmle7', 2147483647, 'donate'),
+	('Dodge 16 Challenger', '16challenger', 895000, 'importcars'),
+	('Dodge 16 Charger', '16charger', 986000, 'importcars'),
+	('Nissan Skyline R-34 Special Edition', '2f2fgtr34', 2147483647, 'donasi'),
+	('Mitsubishi Lancer Evolution VII 2002', '2f2fmle7', 2147483647, 'donasi'),
 	('Nissan 350 ZDK', '350zdk', 7800000, 'racecars'),
+	('Nissan 370Z', '370z', 1278000, 'importcars'),
 	('BMW M5 F90', 'bmci', 3730000, 'importcars'),
+	('BMW S1000RR', 'bs17', 3457000, 'importmotorcycles'),
 	('Mercedes-Benz C63', 'c63coupe', 3352000, 'importcars'),
+	('Honda CB500F 2018', 'cb500f', 1756000, 'importmotorcycles'),
+	('Honda CBR1000R3', 'cbr1000rrr', 1756000, 'importmotorcycles'),
 	('Deviant', 'deviant', 2145000, 'importcars'),
 	('Diablous S2', 'diablous2', 1354000, 'importmotorcycles'),
 	('Elegy', 'elegy', 750000, 'importcars'),
@@ -1290,30 +1296,42 @@ INSERT INTO `vehicles_import` (`name`, `model`, `price`, `category`) VALUES
 	('Lotus Espirit', 'esprit02', 2245000, 'importcars'),
 	('FCR S2', 'fcr2', 1421000, 'importmotorcycles'),
 	('Flash GT', 'flashgt', 1354000, 'importcars'),
-	('Mitsubishi Lancer Evolution VII 2002', 'fnflan', 2147483647, 'donate'),
-	('Mitsubishi Eclipse GSX 1995', 'fnfmits', 2147483647, 'donate'),
-	('Toyota Supra MK IV 1994', 'fnfmk4', 2147483647, 'donate'),
-	('Mazda RX-7 VeilSide 1994', 'fnfrx7', 2147483647, 'donate'),
-	('Mazda RX-7 1994', 'fnfrx7dom', 2147483647, 'donate'),
+	('Mitsubishi Lancer Evolution VII 2002', 'fnflan', 2147483647, 'donasi'),
+	('Mitsubishi Eclipse GSX 1995', 'fnfmits', 2147483647, 'donasi'),
+	('Toyota Supra MK IV 1994', 'fnfmk4', 2147483647, 'donasi'),
+	('Mazda RX-7 VeilSide 1994', 'fnfrx7', 2147483647, 'donasi'),
+	('Mazda RX-7 1994', 'fnfrx7dom', 2147483647, 'donasi'),
+	('BMW GS 1', 'gs1', 3467000, 'importmotorcycles'),
 	('Issi S3', 'issi3', 3458000, 'importcars'),
 	('Itali GTB S2', 'italigtb2', 3230000, 'importcars'),
 	('Itali GTO', 'italigto', 3320000, 'importcars'),
 	('Jester S3', 'jester3', 750000, 'importcars'),
+	('BMW M4F82', 'm4f82', 2785000, 'importcars'),
 	('Ford Mustang Mach 1', 'mach1', 2245000, 'importcars'),
 	('Nero S2', 'nero2', 2421000, 'importcars'),
+	('Nissan Titan 2017', 'nissantitan17', 3789000, 'importcars'),
 	('penetrator', 'penetrator', 1421000, 'importcars'),
+	('Yamaha R1 2018', 'r1', 2798000, 'importmotorcycles'),
+	('Nissan Skyline R-34', 'r34', 2785000, 'importcars'),
+	('Nissan Skyline R-35 Nismo', 'r35', 2987000, 'importcars'),
+	('Yamah R6 2017', 'r6', 2458000, 'importmotorcycles'),
+	('Raptor 2017', 'raptor2017', 2345000, 'importcars'),
 	('Schlagen', 'schlagen', 2325000, 'importcars'),
 	('Shotaro Concept', 'shotaro', 5800000, 'racemotorcycles'),
 	('Lamborghini Sian 2012', 'sian', 2756000, 'importcars'),
-	('Nissan Silvia 1997', 'silvias15', 2147483647, 'donate'),
+	('Nissan Silvia 1997', 'silvias15', 2147483647, 'donasi'),
+	('Nissan Skyline R-34 Limited Edition', 'skyline', 5320000, 'racecars'),
 	('Specter S2', 'specter2', 2354000, 'importcars'),
 	('Stafford', 'stafford', 2675000, 'importcars'),
 	('Taipan', 'taipan', 2675000, 'importcars'),
 	('Tempesta', 'tempesta', 1730000, 'importcars'),
 	('Tezeract', 'tezeract', 1458000, 'importcars'),
+	('RAM TRX 2017', 'trx', 2658000, 'importcars'),
 	('Tyrant', 'tyrant', 2780000, 'importcars'),
 	('Vagner', 'vagner', 3421000, 'importcars'),
-	('XA21', 'xa21', 3354000, 'importcars');
+	('Ford Ranger Wildtrak', 'wildtrak', 1658000, 'importcars'),
+	('XA21', 'xa21', 3354000, 'importcars'),
+	('Kawasaki ZX10R', 'zx10r', 5845000, 'racemotorcycles');
 /*!40000 ALTER TABLE `vehicles_import` ENABLE KEYS */;
 
 -- Dumping structure for table db_skuadcity.vehicle_categories
