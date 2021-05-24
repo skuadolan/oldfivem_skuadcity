@@ -2,14 +2,14 @@
 ESX                       = nil
 local PhoneNumbers        = {}
 
--- PhoneNumbers = {
---   ambulance = {
---     type  = "ambulance",
---     sources = {
---        ['1'] = true
---     }
---   }
--- }
+ PhoneNumbers = {
+   ambulance = {
+     type  = "ambulance",
+     sources = {
+        ['1'] = true
+     }
+   }
+ }
 
 TriggerEvent('esx:getSharedObject', function(obj)
   ESX = obj

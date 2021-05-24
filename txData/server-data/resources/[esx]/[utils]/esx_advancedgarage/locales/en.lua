@@ -1,9 +1,9 @@
 Locales['en'] = {
 	-- Global
 	['custom_kick'] = 'INPUT CUSTOM KICK MESSAGE',
-	['blip_garage'] = 'Garage | Public',
-	['blip_garage_private'] = 'Garage | Private',
-	['blip_pound'] = 'Garage | Pound',
+	['blip_garage'] = 'Garasi | Publik',
+	['blip_garage_private'] = 'Garasi | Private',
+	['blip_pound'] = 'Garasi | Pound',
 	['loc_garage'] = 'In Garage',
 	['loc_pound'] = 'Check Impound',
 	['return'] = 'Return',
@@ -34,7 +34,7 @@ Locales['en'] = {
 	['location'] = 'Location',
 	-- Ambulance
 	['blip_ambulance_garage'] = 'Garage | Ambulance Garage',
-	['blip_ambulance_pound'] = 'Garage | Ambulance Pound',
+	['blip_ambulance_pound'] = 'Garasi | Pound Dinas',
 	['garage_ambulance'] = 'Ambulance Garage',
 	['pound_ambulance'] = 'Ambulance Pound: Fee $%s',
 	['garage_no_ambulance'] = 'You dont own any Ambulance Vehicles!',
@@ -43,7 +43,7 @@ Locales['en'] = {
 	['must_ambulance'] = 'Must be Ambulance Job to Access this!',
 	-- Police
 	['blip_police_garage'] = 'Garage | Police Garage',
-	['blip_police_pound'] = 'Garage | Police Pound',
+	['blip_police_pound'] = 'Garasi | Pound Dinas',
 	['garage_police'] = 'Police Garage',
 	['pound_police'] = 'Police Pound: Fee $%s',
 	['garage_no_police'] = 'You dont own any Police Vehicles!',

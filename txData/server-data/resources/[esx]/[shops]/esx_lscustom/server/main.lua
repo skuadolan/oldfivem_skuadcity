@@ -9,22 +9,13 @@ AddEventHandler('esx_lscustom:buyMod', function(price)
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	price = tonumber(price)
 
-	if Config.IsMechanicJobOnly then
+	--[[if Config.IsMechanicJobOnly then
 		local societyAccount
 
 		TriggerEvent('esx_addonaccount:getSharedAccount', 'society_mechanic', function(account)
 			societyAccount = account
 		end)
 
-		if price < societyAccount.money then
-			TriggerClientEvent('esx_lscustom:installMod', _source)
-			TriggerClientEvent('esx:showNotification', _source, _U('purchased'))
-			societyAccount.removeMoney(price)
-		else
-			TriggerClientEvent('esx_lscustom:cancelInstallMod', _source)
-			TriggerClientEvent('esx:showNotification', _source, _U('not_enough_money'))
-		end
-	else
 		if price < xPlayer.getMoney() then
 			TriggerClientEvent('esx_lscustom:installMod', _source)
 			TriggerClientEvent('esx:showNotification', _source, _U('purchased'))
@@ -33,7 +24,16 @@ AddEventHandler('esx_lscustom:buyMod', function(price)
 			TriggerClientEvent('esx_lscustom:cancelInstallMod', _source)
 			TriggerClientEvent('esx:showNotification', _source, _U('not_enough_money'))
 		end
-	end
+	else]]
+		if price < xPlayer.getMoney() then
+			TriggerClientEvent('esx_lscustom:installMod', _source)
+			TriggerClientEvent('esx:showNotification', _source, _U('purchased'))
+			xPlayer.removeMoney(price)
+		else
+			TriggerClientEvent('esx_lscustom:cancelInstallMod', _source)
+			TriggerClientEvent('esx:showNotification', _source, _U('not_enough_money'))
+		end
+	--end
 end)
 
 RegisterServerEvent('esx_lscustom:refreshOwnedVehicle')
@@ -61,6 +61,26 @@ end)
 ESX.RegisterServerCallback('esx_lscustom:getVehiclesPrices', function(source, cb)
 	if not Vehicles then
 		MySQL.Async.fetchAll('SELECT * FROM vehicles', {}, function(result)
+			local vehicles = {}
+
+			for i=1, #result, 1 do
+				table.insert(vehicles, {
+					model = result[i].model,
+					price = result[i].price
+				})
+			end
+
+			Vehicles = vehicles
+			cb(Vehicles)
+		end)
+	else
+		cb(Vehicles)
+	end
+end)
+
+ESX.RegisterServerCallback('esx_lscustom:getVehiclesPrices', function(source, cb)
+	if not Vehicles then
+		MySQL.Async.fetchAll('SELECT * FROM vehicles_import', {}, function(result)
 			local vehicles = {}
 
 			for i=1, #result, 1 do

@@ -1,1 +1,0 @@
-# [FiveM] Cross hands "g" as default

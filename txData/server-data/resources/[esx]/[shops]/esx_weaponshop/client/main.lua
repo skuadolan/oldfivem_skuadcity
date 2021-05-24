@@ -148,7 +148,7 @@ Citizen.CreateThread(function()
 
 				SetBlipSprite (blip, 110)
 				SetBlipDisplay(blip, 4)
-				SetBlipScale  (blip, 0.95)
+				SetBlipScale  (blip, 1.0)
 				SetBlipColour (blip, 81)
 				SetBlipAsShortRange(blip, true)
 
@@ -217,9 +217,44 @@ Citizen.CreateThread(function()
 					if Config.LicenseEnable and Config.Zones[CurrentActionData.zone].Legal then
 						ESX.TriggerServerCallback('esx_license:checkLicense', function(hasWeaponLicense)
 							if hasWeaponLicense then
-								OpenShopMenu(CurrentActionData.zone)
+								ESX.TriggerServerCallback("esx_inventoryhud:getPlayerInventory", function(data)
+									items = {}
+									fastItems = {}
+									inventory = data.inventory
+									local bringLicense = false
+									
+									if inventory ~= nil then
+										
+										for key, value in pairs(inventory) do
+											local fnd = false
+											
+											if fnd == false then
+												if inventory[key].count <= 0 then
+													inventory[key] = nil
+												else
+													print("Inventory"..inventory[key].name)
+													inventory[key].type = "item_standard"
+													table.insert(items, inventory[key])
+	
+		
+													if inventory[key].name == 'lisensi_senjata' then
+														bringLicense = true
+													end
+												end
+											end
+										end
+
+										if bringLicense then
+											OpenShopMenu(CurrentActionData.zone)
+										else
+											ESX.ShowNotification(_U('dont_bring'))
+										end
+									end
+								end, GetPlayerServerId(PlayerId())
+								)
 							else
-								OpenBuyLicenseMenu(CurrentActionData.zone)
+								--OpenBuyLicenseMenu(CurrentActionData.zone)
+								ESX.ShowNotification(_U('not_have_license'))
 							end
 						end, GetPlayerServerId(PlayerId()), 'weapon')
 					else

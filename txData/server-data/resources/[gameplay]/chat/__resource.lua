@@ -25,13 +25,9 @@ files {
 
 client_scripts {
   'client/cl_chat.lua',
-  '3ddo-cl.lua',
-  '3dme-cl.lua',
 }
 
 server_scripts {
-  '3ddo-sv.lua',
-  '3dme-sv.lua',
   'server/utils.lua',
   'server/commands.lua',
   'server/sv_chat.lua',

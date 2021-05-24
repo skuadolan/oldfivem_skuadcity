@@ -12,21 +12,21 @@ Config = {
 -- Set this if you really wanna disable emotes in cars, as of 1.7.2 they only play the upper body part if in vehicle
     AllowedInCars = true,
 -- You can disable the (F3) menu here / change the keybind.
-	MenuKeybindEnabled = false,
+	MenuKeybindEnabled = true,
 	MenuKeybind = 170, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can disable the Favorite emote keybinding here.
 	FavKeybindEnabled = true,
-	FavKeybind = 171, -- Get the button number here https://docs.fivem.net/game-references/controls/
+	FavKeybind = 166, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can change the header image for the f3 menu here
 -- Use a 512 x 128 image!
 -- NOte this might cause an issue of the image getting stuck on peoples screens
 	CustomMenuEnabled = false,
-	MenuImage = "https://dianadi021.github.io/assets/content/icon/skd.png",
+	MenuImage = "https://i.imgur.com/kgzvDwQ.png",
 -- You can change the menu position here
 	MenuPosition = "right", -- (left, right)
 -- You can disable the Ragdoll keybinding here.
 	RagdollEnabled = false,
-	RagdollKeybind = 83, -- Get the button number here https://docs.fivem.net/game-references/controls/
+	RagdollKeybind = 303, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can disable the Facial Expressions menu here.
 	ExpressionsEnabled = true,
 -- You can disable the Walking Styles menu here.
@@ -35,7 +35,7 @@ Config = {
     SharedEmotesEnabled = true,
     CheckForUpdates = true,
 -- If you have the SQL imported enable this to turn on keybinding.
-    SqlKeybinding = true,
+    SqlKeybinding = false,
 }
 
 Config.KeybindKeys = {
@@ -58,7 +58,7 @@ Config.Languages = {
         ['prop2info'] = "❓ Prop Emotes can be located at the end",
         ['set'] = "Set (",
         ['setboundemote'] = ") to be your bound emote?",
-        ['newsetemote'] = "~w~ is now your bound emote, press ~g~CapsLock~w~ to use it.",
+        ['newsetemote'] = "~w~ is now your bound emote, press ~g~F5~w~ to use it.",
         ['cancelemote'] = "Cancel Emote",
         ['cancelemoteinfo'] = "~r~X~w~ Cancels the currently playing emote",
         ['walkingstyles'] = "Walking Styles",

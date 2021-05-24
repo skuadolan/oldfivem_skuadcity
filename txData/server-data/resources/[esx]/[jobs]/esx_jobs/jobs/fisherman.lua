@@ -51,7 +51,7 @@ Config.Jobs.fisherman = {
 				{
 					name   = _U('fm_fish'),
 					db_name= 'fish',
-					time   = 2,
+					time   = 1.2,
 					max    = 100,
 					add    = 1,
 					remove = 1,
@@ -69,11 +69,11 @@ Config.Jobs.fisherman = {
 			Color = {r = 204, g = 204, b = 0},
 			Marker= 1,
 			Blip  = true,
-			Name  = _U('fm_spawnboat_title'),
+			Name  = _U('spawn_veh'),
 			Type  = 'vehspawner',
 			Spawner = 2,
-			Hint  = _U('fm_spawnboat'),
-			Caution = 0,
+			Hint  = _U('spawn_veh_button'),
+			Caution = 2000,
 			GPS = {x = 4435.21, y = 4829.60, z = 0.34}
 		},
 
@@ -160,10 +160,10 @@ Config.Jobs.fisherman = {
 			Item = {
 				{
 				name   = _U('delivery'),
-				time   = 0.5,
+				time   = 0.1,
 				remove = 1,
 				max    = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-				price  = 11,
+				price  = 93,
 				requires = 'fish',
 				requires_name = _U('fm_fish'),
 				drop   = 100

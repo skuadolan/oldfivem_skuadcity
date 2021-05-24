@@ -254,7 +254,7 @@ function OpenTaxiActionsMenu()
 		elseif data.current.value == 'boss_actions' then
 			TriggerEvent('esx_society:openBossMenu', 'taxi', function(data, menu)
 				menu.close()
-			end)
+			end, { wash = false, grades = false })
 		end
 
 	end, function(data, menu)
@@ -496,7 +496,7 @@ Citizen.CreateThread(function()
 
 	SetBlipSprite (blip, 198)
 	SetBlipDisplay(blip, 4)
-	SetBlipScale  (blip, 0.95)
+	SetBlipScale  (blip, 1.0)
 	SetBlipColour (blip, 5)
 	SetBlipAsShortRange(blip, true)
 

@@ -36,21 +36,20 @@ $(function () {
 				$('#player_count').html(jobs.player_count);
 
 				$('#ems').html(jobs.ems);
-				$('#pedagang').html(jobs.pedagang);
 				$('#police').html(jobs.police);
 				$('#taxi').html(jobs.taxi);
 				$('#mechanic').html(jobs.mechanic);
-				/* $('#slaughterer').html(jobs.slaughterer);
+				$('#pedagang').html(jobs.pedagang);
+				$('#slaughterer').html(jobs.slaughterer);
 				$('#fueler').html(jobs.fueler);
 				$('#lumberjack').html(jobs.lumberjack);
-				$('#tailor').html(jobs.tailor); */
-				$('#reporter').html(jobs.reporter);
-				/* $('#miner').html(jobs.miner); */
-				$('#estate').html(jobs.estate);
-				$('#cardeal').html(jobs.cardeal);
-				$('#arma').html(jobs.arma);
-				$('#stato').html(jobs.stato);
-				$('#unemployed').html(jobs.unemployed);
+				$('#tailor').html(jobs.tailor);
+				$('#cargo').html(jobs.cargo);
+				$('#busdriver').html(jobs.busdriver);
+				$('#fisherman').html(jobs.fisherman);
+				$('#miner').html(jobs.miner);
+				$('#petani').html(jobs.petani);
+				$('#trucker').html(jobs.trucker);
 				break;
 
 			case 'updatePlayerList':

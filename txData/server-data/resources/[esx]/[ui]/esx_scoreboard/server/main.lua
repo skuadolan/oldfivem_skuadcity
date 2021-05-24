@@ -13,9 +13,8 @@ AddEventHandler('esx:setJob', function(playerId, job, lastJob)
 	TriggerClientEvent('esx_scoreboard:updateConnectedPlayers', -1, connectedPlayers)
 end)
 
-AddEventHandler('esx:playerLoaded', function(source)
-	local xPlayer = ESX.GetPlayerFromId(source)
-		AddPlayerToScoreboard(xPlayer, true)
+AddEventHandler('esx:playerLoaded', function(playerId, xPlayer)
+	AddPlayerToScoreboard(xPlayer, true)
 end)
 
 AddEventHandler('esx:playerDropped', function(playerId)
@@ -46,7 +45,7 @@ function AddPlayerToScoreboard(xPlayer, update)
 	connectedPlayers[playerId] = {}
 	connectedPlayers[playerId].ping = GetPlayerPing(playerId)
 	connectedPlayers[playerId].id = playerId
-	connectedPlayers[playerId].name = GetPlayerIdentifier(playerId) --myID--identifier.steam--myID--'INDODREAM'--GetPlayerIdentifier(source) --'INDODREAM' --xPlayer.identifier
+	connectedPlayers[playerId].name = xPlayer.identifier
 	connectedPlayers[playerId].job = xPlayer.job.name
 
 	if update then
@@ -80,14 +79,15 @@ function UpdatePing()
 	TriggerClientEvent('esx_scoreboard:updatePing', -1, connectedPlayers)
 end
 
-TriggerEvent('es:addGroupCommand', 'screfresh', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'skin', 'admin', function(source, args, user)
 	AddPlayersToScoreboard()
 end, function(source, args, user)
-	TriggerClientEvent('chat:addMessage', source, { args = { '^1SISTEMA', 'Non hai i permessi per farlo.' } })
-end, {help = "Ricarica nomi lista giocatori!"})
+	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
+end, {help = "Refresh esx_scoreboard names!"})
 
-TriggerEvent('es:addGroupCommand', 'sctoggle', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'skinsave', 'admin', function(source, args, user)
 	TriggerClientEvent('esx_scoreboard:toggleID', source)
 end, function(source, args, user)
-	TriggerClientEvent('chat:addMessage', source, { args = { '^1SISTEMA', 'Non hai i permessi per farlo.' } })
-end, {help = "Togli colonna degli ID!"})
+	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
+end, {help = "Toggle ID column on the scoreboard!"})
+

@@ -1,1874 +1,323 @@
 
 ================================================================
-======== FXServer starting - 3/30/2021, 02:48:30
+======== FXServer starting - 5/20/2021, 22:47:49
 ================================================================
-Argument count mismatch (passed 6, wanted 2)
-Creating script environments for _cfx_internal
-Found new resource async in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//async
-Found new resource cron in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//cron
-Found new resource esplugin_mysql in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//esplugin_mysql
-Found new resource essentialmode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//essentialmode
-Found new resource esx_adminplus in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//esx_adminplus
-Found new resource extendedmode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//extendedmode
-Found new resource mysql-async in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//mysql-async
-Found new resource simpledrift in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//simpledrift
-Found new resource skinchanger in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//skinchanger
-Found new resource vMenu in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//vMenu
-Found new resource monitor in D:\Project\FiveM\[new]skuadcity\server\citizen/system_resources//monitor
-Found new resource webadmin in D:\Project\FiveM\[new]skuadcity\server\citizen/system_resources//webadmin
-Found new resource basic-gamemode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gamemodes]/basic-gamemode
-Found new resource chat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/chat
-Found new resource chat-theme-gtao in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/chat-theme-gtao
-Found new resource player-data in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/player-data
-Found new resource playernames in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/playernames
-Found new resource skd_core in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/skd_core
-Found new resource mapmanager in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[managers]/mapmanager
-Found new resource spawnmanager in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[managers]/spawnmanager
-Found new resource baseevents in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/baseevents
-Found new resource hardcap in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/hardcap
-Found new resource rconlog in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/rconlog
-Found new resource runcode in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/runcode
-Found new resource scoreboard in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/scoreboard
-Found new resource sessionmanager in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/sessionmanager
-Found new resource sessionmanager-rdr3 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/sessionmanager-rdr3
-Found new resource example-loadscreen in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[test]/example-loadscreen
-Found new resource fivem in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[test]/fivem
-Found new resource esx_addons_gcphone in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[voice]/esx_addons_gcphone
-Found new resource gcphone in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[voice]/gcphone
-Found new resource ls-radio in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[voice]/ls-radio
-Found new resource saltychat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[voice]/saltychat
-Found new resource screenshot-basic in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[voice]/screenshot-basic
-Found new resource tokovoip_script in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[voice]/tokovoip_script
-Found new resource ws_server in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[voice]/ws_server
-Found new resource ESX-qb-garbagejob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/ESX-qb-garbagejob
-Found new resource esx_ambulancejob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_ambulancejob
-Found new resource esx_bankerjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_bankerjob
-Found new resource esx_bikerjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_bikerjob
-Found new resource esx_carteljob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_carteljob
-Found new resource esx_drugs in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_drugs
-Found new resource esx_gangjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_gangjob
-Found new resource esx_gopostal in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_gopostal
-Found new resource esx_illegal in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_illegal
-Found new resource esx_jobs in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_jobs
-Found new resource esx_mafiajob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_mafiajob
-Found new resource esx_mechanicjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_mechanicjob
-Found new resource esx_pedagang in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_pedagang
-Found new resource esx_policejob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_policejob
-Found new resource esx_realestateagentjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_realestateagentjob
-Found new resource esx_taxijob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_taxijob
-Found new resource esx_truckerjob in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[jobs]/esx_truckerjob
-Found new resource esx_holdup in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[robbery]/esx_holdup
-Found new resource esx_barbershop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_barbershop
-Found new resource esx_boat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_boat
-Found new resource esx_clotheshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_clotheshop
-Found new resource esx_lscustom in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_lscustom
-Found new resource esx_shops in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_shops
-Found new resource esx_tattooshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_tattooshop
-Found new resource esx_vehicleshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_vehicleshop
-Found new resource esx_vehicleshopimport in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_vehicleshopimport
-Found new resource esx_weaponshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[shops]/esx_weaponshop
-Found new resource esx_menu_default in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[ui]/esx_menu_default
-Found new resource esx_menu_dialog in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[ui]/esx_menu_dialog
-Found new resource esx_menu_list in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[ui]/esx_menu_list
-Found new resource esx_scoreboard in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[ui]/esx_scoreboard
-Found new resource esx-checkdeathcause in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx-checkdeathcause
-Found new resource esx-kr-vehicle-push in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx-kr-vehicle-push
-Found new resource esx-qalle-jail in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx-qalle-jail
-Found new resource esx_accessories in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_accessories
-Found new resource esx_addonaccount in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_addonaccount
-Found new resource esx_addoninventory in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_addoninventory
-Found new resource esx_advancedgarage in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_advancedgarage
-Found new resource esx_alerts in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_alerts
-Found new resource esx_basicneeds in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_basicneeds
-Found new resource esx_billing in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_billing
-Found new resource esx_boilerplate in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_boilerplate
-Found new resource esx_communityservice in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_communityservice
-Found new resource esx_crafting in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_crafting
-Found new resource esx_datastore in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_datastore
-Found new resource esx_dmvschool in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_dmvschool
-Found new resource esx_doorlock in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_doorlock
-Found new resource esx_duty in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_duty
-Found new resource esx_eden_jail in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_eden_jail
-Found new resource esx_giveownedcar in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_giveownedcar
-Found new resource esx_identity in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_identity
-Found new resource esx_jobchat in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_jobchat
-Found new resource esx_joblisting in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_joblisting
-Found new resource esx_jsidmenu in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_jsidmenu
-Found new resource esx_license in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_license
-Found new resource esx_licenseshop in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_licenseshop
-Found new resource esx_migrate in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_migrate
-Found new resource esx_optionalneeds in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_optionalneeds
-Found new resource esx_plasticsurgery in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_plasticsurgery
-Found new resource esx_property in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_property
-Found new resource esx_repairkit in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_repairkit
-Found new resource esx_service in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_service
-Found new resource esx_showcommands in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_showcommands
-Found new resource esx_skin in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_skin
-Found new resource esx_society in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_society
-Found new resource esx_status in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_status
-Found new resource esx_teleports in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_teleports
-Found new resource esx_turbo in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/esx_turbo
-Found new resource es_camera in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/es_camera
-Found new resource instance in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[esx]/[utils]/instance
-Found new resource fivem-map-hipster in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gamemodes]/[maps]/fivem-map-hipster
-Found new resource fivem-map-skater in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gamemodes]/[maps]/fivem-map-skater
-Found new resource redm-map-one in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gamemodes]/[maps]/redm-map-one
-Found new resource money in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/money
-Found new resource money-fountain in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/money-fountain
-Found new resource money-fountain-example-map in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/money-fountain-example-map
-Found new resource ped-money-drops in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[gameplay]/[examples]/ped-money-drops
-Found new resource JD_logs in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[dc]/JD_logs
-Found new resource dpclothing in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[dp]/dpclothing
-Found new resource dpemotes in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[dp]/dpemotes
-Found new resource jsfour-idcard in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/jsfour-idcard
-Found new resource mythic_interiors in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/mythic_interiors
-Found new resource mythic_notify in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/mythic_notify
-Found new resource mythic_progbar in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/mythic_progbar
-Found new resource rgz_menu in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/rgz_menu
-Found new resource trew_hud_ui in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[hud]/trew_hud_ui
-Found new resource esx_inventoryhud in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[inventory]/esx_inventoryhud
-Found new resource esx_inventoryhud_glovebox in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[inventory]/esx_inventoryhud_glovebox
-Found new resource esx_inventoryhud_trunk in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[inventory]/esx_inventoryhud_trunk
-Found new resource .git in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/.git
-Resource loading for .git failed:
-Could not open resource metadata file D:/Project/FiveM/[new]skuadcity/txData/server-data/resources//[local]/[maps]/.git/__resource.lua.
-Found new resource banner_anim in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/banner_anim
-Found new resource bob74_ipl in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/bob74_ipl
-Found new resource cardealerimport in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/cardealerimport
-Found new resource kantor-pedagang in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/kantor-pedagang
-Found new resource lsrp-motels in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/lsrp-motels
-Found new resource ocrp_postal_map in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/ocrp_postal_map
-Found new resource pertamina in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/pertamina
-Found new resource pillbox in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/pillbox
-Found new resource prisonlobbys in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/prisonlobbys
-Found new resource tolKanan in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[maps]/tolKanan
-Found new resource WeaponCustomMods in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[mods]/WeaponCustomMods
-Found new resource bisik in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/bisik
-Found new resource carcontrol in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/carcontrol
-Found new resource carremote in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/carremote
-Found new resource esx_animasisenjata in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_animasisenjata
-Found new resource esx_balapliar in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_balapliar
-Found new resource esx_dokumen in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_dokumen
-Found new resource esx_kontrak in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_kontrak
-Found new resource esx_punggungsenjata in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/esx_punggungsenjata
-Found new resource ExM_Hunting in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/ExM_Hunting
-Found new resource LegacyFuel in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/LegacyFuel
-Found new resource MF_VehSales in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/MF_VehSales
-Found new resource new_banking in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/new_banking
-Found new resource RealisticVehicleFailure in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/RealisticVehicleFailure
-Found new resource vehicle-control in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[utils]/vehicle-control
-Found new resource webpack in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/[builders]/webpack
-Found new resource yarn in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[system]/[builders]/yarn
-Found new resource 16challenger in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/16challenger
-Found new resource 16charger in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/16charger
-Found new resource 370Z in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/370Z
-Found new resource bmci in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/bmci
-Found new resource c63coupe in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/c63coupe
-Found new resource esprit02 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/esprit02
-Found new resource M4F82 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/M4F82
-Found new resource mach1 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/mach1
-Found new resource nissantitan17 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/nissantitan17
-Found new resource r34 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/r34
-Found new resource r35 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/r35
-Found new resource raptor2017 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/raptor2017
-Found new resource sian in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/sian
-Found new resource skyline in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/skyline
-Found new resource trx in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/trx
-Found new resource wildtrak in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[cars]/wildtrak
-Found new resource ff in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[fast furious]/ff
-Found new resource bs17 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[motorcycles]/bs17
-Found new resource cb500f in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[motorcycles]/cb500f
-Found new resource gs1 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[motorcycles]/gs1
-Found new resource r1 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[motorcycles]/r1
-Found new resource r6 in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[motorcycles]/r6
-Found new resource zx10r in D:/Project\FiveM\[new]skuadcity\txData\server-data/resources//[local]/[vehicle]/[motorcycles]/zx10r
-Creating script environments for sessionmanager
-Started resource sessionmanager
-Creating script environments for monitor
-[txAdminClientJS] Logger started
-[txAdminClientLUA] Version 3.3.0 starting...
-Started resource monitor
-Argument count mismatch (passed 6, wanted 2)
-Creating script environments for essentialmode
-Instantiated instance of script SQLite.Main.
-Started resource essentialmode
-Creating script environments for mysql-async
-Started resource mysql-async
-Creating script environments for esplugin_mysql
-Started resource esplugin_mysql
-Creating script environments for mapmanager
-Started resource mapmanager
-Creating script environments for chat
-Started resource chat
-Started resource spawnmanager
-Started gametype Freeroam
-Started resource basic-gamemode
-Started resource fivem
-Creating script environments for hardcap
-Started resource hardcap
-Creating script environments for rconlog
-Started resource rconlog
-Creating script environments for async
-Started resource async
-Creating script environments for cron
-Started resource cron
-Changing gametype from basic-gamemode to extendedmode
-Stopping resource fivem
-Stopping resource basic-gamemode
-Creating script environments for extendedmode
-[ExtendedMode] [INFO] Starting up...
-Started gametype extendedmode
-Started resource extendedmode
-Started resource mythic_notify
-Started resource mythic_progbar
-Started resource mythic_interiors
-Creating script environments for esx_inventoryhud
-Started resource esx_inventoryhud
-Creating script environments for esx_inventoryhud_glovebox
-Started resource esx_inventoryhud_glovebox
-Creating script environments for esx_inventoryhud_trunk
-Started resource esx_inventoryhud_trunk
-Started resource skinchanger
-Creating script environments for instance
-Started resource instance
-Started resource esx_menu_default
-Started resource esx_menu_dialog
-Started resource esx_menu_list
-Creating script environments for esx_datastore
-Started resource esx_datastore
-Creating script environments for esx_identity
-Error loading script server/main.lua in resource esx_identity: @es_extended/locale.lua:5: attempt to index a nil value (global 'Config')
-stack traceback:
-	@es_extended/locale.lua:5: in function '_'
-	@es_extended/locale.lua:20: in function '_U'
-	@esx_identity/server/main.lua:167: in main chunk
-Failed to load script server/main.lua.
-Started resource esx_identity
-Creating script environments for esx_skin
-Started resource esx_skin
-Creating script environments for esx_status
-Started resource esx_status
-Creating script environments for esx_basicneeds
-Started resource esx_basicneeds
-Creating script environments for esx_billing
-Started resource esx_billing
-Creating script environments for esx_addoninventory
-Started resource esx_addoninventory
-Creating script environments for esx_addonaccount
-Started resource esx_addonaccount
-Creating script environments for esx_society
-Started resource esx_society
-Creating script environments for esx_license
-Started resource esx_license
-Creating script environments for esx_service
-Started resource esx_service
-Creating script environments for esx_property
-Started resource esx_property
-Creating script environments for esx_advancedgarage
-Started resource esx_advancedgarage
-Creating script environments for esx_vehicleshop
-Started resource esx_vehicleshop
-Creating script environments for esx_vehicleshopimport
-Started resource esx_vehicleshopimport
-Creating script environments for esx_jobs
-Started resource esx_jobs
-Creating script environments for esx_joblisting
-Started resource esx_joblisting
-Creating script environments for esx_policejob
-Started resource esx_policejob
-Creating script environments for esx_ambulancejob
-Started resource esx_ambulancejob
-Creating script environments for esx_mechanicjob
-Started resource esx_mechanicjob
-Creating script environments for esx_taxijob
-Started resource esx_taxijob
-Creating script environments for esx_lscustom
-Started resource esx_lscustom
-Creating script environments for esx_shops
-Started resource esx_shops
-Creating script environments for esx_weaponshop
-Started resource esx_weaponshop
-Creating script environments for esx_clotheshop
-Started resource esx_clotheshop
-Creating script environments for esx_barbershop
-Started resource esx_barbershop
-Creating script environments for esx_drugs
-Started resource esx_drugs
-Creating script environments for esx_holdup
-Started resource esx_holdup
-Creating script environments for esx_accessories
-Started resource esx_accessories
-Creating script environments for esx_alerts
-Started resource esx_alerts
-Creating script environments for esx_dmvschool
-Started resource esx_dmvschool
-Creating script environments for esx_doorlock
-Started resource esx_doorlock
-Creating script environments for esx_duty
-Started resource esx_duty
-Creating script environments for esx_eden_jail
-Started resource esx_eden_jail
-Creating script environments for esx_giveownedcar
-Started resource esx_giveownedcar
-Creating script environments for esx_jobchat
-Started resource esx_jobchat
-Creating script environments for jsfour-idcard
-Started resource jsfour-idcard
-Creating script environments for esx_jsidmenu
-Started resource esx_jsidmenu
-Creating script environments for esx_licenseshop
-Started resource esx_licenseshop
-Creating script environments for esx_migrate
-Started resource esx_migrate
-Creating script environments for esx_plasticsurgery
-Started resource esx_plasticsurgery
-Creating script environments for esx_repairkit
-Started resource esx_repairkit
-Creating script environments for esx_scoreboard
-Started resource esx_scoreboard
-Creating script environments for esx_tattooshop
-Started resource esx_tattooshop
-Started resource esx_teleports
-Creating script environments for esx_turbo
-Started resource esx_turbo
-Started resource esx-checkdeathcause
-Creating script environments for esx-qalle-jail
-Started resource esx-qalle-jail
-Creating script environments for esx_boat
-Started resource esx_boat
-Creating script environments for esx_boilerplate
-Started resource esx_boilerplate
-Creating script environments for esx_optionalneeds
-Started resource esx_optionalneeds
-Started resource esx-kr-vehicle-push
-Creating script environments for esx_crafting
-Started resource esx_crafting
-Creating script environments for esx_showcommands
-Started resource esx_showcommands
-Creating script environments for esx_communityservice
-Started resource esx_communityservice
-Started resource esx_animasisenjata
-Creating script environments for esx_balapliar
-Started resource esx_balapliar
-Creating script environments for esx_dokumen
-Started resource esx_dokumen
-Creating script environments for esx_kontrak
-Started resource esx_kontrak
-Creating script environments for esx_pedagang
-Started resource esx_pedagang
-Started resource esx_punggungsenjata
-Creating script environments for esx_bikerjob
-Started resource esx_bikerjob
-Creating script environments for esx_carteljob
-Started resource esx_carteljob
-Creating script environments for esx_gangjob
-Started resource esx_gangjob
-Creating script environments for esx_illegal
-Started resource esx_illegal
-Creating script environments for esx_mafiajob
-Started resource esx_mafiajob
-Creating script environments for esx_bankerjob
-Started resource esx_bankerjob
-Creating script environments for esx_gopostal
-Started resource esx_gopostal
-Creating script environments for esx_realestateagentjob
-Started resource esx_realestateagentjob
-Creating script environments for esx_truckerjob
-Started resource esx_truckerjob
-Creating script environments for ESX-qb-garbagejob
-Started resource ESX-qb-garbagejob
-Started resource ocrp_postal_map
-Started resource banner_anim
-Started resource bob74_ipl
-Started resource cardealerimport
-Started resource kantor-pedagang
-Started resource pertamina
-Asset pillbox/gabz_pillbox_textures_01.ytd uses 22.5 MiB of physical memory.
-Started resource pillbox
-Started resource prisonlobbys
-Started resource tolKanan
-Creating script environments for esx_adminplus
-Started resource esx_adminplus
-Creating script environments for esx_addons_gcphone
-Started resource esx_addons_gcphone
-Creating script environments for gcphone
-Started resource gcphone
-Creating script environments for es_camera
-Started resource es_camera
-Started resource yarn
-Creating script environments for webpack
-Started resource webpack
-Creating script environments for screenshot-basic
-Started resource screenshot-basic
-Creating script environments for ls-radio
-Started resource ls-radio
-Started resource simpledrift
-Creating script environments for LegacyFuel
-Started resource LegacyFuel
-Creating script environments for carremote
-Started resource carremote
-Started resource carcontrol
-Creating script environments for vehicle-control
-Started resource vehicle-control
-Asset WeaponCustomMods/w_sb_compactsmg.ytd uses 24.0 MiB of physical memory.
-Asset WeaponCustomMods/w_sb_compactsmg_boxmag.ytd uses 24.0 MiB of physical memory.
-Asset WeaponCustomMods/w_sb_compactsmg_mag1.ytd uses 24.0 MiB of physical memory.
-Asset WeaponCustomMods/w_sb_compactsmg_mag2.ytd uses 24.0 MiB of physical memory.
-Started resource WeaponCustomMods
-Creating script environments for lsrp-motels
-Started resource lsrp-motels
-Creating script environments for new_banking
-Started resource new_banking
-Creating script environments for MF_VehSales
-Started resource MF_VehSales
-Creating script environments for RealisticVehicleFailure
-Started resource RealisticVehicleFailure
-Creating script environments for bisik
-Started resource bisik
-Creating script environments for skd_core
-Started resource skd_core
-Creating script environments for ExM_Hunting
-Started resource ExM_Hunting
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-Started resource dpclothing
-Creating script environments for dpemotes
-Started resource dpemotes
-Started resource rgz_menu
-Creating script environments for JD_logs
-Started resource JD_logs
-Creating script environments for vMenu
-sync thread hitch warning: timer interval of 120 milliseconds
-sync thread hitch warning: timer interval of 284 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-sync thread hitch warning: timer interval of 146 milliseconds
-sync thread hitch warning: timer interval of 353 milliseconds
-sync thread hitch warning: timer interval of 264 milliseconds
-Instantiated instance of script vMenuServer.BanManager.
-Instantiated instance of script vMenuServer.MainServer.
-Started resource vMenu
-Asset ff/2f2fgtr34.ytd uses 100.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/2f2fgts.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/2f2fmk4.ytd uses 46.0 MiB of physical memory.
-Asset ff/2f2fmle7.ytd uses 51.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/2f2frx7.ytd uses 100.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/2f2fs2000.ytd uses 88.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/350zdk.ytd uses 32.0 MiB of physical memory.
-Asset ff/350zm.ytd uses 32.0 MiB of physical memory.
-Asset ff/acura2f2f.ytd uses 46.0 MiB of physical memory.
-Asset ff/ff4wrx.ytd uses 88.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/fnf4r34.ytd uses 84.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/fnfjetta.ytd uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/fnflan.ytd uses 50.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/fnfmits.ytd uses 84.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/fnfmk4.ytd uses 45.0 MiB of physical memory.
-Asset ff/fnfrx7.ytd uses 84.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/fnfrx7dom.ytd uses 88.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/hcej1.ytd uses 80.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset ff/silvias15.ytd uses 49.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Started resource ff
-Asset 16challenger/16challenger.ytd uses 185.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Started resource 16challenger
-Asset 16charger/16charger.ytd uses 176.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Started resource 16charger
-Asset 370Z/370z.yft uses 22.0 MiB of virtual memory.
-Asset 370Z/370z.ytd uses 76.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset 370Z/370z_hi.yft uses 22.0 MiB of virtual memory.
-Started resource 370Z
-Asset bmci/bmci.yft uses 26.2 MiB of virtual memory.
-Asset bmci/bmci.ytd uses 41.5 MiB of physical memory.
-Asset bmci/bmci_hi.yft uses 26.2 MiB of virtual memory.
-Started resource bmci
-Asset c63coupe/c63coupe.yft uses 23.0 MiB of virtual memory.
-Asset c63coupe/c63coupe.ytd uses 56.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset c63coupe/c63coupe_hi.yft uses 23.0 MiB of virtual memory.
-Started resource c63coupe
-Asset esprit02/esprit02.ytd uses 26.5 MiB of physical memory.
-Started resource esprit02
-Asset M4F82/m4f82.ytd uses 164.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Started resource M4F82
-Started resource mach1
-Asset nissantitan17/nissantitan17.ytd uses 52.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Started resource nissantitan17
-Started resource r34
-Started resource r35
-Asset raptor2017/avnt_livery1.yft uses 32.0 MiB of physical memory.
-Asset raptor2017/raptor2017+hi.ytd uses 32.0 MiB of physical memory.
-Asset raptor2017/raptor2017.ytd uses 24.0 MiB of physical memory.
-Asset raptor2017/raptor_bajacage_2.yft uses 20.8 MiB of physical memory.
-Asset raptor2017/raptor_bajacage_4.yft uses 32.0 MiB of physical memory.
-Asset raptor2017/raptor_raidint.yft uses 32.0 MiB of physical memory.
-Asset raptor2017/raptor_tools.yft uses 24.0 MiB of physical memory.
-Asset raptor2017/raptor_tools2.yft uses 24.0 MiB of physical memory.
-Started resource raptor2017
-Asset sian/sian.yft uses 29.4 MiB of virtual memory.
-Asset sian/sian.ytd uses 52.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset sian/sian_hi.yft uses 29.4 MiB of virtual memory.
-Started resource sian
-Asset skyline/skyline.ytd uses 84.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Started resource skyline
-Asset trx/trx.ytd uses 62.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset trx/trx_hi.yft uses 20.0 MiB of virtual memory.
-Started resource trx
-Asset wildtrak/wildtrak.yft uses 23.2 MiB of virtual memory.
-Asset wildtrak/wildtrak.ytd uses 70.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset wildtrak/wildtrak_hi.yft uses 23.2 MiB of virtual memory.
-Started resource wildtrak
-Asset bs17/bs17.ytd uses 45.0 MiB of physical memory.
-Started resource bs17
-Asset cb500f/cb500f.yft uses 16.2 MiB of virtual memory.
-Asset cb500f/cb500f.ytd uses 148.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset cb500f/cb500f_hi.yft uses 16.2 MiB of virtual memory.
-Started resource cb500f
-Asset gs1/gs1.yft uses 32.2 MiB of virtual memory.
-Asset gs1/gs1.ytd uses 196.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Asset gs1/gs1_corpo.yft uses 21.0 MiB of virtual memory.
-Asset gs1/gs1_hi.yft uses 32.2 MiB of virtual memory.
-Asset gs1/gs1_itens1.yft uses 18.0 MiB of virtual memory.
-Started resource gs1
-Asset r1/r1.ytd uses 29.0 MiB of physical memory.
-Started resource r1
-Asset r6/r6.ytd uses 53.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Started resource r6
-Asset zx10r/zx10r.ytd uses 98.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-Started resource zx10r
-Stopping resource sessionmanager
-Creating script environments for sessionmanager
-Started resource sessionmanager
-Authenticating server license key...
-[mysql-async] [ERROR] connect ETIMEDOUT
-[ExtendedMode] [INFO] Checking your database...
-Performing version check against: https://api.kanersps.pw/em/version?version=6.4.2&uuid=8dc78362-0de9-44d2-bebe-10d399d582dc
-
-[txAdminClientLUA] Threads and commands set up. All Ready.
-esx_advancedgarage: Parking Vehicles on restart is currently set to false.
-
-
-########################
-## RepairKit Resource
-##
-## Current Version: 3.1
-## Newest Version: 3.1
-##
-## Up to date!
-########################
-
-
-MF_VehSales: Started
-server thread hitch warning: timer interval of 641 milliseconds
-Server license key authentication succeeded. Welcome!
-[MySQL] [WARNING] [esx_addonaccount] [273ms] SELECT * FROM addon_account : []
-[MySQL] [WARNING] [esx_addoninventory] [389ms] SELECT * FROM items : []
-[MySQL] [WARNING] [extendedmode] [416ms] SELECT TABLE_NAME AS 't', COLUMN_NAME AS 'c' FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'users' or TABLE_NAME = 'user_inventory' or TABLE_NAME = 'user_accounts' : []
-[MySQL] [WARNING] [esx_vehicleshop] [279ms] SELECT * FROM `vehicle_categories` : []
-[ExtendedMode] [INFO] Your database is using the 'newesx' storage format, starting...
-[ExtendedMode] [INFO] ExtendedMode has been initialized
-[MySQL] [WARNING] [esx_vehicleshop] [300ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [296ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [303ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [298ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [298ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [304ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [300ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [304ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [302ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [303ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [303ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [307ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [321ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [322ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [323ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [325ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [326ms] SELECT * FROM `vehicle_categories` : []
-
-
--------------------------------------------------------
-JD_logs
-UPDATE: 1.1.6 AVAILABLE
-CHANGELOG: Fixed issue with Death logs.
--------------------------------------------------------
-
-[MySQL] [WARNING] [esx_vehicleshop] [354ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [356ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [383ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [393ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [405ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [405ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [406ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [408ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [409ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [408ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [409ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [410ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [411ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [412ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [412ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [412ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [414ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [415ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [415ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [437ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [443ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [464ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [464ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [465ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [467ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [471ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [473ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [474ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [478ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [479ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [480ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [482ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [486ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [488ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [489ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [495ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [491ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [502ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [504ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [503ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [504ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [506ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [507ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [508ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [508ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [509ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [528ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [530ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [531ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [534ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [532ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [532ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [533ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [512ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [539ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [541ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [558ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [530ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [530ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [530ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [531ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [572ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [543ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [544ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [544ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [545ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [546ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [547ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [549ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [547ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [548ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [554ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_joblisting] [547ms] SELECT name, label FROM jobs WHERE whitelisted = ? : [false]
-[MySQL] [WARNING] [esx_vehicleshop] [550ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [556ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_boat] [550ms] UPDATE owned_vehicles SET `stored` = true WHERE `stored` = false AND type = ? : ["boat"]
-[MySQL] [WARNING] [esx_vehicleshop] [559ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [558ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [548ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [549ms] SELECT * FROM `vehicle_import_categories` : []
-
-[EssentialMode] Current version: 6.4.2
-[EssentialMode] Updater version: 6.4.2
-
-[EssentialMode] Everything is nice and updated!
-
-Support the developers: Hey! Would you like to support the developers, go to https://www.patreon.com/gdevelopment and get some nifty rewards!
-[MySQL] [WARNING] [esx_shops] [592ms] SELECT * FROM shops LEFT JOIN items ON items.name = shops.item : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [591ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [592ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [592ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [593ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [594ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [595ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [596ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [607ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [607ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [608ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [614ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [614ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [614ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [615ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [615ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [620ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [619ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [623ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [623ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [624ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [626ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [626ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [628ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [629ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [636ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [632ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [667ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [667ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [667ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [667ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [666ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [675ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [672ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [672ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [674ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [681ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [679ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [676ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [677ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [679ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [683ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [679ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [683ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [684ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [685ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [685ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [686ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [733ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [733ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [734ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [737ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [737ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [741ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [745ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [758ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [759ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [761ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [759ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [760ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [761ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [763ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [762ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [764ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [764ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [763ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [764ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [765ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [765ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [769ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [767ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [767ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [766ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [785ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [783ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [784ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [813ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [811ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [812ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [813ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [816ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [813ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [814ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [814ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [820ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [825ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [825ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [831ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [828ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [830ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [831ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_weaponshop] [830ms] SELECT * FROM weashops : []
-[MySQL] [WARNING] [esx_vehicleshop] [791ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_society] [825ms] SELECT * FROM jobs : []
-[MySQL] [WARNING] [esx_vehicleshop] [815ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [815ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [816ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [865ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_datastore] [856ms] SELECT * FROM datastore : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [870ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [919ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [872ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [872ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [807ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [806ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [807ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [807ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [838ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [788ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [789ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [790ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [812ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [791ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [847ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [796ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [796ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [796ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_addoninventory] [765ms] SELECT * FROM addon_inventory : []
-[MySQL] [WARNING] [extendedmode] [770ms] SELECT * FROM items : []
-[MySQL] [WARNING] [extendedmode] [771ms] SELECT * FROM jobs : []
-[MySQL] [WARNING] [esx_vehicleshop] [771ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [766ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [768ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [769ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [772ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [861ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [776ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [776ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [862ms] SELECT * FROM `vehicle_import_categories` : []
-        fff                          
-  cccc ff   xx  xx     rr rr    eee  
-cc     ffff   xx       rrr  r ee   e 
-cc     ff     xx   ... rr     eeeee  
- ccccc ff   xx  xx ... rr      eeeee 
-                                     
-Authenticated with cfx.re Nucleus: https://dianadi021-k38elr.users.cfx.re/
-[MySQL] [WARNING] [esx_vehicleshop] [754ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [756ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [754ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [757ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [757ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [762ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [757ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [759ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [773ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_addonaccount] [819ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["bank_savings"]
-[MySQL] [WARNING] [esx_vehicleshop] [767ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [763ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [764ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [767ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [767ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [762ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [762ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [764ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [771ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [766ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [766ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [768ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [822ms] SELECT * FROM `vehicle_categories` : []
-[txAdminClientJS] Logger upload failed with error: request timed out
-[MySQL] [WARNING] [esx_vehicleshopimport] [829ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [829ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [829ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [830ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [854ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [794ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [795ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [852ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [748ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [750ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [814ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [810ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [811ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [810ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [811ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [766ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [766ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [767ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [825ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [868ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [765ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [768ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [802ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [805ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [802ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [804ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [804ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [810ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [810ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [815ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [823ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [812ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [809ms] SELECT * FROM `vehicle_categories` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [830ms] SELECT * FROM `vehicle_import_categories` : []
-[MySQL] [WARNING] [esx_vehicleshop] [800ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [802ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [856ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [858ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [862ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [864ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [866ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [867ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [896ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [896ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [897ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [901ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [903ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [854ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [859ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [859ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [860ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [860ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [861ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [916ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [916ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [910ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [912ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [914ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [919ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [989ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [939ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [941ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [942ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [951ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [955ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [958ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [965ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [919ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [920ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [921ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [922ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [974ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [922ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [960ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [962ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [963ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [967ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [965ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [968ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1011ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1014ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1016ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1017ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1017ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1018ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1035ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1036ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1107ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1057ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1016ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1016ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1067ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1059ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1020ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1020ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1048ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1000ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1050ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1052ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1003ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1004ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1006ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1007ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1008ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1010ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1011ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1011ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1012ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1012ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1014ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1039ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1038ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1039ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1044ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1040ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [995ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [995ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [995ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1044ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1020ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1022ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1035ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1035ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1036ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1037ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1038ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1039ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1040ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1041ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1045ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1096ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1044ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1047ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [999ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1000ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1052ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1053ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1053ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1055ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1006ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1006ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1007ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1007ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [960ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [960ms] SELECT * FROM `vehicles_import` : []
--- [server notice: tebex_not_set]
-================
-Monetize your server using Tebex! Visit https://tebex.io/fivem for more info.
-================
-
-[MySQL] [WARNING] [esx_vehicleshopimport] [1053ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1136ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1042ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1044ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1045ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1049ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1064ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1066ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1065ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1066ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1075ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1077ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1078ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1076ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1076ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1078ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1081ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1093ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1091ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1051ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1051ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1051ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1097ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1144ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1099ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1100ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1111ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1156ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1111ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1112ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1112ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1128ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1131ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1131ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1089ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1135ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1137ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_society] [1125ms] SELECT * FROM job_grades : []
-[MySQL] [WARNING] [esx_vehicleshop] [1097ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1100ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_datastore] [1093ms] SELECT * FROM datastore_data WHERE name = ? : ["motels"]
-[MySQL] [WARNING] [esx_vehicleshopimport] [1103ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1054ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1056ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1059ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1059ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1060ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1062ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1068ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1069ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1095ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1191ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1102ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1090ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1089ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1090ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1091ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1093ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1109ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1055ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [extendedmode] [1062ms] SELECT * FROM job_grades : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1100ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1059ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1060ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1082ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1085ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1086ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1085ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_addoninventory] [1085ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["motels"]
-[MySQL] [WARNING] [esx_vehicleshop] [1153ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1025ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1109ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1048ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1048ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1049ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1039ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1053ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_addonaccount] [1051ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["caution"]
-[MySQL] [WARNING] [esx_vehicleshopimport] [996ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1007ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [996ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1010ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1075ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshop] [1001ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [993ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1002ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshop] [950ms] SELECT * FROM `vehicles` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1018ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_datastore] [172ms] SELECT * FROM datastore_data WHERE name = ? : ["motels_bed"]
-[MySQL] [WARNING] [esx_property] [682ms] SELECT * FROM properties : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [1046ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_vehicleshopimport] [961ms] SELECT * FROM `vehicles_import` : []
-[MySQL] [WARNING] [esx_datastore] [177ms] SELECT * FROM datastore_data WHERE name = ? : ["society_mafia"]
-[MySQL] [WARNING] [esx_addonaccount] [153ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_police"]
-server thread hitch warning: timer interval of 174 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-sync thread hitch warning: timer interval of 106 milliseconds
-server thread hitch warning: timer interval of 170 milliseconds
-server thread hitch warning: timer interval of 201 milliseconds
-server thread hitch warning: timer interval of 151 milliseconds
-sync thread hitch warning: timer interval of 131 milliseconds
-sync thread hitch warning: timer interval of 112 milliseconds
-server thread hitch warning: timer interval of 187 milliseconds
-server thread hitch warning: timer interval of 267 milliseconds
-sync thread hitch warning: timer interval of 207 milliseconds
-Connecting: R`
-server thread hitch warning: timer interval of 152 milliseconds
-server thread hitch warning: timer interval of 159 milliseconds
-server thread hitch warning: timer interval of 182 milliseconds
-server thread hitch warning: timer interval of 164 milliseconds
-server thread hitch warning: timer interval of 167 milliseconds
-server thread hitch warning: timer interval of 198 milliseconds
-sync thread hitch warning: timer interval of 143 milliseconds
-server thread hitch warning: timer interval of 167 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
-sync thread hitch warning: timer interval of 172 milliseconds
-network thread hitch warning: timer interval of 172 milliseconds
-server thread hitch warning: timer interval of 213 milliseconds
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
-sync thread hitch warning: timer interval of 123 milliseconds
-server thread hitch warning: timer interval of 199 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-sync thread hitch warning: timer interval of 130 milliseconds
-sync thread hitch warning: timer interval of 346 milliseconds
-server thread hitch warning: timer interval of 453 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-server thread hitch warning: timer interval of 195 milliseconds
-sync thread hitch warning: timer interval of 189 milliseconds
-network thread hitch warning: timer interval of 173 milliseconds
-sync thread hitch warning: timer interval of 107 milliseconds
-server thread hitch warning: timer interval of 179 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-server thread hitch warning: timer interval of 188 milliseconds
-sync thread hitch warning: timer interval of 208 milliseconds
-server thread hitch warning: timer interval of 336 milliseconds
-sync thread hitch warning: timer interval of 231 milliseconds
-sync thread hitch warning: timer interval of 182 milliseconds
-server thread hitch warning: timer interval of 344 milliseconds
-sync thread hitch warning: timer interval of 184 milliseconds
-server thread hitch warning: timer interval of 188 milliseconds
-sync thread hitch warning: timer interval of 143 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-server thread hitch warning: timer interval of 171 milliseconds
-server thread hitch warning: timer interval of 155 milliseconds
-sync thread hitch warning: timer interval of 178 milliseconds
-server thread hitch warning: timer interval of 238 milliseconds
-sync thread hitch warning: timer interval of 129 milliseconds
-sync thread hitch warning: timer interval of 140 milliseconds
-server thread hitch warning: timer interval of 172 milliseconds
-server thread hitch warning: timer interval of 165 milliseconds
-sync thread hitch warning: timer interval of 124 milliseconds
-server thread hitch warning: timer interval of 229 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
-sync thread hitch warning: timer interval of 117 milliseconds
-sync thread hitch warning: timer interval of 161 milliseconds
-server thread hitch warning: timer interval of 234 milliseconds
-sync thread hitch warning: timer interval of 106 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 589 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 101 milliseconds
-server thread hitch warning: timer interval of 166 milliseconds
-server thread hitch warning: timer interval of 175 milliseconds
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 240 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 215 milliseconds
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 217 milliseconds
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 226 milliseconds
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 252 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 154 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 159 milliseconds
-server thread hitch warning: timer interval of 169 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 152 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 164 milliseconds
-server thread hitch warning: timer interval of 156 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 127 milliseconds
-server thread hitch warning: timer interval of 188 milliseconds
-server thread hitch warning: timer interval of 160 milliseconds
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 221 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 265 milliseconds
-[MySQL] [WARNING] [esx_society] [153ms] SELECT * FROM society_moneywash : []
-[MySQL] [ERROR] [esx_society] An error happens for query "SELECT * FROM society_moneywash : []": ER_NO_SUCH_TABLE: Table 'db_skuadcity.society_moneywash' doesn't exist
-SCRIPT ERROR: @esx_society/server/main.lua:356: attempt to get length of a nil value (local 'result')
-> ref (@esx_society/server/main.lua:356)
->  (@mysql-async/mysql-async.js:15543)
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 152 milliseconds
-sync thread hitch warning: timer interval of 106 milliseconds
-server thread hitch warning: timer interval of 168 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 169 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 131 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 157 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 239 milliseconds
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 198 milliseconds
-server thread hitch warning: timer interval of 179 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 217 milliseconds
-server thread hitch warning: timer interval of 173 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 218 milliseconds
-Stopping resource trew_hud_ui
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Stopping resource trew_hud_ui
-Stopping resource esx_punggungsenjata
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 160 milliseconds
-Stopping resource esx_animasisenjata
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 214 milliseconds
-sync thread hitch warning: timer interval of 122 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource esx_inventoryhud
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 157 milliseconds
-sync thread hitch warning: timer interval of 136 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 101 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 163 milliseconds
-server thread hitch warning: timer interval of 155 milliseconds
-server thread hitch warning: timer interval of 174 milliseconds
-sync thread hitch warning: timer interval of 110 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 163 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-sync thread hitch warning: timer interval of 104 milliseconds
-server thread hitch warning: timer interval of 156 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 150 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 169 milliseconds
-sync thread hitch warning: timer interval of 113 milliseconds
-sync thread hitch warning: timer interval of 108 milliseconds
-server thread hitch warning: timer interval of 152 milliseconds
-server thread hitch warning: timer interval of 156 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 121 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 103 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 161 milliseconds
-sync thread hitch warning: timer interval of 107 milliseconds
-sync thread hitch warning: timer interval of 108 milliseconds
-server thread hitch warning: timer interval of 175 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 152 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 187 milliseconds
-sync thread hitch warning: timer interval of 143 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 105 milliseconds
-sync thread hitch warning: timer interval of 103 milliseconds
-server thread hitch warning: timer interval of 169 milliseconds
-sync thread hitch warning: timer interval of 108 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 192 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 160 milliseconds
-server thread hitch warning: timer interval of 153 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 151 milliseconds
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 171 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 186 milliseconds
-sync thread hitch warning: timer interval of 161 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 152 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 150 milliseconds
-server thread hitch warning: timer interval of 173 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 163 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 151 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-server thread hitch warning: timer interval of 171 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 175 milliseconds
-sync thread hitch warning: timer interval of 143 milliseconds
-server thread hitch warning: timer interval of 192 milliseconds
-server thread hitch warning: timer interval of 153 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 157 milliseconds
-server thread hitch warning: timer interval of 183 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-sync thread hitch warning: timer interval of 162 milliseconds
-server thread hitch warning: timer interval of 180 milliseconds
-sync thread hitch warning: timer interval of 115 milliseconds
-server thread hitch warning: timer interval of 166 milliseconds
-sync thread hitch warning: timer interval of 101 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 141 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
-sync thread hitch warning: timer interval of 110 milliseconds
-sync thread hitch warning: timer interval of 105 milliseconds
-sync thread hitch warning: timer interval of 113 milliseconds
-sync thread hitch warning: timer interval of 106 milliseconds
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 168 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 152 milliseconds
-server thread hitch warning: timer interval of 164 milliseconds
-sync thread hitch warning: timer interval of 109 milliseconds
-server thread hitch warning: timer interval of 180 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 158 milliseconds
-server thread hitch warning: timer interval of 151 milliseconds
-sync thread hitch warning: timer interval of 124 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 167 milliseconds
-server thread hitch warning: timer interval of 202 milliseconds
-server thread hitch warning: timer interval of 172 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 118 milliseconds
-sync thread hitch warning: timer interval of 151 milliseconds
-server thread hitch warning: timer interval of 198 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 164 milliseconds
-sync thread hitch warning: timer interval of 116 milliseconds
-server thread hitch warning: timer interval of 156 milliseconds
-server thread hitch warning: timer interval of 181 milliseconds
-sync thread hitch warning: timer interval of 147 milliseconds
-server thread hitch warning: timer interval of 203 milliseconds
-sync thread hitch warning: timer interval of 110 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 170 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 156 milliseconds
-server thread hitch warning: timer interval of 199 milliseconds
-sync thread hitch warning: timer interval of 149 milliseconds
-sync thread hitch warning: timer interval of 118 milliseconds
-server thread hitch warning: timer interval of 162 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 220 milliseconds
-sync thread hitch warning: timer interval of 121 milliseconds
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 158 milliseconds
-server thread hitch warning: timer interval of 172 milliseconds
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 202 milliseconds
-sync thread hitch warning: timer interval of 103 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-sync thread hitch warning: timer interval of 124 milliseconds
-server thread hitch warning: timer interval of 159 milliseconds
-sync thread hitch warning: timer interval of 121 milliseconds
-sync thread hitch warning: timer interval of 122 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-server thread hitch warning: timer interval of 180 milliseconds
-sync thread hitch warning: timer interval of 114 milliseconds
-sync thread hitch warning: timer interval of 125 milliseconds
-server thread hitch warning: timer interval of 171 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Performing version check against: https://api.kanersps.pw/em/version?version=6.4.2&uuid=8dc78362-0de9-44d2-bebe-10d399d582dc
-
-[EssentialMode] Everything is nice and updated!
-
-Advertisement: Want to have EssentialMode pre-installed on a good and affordable server host? Go to the following link: https://zap-hosting.com/EssentialMode
-[ExtendedMode] [INFO] Automatically saved all player data
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 148 milliseconds
-server thread hitch warning: timer interval of 189 milliseconds
-sync thread hitch warning: timer interval of 114 milliseconds
-server thread hitch warning: timer interval of 159 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 143 milliseconds
-sync thread hitch warning: timer interval of 133 milliseconds
-server thread hitch warning: timer interval of 165 milliseconds
-sync thread hitch warning: timer interval of 160 milliseconds
-server thread hitch warning: timer interval of 222 milliseconds
-sync thread hitch warning: timer interval of 104 milliseconds
-server thread hitch warning: timer interval of 170 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 120 milliseconds
-server thread hitch warning: timer interval of 180 milliseconds
-sync thread hitch warning: timer interval of 129 milliseconds
-server thread hitch warning: timer interval of 169 milliseconds
-sync thread hitch warning: timer interval of 119 milliseconds
-sync thread hitch warning: timer interval of 153 milliseconds
-server thread hitch warning: timer interval of 243 milliseconds
-sync thread hitch warning: timer interval of 155 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 181 milliseconds
-sync thread hitch warning: timer interval of 179 milliseconds
-server thread hitch warning: timer interval of 169 milliseconds
-sync thread hitch warning: timer interval of 175 milliseconds
-server thread hitch warning: timer interval of 226 milliseconds
-server thread hitch warning: timer interval of 151 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 184 milliseconds
-sync thread hitch warning: timer interval of 136 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 101 milliseconds
-server thread hitch warning: timer interval of 153 milliseconds
-server thread hitch warning: timer interval of 237 milliseconds
-sync thread hitch warning: timer interval of 167 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 103 milliseconds
-sync thread hitch warning: timer interval of 159 milliseconds
-server thread hitch warning: timer interval of 194 milliseconds
-sync thread hitch warning: timer interval of 145 milliseconds
-server thread hitch warning: timer interval of 293 milliseconds
-sync thread hitch warning: timer interval of 135 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 128 milliseconds
-server thread hitch warning: timer interval of 160 milliseconds
-server thread hitch warning: timer interval of 208 milliseconds
-sync thread hitch warning: timer interval of 147 milliseconds
-server thread hitch warning: timer interval of 203 milliseconds
-sync thread hitch warning: timer interval of 136 milliseconds
-server thread hitch warning: timer interval of 165 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 356 milliseconds
-Creating script environments for esx_inventoryhud
-Started resource esx_inventoryhud
-server thread hitch warning: timer interval of 1159 milliseconds
-Started resource esx_animasisenjata
-Started resource esx_punggungsenjata
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Creating script environments for trew_hud_ui
-Started resource trew_hud_ui
-server thread hitch warning: timer interval of 240 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 109 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 177 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 202 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 166 milliseconds
-server thread hitch warning: timer interval of 196 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 250 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 198 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-sync thread hitch warning: timer interval of 103 milliseconds
-sync thread hitch warning: timer interval of 112 milliseconds
-sync thread hitch warning: timer interval of 104 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 110 milliseconds
-server thread hitch warning: timer interval of 170 milliseconds
-server thread hitch warning: timer interval of 160 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 322 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 244 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 192 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 256 milliseconds
-server thread hitch warning: timer interval of 167 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 292 milliseconds
-sync thread hitch warning: timer interval of 134 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 174 milliseconds
-sync thread hitch warning: timer interval of 108 milliseconds
-server thread hitch warning: timer interval of 164 milliseconds
-server thread hitch warning: timer interval of 153 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 159 milliseconds
-sync thread hitch warning: timer interval of 135 milliseconds
-server thread hitch warning: timer interval of 177 milliseconds
-server thread hitch warning: timer interval of 152 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 175 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 172 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 291 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 345 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 373 milliseconds
-sync thread hitch warning: timer interval of 106 milliseconds
-server thread hitch warning: timer interval of 214 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 255 milliseconds
-server thread hitch warning: timer interval of 155 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 297 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 101 milliseconds
-server thread hitch warning: timer interval of 162 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 318 milliseconds
-server thread hitch warning: timer interval of 174 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 220 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 258 milliseconds
-server thread hitch warning: timer interval of 177 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 283 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 114 milliseconds
-server thread hitch warning: timer interval of 161 milliseconds
-server thread hitch warning: timer interval of 165 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 133 milliseconds
-server thread hitch warning: timer interval of 230 milliseconds
-sync thread hitch warning: timer interval of 107 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 101 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 247 milliseconds
-sync thread hitch warning: timer interval of 115 milliseconds
-server thread hitch warning: timer interval of 171 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 262 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 124 milliseconds
-server thread hitch warning: timer interval of 221 milliseconds
-server thread hitch warning: timer interval of 156 milliseconds
-sync thread hitch warning: timer interval of 114 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 268 milliseconds
-sync thread hitch warning: timer interval of 117 milliseconds
-server thread hitch warning: timer interval of 172 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 247 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-server thread hitch warning: timer interval of 192 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 176 milliseconds
-sync thread hitch warning: timer interval of 113 milliseconds
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 336 milliseconds
-sync thread hitch warning: timer interval of 113 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 271 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-sync thread hitch warning: timer interval of 110 milliseconds
-server thread hitch warning: timer interval of 176 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 213 milliseconds
-server thread hitch warning: timer interval of 153 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 214 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 214 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 232 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 246 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 177 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 202 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-server thread hitch warning: timer interval of 153 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 210 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 276 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 308 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 288 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 255 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 253 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 264 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 256 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Performing version check against: https://api.kanersps.pw/em/version?version=6.4.2&uuid=8dc78362-0de9-44d2-bebe-10d399d582dc
-
-[EssentialMode] Everything is nice and updated!
-
-Advertisement: Want to have EssentialMode pre-installed on a good and affordable server host? Go to the following link: https://zap-hosting.com/EssentialMode
-[ExtendedMode] [INFO] Automatically saved all player data
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 246 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 365 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 223 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 190 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-server thread hitch warning: timer interval of 156 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 331 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 255 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 211 milliseconds
-server thread hitch warning: timer interval of 154 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 232 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 242 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 211 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 261 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[ExtendedMode] [INFO] Automatically saved all player data
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 211 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-sync thread hitch warning: timer interval of 102 milliseconds
-Stopping resource skd_core
-Creating script environments for skd_core
-Started resource skd_core
-server thread hitch warning: timer interval of 231 milliseconds
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-[MySQL] [ERROR] [esplugin_mysql] An error happens for query "UPDATE users SET  WHERE `identifier`= : []": ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `identifier`=' at line 1
-Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;161m[    c-scripting-core] Creating script environments for _cfx_internal
+[38;5;73m[ citizen-server-impl] Scanning resources.
+[38;5;73m[ citizen-server-impl] Found 121 resources.
+[38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
+[38;5;73m[ citizen-server-impl]     - baseevents
+[38;5;73m[ citizen-server-impl]     - esx_addons_gcphone
+[38;5;73m[ citizen-server-impl]     - im_samsat
+[38;5;73m[ citizen-server-impl]     - new_banking
+[38;5;73m[ citizen-server-impl]     - pNotify
+[38;5;73m[ citizen-server-impl]     - sessionmanager
+[38;5;73m[ citizen-server-impl] 
+[38;5;73m[ citizen-server-impl] Please update these resources.
+[38;5;161m[    c-scripting-core] Creating script environments for sessionmanager
+[38;5;73m[ citizen-server-impl] Started resource sessionmanager
+[38;5;161m[    c-scripting-core] Creating script environments for monitor
+[38;5;84m[      script:monitor] [txAdminClient] Version 3.7.0 starting...
+[38;5;73m[ citizen-server-impl] Started resource monitor
+[38;5;73m[ citizen-server-impl] Could not open skuadcity.png for reading.
+[38;5;161m[    c-scripting-core] Creating script environments for mapmanager
+[38;5;73m[ citizen-server-impl] Started resource mapmanager
+[38;5;161m[    c-scripting-core] Creating script environments for chat
+[38;5;73m[ citizen-server-impl] Started resource chat
+[38;5;73m[ citizen-server-impl] Started resource spawnmanager
+[38;5;161m[    c-scripting-core] Creating script environments for hardcap
+[38;5;73m[ citizen-server-impl] Started resource hardcap
+[38;5;161m[    c-scripting-core] Creating script environments for mysql-async
+[38;5;73m[ citizen-server-impl] Started resource mysql-async
+[38;5;161m[    c-scripting-core] Creating script environments for async
+[38;5;73m[ citizen-server-impl] Started resource async
+[38;5;161m[    c-scripting-core] Creating script environments for cron
+[38;5;73m[ citizen-server-impl] Started resource cron
+[38;5;161m[    c-scripting-core] Creating script environments for instance
+[38;5;73m[ citizen-server-impl] Started resource instance
+[38;5;73m[ citizen-server-impl] Started resource skinchanger
+[38;5;161m[    c-scripting-core] Creating script environments for es_extended
+[38;5;73m[ citizen-server-impl] Started resource es_extended
+[38;5;73m[ citizen-server-impl] Started resource esx_menu_default
+[38;5;73m[ citizen-server-impl] Started resource esx_menu_dialog
+[38;5;73m[ citizen-server-impl] Started resource esx_menu_list
+[38;5;161m[    c-scripting-core] Creating script environments for esx_identity
+[38;5;73m[ citizen-server-impl] Started resource esx_identity
+[38;5;161m[    c-scripting-core] Creating script environments for esx_skin
+[38;5;73m[ citizen-server-impl] Started resource esx_skin
+[38;5;161m[    c-scripting-core] Creating script environments for esx_status
+[38;5;73m[ citizen-server-impl] Started resource esx_status
+[38;5;161m[    c-scripting-core] Creating script environments for esx_basicneeds
+[38;5;73m[ citizen-server-impl] Started resource esx_basicneeds
+[38;5;161m[    c-scripting-core] Creating script environments for esx_addonaccount
+[38;5;73m[ citizen-server-impl] Started resource esx_addonaccount
+[38;5;161m[    c-scripting-core] Creating script environments for esx_addoninventory
+[38;5;73m[ citizen-server-impl] Started resource esx_addoninventory
+[38;5;161m[    c-scripting-core] Creating script environments for esx_datastore
+[38;5;73m[ citizen-server-impl] Started resource esx_datastore
+[38;5;161m[    c-scripting-core] Creating script environments for esx_society
+[38;5;73m[ citizen-server-impl] Started resource esx_society
+[38;5;161m[    c-scripting-core] Creating script environments for esx_service
+[38;5;73m[ citizen-server-impl] Started resource esx_service
+[38;5;161m[    c-scripting-core] Creating script environments for esx_billing
+[38;5;73m[ citizen-server-impl] Started resource esx_billing
+[38;5;161m[    c-scripting-core] Creating script environments for esx_license
+[38;5;73m[ citizen-server-impl] Started resource esx_license
+[38;5;161m[    c-scripting-core] Creating script environments for esx_property
+[38;5;73m[ citizen-server-impl] Started resource esx_property
+[38;5;161m[    c-scripting-core] Creating script environments for esx_advancedgarage
+[38;5;73m[ citizen-server-impl] Started resource esx_advancedgarage
+[38;5;161m[    c-scripting-core] Creating script environments for esx_vehicleshop
+[38;5;73m[ citizen-server-impl] Started resource esx_vehicleshop
+[38;5;161m[    c-scripting-core] Creating script environments for esx_tattooshop
+[38;5;73m[ citizen-server-impl] Started resource esx_tattooshop
+[38;5;161m[    c-scripting-core] Creating script environments for esx_licenseshop
+[38;5;73m[ citizen-server-impl] Started resource esx_licenseshop
+[38;5;161m[    c-scripting-core] Creating script environments for esx_giveownedcar
+[38;5;73m[ citizen-server-impl] Started resource esx_giveownedcar
+[38;5;161m[    c-scripting-core] Creating script environments for esx_doorlock
+[38;5;73m[ citizen-server-impl] Started resource esx_doorlock
+[38;5;161m[    c-scripting-core] Creating script environments for esx_document
+[38;5;73m[ citizen-server-impl] Started resource esx_document
+[38;5;161m[    c-scripting-core] Creating script environments for esx_addons_gcphone
+[38;5;73m[ citizen-server-impl] Started resource esx_addons_gcphone
+[38;5;161m[    c-scripting-core] Creating script environments for gcphone
+[38;5;73m[ citizen-server-impl] Started resource gcphone
+[38;5;161m[    c-scripting-core] Creating script environments for yarn
+[38;5;73m[ citizen-server-impl] Started resource yarn
+[38;5;161m[    c-scripting-core] Creating script environments for webpack
+[38;5;73m[ citizen-server-impl] Started resource webpack
+[38;5;161m[    c-scripting-core] Creating script environments for screenshot-basic
+[38;5;73m[ citizen-server-impl] Started resource screenshot-basic
+[38;5;161m[    c-scripting-core] Creating script environments for esx_jobs
+[38;5;73m[ citizen-server-impl] Started resource esx_jobs
+[38;5;161m[    c-scripting-core] Creating script environments for esx_joblisting
+[38;5;73m[ citizen-server-impl] Started resource esx_joblisting
+[38;5;161m[    c-scripting-core] Creating script environments for esx_policejob
+[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone police => Police alert
+[38;5;54m[      script:gcphone] = INFO = Registered number for police => Police alert
+[38;5;73m[ citizen-server-impl] Started resource esx_policejob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_pedagang
+[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone pedagang => Client Pedagang
+[38;5;54m[      script:gcphone] = INFO = Registered number for pedagang => Client Pedagang
+[38;5;73m[ citizen-server-impl] Started resource esx_pedagang
+[38;5;161m[    c-scripting-core] Creating script environments for esx_ambulancejob
+[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone ambulance => Info Ambulance
+[38;5;54m[      script:gcphone] = INFO = Registered number for ambulance => Info Ambulance
+[38;5;73m[ citizen-server-impl] Started resource esx_ambulancejob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_mechanicjob
+[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone mechanic => Mechanic Customer
+[38;5;54m[      script:gcphone] = INFO = Registered number for mechanic => Mechanic Customer
+[38;5;73m[ citizen-server-impl] Started resource esx_mechanicjob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_taxijob
+[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone taxi => Taxi Client
+[38;5;54m[      script:gcphone] = INFO = Registered number for taxi => Taxi Client
+[38;5;73m[ citizen-server-impl] Started resource esx_taxijob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_lscustom
+[38;5;73m[ citizen-server-impl] Started resource esx_lscustom
+[38;5;161m[    c-scripting-core] Creating script environments for esx_shops
+[38;5;73m[ citizen-server-impl] Started resource esx_shops
+[38;5;161m[    c-scripting-core] Creating script environments for esx_weaponshop
+[38;5;73m[ citizen-server-impl] Started resource esx_weaponshop
+[38;5;161m[    c-scripting-core] Creating script environments for esx_clotheshop
+[38;5;73m[ citizen-server-impl] Started resource esx_clotheshop
+[38;5;161m[    c-scripting-core] Creating script environments for esx_plasticsurgery
+[38;5;73m[ citizen-server-impl] Started resource esx_plasticsurgery
+[38;5;161m[    c-scripting-core] Creating script environments for esx-qalle-jail
+[38;5;73m[ citizen-server-impl] Started resource esx-qalle-jail
+[38;5;161m[    c-scripting-core] Creating script environments for esx_barbershop
+[38;5;73m[ citizen-server-impl] Started resource esx_barbershop
+[38;5;161m[    c-scripting-core] Creating script environments for esx_illegal
+[38;5;73m[ citizen-server-impl] Started resource esx_illegal
+[38;5;161m[    c-scripting-core] Creating script environments for esx_holdup
+[38;5;73m[ citizen-server-impl] Started resource esx_holdup
+[38;5;161m[    c-scripting-core] Creating script environments for esx_scoreboard
+[38;5;73m[ citizen-server-impl] Started resource esx_scoreboard
+[38;5;161m[    c-scripting-core] Creating script environments for esx_accessories
+[38;5;73m[ citizen-server-impl] Started resource esx_accessories
+[38;5;161m[    c-scripting-core] Creating script environments for esx_dmvschool
+[38;5;73m[ citizen-server-impl] Started resource esx_dmvschool
+[38;5;161m[    c-scripting-core] Creating script environments for esx_optionalneeds
+[38;5;73m[ citizen-server-impl] Started resource esx_optionalneeds
+[38;5;161m[    c-scripting-core] Creating script environments for esx_sit
+[38;5;73m[ citizen-server-impl] Started resource esx_sit
+[38;5;161m[    c-scripting-core] Creating script environments for esx_rpchat
+[38;5;73m[ citizen-server-impl] Started resource esx_rpchat
+[38;5;161m[    c-scripting-core] Creating script environments for esx_alerts
+[38;5;73m[ citizen-server-impl] Started resource esx_alerts
+[38;5;161m[    c-scripting-core] Creating script environments for esx_duty
+[38;5;73m[ citizen-server-impl] Started resource esx_duty
+[38;5;73m[ citizen-server-impl] Started resource esx_customui
+[38;5;161m[    c-scripting-core] Creating script environments for esx_bikerjob
+[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone biker => Biker alert
+[38;5;54m[      script:gcphone] = INFO = Registered number for biker => Biker alert
+[38;5;73m[ citizen-server-impl] Started resource esx_bikerjob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_carteljob
+[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone cartel => Cartel alert
+[38;5;54m[      script:gcphone] = INFO = Registered number for cartel => Cartel alert
+[38;5;73m[ citizen-server-impl] Started resource esx_carteljob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_gangjob
+[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone gang => Gang alert
+[38;5;54m[      script:gcphone] = INFO = Registered number for gang => Gang alert
+[38;5;73m[ citizen-server-impl] Started resource esx_gangjob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_mafiajob
+[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone mafia => Mafia alert
+[38;5;54m[      script:gcphone] = INFO = Registered number for mafia => Mafia alert
+[38;5;73m[ citizen-server-impl] Started resource esx_mafiajob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource mythic_notify
+[38;5;73m[ citizen-server-impl] Started resource mythic_progbar
+[38;5;73m[ citizen-server-impl] Started resource pNotify
+[38;5;161m[    c-scripting-core] Creating script environments for dpemotes
+[38;5;133m[     script:dpemotes] [dp] Sql Keybinding is turned off, if you want to enable /emotebind, import dpkeybinding.sql and set SqlKeybinding = true in config.lua.
+[38;5;73m[ citizen-server-impl] Started resource dpemotes
+[38;5;73m[ citizen-server-impl] Started resource dpclothing
+[38;5;73m[ citizen-server-impl] Started resource bob74_ipl
+[38;5;161m[    c-scripting-core] Creating script environments for esx_adminplus
+[38;5;73m[ citizen-server-impl] Started resource esx_adminplus
+[38;5;161m[    c-scripting-core] Creating script environments for new_banking
+[38;5;73m[ citizen-server-impl] Started resource new_banking
+[38;5;73m[ citizen-server-impl] Started resource simpledrift
+[38;5;73m[ citizen-server-impl] Started resource radialmenu
+[38;5;161m[    c-scripting-core] Creating script environments for RealisticVehicleFailure
+[38;5;73m[ citizen-server-impl] Started resource RealisticVehicleFailure
+[38;5;161m[    c-scripting-core] Creating script environments for LegacyFuel
+[38;5;73m[ citizen-server-impl] Started resource LegacyFuel
+[38;5;161m[    c-scripting-core] Creating script environments for SimpleCarHUD
+[38;5;73m[ citizen-server-impl] Started resource SimpleCarHUD
+[38;5;161m[    c-scripting-core] Creating script environments for svehiclelocks
+[38;5;73m[ citizen-server-impl] Started resource svehiclelocks
+[38;5;161m[    c-scripting-core] Creating script environments for transfervehicle
+[38;5;73m[ citizen-server-impl] Started resource transfervehicle
+[38;5;161m[    c-scripting-core] Creating script environments for lsrp-motels
+[38;5;73m[ citizen-server-impl] Started resource lsrp-motels
+[38;5;161m[    c-scripting-core] Creating script environments for jsfour-idcard
+[38;5;73m[ citizen-server-impl] Started resource jsfour-idcard
+[38;5;161m[    c-scripting-core] Creating script environments for scr-ammo
+[38;5;73m[ citizen-server-impl] Started resource scr-ammo
+[38;5;73m[ citizen-server-impl] Started resource loadingscreen
+[38;5;73m[ citizen-server-impl] Started resource teleport
+[38;5;161m[    c-scripting-core] Creating script environments for skd_core
+[38;5;73m[ citizen-server-impl] Started resource skd_core
+[38;5;161m[    c-scripting-core] Creating script environments for skd_starterpack
+[38;5;73m[ citizen-server-impl] Started resource skd_starterpack
+[38;5;161m[    c-scripting-core] Creating script environments for skd_treasure
+[38;5;73m[ citizen-server-impl] Started resource skd_treasure
+[38;5;161m[    c-scripting-core] Creating script environments for im_samsat
+[38;5;73m[ citizen-server-impl] Started resource im_samsat
+[38;5;161m[    c-scripting-core] Creating script environments for discordPresence
+[38;5;73m[ citizen-server-impl] Started resource discordPresence
+[38;5;73m[ citizen-server-impl] Started resource green-map
+[38;5;73m[ citizen-server-impl] Asset texture-map/bkr_biker_dlc_int_01txd.ytd uses 33.6 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset texture-map/bkr_biker_dlc_int_02_txd.ytd uses 24.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset texture-map/cs3_04_structures+hi.ytd uses 19.8 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset texture-map/gabz_pillbox_textures_01.ytd uses 22.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset texture-map/hei_cs3_04_structures.ytd uses 17.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset texture-map/prop_flags.ytd uses 28.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset texture-map/slb2k11_cellblock.ytd uses 24.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset texture-map/slb2k11_cellblock_deco.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Started resource texture-map
+[38;5;216m[              server] Warning: `onesync_enabled` is deprecated. Please use `onesync legacy` instead.
+[38;5;216m[              server] Authenticating server license key...
+[38;5;159m[  script:mysql-async] [mysql-async] [SUCCESS] Database server connection established.
+[38;5;84m[      script:monitor] [txAdminClient] Threads and commands set up. All Ready.
+[38;5;220m[  script:es_extended] [es_extended] [INFO] ESX developed by ESX-Org has been initialized
+[38;5;79m[script:esx_advancedg] esx_advancedgarage: Parking Vehicles on restart is currently set to false.
+[38;5;29m[    script:esx_shops] esx_shops: invalid item "roti" found!
+[38;5;29m[    script:esx_shops] esx_shops: invalid item "roti" found!
+[38;5;29m[    script:esx_shops] esx_shops: invalid item "roti" found!
+[38;5;220m[  script:es_extended] [es_extended] [WARNING] Ignoring job grades for "offcardealer" due to missing job
+[38;5;220m[  script:es_extended] [es_extended] [WARNING] Ignoring job grades for "offcardealer" due to missing job
+[38;5;220m[  script:es_extended] [es_extended] [WARNING] Ignoring job grades for "offcardealer" due to missing job
+[38;5;220m[  script:es_extended] [es_extended] [WARNING] Ignoring job grades for "offcardealer" due to missing job
+[38;5;230m[  script:esx_society] SCRIPT ERROR: @esx_society/server/main.lua:26: attempt to index a nil value (field '?')
+[38;5;230m[  script:esx_society] > fn (@mysql-async/lib/MySQL.lua:226)
+[38;5;133m[     script:dpemotes] 
+[38;5;133m[     script:dpemotes] dp Emotes (dpemotes) is up to date. (173)
+[38;5;66m[          svadhesive] Server license key authentication succeeded. Welcome!
+[38;5;73m[ citizen-server-impl]         fff                          
+[38;5;73m[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[38;5;73m[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[38;5;73m[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[38;5;73m[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[38;5;73m[ citizen-server-impl]                                      
+[38;5;73m[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://dianadi021-k38elr.users.cfx.re/
+[38;5;73m[ citizen-server-impl] -- [server notice: tebex_not_set]
+[38;5;73m[ citizen-server-impl] ================
+[38;5;73m[ citizen-server-impl] Monetize your server using Tebex! Visit https://tebex.io/fivem for more info.
+[38;5;73m[ citizen-server-impl] ================
+[38;5;73m[ citizen-server-impl] 
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 119 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 160 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 131 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 168 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 126 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 179 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 118 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 169 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 176 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 136 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 150 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 231 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 103 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 193 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 137 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 146 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 134 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 174 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 118 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 175 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 194 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 220 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 156 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 114 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 120 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 221 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 166 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 178 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 124 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 242 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 179 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 274 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 226 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 197 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 214 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 155 milliseconds
+[38;5;134m[      script:hardcap] Connecting: R`
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 200 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 251 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 267 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 332 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 182 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 216 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 114 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 143 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 168 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 102 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 103 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 112 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 172 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 160 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 181 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 150 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 105 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 102 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 117 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 182 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 148 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 136 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 123 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 185 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 128 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 131 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 195 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 145 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;143m[  citizen-server-gui] You can reopen the server GUI using the command svgui.
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress

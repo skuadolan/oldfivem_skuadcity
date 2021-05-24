@@ -162,16 +162,12 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 		local coords = GetEntityCoords(PlayerPedId())
-		local sleep = true
 		for k,v in pairs(Config.Zones) do
 			for i = 1, #v.Pos, 1 do
 				if(Config.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos[i], true) < Config.DrawDistance) then
-					sleep = false
+					DrawMarker(Config.Type, v.Pos[i], 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, false, false, false)
 				end
 			end
-		end
-		if sleep then
-			Citizen.Wait(50)
 		end
 	end
 end)
@@ -182,13 +178,11 @@ Citizen.CreateThread(function()
 
 		local coords = GetEntityCoords(PlayerPedId())
 		local isInMarker = false
-		local sleep = true
 		local currentZone = nil
 		for k,v in pairs(Config.Zones) do
 			for i = 1, #v.Pos, 1 do
 				if GetDistanceBetweenCoords(coords, v.Pos[i], true) < Config.Size.x then
 					isInMarker  = true
-					sleep = false
 					currentZone = k
 				end
 			end
@@ -203,9 +197,6 @@ Citizen.CreateThread(function()
 		if not isInMarker and HasAlreadyEnteredMarker then
 			HasAlreadyEnteredMarker = false
 			TriggerEvent('esx_accessories:hasExitedMarker', LastZone)
-		end
-		if sleep then
-			Citizen.Wait(50)
 		end
 	end
 end)

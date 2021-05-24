@@ -20,11 +20,9 @@ AddEventHandler('esx_ambulancejob:revive', function(playerId)
 					xPlayer.showNotification(_U('revive_complete_award', xTarget.name, Config.ReviveReward))
 					xPlayer.addMoney(Config.ReviveReward)
 					xTarget.triggerEvent('esx_ambulancejob:revive')
-					deadPlayers[playerId] = nil
 				else
 					xPlayer.showNotification(_U('revive_complete', xTarget.name))
 					xTarget.triggerEvent('esx_ambulancejob:revive')
-					deadPlayers[playerId] = nil
 				end
 			else
 				xPlayer.showNotification(_U('player_not_unconscious'))
@@ -39,6 +37,11 @@ RegisterNetEvent('esx:onPlayerDeath')
 AddEventHandler('esx:onPlayerDeath', function(data)
 	deadPlayers[source] = 'dead'
 	TriggerClientEvent('esx_ambulancejob:setDeadPlayers', -1, deadPlayers)
+end)
+
+RegisterServerEvent('esx_ambulancejob:svsearch')
+AddEventHandler('esx_ambulancejob:svsearch', function()
+  TriggerClientEvent('esx_ambulancejob:clsearch', -1, source)
 end)
 
 RegisterNetEvent('esx_ambulancejob:onPlayerDistress')
@@ -82,6 +85,16 @@ AddEventHandler('esx_ambulancejob:putInVehicle', function(target)
 	end
 end)
 
+RegisterNetEvent('esx_ambulancejob:OutVehicle')
+AddEventHandler('esx_ambulancejob:OutVehicle', function(target)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	if xPlayer.job.name == 'ambulance' then
+		TriggerClientEvent('esx_ambulancejob:OutVehicle', target)
+	else
+		print(('esx_ambulancejob: %s attempted to drag out from vehicle (not cop)!'):format(xPlayer.identifier))
+	end
+end)
 
 ESX.RegisterServerCallback('esx_ambulancejob:removeItemsAfterRPDeath', function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)

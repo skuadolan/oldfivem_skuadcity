@@ -11,46 +11,39 @@ Config.NPCNextToDistance          = 25.0
 Config.NPCJobEarnings             = { min = 15, max = 40 }
 
 Config.Vehicles = {
-	'adder',
-	'asea',
-	'asterope',
-	'banshee',
-	'buffalo',
-	'sultan',
-	'baller3'
 }
 
 Config.Zones = {
 
 	MechanicActions = {
-		Pos   = { x = -342.291, y = -133.370, z = 38.009 },
+		Pos   = { x = -305.49, y = -120.67, z = 39.01 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = 1
 	},
 
 	Garage = {
-		Pos   = { x = -97.5, y = 6496.1, z = 30.4 },
+		Pos   = { x = -329.92, y = -156.44, z = 35.78 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = 1
 	},
 
 	Craft = {
-		Pos   = { x = -323.140, y = -129.882, z = 37.999 },
+		Pos   = { x = -346.04, y = -112.24, z = 39.01 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = 1
 	},
 
 	VehicleSpawnPoint = {
-		Pos   = { x = -366.354, y = -110.766, z = 37.696 },
+		Pos   = { x = -320.54, y = -159.86, z = 36.21 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Type  = -1
 	},
 
 	VehicleDeleter = {
-		Pos   = { x = -386.899, y = -105.675, z = 37.683 },
+		Pos   = { x = -312.02, y = -154.82, z = 35.78 },
 		Size  = { x = 3.0, y = 3.0, z = 1.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = 1

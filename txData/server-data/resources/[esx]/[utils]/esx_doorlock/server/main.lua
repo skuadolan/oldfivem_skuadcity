@@ -1,30 +1,28 @@
 ESX = nil
+local doorState = {}
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-
-RegisterServerEvent('esx_doorlock:server:updateState')
-AddEventHandler('esx_doorlock:server:updateState', function(doorIndex, state)
+RegisterServerEvent('esx_doorlock:updateState')
+AddEventHandler('esx_doorlock:updateState', function(doorIndex, state)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
-	if xPlayer and type(doorIndex) == 'number' and type(state) == 'boolean' and Config.Doors[doorIndex] then
-		Config.Doors[doorIndex].locked = state
-        TriggerClientEvent('esx_doorlock:client:setState', -1, doorIndex, state)
-    else
-        print('error')
+	if xPlayer and type(doorIndex) == 'number' and type(state) == 'boolean' and Config.DoorList[doorIndex] and isAuthorized(xPlayer.job.name, Config.DoorList[doorIndex]) then
+		doorState[doorIndex] = state
+		TriggerClientEvent('esx_doorlock:setDoorState', -1, doorIndex, state)
 	end
 end)
 
-RegisterServerEvent('esx_doorlock:server:setupDoors')
-AddEventHandler('esx_doorlock:server:setupDoors', function()
-    local id = source
-    local xPlayer = ESX.GetPlayerFromId(id)
-    
-    for k,v in pairs(Config.Doors) do
-        local state = Config.Doors[k].locked
-        TriggerClientEvent('esx_doorlock:client:setState', id, k, state)
-    end
+ESX.RegisterServerCallback('esx_doorlock:getDoorState', function(source, cb)
+	cb(doorState)
 end)
 
+function isAuthorized(jobName, doorObject)
+	for k,job in pairs(doorObject.authorizedJobs) do
+		if job == jobName then
+			return true
+		end
+	end
 
---HaReL#5843 Extra Leaks
+	return false
+end

@@ -33,7 +33,7 @@ AddEventHandler('esx_outlawalert:gunshotInProgress', function(targetCoords, stre
 	    for i=1, #xPlayers, 1 do
 		    local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
             if xPlayer.job.name == 'police' then
-                TriggerClientEvent('mythic_notify:client:SendAlert',  xPlayers[i], { type = 'rojak', text = "LAPORAN PENEMBAKAN" } )
+                TriggerClientEvent('mythic_notify:client:SendAlert',  xPlayers[i], { type = 'error', text = "LAPORAN PENEMBAKAN" } )
 			end
 		end
     TriggerClientEvent('esx_outlawalert:gunshotInProgress', -1, targetCoords)

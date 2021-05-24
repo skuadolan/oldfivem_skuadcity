@@ -72,9 +72,10 @@ function OpenPedagangActionsMenu()
 
 			if data.current.value == 'boss_actions' then
 
-                TriggerEvent('esx_society:openBossMenu', 'pedagang', function(data, menu)
-                    menu.close()
-                end)
+                ESX.UI.Menu.CloseAll()
+				TriggerEvent('esx_society:openBossMenu', 'pedagang', function(data, menu)
+					menu.close()
+				end, { wash = false, grades = false })
             end
 		end, function(data, menu)
 			menu.close()
@@ -151,17 +152,17 @@ AddEventHandler('esx_phone:loaded', function(phoneNumber, contacts)
 end)
 
 -- Create Blips
-Citizen.CreateThread(function()		
+--[[Citizen.CreateThread(function()		
 	blip = AddBlipForCoord(Config.Zones.Actions.Pos.x, Config.Zones.Actions.Pos.y, Config.Zones.Actions.Pos.z)
-	SetBlipSprite (blip, 93.0)
-	SetBlipDisplay(blip, 4.0)
-	SetBlipScale  (blip, 0.95)
-	SetBlipColour (blip, 27.0)
+	SetBlipSprite (blip, 93)
+	SetBlipDisplay(blip, 4)
+	SetBlipScale  (blip, 1.0)
+	SetBlipColour (blip, 27)
 	SetBlipAsShortRange(blip, true)
 	BeginTextCommandSetBlipName("STRING")
 	AddTextComponentString(_U('blip_market'))
 	EndTextCommandSetBlipName(blip)
-end)
+end)]]
 
 -- Display markers
 Citizen.CreateThread(function()
@@ -195,7 +196,7 @@ Citizen.CreateThread(function()
 			local currentZone = nil
 			for k,v in pairs(Config.Zones) do
 				if(GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < v.Size.x) then
-					sleep false
+					sleep = false
 					isInMarker  = true
 					currentZone = k
 				end
@@ -289,10 +290,11 @@ Citizen.CreateThread(function()
             DisplayHelpTextFromStringLabel(0, 0, 1, -1)
             
             if IsControlJustReleased(0, 38) and PlayerData.job ~= nil and PlayerData.job.name == 'pedagang' then
+				OpenPedagangActionsMenu()
 
             	--TriggerServerEvent('esx:clientLog', 'PUSHING E')
                 if CurrentAction == 'pedagang_actions_menu' then
-                    OpenPedagangActionsMenu()
+                    
                 elseif CurrentAction == 'pedagang_client_burger' or CurrentAction == 'pedagang_client_tacos' or CurrentAction == 'pedagang_client_makiriime' then
                     --TriggerServerEvent('np-pedagang:removeFood', CurrentActionData.item)
                     TriggerServerEvent('np-pedagang:addItem', CurrentActionData.item, 1)

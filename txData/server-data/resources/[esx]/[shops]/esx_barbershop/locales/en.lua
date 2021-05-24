@@ -1,9 +1,9 @@
 Locales['en'] = {
-  ['valid_purchase'] = 'validate this purchase?',
-  ['yes'] = 'yes',
-  ['no'] = 'no',
-  ['not_enough_money'] = 'you do not have enough money',
-  ['press_access'] = 'press ~INPUT_CONTEXT~ to access the ~y~Barber Shop~s~.',
-  ['barber_blip'] = 'barber Shop',
-  ['you_paid'] = 'you paid ~g~$%s~s~',
+  ['valid_purchase'] = 'beli?',
+  ['yes'] = 'iya',
+  ['no'] = 'tidak',
+  ['not_enough_money'] = 'tidak cukup uang',
+  ['press_access'] = 'tekan ~INPUT_CONTEXT~ untuk akses ~y~tukang cukur~s~.',
+  ['barber_blip'] = 'tukang cukur',
+  ['you_paid'] = 'membayar ~g~$%s~s~',
 }

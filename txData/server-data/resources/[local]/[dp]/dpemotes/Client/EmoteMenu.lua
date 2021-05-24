@@ -1,8 +1,8 @@
 TriggerServerEvent("dp:CheckVersion")
 
-rightPosition = {x = 1450.0, y = 200.0}
-leftPosition = {x = 0.0, y = 100.0}
-menuPosition = {x = 0.0, y = 200.0}
+rightPosition = {x = 1450, y = 100}
+leftPosition = {x = 0, y = 100}
+menuPosition = {x = 0, y = 200}
 
 if Config.MenuPosition then
   if Config.MenuPosition == "left" then

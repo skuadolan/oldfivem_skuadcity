@@ -6,7 +6,7 @@ Config.IsMechanicJobOnly = true
 Config.Zones = {
 
 	ls1 = {
-		Pos   = { x = -337.38, y = -136.92, z = 38.57},
+		Pos   = { x = -317.79, y = -120.27, z = 38.97},
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,
@@ -15,7 +15,7 @@ Config.Zones = {
 	},
 
 	ls2 = {
-		Pos   = { x = -1155.53, y = -2007.18, z = 12.74},
+		Pos   = { x = -320.49, y = -126.17, z = 38.97},
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,
@@ -24,7 +24,7 @@ Config.Zones = {
 	},
 
 	ls3 = {
-		Pos   = { x = 731.81, y = -1088.82, z = 21.73},
+		Pos   = { x = -323.23, y = -132.34, z = 38.96},
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,
@@ -42,7 +42,7 @@ Config.Zones = {
 	},
 
 	ls5 = {
-		Pos   = { x = 110.99, y = 6626.39, z = 30.89},
+		Pos   = { x = -373.36, y = 110.98, z = 38.85},
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,
@@ -460,13 +460,13 @@ Config.Menus = {
 		label = _U('engine'),
 		parent = 'upgrades',
 		modType = 11,
-		price = {13.95, 32.56, 65.12, 139.53}
+		price = {30.55, 40.55, 50.55, 60.55}
 	},
 	modBrakes = {
 		label = _U('brakes'),
 		parent = 'upgrades',
 		modType = 12,
-		price = {4.65, 9.3, 18.6, 13.95}
+		price = {6.65, 13.3, 18.6, 28.95}
 	},
 	modTransmission = {
 		label = _U('transmission'),
@@ -478,13 +478,13 @@ Config.Menus = {
 		label = _U('suspension'),
 		parent = 'upgrades',
 		modType = 15,
-		price = {3.72, 7.44, 14.88, 29.77, 40.2}
+		price = {30.44, 32.44, 33.44, 36.44, 40.2}
 	},
 	modArmor = {
 		label = _U('armor'),
 		parent = 'upgrades',
 		modType = 16,
-		price = {69.77, 116.28, 130.00, 150.00, 180.00, 190.00}
+		price = {50.5, 55.5, 60.5, 65.5, 70.5, 75.5}
 	},
 	modTurbo = {
 		label = _U('turbo'),
@@ -781,25 +781,25 @@ Config.Menus = {
 		label = _U('primary'),
 		parent = 'primaryRespray',
 		modType = 'color1',
-		price = 1.12
+		price = 3.5
 	},
 	color2 = {
 		label = _U('secondary'),
 		parent = 'secondaryRespray',
 		modType = 'color2',
-		price = 0.66
+		price = 3.5
 	},
 	pearlescentColor = {
 		label = _U('pearlescent'),
 		parent = 'pearlescentRespray',
 		modType = 'pearlescentColor',
-		price = 0.88
+		price = 3.5
 	},
 	modXenon = {
 		label = _U('headlights'),
 		parent = 'cosmetics',
 		modType = 22,
-		price = 3.72
+		price = 3.5
 	},
 	bodyparts = {
 		label = _U('bodyparts'),

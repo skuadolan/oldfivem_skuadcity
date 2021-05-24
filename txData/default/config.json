@@ -1,6 +1,6 @@
 {
   "global": {
-    "serverName": "#SKUAD CITY ROLEPLAY INDONESIA",
+    "serverName": "fixAll",
     "language": "en"
   },
   "logger": {},
@@ -22,24 +22,19 @@
     "onJoinCheckBan": true,
     "onJoinCheckWhitelist": false,
     "minSessionTime": 15,
-    "whitelistRejectionMessage": "You are not yet whitelisted in this server.\nPlease join http://discord.io/skuadcity.\nYour ID: <id>",
+    "whitelistRejectionMessage": "You are not yet whitelisted in this server.\nPlease join http://discord.gg/example.\nYour Request ID: <id>",
     "wipePendingWLOnStart": true
   },
   "authenticator": {},
   "webServer": {},
   "discordBot": {
-    "enabled": true,
-    "token": "ODIzNTkwMzgwMTI5MDkxNjI3.YFjCUA.P1-nlmAe3MQ6xrstxNRvUg-f4mQ",
-    "announceChannel": "817382424563679242",
-    "prefix": "~",
-    "statusMessage": "**Connect:** `skuad.club`\n**Players:** <players>\n**Uptime:** <uptime>"
+    "enabled": false,
+    "prefix": "/",
+    "statusMessage": "**IP:** `change-me:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {
-    "serverDataPath": "D:/Project/FiveM/[new]skuadcity/txData/server-data/",
-    "cfgPath": "D:/Project/FiveM/[new]skuadcity//txData/server-data/server.cfg",
-    "commandLine": "",
-    "onesync": "on",
     "autostart": true,
-    "quiet": false
+    "serverDataPath": "D:/Project/FiveM/fixAll/txData/server-data/",
+    "cfgPath": "D:/Project/FiveM/fixAll/txData/server-data/server.cfg"
   }
 }

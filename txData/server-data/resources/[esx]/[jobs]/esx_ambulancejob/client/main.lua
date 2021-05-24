@@ -239,7 +239,7 @@ function StartDistressSignal()
 	Citizen.CreateThread(function()
 		local timer = Config.BleedoutTimer
 
-		while timer > 0 and IsDead do
+		while IsDead do
 			Citizen.Wait(2)
 			timer = timer - 30
 
@@ -256,14 +256,14 @@ function StartDistressSignal()
 
 			if IsControlPressed(0, Keys['G']) then
 				SendDistressSignal()
+				Citizen.Wait(60000 * 1)
 
 				Citizen.CreateThread(function()
-					Citizen.Wait(1000 * 60 * 5)
 					if IsDead then
 						StartDistressSignal()
+						Citizen.Wait(60000 * 1)
 					end
 				end)
-
 				break
 			end
 		end

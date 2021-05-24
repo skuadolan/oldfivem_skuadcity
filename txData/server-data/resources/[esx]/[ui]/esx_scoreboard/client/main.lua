@@ -73,7 +73,7 @@ end)
 
 function UpdatePlayerTable(connectedPlayers)
 	local formattedPlayerList, num = {}, 1
-	local ems, police, taxi, mechanic, pedagang, fueler, lumberjack, tailor, reporter, miner, unemployed, estate, cardeal, arma, stato, players = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	local ems, police, taxi, mechanic, pedagang, slaughterer, fueler, lumberjack, tailor, busdriver, cargo, fisherman, miner, petani, trucker, players = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
 	for k,v in pairs(connectedPlayers) do
 
@@ -103,26 +103,26 @@ function UpdatePlayerTable(connectedPlayers)
 			mechanic = mechanic + 1
 		elseif v.job == 'pedagang' then
 			pedagang = pedagang + 1
+		elseif v.job == 'slaughterer' then
+			slaughterer = slaughterer + 1
 		elseif v.job == 'fueler' then
 			fueler = fueler + 1
 		elseif v.job == 'lumberjack' then
 			lumberjack = lumberjack + 1
 		elseif v.job == 'tailor' then
-			tailor = tailor + 1 
-		elseif v.job == 'journaliste' then
-			reporter = reporter + 1
+			tailor = tailor + 1
+		elseif v.job == 'busdriver' then
+			busdriver = busdriver + 1
+		elseif v.job == 'cargo' then
+			cargo = cargo + 1
+		elseif v.job == 'fisherman' then
+			fisherman = fisherman + 1
 		elseif v.job == 'miner' then
 			miner = miner + 1
-		elseif v.job == 'unemployed' then
-			unemployed = unemployed + 1
-		elseif v.job == 'realestateagent' then
-			estate = estate + 1
-		elseif v.job == 'cardealer' then
-			cardeal = cardeal + 1
-		elseif v.job == 'armeria' then
-			arma = arma + 1
-		elseif v.job == 'state' then
-			stato = stato + 1
+		elseif v.job == 'petani' then
+			petani = petani + 1
+		elseif v.job == 'trucker' then
+			trucker = trucker + 1
 		end
 	end
 
@@ -134,52 +134,70 @@ function UpdatePlayerTable(connectedPlayers)
 		action  = 'updatePlayerList',
 		players = table.concat(formattedPlayerList)
 	})
+	if ems > 3 then
+		ems = '3+'
+	end
+
+	if police > 3 then
+		police = '3+'
+	end
+	
+	if mechanic > 3 then
+		mechanic = '3+'
+	end
+
+	if pedagang > 3 then
+		pedagang = '3+'
+	end
+
+	if slaughterer > 3 then
+		slaughterer = '3+'
+	end
+
+	if fueler > 3 then
+		fueler = '3+'
+	end
+
+	if lumberjack > 3 then
+		lumberjack = '3+'
+	end
+
+	if tailor > 3 then
+		tailor = '3+'
+	end
+
+	if busdriver > 3 then
+		busdriver = '3+'
+	end
+
+	if cargo > 3 then
+		cargo = '3+'
+	end
+
+	if fisherman > 3 then
+		fisherman = '3+'
+	end
+
+	if miner > 3 then
+		miner = '3+'
+	end
+
+	if petani > 3 then
+		petani = '3+'
+	end
+
+	if trucker > 3 then
+		trucker = '3+'
+	end
 
 	SendNUIMessage({
 		action = 'updatePlayerJobs',
-		jobs   = {ems = ems, police = police, taxi = taxi, mechanic = mechanic, pedagang = pedagang, fueler = fueler, lumberjack = lumberjack, tailor = tailor, reporter = reporter, miner = miner, unemployed = unemployed, estate = estate, cardeal = cardeal, arma = arma, stato = stato, player_count = players}
+		jobs   = {ems = ems, police = police, taxi = taxi, mechanic = mechanic, pedagang = pedagang, slaughterer = slaughterer, fueler = fueler, lumberjack = lumberjack, tailor = tailor, busdriver = busdriver, cargo = cargo, fisherman = fisherman, miner = miner, petani = petani, trucker = trucker, player_count = players}
+		
 	})
 end
---[[exports['mythic_progbar']:Progress({
-	name = "inventoryhud_trunk",
-	duration = 1000,
-	label = 'Membuka Bagasi',
-	useWhileDead = true,
-	canCancel = true,
-	controlDisables = {
-	disableMovement = true,
-	disableCarMovement = true,
-	disableMouse = false,
-	disableCombat = true,
-	},
-	animation = {
-		animDict = "mini@repair",
-		anim = "fixing_a_player",
-		flags = 49,
-	},
-}, function(cancelled)
-	if not cancelled then
-		ToggleScoreBoard()
-	end
-end)]]
+
 Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
-
-		if IsControlJustReleased(0, Keys['F10']) and IsInputDisabled(0) then
-			PlaySoundFrontend(-1, "NAV", "HUD_AMMO_SHOP_SOUNDSET", 1)
-			ToggleScoreBoard()
-			Citizen.Wait(200)
-
-		-- D-pad up on controllers works, too!
-		elseif IsControlJustReleased(0, 172) and not IsInputDisabled(0) then
-			ToggleScoreBoard()
-			Citizen.Wait(200)
-		end
-	end
-end)
-
---[[Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
@@ -193,7 +211,7 @@ end)
 			Citizen.Wait(200)
 		end
 	end
-end)]]
+end)
 
 -- Close scoreboard when game is paused
 Citizen.CreateThread(function()

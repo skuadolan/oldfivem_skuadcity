@@ -92,7 +92,7 @@ Citizen.CreateThread(function()
 			local blip = AddBlipForCoord(v.Pos[i])
 
 			SetBlipSprite (blip, 52)
-			SetBlipScale  (blip, 0.95)
+			SetBlipScale  (blip, 1.0)
 			SetBlipColour (blip, 2)
 			SetBlipAsShortRange(blip, true)
 
@@ -151,13 +151,13 @@ Citizen.CreateThread(function()
 		if currentAction then
 			ESX.ShowHelpNotification(currentActionMsg)
 
-			if IsControlJustReleased(0, 38) then
+			--[[if IsControlJustReleased(0, 38) then
 				if currentAction == 'shop_menu' then
 					OpenShopMenu(currentActionData.zone)
 				end
 
 				currentAction = nil
-			end
+			end]]
 		else
 			Citizen.Wait(500)
 		end

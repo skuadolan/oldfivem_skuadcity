@@ -335,49 +335,50 @@ ESX.RegisterServerCallback('esx_vehicleshopimport:resellVehicle', function(sourc
 	local xPlayer, resellPrice = ESX.GetPlayerFromId(source)
 
 	if xPlayer.job.name == 'cardealer' then
-		-- calculate the resell price
-		for i=1, #vehicles, 1 do
-			if GetHashKey(vehicles[i].model) == model then
-				resellPrice = ESX.Math.Round(vehicles[i].price / 100 * Config.ResellPercentage)
-				break
-			end
+		
+	end
+	-- calculate the resell price
+	for i=1, #vehicles, 1 do
+		if GetHashKey(vehicles[i].model) == model then
+			resellPrice = ESX.Math.Round(vehicles[i].price / 100 * Config.ResellPercentage)
+			break
 		end
+	end
 
-		if not resellPrice then
-			print(('[esx_vehicleshopimport] [^3WARNING^7] %s attempted to sell an unknown vehicle!'):format(xPlayer.identifier))
-			cb(false)
-		else
-			MySQL.Async.fetchAll('SELECT * FROM rented_vehicles WHERE plate = @plate', {
-				['@plate'] = plate
-			}, function(result)
-				if result[1] then -- is it a rented vehicle?
-					cb(false) -- it is, don't let the player sell it since he doesn't own it
-				else
-					MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner AND @plate = plate', {
-						['@owner'] = xPlayer.identifier,
-						['@plate'] = plate
-					}, function(result)
-						if result[1] then -- does the owner match?
-							local vehicle = json.decode(result[1].vehicle)
+	if not resellPrice then
+		print(('[esx_vehicleshopimport] [^3WARNING^7] %s attempted to sell an unknown vehicle!'):format(xPlayer.identifier))
+		cb(false)
+	else
+		MySQL.Async.fetchAll('SELECT * FROM rented_vehicles WHERE plate = @plate', {
+			['@plate'] = plate
+		}, function(result)
+			if result[1] then -- is it a rented vehicle?
+				cb(false) -- it is, don't let the player sell it since he doesn't own it
+			else
+				MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner AND @plate = plate', {
+					['@owner'] = xPlayer.identifier,
+					['@plate'] = plate
+				}, function(result)
+					if result[1] then -- does the owner match?
+						local vehicle = json.decode(result[1].vehicle)
 
-							if vehicle.model == model then
-								if vehicle.plate == plate then
-									xPlayer.addMoney(resellPrice)
-									RemoveOwnedVehicle(plate)
-									cb(true)
-								else
-									print(('[esx_vehicleshopimport] [^3WARNING^7] %s attempted to sell an vehicle with plate mismatch!'):format(xPlayer.identifier))
-									cb(false)
-								end
+						if vehicle.model == model then
+							if vehicle.plate == plate then
+								xPlayer.addMoney(resellPrice)
+								RemoveOwnedVehicle(plate)
+								cb(true)
 							else
-								print(('[esx_vehicleshopimport] [^3WARNING^7] %s attempted to sell an vehicle with model mismatch!'):format(xPlayer.identifier))
+								print(('[esx_vehicleshopimport] [^3WARNING^7] %s attempted to sell an vehicle with plate mismatch!'):format(xPlayer.identifier))
 								cb(false)
 							end
+						else
+							print(('[esx_vehicleshopimport] [^3WARNING^7] %s attempted to sell an vehicle with model mismatch!'):format(xPlayer.identifier))
+							cb(false)
 						end
-					end)
-				end
-			end)
-		end
+					end
+				end)
+			end
+		end)
 	end
 end)
 

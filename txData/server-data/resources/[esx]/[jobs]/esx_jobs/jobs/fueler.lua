@@ -42,7 +42,7 @@ Config.Jobs.fueler = {
 				{
 					name = _U('f_fuel'),
 					db_name = 'petrol',
-					time = 5,
+					time = 0.4,
 					max = 24,
 					add = 1,
 					remove = 1,
@@ -67,7 +67,7 @@ Config.Jobs.fueler = {
 				{
 					name = _U('f_fuel_refine'),
 					db_name = 'petrol_raffin',
-					time = 5,
+					time = 0.4,
 					max = 24,
 					add = 1,
 					remove = 2,
@@ -92,7 +92,7 @@ Config.Jobs.fueler = {
 				{
 					name = _U('f_gas'),
 					db_name = 'essence',
-					time = 5,
+					time = 0.4,
 					max = 24,
 					add = 2,
 					remove = 1,
@@ -158,10 +158,10 @@ Config.Jobs.fueler = {
 			Item = {
 				{
 					name = _U('delivery'),
-					time = 0.5,
+					time = 0.2,
 					remove = 1,
-					max = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 61,
+					max = 100,
+					price = 1250,
 					requires = 'essence',
 					requires_name = _U('f_gas'),
 					drop = 100

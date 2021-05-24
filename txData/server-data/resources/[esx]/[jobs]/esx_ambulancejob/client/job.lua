@@ -6,7 +6,7 @@ isInShopMenu = false
 function OpenAmbulanceActionsMenu()
 	local elements = {{label = _U('cloakroom'), value = 'cloakroom'}}
 
-	if Config.EnablePlayerManagement and ESX.PlayerData.job.grade_name == 'boss' then
+	if Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.grade_name == 'boss' then
 		table.insert(elements, {label = _U('boss_actions'), value = 'boss_actions'})
 	end
 
@@ -14,7 +14,7 @@ function OpenAmbulanceActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'ambulance_actions', {
 		title    = _U('ambulance'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'cloakroom' then
@@ -22,7 +22,7 @@ function OpenAmbulanceActionsMenu()
 		elseif data.current.value == 'boss_actions' then
 			TriggerEvent('esx_society:openBossMenu', 'ambulance', function(data, menu)
 				menu.close()
-			end, {wash = false})
+			end, { wash = false, grades = false })
 		end
 	end, function(data, menu)
 		menu.close()
@@ -34,25 +34,30 @@ function OpenMobileAmbulanceActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_ambulance_actions', {
 		title    = _U('ambulance'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = {
 			{label = _U('ems_menu'), value = 'citizen_interaction'}
 	}}, function(data, menu)
 		if data.current.value == 'citizen_interaction' then
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'citizen_interaction', {
 				title    = _U('ems_menu_title'),
-				align    = 'top-left',
+				align    = 'top-right',
 				elements = {
+					{label = _U('billing'),   value = 'billing'},
 					{label = _U('ems_menu_revive'), value = 'revive'},
 					{label = _U('ems_menu_small'), value = 'small'},
 					{label = _U('ems_menu_big'), value = 'big'},
-					{label = _U('ems_menu_putincar'), value = 'put_in_vehicle'}
+					{label = _U('ems_menu_putincar'), value = 'put_in_vehicle'},
+					{label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
+					--{label = _U('ems_menu_search'), value = 'search'}
 			}}, function(data, menu)
 				if isBusy then return end
 
 				local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
-				if closestPlayer == -1 or closestDistance > 1.0 then
+				if data.current.value == 'search' then
+					TriggerServerEvent('esx_ambulancejob:svsearch')
+				elseif closestPlayer == -1 or closestDistance > 1.0 then
 					ESX.ShowNotification(_U('no_players'))
 				else
 					if data.current.value == 'revive' then
@@ -84,6 +89,29 @@ function OpenMobileAmbulanceActionsMenu()
 							end
 						end, 'bandage')
 
+					elseif data.current.value == 'billing' then
+						ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'billing', {
+							title = _U('invoice_amount')
+						}, function(data, menu)
+								
+						local amount = tonumber(data.value)
+						if amount == nil then
+							ESX.ShowNotification(_U('amount_invalid'))
+						else
+							menu.close()
+							local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+							if closestPlayer == -1 or closestDistance > 3.0 then
+								ESX.ShowNotification(_U('no_players'))
+							else
+								TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_ambulance', 'Ambulance', amount)
+								TriggerServerEvent("esx:ambulancejob", GetPlayerName(closestPlayer), amount)
+								ESX.ShowNotification(_U('billing_sent'))
+							end
+						end		
+					end, function(data, menu)
+						menu.close()
+					end)
+
 					elseif data.current.value == 'big' then
 
 						ESX.TriggerServerCallback('esx_ambulancejob:getItemAmount', function(quantity)
@@ -114,6 +142,8 @@ function OpenMobileAmbulanceActionsMenu()
 
 					elseif data.current.value == 'put_in_vehicle' then
 						TriggerServerEvent('esx_ambulancejob:putInVehicle', GetPlayerServerId(closestPlayer))
+					elseif action == 'out_the_vehicle' then
+						TriggerServerEvent('esx_ambulancejob:OutVehicle', GetPlayerServerId(closestPlayer))
 					end
 				end
 			end, function(data, menu)
@@ -192,7 +222,7 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v)
 
 					if distance < Config.DrawDistance then
-			
+						DrawMarker(Config.Marker.type, v, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.Marker.x, Config.Marker.y, Config.Marker.z, Config.Marker.r, Config.Marker.g, Config.Marker.b, Config.Marker.a, false, false, 2, Config.Marker.rotate, nil, nil, false)
 						letSleep = false
 
 						if distance < Config.Marker.x then
@@ -206,7 +236,7 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v)
 
 					if distance < Config.DrawDistance then
-						
+						DrawMarker(Config.Marker.type, v, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.Marker.x, Config.Marker.y, Config.Marker.z, Config.Marker.r, Config.Marker.g, Config.Marker.b, Config.Marker.a, false, false, 2, Config.Marker.rotate, nil, nil, false)
 						letSleep = false
 
 						if distance < Config.Marker.x then
@@ -220,7 +250,7 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.Spawner)
 
 					if distance < Config.DrawDistance then
-						
+						DrawMarker(v.Marker.type, v.Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Marker.x, v.Marker.y, v.Marker.z, v.Marker.r, v.Marker.g, v.Marker.b, v.Marker.a, false, false, 2, v.Marker.rotate, nil, nil, false)
 						letSleep = false
 
 						if distance < v.Marker.x then
@@ -234,7 +264,7 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.Spawner)
 
 					if distance < Config.DrawDistance then
-						
+						DrawMarker(v.Marker.type, v.Spawner, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Marker.x, v.Marker.y, v.Marker.z, v.Marker.r, v.Marker.g, v.Marker.b, v.Marker.a, false, false, 2, v.Marker.rotate, nil, nil, false)
 						letSleep = false
 
 						if distance < v.Marker.x then
@@ -248,7 +278,7 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.From)
 
 					if distance < Config.DrawDistance then
-						
+						DrawMarker(v.Marker.type, v.From, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Marker.x, v.Marker.y, v.Marker.z, v.Marker.r, v.Marker.g, v.Marker.b, v.Marker.a, false, false, 2, v.Marker.rotate, nil, nil, false)
 						letSleep = false
 
 						if distance < v.Marker.x then
@@ -279,7 +309,7 @@ Citizen.CreateThread(function()
 			end
 
 			if letSleep then
-				Citizen.Wait(50)
+				Citizen.Wait(500)
 			end
 		else
 			Citizen.Wait(500)
@@ -299,6 +329,7 @@ Citizen.CreateThread(function()
 				local distance = #(playerCoords - v.From)
 
 				if distance < Config.DrawDistance then
+					DrawMarker(v.Marker.type, v.From, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Marker.x, v.Marker.y, v.Marker.z, v.Marker.r, v.Marker.g, v.Marker.b, v.Marker.a, false, false, 2, v.Marker.rotate, nil, nil, false)
 					letSleep = false
 
 					if distance < v.Marker.x then
@@ -309,7 +340,7 @@ Citizen.CreateThread(function()
 		end
 
 		if letSleep then
-			Citizen.Wait(50)
+			Citizen.Wait(500)
 		end
 	end
 end)
@@ -407,10 +438,20 @@ AddEventHandler('esx_ambulancejob:putInVehicle', function()
 	end
 end)
 
+RegisterNetEvent('esx_ambulancejob:OutVehicle')
+AddEventHandler('esx_ambulancejob:OutVehicle', function()
+	local playerPed = PlayerPedId()
+
+	if IsPedSittingInAnyVehicle(playerPed) then
+		local vehicle = GetVehiclePedIsIn(playerPed, false)
+		TaskLeaveVehicle(playerPed, vehicle, 64)
+	end
+end)
+
 function OpenCloakroomMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom', {
 		title    = _U('cloakroom'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = {
 			{label = _U('ems_clothes_civil'), value = 'citizen_wear'},
 			{label = _U('ems_clothes_ems'), value = 'ambulance_wear'},
@@ -449,7 +490,7 @@ function OpenPharmacyMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'pharmacy', {
 		title    = _U('pharmacy_menu_title'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = {
 			{label = _U('pharmacy_take', _U('medikit')), item = 'medikit', type = 'slider', value = 1, min = 1, max = 100},
 			{label = _U('pharmacy_take', _U('bandage')), item = 'bandage', type = 'slider', value = 1, min = 1, max = 100}

@@ -12,7 +12,7 @@ MySQL.ready(function()
 end)
 
 function ParkVehicles()
-	MySQL.Async.execute('UPDATE owned_vehicles SET `stored` = true WHERE `stored` = @stored', {
+	MySQL.Async.execute('UPDATE owned_vehicles SET `stored` = true WHERE `stored` = @stored AND owned_vehicles.plate NOT IN (SELECT plate from h_impounded_vehicles)', {
 		['@stored'] = false
 	}, function(rowsChanged)
 		if rowsChanged > 0 then
@@ -502,7 +502,7 @@ ESX.RegisterServerCallback('esx_advancedgarage:getOutOwnedCars', function(source
 	local ownedCars = {}
 	local xPlayer = ESX.GetPlayerFromId(source)
 
-	MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner AND Type = @Type AND job = @job AND `stored` = @stored', { -- job = NULL
+	MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner AND Type = @Type AND job = @job AND `stored` = @stored AND owned_vehicles.plate NOT IN (SELECT plate from h_impounded_vehicles)', {
 		['@owner'] = xPlayer.identifier,
 		['@Type'] = 'car',
 		['@job'] = 'civ',

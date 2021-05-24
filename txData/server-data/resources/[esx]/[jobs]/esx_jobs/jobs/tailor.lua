@@ -42,7 +42,7 @@ Config.Jobs.tailor = {
 				{
 					name = _U('dd_wool'),
 					db_name = 'wool',
-					time = 3,
+					time = 0.4,
 					max = 40,
 					add = 1,
 					remove = 1,
@@ -67,7 +67,7 @@ Config.Jobs.tailor = {
 				{
 					name = _U('dd_fabric'),
 					db_name = 'fabric',
-					time = 5,
+					time = 0.4,
 					max = 80,
 					add = 2,
 					remove = 1,
@@ -92,7 +92,7 @@ Config.Jobs.tailor = {
 				{
 					name = _U('dd_clothing'),
 					db_name = 'clothe',
-					time = 4,
+					time = 0.4,
 					max = 40,
 					add = 1,
 					remove = 2,
@@ -158,10 +158,10 @@ Config.Jobs.tailor = {
 			Item = {
 				{
 					name = _U('delivery'),
-					time = 0.5,
+					time = 0.1,
 					remove = 1,
 					max = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 40,
+					price = 1000,
 					requires = 'clothe',
 					requires_name = _U('dd_clothing'),
 					drop = 100

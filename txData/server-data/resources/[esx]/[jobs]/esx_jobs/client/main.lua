@@ -204,7 +204,7 @@ function refreshBlips()
 					local blip = AddBlipForCoord(v.Pos.x, v.Pos.y, v.Pos.z)
 
 					SetBlipSprite  (blip, jobObject.BlipInfos.Sprite)
-					SetBlipScale   (blip, 0.95)
+					SetBlipScale   (blip, 1.2)
 					SetBlipCategory(blip, 3)
 					SetBlipColour  (blip, jobObject.BlipInfos.Color)
 					SetBlipAsShortRange(blip, true)
@@ -244,9 +244,6 @@ AddEventHandler('esx_jobs:spawnJobVehicle', function(spawnPoint, vehicle)
 		myPlate[plate] = true
 
 		TaskWarpPedIntoVehicle(playerPed, spawnedVehicle, -1)
-		Citizen.Wait(1)
-		SetVehicleFuelLevel(vehicle, 100.0)
-		DecorSetFloat(vehicle, "_FUEL_LEVEL", GetVehicleFuelLevel(vehicle))
 
 		if vehicle.HasCaution then
 			vehicleInCaseofDrop = spawnedVehicle

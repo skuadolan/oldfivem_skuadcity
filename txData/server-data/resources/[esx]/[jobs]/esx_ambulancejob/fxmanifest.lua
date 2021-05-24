@@ -6,7 +6,6 @@ description 'ESX Ambulance Job'
 
 version '1.2.0'
 
-
 server_scripts {
 	'@mysql-async/lib/MySQL.lua',
 	'@es_extended/locale.lua',
@@ -17,8 +16,10 @@ server_scripts {
 	'locales/es.lua',
 	'locales/sv.lua',
 	'locales/pl.lua',
+	'locales/de.lua',
 	'locales/cs.lua',
 	'locales/nl.lua',
+	'locales/tr.lua',
 	'config.lua',
 	'server/main.lua'
 }
@@ -34,10 +35,12 @@ client_scripts {
 	'locales/pl.lua',
 	'locales/cs.lua',
 	'locales/nl.lua',
+	'locales/tr.lua',
 	'config.lua',
 	'client/main.lua',
 	'client/job.lua',
 	'client/vehicle.lua',
+	'check-body.lua',
 }
 
 dependencies {

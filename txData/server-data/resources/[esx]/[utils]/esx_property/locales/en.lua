@@ -4,7 +4,7 @@ Locales['en'] = {
   ['free_prop'] = 'property For Sale',
   ['property'] = 'property',
   ['enter'] = 'enter',
-  ['move_out'] = 'move out the property',
+  ['move_out'] = 'move out from property',
   ['move_out_sold'] = 'sell property for <span style="color:green;">$%s</span>',
   ['moved_out'] = 'you moved out and do no longer rent the property.',
   ['moved_out_sold'] = 'you have sold the property for ~g~$%s~s~',
@@ -34,6 +34,4 @@ Locales['en'] = {
   ['paid_rent_evicted'] = 'you have been ~o~evicted~s~ from ~y~%s~s~ for not affording rent at ~g~$%s~s~',
   ['not_enough_in_property'] = 'there\'s not enough of ~r~that item~s~ in the property!',
   ['player_cannot_hold'] = 'you do ~r~not~s~ have enough ~y~free space~s~ in your inventory!',
-  ['leave'] = 'sell',
-  ['visit'] = 'visit',
 }

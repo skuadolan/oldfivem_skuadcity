@@ -1,14 +1,4 @@
---[[
-==============  Script Created By : esx-framework  ===============
-~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
-=======    Protected By:mø#3765|github.com/Mqasim14    ===========
-~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
-]]--
-
 ESX = nil
-
-webhookURL = '' -- Moving items in
-webhookURL2 = '' -- Moving items outs
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
@@ -33,9 +23,9 @@ function SetPropertyOwned(name, price, rented, owner)
 			TriggerClientEvent('esx_property:setPropertyOwned', xPlayer.source, name, true, rented)
 
 			if rented then
-				TriggerClientEvent('esx:showNotification', xPlayer.source, _U('rent_for', ESX.Math.GroupDigits(price)))
+				xPlayer.showNotification(_U('rent_for', ESX.Math.GroupDigits(price)))
 			else
-				TriggerClientEvent('esx:showNotification', xPlayer.source, _U('buy_for', ESX.Math.GroupDigits(price)))
+				xPlayer.showNotification(_U('buy_for', ESX.Math.GroupDigits(price)))
 			end
 		end
 	end)
@@ -53,15 +43,15 @@ function RemoveOwnedProperty(name, owner, noPay)
 				local xPlayer = ESX.GetPlayerFromIdentifier(owner)
 
 				if xPlayer then
-					TriggerClientEvent('esx_property:setPropertyOwned', xPlayer.source, name, false)
+					xPlayer.triggerEvent('esx_property:setPropertyOwned', name, false)
 
 					if not noPay then
 						if result[1].rented == 1 then
-							TriggerClientEvent('esx:showNotification', xPlayer.source, _U('moved_out'))
+							xPlayer.showNotification(_U('moved_out'))
 						else
 							local sellPrice = ESX.Math.Round(result[1].price / Config.SellModifier)
 
-							TriggerClientEvent('esx:showNotification', xPlayer.source, _U('moved_out_sold', ESX.Math.GroupDigits(sellPrice)))
+							xPlayer.showNotification(_U('moved_out_sold', ESX.Math.GroupDigits(sellPrice)))
 							xPlayer.addAccountMoney('bank', sellPrice)
 						end
 					end
@@ -74,7 +64,7 @@ end
 MySQL.ready(function()
 	Citizen.Wait(1500)
 
-	MySQL.Async.fetchAll('SELECT * FROM properties', {}, function(properties)
+	MySQL.Async.fetchAll('SELECT * FROM `properties`', {}, function(properties)
 
 		for i=1, #properties, 1 do
 			local entering  = nil
@@ -194,7 +184,7 @@ AddEventHandler('esx_property:buyProperty', function(propertyName)
 		xPlayer.removeMoney(property.price)
 		SetPropertyOwned(propertyName, property.price, false, xPlayer.identifier)
 	else
-		TriggerClientEvent('esx:showNotification', xPlayer.source, _U('not_enough'))
+		xPlayer.showNotification(_U('not_enough'))
 	end
 end)
 
@@ -232,205 +222,98 @@ AddEventHandler('esx_property:getItem', function(owner, type, item, count)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local xPlayerOwner = ESX.GetPlayerFromIdentifier(owner)
 
-	local id = source;
-	local ids = ExtractIdentifiers(id);
-	local steam = ids.steam:gsub("steam:", "");
-	local steamDec = tostring(tonumber(steam,16));
-	
-	local ip = ids.ip;
-	local gameLicense = ids.license;
-	local discord = ids.discord;
 	if type == 'item_standard' then
-   TriggerEvent('esx_addoninventory:getInventory', 'property', xPlayerOwner.identifier, function(inventory)
+		TriggerEvent('esx_addoninventory:getInventory', 'property', xPlayerOwner.identifier, function(inventory)
+			local inventoryItem = inventory.getItem(item)
 
-      local roomItemCount = inventory.getItem(item).count
+			-- is there enough in the property?
+			if count > 0 and inventoryItem.count >= count then
+				-- can the player carry the said amount of x item?
+				if xPlayer.canCarryItem(item, count) then
+					inventory.removeItem(item, count)
+					xPlayer.addInventoryItem(item, count)
+					xPlayer.showNotification(_U('have_withdrawn', count, inventoryItem.label))
+				else
+					xPlayer.showNotification(_U('player_cannot_hold'))
+				end
+			else
+				xPlayer.showNotification(_U('not_enough_in_property'))
+			end
+		end)
+	elseif type == 'item_account' then
+		TriggerEvent('esx_addonaccount:getAccount', 'property_' .. item, xPlayerOwner.identifier, function(account)
+			if account.money >= count then
+				account.removeMoney(count)
+				xPlayer.addAccountMoney(item, count)
+			else
+				xPlayer.showNotification(_U('amount_invalid'))
+			end
+		end)
+	elseif type == 'item_weapon' then
+		TriggerEvent('esx_datastore:getDataStore', 'property', xPlayerOwner.identifier, function(store)
+			local storeWeapons = store.get('weapons') or {}
+			local weaponName   = nil
+			local ammo         = nil
 
-      if roomItemCount >= count then
-        inventory.removeItem(item, count)
-        xPlayer.addInventoryItem(item, count)
-					    sendToDisc2("(Removed From Property) _[" .. tostring(id) .. "] " .. GetPlayerName(id) .. "_", 
-  'Item: **' .. item .. '**\n' ..
-  'Count: **' .. count .. '**\n' ..
-       '**SteamID:** steam:' .. steam .. '\n' .. '**License: **' .. gameLicense .. '\n' ..
-  
-  '**IP: **' .. ip:gsub("ip:", "") .. '\n' ..
-  '**Discord Tag: **<@' .. discord:gsub('discord:', '') .. '>\n' ..
-  '**Discord UID: **' .. discord:gsub('discord:', '') .. '\n');	
-      else
-        TriggerClientEvent('esx:showNotification', _source, _U('invalid_quantity'))
-      end
+			for i=1, #storeWeapons, 1 do
+				if storeWeapons[i].name == item then
+					weaponName = storeWeapons[i].name
+					ammo       = storeWeapons[i].ammo
 
-    end)
+					table.remove(storeWeapons, i)
+					break
+				end
+			end
 
-  end
-
-  if type == 'item_account' then
-
-    TriggerEvent('esx_addonaccount:getAccount', 'property_' .. item, xPlayerOwner.identifier, function(account)
-
-      local roomAccountMoney = account.money
-
-      if roomAccountMoney >= count then
-        account.removeMoney(count)
-        xPlayer.addAccountMoney(item, count)
-							    sendToDisc2("(Removed From Property) _[" .. tostring(id) .. "] " .. GetPlayerName(id) .. "_", 
-  'Item: **' .. item .. '**\n' ..
-  'Amount: $**' .. count .. '**\n' ..
-       '**SteamID:** steam:' .. steam .. '\n' .. '**License: **' .. gameLicense .. '\n' ..
-  
-  '**IP: **' .. ip:gsub("ip:", "") .. '\n' ..
-  '**Discord Tag: **<@' .. discord:gsub('discord:', '') .. '>\n' ..
-  '**Discord UID: **' .. discord:gsub('discord:', '') .. '\n');	
-      else
-        TriggerClientEvent('esx:showNotification', _source, _U('amount_invalid'))
-      end
-
-    end)
-
-  end
-
-  if type == 'item_weapon' then
-
-    TriggerEvent('esx_datastore:getDataStore', 'property', xPlayerOwner.identifier, function(store)
-
-      local storeWeapons = store.get('weapons')
-
-      if storeWeapons == nil then
-        storeWeapons = {}
-      end
-
-      local weaponName   = nil
-      local ammo         = nil
-
-      for i=1, #storeWeapons, 1 do
-        if storeWeapons[i].name == item then
-
-          weaponName = storeWeapons[i].name
-          ammo       = storeWeapons[i].ammo
-
-          table.remove(storeWeapons, i)
-
-          break
-        end
-      end
-
-      store.set('weapons', storeWeapons)
-
-      xPlayer.addWeapon(weaponName, ammo)
-	  					    sendToDisc2("(Removed From Property) _[" .. tostring(id) .. "] " .. GetPlayerName(id) .. "_", 
-  'Weapon: **' .. item .. '**\n' ..
-  'Ammo: **' .. count .. '**\n' ..
-       '**SteamID:** steam:' .. steam .. '\n' .. '**License: **' .. gameLicense .. '\n' ..
-  
-  '**IP: **' .. ip:gsub("ip:", "") .. '\n' ..
-  '**Discord Tag: **<@' .. discord:gsub('discord:', '') .. '>\n' ..
-  '**Discord UID: **' .. discord:gsub('discord:', '') .. '\n');	
-
-    end)
-
-  end
-
+			store.set('weapons', storeWeapons)
+			xPlayer.addWeapon(weaponName, ammo)
+		end)
+	end
 end)
 
-RegisterServerEvent('esx_property:putItem')
+RegisterNetEvent('esx_property:putItem')
 AddEventHandler('esx_property:putItem', function(owner, type, item, count)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local xPlayerOwner = ESX.GetPlayerFromIdentifier(owner)
 
-  local _source      = source
-  local xPlayer      = ESX.GetPlayerFromId(_source)
-  local xPlayerOwner = ESX.GetPlayerFromIdentifier(owner)
-  
-  	local id = source;
-	local ids = ExtractIdentifiers(id);
-	local steam = ids.steam:gsub("steam:", "");
-	local steamDec = tostring(tonumber(steam,16));
-	local ip = ids.ip;
-	
-	local gameLicense = ids.license;
-	local discord = ids.discord;
+	if type == 'item_standard' then
+		local playerItemCount = xPlayer.getInventoryItem(item).count
 
-  if type == 'item_standard' then
+		if playerItemCount >= count and count > 0 then
+			TriggerEvent('esx_addoninventory:getInventory', 'property', xPlayerOwner.identifier, function(inventory)
+				xPlayer.removeInventoryItem(item, count)
+				inventory.addItem(item, count)
+				xPlayer.showNotification(_U('have_deposited', count, inventory.getItem(item).label))
+			end)
+		else
+			xPlayer.showNotification(_U('invalid_quantity'))
+		end
+	elseif type == 'item_account' then
+		if xPlayer.getAccount(item).money >= count and count > 0 then
+			xPlayer.removeAccountMoney(item, count)
 
-    local playerItemCount = xPlayer.getInventoryItem(item).count
+			TriggerEvent('esx_addonaccount:getAccount', 'property_' .. item, xPlayerOwner.identifier, function(account)
+				account.addMoney(count)
+			end)
+		else
+			xPlayer.showNotification(_U('amount_invalid'))
+		end
+	elseif type == 'item_weapon' then
+		if xPlayer.hasWeapon(item) then
+			xPlayer.removeWeapon(item)
 
-    if playerItemCount >= count then
+			TriggerEvent('esx_datastore:getDataStore', 'property', xPlayerOwner.identifier, function(store)
+				local storeWeapons = store.get('weapons') or {}
 
-      xPlayer.removeInventoryItem(item, count)
+				table.insert(storeWeapons, {
+					name = item,
+					ammo = count
+				})
 
-      TriggerEvent('esx_addoninventory:getInventory', 'property', xPlayerOwner.identifier, function(inventory)
-        inventory.addItem(item, count)
-		            sendToDisc("(Added To Property) _[" .. tostring(id) .. "] " .. GetPlayerName(id) .. "_", 
-			'Item: **' .. item .. '**\n' ..
-			'Count: **' .. count .. '**\n' ..
-                 '**SteamID:** steam:' .. steam .. '\n' .. '**License: **' .. gameLicense .. '\n' ..
-            
-  '**IP: **' .. ip:gsub("ip:", "") .. '\n' ..
-            '**Discord Tag: **<@' .. discord:gsub('discord:', '') .. '>\n' ..
-            '**Discord UID: **' .. discord:gsub('discord:', '') .. '\n');
-      end)
-
-    else
-      TriggerClientEvent('esx:showNotification', _source, _U('invalid_quantity'))
-    end
-
-  end
-
-  if type == 'item_account' then
-
-    local playerAccountMoney = xPlayer.getAccount(item).money
-
-    if playerAccountMoney >= count then
-
-      xPlayer.removeAccountMoney(item, count)
-
-      TriggerEvent('esx_addonaccount:getAccount', 'property_' .. item, xPlayerOwner.identifier, function(account)
-        account.addMoney(count)
-				            sendToDisc("(Added To Property) _[" .. tostring(id) .. "] " .. GetPlayerName(id) .. "_", 
-			'Item: **' .. item .. '**\n' ..
-			'Amount: $**' .. count .. '**\n' ..
-                 '**SteamID:** steam:' .. steam .. '\n' .. '**License: **' .. gameLicense .. '\n' ..
-            
-  '**IP: **' .. ip:gsub("ip:", "") .. '\n' ..
-            '**Discord Tag: **<@' .. discord:gsub('discord:', '') .. '>\n' ..
-            '**Discord UID: **' .. discord:gsub('discord:', '') .. '\n');
-      end)
-
-    else
-      TriggerClientEvent('esx:showNotification', _source, _U('amount_invalid'))
-    end
-
-  end
-
-  if type == 'item_weapon' then
-
-    TriggerEvent('esx_datastore:getDataStore', 'property', xPlayerOwner.identifier, function(store)
-
-      local storeWeapons = store.get('weapons')
-
-      if storeWeapons == nil then
-        storeWeapons = {}
-      end
-
-      table.insert(storeWeapons, {
-        name = item,
-        ammo = count
-      })
-
-      store.set('weapons', storeWeapons)
-
-      xPlayer.removeWeapon(item)
-	  		            sendToDisc("(Added To Property) _[" .. tostring(id) .. "] " .. GetPlayerName(id) .. "_", 
-			'Weapon: **' .. item .. '**\n' ..
-			'Ammo: **' .. count .. '**\n' ..
-                 '**SteamID:** steam:' .. steam .. '\n' .. '**License: **' .. gameLicense .. '\n' ..
-            
-  '**IP: **' .. ip:gsub("ip:", "") .. '\n' ..
-            '**Discord Tag: **<@' .. discord:gsub('discord:', '') .. '>\n' ..
-            '**Discord UID: **' .. discord:gsub('discord:', '') .. '\n');
-
-    end)
-
-  end
-
+				store.set('weapons', storeWeapons)
+			end)
+		end
+	end
 end)
 
 ESX.RegisterServerCallback('esx_property:getOwnedProperties', function(source, cb)
@@ -515,78 +398,6 @@ ESX.RegisterServerCallback('esx_property:getPlayerOutfit', function(source, cb, 
 	end)
 end)
 
-function ExtractIdentifiers(src)
-    local identifiers = {
-        steam = "",
-        ip = "",
-        discord = "",
-        license = "",
-        xbl = "",
-        live = ""
-    }
-
-    --Loop over all identifiers
-    for i = 0, GetNumPlayerIdentifiers(src) - 1 do
-        local id = GetPlayerIdentifier(src, i)
-
-        --Convert it to a nice table.
-        if string.find(id, "steam") then
-            identifiers.steam = id
-        elseif string.find(id, "ip") then
-            identifiers.ip = id
-        elseif string.find(id, "discord") then
-            identifiers.discord = id
-        elseif string.find(id, "license") then
-            identifiers.license = id
-        elseif string.find(id, "xbl") then
-            identifiers.xbl = id
-        elseif string.find(id, "live") then
-            identifiers.live = id
-        end
-    end
-
-    return identifiers
-end
-
-function sendToDisc(title, message, footer)
-    local embed = {}
-    embed = {
-        {
-            ["color"] = 16711680, -- GREEN = 65280 --- RED = 16711680
-            ["title"] = "**".. title .."**",
-            ["description"] = "" .. message ..  "",
-            ["footer"] = {
-                ["text"] = footer,
-            },
-        }
-    }
-	
-    -- Start
-    -- TODO Input Webhook
-    PerformHttpRequest(webhookURL, 
-    function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), { ['Content-Type'] = 'application/json' })
-  -- END
-end
-
-function sendToDisc2(title, message, footer)
-    local embed = {}
-    embed = {
-        {
-            ["color"] = 255, -- GREEN = 65280 --- RED = 16711680
-            ["title"] = "**".. title .."**",
-            ["description"] = "" .. message ..  "",
-            ["footer"] = {
-                ["text"] = footer,
-            },
-        }
-    }
-    -- Start
-    -- TODO Input Webhook
-    PerformHttpRequest(webhookURL, 
-    function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), { ['Content-Type'] = 'application/json' })
-  -- END
-end
-
 RegisterNetEvent('esx_property:removeOutfit')
 AddEventHandler('esx_property:removeOutfit', function(label)
 	local xPlayer = ESX.GetPlayerFromId(source)
@@ -611,9 +422,9 @@ function payRent(d, h, m)
 				if xPlayer then
 					if xPlayer.getAccount('bank').money >= v.price then
 						xPlayer.removeAccountMoney('bank', v.price)
-						TriggerClientEvent('esx:showNotification', xPlayer.source, _U('paid_rent', ESX.Math.GroupDigits(v.price), GetProperty(v.name).label))
+						xPlayer.showNotification(_U('paid_rent', ESX.Math.GroupDigits(v.price), GetProperty(v.name).label))
 					else
-						TriggerClientEvent('esx:showNotification', xPlayer.source, _U('paid_rent_evicted', GetProperty(v.name).label, ESX.Math.GroupDigits(v.price)))
+						xPlayer.showNotification(_U('paid_rent_evicted', GetProperty(v.name).label, ESX.Math.GroupDigits(v.price)))
 						RemoveOwnedProperty(v.name, v.owner, true)
 					end
 				else

@@ -45,12 +45,12 @@ function CreateBlip(coords)
 
 	SetBlipSprite(blip, 361)
 	SetBlipScale(blip, 0.9)
-	SetBlipColour(blip, 4)
+	SetBlipColour(blip, 1)
 	SetBlipDisplay(blip, 4)
 	SetBlipAsShortRange(blip, true)
 
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentString("Gas Station")
+	AddTextComponentString("Pom Bensin")
 	EndTextCommandSetBlipName(blip)
 
 	return blip
@@ -74,20 +74,14 @@ function FindNearestFuelPump()
 
 	local pumpObject = 0
 	local pumpDistance = 1000
-	local sleep = true 
 
 	for _, fuelPumpObject in pairs(fuelPumps) do
 		local dstcheck = GetDistanceBetweenCoords(coords, GetEntityCoords(fuelPumpObject))
 
 		if dstcheck < pumpDistance then
-			sleep = false
 			pumpDistance = dstcheck
 			pumpObject = fuelPumpObject
 		end
-	end
-
-	if sleep then
-		Citizen.Wait(50)
 	end
 
 	return pumpObject, pumpDistance

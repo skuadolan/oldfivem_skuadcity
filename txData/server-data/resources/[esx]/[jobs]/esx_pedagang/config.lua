@@ -24,7 +24,7 @@ Config.Fridge = {
 
 Config.Zones = {
 	Actions = {
-		Pos   = {x = -634.44,  y = 226.12,  z = 80.88},
+		Pos   = {x = -634.56,  y = 226.4,  z = 81.88},
 		Size  = {x = 1.5, y = 1.5, z = 0.4},
 		Color = {r = 102, g = 102, b = 204},
 		Type  = 23

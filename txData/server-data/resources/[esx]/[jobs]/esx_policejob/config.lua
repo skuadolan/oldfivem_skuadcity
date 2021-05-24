@@ -2,7 +2,7 @@ Config                            = {}
 --borgol
 Config.ArrestDistance				= 3.0
 
-Config.DrawDistance               = 10.0 -- How close do you need to be for the markers to be drawn (in GTA units).
+Config.DrawDistance               = 2.0 -- How close do you need to be for the markers to be drawn (in GTA units).
 Config.MarkerType                 = {Cloakrooms = 20, Armories = 21, BossActions = 22, Vehicles = 36, Helicopters = 34}
 Config.MarkerSize                 = {x = 1.5, y = 1.5, z = 0.5}
 Config.MarkerColor                = {r = 50, g = 50, b = 204}
@@ -10,7 +10,7 @@ Config.MarkerColor                = {r = 50, g = 50, b = 204}
 Config.EnablePlayerManagement     = true -- Enable if you want society managing.
 Config.EnableArmoryManagement     = true
 Config.EnableESXIdentity          = true -- Enable if you're using esx_identity.
-Config.EnableLicenses             = false -- Enable if you're using esx_license.
+Config.EnableLicenses             = true -- Enable if you're using esx_license.
 
 Config.EnableHandcuffTimer        = false -- Enable handcuff timer? will unrestrain player after the time ends.
 Config.HandcuffTimer              = 10 * 60000 -- 10 minutes.
@@ -31,14 +31,6 @@ Config.PoliceStations = {
 			Coords  = vector3(425.1, -979.5, 30.7),
 			Sprite  = 60,
 			Display = 4,
-			Scale   = 0.95,
-			Colour  = 29
-		},
-
-		Blip = {
-			Coords  = vector3(425.1, -979.5, 30.7),
-			Sprite  = 60,
-			Display = 4,
 			Scale   = 1.2,
 			Colour  = 29
 		},
@@ -53,7 +45,7 @@ Config.PoliceStations = {
 
 		Vehicles = {
 			{
-				Spawner = vector3(454.6, -1017.4, 28.4),
+				Spawner = vector3(458.44, -1017.12, 28.22),
 				InsideShop = vector3(228.5, -993.5, -99.5),
 				SpawnPoints = {
 					{coords = vector3(438.4, -1018.3, 27.7), heading = 90.0, radius = 6.0},
@@ -93,77 +85,69 @@ Config.PoliceStations = {
 
 Config.AuthorizedWeapons = {
 	tamtama = {
-        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000}
 	},
 
 	bripda = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000}
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
 	briptu = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000}
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_STUNGUN', price = 20000}
 	},
 
 	brigpol = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000}
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_STUNGUN', price = 20000}
 	},
 
 	bripka = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000}
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_STUNGUN', price = 20000}
 	},
 
 	aipda = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000}
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
 	aiptu = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000}
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
 	ipda = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000}
 	},
 
 	iptu = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000}
 	},
 
 	akp = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000}
 	},
 
 	kompol = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000}
 	},
@@ -171,8 +155,7 @@ Config.AuthorizedWeapons = {
 	akbp = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000}
 	},
@@ -180,11 +163,9 @@ Config.AuthorizedWeapons = {
 	brigjen = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
-		{weapon = 'WEAPON_HEAVYPISTOL', price = 75000},
 		{weapon = 'WEAPON_PUMPSHOTGUN', price = 75000},
 		{weapon = 'WEAPON_HEAVYSNIPER', price = 100000}
 	},
@@ -192,11 +173,9 @@ Config.AuthorizedWeapons = {
 	irjen = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
-		{weapon = 'WEAPON_HEAVYPISTOL', price = 75000},
 		{weapon = 'WEAPON_PUMPSHOTGUN', price = 75000},
 		{weapon = 'WEAPON_HEAVYSNIPER', price = 100000}
 	},
@@ -204,25 +183,21 @@ Config.AuthorizedWeapons = {
 	komjen = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
-		{weapon = 'WEAPON_HEAVYPISTOL', price = 75000},
 		{weapon = 'WEAPON_PUMPSHOTGUN', price = 75000},
 		{weapon = 'WEAPON_REVOLVER', price = 100000},
 		{weapon = 'WEAPON_HEAVYSNIPER', price = 100000}
 
 	},
 
-	jendral = {
+	boss = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_STUNGUN', price = 20000},
-		{weapon = 'WEAPON_PISTOL', price = 20000},
-		{weapon = 'WEAPON_APPISTOL', price = 20000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
-		{weapon = 'WEAPON_HEAVYPISTOL', price = 75000},
 		{weapon = 'WEAPON_PUMPSHOTGUN', price = 75000},
 		{weapon = 'WEAPON_REVOLVER', price = 100000},
 		{weapon = 'WEAPON_HEAVYSNIPER', price = 100000}
@@ -323,7 +298,27 @@ Config.AuthorizedVehicles = {
 			{model = 'police3', price = 10000}
 		},
 
+		akbp = {
+			{model = 'riot', price = 10000},
+			{model = 'pranger', price = 10000},
+			{model = 'policeb', price = 10000},
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'policeb', price = 10000},
+			{model = 'police3', price = 10000}
+		},
+
 		brigjen = {
+			{model = 'riot', price = 10000},
+			{model = 'pranger', price = 10000},
+			{model = 'policeb', price = 10000},
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'policeb', price = 10000},
+			{model = 'police3', price = 10000}
+		},
+
+		irjen = {
 			{model = 'riot', price = 10000},
 			{model = 'pranger', price = 10000},
 			{model = 'policeb', price = 10000},
@@ -343,7 +338,7 @@ Config.AuthorizedVehicles = {
 			{model = 'police3', price = 10000}
 		},
 
-		jendral = {
+		boss = {
 			{model = 'riot', price = 10000},
 			{model = 'pranger', price = 10000},
 			{model = 'policeb', price = 10000},
@@ -372,12 +367,16 @@ Config.AuthorizedVehicles = {
 		brigjen = {
             {model = 'polmav', props = {modLivery = 0}, price = 30000}
 		},
+
+		irjen = {
+            {model = 'polmav', props = {modLivery = 0}, price = 30000}
+        },
 		
 		komjen = {
             {model = 'polmav', props = {modLivery = 0}, price = 30000}
         },
 
-		jendral = {
+		boss = {
 			{model = 'polmav', props = {modLivery = 0}, price = 30000}
 		}
 	}
@@ -393,9 +392,9 @@ Config.CustomPeds = {
 
 	officer = {},
 
-	sergeant = {},
+	irjen = {},
 
-	lieutenant = {},
+	komjen = {},
 
 	boss = {
 		{label = 'SWAT Ped', maleModel = 's_m_y_swat_01', femaleModel = 's_m_y_swat_01'}
@@ -407,7 +406,7 @@ Config.Uniforms = {
 	tamtama = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 0,
+			torso_1 = 150,   torso_2 = 11,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -432,7 +431,7 @@ Config.Uniforms = {
 	bripda = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 1,
+			torso_1 = 150,   torso_2 = 10,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -457,7 +456,7 @@ Config.Uniforms = {
 	briptu = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 2,
+			torso_1 = 150,   torso_2 = 9,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -482,7 +481,7 @@ Config.Uniforms = {
 	brigpol = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 3,
+			torso_1 = 150,   torso_2 = 8,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -507,7 +506,7 @@ Config.Uniforms = {
 	bripka = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 4,
+			torso_1 = 150,   torso_2 = 7,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -532,7 +531,7 @@ Config.Uniforms = {
 	aipda = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 5,
+			torso_1 = 150,   torso_2 = 6,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -557,7 +556,7 @@ Config.Uniforms = {
 	aiptu = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 6,
+			torso_1 = 150,   torso_2 = 5,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -582,7 +581,7 @@ Config.Uniforms = {
 	ipda = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 7,
+			torso_1 = 150,   torso_2 = 4,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -607,7 +606,7 @@ Config.Uniforms = {
 	iptu = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 8,
+			torso_1 = 150,   torso_2 = 3,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -632,7 +631,7 @@ Config.Uniforms = {
 	akp = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 9,
+			torso_1 = 150,   torso_2 = 2,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -657,7 +656,7 @@ Config.Uniforms = {
 	kompol = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 10,
+			torso_1 = 150,   torso_2 = 1,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -682,7 +681,7 @@ Config.Uniforms = {
 	akbp = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
-			torso_1 = 150,   torso_2 = 11,
+			torso_1 = 150,   torso_2 = 0,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 0,
 			pants_1 = 28,   pants_2 = 0,
@@ -779,7 +778,7 @@ Config.Uniforms = {
 		}
 	},
 
-	jendral = {
+	boss = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
 			torso_1 = 149,   torso_2 = 0,
@@ -814,6 +813,15 @@ Config.Uniforms = {
 	},
 
 	gilet_wear = {
+		male = {
+			helmet_1 = 118,  helmet_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1
+		}
+	},
+
+	baju_lapangan = {
 		male = {
 			helmet_1 = 118,  helmet_2 = 0
 		},

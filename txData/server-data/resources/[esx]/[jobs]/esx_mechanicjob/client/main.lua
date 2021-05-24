@@ -83,7 +83,7 @@ function OpenMechanicActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_actions', {
 		title    = _U('mechanic'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'vehicle_list' then
@@ -101,7 +101,7 @@ function OpenMechanicActionsMenu()
 
 					ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_spawner', {
 						title    = _U('service_vehicle'),
-						align    = 'top-left',
+						align    = 'top-right',
 						elements = elements
 					}, function(data, menu)
 						menu.close()
@@ -134,7 +134,7 @@ function OpenMechanicActionsMenu()
 
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'spawn_vehicle', {
 					title    = _U('service_vehicle'),
-					align    = 'top-left',
+					align    = 'top-right',
 					elements = elements
 				}, function(data, menu)
 					if Config.MaxInService == -1 then
@@ -183,7 +183,7 @@ function OpenMechanicActionsMenu()
 		elseif data.current.value == 'boss_actions' then
 			TriggerEvent('esx_society:openBossMenu', 'mechanic', function(data, menu)
 				menu.close()
-			end)
+			end, { wash = false, grades = false })
 		end
 	end, function(data, menu)
 		menu.close()
@@ -206,7 +206,7 @@ function OpenMechanicHarvestMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_harvest', {
 			title    = _U('harvest'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -241,7 +241,7 @@ function OpenMechanicCraftMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_craft', {
 			title    = _U('craft'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -270,11 +270,11 @@ function OpenMobileMechanicActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions', {
 		title    = _U('mechanic'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = {
 			{label = _U('billing'),       value = 'billing'},
 			{label = _U('hijack'),        value = 'hijack_vehicle'},
-			{label = _U('repair'),        value = 'fix_vehicle'},
+			--{label = _U('repair'),        value = 'fix_vehicle'},
 			{label = _U('clean'),         value = 'clean_vehicle'},
 			{label = _U('imp_veh'),       value = 'del_vehicle'},
 			{label = _U('flat_bed'),      value = 'dep_vehicle'},
@@ -479,7 +479,7 @@ function OpenMobileMechanicActionsMenu()
 
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions_spawn', {
 				title    = _U('objects'),
-				align    = 'top-left',
+				align    = 'top-right',
 				elements = {
 					{label = _U('roadcone'), value = 'prop_roadcone02a'},
 					{label = _U('toolbox'),  value = 'prop_toolchest_01'}
@@ -521,7 +521,7 @@ function OpenGetStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('mechanic_stock'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -568,7 +568,7 @@ function OpenPutStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('inventory'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -834,7 +834,7 @@ Citizen.CreateThread(function()
 
 			for k,v in pairs(Config.Zones) do
 				if v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance then
-					DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, nil, nil, false)
+					DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z-1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, nil, nil, false)
 					letSleep = false
 				end
 			end

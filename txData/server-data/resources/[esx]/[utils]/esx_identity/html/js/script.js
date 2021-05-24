@@ -5,7 +5,7 @@ $(function() {
 		}
 	});
 	
-	/*$("#register").submit(function(event) {
+	$("#register").submit(function(event) {
 		event.preventDefault(); // Prevent form from submitting
 		
 		// Verify date
@@ -30,5 +30,5 @@ $(function() {
 				height: $("#height").val()
 			}));
 		}
-	});*/
+	});
 });

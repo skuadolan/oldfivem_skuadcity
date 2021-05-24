@@ -10,12 +10,6 @@ Citizen.CreateThread(function()
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
-
-	while ESX.GetPlayerData().job == nil do
-		Citizen.Wait(10)
-	end
-
-	PlayerData = ESX.GetPlayerData()
 end)
 
 RegisterNetEvent('esx:playerLoaded')
@@ -35,23 +29,41 @@ end)
 RegisterNetEvent('esx_lscustom:installMod')
 AddEventHandler('esx_lscustom:installMod', function()
 	local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+	TriggerEvent("mythic_progbar:client:progress", {
+		name = "",
+		duration = 3000,
+		label = "MEMASANG PART",
+		useWhileDead = false,
+		canCancel = true,
+		controlDisables = {
+			disableMovement = true,
+			disableCarMovement = true,
+			disableMouse = false,
+			disableCombat = true,
+			disablewasd = true,
+			disablex = true,
+		},
+		animation = {
+			animDict = "PROP_HUMAN_BUM_BIN",
+			anim = "",
+		},
+		prop = {
+			model = "",
+		}
+	}, function(status)
+		if not status then
+		end
+	end)
+	Citizen.Wait(3000)
 	myCar = ESX.Game.GetVehicleProperties(vehicle)
 	TriggerServerEvent('esx_lscustom:refreshOwnedVehicle', myCar)
+	PlaySoundFrontend(-1, "NAV", "HUD_AMMO_SHOP_SOUNDSET", 1)
 end)
 
 RegisterNetEvent('esx_lscustom:cancelInstallMod')
 AddEventHandler('esx_lscustom:cancelInstallMod', function()
 	local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 	ESX.Game.SetVehicleProperties(vehicle, myCar)
-	if not (myCar.modTurbo) then
-	ToggleVehicleMod(vehicle,  18, false)
-	end
-	if not (myCar.modXenon) then
-	ToggleVehicleMod(vehicle,  22, false)
-	end
-	if not (myCar.windowTint) then
-	SetVehicleWindowTint(vehicle, 0)
-	end
 end)
 
 function OpenLSMenu(elems, menuName, menuTitle, parent)
@@ -154,6 +166,9 @@ function UpdateMods(data)
 		end
 
 		props[data.modType] = data.modNum
+		if data.modType == 'modFrontWheels' then
+			props['modBackWheels'] = data.modNum
+		 end
 		ESX.Game.SetVehicleProperties(vehicle, props)
 	end
 end
@@ -369,8 +384,8 @@ function GetAction(data)
 	OpenLSMenu(elements, menuName, menuTitle, parent)
 end
 
--- Blips
---[[Citizen.CreateThread(function()
+--[[ Blips
+Citizen.CreateThread(function()
 	for k,v in pairs(Config.Zones) do
 		local blip = AddBlipForCoord(v.Pos.x, v.Pos.y, v.Pos.z)
 
@@ -393,10 +408,12 @@ Citizen.CreateThread(function()
 		if IsPedInAnyVehicle(playerPed, false) then
 			local coords = GetEntityCoords(PlayerPedId())
 			local currentZone, zone, lastZone
+			local sleep = true
 
 			if (PlayerData.job and PlayerData.job.name == 'mechanic') or not Config.IsMechanicJobOnly then
 				for k,v in pairs(Config.Zones) do
 					if GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < v.Size.x and not lsMenuIsShowed then
+						sleep = false
 						isInLSMarker  = true
 						ESX.ShowHelpNotification(v.Hint)
 						break
@@ -408,18 +425,26 @@ Citizen.CreateThread(function()
 
 			if IsControlJustReleased(0, 38) and not lsMenuIsShowed and isInLSMarker then
 				if (PlayerData.job and PlayerData.job.name == 'mechanic') or not Config.IsMechanicJobOnly then
-					lsMenuIsShowed = true
+					if (PlayerData.job.grade_name ~= 'recrue' )  then
 
-					local vehicle = GetVehiclePedIsIn(playerPed, false)
-					FreezeEntityPosition(vehicle, true)
+						lsMenuIsShowed = true
 
-					myCar = ESX.Game.GetVehicleProperties(vehicle)
+						local vehicle = GetVehiclePedIsIn(playerPed, false)
+						FreezeEntityPosition(vehicle, true)
 
-					ESX.UI.Menu.CloseAll()
-					GetAction({value = 'main'})
+						myCar = ESX.Game.GetVehicleProperties(vehicle)
+
+						ESX.UI.Menu.CloseAll()
+						GetAction({value = 'main'})
+					else
+						exports['mythic_notify']:SendAlert('error', 'Anda Masih Magang')
+					end
 				end
 			end
 
+			if sleep then
+				Citizen.Wait(50)
+			end
 			if isInLSMarker and not hasAlreadyEnteredMarker then
 				hasAlreadyEnteredMarker = true
 			end

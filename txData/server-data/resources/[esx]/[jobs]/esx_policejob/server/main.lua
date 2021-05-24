@@ -9,7 +9,7 @@ if Config.EnableESXService then
 end
 
 TriggerEvent('esx_phone:registerNumber', 'police', _U('alert_police'), true, true)
-TriggerEvent('esx_society:registerSociety', 'police', 'police', 'society_police', 'society_police', 'society_police', {type = 'public'})
+TriggerEvent('esx_society:registerSociety', 'police', 'Police', 'society_police', 'society_police', 'society_police', {type = 'public'})
 
 RegisterNetEvent('esx_policejob:confiscatePlayerItem')
 AddEventHandler('esx_policejob:confiscatePlayerItem', function(target, itemType, itemName, amount)
@@ -43,19 +43,32 @@ AddEventHandler('esx_policejob:confiscatePlayerItem', function(target, itemType,
 		end
 
 	elseif itemType == 'item_account' then
-		targetXPlayer.removeAccountMoney(itemName, amount)
-		sourceXPlayer.addAccountMoney   (itemName, amount)
+		local targetAccount = targetXPlayer.getAccount(itemName)
 
-		sourceXPlayer.showNotification(_U('you_confiscated_account', amount, itemName, targetXPlayer.name))
-		targetXPlayer.showNotification(_U('got_confiscated_account', amount, itemName, sourceXPlayer.name))
+		-- does the target player have enough money?
+		if targetAccount.money >= amount then
+			targetXPlayer.removeAccountMoney(itemName, amount)
+			sourceXPlayer.addAccountMoney   (itemName, amount)
+
+			sourceXPlayer.showNotification(_U('you_confiscated_account', amount, itemName, targetXPlayer.name))
+			targetXPlayer.showNotification(_U('got_confiscated_account', amount, itemName, sourceXPlayer.name))
+		else
+			sourceXPlayer.showNotification(_U('quantity_invalid'))
+		end
 
 	elseif itemType == 'item_weapon' then
 		if amount == nil then amount = 0 end
-		targetXPlayer.removeWeapon(itemName, amount)
-		sourceXPlayer.addWeapon   (itemName, amount)
 
-		sourceXPlayer.showNotification(_U('you_confiscated_weapon', ESX.GetWeaponLabel(itemName), targetXPlayer.name, amount))
-		targetXPlayer.showNotification(_U('got_confiscated_weapon', ESX.GetWeaponLabel(itemName), amount, sourceXPlayer.name))
+		-- does the target player have weapon?
+		if targetXPlayer.hasWeapon(itemName) then
+			targetXPlayer.removeWeapon(itemName, amount)
+			sourceXPlayer.addWeapon   (itemName, amount)
+
+			sourceXPlayer.showNotification(_U('you_confiscated_weapon', ESX.GetWeaponLabel(itemName), targetXPlayer.name, amount))
+			targetXPlayer.showNotification(_U('got_confiscated_weapon', ESX.GetWeaponLabel(itemName), amount, sourceXPlayer.name))
+		else
+			sourceXPlayer.showNotification(_U('quantity_invalid'))
+		end
 	end
 end)
 
@@ -118,7 +131,7 @@ AddEventHandler('esx_policejob:getStockItem', function(itemName, count)
 			if xPlayer.canCarryItem(itemName, count) then
 				inventory.removeItem(itemName, count)
 				xPlayer.addInventoryItem(itemName, count)
-				xPlayer.showNotification(_U('have_withdrawn', count, inventoryItem.label))
+				xPlayer.showNotification(_U('have_withdrawn', count, inventoryItem.name))
 			else
 				xPlayer.showNotification(_U('quantity_invalid'))
 			end
@@ -140,7 +153,7 @@ AddEventHandler('esx_policejob:putStockItems', function(itemName, count)
 		if sourceItem.count >= count and count > 0 then
 			xPlayer.removeInventoryItem(itemName, count)
 			inventory.addItem(itemName, count)
-			xPlayer.showNotification(_U('have_deposited', count, inventoryItem.label))
+			xPlayer.showNotification(_U('have_deposited', count, inventoryItem.name))
 		else
 			xPlayer.showNotification(_U('quantity_invalid'))
 		end

@@ -38,7 +38,7 @@ function StartTheoryTest()
 		SetNuiFocus(true, true)
 	end)
 
-	TriggerServerEvent('esx_dmvschool:pay', Config.Prices['dmv'])
+
 end
 
 function StopTheoryTest(success)
@@ -75,8 +75,6 @@ function StartDriveTest(type)
 		SetVehicleFuelLevel(vehicle, 100.0)
 		DecorSetFloat(vehicle, "_FUEL_LEVEL", GetVehicleFuelLevel(vehicle))
 	end)
-
-	TriggerServerEvent('esx_dmvschool:pay', Config.Prices[type])
 end
 
 function StopDriveTest(success)
@@ -142,13 +140,26 @@ function OpenDMVSchoolMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'dmvschool_actions', {
 		title    = _U('driving_school'),
 		elements = elements,
-		align    = 'top-left'
+		align    = 'bottom-right'
 	}, function(data, menu)
 		if data.current.value == 'theory_test' then
 			menu.close()
-			StartTheoryTest()
+			ESX.TriggerServerCallback('esx_dmvschool:canYouPay', function(haveMoney)
+				if haveMoney then
+					StartTheoryTest()
+				else
+					ESX.ShowNotification(_U('not_enough_money'))
+				end
+			end, 'dmv')
 		elseif data.current.value == 'drive_test' then
-			StartDriveTest(data.current.type)
+			menu.close()
+			ESX.TriggerServerCallback('esx_dmvschool:canYouPay', function(haveMoney)
+				if haveMoney then
+					StartDriveTest(data.current.type)
+				else
+					ESX.ShowNotification(_U('not_enough_money'))
+				end
+			end, data.current.type)
 		end
 	end, function(data, menu)
 		menu.close()
@@ -201,7 +212,7 @@ Citizen.CreateThread(function()
 
 	SetBlipSprite (blip, 408)
 	SetBlipDisplay(blip, 4)
-	SetBlipScale  (blip, 0.95)
+	SetBlipScale  (blip, 1.2)
 	SetBlipAsShortRange(blip, true)
 
 	BeginTextCommandSetBlipName("STRING")
@@ -300,12 +311,10 @@ Citizen.CreateThread(function()
 
 		Citizen.Wait(0)
 
-		
 		if CurrentTest == 'drive' then
 			local playerPed      = PlayerPedId()
 			local coords         = GetEntityCoords(playerPed)
 			local nextCheckPoint = CurrentCheckPoint + 1
-			local sleep = true
 
 			if Config.CheckPoints[nextCheckPoint] == nil then
 				if DoesBlipExist(CurrentBlip) then
@@ -337,24 +346,18 @@ Citizen.CreateThread(function()
 				local distance = GetDistanceBetweenCoords(coords, Config.CheckPoints[nextCheckPoint].Pos.x, Config.CheckPoints[nextCheckPoint].Pos.y, Config.CheckPoints[nextCheckPoint].Pos.z, true)
 
 				if distance <= 100.0 then
-					sleep = false
 					DrawMarker(1, Config.CheckPoints[nextCheckPoint].Pos.x, Config.CheckPoints[nextCheckPoint].Pos.y, Config.CheckPoints[nextCheckPoint].Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.5, 1.5, 1.5, 102, 204, 102, 100, false, true, 2, false, false, false, false)
 				end
 
 				if distance <= 3.0 then
-					sleep = false
 					Config.CheckPoints[nextCheckPoint].Action(playerPed, CurrentVehicle, SetCurrentZoneType)
 					CurrentCheckPoint = CurrentCheckPoint + 1
 				end
-			end
-			if sleep then
-				Citizen.Wait(50)
 			end
 		else
 			-- not currently taking driver test
 			Citizen.Wait(500)
 		end
-	
 	end
 end)
 

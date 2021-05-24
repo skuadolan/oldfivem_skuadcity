@@ -2,9 +2,9 @@ Config = {}
 Config.Locale = 'en'
 
 Config.MenuAlign = 'bottom-right'
-Config.DrawDistance = 20
+Config.DrawDistance = 8.0
 
-Config.UseCommand = true -- Will allow players to do /getproperties instead of having to log out & back in to see Private Garages.
+Config.UseCommand = false -- Will allow players to do /getproperties instead of having to log out & back in to see Private Garages.
 Config.ParkVehicles = false -- true = Automatically Park all Vehicles in Garage on Server/Script Restart | false = Opposite of true but players will have to go to Pound to get their Vehicle Back.
 Config.KickPossibleCheaters = true -- true = Kick Player that tries to Cheat Garage by changing Vehicle Hash/Plate.
 Config.UseCustomKickMessage = true -- true = Sets Custom Kick Message for those that try to Cheat. Note: "Config.KickPossibleCheaters" must be true.
@@ -18,11 +18,11 @@ Config.DeleteMarker = {Type = 27, r = 255, g = 0, b = 0, x = 5.0, y = 5.0, z = 1
 Config.PoundMarker = {Type = 27, r = 0, g = 0, b = 100, x = 1.5, y = 1.5, z = 1.0} -- Blue Color / Standard Size Circle.
 Config.JPoundMarker = {Type = 27, r = 255, g = 0, b = 0, x = 1.5, y = 1.5, z = 1.0} -- Red Color / Standard Size Circle.
 
-Config.GarageBlip = {Sprite = 290, Color = 38, Display = 2, Scale = 0.95} -- Public Garage Blip.
-Config.PGarageBlip = {Sprite = 290, Color = 53, Display = 2, Scale = 0.95} -- Private Garage Blip.
-Config.PoundBlip = {Sprite = 67, Color = 64, Display = 2, Scale = 0.95} -- Pound Blip.
-Config.JGarageBlip = {Sprite = 290, Color = 49, Display = 2, Scale = 0.95} -- Job Garage Blip.
-Config.JPoundBlip = {Sprite = 67, Color = 49, Display = 2, Scale = 0.95} -- Job Pound Blip.
+Config.GarageBlip = {Sprite = 290, Color = 38, Display = 2, Scale = 1.0} -- Public Garage Blip.
+Config.PGarageBlip = {Sprite = 290, Color = 53, Display = 2, Scale = 1.0} -- Private Garage Blip.
+Config.PoundBlip = {Sprite = 67, Color = 64, Display = 2, Scale = 1.0} -- Pound Blip.
+Config.JGarageBlip = {Sprite = 290, Color = 49, Display = 2, Scale = 1.0} -- Job Garage Blip.
+Config.JPoundBlip = {Sprite = 67, Color = 49, Display = 2, Scale = 1.0} -- Job Pound Blip.
 
 Config.UsePoundTimer = false -- true = Uses Pound Timer
 Config.PoundWait = 5 -- How many Minutes someone must wait before Opening Pound Menu Again.
@@ -38,19 +38,19 @@ Config.UsingAdvancedVehicleShop = false -- Set to true if using esx_advancedvehi
 Config.UseAmbulanceGarages = false -- true = Allows use of Ambulance Garages.
 Config.UseAmbulancePounds = true -- true = Allows use of Ambulance Pounds.
 Config.UseAmbulanceBlips = true -- true = Use Ambulance Blips.
-Config.AmbulancePoundPrice = 80 -- How much it Costs to get Vehicle from Ambulance Pound.
+Config.AmbulancePoundPrice = 10000 -- How much it Costs to get Vehicle from Ambulance Pound.
 
 Config.UsePoliceGarages = false -- true = Allows use of Police Garages.
 Config.UsePolicePounds = true -- true = Allows use of Police Pounds.
 Config.UsePoliceBlips = true -- true = Use Police Blips.
-Config.PolicePoundPrice = 80 -- How much it Costs to get Vehicle from Police Pound.
+Config.PolicePoundPrice = 10000 -- How much it Costs to get Vehicle from Police Pound.
 
-Config.UseAircraftGarages = true -- true = Allows use of Aircraft Garages.
-Config.UseAircraftBlips = true -- true = Use Aircraft Blips.
+Config.UseAircraftGarages = false -- true = Allows use of Aircraft Garages.
+Config.UseAircraftBlips = false -- true = Use Aircraft Blips.
 Config.AircraftPoundPrice = 2500 -- How much it Costs to get Vehicle from Aircraft Pound.
 
-Config.UseBoatGarages = true -- true = Allows use of Boat Garages.
-Config.UseBoatBlips = true -- true = Use Boat Blips.
+Config.UseBoatGarages = false -- true = Allows use of Boat Garages.
+Config.UseBoatBlips = false -- true = Use Boat Blips.
 Config.BoatPoundPrice = 500 -- How much it Costs to get Vehicle from Boat Pound.
 
 Config.UseCarGarages = true -- true = Allows use of Car Garages.
@@ -62,149 +62,39 @@ Config.UsePrivateCarGarages = true -- true = Allows use of Private Car Garages.
 -- Marker = Enter Location | Spawner = Spawn Location | Spawner2 = Job Aircraft Spawn Location | Deleter = Delete Location
 -- Deleter2 = Job Aircraft Delete Location | Heading = Spawn Heading | Heading2 = Job Aircraft Spawn Heading
 
--- Start of Ambulance
-Config.AmbulanceGarages = {
-	Los_Santos = {
-		Marker = vector3(302.95, -1453.5, 28.97),
-		Spawner = vector3(300.33, -1431.91, 29.8),
-		Spawner2 = vector3(313.36, -1465.17, 46.51),
-		Deleter = vector3(300.33, -1431.91, 28.8),
-		Deleter2 = vector3(313.36, -1465.17, 45.51),
-		Heading = 226.71,
-		Heading2 = 318.34
-	}
-}
-
-Config.AmbulancePounds = {
-	Los_Santos = {
-		Marker = vector3(374.42, -1620.68, 28.29),
-		Spawner = vector3(391.74, -1619.0, 28.29),
-		Heading = 318.34
-	}
-}
--- End of Ambulance
-
--- Start of Police
-Config.PoliceGarages = {
-	Los_Santos = {
-		Marker = vector3(425.41, -1003.43, 29.71),
-		Spawner = vector3(434.28, -1015.8, 28.83),
-		Spawner2 = vector3(449.21, -981.35, 43.69),
-		Deleter = vector3(462.95, -1014.56, 27.07),
-		Deleter2 = vector3(449.21, -981.35, 42.69),
-		Heading = 90.46,
-		Heading2 = 184.53
-	}
-}
-
-Config.PolicePounds = {
-	Los_Santos = {
-		Marker = vector3(374.42, -1620.68, 28.29),
-		Spawner = vector3(391.74, -1619.0, 28.29),
-		Heading = 318.34
-	}
-}
--- End of Police
-
--- Start of Aircrafts
-Config.AircraftGarages = {
-	Los_Santos_Airport = {
-		Marker = vector3(-1617.14, -3145.52, 12.99),
-		Spawner = vector3(-1657.99, -3134.38, 12.99),
-		Deleter = vector3(-1642.12, -3144.25, 12.99),
-		Heading = 330.11
-	},
-	Sandy_Shores_Airport = {
-		Marker = vector3(1723.84, 3288.29, 40.16),
-		Spawner = vector3(1710.85, 3259.06, 40.69),
-		Deleter = vector3(1714.45, 3246.75, 40.07),
-		Heading = 104.66
-	},
-	Grapeseed_Airport = {
-		Marker = vector3(2152.83, 4797.03, 40.19),
-		Spawner = vector3(2122.72, 4804.85, 40.78),
-		Deleter = vector3(2082.36, 4806.06, 40.07),
-		Heading = 115.04
-	}
-}
-
-Config.AircraftPounds = {
-	Los_Santos_Airport = {
-		Marker = vector3(-1243.0, -3391.92, 12.94),
-		Spawner = vector3(-1272.27, -3382.46, 12.94),
-		Heading = 330.25
-	}
-}
--- End of Aircrafts
-
--- Start of Boats
-Config.BoatGarages = {
-	Los_Santos_Dock = {
-		Marker = vector3(-735.87, -1325.08, 0.6),
-		Spawner = vector3(-718.87, -1320.18, -0.47),
-		Deleter = vector3(-731.15, -1334.71, -0.47),
-		Heading = 45.0
-	},
-	Sandy_Shores_Dock = {
-		Marker = vector3(1333.2, 4269.92, 30.5),
-		Spawner = vector3(1334.61, 4264.68, 29.86),
-		Deleter = vector3(1323.73, 4269.94, 29.86),
-		Heading = 87.0
-	},
-	Paleto_Bay_Dock = {
-		Marker = vector3(-283.74, 6629.51, 6.3),
-		Spawner = vector3(-290.46, 6622.72, -0.47),
-		Deleter = vector3(-304.66, 6607.36, -0.47),
-		Heading = 52.0
-	}
-}
-
-Config.BoatPounds = {
-	Los_Santos_Dock = {
-		Marker = vector3(-738.67, -1400.43, 4.0),
-		Spawner = vector3(-738.33, -1381.51, 0.12),
-		Heading = 137.85
-	}
-	--[[Sandy_Shores_Dock = {
-		Marker = vector3(1299.36, 4217.93, 32.91),
-		Spawner = vector3(1294.35, 4226.31, 29.86),
-		Heading = 345.0
-	},
-	Paleto_Bay_Dock = {
-		Marker = vector3(-270.2, 6642.43, 6.36),
-		Spawner = vector3(-290.38, 6638.54, -0.47),
-		Heading = 130.0
-	}]]--
-}
--- End of Boats
-
 -- Start of Cars
 Config.CarGarages = {
 	Garasi_Kota = {
 		---789.75 29.55
 		---472.1 -786.98 29.55 174.74
-		Marker = vector3(-468.24, -789.75, 29.55),
-		Spawner = vector3(-472.1, -786.98, 29.55),
-		Deleter = vector3(-453.35, -787.85, 29.55),
+		Marker = vector3(-468.24, -789.75, 30.55),
+		Spawner = vector3(-472.1, -786.98, 30.55),
+		Deleter = vector3(-453.35, -787.85, 30.55),
 		Heading = 174.74
 	},
 	Garasi_Rusun = {
-		Marker = vector3(274.67, -330.23, 43.92),
-		Spawner = vector3(274.67, -330.23, 43.92),
-		Deleter = vector3(290.64, -337.47, 43.96),
+		Marker = vector3(274.67, -330.23, 44.92),
+		Spawner = vector3(274.67, -330.23, 44.92),
+		Deleter = vector3(290.64, -337.47, 44.96),
 		Heading = 160.09
 	},
 	Garasi_SandyShores = {
-		Marker = vector3(1698.15, 3595.93, 34.54),
-		Spawner = vector3(1706.04, 3598.46, 34.43),
-		Deleter = vector3(1696.02, 3608.25, 34.36),
+		Marker = vector3(1698.15, 3595.93, 35.54),
+		Spawner = vector3(1706.04, 3598.46, 35.43),
+		Deleter = vector3(1696.02, 3608.25, 35.36),
 		Heading = 206.54
 	},
 	Paleto_Bay = {
-		Marker = vector3(105.36, 6613.59, 31.40),
-		Spawner = vector3(128.78, 6622.99, 30.78),
-		Deleter = vector3(126.36, 6608.41, 30.86),
+		Marker = vector3(105.36, 6613.59, 32.40),
+		Spawner = vector3(128.78, 6622.99, 31.78),
+		Deleter = vector3(126.36, 6608.41, 31.86),
 		Heading = 315.01
+	},
+	cardealer_import = {
+		Marker = vector3(-1249.58, -396.51, 37.29),
+		Spawner = vector3(-1246.24, -388.17, 37.29),
+		Deleter = vector3(-1226.75, -374.73, 37.29),
+		Heading = 24.03
 	}
 }
 
@@ -226,6 +116,21 @@ Config.CarPounds = {
 	}
 }
 -- End of Cars
+Config.AmbulancePounds = {
+	Los_Santos = {
+		Marker = vector3(374.42, -1620.68, 28.29),
+		Spawner = vector3(391.74, -1619.0, 28.29),
+		Heading = 318.34
+	}
+}
+-- End of Ambulance
+Config.PolicePounds = {
+	Los_Santos = {
+		Marker = vector3(374.42, -1620.68, 28.29),
+		Spawner = vector3(391.74, -1619.0, 28.29),
+		Heading = 318.34
+	}
+}
 
 -- Start of Private Cars
 Config.PrivateCarGarages = {

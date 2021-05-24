@@ -4,8 +4,8 @@ Config = {}
 Config.UseESX = true
 
 -- What should the price of jerry cans be?
-Config.JerryCanCost = 100
-Config.RefillCost = 50 -- If it is missing half of it capacity, this amount will be divided in half, and so on.
+Config.JerryCanCost = 4500
+Config.RefillCost = 3000 -- If it is missing half of it capacity, this amount will be divided in half, and so on.
 
 -- Fuel decor - No need to change this, just leave it.
 Config.FuelDecor = "_FUEL_LEVEL"
@@ -25,23 +25,23 @@ Config.CostMultiplier = 1.0
 
 -- Configure the strings as you wish here.
 Config.Strings = {
-	ExitVehicle = "keluar untuk mengisi bahan bakar",
-	EToRefuel = "tekan ~g~E ~w~to refuel vehicle",
+	ExitVehicle = "Exit the vehicle to refuel",
+	EToRefuel = "Press ~g~E ~w~to refuel vehicle",
 	JerryCanEmpty = "Jerry can is empty",
-	FullTank = "Tangki sudah penuh",
-	PurchaseJerryCan = "tekan ~g~E ~w~to purchase a jerry can for ~g~$" .. Config.JerryCanCost,
-	CancelFuelingPump = "tekan ~g~E ~w~to cancel the fueling",
-	CancelFuelingJerryCan = "tekan ~g~E ~w~to cancel the fueling",
-	NotEnoughCash = "tidak cukup uang",
-	RefillJerryCan = "tekan ~g~E ~w~ to refill the jerry can for ",
-	NotEnoughCashJerryCan = "tidak cukup uang to refill jerry can",
+	FullTank = "Tank is full",
+	PurchaseJerryCan = "Press ~g~E ~w~to purchase a jerry can for ~g~$" .. Config.JerryCanCost,
+	CancelFuelingPump = "Press ~g~E ~w~to cancel the fueling",
+	CancelFuelingJerryCan = "Press ~g~E ~w~to cancel the fueling",
+	NotEnoughCash = "Not enough cash",
+	RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can for ",
+	NotEnoughCashJerryCan = "Not enough cash to refill jerry can",
 	JerryCanFull = "Jerry can is full",
 	TotalCost = "Cost",
 }
 
 if not Config.UseESX then
-	Config.Strings.PurchaseJerryCan = "tekan ~g~E ~w~to grab a jerry can"
-	Config.Strings.RefillJerryCan = "tekan ~g~E ~w~ to refill the jerry can"
+	Config.Strings.PurchaseJerryCan = "Press ~g~E ~w~to grab a jerry can"
+	Config.Strings.RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can"
 end
 
 Config.PumpModels = {

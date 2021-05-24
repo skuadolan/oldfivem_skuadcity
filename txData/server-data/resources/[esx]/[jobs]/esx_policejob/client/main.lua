@@ -72,7 +72,7 @@ function OpenCloakroomMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom', {
 		title    = _U('cloakroom'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = elements
 	}, function(data, menu)
 		cleanPlayer(playerPed)
@@ -117,7 +117,6 @@ function OpenCloakroomMenu()
 				end, 'police')
 			end
 		end
-		
 
 		if Config.EnableESXService and data.current.value ~= 'citizen_wear' then
 			local awaitService
@@ -222,7 +221,7 @@ function OpenArmoryMenu(station)
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'armory', {
 		title    = _U('armory'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = elements
 	}, function(data, menu)
 
@@ -247,23 +246,17 @@ function OpenArmoryMenu(station)
 	end)
 end
 
-function OpenpoliceActionsMenu()
+function OpenPoliceActionsMenu()
 	ESX.UI.Menu.CloseAll()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'police_actions', {
-		title    = 'police',
-		align    = 'top-left',
-        elements = {
-            {label = _U('citizen_interaction'),	value = 'citizen_interaction'},
-            {label = _U('vehicle_interaction'),	value = 'vehicle_interaction'},
-            {label = _U('object_spawner'),		value = 'object_spawner'},
-            {label = "Jail Menu",               value = 'jail_menu'} -- You add this line
+		title    = 'Police',
+		align    = 'top-right',
+		elements = {
+			{label = _U('citizen_interaction'), value = 'citizen_interaction'},
+			{label = _U('vehicle_interaction'), value = 'vehicle_interaction'},
+			{label = _U('object_spawner'), value = 'object_spawner'}
 	}}, function(data, menu)
-
-		if data.current.value == 'jail_menu' then
-            TriggerEvent("esx-qalle-jail:openJailMenu")
-        end
-
 		if data.current.value == 'citizen_interaction' then
 			local elements = {
 				{label = _U('id_card'), value = 'identity_card'},
@@ -274,7 +267,8 @@ function OpenpoliceActionsMenu()
 				{label = _U('put_in_vehicle'), value = 'put_in_vehicle'},
 				{label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
 				{label = _U('fine'), value = 'fine'},
-				{label = _U('unpaid_bills'), value = 'unpaid_bills'}
+				{label = _U('unpaid_bills'), value = 'unpaid_bills'},
+				{label = _U('jail_menu'), value = 'jail_menu'}
 			}
 
 			if Config.EnableLicenses then
@@ -283,14 +277,16 @@ function OpenpoliceActionsMenu()
 
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'citizen_interaction', {
 				title    = _U('citizen_interaction'),
-				align    = 'top-left',
+				align    = 'top-right',
 				elements = elements
 			}, function(data2, menu2)
 				local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 				if closestPlayer ~= -1 and closestDistance <= 3.0 then
 					local action = data2.current.value
 
-					if action == 'identity_card' then
+					if action == 'jail_menu' then
+						TriggerEvent("esx-qalle-jail:openJailMenu")
+					elseif action == 'identity_card' then
 						OpenIdentityCardMenu(closestPlayer)
 					elseif action == 'search' then
 						OpenBodySearchMenu(closestPlayer)
@@ -347,7 +343,6 @@ function OpenpoliceActionsMenu()
 						end)
 						Citizen.Wait(1000)
 						TriggerServerEvent('esx_policejob:handcuff', GetPlayerServerId(closestPlayer))
-						
 					elseif action == 'drag' then
 						TriggerServerEvent('esx_policejob:drag', GetPlayerServerId(closestPlayer))
 					elseif action == 'put_in_vehicle' then
@@ -375,6 +370,7 @@ function OpenpoliceActionsMenu()
 			if DoesEntityExist(vehicle) then
 				table.insert(elements, {label = _U('vehicle_info'), value = 'vehicle_infos'})
 				table.insert(elements, {label = _U('pick_lock'), value = 'hijack_vehicle'})
+				table.insert(elements, {label = _U('impound_samsat'), value = 'impound_samsat'})
 				table.insert(elements, {label = _U('impound'), value = 'impound'})
 			end
 
@@ -382,7 +378,7 @@ function OpenpoliceActionsMenu()
 
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_interaction', {
 				title    = _U('vehicle_interaction'),
-				align    = 'top-left',
+				align    = 'top-right',
 				elements = elements
 			}, function(data2, menu2)
 				local coords  = GetEntityCoords(playerPed)
@@ -397,27 +393,6 @@ function OpenpoliceActionsMenu()
 						OpenVehicleInfosMenu(vehicleData)
 					elseif action == 'hijack_vehicle' then
 						if IsAnyVehicleNearPoint(coords.x, coords.y, coords.z, 3.0) then
-							exports['mythic_progbar']:Progress({
-								name = "inventoryhud_trunk",
-								duration = 20000,
-								label = 'membobol',
-								useWhileDead = true,
-								canCancel = true,
-								controlDisables = {
-								disableMovement = true,
-								disableCarMovement = true,
-								disableMouse = false,
-								disableCombat = true,
-								},
-								animation = {
-									animDict = "",
-									anim = "",
-									flags = 49,
-								},
-							}, function(cancelled)
-								if not cancelled then
-								end
-							end)
 							TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_WELDING', 0, true)
 							Citizen.Wait(20000)
 							ClearPedTasksImmediately(playerPed)
@@ -426,6 +401,8 @@ function OpenpoliceActionsMenu()
 							SetVehicleDoorsLockedForAllPlayers(vehicle, false)
 							ESX.ShowNotification(_U('vehicle_unlocked'))
 						end
+					elseif action == 'impound_samsat' then
+						TriggerEvent('im_samsat:ShowImpoundMenu')
 					elseif action == 'impound' then
 						-- is the script busy?
 						if currentTask.busy then
@@ -433,27 +410,6 @@ function OpenpoliceActionsMenu()
 						end
 
 						ESX.ShowHelpNotification(_U('impound_prompt'))
-						exports['mythic_progbar']:Progress({
-							name = "inventoryhud_trunk",
-							duration = 11100,
-							label = 'menyita',
-							useWhileDead = true,
-							canCancel = true,
-							controlDisables = {
-							disableMovement = true,
-							disableCarMovement = true,
-							disableMouse = false,
-							disableCombat = true,
-							},
-							animation = {
-								animDict = "",
-								anim = "",
-								flags = 49,
-							},
-						}, function(cancelled)
-							if not cancelled then
-							end
-						end)
 						TaskStartScenarioInPlace(playerPed, 'CODE_HUMAN_MEDIC_TEND_TO_DEAD', 0, true)
 
 						currentTask.busy = true
@@ -489,7 +445,7 @@ function OpenpoliceActionsMenu()
 		elseif data.current.value == 'object_spawner' then
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'citizen_interaction', {
 				title    = _U('traffic_interaction'),
-				align    = 'top-left',
+				align    = 'top-right',
 				elements = {
 					{label = _U('cone'), model = 'prop_roadcone02a'},
 					{label = _U('barrier'), model = 'prop_barrier_work05'},
@@ -513,7 +469,6 @@ function OpenpoliceActionsMenu()
 		menu.close()
 	end)
 end
-
 
 function OpenIdentityCardMenu(player)
 	ESX.TriggerServerCallback('esx_policejob:getOtherPlayerData', function(data)
@@ -542,7 +497,7 @@ function OpenIdentityCardMenu(player)
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'citizen_interaction', {
 			title    = _U('citizen_interaction'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, nil, function(data, menu)
 			menu.close()
@@ -552,29 +507,6 @@ end
 
 function OpenBodySearchMenu(player)
 	ESX.TriggerServerCallback('esx_policejob:getOtherPlayerData', function(data)
-		exports['mythic_progbar']:Progress({
-			name = "inventoryhud_trunk",
-			duration = 1000,
-			label = 'menggeledah',
-			useWhileDead = true,
-			canCancel = true,
-			controlDisables = {
-			disableMovement = true,
-			disableCarMovement = true,
-			disableMouse = false,
-			disableCombat = true,
-			},
-			animation = {
-				animDict = "mini@repair",
-				anim = "fixing_a_player",
-				flags = 49,
-			},
-		}, function(cancelled)
-			if not cancelled then
-			end
-		end)
-
-		Citizen.Wait(1000)
 		local elements = {}
 
 		for i=1, #data.accounts, 1 do
@@ -616,12 +548,12 @@ function OpenBodySearchMenu(player)
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'body_search', {
 			title    = _U('search'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			if data.current.value then
 				TriggerServerEvent('esx_policejob:confiscatePlayerItem', GetPlayerServerId(player), data.current.itemType, data.current.value, data.current.amount)
-				menu.close()
+				OpenBodySearchMenu(player)
 			end
 		end, function(data, menu)
 			menu.close()
@@ -632,7 +564,7 @@ end
 function OpenFineMenu(player)
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'fine', {
 		title    = _U('fine'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = {
 			{label = _U('traffic_offense'), value = 0},
 			{label = _U('minor_offense'),   value = 1},
@@ -660,7 +592,7 @@ function OpenFineCategoryMenu(player, category)
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'fine_category', {
 			title    = _U('fine'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -700,7 +632,7 @@ function LookupVehicle()
 
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_infos', {
 					title    = _U('vehicle_info'),
-					align    = 'top-left',
+					align    = 'top-right',
 					elements = elements
 				}, nil, function(data2, menu2)
 					menu2.close()
@@ -730,7 +662,7 @@ function ShowPlayerLicense(player)
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'manage_license', {
 			title    = _U('license_revoke'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements,
 		}, function(data, menu)
 			ESX.ShowNotification(_U('licence_you_revoked', data.current.label, playerData.name))
@@ -761,7 +693,7 @@ function OpenUnpaidBillsMenu(player)
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'billing', {
 			title    = _U('unpaid_bills'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, nil, function(data, menu)
 			menu.close()
@@ -781,7 +713,7 @@ function OpenVehicleInfosMenu(vehicleData)
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_infos', {
 			title    = _U('vehicle_info'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, nil, function(data, menu)
 			menu.close()
@@ -804,7 +736,7 @@ function OpenGetWeaponMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'armory_get_weapon', {
 			title    = _U('get_weapon_menu'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -836,7 +768,7 @@ function OpenPutWeaponMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'armory_put_weapon', {
 		title    = _U('put_weapon_menu'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = elements
 	}, function(data, menu)
 		menu.close()
@@ -911,7 +843,7 @@ function OpenBuyWeaponsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'armory_buy_weapons', {
 		title    = _U('armory_weapontitle'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = elements
 	}, function(data, menu)
 		if data.current.hasWeapon then
@@ -940,7 +872,7 @@ end
 function OpenWeaponComponentShop(components, weaponName, parentShop)
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'armory_buy_weapons_components', {
 		title    = _U('armory_componenttitle'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = components
 	}, function(data, menu)
 		if data.current.hasComponent then
@@ -978,7 +910,7 @@ function OpenGetStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('police_stock'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -1025,7 +957,7 @@ function OpenPutStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('inventory'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -1424,7 +1356,7 @@ Citizen.CreateThread(function()
 					end
 				end
 
-				if Config.EnablePlayerManagement and ESX.PlayerData.job.grade_name == 'jendral' or ESX.PlayerData.job.grade_name == 'komjen' then
+				if Config.EnablePlayerManagement and ESX.PlayerData.job.grade_name == 'boss' then
 					for i=1, #v.BossActions, 1 do
 						local distance = #(playerCoords - v.BossActions[i])
 
@@ -1564,7 +1496,7 @@ Citizen.CreateThread(function()
 						CurrentAction     = 'menu_boss_actions'
 						CurrentActionMsg  = _U('open_bossmenu')
 						CurrentActionData = {}
-					end, { wash = false }) -- disable washing money
+					end, { wash = false, grades = false }) -- disable washing money
 				elseif CurrentAction == 'remove_entity' then
 					DeleteEntity(CurrentActionData.entity)
 				end
@@ -1575,9 +1507,9 @@ Citizen.CreateThread(function()
 
 		if IsControlJustReleased(0, 167) and not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') then
 			if not Config.EnableESXService then
-				OpenpoliceActionsMenu()
+				OpenPoliceActionsMenu()
 			elseif playerInService then
-				OpenpoliceActionsMenu()
+				OpenPoliceActionsMenu()
 			else
 				ESX.ShowNotification(_U('service_not'))
 			end
@@ -1594,28 +1526,22 @@ Citizen.CreateThread(function()
 end)
 
 -- Create blip for colleagues
-function createBlip(id, nama)
+function createBlip(id)
 	local ped = GetPlayerPed(id)
 	local blip = GetBlipFromEntity(ped)
-
 
 	if not DoesBlipExist(blip) then -- Add blip and create head display on player
 		blip = AddBlipForEntity(ped)
 		SetBlipSprite(blip, 1)
-		SetBlipColour(blip, 3)
 		ShowHeadingIndicatorOnBlip(blip, true) -- Player Blip indicator
 		SetBlipRotation(blip, math.ceil(GetEntityHeading(ped))) -- update rotation
+		SetBlipNameToPlayerName(blip, id) -- update blip name
 		SetBlipScale(blip, 0.85) -- set scale
 		SetBlipAsShortRange(blip, true)
-		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString(nama)
-		EndTextCommandSetBlipName(blip)
-
+		DisplayRadar(true)
 
 		table.insert(blipsCops, blip) -- add blip to array so we can remove it later
-
 	end
-
 end
 
 RegisterNetEvent('esx_policejob:updateBlip')
@@ -1640,21 +1566,18 @@ AddEventHandler('esx_policejob:updateBlip', function()
 
 	-- Is the player a cop? In that case show all the blips for other cops
 	if ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' then
-        ESX.TriggerServerCallback('esx_society:getOnlinePlayers', function(connectedPlayers)
-            for k,v in pairs(connectedPlayers) do
-                local id         = GetPlayerFromServerId(v.source)
-                local name         = v.name
-                local pangkat = v.job.grade_label
-
-                local nama = '' .. pangkat.. ' - ' .. name
-                if v.job.name == 'police' then
-                    if GetPlayerPed(id) ~= PlayerPedId() then
-                        createBlip(id, nama)
-                    end
-                end
-            end
-        end)
-    end
+		ESX.TriggerServerCallback('esx_society:getOnlinePlayers', function(players)
+			for i=1, #players, 1 do
+				if players[i].job.name == 'police' then
+					local id = GetPlayerFromServerId(players[i].source)
+					if NetworkIsPlayerActive(id) and GetPlayerPed(id) ~= PlayerPedId() then
+						DisplayRadar(true)
+						createBlip(id)
+					end
+				end
+			end
+		end)
+	end
 
 end)
 
