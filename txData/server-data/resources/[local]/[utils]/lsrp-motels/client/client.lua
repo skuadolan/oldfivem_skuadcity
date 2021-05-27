@@ -442,6 +442,44 @@ AddEventHandler('lsrp-motels:roomMenu', function(room, motel)
     end)
 end)
 
+RegisterNetEvent('lsrp-motels:leaveMenu')
+AddEventHandler('lsrp-motels:leaveMenu', function(room, motel)
+    local motelName = nil
+    local motelRoom = nil
+    local roomID = nil
+    local owner = ESX.GetPlayerData().identifier
+    for k,v in pairs(Config.Zones) do
+        for kk,vm in pairs(v.Rooms) do       
+            if room == vm.instancename then
+                motelName = v.Name
+                motelRoom = vm.number
+            end
+        end
+    end
+   
+        options = {}
+
+        table.insert(options, {label = 'Keluar Motel', value = 'keluarkamar'})
+        
+    ESX.UI.Menu.Open(
+        'default', GetCurrentResourceName(), 'lsrp-motels',
+        {
+            title    = motelName..' Room '..motelRoom,
+            align    = 'top-right',
+            elements = options
+        },
+    function(data, menu)
+        local value = data.current.value
+        if value == 'keluarkamar' then
+            menu.close()
+            TriggerEvent('lsrp-motels:exitRoom', curMotel, curRoom))
+        end
+    end,    
+    function(data, menu)
+        menu.close()
+    end)
+end)          
+
 RegisterNetEvent('lsrp-motels:rentRoom')
 AddEventHandler('lsrp-motels:rentRoom', function(room)
     local motelName = nil
@@ -486,20 +524,17 @@ function roomMarkers()
     local playerPed = PlayerPedId()
     local coords    = GetEntityCoords(playerPed)
     local sleep     = true
+
     -- Exit Marker
     for k,v in pairs(Config.Zones) do
-        for km,vm in pairs(v.Rooms) do
-            distance = GetDistanceBetweenCoords(coords, v.roomExit.x, v.roomExit.y, v.roomExit.z, true)
-            if (distance < 1.0) then
-                sleep = false
-                if curRoom ~= nil then
-                    DrawText3D(v.roomExit.x, v.roomExit.y, v.roomExit.z + 0.35, ' Tekan [~g~E~s~] Untuk Keluar ')
-                    if IsControlJustReleased(0, Keys['E']) then
-                        ESX.UI.Menu.CloseAll()
-                        TriggerEvent('lsrp-motels:exitRoom', curMotel, curRoom)
-                    end
-                end  
-            end
+        distance = GetDistanceBetweenCoords(coords, v.roomExit.x, v.roomExit.y, v.roomExit.z, true)
+        if distance < 1.0 then
+            sleep = false
+            DrawText3D(v.roomExit.x, v.roomExit.y, v.roomExit.z + 0.35, ' Tekan [~g~E~s~] Untuk Keluar ')
+                if IsControlJustReleased(0, Keys['E']) then
+                    TriggerEvent('lsrp-motels:leaveMenu', curRoom, curMotel)
+                end
+            end    
         end
     end
 

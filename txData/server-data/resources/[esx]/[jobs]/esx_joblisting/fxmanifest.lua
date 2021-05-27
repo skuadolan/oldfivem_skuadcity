@@ -36,5 +36,3 @@ client_scripts {
 	'locales/cs.lua',
 	'client/main.lua'
 }
-
-dependency 'es_extended'

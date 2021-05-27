@@ -97,8 +97,3 @@ exports {
 server_exports {
 	'getSharedObject'
 }
-
-dependencies {
-	'mysql-async',
-	'async'
-}

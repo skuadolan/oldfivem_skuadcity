@@ -12,24 +12,3 @@ RegisterServerEvent('CarryPeople:stop')
 AddEventHandler('CarryPeople:stop', function(targetSrc)
 	TriggerClientEvent('CarryPeople:cl_stop', targetSrc)
 end)
-
-ESX.RegisterServerCallback('skd_core:checkJobs', function(source, cb)
-	local xPlayer = ESX.GetPlayerFromId(playerId)
-	if playerId == 0 then
-		print('skd_core: you can\'t use this command from console!')
-	elseif xPlayer.job.name == "ambulance" then
-		cb('ambulance')
-	elseif xPlayer.job.name == "police" then
-		cb('police')
-	elseif xPlayer.job.name == "taxi" then
-		cb('taxi')
-	elseif xPlayer.job.name == "mechanic" then
-		cb('mechanic')	
-	elseif xPlayer.job.name == "pedagang" then
-		cb('pedagang')
-	elseif xPlayer.job.name == "unemployed" then
-		cb('nonwhitelist')
-	else
-		cb('nonwhitelist')
-	end
-end)

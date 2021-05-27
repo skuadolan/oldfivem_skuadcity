@@ -281,7 +281,7 @@ RegisterCommand('info', function(playerId, args, rawCommand)
 		print('esx_rpchat: you can\'t use this command from console!')
 	elseif xPlayer.job.name == "ambulance" then
 		TriggerClientEvent('chat:addMessage', -1, {
-			template = '<div class="chat-message-ems"><b>🚑 RUMAH SAKIT | {0}: </b> {1}</div>',
+			template = '<div class="chat-message-ems"><b>🚑 EMS | {0}: </b> {1}</div>',
 			args = { xPlayer.name, msg }
 		})
 	elseif xPlayer.job.name == "police" then
@@ -291,7 +291,7 @@ RegisterCommand('info', function(playerId, args, rawCommand)
 		})
 	elseif xPlayer.job.name == "taxi" then
 		TriggerClientEvent('chat:addMessage', -1, {
-			template = '<div class="chat-message-taxi"><b>🚕 GRAB |  @{0}: <br></b> {1}</div>',
+			template = '<div class="chat-message-taxi"><b>🚕 TAKSI |  @{0}: <br></b> {1}</div>',
 			args = { xPlayer.name, msg }
 		})
 	elseif xPlayer.job.name == "mechanic" then

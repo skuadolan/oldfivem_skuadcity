@@ -12,112 +12,201 @@ Citizen.CreateThread(function()
 
 	ESX.PlayerData = ESX.GetPlayerData()
 
-	-- Update the door list
-	ESX.TriggerServerCallback('esx_doorlock:getDoorState', function(doorState)
-		for index,state in pairs(doorState) do
-			Config.DoorList[index].locked = state
-		end
-	end)
+	TriggerServerEvent("esx_doorlock:server:setupDoors")
+
 end)
+local playerCoords = vector3(0.0, 0.0, 0.0)
+local closestDoorKey, closestDoorValue = nil, nil
 
-RegisterNetEvent('esx:setJob')
-AddEventHandler('esx:setJob', function(job) ESX.PlayerData.job = job end)
 
-RegisterNetEvent('esx_doorlock:setDoorState')
-AddEventHandler('esx_doorlock:setDoorState', function(index, state) Config.DoorList[index].locked = state end)
+function DrawText3Ds(x, y, z, text)
+	SetTextScale(0.35, 0.35)
+    SetTextFont(4)
+    SetTextProportional(1)
+    SetTextColour(255, 255, 255, 215)
+    SetTextEntry("STRING")
+    SetTextCentre(true)
+    AddTextComponentString(text)
+    SetDrawOrigin(x,y,z, 0)
+    DrawText(0.0, 0.0)
+    local factor = (string.len(text)) / 370
+    DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
+    ClearDrawOrigin()
+end
 
 Citizen.CreateThread(function()
 	while true do
-		local playerCoords = GetEntityCoords(PlayerPedId())
-
-		for k,v in ipairs(Config.DoorList) do
-			v.isAuthorized = isAuthorized(v)
-
-			if v.doors then
-				for k2,v2 in ipairs(v.doors) do
-					if v2.object and DoesEntityExist(v2.object) then
-						if k2 == 1 then
-							v.distanceToPlayer = #(playerCoords - GetEntityCoords(v2.object))
-						end
-
-						if v.locked and v2.objHeading and ESX.Math.Round(GetEntityHeading(v2.object)) ~= v2.objHeading then
-							SetEntityHeading(v2.object, v2.objHeading)
-						end
-					else
-						v.distanceToPlayer = nil
-						v2.object = GetClosestObjectOfType(v2.objCoords, 1.0, v2.objHash, false, false, false)
+		for key, doorID in ipairs(Config.Doors) do
+			if doorID.doors then
+				for k,v in ipairs(doorID.doors) do
+					v.objHash = v.objHash or GetHashKey(v.objName)
+					if not v.object or not DoesEntityExist(v.object) then
+						v.object = GetClosestObjectOfType(v.objCoords, 1.0, v.objHash, false, false, false)
 					end
 				end
 			else
-				if v.object and DoesEntityExist(v.object) then
-					v.distanceToPlayer = #(playerCoords - GetEntityCoords(v.object))
-
-					if v.locked and v.objHeading and ESX.Math.Round(GetEntityHeading(v.object)) ~= v.objHeading then
-						SetEntityHeading(v.object, v.objHeading)
-					end
-				else
-					v.distanceToPlayer = nil
-					v.object = GetClosestObjectOfType(v.objCoords, 1.0, v.objHash, false, false, false)
+				doorID.objHash = doorID.objHash or GetHashKey(doorID.objName)
+				if not doorID.object or not DoesEntityExist(doorID.object) then
+					doorID.object = GetClosestObjectOfType(doorID.objCoords, 1.0, doorID.objHash, false, false, false)
 				end
 			end
 		end
 
-		Citizen.Wait(500)
+		Citizen.Wait(2500)
 	end
 end)
 
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
-		local letSleep = true
+local maxDistance = 1.25
 
-		for k,v in ipairs(Config.DoorList) do
-			if v.distanceToPlayer and v.distanceToPlayer < 50 then
-				letSleep = false
+CoordsEvents = function()
+	playerCoords = GetEntityCoords(GetPlayerPed(-1))
+end
 
-				if v.doors then
-					for k2,v2 in ipairs(v.doors) do
-						FreezeEntityPosition(v2.object, v.locked)
+MovementEvents = function()
+		--local playerCoords = GetEntityCoords(GetPlayerPed(-1))
+	local sleep = true
+
+	for k,doorID in ipairs(Config.Doors) do
+		local distance
+
+		if doorID.doors then
+			distance = #(playerCoords - doorID.doors[1].objCoords)
+		else
+			distance = #(playerCoords - doorID.objCoords)
+		end
+
+		if doorID.distance then
+			maxDistance = doorID.distance
+		end
+		if distance < 8.0 then
+			sleep = false
+			if doorID.doors then
+				for _,v in ipairs(doorID.doors) do
+					FreezeEntityPosition(v.object, doorID.locked)
+
+					if doorID.locked and v.objYaw and GetEntityRotation(v.object).z ~= v.objYaw then
+						SetEntityRotation(v.object, 0.0, 0.0, v.objYaw, 2, true)
 					end
+				end
+			else
+				FreezeEntityPosition(doorID.object, doorID.locked)
+
+				if doorID.locked and doorID.objYaw and GetEntityRotation(doorID.object).z ~= doorID.objYaw then
+					SetEntityRotation(doorID.object, 0.0, 0.0, doorID.objYaw, 2, true)
+				end
+			end
+		end
+
+		if distance < maxDistance then
+			sleep = false
+			if doorID.size then
+				size = doorID.size
+			end
+
+			local isAuthorized = IsAuthorized(doorID)
+
+			if isAuthorized then
+				if doorID.locked then
+					displayText = "[E] - ~r~Terkunci"
+				elseif not doorID.locked then
+					displayText = "[E] - ~g~Terbuka"
+				end
+			elseif not isAuthorized then
+				if doorID.locked then
+					if doorID.text then
+						displayText = " ~r~Terkunci " .. doorID.text
+					else
+						displayText = " ~r~Terkunci "
+					end
+				elseif not doorID.locked then
+					displayText = " ~g~Terbuka "
+				end
+			end
+
+			if doorID.locking then
+				if doorID.locked then
+					displayText = " Membuka.. "
 				else
-					FreezeEntityPosition(v.object, v.locked)
+					displayText = " Mengunci.. "
 				end
 			end
 
-			if v.distanceToPlayer and v.distanceToPlayer < v.maxDistance then
-				local size, displayText = 1, _U('unlocked')
+			if doorID.objCoords == nil then
+				doorID.objCoords = doorID.textCoords
+			end
 
-				if v.size then size = v.size end
-				if v.locked then displayText = _U('locked') end
-				if v.isAuthorized then displayText = _U('press_button', displayText) end
+			DrawText3Ds(doorID.objCoords.x, doorID.objCoords.y, doorID.objCoords.z, displayText)
 
-				ESX.Game.Utils.DrawText3D(v.textCoords, displayText, size)
-
-				if IsControlJustReleased(0, 38) then
-					if v.isAuthorized then
-						v.locked = not v.locked
-						TriggerServerEvent('esx_doorlock:updateState', k, v.locked) -- broadcast new state of the door to everyone
-					end
+			if IsControlJustReleased(0, 38) then
+				if isAuthorized then
+					setDoorLocking(doorID, k)
 				end
 			end
 		end
-
-		if letSleep then
-			Citizen.Wait(500)
-		end
-	end
-end)
-
-function isAuthorized(door)
-	if not ESX or not ESX.PlayerData.job then
-		return false
 	end
 
-	for k,job in pairs(door.authorizedJobs) do
-		if job == ESX.PlayerData.job.name then
+	if sleep then
+		Citizen.Wait(1000)
+	end
+end
+
+function round(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	return math.floor(num * mult + 0.5) / mult
+end
+
+function setDoorLocking(doorId, key)
+	doorId.locking = true
+	openDoorAnim()
+    SetTimeout(800, function()
+		doorId.locking = false
+		doorId.locked = not doorId.locked
+		TriggerServerEvent('esx_doorlock:server:updateState', key, doorId.locked)
+	end)
+end
+
+function loadAnimDict(dict)
+    while (not HasAnimDictLoaded(dict)) do
+        RequestAnimDict(dict)
+        Citizen.Wait(5)
+    end
+end
+
+function IsAuthorized(doorID)
+	local PlayerData = ESX.GetPlayerData()
+
+	
+	for _,job in pairs(doorID.authorizedJobs) do
+		if job == PlayerData.job.name then
 			return true
 		end
 	end
-
+	
 	return false
 end
+
+function openDoorAnim()
+	if not IsPedInAnyVehicle(PlayerPedId()) then
+    	loadAnimDict("anim@heists@keycard@") 
+    	TaskPlayAnim( GetPlayerPed(-1), "anim@heists@keycard@", "exit", 5.0, 1.0, -1, 16, 0, 0, 0, 0 )
+		SetTimeout(600, function()
+			ClearPedTasks(GetPlayerPed(-1))
+		end)
+	end
+end
+
+RegisterNetEvent('esx_doorlock:client:setState')
+AddEventHandler('esx_doorlock:client:setState', function(doorID, state)
+	Config.Doors[doorID].locked = state
+end)
+
+RegisterNetEvent('esx_doorlock:client:setDoors')
+AddEventHandler('esx_doorlock:client:setDoors', function(doorList)
+	Config.Doors = doorList
+end)
+
+
+
+
+
+--HaReL#5843 Extra Leaks

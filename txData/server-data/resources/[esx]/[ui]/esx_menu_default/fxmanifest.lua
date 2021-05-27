@@ -23,7 +23,3 @@ files {
 	'html/fonts/pdown.ttf',
 	'html/fonts/bankgothic.ttf'
 }
-
-dependencies {
-	'es_extended'
-}

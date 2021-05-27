@@ -18,8 +18,3 @@ client_scripts {
 	'locales/tw.lua',
 	'locales/en.lua'
 }
-
-dependency {
-	'es_extended',
-	'esx_vehicleshop'
-}

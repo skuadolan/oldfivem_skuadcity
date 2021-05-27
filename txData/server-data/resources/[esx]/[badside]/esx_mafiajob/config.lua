@@ -84,7 +84,7 @@ Config.AuthorizedWeapons = {
 	sergeant = {
 	},
 
-	lieutenant = {
+	wakil_boss = {
 		{weapon = 'WEAPON_APPISTOL', components = {0, 0, 1000, 4000, nil}, price = 10000},
 		{weapon = 'WEAPON_ADVANCEDRIFLE', components = {0, 6000, 1000, 4000, 8000, nil}, price = 50000},
 		{weapon = 'WEAPON_PUMPSHOTGUN', components = {2000, 6000, nil}, price = 70000},
@@ -113,7 +113,7 @@ Config.AuthorizedVehicles = {
 		sergeant = {
 		},
 
-		lieutenant = {
+		wakil_boss = {
 		},
 
 		boss = {}
@@ -126,7 +126,7 @@ Config.AuthorizedVehicles = {
 
 		sergeant = {},
 
-		lieutenant = {
+		wakil_boss = {
 		},
 
 		boss = {
@@ -146,7 +146,7 @@ Config.CustomPeds = {
 
 	sergeant = {},
 
-	lieutenant = {},
+	wakil_boss = {},
 
 	boss = {
 		{label = 'SWAT Ped', maleModel = 's_m_y_swat_01', femaleModel = 's_m_y_swat_01'}
@@ -230,7 +230,7 @@ Config.Uniforms = {
 		}
 	},
 
-	lieutenant = {
+	wakil_boss = {
 		male = {
 			tshirt_1 = 58,  tshirt_2 = 0,
 			torso_1 = 55,   torso_2 = 0,

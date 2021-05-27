@@ -18,7 +18,7 @@ function OpenPedagangActionsMenu()
 		{label = _U('civil'), 			value = 'cloakroom2'}
 	}
 
-	if PlayerData.job ~= nil and PlayerData.job.grade_name == 'boss' then
+	if PlayerData.job ~= nil and PlayerData.job.grade_name == 'boss' or PlayerData.job.grade_name == 'wakil_boss' then
   		table.insert(elements, {label = _U('boss_actions'), value = 'boss_actions'})
 	end
 

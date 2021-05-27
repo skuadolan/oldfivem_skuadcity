@@ -47,10 +47,3 @@ client_scripts {
 
 	'client/main.lua'
 }
-
-dependencies {
-	'es_extended',
-	'esx_addonaccount',
-	'skinchanger',
-	'esx_skin'
-}

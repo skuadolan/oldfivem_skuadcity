@@ -43,8 +43,3 @@ files {
 	'html/scripts.js',
 	'html/debounce.min.js'
 }
-
-dependencies {
-	'es_extended',
-	'esx_license'
-}

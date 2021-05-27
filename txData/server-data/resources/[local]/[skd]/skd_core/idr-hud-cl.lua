@@ -399,13 +399,13 @@ Citizen.CreateThread(function()
 		if IsPedInAnyVehicle(PlayerPedId(), false) then
 			DisplayRadar(true)
 		else
-			ESX.TriggerServerCallback('skd_core:checkJobs', function(jobs)
+			--[[ESX.TriggerServerCallback('skd_core:checkJobs', function(jobs)
 				if jobs == 'police' or jobs == 'ambulance' or jobs == 'mechanic' or jobs == 'pedagang' or jobs == 'taxi' then
 					mapsOn = true
 				else
 					mapsOn = false
 				end
-			end)
+			end)]]
 
 			if mapsOn then
 				DisplayRadar(true)

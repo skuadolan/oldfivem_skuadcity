@@ -86,6 +86,8 @@ AddEventHandler('esx_society:depositMoney', function(societyName, amount)
 	local society = GetSociety(societyName)
 	amount = ESX.Math.Round(tonumber(amount))
 
+	print(society.name)
+
 	if xPlayer.job.name == society.name then
 		if amount > 0 and xPlayer.getMoney() >= amount then
 			TriggerEvent('esx_addonaccount:getSharedAccount', society.account, function(account)
@@ -258,9 +260,9 @@ end)
 
 ESX.RegisterServerCallback('esx_society:setJob', function(source, cb, identifier, job, grade, type)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	local isBoss = xPlayer.job.grade_name == 'boss'
+	local isBoss = xPlayer.job.grade_name == 'boss' or xPlayer.job.grade_name == 'wakil_boss'
 
-	if isBoss or xPlayer.job.grade_name == 'experienced' or xPlayer.job.grade_name == 'asisten_boss' or xPlayer.job.grade_name == 'chief' or xPlayer.job.grade_name == 'uber' or xPlayer.job.grade_name == 'wakil_boss' or xPlayer.job.grade_name == 'komjen' or xPlayer.job.grade_name == 'lieutenant' then
+	if isBoss then
 		local xTarget = ESX.GetPlayerFromIdentifier(identifier)
 
 		if xTarget then
@@ -293,7 +295,7 @@ end)
 ESX.RegisterServerCallback('esx_society:setJobSalary', function(source, cb, job, grade, salary)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
-	if xPlayer.job.name == job and xPlayer.job.grade_name == 'boss' then
+	if xPlayer.job.name == job and xPlayer.job.grade_name == 'boss' or xPlayer.job.grade_name == 'wakil_boss' then
 		if salary <= Config.MaxSalary then
 			MySQL.Async.execute('UPDATE job_grades SET salary = @salary WHERE job_name = @job_name AND grade = @grade', {
 				['@salary']   = salary,
@@ -356,7 +358,7 @@ end)
 function isPlayerBoss(playerId, job)
 	local xPlayer = ESX.GetPlayerFromId(playerId)
 
-	if xPlayer.job.name == job and xPlayer.job.grade_name == 'boss' then
+	if xPlayer.job.name == job and xPlayer.job.grade_name == 'boss' or xPlayer.job.grade_name == 'wakil_boss' then
 		return true
 	else
 		print(('esx_society: %s attempted open a society boss menu!'):format(xPlayer.identifier))

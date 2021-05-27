@@ -38,5 +38,3 @@ client_scripts {
 	'config.lua',
 	'client/main.lua'
 }
-
-dependency 'es_extended'

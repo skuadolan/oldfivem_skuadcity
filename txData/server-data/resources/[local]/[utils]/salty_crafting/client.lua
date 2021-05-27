@@ -75,14 +75,14 @@ if Config.Shop.useShop then
 	end
 	
 	Citizen.CreateThread(function()
-		local blip = AddBlipForCoord(Config.Shop.shopCoordinates.x, Config.Shop.shopCoordinates.y, Config.Shop.shopCoordinates.z)
+		--[[local blip = AddBlipForCoord(Config.Shop.shopCoordinates.x, Config.Shop.shopCoordinates.y, Config.Shop.shopCoordinates.z)
 		SetBlipSprite (blip, Config.Shop.shopBlipID)
 		SetBlipDisplay(blip, 4)
 		SetBlipScale  (blip, 1.0)
 		SetBlipAsShortRange(blip, true)
 		BeginTextCommandSetBlipName("STRING")
 		AddTextComponentString(Config.Shop.shopName)
-		EndTextCommandSetBlipName(blip)
+		EndTextCommandSetBlipName(blip)]]
 		
 		while true do
 			Citizen.Wait(250)

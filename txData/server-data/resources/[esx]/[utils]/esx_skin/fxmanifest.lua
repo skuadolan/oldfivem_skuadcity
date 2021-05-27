@@ -36,8 +36,3 @@ client_scripts {
 	'config.lua',
 	'client/main.lua'
 }
-
-dependencies {
-	'es_extended',
-	'skinchanger'
-}

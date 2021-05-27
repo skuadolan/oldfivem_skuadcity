@@ -37,5 +37,3 @@ files {
 	'html/css/style.css',
 	'html/img/esx_identity.png'
 }
-
-dependency 'es_extended'

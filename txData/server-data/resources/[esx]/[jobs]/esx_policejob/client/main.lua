@@ -1356,7 +1356,7 @@ Citizen.CreateThread(function()
 					end
 				end
 
-				if Config.EnablePlayerManagement and ESX.PlayerData.job.grade_name == 'boss' then
+				if Config.EnablePlayerManagement and ESX.PlayerData.job.grade_name == 'boss' or ESX.PlayerData.job.grade_name == 'wakil_boss' then
 					for i=1, #v.BossActions, 1 do
 						local distance = #(playerCoords - v.BossActions[i])
 

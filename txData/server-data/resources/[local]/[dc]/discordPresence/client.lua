@@ -1,6 +1,15 @@
 ESX = nil
 local jobGrade = ''
 local job = ''
+
+WatermarkText = "~b~ES~w~X P~b~remium~w~"
+statement = 1
+
+local logoFont
+
+local onlinePlayers = 0
+local maxPlayers = GetConvar("sv_maxclients", 48)
+
 -- ESX Stuff----
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -13,6 +22,7 @@ Citizen.CreateThread(function()
 	end
 
 	ESX.PlayerData = ESX.GetPlayerData()
+	onlinePlayers = #GetActivePlayers()
 end)
 
 RegisterNetEvent('esx:playerLoaded')
@@ -49,6 +59,7 @@ Citizen.CreateThread(function()
 			
 		--SetRichPresence('STARTERPACK 24JAM | Warga: ' .. ESX.GetPlayers() .. '/' .. tostring(Config.PlayerCount) .. ' | ' .. GetPlayerName(PlayerId()))
 		--SetRichPresence('ID: ' .. GetPlayerServerId(NetworkGetEntityOwner(GetPlayerPed(-1))) .. ' | ' .. GetPlayerName(PlayerId()) .. ' | ' ..' '.. Config.PlayerText ..' ' .. #GetActivePlayers() .. '/' .. tostring(Config.PlayerCount))
+		SetRichPresence('Warga: '..#GetActivePlayers())
 
 		SetDiscordRichPresenceAction(0, "Discord", "https://discord.gg/TNP7UGZX2Y")
         SetDiscordRichPresenceAction(1, "Join RP!", "fivem://connect/skuad.club:30120")

@@ -27,7 +27,7 @@ Config.Recipes = {
 	["blowpipe"] = { 
 		{item = "gazbottle", quantity = 4 },
 		{item = "iron", quantity = 8 },
-	},
+	}
 }
 
 -- Enable a shop to access the crafting menu

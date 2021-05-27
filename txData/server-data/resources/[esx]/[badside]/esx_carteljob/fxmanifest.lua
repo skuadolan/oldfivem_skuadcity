@@ -45,9 +45,3 @@ client_scripts {
 	'client/vehicle.lua',
 	'client/cl-borgol.lua'
 }
-
-dependencies {
-	'es_extended',
-	'esx_billing',
-	'esx_vehicleshop'
-}

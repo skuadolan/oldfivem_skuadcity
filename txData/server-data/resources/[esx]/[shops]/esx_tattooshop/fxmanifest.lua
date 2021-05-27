@@ -29,9 +29,3 @@ client_scripts {
 	'client/tattooList.lua',
 	'client/main.lua'
 }
-
-dependencies {
-	'es_extended',
-	'skinchanger',
-	'esx_skin'
-}

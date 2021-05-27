@@ -37,13 +37,3 @@ client_scripts {
 	'config.lua',
 	'client/main.lua'
 }
-
-dependencies {
-	'async',
-	'es_extended',
-	'instance',
-	'cron',
-	'esx_addonaccount',
-	'esx_addoninventory',
-	'esx_datastore'
-}
