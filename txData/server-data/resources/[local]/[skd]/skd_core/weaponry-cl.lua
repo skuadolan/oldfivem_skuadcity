@@ -32,6 +32,7 @@ function ManageReticle(i)
     local k, v = GetCurrentPedWeapon(i, true)
     if not HashInTable(v) then 
        HideHudComponentThisFrame(14)
+	   SetPlayerTargetingMode(3)
 	end 
 end
 
@@ -108,6 +109,15 @@ local recoils = {
 }
 
 Citizen.CreateThread(function()
+    while true do
+	N_0x4757f00bc6323cfe(GetHashKey("WEAPON_UNARMED"), 0.1) 
+    	Wait(0)
+    	N_0x4757f00bc6323cfe(GetHashKey("WEAPON_NIGHTSTICK"), 0.1) 
+    	Wait(0)
+    end
+end)
+
+Citizen.CreateThread(function()
 	local wait = global_wait
 	while true do
 		Citizen.Wait(wait)
@@ -135,7 +145,6 @@ Citizen.CreateThread(function()
 
 			-- Disable melee while aiming (may be not working)	
 			if IsPedShooting(ped) then	
-				DisableControlAction(0, 140)
 		       	DisableControlAction(1, 140, true)
 		        DisableControlAction(1, 141, true)
 		        DisableControlAction(1, 142, true)

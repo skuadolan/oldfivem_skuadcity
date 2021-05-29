@@ -14,7 +14,7 @@ RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
 	ESX.TriggerServerCallback('esx_property:getProperties', function(properties)
 		Config.Properties = properties
-		--CreateBlips()
+		CreateBlips()
 	end)
 
 	ESX.TriggerServerCallback('esx_property:getOwnedProperties', function(result)
@@ -28,7 +28,7 @@ end)
 RegisterNetEvent('esx_property:sendProperties')
 AddEventHandler('esx_property:sendProperties', function(properties)
 	Config.Properties = properties
-	--CreateBlips()
+	CreateBlips()
 
 	ESX.TriggerServerCallback('esx_property:getOwnedProperties', function(result)
 		for k,v in ipairs(result) do
@@ -408,8 +408,9 @@ function OpenRoomMenu(property, owner)
 		table.insert(elements, {label = _U('remove_cloth'), value = 'remove_cloth'})
 	end
 
-	table.insert(elements, {label = _U('remove_object'),  value = 'room_inventory'})
-	table.insert(elements, {label = _U('deposit_object'), value = 'player_inventory'})
+	--[[table.insert(elements, {label = _U('remove_object'),  value = 'room_inventory'})
+	table.insert(elements, {label = _U('deposit_object'), value = 'player_inventory'})]]
+	table.insert(elements, {label = "Property inventory", value = "property_inventory"})
 
 	ESX.UI.Menu.CloseAll()
 
@@ -502,6 +503,9 @@ function OpenRoomMenu(property, owner)
 			OpenRoomInventoryMenu(property, owner)
 		elseif data.current.value == 'player_inventory' then
 			OpenPlayerInventoryMenu(property, owner)
+		elseif data.current.value == "property_inventory" then
+			menu.close()
+			OpenPropertyInventoryMenu(property, owner)
 		end
 
 	end, function(data, menu)
@@ -511,6 +515,12 @@ function OpenRoomMenu(property, owner)
 		CurrentActionMsg  = _U('press_to_menu')
 		CurrentActionData = {property = property, owner = owner}
 	end)
+end
+
+function OpenPropertyInventoryMenu(property, owner)
+	ESX.TriggerServerCallback("esx_property:getPropertyInventory", function(inventory)
+		TriggerEvent("esx_inventoryhud:openPropertyInventory", inventory)
+	end, owner)
 end
 
 function OpenRoomInventoryMenu(property, owner)

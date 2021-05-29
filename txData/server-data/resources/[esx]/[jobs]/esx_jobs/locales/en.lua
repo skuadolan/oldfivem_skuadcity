@@ -81,6 +81,7 @@ Locales['en'] = {
   ['m_sell_gold']               = 'gold Seller',
   ['m_deliver_gold']            = 'press ~INPUT_PICKUP~ to deliver the gold.',
   ['m_diamond']                 = 'diamond',
+  ['m_coal']                 = 'coal',
   ['m_sell_diamond']            = 'diamond Seller',
   ['m_deliver_diamond']         = 'press ~INPUT_PICKUP~ to deliver the diamonds.',
   ['m_melt_button']             = 'press ~INPUT_PICKUP~ to melt the rocks.',

@@ -85,68 +85,59 @@ Config.PoliceStations = {
 
 Config.AuthorizedWeapons = {
 	tamtama = {
+		{weapon = 'WEAPON_NIGHTSTICK', price = 10000}
 	},
 
 	bripda = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
 	briptu = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000}
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
 	brigpol = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000}
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
 	bripka = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000}
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
 	aipda = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
 	aiptu = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
 	ipda = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000}
 	},
 
 	iptu = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000}
 	},
 
 	akp = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000}
 	},
 
 	kompol = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000}
@@ -154,7 +145,6 @@ Config.AuthorizedWeapons = {
 
 	akbp = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000}
@@ -162,7 +152,6 @@ Config.AuthorizedWeapons = {
 
 	brigjen = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
@@ -172,7 +161,6 @@ Config.AuthorizedWeapons = {
 
 	irjen = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
@@ -182,7 +170,6 @@ Config.AuthorizedWeapons = {
 
 	komjen = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
@@ -194,7 +181,6 @@ Config.AuthorizedWeapons = {
 
 	boss = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
-		{weapon = 'WEAPON_STUNGUN', price = 20000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
 		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
@@ -208,144 +194,233 @@ Config.AuthorizedWeapons = {
 Config.AuthorizedVehicles = {
 	car = {
 		tamtama = {
-			{model = 'police', price = 10000},
-			{model = 'police2', price = 10000}
+			{model = 'police', price = 10000}
 		},
 
 		bripda = {
-			{model = 'police3', price = 10000},
 			{model = 'police', price = 10000},
-			{model = 'police2', price = 10000}
+			{model = 'police2', price = 10000},
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		briptu = {
-			{model = 'police3', price = 10000},
 			{model = 'police', price = 10000},
-			{model = 'police2', price = 10000}
+			{model = 'police2', price = 10000},
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		brigpol = {
-			{model = 'police3', price = 10000},
 			{model = 'police', price = 10000},
-			{model = 'police2', price = 10000}
+			{model = 'police2', price = 10000},
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		bripka = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		aipda = {
-			{model = 'policeb', price = 10000},
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
-		aiptu = {
-			{model = 'policeb', price = 10000},
+		aiptu = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
-		ipda = {
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
+		ipda = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		iptu = {
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		akp = {
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		kompol = {
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		kombes = {
-			{model = 'riot', price = 10000},
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		akbp = {
-			{model = 'riot', price = 10000},
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
-		brigjen = {
-			{model = 'riot', price = 10000},
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
+		brigjen = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
 		irjen = {
-			{model = 'riot', price = 10000},
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
-		komjen = {
-			{model = 'riot', price = 10000},
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
+		komjen = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstangprice', price = 10000},
+			{model = 'fbi', price = 10000}
 		},
 
-		boss = {
-			{model = 'riot', price = 10000},
-			{model = 'pranger', price = 10000},
-			{model = 'policeb', price = 10000},
+		boss = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'policeb', price = 10000},
-			{model = 'police3', price = 10000}
+			{model = 'polb', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstangprice', price = 10000},
+			{model = 'fbi', price = 10000}
 		}
 	},
 

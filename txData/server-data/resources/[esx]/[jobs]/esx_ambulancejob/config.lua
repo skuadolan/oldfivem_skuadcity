@@ -98,27 +98,31 @@ Config.Hospitals = {
 Config.AuthorizedVehicles = {
 	car = {
 		asisten_perawat = {
-			{model = 'ambulance', price = 5000}
 		},
 
 		perawat = {
-			{model = 'ambulance', price = 5000}
+			{model = 'ambulance', price = 5000},
+			{model = 'emsc', price = 10000}
 		},
 
 		asisten_doctor = {
-			{model = 'ambulance', price = 4500}
+			{model = 'ambulance', price = 5000},
+			{model = 'emsc', price = 10000}
 		},
 
 		chief_doctor = {
-			{model = 'ambulance', price = 4500}
+			{model = 'ambulance', price = 5000},
+			{model = 'emsc', price = 10000}
 		},
 
 		asisten_boss = {
-			{model = 'ambulance', price = 3000}
+			{model = 'ambulance', price = 5000},
+			{model = 'emsc', price = 10000}
 		},
 
 		boss = {
-			{model = 'ambulance', price = 2000}
+			{model = 'ambulance', price = 5000},
+			{model = 'emsc', price = 10000}
 		}
 	},
 

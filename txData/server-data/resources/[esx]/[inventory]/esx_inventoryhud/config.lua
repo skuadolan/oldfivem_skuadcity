@@ -32,80 +32,34 @@ Config.LicensePrice = 1000000
 Config.priceItemPedagang = 250 --sementara
 
 Config.Map = {
-    {name="Lounge",color=27, id=93,x = -629.28, y = 223.93, z = 81.88},
-    {name="Bandara Kota",color=39, id=307,x =-1037.38, y =-2737.68, z =20.17},
-
-    --[[{name="Warung",color=2, id=52,x =373.875, y =325.896, z =100.319},
-	{name="Warung",color=2, id=52,x =2557.458, y =382.282, z =100.319},
-	{name="Warung",color=2, id=52,x =-3038.939, y =585.954, z =6.908},
-	{name="Warung",color=2, id=52,x =-3241.927, y =1001.462, z =11.830},
-    {name="Warung",color=2, id=52,x =547.431, y =2671.710, z =41.156},
-	{name="Warung",color=2, id=52,x =1961.464, y =3740.672, z =31.343},
-	{name="Warung",color=2, id=52,x =2678.916, y =3280.671, z =54.241},
-	{name="Warung",color=2, id=52,x =1729.216, y =6414.131, z =34.037},
-	{name="Warung",color=2, id=52,x =26.17, y =-1347.33, z =28.5},
-    {name="Warung",color=2, id=52,x =1135.808, y =-982.281, z =45.415},
-	{name="Warung",color=2, id=52,x =-1222.915, y =-906.983, z =11.326},
-	{name="Warung",color=2, id=52,x =-1487.553, y =-379.107, z =39.163},
-	{name="Warung",color=2, id=52,x =-2968.243, y =390.910, z =14.043},
-    {name="Warung",color=2, id=52,x =1166.024, y =2708.930, z =37.157},
-	{name="Warung",color=2, id=52,x =1392.562, y =3604.648, z =33.980},
-    --{name="Warung",color=2, id=52,x =-160.33, y =6322.71, z =30.6},
-	{name="Warung",color=2, id=52,x =-48.519, y =-1757.514, z =28.421},
-	{name="Warung",color=2, id=52,x =1163.373, y =-323.801, z =68.205},
-	{name="Warung",color=2, id=52,x =-707.501, y =-914.260, z =18.215},
-	{name="Warung",color=2, id=52,x =-1820.523, y =792.518, z =137.118},
-	{name="Warung",color=2, id=52,x =1698.388, y =4924.404, z =41.063}]]
+    {name="Lounge",color=27, id=93, pos=vector3(-629.28, 223.93, 81.88)}
 }
 
 Config.Shops = {
     RegularShop = {
         Locations = {
-			{x = 373.875,   y = 325.896,  	z = 103.566},
-
-            {x = 2557.458,  y = 382.282,  	z = 108.622},
-
-            {x = -3038.939, y = 585.954,  	z = 7.908},
-
-            {x = -3241.927, y = 1001.462, 	z = 12.830},
-
-            {x = 547.431,   y = 2671.710, 	z = 42.156},
-
-            {x = 1961.464,  y = 3740.672, 	z = 32.343},
-
-            {x = 2678.916,  y = 3280.671, 	z = 56.241},
-
-            {x = 1729.216,  y = 6414.131, 	z = 35.037},
-
-            {x = 1135.808,  y = -982.281,  	z = 46.415},
-
-            {x = -1222.915, y = -906.983,  	z = 12.326},
-
-            {x = -1487.553, y = -379.107,  	z = 40.163},
-
-            {x = -2968.243, y = 390.910,   	z = 15.043},
-
-            {x = 1166.024,  y = 2708.930,  	z = 38.157},
-
-            {x = 1392.562,  y = 3604.684,  	z = 34.980},
-
-            {x = -48.519,   y = -1757.514, 	z = 29.421},
-
-            {x = 1163.373,  y = -323.801,  	z = 69.205},
-
-            {x = -707.501,  y = -914.260,  	z = 19.215},
-
-            {x = -1820.523, y = 792.518,   	z = 138.118},
-
-            {x = 26.17, 	y = -1347.33,   z = 29.5},
-
-            {x = -2540.95,  y = 2314.05,  	z = 33.41},
-
-            {x = 1698.388,  y = 4924.404,  	z = 42.063},
-
-            {x = -160.33,  	y = 6322.71,  	z = 31.6},
-
-            {x = -253.56, y = -979.32,    z = 32.22}, -- bandara    
+			vector3(373.8, 325.8, 102.5),
+			vector3(2557.4, 382.2, 107.6),
+			vector3(-3038.9, 585.9, 6.9),
+			vector3(-3241.9, 1001.4, 11.8),
+			vector3(547.4, 2671.7, 41.1),
+			vector3(1961.4, 3740.6, 31.3),
+			vector3(2678.9, 3280.6, 54.2),
+			vector3(1729.2, 6414.1, 34.0),
+            vector3(1135.8, -982.2, 45.4),
+			vector3(-1222.9, -906.9, 11.3),
+			vector3(-1487.5, -379.1, 39.1),
+			vector3(-2968.2, 390.9, 14.0),
+			vector3(1166.0, 2708.9, 37.1),
+			vector3(1392.5, 3604.6,  33.9),
+			vector3(127.8,  -1284.7, 28.2), --StripClub
+			vector3(-1393.4, -606.6, 29.3), --Tequila la
+			vector3(-559.9, 287.0, 81.1),
+            vector3(-48.5,  -1757.5, 28.4),
+			vector3(1163.3, -323.8, 68.2),
+			vector3(-707.5, -914.2, 18.2),
+			vector3(-1820.5, 792.5, 137.1),
+			vector3(1698.3, 4924.4, 41.0),
         },
         Items = {
             {name = 'air_putih'},
@@ -113,36 +67,16 @@ Config.Shops = {
             {name = 'tehkotak'},
             {name = 'makaroni'},
             {name = 'phone'},
-            {name = 'radio'}
-        }
-    },
-
-    RobsLiquor = {
-		Locations = {
-            {x = 1985.27, y = 3050.6, z = 48.22},
-            {x = -450.42, y = 281.22,   z = 78.52},
-
-            {x = -1577.93, y = -3014.85,   z = -81.01},
-
-            {x = -1586.7, y = -3012.44,   z = -78.0},
-
-         {x = -429.59, y = 268.26,   z = 83.02},
-
-         {x = 1420.48, y = 3558.65,   z = 36.71},
-        },
-        Items = {
-            {name = 'air_putih'},
-            {name = 'coklat'},
-            {name = 'tehkotak'},
-            {name = 'makaroni'},
-            {name = 'phone'},
-            {name = 'radio'}
+            {name = 'radio'},
+            {name = 'beer'},
+            {name = 'whiskey'},
+            {name = 'vodka'},
         }
     },
 
     Ambulance = {
 		Locations = {
-
+            vector3(311.72, -562.65, 43.28)
         },
         Items = {
             {name = 'bandage'},
@@ -152,7 +86,7 @@ Config.Shops = {
     
     Pedagang = {
 		Locations = {
-            { x = -629.28, y = 223.93, z = 81.88 }
+            vector3(-629.28, 223.93, 81.88)
         },
         Items = {
             {name = 'kopi'},
@@ -168,22 +102,24 @@ Config.Shops = {
         }
     },
 
-    Police = {
-		Locations = {
-            { x = 461.14, y = -982.62, z = 31.69 }
+    YouTool = {
+        Locations = {
+            vector3(61.04, -1726.92, 29.46),
+            vector3(2751.0, 3471.74,  55.7)
         },
         Items = {
-
+            {name = 'kertas'},
+            {name = 'gunpowder'},
+            {name = 'betadine'},
+            {name = 'fixtool'},
+            {name = 'carotool'},
+            {name = 'gazbottle'},
         }
     },
 
     Mech = {
         Locations = {
-            ---323.140, y = -129.882, z = 37.999
-            --X.-377.03 Y -121.5 Z 38.85
-            --310.8, -137.55, 39.01
-            { x = -310.8, y = -137.55, z = 39.01 },
-            --{ x = 548.53, y = -188.69, z = 54.48 },
+            vector3(-310.8, -137.55, 39.01)
         },
         Items = {
             {name = 'fixkit'},
@@ -192,13 +128,22 @@ Config.Shops = {
         }
     },
 
-    YouTool = {
-        Locations = {
-            {x = 311.72, y = -562.65, z = 43.28},
+    RobsLiquor = {
+		Locations = {
+            vector3(1272.85, -1711.89,54.77),
         },
         Items = {
-            {name = 'bandage'},
-            {name = 'medikit'}
+            {name = 'moneywash'},
+            {name = 'chemicalslisence'}
+        }
+    },
+
+    Police = {
+		Locations = {
+            
+        },
+        Items = {
+
         }
     },
 
@@ -216,7 +161,6 @@ Config.Shops = {
 
     Bahama = {
         Locations = {
-            {x = -1393.409, y = -606.624,  z = 30.319},
         },
         Items = {
             {name = 'air_putih'},
@@ -228,7 +172,6 @@ Config.Shops = {
 
     Tequi = {
         Locations = {
-            {x = -560.2, y = 285.4,  z = 82.25},
         },
         Items = {
             {name = 'air_putih'},
@@ -240,7 +183,6 @@ Config.Shops = {
 
     Yellow = {
 		Locations = {
-            {x = 1985.81, y = 3053.84,  z = 47.80}
         },
         Items = {
             {name = 'air_putih'},
@@ -252,7 +194,7 @@ Config.Shops = {
     
     Noblip = {
         Locations = {
-            {x = -1093.6,  y = -834.58, z = 23.25}            
+
         },
         Items = {
             {name = 'air_putih'},

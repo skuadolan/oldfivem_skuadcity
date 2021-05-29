@@ -120,6 +120,13 @@ Config.Jobs.miner = {
 					max = 50,
 					add = 1,
 					drop = 5
+				},
+				{
+					name = _U('m_coal'),
+					db_name = 'coal',
+					max = 50,
+					add = 2,
+					drop = 5
 				}
 			},
 			Hint = _U('m_melt_button'),

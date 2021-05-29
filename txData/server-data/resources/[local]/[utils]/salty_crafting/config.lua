@@ -7,15 +7,32 @@ Config.Recipes = {
 	-- Can be a normal ESX item
 	["beer"] = { 
 		{item = "air_putih", quantity = 1 },
-		{item = "pmicin", quantity = 1 },
+		{item = "micin", quantity = 1 },
 	},
+
+	["whiskey"] = { 
+		{item = "air_putih", quantity = 1 },
+		{item = "micin", quantity = 1 },
+	},
+
+	["vodka"] = { 
+		{item = "air_putih", quantity = 1 },
+		{item = "kecubung", quantity = 1 },
+	},
+
+	
 
 	["bandage"] = { 
 		{item = "fabric", quantity = 12 },
+		{item = "betadine", quantity = 2 }
+	},
+
+	["bubuk_arang"] = { 
+		{item = "coal", quantity = 1 },
 	},
 
 	["gunpowder"] = { 
-		{item = "cutted_wood", quantity = 8 },
+		{item = "bubuk_arang", quantity = 8 },
 		{item = "iron", quantity = 4 },
 	},
 
@@ -25,8 +42,13 @@ Config.Recipes = {
 	},
 
 	["blowpipe"] = { 
-		{item = "gazbottle", quantity = 4 },
-		{item = "iron", quantity = 8 },
+		{item = "gazbottle", quantity = 1 },
+		{item = "iron", quantity = 2 },
+	}
+
+	["fixkit"] = { 
+		{item = "fixtool", quantity = 8 },
+		{item = "carotool", quantity = 4 },
 	}
 }
 

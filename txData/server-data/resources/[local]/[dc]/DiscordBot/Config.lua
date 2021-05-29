@@ -1,5 +1,5 @@
 DiscordWebhookSystemInfos = 'https://discord.com/api/webhooks/827157977067946045/aN9ho2K8IHtwIFaHDjt1ra0Sq9TKCqrs6EDItNPGkLc_X56oRGvNLt_grKhgk-bhera8'
-DiscordWebhookKillinglogs = 'https://discord.com/api/webhooks/827157977067946045/aN9ho2K8IHtwIFaHDjt1ra0Sq9TKCqrs6EDItNPGkLc_X56oRGvNLt_grKhgk-bhera8'
+DiscordWebhookKillinglogs = 'https://discord.com/api/webhooks/817653173614936065/-uj0exaUwn_ktEjFP5-QqBVwaCyHA1FmzteTvpqRTpA5uqoVsgHciJXhnofhWyQKIvR-'
 DiscordWebhookChat = 'https://discord.com/api/webhooks/817653173614936065/-uj0exaUwn_ktEjFP5-QqBVwaCyHA1FmzteTvpqRTpA5uqoVsgHciJXhnofhWyQKIvR-'
 
 SystemAvatar = 'https://media.discordapp.net/attachments/797857470897848360/827171596808617994/SKUAD_CITY_DISCORD.png'

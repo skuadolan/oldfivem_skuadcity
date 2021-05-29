@@ -1069,26 +1069,21 @@ ESX.Game.Utils.DrawText3D = function(coords, text, scale, font)
 	local fov = (1 / GetGameplayCamFov()) * 100
 	scale = scale * fov
 
-	if not scale then scale = 0.35 end
-	if not font then font = 4 end
-
-	SetTextScale(scale, scale)
+	SetTextScale(0.0 * scale, 0.55 * scale)
 	SetTextFont(font)
-	SetTextProportional(1)
 	SetTextColour(255, 255, 255, 215)
-	SetTextEntry('STRING')
-	SetTextCentre(true)
 	SetTextDropshadow(0, 0, 0, 0, 255)
 	SetTextDropShadow()
 	SetTextOutline()
+	SetTextCentre(true)
+	SetTextProportional(1)
+	SetTextEntry('STRING')
 
-	AddTextComponentString(text)
+	SetDrawOrigin(coords, 0)
 	BeginTextCommandDisplayText('STRING')
+	AddTextComponentString(text)
 	AddTextComponentSubstringPlayerName(text)
 	EndTextCommandDisplayText(0.0, 0.0)
-	SetDrawOrigin(vector.xyz, 0)
-	DrawText(0.0, 0.0)
-	DrawRect(0.0, 0.0 + 0.0125, 0.017, 0.03, 0, 0, 0, 75)
 	ClearDrawOrigin()
 end
 

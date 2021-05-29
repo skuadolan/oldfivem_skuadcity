@@ -15,3 +15,27 @@ ESX.RegisterUsableItem('beer', function(source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_beer'))
 
 end)
+
+ESX.RegisterUsableItem('whiskey', function(source)
+
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('whiskey', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 250000)
+	TriggerClientEvent('esx_optionalneeds:onDrink', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_beer'))
+
+end)
+
+ESX.RegisterUsableItem('vodka', function(source)
+
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('vodka', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 250000)
+	TriggerClientEvent('esx_optionalneeds:onDrink', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_beer'))
+
+end)

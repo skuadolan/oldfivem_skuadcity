@@ -320,8 +320,8 @@ function newShift()
   currentJob = jobLocation
  end
  currentJobPay = CalculateTravelDistanceBetweenPoints(GetEntityCoords(GetPlayerPed(-1)), currentJob[1],currentJob[2],currentJob[3])/2/4
- if currentJobPay > 60 then 
-  currentJobPay = math.random(70, 100)
+ if currentJobPay > 1000 then 
+  currentJobPay = math.random(70, 1000)
  end
 end
 

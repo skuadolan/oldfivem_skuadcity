@@ -109,6 +109,7 @@ local atms = {
 	{name="ATM", id=277, x=-1285.6, y=-224.28, z=42.45},
 	{name="ATM", id=277, x=-1286.24, y=-213.39, z=42.45},
 	{name="ATM", id=277, x=-1282.54, y=-210.45, z=42.45},
+	{name="ATM", id=277, x=315.14, y=-593.72, z=43.28}
 }
 --================================================================================================
 --==                                THREADING - DO NOT EDIT                                     ==
@@ -139,6 +140,8 @@ if bankMenu then
 			DisplayHelpText("Tekan ~INPUT_PICKUP~ untuk mengakses~b~")
 	
 		if IsControlJustPressed(1, 38) then
+			playAnim('mp_common', 'givetake1_a', 1000)
+			Citizen.Wait(1000)
 			inMenu = true
 			SetNuiFocus(true, true)
 			SendNUIMessage({type = 'openGeneral'})
@@ -197,6 +200,31 @@ end)
 --==           Deposit Event                   ==
 --===============================================
 RegisterNUICallback('deposit', function(data)
+	playAnim('mp_common', 'givetake1_a', 1000)
+		TriggerEvent("mythic_progbar:client:progress", {
+			name = "",
+			duration = 1000,
+			label = "MEMASUKKAN UANG",
+			useWhileDead = false,
+			canCancel = true,
+			controlDisables = {
+				disableMovement = true,
+				disableCarMovement = true,
+				disableMouse = false,
+				disableCombat = true,
+			},
+			animation = {
+				animDict = "",
+				anim = "",
+			},
+			prop = {
+				model = "",
+			}
+		}, function(status)
+			if not status then
+			end
+		end)
+		Citizen.Wait(1000)
 	TriggerServerEvent('bank:deposit', tonumber(data.amount))
 	TriggerServerEvent('bank:balance')
 end)
@@ -205,6 +233,31 @@ end)
 --==          Withdraw Event                   ==
 --===============================================
 RegisterNUICallback('withdrawl', function(data)
+	playAnim('mp_common', 'givetake1_a', 1000)
+		TriggerEvent("mythic_progbar:client:progress", {
+			name = "",
+			duration = 1000,
+			label = "MENGAMBIL UANG",
+			useWhileDead = false,
+			canCancel = true,
+			controlDisables = {
+				disableMovement = true,
+				disableCarMovement = true,
+				disableMouse = false,
+				disableCombat = true,
+			},
+			animation = {
+				animDict = "",
+				anim = "",
+			},
+			prop = {
+				model = "",
+			}
+		}, function(status)
+			if not status then
+			end
+		end)
+		Citizen.Wait(1000)
 	TriggerServerEvent('bank:withdraw', tonumber(data.amountw))
 	TriggerServerEvent('bank:balance')
 end)
@@ -226,6 +279,31 @@ end)
 --==         Transfer Event                    ==
 --===============================================
 RegisterNUICallback('transfer', function(data)
+	playAnim('mp_common', 'givetake1_a', 1000)
+		TriggerEvent("mythic_progbar:client:progress", {
+			name = "",
+			duration = 1000,
+			label = "TRANSFER UANG",
+			useWhileDead = false,
+			canCancel = true,
+			controlDisables = {
+				disableMovement = true,
+				disableCarMovement = true,
+				disableMouse = false,
+				disableCombat = true,
+			},
+			animation = {
+				animDict = "",
+				anim = "",
+			},
+			prop = {
+				model = "",
+			}
+		}, function(status)
+			if not status then
+			end
+		end)
+		Citizen.Wait(1000)
 	TriggerServerEvent('bank:transfer', data.to, data.amountt)
 	TriggerServerEvent('bank:balance')
 end)
@@ -258,7 +336,7 @@ function nearBank()
 	for _, search in pairs(banks) do
 		local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
 		
-		if distance <= 3 then
+		if distance <= 2 then
 			return true
 		end
 	end
@@ -271,7 +349,7 @@ function nearATM()
 	for _, search in pairs(atms) do
 		local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
 		
-		if distance <= 3 then
+		if distance <= 1 then
 			return true
 		end
 	end
@@ -282,4 +360,12 @@ function DisplayHelpText(str)
 	SetTextComponentFormat("STRING")
 	AddTextComponentString(str)
 	DisplayHelpTextFromStringLabel(0, 0, 1, -1)
+end
+
+
+function playAnim(animDict, animName, duration)
+	RequestAnimDict(animDict)
+	while not HasAnimDictLoaded(animDict) do Citizen.Wait(0) end
+	TaskPlayAnim(PlayerPedId(), animDict, animName, 1.0, -1.0, duration, 49, 1, false, false, false)
+	RemoveAnimDict(animDict)
 end

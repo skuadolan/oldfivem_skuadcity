@@ -42,39 +42,24 @@ Citizen.CreateThread(function()
             if IsInRegularShopZone(coords) then
                 if IsControlJustReleased(0, Keys["E"]) then
                     OpenShopInv("regular")
-                    Citizen.Wait(2000)
-                end
-            end
-            if IsInRobsLiquorZone(coords) then
-                if IsControlJustReleased(0, Keys["E"]) then
-                    OpenShopInv("robsliquor")
-                    Citizen.Wait(2000)
+                    Citizen.Wait(1000)
                 end
             end
             if IsInYouToolZone(coords) then
                 if IsControlJustReleased(0, Keys["E"]) then
-                    if PlayerData.job ~= nil and PlayerData.job.name == 'ambulance' then
-                        OpenShopInv("youtool")
-                        Citizen.Wait(2000)
-                    end    
+                    OpenShopInv("youtool")
+                    Citizen.Wait(1000)
                 end
             end
-            if IsInMechZone(coords) then
+            if IsInRobsLiquorZone(coords) then
                 if IsControlJustReleased(0, Keys["E"]) then
-                    if PlayerData.job ~= nil and PlayerData.job.name == 'mechanic' then
-                        OpenShopInv("mech")
-                        Citizen.Wait(2000)
-                    end    
+                    OpenShopInv("weaponshop") --black market
+                    Citizen.Wait(1000)
                 end
             end
-            if IsInPoliceZone(coords) then
-                if IsControlJustReleased(0, Keys["E"]) then
-                    if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
-                        OpenShopInv("police")
-                        Citizen.Wait(2000)
-                    end    
-                end
-            end
+
+
+            
             if IsInPedagangZone(coords) then
                 letSleep = false    
                 if IsControlJustReleased(0, Keys["E"]) then    
@@ -90,6 +75,22 @@ Citizen.CreateThread(function()
                         OpenShopInv("ambulance")        
                     end    
                 end    
+            end
+            if IsInMechZone(coords) then
+                if IsControlJustReleased(0, Keys["E"]) then
+                    if PlayerData.job ~= nil and PlayerData.job.name == 'mechanic' then
+                        OpenShopInv("mech")
+                        Citizen.Wait(1000)
+                    end    
+                end
+            end
+            if IsInPoliceZone(coords) then
+                if IsControlJustReleased(0, Keys["E"]) then
+                    if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
+                        OpenShopInv("police")
+                        Citizen.Wait(1000)
+                    end    
+                end
             end
         end
     end
@@ -186,7 +187,7 @@ function IsInRegularShopZone(coords)
     RegularShop = Config.Shops.RegularShop.Locations
     
     for i = 1, #RegularShop, 1 do
-        if GetDistanceBetweenCoords(coords, RegularShop[i].x, RegularShop[i].y, RegularShop[i].z, true) < 1.5 then
+        if GetDistanceBetweenCoords(coords, RegularShop[i], true) < 1.5 then
            
             return true
         end
@@ -198,7 +199,7 @@ function IsInRobsLiquorZone(coords)
     RobsLiquor = Config.Shops.RobsLiquor.Locations
     
     for i = 1, #RobsLiquor, 1 do
-        if GetDistanceBetweenCoords(coords, RobsLiquor[i].x, RobsLiquor[i].y, RobsLiquor[i].z, true) < 1.5 then
+        if GetDistanceBetweenCoords(coords, RobsLiquor[i], true) < 1.5 then
             
             return true
         end
@@ -210,7 +211,7 @@ function IsInYouToolZone(coords)
     YouTool = Config.Shops.YouTool.Locations
     
     for i = 1, #YouTool, 1 do
-        if GetDistanceBetweenCoords(coords, YouTool[i].x, YouTool[i].y, YouTool[i].z, true) < 1.5 then
+        if GetDistanceBetweenCoords(coords, YouTool[i], true) < 1.5 then
             
             return true
         end
@@ -222,7 +223,7 @@ function IsInMechZone(coords)
     Mech = Config.Shops.Mech.Locations
     
     for i = 1, #Mech, 1 do
-        if GetDistanceBetweenCoords(coords, Mech[i].x, Mech[i].y, Mech[i].z, true) < 1.5 then
+        if GetDistanceBetweenCoords(coords, Mech[i], true) < 1.5 then
            
             return true
         end
@@ -234,7 +235,7 @@ function IsInAmbulanceZone(coords)
     Ambulance = Config.Shops.Ambulance.Locations
     
     for i = 1, #Ambulance, 1 do
-        if GetDistanceBetweenCoords(coords, Ambulance[i].x, Ambulance[i].y, Ambulance[i].z, true) < 1.5 then
+        if GetDistanceBetweenCoords(coords, Ambulance[i], true) < 1.5 then
             
             return true
         end
@@ -246,7 +247,7 @@ function IsInPedagangZone(coords)
     Pedagang = Config.Shops.Pedagang.Locations
     
     for i = 1, #Pedagang, 1 do
-        if GetDistanceBetweenCoords(coords, Pedagang[i].x, Pedagang[i].y, Pedagang[i].z, true) < 0.5 then
+        if GetDistanceBetweenCoords(coords, Pedagang[i], true) < 0.5 then
             
             return true
         end
@@ -259,7 +260,7 @@ function IsInPoliceZone(coords)
     
 
     for i = 1, #Police, 1 do
-        if GetDistanceBetweenCoords(coords, Police[i].x, Police[i].y, Police[i].z, true) < 0.5 then
+        if GetDistanceBetweenCoords(coords, Police[i], true) < 0.5 then
             
             return true
         end
@@ -282,15 +283,15 @@ local already = false
 Citizen.CreateThread(function()
     while(true) do
         --config shop
-        test1 = GetDistanceBetweenCoords(coords, Config.Shops.RegularShop.Locations[k].x, Config.Shops.RegularShop.Locations[k].y, Config.Shops.RegularShop.Locations[k].z, true)
-        test2 = GetDistanceBetweenCoords(coords, Config.Shops.RobsLiquor.Locations[k].x, Config.Shops.RobsLiquor.Locations[k].y, Config.Shops.RobsLiquor.Locations[k].z, true)
-        test3 = GetDistanceBetweenCoords(coords, Config.Shops.YouTool.Locations[k].x, Config.Shops.YouTool.Locations[k].y, Config.Shops.YouTool.Locations[k].z, true)
-        test4 = GetDistanceBetweenCoords(coords, Config.Shops.Mech.Locations[k].x, Config.Shops.Mech.Locations[k].y, Config.Shops.Mech.Locations[k].z, true)
-        test5 = GetDistanceBetweenCoords(coords, Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z, true)
-        test6 = GetDistanceBetweenCoords(coords, Config.Shops.Pedagang.Locations[k].x, Config.Shops.Pedagang.Locations[k].y, Config.Shops.Pedagang.Locations[k].z, true)
-        test7 = GetDistanceBetweenCoords(coords, Config.Shops.Police.Locations[k].x, Config.Shops.Police.Locations[k].y, Config.Shops.Police.Locations[k].z, true)
-        test8 = GetDistanceBetweenCoords(coords, Config.Shops.Ambulance.Locations[k].x, Config.Shops.Ambulance.Locations[k].y, Config.Shops.Ambulance.Locations[k].z, true)
-        test9 = GetDistanceBetweenCoords(coords, Config.Shops.WeaponShop.Locations[k].x, Config.Shops.WeaponShop.Locations[k].y, Config.Shops.WeaponShop.Locations[k].z, true)
+        test1 = GetDistanceBetweenCoords(coords, Config.Shops.RegularShop.Locations[k], true)
+        test2 = GetDistanceBetweenCoords(coords, Config.Shops.RobsLiquor.Locations[k], true)
+        test3 = GetDistanceBetweenCoords(coords, Config.Shops.YouTool.Locations[k], true)
+        test4 = GetDistanceBetweenCoords(coords, Config.Shops.Mech.Locations[k], true)
+        test5 = GetDistanceBetweenCoords(coords, Config.Shops.PrisonShop.Locations[k], true)
+        test6 = GetDistanceBetweenCoords(coords, Config.Shops.Pedagang.Locations[k], true)
+        test7 = GetDistanceBetweenCoords(coords, Config.Shops.Police.Locations[k], true)
+        test8 = GetDistanceBetweenCoords(coords, Config.Shops.Ambulance.Locations[k], true)
+        test9 = GetDistanceBetweenCoords(coords, Config.Shops.WeaponShop.Locations[k], true)
         --take
         take = IsPedSittingInAnyVehicle(playerPed)
         --already
@@ -376,7 +377,7 @@ Citizen.CreateThread(function()
         local sleep = true
         for k,v in pairs(Config.Shops) do
             for i = 1, #v.Locations, 1 do
-                local distance = GetDistanceBetweenCoords(playerCoords, v.Locations[i].x, v.Locations[i].y, v.Locations[i].z, true)
+                local distance = GetDistanceBetweenCoords(playerCoords, v.Locations[i], true)
                 if distance <  1.5 then
                     sleep = false
                     if distance < 1.5 then
@@ -444,7 +445,7 @@ Citizen.CreateThread(function()
 	
 	for i=1, #Config.Map, 1 do
 		
-		local blip = AddBlipForCoord(Config.Map[i].x, Config.Map[i].y, Config.Map[i].z)
+		local blip = AddBlipForCoord(Config.Map[i].pos)
 		SetBlipSprite (blip, Config.Map[i].id)
 		SetBlipScale  (blip, 0.7)
 		SetBlipDisplay(blip, 4)

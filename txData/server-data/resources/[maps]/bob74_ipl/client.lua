@@ -47,7 +47,7 @@ Citizen.CreateThread(function()
     RedCarpet.Enable(true)
     
     -- North Yankton: 3217.697, -4834.826, 111.8152
-    NorthYankton.Enable(true)
+    NorthYankton.Enable(false)
 
     -- ====================================================================
     -- =-------------------------- [GTA Online] --------------------------=

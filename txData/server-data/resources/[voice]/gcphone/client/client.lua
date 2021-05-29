@@ -173,7 +173,7 @@ function showFixePhoneHelper (coords)
     local dist = GetDistanceBetweenCoords(
       data.coords.x, data.coords.y, data.coords.z,
       coords.x, coords.y, coords.z, 1)
-    if dist <= 2.5 then
+    if dist <= 1 then
       SetTextComponentFormat("STRING")
       AddTextComponentString(_U('use_fixed', data.name, number))
       DisplayHelpTextFromStringLabel(0, 0, 0, -1)

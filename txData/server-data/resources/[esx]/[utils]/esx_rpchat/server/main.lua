@@ -234,7 +234,7 @@ end, false)]]
 	end
 end, false)]]
 
---[[RegisterCommand('msg', function(source, args, user)
+RegisterCommand('msg', function(source, args, user)
 
 	if GetPlayerName(tonumber(args[1])) then
 		local player = tonumber(args[1])
@@ -246,7 +246,7 @@ end, false)]]
 		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID de jugador incorrecta!")
 	end
 
-end,false)]]
+end,false)
 
 function GetRealPlayerName(playerId)
 	local xPlayer = ESX.GetPlayerFromId(playerId)

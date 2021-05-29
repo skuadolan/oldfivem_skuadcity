@@ -11,6 +11,7 @@ Config.NPCNextToDistance          = 25.0
 Config.NPCJobEarnings             = { min = 15, max = 40 }
 
 Config.Vehicles = {
+	'flatbed3'
 }
 
 Config.Zones = {
