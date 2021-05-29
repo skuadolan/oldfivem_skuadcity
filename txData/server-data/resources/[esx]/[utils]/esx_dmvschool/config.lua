@@ -1,6 +1,6 @@
 Config                 = {}
 Config.DrawDistance    = 100.0
-Config.MaxErrors       = 5
+Config.MaxErrors       = 7
 Config.SpeedMultiplier = 3.6
 Config.Locale          = 'en'
 

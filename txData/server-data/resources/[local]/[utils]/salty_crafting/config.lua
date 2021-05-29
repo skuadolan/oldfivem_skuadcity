@@ -5,22 +5,15 @@ Config.WeaponAmmo = 42
 
 Config.Recipes = {
 	-- Can be a normal ESX item
-	["beer"] = { 
+	["betadine"] = { 
 		{item = "air_putih", quantity = 1 },
-		{item = "micin", quantity = 1 },
+		{item = "micin", quantity = 1 }
 	},
 
-	["whiskey"] = { 
+	["betadine"] = { 
 		{item = "air_putih", quantity = 1 },
-		{item = "micin", quantity = 1 },
+		{item = "sianida", quantity = 1 }
 	},
-
-	["vodka"] = { 
-		{item = "air_putih", quantity = 1 },
-		{item = "kecubung", quantity = 1 },
-	},
-
-	
 
 	["bandage"] = { 
 		{item = "fabric", quantity = 12 },
@@ -32,8 +25,8 @@ Config.Recipes = {
 	},
 
 	["gunpowder"] = { 
-		{item = "bubuk_arang", quantity = 8 },
-		{item = "iron", quantity = 4 },
+		{item = "bubuk_arang", quantity = 4 },
+		{item = "iron", quantity = 2 },
 	},
 
 	["clip"] = { 
@@ -44,11 +37,11 @@ Config.Recipes = {
 	["blowpipe"] = { 
 		{item = "gazbottle", quantity = 1 },
 		{item = "iron", quantity = 2 },
-	}
+	},
 
 	["fixkit"] = { 
-		{item = "fixtool", quantity = 8 },
-		{item = "carotool", quantity = 4 },
+		{item = "fixtool", quantity = 4 },
+		{item = "carotool", quantity = 2 },
 	}
 }
 

@@ -1,6 +1,6 @@
 Locales['en'] = {
   ['shop_robbery'] = 'perampokan ',
-  ['press_to_rob'] = 'tekan ~INPUT_CONTEXT~ to ~o~perampokan~s~ ~b~%s~s~',
+  ['press_to_rob'] = 'tekan ~INPUT_CONTEXT~ untuk ~o~perampokan~s~ ~b~%s~s~',
   ['robbery_timer'] = 'waktu perampokan: ~r~%s~s~ detik lagi',
   ['recently_robbed'] = 'tempat ini sudah pernah di rampok sebelumnya, tunggulah beberapa saat lagi',
   ['rob_in_prog'] = '~r~perampokan sedang terjadi di ~b~%s~s~',

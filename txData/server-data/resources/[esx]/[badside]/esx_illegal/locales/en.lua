@@ -1,44 +1,44 @@
 Locales ['en'] = {
   -- weed
   ['weed_pickupprompt'] = 'tekan ~INPUT_CONTEXT~ untuk mengambil ~g~kecubung~s~',
-  ['weed_inventoryfull'] = 'Inventory anda penuh untuk membawa kecubung',
-  ['weed_processprompt'] = 'tekan ~INPUT_CONTEXT~ to start ~g~Processing kecubung~s~.',
+  ['weed_inventoryfull'] = 'tas sudah penuh!',
+  ['weed_processprompt'] = 'tekan ~INPUT_CONTEXT~ untuk memulai ~g~Memproses Kecubung~s~.',
   ['weed_processingstarted'] = 'memproses kecubung...',
-  ['weed_processingfull'] = 'gagal proses karena inventory anda penuh!',
-  ['weed_processingenough'] = 'you must have ~b~1x~s~ ~g~kecubung~s~ in order to process.',
-  ['weed_processed'] = 'you\'ve processed ~b~1x~s~ ~g~kecubung~s~ to ~b~1x~s~ ~g~Marijuana~s~',
-  ['weed_processingtoofar'] = 'gagal proses karena anda keluar area',
+  ['weed_processingfull'] = 'gagal memproses! Tas penuh!',
+  ['weed_processingenough'] = 'harus punya ~b~1x~s~ ~g~Kecubung~s~ untuk memproses',
+  ['weed_processed'] = 'telah memproses ~b~1x~s~ ~g~Kecubung~s~ untuk ~b~1x~s~ ~g~Marijuana~s~',
+  ['weed_processingtoofar'] = 'gagal memproses! karena keluar zona',
   ['pickup_micin'] = 'micin telah terambil',
   ['pickup_sianida'] = 'sianida telah terambil',
   ['pickup_kecubung'] = 'kecubung telah terambil',
   
   -- coke
   ['coke_pickupprompt'] = 'tekan ~INPUT_CONTEXT~ untuk mengambil ~g~micin~s~.',
-  ['coke_inventoryfull'] = 'Inventory anda penuh untuk membawa micin',
-  ['coke_processprompt'] = 'tekan ~INPUT_CONTEXT~ to start ~g~Processing Coke~s~.',
+  ['coke_inventoryfull'] = 'tas sudah penuh!',
+  ['coke_processprompt'] = 'tekan ~INPUT_CONTEXT~ to start ~g~Memproses Micin~s~.',
   ['coke_processingstarted'] = 'memproses micin...',
-  ['coke_processingfull'] = 'gagal proses karena inventory anda penuh!',
-  ['coke_processingenough'] = 'you must have ~b~1x~s~ ~g~micin leaf~s~ in order to process.',
-  ['coke_processed'] = 'you\'ve processed ~b~1x~s~ ~g~Coke~s~',
-  ['coke_processingtoofar'] = 'gagal proses karena anda keluar area',
+  ['coke_processingfull'] = 'gagal memproses! Tas penuh!',
+  ['coke_processingenough'] = 'harus punya ~b~1x~s~ ~g~Micin~s~ untuk memproses',
+  ['coke_processed'] = 'telah memproses ~b~1x~s~ ~g~Micin~s~',
+  ['coke_processingtoofar'] = 'gagal memproses! karena keluar zona',
   
    -- heroin
   ['heroin_pickupprompt'] = 'tekan ~INPUT_CONTEXT~ untuk mengambil ~g~Sianida~s~',
-  ['poppy_inventoryfull'] = 'inventory anda penuh untuk membawa sianida',
-  ['heroin_inventoryfull'] = 'inventory anda penuh untuk membawa paket sianida',
-  ['heroin_processprompt'] = 'tekan ~INPUT_CONTEXT~ to start ~g~Processing Heroin~s~.',
+  ['poppy_inventoryfull'] = 'tas sudah penuh!',
+  ['heroin_inventoryfull'] = 'tas sudah penuh!',
+  ['heroin_processprompt'] = 'tekan ~INPUT_CONTEXT~ to start ~g~Processing Sianida~s~.',
   ['heroin_processingstarted'] = 'memproses sianida',
-  ['heroin_processingfull'] = 'gagal proses karena inventory anda penuh!',
-  ['heroin_processingenough'] = 'you must have ~b~1x~s~ ~g~Poppy Resin~s~ in order to process.',
-  ['heroin_processed'] = 'berhasil memproses sianida',
-  ['heroin_processingtoofar'] = 'gagal proses karena anda keluar area',
+  ['heroin_processingfull'] = 'gagal memproses! Tas penuh!',
+  ['heroin_processingenough'] = 'harus punya ~b~1x~s~ ~g~Sianida~s~ untuk memproses',
+  ['heroin_processed'] = 'telah memproses ~b~1x~s~ ~g~Sianida~s~',
+  ['heroin_processingtoofar'] = 'gagal memproses! karena keluar zona',
 
   -- drug dealer
-  ['dealer_prompt'] = 'tekan ~INPUT_CONTEXT~ to talk with the ~r~Drug Dealer~s~.',
-  ['dealer_title'] = 'drug Dealer',
-  ['dealer_item'] = '$%s',
-  ['dealer_notenough'] = 'you don\'t have enough of that to sell!',
-  ['dealer_sold'] = 'you\'ve sold ~b~%sx~s~ ~y~%s~s~ for ~g~$%s~s~',
+  ['dealer_prompt'] = 'tekan ~INPUT_CONTEXT~ untuk ~r~Menjual~s~.',
+  ['dealer_title'] = 'Bandar',
+  ['dealer_item'] = 'Rp.%s',
+  ['dealer_notenough'] = 'barang tidak cukup banyak untuk dijual!',
+  ['dealer_sold'] = 'menjual ~b~%sx~s~ ~y~%s~s~ seharga ~g~$%s~s~',
 
   -- license
   ['license_title'] = 'you are required to own a processing license to process this product, it can be bought here.',
@@ -57,10 +57,10 @@ Locales ['en'] = {
   
   
   -- moneywash
-  ['moneywash_washed'] = 'you\'ve washed ~r~$%s~s~',
-  ['moneywash_title'] = 'MoneyWash',
-  ['moneywash_wash'] = 'Wash all black money.',
-  ['moneywash_prompt'] = 'tekan ~INPUT_CONTEXT~ to open the ~r~MoneyWash~s~.',
+  ['moneywash_washed'] = 'sedang mencuci ~r~Rp.%s~s~ uang kotor',
+  ['moneywash_title'] = 'Cuci Uang',
+  ['moneywash_wash'] = 'mencuci uang',
+  ['moneywash_prompt'] = 'tekan ~INPUT_CONTEXT~ untuk akses ~r~Menu~s~.',
   
   -- blips
   ['blip_weedfield'] = 'Weed Field',

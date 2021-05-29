@@ -9,9 +9,7 @@
 }
 
 .menu {
-	background-color: rgba(0,0,0,0.6);
-	border-radius: 20px;
-	font-family: Verdana;
+	font-family: bankgothic;
 	min-width: 400px;
 	color: #fff;
 	box-shadow: 0px 0px 50px 0px #000;
@@ -69,30 +67,28 @@
 }
 
 .menu .head {
-	background-image: url(https://i.imgur.com/T6cjLy8.png);
-	border-radius: 20px 20px 0px 0px;
+	background-color: #506be6;
 	text-align: center;
-	height: 85px;
+	height: 40px;
 	line-height: 40px;
 }
 
 .menu .menu-items {
 	max-height: 600px;
-	overflow-y: hidden;
-	border-radius: 0px 0px 20px 20px;
+	overflow-y: auto;
 }
 
 .menu .menu-items .menu-item {
 	height: 40px;
 	display: block;
-	background-color: rgba(0, 0, 0, 0.6);
-	-box-shadow: inset 1px 0px 0px 1px rgba(0, 0, 0, 0.6);
+	background-color: #f1f1f1;
+	box-shadow: inset 1px 0px 0px 1px #b8b8b8;
 	height: 32px;
 	line-height: 32px;
-	color: rgb(255, 255, 255);
+	color: #3A3A3A;
 	text-align: center;
 }
 
 .menu .menu-items .menu-item.selected {
-	background-color: #4d4d4d38;
+	background-color: #d0d0d0;
 }

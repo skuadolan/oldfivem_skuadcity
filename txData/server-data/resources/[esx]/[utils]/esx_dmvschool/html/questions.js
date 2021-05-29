@@ -1,42 +1,42 @@
 var tableauQuestion = [
 	{
-		question: "Si vous conduisez à 80km/h, que vous approchez d'un lieu de résidence, cela veut dire que :",
-		propositionA: "Vous devez accélérer",
-		propositionB: "Vous pouvez garder votre vitesse, si vous ne croisez pas d'autres véhicules",
-		propositionC: "Vous devez ralentir",
-		propositionD: "Vous pouvez garder votre vitesse",
+		question: "Jika Anda melaju dengan kecepatan 80 km/jam dan Anda mendekati daerah pemukiman, Anda harus:",
+		propositionA: "Menambah laju kendaraan",
+		propositionB: "Mempercepat laju kendaraan",
+		propositionC: "Memperlambat kecepatan",
+		propositionD: "Tetap dengan kecepatan yang sama",
 		reponse: "C"
 	},
 
 	{
-		question: "Vous vous apprétez à tourner à droite au feu vert, mais vous voyez un piéton qui traverse :",
-		propositionA: "Vous passez avant le piéton",
-		propositionB: "Vous vérifiez qu'il n'y a pas d'autre véhicule et vous passez",
-		propositionC: "Vous attendez que le piéton est terminé",
-		propositionD: "Vous shoutez le piéton pour passer",
+		question: "Jika Anda berbelok ke kanan di lampu lalu lintas, tetapi melihat penyeberangan pejalan kaki, apa yang Anda lakukan:",
+		propositionA: "Melewati pejalan kaki",
+		propositionB: "Memeriksa bahwa tidak ada kendaraan lain di sekitar",
+		propositionC: "Menunggu sampai pejalan kaki menyeberang",
+		propositionD: "Menabrak pejalan kaki tersebut",
 		reponse: "C"
 	},
 
 	{
-		question: "Sans aucune indication : La vitesse dans une zone résidentielle est de : __ km/h",
-		propositionA: "50",
-		propositionB: "55",
-		propositionC: "65",
-		propositionD: "70",
-		reponse: "A"
+		question: "Kecepatan di daerah pemukiman adalah: __ km/jam",
+		propositionA: "30 km/jam",
+		propositionB: "50 km/jam",
+		propositionC: "40 km/jam",
+		propositionD: "60 km/jam",
+		reponse: "B"
 	},
 
 	{
-		question: "Avant chaque changement de file vous devez :",
-		propositionA: "Vérifiez vos rétroviseurs",
-		propositionB: "Vérifiez vos angles morts",
-		propositionC: "Signalez vos intentions",
-		propositionD: "Tout cela",
+		question: "Sebelum berbelok atau mengganti jalur, Anda harus:",
+		propositionA: "Meliat spion",
+		propositionB: "Mengecek titik buta",
+		propositionC: "Menghidupkan reting/sein",
+		propositionD: "Semua jawaban benar",
 		reponse: "D"
 	},
 
 	{
-		question: "What blood alcohol level is classified as driving while intoxicated?",
+		question: "Berapa tingkat alkohol dalam darah yang diklasifikasikan sebagai mengemudi saat mabuk?",
 		propositionA: "0.05%",
 		propositionB: "0.18%",
 		propositionC: "0.08%",
@@ -45,47 +45,47 @@ var tableauQuestion = [
 	},
 
 	{
-		question: "A quel moment vous pouvez passer aux feux ?",
-		propositionA: "Quand il est vert",
-		propositionB: "Quand il n'y a personne sur l'intersection",
-		propositionC: "Vous êtes dans une zone d'école",
-		propositionD: "Quand il est vert et/ou rouge et que je tourne à droite",
-		reponse: "D"
+		question: "Kapan Anda bisa terus mengemudi di lampu lalu lintas?",
+		propositionA: "Pada saat hijau",
+		propositionB: "Pada saat ada orang yang menghalangi",
+		propositionC: "Berada di parkiran",
+		propositionD: "Pada saat makan",
+		reponse: "A"
 	},
 
 	{
-		question: "Un piéton est au feu rouge pour les piétons",
-		propositionA: "Vous le laissez passer",
-		propositionB: "Vous observez avant de continuer",
-		propositionC: "Vous lui faite un signe de la main",
-		propositionD: "Vous continuez votre chemin car votre feu est vert",
-		reponse: "D"
-	},
-
-	{
-		question: "Qu'est ce qui est permit quand vous dépassez un autre véhicule",
-		propositionA: "Le suivre de près pour le doubler plus vite",
-		propositionB: "Le doubler en quittant la route",
-		propositionC: "Conduire sur la route opposé pour le dépasser",
-		propositionD: "Dépasser la vitesse limite",
+		question: "Seorang pejalan kaki memiliki sinyal jangan menyeberang, apa yang Anda lakukan?",
+		propositionA: "Membiarkan mereka lewat",
+		propositionB: "Melanjutkan perjalanan dengan menambah kecepatan",
+		propositionC: "Menyuruh mereka untuk menepi dan melanjutkan perjalanan",
+		propositionD: "Lapor kepada polisi",
 		reponse: "C"
 	},
 
 	{
-		question: "Vous conduisez sur une rocade qui indique une vitesse maximum de 110 km/h. La plupart du traffic roule à 120 km/h, alors vous ne devriez pas conduire plus vite que :",
-		propositionA: "80 kmh",
-		propositionB: "40 kmh",
-		propositionC: "50 kmh",
-		propositionD: "110 kmh",
-		reponse: "D"
+		question: "Apa yang diperbolehkan saat melewati kendaraan lain",
+		propositionA: "Mengikutinya dengan cermat untuk melewatinya dengan lebih cepat",
+		propositionB: "Melewatinya tanpa keluar dari jalur yang tepat",
+		propositionC: "Berkendara di jalan yang sepi untuk dilewati",
+		propositionD: "Melebihi batas kecepatan untuk melewatinya",
+		reponse: "C"
 	},
 
 	{
-		question: "Quand vous êtes dépassé par un autre véhicule il est important de ne PAS :",
-		propositionA: "Ralentir",
-		propositionB: "Vérifiez vos rétroviseurs",
-		propositionC: "Regarder les autres conducteurs",
-		propositionD: "Augmenter votre vitesse",
+		question: "Anda berkendara di jalan raya yang menunjukkan kecepatan maksimum 120 km/jam. Tetapi anda  mengemudi dengan kecepatan 125 km/jam, jadi sebaiknya Anda tidak mengemudi lebih cepat dari:",
+		propositionA: "120 km/h",
+		propositionB: "125 km/h",
+		propositionC: "130 km/h",
+		propositionD: "110 km/h",
+		reponse: "A"
+	},
+
+	{
+		question: "Saat Anda disusul oleh kendaraan lain, penting untuk TIDAK:",
+		propositionA: "Berhinti",
+		propositionB: "Mengecek spion",
+		propositionC: "Memarahi pengendara tersebut",
+		propositionD: "Menambah kecepatan",
 		reponse: "D"
 	},
 ]

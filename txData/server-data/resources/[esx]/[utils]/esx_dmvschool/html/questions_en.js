@@ -1,42 +1,42 @@
 var tableauQuestion = [
 	{
-		question: "If you're going 80 km/h, and you're approaching a residential area you must:",
-		propositionA: "You accelerate",
-		propositionB: "You keep your speed, if you do not pass other vehicles",
-		propositionC: "You slow down",
-		propositionD: "You keep your speed",
+		question: "Jika Anda melaju dengan kecepatan 80 km/jam dan Anda mendekati daerah pemukiman, Anda harus:",
+		propositionA: "Menambah laju kendaraan",
+		propositionB: "Mempercepat laju kendaraan",
+		propositionC: "Memperlambat kecepatan",
+		propositionD: "Tetap dengan kecepatan yang sama",
 		reponse: "C"
 	},
 
 	{
-		question: "If you're turning right at a traffic light, but see a pedestrian crossing what do you do:",
-		propositionA: "You pass the pedestrian",
-		propositionB: "You check that there is no other vehicles around",
-		propositionC: "You wait until the pedestrian has crossed",
-		propositionD: "You shoot the pedestrian and continue to drive",
+		question: "Jika Anda berbelok ke kanan di lampu lalu lintas, tetapi melihat penyeberangan pejalan kaki, apa yang Anda lakukan:",
+		propositionA: "Melewati pejalan kaki",
+		propositionB: "Memeriksa bahwa tidak ada kendaraan lain di sekitar",
+		propositionC: "Menunggu sampai pejalan kaki menyeberang",
+		propositionD: "Menabrak pejalan kaki tersebut",
 		reponse: "C"
 	},
 
 	{
-		question: "Without any prior indication, the speed in a residential area is: __ km/h",
-		propositionA: "30 km/h",
-		propositionB: "50 km/h",
-		propositionC: "40 km/h",
-		propositionD: "60 km/h",
+		question: "Kecepatan di daerah pemukiman adalah: __ km/jam",
+		propositionA: "30 km/jam",
+		propositionB: "50 km/jam",
+		propositionC: "40 km/jam",
+		propositionD: "60 km/jam",
 		reponse: "B"
 	},
 
 	{
-		question: "Before every lane change you must:",
-		propositionA: "Check your mirrors",
-		propositionB: "Check your blind spots",
-		propositionC: "Signal your intentions",
-		propositionD: "All of the above",
+		question: "Sebelum berbelok atau mengganti jalur, Anda harus:",
+		propositionA: "Meliat spion",
+		propositionB: "Mengecek titik buta",
+		propositionC: "Menghidupkan reting/sein",
+		propositionD: "Semua jawaban benar",
 		reponse: "D"
 	},
 
 	{
-		question: "What blood alcohol level is classified as driving while intoxicated?",
+		question: "Berapa tingkat alkohol dalam darah yang diklasifikasikan sebagai mengemudi saat mabuk?",
 		propositionA: "0.05%",
 		propositionB: "0.18%",
 		propositionC: "0.08%",
@@ -45,34 +45,34 @@ var tableauQuestion = [
 	},
 
 	{
-		question: "When can you continue to drive at a traffic light?",
-		propositionA: "When it is green",
-		propositionB: "When there is nobody in the intersection",
-		propositionC: "You are in a school zone",
-		propositionD: "When it is green and / or red and you're turning right",
-		reponse: "D"
+		question: "Kapan Anda bisa terus mengemudi di lampu lalu lintas?",
+		propositionA: "Pada saat hijau",
+		propositionB: "Pada saat ada orang yang menghalangi",
+		propositionC: "Berada di parkiran",
+		propositionD: "Pada saat makan",
+		reponse: "A"
 	},
 
 	{
-		question: "A pedestrian has a do not cross signal, what do you do?",
-		propositionA: "You let them pass",
-		propositionB: "You observe before continuing",
-		propositionC: "You wave to tell them to cross",
-		propositionD: "You continue because your traffic light is green",
-		reponse: "D"
-	},
-
-	{
-		question: "What is allowed when passing another vehicle",
-		propositionA: "You follow it closely to pass it faster",
-		propositionB: "You pass it without leaving the roadway",
-		propositionC: "You drive on the opposite side of the road to pass",
-		propositionD: "You exceed the speed limit to pass them",
+		question: "Seorang pejalan kaki memiliki sinyal jangan menyeberang, apa yang Anda lakukan?",
+		propositionA: "Membiarkan mereka lewat",
+		propositionB: "Melanjutkan perjalanan dengan menambah kecepatan",
+		propositionC: "Menyuruh mereka untuk menepi dan melanjutkan perjalanan",
+		propositionD: "Lapor kepada polisi",
 		reponse: "C"
 	},
 
 	{
-		question: "You are driving on a highway which indicates a maximum speed of 120 km/h. But most trafficers drive at 125 km/h, so you should not drive faster than:",
+		question: "Apa yang diperbolehkan saat melewati kendaraan lain",
+		propositionA: "Mengikutinya dengan cermat untuk melewatinya dengan lebih cepat",
+		propositionB: "Melewatinya tanpa keluar dari jalur yang tepat",
+		propositionC: "Berkendara di jalan yang sepi untuk dilewati",
+		propositionD: "Melebihi batas kecepatan untuk melewatinya",
+		reponse: "C"
+	},
+
+	{
+		question: "Anda berkendara di jalan raya yang menunjukkan kecepatan maksimum 120 km/jam. Tetapi anda  mengemudi dengan kecepatan 125 km/jam, jadi sebaiknya Anda tidak mengemudi lebih cepat dari:",
 		propositionA: "120 km/h",
 		propositionB: "125 km/h",
 		propositionC: "130 km/h",
@@ -81,11 +81,11 @@ var tableauQuestion = [
 	},
 
 	{
-		question: "When you are overtaken by another vehicle it is important NOT to:",
-		propositionA: "Slow Down",
-		propositionB: "Check your mirrors",
-		propositionC: "Watch other drivers",
-		propositionD: "Increase your speed",
+		question: "Saat Anda disusul oleh kendaraan lain, penting untuk TIDAK:",
+		propositionA: "Berhinti",
+		propositionB: "Mengecek spion",
+		propositionC: "Memarahi pengendara tersebut",
+		propositionD: "Menambah kecepatan",
 		reponse: "D"
 	},
 ]

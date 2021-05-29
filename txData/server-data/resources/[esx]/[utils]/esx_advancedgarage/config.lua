@@ -2,7 +2,7 @@ Config = {}
 Config.Locale = 'en'
 
 Config.MenuAlign = 'bottom-right'
-Config.DrawDistance = 8.0
+Config.DrawDistance = 17.0
 
 Config.UseCommand = false -- Will allow players to do /getproperties instead of having to log out & back in to see Private Garages.
 Config.ParkVehicles = false -- true = Automatically Park all Vehicles in Garage on Server/Script Restart | false = Opposite of true but players will have to go to Pound to get their Vehicle Back.
