@@ -25,13 +25,23 @@ Config.Recipes = {
 	},
 
 	["gunpowder"] = { 
-		{item = "bubuk_arang", quantity = 4 },
+		{item = "bubuk_arang", quantity = 2 },
+	},
+
+	["bullet_casing"] = { 
+		{item = "stainless_steel", quantity = 4 },
+		{item = "iron", quantity = 2 },
+	},
+
+	["bullet"] = { 
+		{item = "gunpowder", quantity = 1 },
+		{item = "bullet_casing", quantity = 1 },
 		{item = "iron", quantity = 2 },
 	},
 
 	["clip"] = { 
-		{item = "gunpowder", quantity = 8 },
-		{item = "iron", quantity = 12 },
+		{item = "bullet", quantity = 10 },
+		{item = "iron", quantity = 4 },
 	},
 
 	["blowpipe"] = { 
@@ -42,7 +52,31 @@ Config.Recipes = {
 	["fixkit"] = { 
 		{item = "fixtool", quantity = 4 },
 		{item = "carotool", quantity = 2 },
-	}
+		{item = "battery", quantity = 1 },
+	},
+
+	["stainless_steel"] = { 
+		{item = "iron", quantity = 1 },
+		{item = "copper", quantity = 1 }
+	},
+
+	["SmallArmor"] = { 
+		{item = "leather", quantity = 6 },
+		{item = "bandage", quantity = 4 },
+		{item = "stainless_steel", quantity = 2 },
+	},
+
+	["MedArmor"] = { 
+		{item = "leather", quantity = 8 },
+		{item = "bandage", quantity = 6 },
+		{item = "stainless_steel", quantity = 4 },
+	},
+
+	["HeavyArmor"] = { 
+		{item = "leather", quantity = 10 },
+		{item = "bandage", quantity = 8 },
+		{item = "stainless_steel", quantity = 6 },
+	},
 }
 
 -- Enable a shop to access the crafting menu

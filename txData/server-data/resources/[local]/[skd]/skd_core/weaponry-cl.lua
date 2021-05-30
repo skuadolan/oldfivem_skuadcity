@@ -15,7 +15,7 @@ local global_wait 		= 300 			-- Don't change this
 local disable_reticle 	= true			-- Change this to false if you want a reticle
 local camera_shake 		= 0.1			-- Set this between 0.0-1.0 
 local scopedWeapons 	= {				-- Scoped weapons (Add's reticle back for them)
-	100416529, 205991906, 177293209, 3342088282, -952879014 
+	--100416529, 205991906, 177293209, 3342088282, -952879014 
 }
 
 function HashInTable(hash)
@@ -108,14 +108,14 @@ local recoils = {
 	[125959754] 		= 0.5, 		-- COMPACT GRENADE LAUNCHER	
 }
 
-Citizen.CreateThread(function()
+--[[Citizen.CreateThread(function()
     while true do
 	N_0x4757f00bc6323cfe(GetHashKey("WEAPON_UNARMED"), 0.1) 
     	Wait(0)
     	N_0x4757f00bc6323cfe(GetHashKey("WEAPON_NIGHTSTICK"), 0.1) 
     	Wait(0)
     end
-end)
+end)]]
 
 Citizen.CreateThread(function()
 	local wait = global_wait
@@ -210,6 +210,17 @@ Citizen.CreateThread(function()
 			end
 		else
 			wait = global_wait
+		end
+	end
+end)
+
+local timingFalling = 5000 -- in miliseconds >> 1000 ms = 1s
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(0)
+		if IsPedBeingStunned(GetPlayerPed(-1)) then
+		SetPedMinGroundTimeForStungun(GetPlayerPed(-1), timingFalling)
 		end
 	end
 end)

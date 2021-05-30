@@ -71,6 +71,8 @@ Config.Shops = {
             {name = 'beer'},
             {name = 'whiskey'},
             {name = 'vodka'},
+            {name = 'champagne'},
+            {name = 'wine'},
         }
     },
 
@@ -114,6 +116,7 @@ Config.Shops = {
             {name = 'fixtool'},
             {name = 'carotool'},
             {name = 'gazbottle'},
+            {name = 'battery'},
         }
     },
 
@@ -134,7 +137,8 @@ Config.Shops = {
         },
         Items = {
             {name = 'moneywash'},
-            {name = 'chemicalslisence'}
+            {name = 'chemicalslisence'},
+            {name = 'bullet_casing'}
         }
     },
 
