@@ -1460,9 +1460,9 @@ Citizen.CreateThread(function()
 
 			if IsControlJustReleased(0, 38) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'gang' then
 
-				if CurrentAction == 'menu_cloakroom' then
+				--[[if CurrentAction == 'menu_cloakroom' then
 					OpenCloakroomMenu()
-				elseif CurrentAction == 'menu_armory' then
+				else]]if CurrentAction == 'menu_armory' then
 					if not Config.EnableESXService then
 						OpenArmoryMenu(CurrentActionData.station)
 					elseif playerInService then
