@@ -423,3 +423,5 @@ function OnEmotePlay(EmoteName)
   end
   return true
 end
+
+RegisterKeyMapping('Menu Emote', 'Tombol Emote', 'keyboard', 'F3')

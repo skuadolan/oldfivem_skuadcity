@@ -15,6 +15,7 @@ client_scripts {
   "client/shop.lua",
   "client/police.lua",
   "client/trunk.lua",
+  "client/glovebox.lua",
   "client/cartel.lua",
   "client/vault.lua",
   "client/mafia.lua",

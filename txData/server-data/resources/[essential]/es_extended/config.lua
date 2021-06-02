@@ -11,6 +11,6 @@ Config.StartingAccountMoney = {bank = 0, money = 0}
 
 Config.EnableSocietyPayouts = false -- pay from the society account that the player is employed at? Requirement: esx_society
 Config.EnableHud            = false -- enable the default hud? Display current job and accounts (black, bank & cash)
-Config.MaxWeight            = 240   -- the max inventory weight without backpack
+Config.MaxWeight            = 320   -- the max inventory weight without backpack
 Config.PaycheckInterval     = 7 * 60000 -- how often to recieve pay checks in milliseconds
 Config.EnableDebug          = false

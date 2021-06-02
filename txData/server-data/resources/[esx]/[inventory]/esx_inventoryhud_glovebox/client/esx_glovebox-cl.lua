@@ -129,19 +129,33 @@ function openmenuvehicle()
           ESX.UI.Menu.CloseAll()
             if globalplate ~= nil or globalplate ~= "" or globalplate ~= " " then
               CloseToVehicle = true
-              OpenCoffresInventoryMenu(GetVehicleNumberPlateText(vehFront), Config.VehicleWeight[class], myVeh)
+              OpenCoffresInventoryMenu(GetVehicleNumberPlateText(vehFront), Config.VehicleLimit[class], myVeh)
             end
         else
-       
-            exports['b1g_notify']:Notify('false', _U("no_veh_nearby"))
+          exports.pNotify:SendNotification(
+            {
+              text = _U("no_veh_nearby"),
+              type = "error",
+              timeout = 3000,
+              layout = "bottomCenter",
+              queue = "glovebox"
+            }
+          )
         end
         lastOpen = true
         GUI.Time = GetGameTimer()
       end
     else
       -- Not their vehicle
- 
-            exports['b1g_notify']:Notify('false', _U("nacho_veh"))
+      exports.pNotify:SendNotification(
+        {
+          text = _U("nacho_veh"),
+          type = "error",
+          timeout = 3000,
+          layout = "bottomCenter",
+          queue = "glovebox"
+        }
+      )
     end
   end
 end
@@ -152,9 +166,10 @@ Citizen.CreateThread(
   function()
     while true do
       Wait(0)
+      --if IsControlJustReleased(0, Config.OpenKey) then
       if IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
         openmenuvehicle()
-        GUI.Time = GetGameTimer()
+        --GUI.Time = GetGameTimer()
       end
     end
   end
@@ -224,3 +239,5 @@ function dump(o)
     return tostring(o)
   end
 end
+
+RegisterKeyMapping('Dashboard Mobil', 'Tombol Dashboard Mobil', 'keyboard', 'Y')

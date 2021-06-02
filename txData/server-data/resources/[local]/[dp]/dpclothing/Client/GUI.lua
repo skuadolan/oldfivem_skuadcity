@@ -296,3 +296,5 @@ Citizen.CreateThread(function()
 		if Config.Debug then DrawDev() end
 	end
 end)
+
+RegisterKeyMapping('Menu Pakaian', 'Tombol Pakaian', 'keyboard', 'K')

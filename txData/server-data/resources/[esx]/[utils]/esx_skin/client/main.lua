@@ -211,9 +211,9 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
 
         if isCameraActive then
-            if IsControlPressed(0, 108) then
+            if IsControlPressed(0, 108) or IsControlPressed(82) then
                 angle = angle - 1
-            elseif IsControlPressed(0, 109) then
+            elseif IsControlPressed(0, 109) or IsControlPressed(81) then
                 angle = angle + 1
             end
 

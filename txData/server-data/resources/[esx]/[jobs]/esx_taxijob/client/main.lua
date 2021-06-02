@@ -274,7 +274,7 @@ function OpenMobileTaxiActionsMenu()
 		align    = 'top-left',
 		elements = {
 			{label = _U('billing'),   value = 'billing'},
-			{label = _U('start_job'), value = 'start_job'}
+			--{label = _U('start_job'), value = 'start_job'}
 	}}, function(data, menu)
 		if data.current.value == 'billing' then
 

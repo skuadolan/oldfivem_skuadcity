@@ -7,5 +7,5 @@ Locales['en'] = {
   ['tattoos']            = 'tattoos',
   ['tattoo_shop']        = 'Tempat Tatoo',
   ['bought_tattoo']      = 'Kamu Telah Menatoo ~y~tattoo~s~ for ~r~$%s~s~',
-  ['not_enough_money']   = 'you don\'t have ~r~enough money~s~ for that tattoo! You are missing ~r~$%s~s~'
+  ['not_enough_money']   = 'tidak cukup uang, kurang ~r~$%s~s~'
 }

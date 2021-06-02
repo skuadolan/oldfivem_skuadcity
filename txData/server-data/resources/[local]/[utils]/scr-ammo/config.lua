@@ -36,6 +36,6 @@ Config.Ammo = {
             `WEAPON_HEAVYSNIPER`,
             `WEAPON_MARKSMANRIFLE`
         },
-        count = 30
+        count = 75
     }
 }

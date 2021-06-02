@@ -239,7 +239,7 @@ Citizen.CreateThread(function()
   while isLoading do Citizen.Wait(10) end
   while true do
     Citizen.Wait(0)
-    if IsControlJustReleased(1, Keys["F6"]) and playerData.job.name == Config.jobName then openMobileBrinksMenu() end
+    --if IsControlJustReleased(1, Keys["F6"]) and playerData.job.name == Config.jobName then openMobileBrinksMenu() end
     if currentAction ~= nil then
       SetTextComponentFormat('STRING')
       AddTextComponentString(currentActionMsg)

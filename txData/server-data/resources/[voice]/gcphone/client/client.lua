@@ -763,3 +763,5 @@ RegisterNUICallback('takePhoto', function(data, cb)
   Citizen.Wait(1000)
   PhonePlayAnim('text', false, true)
 end)
+
+RegisterKeyMapping('Handphone', 'Tombol Phone', 'keyboard', 'F1')

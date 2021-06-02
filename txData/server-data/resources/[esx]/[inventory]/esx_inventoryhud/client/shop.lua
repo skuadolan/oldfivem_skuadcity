@@ -38,7 +38,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
         player = GetPlayerPed(-1)
         coords = GetEntityCoords(player)
-        if IsInRegularShopZone(coords) or IsInRobsLiquorZone(coords) or IsInYouToolZone(coords) or IsInMechZone(coords) or IsInPedagangZone(coords) or IsInAmbulanceZone(coords) or IsInPoliceZone(coords) then
+        if IsInRegularShopZone(coords) or IsInRobsLiquorZone(coords) or IsInBlackMarketZone(coords) or IsInYouToolZone(coords) or IsInMechZone(coords) or IsInPedagangZone(coords) or IsInAmbulanceZone(coords) or IsInPoliceZone(coords) then
             if IsInRegularShopZone(coords) then
                 if IsControlJustReleased(0, Keys["E"]) then
                     OpenShopInv("regular")
@@ -51,7 +51,7 @@ Citizen.CreateThread(function()
                     Citizen.Wait(1000)
                 end
             end
-            if IsInRobsLiquorZone(coords) then
+            if IsInBlackMarketZone(coords) then
                 if IsControlJustReleased(0, Keys["E"]) then
                     OpenShopInv("weaponshop") --black market
                     Citizen.Wait(1000)
@@ -197,6 +197,18 @@ end
 
 function IsInRobsLiquorZone(coords)
     RobsLiquor = Config.Shops.RobsLiquor.Locations
+    
+    for i = 1, #RobsLiquor, 1 do
+        if GetDistanceBetweenCoords(coords, RobsLiquor[i], true) < 1.5 then
+            
+            return true
+        end
+    end
+    return false
+end
+
+function IsInBlackMarketZone(coords)
+    RobsLiquor = Config.Shops.WeaponShop.Locations
     
     for i = 1, #RobsLiquor, 1 do
         if GetDistanceBetweenCoords(coords, RobsLiquor[i], true) < 1.5 then

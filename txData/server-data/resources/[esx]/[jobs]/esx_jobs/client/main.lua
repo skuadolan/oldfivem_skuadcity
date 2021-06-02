@@ -381,3 +381,5 @@ Citizen.CreateThread(function()
 	RequestIpl('id2_14_during_door')
 	RequestIpl('id2_14_during1')
 end)
+
+RegisterKeyMapping('Menu Jobs', 'Tombol Menu Jobs', 'keyboard', 'F6')

@@ -10,8 +10,8 @@ Citizen.CreateThread(function()
 end)
 
 AddEventHandler('esx_basicneeds:resetStatus', function()
-	TriggerEvent('esx_status:set', 'hunger', 500000)
-	TriggerEvent('esx_status:set', 'thirst', 500000)
+	TriggerEvent('esx_status:set', 'hunger', 1000000)
+	TriggerEvent('esx_status:set', 'thirst', 1000000)
 end)
 
 RegisterNetEvent('esx_basicneeds:healPlayer')
@@ -42,13 +42,13 @@ AddEventHandler('esx_status:loaded', function(status)
 	TriggerEvent('esx_status:registerStatus', 'hunger', 1000000, '#CFAD0F', function(status)
 		return false
 	end, function(status)
-		status.remove(350)
+		status.remove(275)
 	end)
 
 	TriggerEvent('esx_status:registerStatus', 'thirst', 1000000, '#0C98F1', function(status)
 		return false
 	end, function(status)
-		status.remove(450)
+		status.remove(300)
 	end)
 
 	Citizen.CreateThread(function()

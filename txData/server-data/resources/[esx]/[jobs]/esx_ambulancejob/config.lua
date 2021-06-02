@@ -10,7 +10,7 @@ Config.LoadIpl                    = true -- Disable if you're using fivem-ipl or
 
 Config.Locale                     = 'en'
 
-Config.EarlyRespawnTimer          = 60000 * 15  -- time til respawn is available
+Config.EarlyRespawnTimer          = 60000 * 0  -- time til respawn is available
 Config.BleedoutTimer              = 60000 * 15 -- time til the player bleeds out
 
 Config.EnablePlayerManagement     = true -- Enable society managing (If you are using esx_society).
@@ -21,9 +21,9 @@ Config.RemoveItemsAfterRPDeath    = false
 
 -- Let the player pay for respawning early, only if he can afford it.
 Config.EarlyRespawnFine           = true
-Config.EarlyRespawnFineAmount     = 15000
+Config.EarlyRespawnFineAmount     = 21000
 
-Config.RespawnPoint = {coords = vector3(341.0, -1397.3, 32.5), heading = 48.5}
+Config.RespawnPoint = {coords = vector3(351.75,-588.54,43.28), heading = 68.44}
 
 Config.Hospitals = {
 

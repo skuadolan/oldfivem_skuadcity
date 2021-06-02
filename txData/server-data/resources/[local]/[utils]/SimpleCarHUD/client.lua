@@ -27,11 +27,11 @@ function has_value(tab, val)
     return false
 end
 
-local cruiseInput = 137                     -- Toggle cruise on/off with CAPSLOCK or A button (controller)
-local seatbeltInput = 29                   -- Toggle seatbelt on/off with K or DPAD down (controller)
-local signalLeft = 174
-local signalRight = 175
-local signalBoth = 173
+local cruiseInput = 182 --L                     -- Toggle cruise on/off with CAPSLOCK or A button (controller)
+local seatbeltInput = 29 --B                   -- Toggle seatbelt on/off with K or DPAD down (controller)
+local signalLeft = 174 --ARROW LEFT
+local signalRight = 175 --ARROW RIGHT
+local signalBoth = 173 --ARROW DOWN
 
 local vehiclesCars = {0,1,2,3,4,5,6,7,8,9,10,11,12,17,18,19,20}
 
@@ -436,3 +436,9 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+RegisterKeyMapping('Seatbelt', 'Tombol Seatbelt', 'keyboard', 'B')
+RegisterKeyMapping('Cruise', 'Tombol Cruise', 'keyboard', 'L')
+RegisterKeyMapping('Reting Kanan/Sein Kanan', 'Tombol Reting Kanan/Sein Kanan', 'keyboard', 'ARROW RIGHT')
+RegisterKeyMapping('Reting Kiri/Sein Kiri', 'Tombol Reting Kiri/Sein Kiri', 'keyboard', 'ARROW LEFT')
+RegisterKeyMapping('Hazard', 'Tombol Hazard', 'keyboard', 'ARROW DOWN')

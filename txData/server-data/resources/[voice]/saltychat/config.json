@@ -12,7 +12,7 @@
 
   // Keybinds: https://docs.fivem.net/docs/game-references/controls/#controls
   "ToggleRange": 20, // EnterCheatCode
-  "TalkPrimary": 244, // PushToTalk
-  "TalkSecondary": 244, // VehiclePushbikeSprint
+  "TalkPrimary": 249, // PushToTalk
+  "TalkSecondary": 249, // VehiclePushbikeSprint
   "TalkMegaphone": 113 // SpecialAbilitySecondary
 }

@@ -32,7 +32,9 @@ Config.LicensePrice = 1000000
 Config.priceItemPedagang = 250 --sementara
 
 Config.Map = {
-    {name="Lounge",color=27, id=93, pos=vector3(-629.28, 223.93, 81.88)}
+    {name="Lounge",color=27, id=93, pos=vector3(-629.28, 223.93, 81.88)},
+    {name="",color=1, id=52, pos=vector3(2751.0, 3471.74,  55.7)},
+    {name="",color=1, id=643, pos=vector3(962.5,-1585.5,29.6)},
 }
 
 Config.Shops = {
@@ -82,7 +84,7 @@ Config.Shops = {
         },
         Items = {
             {name = 'bandage'},
-            {name = 'medikit'}
+            {name = 'medikit'},
         }
     },
     
@@ -106,7 +108,6 @@ Config.Shops = {
 
     YouTool = {
         Locations = {
-            vector3(61.04, -1726.92, 29.46),
             vector3(2751.0, 3471.74,  55.7)
         },
         Items = {
@@ -117,6 +118,8 @@ Config.Shops = {
             {name = 'carotool'},
             {name = 'gazbottle'},
             {name = 'battery'},
+            {name = 'bullet_casing'},
+            {name = 'bullet'}
         }
     },
 
@@ -127,19 +130,27 @@ Config.Shops = {
         Items = {
             {name = 'fixkit'},
             {name = 'carokit'},
-            {name = 'repairkit'}
+            {name = 'blowpipe'}
         }
     },
 
     RobsLiquor = {
 		Locations = {
-            vector3(1272.85, -1711.89,54.77),
+        },
+        Items = {
+        }
+    },
+
+    WeaponShop = {
+        Locations = {
+            vector3(1272.85, -1711.89,54.77), --blackmarket
         },
         Items = {
             {name = 'moneywash'},
             {name = 'chemicalslisence'},
-            {name = 'bullet_casing'}
-        }
+            {name = 'lisensi_senjata'},
+            {name = 'clip'},
+        },
     },
 
     Police = {
@@ -156,10 +167,6 @@ Config.Shops = {
 
         },
         Items = {
-            {name = 'air_putih'},
-            {name = 'coklat'},
-            {name = 'tehkotak'},
-            {name = 'makaroni'}
         }
     },
 
@@ -167,10 +174,6 @@ Config.Shops = {
         Locations = {
         },
         Items = {
-            {name = 'air_putih'},
-            {name = 'coklat'},
-            {name = 'tehkotak'},
-            {name = 'makaroni'}
         }
     },
 
@@ -178,10 +181,6 @@ Config.Shops = {
         Locations = {
         },
         Items = {
-            {name = 'air_putih'},
-            {name = 'coklat'},
-            {name = 'tehkotak'},
-            {name = 'makaroni'}
         }
     },
 
@@ -189,10 +188,6 @@ Config.Shops = {
 		Locations = {
         },
         Items = {
-            {name = 'air_putih'},
-            {name = 'coklat'},
-            {name = 'tehkotak'},
-            {name = 'makaroni'}
         }
     },
     
@@ -201,10 +196,6 @@ Config.Shops = {
 
         },
         Items = {
-            {name = 'air_putih'},
-            {name = 'coklat'},
-            {name = 'tehkotak'},
-            {name = 'makaroni'}
         }
     },
 

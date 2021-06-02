@@ -18,7 +18,7 @@ Citizen.CreateThread(function()
             -- Check if menu should be enabled
             if menuConfig:enableMenu() then
                 -- When keybind is pressed toggle UI
-                local keybindControl = keybindControls[menuConfig.data.keybind]
+                local keybindControl = menuConfig.data.keybind
                 if IsControlPressed(0, keybindControl) then
                     -- Init UI
                     showMenu = true
@@ -273,3 +273,5 @@ end, false)
 AddEventHandler('esx:onPlayerDeath', function(data)
 	isDead = true
 end)
+
+RegisterKeyMapping('Radial Menu', 'Tombol Radial Menu', 'keyboard', '`')

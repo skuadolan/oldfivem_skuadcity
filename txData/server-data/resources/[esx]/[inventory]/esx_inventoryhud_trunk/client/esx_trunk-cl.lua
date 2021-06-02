@@ -154,7 +154,28 @@ function openmenuvehicle()
 
               if globalplate ~= nil or globalplate ~= "" or globalplate ~= " " then
                 CloseToVehicle = true
-                OpenCoffreInventoryMenu(GetVehicleNumberPlateText(vehFront), Config.VehicleLimit[class], myVeh)
+                exports['mythic_progbar']:Progress({
+                  name = "inventoryhud_trunk",
+                  duration = 1000,
+                  label = 'Membuka Bagasi',
+                  useWhileDead = true,
+                  canCancel = true,
+                  controlDisables = {
+                  disableMovement = true,
+                  disableCarMovement = true,
+                  disableMouse = false,
+                  disableCombat = true,
+                  },
+                  animation = {
+                      animDict = "mini@repair",
+                      anim = "fixing_a_player",
+                      flags = 49,
+                  },
+              }, function(cancelled)
+                  if not cancelled then
+                    OpenCoffreInventoryMenu(GetVehicleNumberPlateText(vehFront), Config.VehicleLimit[class], myVeh)    
+                  end
+              end)
               end
             else
               exports['mythic_notify']:SendAlert('error', _U('trunk_closed'))
@@ -205,30 +226,9 @@ Citizen.CreateThread(
     while true do
       Wait(0)
       
-      if IsDisabledControlPressed(0, 19) and IsDisabledControlJustReleased(1, 47) then 
+      if IsDisabledControlPressed(0, Config.OpenKey) and IsDisabledControlJustReleased(1, Config.OpenKeySec) then 
       --if IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
-          exports['mythic_progbar']:Progress({
-            name = "inventoryhud_trunk",
-            duration = 1000,
-            label = 'Membuka Bagasi',
-            useWhileDead = true,
-            canCancel = true,
-            controlDisables = {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-            },
-            animation = {
-                animDict = "mini@repair",
-                anim = "fixing_a_player",
-                flags = 49,
-            },
-        }, function(cancelled)
-            if not cancelled then
-                openmenuvehicle()
-            end
-        end)
+        openmenuvehicle()
       end
     end
   end
@@ -300,3 +300,5 @@ function dump(o)
     return tostring(o)
   end
 end
+
+RegisterKeyMapping('Bagasi', 'Tombol Bagasi Mobil', 'keyboard', 'LEFT SHIFT + Y')

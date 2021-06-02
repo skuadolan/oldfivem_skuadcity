@@ -1,9 +1,9 @@
 Locales['en'] = {
-  ['valid_purchase'] = 'validate this purchase?',
-  ['yes'] = 'yes',
-  ['no'] = 'no',
-  ['press_access'] = 'press ~INPUT_CONTEXT~ to access Plastic Surgery',
-  ['not_enough_money'] = 'you do not have enough money',
-  ['you_paid'] = 'you paid $%s',
+  ['valid_purchase'] = 'membeli?',
+  ['yes'] = 'iya',
+  ['no'] = 'tidak',
+  ['press_access'] = 'tekan ~INPUT_CONTEXT~ untuk OPLAS',
+  ['not_enough_money'] = 'tidak cukup uang',
+  ['you_paid'] = 'membayar $%s',
   ['blip_plastic_surgery'] = 'Plastic Surgery',
 }

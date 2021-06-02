@@ -11,7 +11,7 @@
 			Crafting Menu
 		</div>
 		<div class="subtitle">
-			SELECT INGREDIENTS
+			Pilih Bahan Resep
 		</div>
 		<div class="ingredients iqdropdown">
 			<p class="iqdropdown-selection"></p>
@@ -41,7 +41,7 @@
 						ingredients = {};
 						for (var i = 0; i < item.inventory.length; i++) {
 							var obj = item.inventory[i]
-							$( ".iqdropdown-menu" ).append('<li data-id="' + obj.name + '" data-maxcount=' + obj.count + '><div> ' + obj.label + '<span>Add ' + obj.label + ' to your ingredients list.</span> </div></li>');
+							$( ".iqdropdown-menu" ).append('<li data-id="' + obj.name + '" data-maxcount=' + obj.count + '><div> ' + obj.label + '<span>Tambahkan ' + obj.label + ' untuk digabungkan sebagai resep.</span> </div></li>');
 							//Do something
 						}
 						$(".ingredients").iqDropdown({

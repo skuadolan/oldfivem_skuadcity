@@ -20,3 +20,4 @@ Citizen.CreateThread(function()
     end
 end)
 	
+RegisterKeyMapping('Handsup', 'Tombol Handsup', 'keyboard', 'X')

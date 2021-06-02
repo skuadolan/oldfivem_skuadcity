@@ -656,3 +656,5 @@ RegisterNetEvent('esx_inventoryhud:forcekeluar')
 AddEventHandler('esx_inventoryhud:forcekeluar', function()
   closeInventory()
 end)
+
+RegisterKeyMapping('Tas/Inventory', 'Tombol Tas/Inventory', 'keyboard', 'F2')

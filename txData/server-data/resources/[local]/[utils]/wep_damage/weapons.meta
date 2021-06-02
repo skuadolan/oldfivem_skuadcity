@@ -2220,7 +2220,7 @@
           <AttachPoints />
           <GunFeedBone />
           <TargetSequenceGroup />
-          <WeaponFlags>AllowCloseQuarterKills AllowMeleeBlock CarriedInHand ArmourPenetrating CanLockonOnFoot CanLockonInVehicle CanFreeAim UsableOnFoot UsableUnderwater UsableClimbing UsableInCover DisableLeftHandIkInCover DoesRevivableDamage  AllowMeleeIntroAnim HasLowCoverSwaps NoWheelStats QuitTransitionToIdleIntroOnWeaponChange DisableFPSScope AttachFPSLeftHandIKToRight UseFPSAimIK UseFPSSecondaryMotion</WeaponFlags>
+          <WeaponFlags>AllowCloseQuarterKills CarriedInHand ArmourPenetrating CanLockonOnFoot CanLockonInVehicle CanFreeAim UsableOnFoot UsableUnderwater UsableClimbing UsableInCover DisableLeftHandIkInCover DoesRevivableDamage  AllowMeleeIntroAnim HasLowCoverSwaps NoWheelStats QuitTransitionToIdleIntroOnWeaponChange DisableFPSScope AttachFPSLeftHandIKToRight UseFPSAimIK UseFPSSecondaryMotion</WeaponFlags>
           <TintSpecValues ref="TINT_DEFAULT" />
           <FiringPatternAliases ref="NULL" />
           <ReloadUpperBodyFixupExpressionData ref="default" />
@@ -8670,7 +8670,7 @@
           <VehicleReloadTime value="7.000000" />
           <AnimReloadRate value="1.000000" />
           <BulletsPerAnimLoop value="1" />
-          <TimeBetweenShots value="0.800000" />
+          <TimeBetweenShots value="0.000000" />
           <TimeLeftBetweenShotsWhereShouldFireIsCached value="-1.000000" />
           <SpinUpTime value="0.000000" />
           <SpinTime value="0.000000" />

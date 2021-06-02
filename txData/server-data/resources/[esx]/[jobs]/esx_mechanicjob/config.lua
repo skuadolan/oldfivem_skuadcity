@@ -44,14 +44,14 @@ Config.Zones = {
 	},
 
 	VehicleDeleter = {
-		Pos   = { x = -312.02, y = -154.82, z = 35.78 },
+		Pos   = { x = -358.55, y = -122.2, z = 38.73 },
 		Size  = { x = 3.0, y = 3.0, z = 1.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = 1
 	},
 
 	VehicleDelivery = {
-		Pos   = { x = -382.925, y = -133.748, z = 37.685 },
+		Pos   = { x = -360.11, y = -129.08, z = 38.7 },
 		Size  = { x = 20.0, y = 20.0, z = 3.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = -1

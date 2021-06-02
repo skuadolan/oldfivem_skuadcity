@@ -104,7 +104,7 @@ Citizen.CreateThread(function()
 	while true do
 		Wait(0)
 
-		if IsControlPressed(0, Keys['G']) and not isTackling and GetGameTimer() - lastTackleTime > 10 * 1000 and PlayerData.job.name == 'police' then
+		if IsControlPressed(0, Config.Hotkey) and IsControlPressed(1, Config.HotkeySec) and not isTackling and GetGameTimer() - lastTackleTime > 10 * 1000 and PlayerData.job.name == 'police' then
 			Citizen.Wait(10)
 			local closestPlayer, distance = ESX.Game.GetClosestPlayer()
 
@@ -117,3 +117,5 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+RegisterKeyMapping('Tackle', 'Tombol Tackle', 'keyboard', 'LEFT SHIFT + G')

@@ -214,13 +214,25 @@ Citizen.CreateThread(function()
 	end
 end)
 
-local timingFalling = 5000 -- in miliseconds >> 1000 ms = 1s
+local tiempo = 1000 -- in miliseconds >> 1000 ms = 1s
+
+local playerIdx = GetPlayerFromServerId(source)
+local ped = GetPlayerPed(playerIdx)
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-		if IsPedBeingStunned(GetPlayerPed(-1)) then
-		SetPedMinGroundTimeForStungun(GetPlayerPed(-1), timingFalling)
+		if IsPedBeingStunned(ped) then
+		SetPedMinGroundTimeForStungun(ped, tiempo)
+		end
+	end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(0)
+		if IsPedBeingStunned(ped, 0) then
+		SetPedMinGroundTimeForStungun(ped, tiempo)
 		end
 	end
 end)

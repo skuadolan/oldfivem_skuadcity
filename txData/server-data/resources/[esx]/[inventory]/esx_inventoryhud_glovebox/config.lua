@@ -2,7 +2,7 @@
 
 Config = {}
 
-Config.CheckOwnership = false -- If true, Only owner of vehicle can store items in glovebox.
+Config.CheckOwnership = true -- If true, Only owner of vehicle can store items in glovebox.
 Config.AllowPolice = true -- If true, police will be able to search players' glovebox.
 
 Config.Locale = "en"
@@ -24,28 +24,28 @@ Config.localWeight = {
     WEAPON_SMG = 5000
 }
 
-Config.VehicleWeight = {
-    [0] = 300, --Compact
-    [1] = 400, --Sedan
-    [2] = 700, --SUV
-    [3] = 250, --Coupes
-    [4] = 300, --Muscle
-    [5] = 100, --Sports Classics
-    [6] = 50, --Sports
-    [7] = 50, --Super
-    [8] = 50, --Motorcycles
+Config.VehicleLimit = {
+    [0] = 3000, --Compact
+    [1] = 4000, --Sedan
+    [2] = 7000, --SUV
+    [3] = 2500, --Coupes
+    [4] = 3000, --Muscle
+    [5] = 1000, --Sports Classics
+    [6] = 5000, --Sports
+    [7] = 5000, --Super
+    [8] = 5000, --Motorcycles
     [9] = 1800, --Off-road
     [10] = 3000, --Industrial
-    [11] = 700, --Utility
+    [11] = 7000, --Utility
     [12] = 1000, --Vans
     [13] = 0, --Cycles
-    [14] = 50, --Boats
-    [15] = 200, --Helicopters
+    [14] = 5000, --Boats
+    [15] = 2000, --Helicopters
     [16] = 0, --Planes
-    [17] = 400, --Service
-    [18] = 400, --Emergency
+    [17] = 4000, --Service
+    [18] = 4000, --Emergency
     [19] = 0, --Military
-    [20] = 3000, --Commercial
+    [20] = 30000, --Commercial
     [21] = 0 --Trains
 }
 

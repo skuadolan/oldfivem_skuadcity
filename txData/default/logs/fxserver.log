@@ -1,14 +1,15 @@
 
 ================================================================
-======== FXServer starting - 5/26/2021, 15:42:55
+======== FXServer starting - 6/2/2021, 19:03:44
 ================================================================
-[38;5;171m[                 cmd] No such config file: /home/admin/skuadcity/txData/server-data/resources/vMenu/config/permissions.cfg
 [38;5;161m[    c-scripting-core] Creating script environments for _cfx_internal
 [38;5;73m[ citizen-server-impl] Scanning resources.
-[38;5;73m[ citizen-server-impl] Found 138 resources.
+[38;5;73m[ citizen-server-impl] Found 153 resources.
 [38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
 [38;5;73m[ citizen-server-impl]     - baseevents
+[38;5;73m[ citizen-server-impl]     - drawtext
 [38;5;73m[ citizen-server-impl]     - esx_addons_gcphone
+[38;5;73m[ citizen-server-impl]     - esx_brinks
 [38;5;73m[ citizen-server-impl]     - im_samsat
 [38;5;73m[ citizen-server-impl]     - ls-radio
 [38;5;73m[ citizen-server-impl]     - new_banking
@@ -22,7 +23,6 @@
 [38;5;161m[    c-scripting-core] Creating script environments for monitor
 [38;5;84m[      script:monitor] [txAdminClient] Version 3.7.0 starting...
 [38;5;73m[ citizen-server-impl] Started resource monitor
-[38;5;171m[                 cmd] No such config file: /home/admin/skuadcity/txData/server-data/resources/vMenu/config/permissions.cfg
 [38;5;161m[    c-scripting-core] Creating script environments for mapmanager
 [38;5;73m[ citizen-server-impl] Started resource mapmanager
 [38;5;161m[    c-scripting-core] Creating script environments for chat
@@ -82,6 +82,34 @@
 [38;5;73m[ citizen-server-impl] Started resource esx_doorlock
 [38;5;161m[    c-scripting-core] Creating script environments for esx_document
 [38;5;73m[ citizen-server-impl] Started resource esx_document
+[38;5;161m[    c-scripting-core] Creating script environments for esx_jobs
+[38;5;73m[ citizen-server-impl] Started resource esx_jobs
+[38;5;161m[    c-scripting-core] Creating script environments for esx_policejob
+[38;5;73m[ citizen-server-impl] Started resource esx_policejob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_pedagang
+[38;5;73m[ citizen-server-impl] Started resource esx_pedagang
+[38;5;161m[    c-scripting-core] Creating script environments for esx_ambulancejob
+[38;5;73m[ citizen-server-impl] Started resource esx_ambulancejob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_mechanicjob
+[38;5;73m[ citizen-server-impl] Started resource esx_mechanicjob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_taxijob
+[38;5;73m[ citizen-server-impl] Started resource esx_taxijob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_garbagecrew
+[38;5;73m[ citizen-server-impl] Started resource esx_garbagecrew
+[38;5;161m[    c-scripting-core] Creating script environments for esx_gopostal
+[38;5;73m[ citizen-server-impl] Started resource esx_gopostal
+[38;5;161m[    c-scripting-core] Creating script environments for esx_brinks
+[38;5;73m[ citizen-server-impl] Started resource esx_brinks
+[38;5;161m[    c-scripting-core] Creating script environments for esx_pilotjob
+[38;5;73m[ citizen-server-impl] Started resource esx_pilotjob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_bikerjob
+[38;5;73m[ citizen-server-impl] Started resource esx_bikerjob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_carteljob
+[38;5;73m[ citizen-server-impl] Started resource esx_carteljob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_gangjob
+[38;5;73m[ citizen-server-impl] Started resource esx_gangjob
+[38;5;161m[    c-scripting-core] Creating script environments for esx_mafiajob
+[38;5;73m[ citizen-server-impl] Started resource esx_mafiajob
 [38;5;161m[    c-scripting-core] Creating script environments for esx_addons_gcphone
 [38;5;73m[ citizen-server-impl] Started resource esx_addons_gcphone
 [38;5;161m[    c-scripting-core] Creating script environments for gcphone
@@ -92,30 +120,8 @@
 [38;5;73m[ citizen-server-impl] Started resource webpack
 [38;5;161m[    c-scripting-core] Creating script environments for screenshot-basic
 [38;5;73m[ citizen-server-impl] Started resource screenshot-basic
-[38;5;161m[    c-scripting-core] Creating script environments for esx_jobs
-[38;5;73m[ citizen-server-impl] Started resource esx_jobs
 [38;5;161m[    c-scripting-core] Creating script environments for esx_joblisting
 [38;5;73m[ citizen-server-impl] Started resource esx_joblisting
-[38;5;161m[    c-scripting-core] Creating script environments for esx_policejob
-[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone police => Police alert
-[38;5;54m[      script:gcphone] = INFO = Registered number for police => Police alert
-[38;5;73m[ citizen-server-impl] Started resource esx_policejob
-[38;5;161m[    c-scripting-core] Creating script environments for esx_pedagang
-[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone pedagang => Client Pedagang
-[38;5;54m[      script:gcphone] = INFO = Registered number for pedagang => Client Pedagang
-[38;5;73m[ citizen-server-impl] Started resource esx_pedagang
-[38;5;161m[    c-scripting-core] Creating script environments for esx_ambulancejob
-[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone ambulance => Info Ambulance
-[38;5;54m[      script:gcphone] = INFO = Registered number for ambulance => Info Ambulance
-[38;5;73m[ citizen-server-impl] Started resource esx_ambulancejob
-[38;5;161m[    c-scripting-core] Creating script environments for esx_mechanicjob
-[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone mechanic => Mechanic Customer
-[38;5;54m[      script:gcphone] = INFO = Registered number for mechanic => Mechanic Customer
-[38;5;73m[ citizen-server-impl] Started resource esx_mechanicjob
-[38;5;161m[    c-scripting-core] Creating script environments for esx_taxijob
-[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone taxi => Taxi Client
-[38;5;54m[      script:gcphone] = INFO = Registered number for taxi => Taxi Client
-[38;5;73m[ citizen-server-impl] Started resource esx_taxijob
 [38;5;161m[    c-scripting-core] Creating script environments for esx_lscustom
 [38;5;73m[ citizen-server-impl] Started resource esx_lscustom
 [38;5;161m[    c-scripting-core] Creating script environments for esx_shops
@@ -158,22 +164,6 @@
 [38;5;73m[ citizen-server-impl] Started resource esx-checkdeathcause
 [38;5;161m[    c-scripting-core] Creating script environments for esx_ktackle
 [38;5;73m[ citizen-server-impl] Started resource esx_ktackle
-[38;5;161m[    c-scripting-core] Creating script environments for esx_bikerjob
-[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone biker => Biker alert
-[38;5;54m[      script:gcphone] = INFO = Registered number for biker => Biker alert
-[38;5;73m[ citizen-server-impl] Started resource esx_bikerjob
-[38;5;161m[    c-scripting-core] Creating script environments for esx_carteljob
-[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone cartel => Cartel alert
-[38;5;54m[      script:gcphone] = INFO = Registered number for cartel => Cartel alert
-[38;5;73m[ citizen-server-impl] Started resource esx_carteljob
-[38;5;161m[    c-scripting-core] Creating script environments for esx_gangjob
-[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone gang => Gang alert
-[38;5;54m[      script:gcphone] = INFO = Registered number for gang => Gang alert
-[38;5;73m[ citizen-server-impl] Started resource esx_gangjob
-[38;5;161m[    c-scripting-core] Creating script environments for esx_mafiajob
-[38;5;153m[script:esx_addons_gc] = INFO = Enregistrement du telephone mafia => Mafia alert
-[38;5;54m[      script:gcphone] = INFO = Registered number for mafia => Mafia alert
-[38;5;73m[ citizen-server-impl] Started resource esx_mafiajob
 [38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud
 [38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud
 [38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
@@ -204,8 +194,11 @@
 [38;5;73m[ citizen-server-impl] Started resource svehiclelocks
 [38;5;161m[    c-scripting-core] Creating script environments for transfervehicle
 [38;5;73m[ citizen-server-impl] Started resource transfervehicle
-[38;5;161m[    c-scripting-core] Creating script environments for lsrp-motels
-[38;5;73m[ citizen-server-impl] Started resource lsrp-motels
+[38;5;73m[ citizen-server-impl] Started resource mythic_interiors
+[38;5;161m[    c-scripting-core] Creating script environments for meta_libs
+[38;5;73m[ citizen-server-impl] Started resource meta_libs
+[38;5;161m[    c-scripting-core] Creating script environments for motels
+[38;5;73m[ citizen-server-impl] Started resource motels
 [38;5;161m[    c-scripting-core] Creating script environments for jsfour-idcard
 [38;5;73m[ citizen-server-impl] Started resource jsfour-idcard
 [38;5;161m[    c-scripting-core] Creating script environments for scr-ammo
@@ -223,6 +216,13 @@
 [38;5;73m[ citizen-server-impl] Started resource salty_crafting
 [38;5;73m[ citizen-server-impl] Started resource weapon-holster
 [38;5;73m[ citizen-server-impl] Started resource wep_damage
+[38;5;73m[ citizen-server-impl] Asset flatbedsystem/flatbed3.ytd uses 160.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Started resource flatbedsystem
+[38;5;73m[ citizen-server-impl] Started resource drawtext
+[38;5;73m[ citizen-server-impl] Started resource HideInTrunk
+[38;5;161m[    c-scripting-core] Creating script environments for vSync
+[38;5;73m[ citizen-server-impl] Started resource vSync
+[38;5;73m[ citizen-server-impl] Started resource pd-spawn
 [38;5;161m[    c-scripting-core] Creating script environments for skd_core
 [38;5;73m[ citizen-server-impl] Started resource skd_core
 [38;5;161m[    c-scripting-core] Creating script environments for skd_starterpack
@@ -231,8 +231,6 @@
 [38;5;73m[ citizen-server-impl] Started resource skd_treasure
 [38;5;161m[    c-scripting-core] Creating script environments for im_samsat
 [38;5;73m[ citizen-server-impl] Started resource im_samsat
-[38;5;161m[    c-scripting-core] Creating script environments for discordPresence
-[38;5;73m[ citizen-server-impl] Started resource discordPresence
 [38;5;73m[ citizen-server-impl] Asset CitizenVehicle/ambulance+hi.ytd uses 18.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset CitizenVehicle/ambulance.ytd uses 17.5 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Started resource CitizenVehicle
@@ -254,210 +252,525 @@
 [38;5;73m[ citizen-server-impl] Asset texture-map/bkr_biker_dlc_int_01txd.ytd uses 33.6 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset texture-map/bkr_biker_dlc_int_02_txd.ytd uses 24.5 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset texture-map/cs3_04_structures+hi.ytd uses 19.8 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset texture-map/divinity_statue.ydr uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset texture-map/hei_cs3_04_structures.ytd uses 17.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset texture-map/prop_flags.ytd uses 28.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset texture-map/slb2k11_cellblock.ytd uses 24.5 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset texture-map/slb2k11_cellblock_deco.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Started resource texture-map
-[38;5;73m[ citizen-server-impl] Started resource cardealerimport
+[38;5;73m[ citizen-server-impl] Couldn't find resource cardealerimport.
 [38;5;73m[ citizen-server-impl] Asset pillbox/gabz_pillbox_textures_01.ytd uses 22.5 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Started resource pillbox
+[38;5;73m[ citizen-server-impl] Couldn't find resource carsounds.
 [38;5;216m[              server] Warning: `onesync_enabled` is deprecated. Please use `onesync legacy` instead.
 [38;5;216m[              server] Authenticating server license key...
+[38;5;159m[  script:mysql-async] [mysql-async] [SUCCESS] Database server connection established.
 [38;5;84m[      script:monitor] [txAdminClient] Threads and commands set up. All Ready.
 [38;5;220m[  script:es_extended] [es_extended] [INFO] ESX developed by ESX-Org has been initialized
 [38;5;79m[script:esx_advancedg] esx_advancedgarage: Parking Vehicles on restart is currently set to false.
-[38;5;159m[  script:mysql-async] [mysql-async] [SUCCESS] Database server connection established.
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [es_extended] [158ms] SELECT * FROM items : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [165ms] SELECT * FROM items : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [es_extended] [163ms] SELECT * FROM jobs : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [165ms] SELECT * FROM addon_account : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [156ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [166ms] SELECT * FROM `vehicle_import_categories` : []
 [38;5;29m[    script:esx_shops] esx_shops: invalid item "roti" found!
 [38;5;29m[    script:esx_shops] esx_shops: invalid item "roti" found!
 [38;5;29m[    script:esx_shops] esx_shops: invalid item "roti" found!
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [194ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [195ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [200ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [201ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [203ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [205ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [206ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [211ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [211ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [216ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [211ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [213ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [214ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [216ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [218ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [218ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [217ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [223ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [219ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [225ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [232ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [235ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [237ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_weaponshop] [238ms] SELECT * FROM weashops : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [236ms] SELECT * FROM datastore : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [265ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [267ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [271ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [209ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [215ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_society] [282ms] SELECT * FROM jobs : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [231ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [252ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [259ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [294ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [300ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [305ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [388ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [322ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [323ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [331ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [334ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [336ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [es_extended] [273ms] SELECT * FROM job_grades : []
 [38;5;220m[  script:es_extended] [es_extended] [WARNING] Ignoring job grades for "offcardealer" due to missing job
 [38;5;220m[  script:es_extended] [es_extended] [WARNING] Ignoring job grades for "offcardealer" due to missing job
 [38;5;220m[  script:es_extended] [es_extended] [WARNING] Ignoring job grades for "offcardealer" due to missing job
 [38;5;220m[  script:es_extended] [es_extended] [WARNING] Ignoring job grades for "offcardealer" due to missing job
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [323ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [338ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshop] [375ms] SELECT * FROM vehicles : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [375ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [379ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [386ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [396ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [480ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [516ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [440ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [442ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [409ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [412ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [368ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [371ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [372ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [470ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [469ms] SELECT * FROM addon_inventory : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [511ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [531ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [438ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [439ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [511ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["caution"]
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [441ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [442ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [450ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [453ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [465ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [468ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [487ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [491ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [496ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [497ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [498ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [504ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [500ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [511ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [471ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [473ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_society] [460ms] SELECT * FROM job_grades : []
-[38;5;230m[  script:esx_society] SCRIPT ERROR: @esx_society/server/main.lua:26: attempt to index a nil value (field '?')
-[38;5;230m[  script:esx_society] > fn (@mysql-async/lib/MySQL.lua:226)
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [556ms] SELECT * FROM datastore_data WHERE name = ? : ["motels"]
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [490ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [326ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [169ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["motels"]
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [583ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [439ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [367ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [581ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [446ms] SELECT * FROM `vehicles_import` : []
 [38;5;133m[     script:dpemotes] 
 [38;5;133m[     script:dpemotes] dp Emotes (dpemotes) is up to date. (173)
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [183ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_vehicleshopimport] [182ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [156ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_ambulance"]
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [154ms] SELECT * FROM datastore_data WHERE name = ? : ["society_ballas"]
+[38;5;230m[  script:esx_society] SCRIPT ERROR: @esx_society/server/main.lua:26: attempt to index a nil value (field '?')
+[38;5;230m[  script:esx_society] > fn (@mysql-async/lib/MySQL.lua:226)
+[38;5;66m[       script:motels] motels incorrect mysql_connection_string format. Needs 'server=myserver;uid=myuser;password=mypassword;database=mydatabase'
 [38;5;66m[          svadhesive] Server license key authentication succeeded. Welcome!
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [170ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_gang"]
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addoninventory] [185ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["vault"]
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [263ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_mafia_black_money"]
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [327ms] SELECT * FROM datastore_data WHERE name = ? : ["society_theb"]
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 155 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 160 milliseconds
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [324ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_mechanic"]
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [308ms] SELECT * FROM datastore_data WHERE name = ? : ["society_vagos"]
 [38;5;73m[ citizen-server-impl]         fff                          
 [38;5;73m[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
 [38;5;73m[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
 [38;5;73m[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
 [38;5;73m[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
 [38;5;73m[ citizen-server-impl]                                      
-[38;5;73m[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://boulevard-boys-qrgvbz.users.cfx.re/
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 202 milliseconds
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [277ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_pedagang"]
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 158 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 151 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 163 milliseconds
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_datastore] [366ms] SELECT * FROM datastore_data WHERE name = ? : ["vault"]
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 125 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 206 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 431 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 395 milliseconds
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [604ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_police"]
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 120 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 229 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 166 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 198 milliseconds
+[38;5;73m[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://tokyo99-kg6k4a.users.cfx.re/
 [38;5;73m[ citizen-server-impl] -- [server notice: tebex_not_set]
 [38;5;73m[ citizen-server-impl] ================
 [38;5;73m[ citizen-server-impl] Monetize your server using Tebex! Visit https://tebex.io/fivem for more info.
 [38;5;73m[ citizen-server-impl] ================
 [38;5;73m[ citizen-server-impl] 
-[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [WARNING] [esx_addonaccount] [294ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["society_police_black_money"]
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 118 milliseconds
-[38;5;143m[  citizen-server-gui] You can reopen the server GUI using the command svgui.
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 195 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 151 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 219 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 154 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 110 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 120 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 120 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 231 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 153 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 106 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 176 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 113 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 158 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 179 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 181 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 170 milliseconds
 [38;5;134m[      script:hardcap] Connecting: R`
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 172 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 166 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 180 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 115 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 132 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 164 milliseconds
 [38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 552 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 609 milliseconds
 [38;5;220m[  script:es_extended] [es_extended] [INFO] A player with name "Dian Nugroho" has connected to the server with assigned player id 1
-[38;5;161m[    c-scripting-core] Creating script environments for esx_garbagecrew
-[38;5;73m[ citizen-server-impl] Started resource esx_garbagecrew
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 118 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 197 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 165 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 168 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 101 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 151 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 102 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 193 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 164 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 216 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 179 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 151 milliseconds
 [38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 155 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 110 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 118 milliseconds
 [38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;139m[script:esx_garbagecr] request recieved to payout for stop: vector3(342.8775, -1034.313, 28.33402)
 [38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 112 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 196 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 105 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 181 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 158 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 162 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 164 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 201 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 128 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 155 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 200 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 153 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 245 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 206 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 164 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 154 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 122 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 156 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 114 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 173 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 165 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 234 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 152 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 101 milliseconds
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] Scanning resources.
+[38;5;73m[ citizen-server-impl] Found 0 resources, and refreshed 153 resources.
+[38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
+[38;5;73m[ citizen-server-impl]     - baseevents
+[38;5;73m[ citizen-server-impl]     - drawtext
+[38;5;73m[ citizen-server-impl]     - esx_addons_gcphone
+[38;5;73m[ citizen-server-impl]     - esx_brinks
+[38;5;73m[ citizen-server-impl]     - im_samsat
+[38;5;73m[ citizen-server-impl]     - ls-radio
+[38;5;73m[ citizen-server-impl]     - new_banking
+[38;5;73m[ citizen-server-impl]     - pNotify
+[38;5;73m[ citizen-server-impl]     - salty_crafting
+[38;5;73m[ citizen-server-impl]     - sessionmanager
+[38;5;73m[ citizen-server-impl] 
+[38;5;73m[ citizen-server-impl] Please update these resources.
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 274 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 220 milliseconds
+[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_glovebox] An error happens for query "INSERT INTO glovebox_inventory(plate,data,owned) VALUES (?,'{}',?) : ["26HYK146",false]": ER_DUP_ENTRY: Duplicate entry '26HYK146' for key 'plate'
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 156 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 183 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 181 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 168 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 208 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 183 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 104 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 155 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 172 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 248 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 238 milliseconds
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 151 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 218 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 155 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 153 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 192 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 114 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 103 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 188 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 127 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 185 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 134 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 261 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 119 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 183 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 137 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 191 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 106 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 175 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 107 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 184 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 163 milliseconds
+[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_glovebox] An error happens for query "INSERT INTO glovebox_inventory(plate,data,owned) VALUES (?,'{}',?) : ["IWA 806 ",false]": ER_DUP_ENTRY: Duplicate entry 'IWA 806 ' for key 'plate'
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 151 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 185 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 125 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 1628 milliseconds
+[38;5;73m[ citizen-server-impl] Scanning resources.
+[38;5;73m[ citizen-server-impl] Found 0 resources, and refreshed 153 resources.
+[38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
+[38;5;73m[ citizen-server-impl]     - baseevents
+[38;5;73m[ citizen-server-impl]     - drawtext
+[38;5;73m[ citizen-server-impl]     - esx_addons_gcphone
+[38;5;73m[ citizen-server-impl]     - esx_brinks
+[38;5;73m[ citizen-server-impl]     - im_samsat
+[38;5;73m[ citizen-server-impl]     - ls-radio
+[38;5;73m[ citizen-server-impl]     - new_banking
+[38;5;73m[ citizen-server-impl]     - pNotify
+[38;5;73m[ citizen-server-impl]     - salty_crafting
+[38;5;73m[ citizen-server-impl]     - sessionmanager
+[38;5;73m[ citizen-server-impl] 
+[38;5;73m[ citizen-server-impl] Please update these resources.
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 289 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 1804 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 160 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 205 milliseconds
+[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_glovebox] An error happens for query "INSERT INTO glovebox_inventory(plate,data,owned) VALUES (?,'{}',?) : ["IWA 806 ",false]": ER_DUP_ENTRY: Duplicate entry 'IWA 806 ' for key 'plate'
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 124 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 173 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 157 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 107 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 151 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 115 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 111 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 159 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;143m[  citizen-server-gui] You can reopen the server GUI using the command svgui.
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 655 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_trunk
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 216 milliseconds
+[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_trunk] An error happens for query "INSERT INTO trunk_inventory(plate,data,owned) VALUES (?,'{}',?) : ["IWA 806 ",false]": ER_DUP_ENTRY: Duplicate entry 'IWA 806 ' for key 'plate'
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 107 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 101 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 234 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_glovebox] An error happens for query "INSERT INTO glovebox_inventory(plate,data,owned) VALUES (?,'{}',?) : ["IWA 806 ",false]": ER_DUP_ENTRY: Duplicate entry 'IWA 806 ' for key 'plate'
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 116 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 117 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 194 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 105 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 136 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 154 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 101 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 178 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 153 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 177 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 157 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_trunk
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 258 milliseconds
+[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_trunk] An error happens for query "INSERT INTO trunk_inventory(plate,data,owned) VALUES (?,'{}',?) : ["IWA 806 ",false]": ER_DUP_ENTRY: Duplicate entry 'IWA 806 ' for key 'plate'
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 162 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 154 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_trunk
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 266 milliseconds
+[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_trunk] An error happens for query "INSERT INTO trunk_inventory(plate,data,owned) VALUES (?,'{}',?) : ["IWA 806 ",false]": ER_DUP_ENTRY: Duplicate entry 'IWA 806 ' for key 'plate'
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 227 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 164 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 154 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 173 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 179 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 125 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 156 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 209 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 120 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 209 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_trunk
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 224 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 140 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 193 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 184 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 168 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_glovebox
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_glovebox
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 210 milliseconds
+[38;5;159m[  script:mysql-async] [MariaDB:10.5.9-MariaDB] [ERROR] [esx_inventoryhud_glovebox] An error happens for query "INSERT INTO glovebox_inventory(plate,data,owned) VALUES (?,'{}',?) : ["IWA 806 ",false]": ER_DUP_ENTRY: Duplicate entry 'IWA 806 ' for key 'plate'
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 155 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 181 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 140 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 163 milliseconds
 [38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 109 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_trunk
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 243 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_trunk
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 220 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_trunk
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 166 milliseconds
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] Scanning resources.
+[38;5;73m[ citizen-server-impl] Found 0 resources, and refreshed 153 resources.
+[38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
+[38;5;73m[ citizen-server-impl]     - baseevents
+[38;5;73m[ citizen-server-impl]     - drawtext
+[38;5;73m[ citizen-server-impl]     - esx_addons_gcphone
+[38;5;73m[ citizen-server-impl]     - esx_brinks
+[38;5;73m[ citizen-server-impl]     - im_samsat
+[38;5;73m[ citizen-server-impl]     - ls-radio
+[38;5;73m[ citizen-server-impl]     - new_banking
+[38;5;73m[ citizen-server-impl]     - pNotify
+[38;5;73m[ citizen-server-impl]     - salty_crafting
+[38;5;73m[ citizen-server-impl]     - sessionmanager
+[38;5;73m[ citizen-server-impl] 
+[38;5;73m[ citizen-server-impl] Please update these resources.
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 305 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource esx_inventoryhud_trunk
+[38;5;161m[    c-scripting-core] Creating script environments for esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] Started resource esx_inventoryhud_trunk
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 204 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 137 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 209 milliseconds
 [38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 151 milliseconds
 [38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 106 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 171 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 127 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 120 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 170 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 103 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 101 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 192 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 289 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 142 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 164 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 165 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 235 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 265 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 124 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 201 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 140 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 116 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 174 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 173 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 139 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 158 milliseconds
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 218 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 287 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 180 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 102 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 163 milliseconds
 [38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 104 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 155 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 192 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 107 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 198 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 104 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 108 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 120 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 109 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 190 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 174 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 128 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 187 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 115 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 151 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 159 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 119 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 136 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 186 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 197 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 184 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 163 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 183 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 112 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 332 milliseconds
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 162 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 102 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 161 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 169 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 216 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 115 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 113 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 188 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 102 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 161 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 177 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 206 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 268 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 122 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 183 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 147 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 235 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 154 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 107 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 153 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 159 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 230 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 140 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 200 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 153 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 214 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 134 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 209 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 119 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 167 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 200 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 123 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 200 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 143 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 205 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 158 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 129 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 163 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 170 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 201 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 145 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 161 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 118 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 215 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 169 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 228 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 126 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 192 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 123 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 174 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 156 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 116 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 127 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 109 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 242 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 164 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 201 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 147 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 213 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 152 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 203 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 147 milliseconds
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 133 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 185 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 104 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 133 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 176 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 108 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 166 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 178 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 157 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 140 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 180 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 176 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 118 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 166 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 101 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 120 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 127 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 203 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 159 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 203 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 104 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 123 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 167 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 190 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 106 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 143 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 213 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 142 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 164 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 112 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 101 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 162 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 128 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 171 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 166 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 108 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 185 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 184 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 110 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 187 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 137 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 115 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 152 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 107 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 110 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 174 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 154 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 152 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 101 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 187 milliseconds
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
+[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 151 milliseconds
+[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 177 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 151 milliseconds

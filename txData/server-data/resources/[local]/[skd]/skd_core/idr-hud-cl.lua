@@ -159,15 +159,15 @@ end)
 Citizen.CreateThread(function()
 
 	while true do
-		if sleeping then
+		--[[if sleeping then
 			if IsControlJustPressed(0,38) then
 				sleeping = false
 				DetachEntity(GetPlayerPed(-1), 1, true)
 			end
-		end
+		end]]
 
 
-		if IsControlJustPressed(0,82) then
+		if IsControlJustPressed(0,40) then
 			if HudStage == 1 then
 				HudStage = 2
 			elseif HudStage == 2 then
@@ -259,7 +259,7 @@ Citizen.CreateThread(function()
 				SetPedDiesInWater(GetPlayerPed(-1), true)
 			end
 
-			if IsControlJustPressed(1, 118) then
+			if IsControlPressed(0, 20) then
 				for k,v in ipairs(voipTypes) do
 					if v.type == voipsetting then
 						if k >= #voipTypes then TriggerEvent(voipTypes[1].event) break else TriggerEvent(voipTypes[k + 1].event) break end
@@ -303,7 +303,7 @@ Citizen.CreateThread(function()
 		    	opacity = opacity + 10
 		    end
 
-			if IsControlPressed(1, 137) or IsDisabledControlPressed(1, 137)  then
+			if IsControlPressed(0, 249) or IsDisabledControlPressed(0, 249)  then
 				talking = true
 			else
 				talking = false
@@ -417,3 +417,8 @@ Citizen.CreateThread(function()
 		Citizen.Wait(2000)	
 	end
 end)
+
+RegisterKeyMapping('HUD', 'Tombol HUD', 'keyboard', ']')
+RegisterKeyMapping('Radio', 'Tombol Radio', 'keyboard', 'N')
+RegisterKeyMapping('Megaphone', 'Tombol Megaphone', 'keyboard', 'M')
+RegisterKeyMapping('Jarak Berbicara', 'Tombol Jarak', 'keyboard', 'Z')

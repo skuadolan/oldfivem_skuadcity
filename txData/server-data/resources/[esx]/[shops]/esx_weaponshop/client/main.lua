@@ -215,7 +215,7 @@ Citizen.CreateThread(function()
 
 				if CurrentAction == 'shop_menu' then
 					if Config.LicenseEnable and Config.Zones[CurrentActionData.zone].Legal then
-						ESX.TriggerServerCallback('esx_license:checkLicense', function(hasWeaponLicense)
+						--ESX.TriggerServerCallback('esx_license:checkLicense', function(hasWeaponLicense)
 							if hasWeaponLicense then
 								ESX.TriggerServerCallback("esx_inventoryhud:getPlayerInventory", function(data)
 									items = {}
@@ -256,7 +256,7 @@ Citizen.CreateThread(function()
 								--OpenBuyLicenseMenu(CurrentActionData.zone)
 								ESX.ShowNotification(_U('not_have_license'))
 							end
-						end, GetPlayerServerId(PlayerId()), 'weapon')
+						--end, GetPlayerServerId(PlayerId()), 'weapon')
 					else
 						OpenShopMenu(CurrentActionData.zone)
 					end

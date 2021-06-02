@@ -5,10 +5,6 @@ Config.WeaponAmmo = 42
 
 Config.Recipes = {
 	-- Can be a normal ESX item
-	["betadine"] = { 
-		{item = "air_putih", quantity = 1 },
-		{item = "micin", quantity = 1 }
-	},
 
 	["betadine"] = { 
 		{item = "air_putih", quantity = 1 },

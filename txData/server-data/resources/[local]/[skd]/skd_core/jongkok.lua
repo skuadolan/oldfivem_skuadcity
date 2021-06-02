@@ -40,3 +40,4 @@ Citizen.CreateThread( function()
 	end
 end)
 
+RegisterKeyMapping('Jongkok', 'Tombol Jongkok', 'keyboard', 'LEFT CTRL')

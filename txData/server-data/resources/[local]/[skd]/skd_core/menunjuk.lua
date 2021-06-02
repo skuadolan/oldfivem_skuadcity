@@ -105,3 +105,5 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
+RegisterKeyMapping('Menunjuk', 'Tombol Menunjuk', 'keyboard', 'B')
