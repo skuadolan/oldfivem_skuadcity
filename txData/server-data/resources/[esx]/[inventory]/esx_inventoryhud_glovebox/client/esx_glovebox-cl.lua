@@ -85,6 +85,10 @@ function VehicleInFront()
   return result
 end
 
+RegisterCommand('dashboardmobil', function()
+	openmenuvehicle()
+end)
+
 function openmenuvehicle()
   local playerPed = GetPlayerPed(-1)
   local coords = GetEntityCoords(playerPed)
@@ -129,7 +133,29 @@ function openmenuvehicle()
           ESX.UI.Menu.CloseAll()
             if globalplate ~= nil or globalplate ~= "" or globalplate ~= " " then
               CloseToVehicle = true
-              OpenCoffresInventoryMenu(GetVehicleNumberPlateText(vehFront), Config.VehicleLimit[class], myVeh)
+              exports['mythic_progbar']:Progress({
+                name = "inventoryhud_dashboard",
+                duration = 1000,
+                label = 'Membuka Dashboard',
+                useWhileDead = true,
+                canCancel = true,
+                controlDisables = {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+                },
+                animation = {
+                    animDict = "mini@repair",
+                    anim = "fixing_a_player",
+                    flags = 49,
+                },
+            }, function(cancelled)
+                if not cancelled then
+                  OpenCoffresInventoryMenu(GetVehicleNumberPlateText(vehFront), Config.VehicleLimit[class], myVeh)
+                end
+            end)
+              
             end
         else
           exports.pNotify:SendNotification(
@@ -166,10 +192,23 @@ Citizen.CreateThread(
   function()
     while true do
       Wait(0)
+      local playerIdx = GetPlayerFromServerId(source)
+      local ped = GetPlayerPed(playerIdx)
+      local pedInVeh = false
+
+      -- Set vehicle states
+      if IsPedInAnyVehicle(ped, false) then
+          pedInVeh = true
+      else
+          -- Reset states when not in car
+          pedInVeh = false
+      end
       --if IsControlJustReleased(0, Config.OpenKey) then
-      if IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
-        openmenuvehicle()
-        --GUI.Time = GetGameTimer()
+      if pedInVeh then
+        if IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
+          openmenuvehicle()
+          --GUI.Time = GetGameTimer()
+        end
       end
     end
   end

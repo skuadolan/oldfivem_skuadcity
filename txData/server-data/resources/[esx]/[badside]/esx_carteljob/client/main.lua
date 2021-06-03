@@ -289,7 +289,29 @@ function OpencartelActionsMenu()
 					elseif action == 'identity_card' then
 						OpenIdentityCardMenu(closestPlayer)
 					elseif action == 'search' then
-						OpenBodySearchMenu(closestPlayer)
+						ExecuteCommand('me menggeledah')
+						exports['mythic_progbar']:Progress({
+							name = "inventoryhud_trunk",
+							duration = 1000,
+							label = 'Menggeledah',
+							useWhileDead = true,
+							canCancel = true,
+							controlDisables = {
+							disableMovement = true,
+							disableCarMovement = true,
+							disableMouse = false,
+							disableCombat = true,
+							},
+							animation = {
+								animDict = "mini@repair",
+								anim = "fixing_a_player",
+								flags = 49,
+							},
+						}, function(cancelled)
+							if not cancelled then
+								OpenBodySearchMenu(closestPlayer)
+							end
+						end)
 					elseif action == 'handcuff' then
 						ExecuteCommand('me mengikat')
 						exports['mythic_progbar']:Progress({

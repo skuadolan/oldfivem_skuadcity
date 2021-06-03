@@ -10,7 +10,7 @@ Locales['en'] = {
   ['robbery_complete_at'] = '~r~perampokan sudah sukses di ~y~%s~s~',
   ['robbery_cancelled'] = 'perampokan dibatalkan!',
   ['robbery_cancelled_at'] = '~r~perampokan di ~b~%s~s~ telah dibatalkan!',
-  ['min_police'] = 'minimal ~b~%s polisi~s~ di kota.',
+  ['min_police'] = 'minimal ~b~%s polisi~s~ dan ~b~%s ems~s~ di kota.',
   ['robbery_already'] = '~r~perampokan sedang dimulai.',
   ['no_threat'] = 'kamu harus memegang senjata',
 }

@@ -129,19 +129,16 @@ Config.AuthorizedVehicles = {
 	helicopter = {
 
 		asisten_perawat = {
-			{model = 'polmav', price = 5000}
+			
 		},
 
 		perawat = {
-			{model = 'polmav', price = 5000}
 		},
 
 		asisten_doctor = {
-			{model = 'polmav', price = 4500}
 		},
 
 		chief_doctor = {
-			{model = 'polmav', price = 4500}
 		},
 
 		asisten_boss = {

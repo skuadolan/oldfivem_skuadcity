@@ -53,30 +53,7 @@ AddEventHandler(
   end
 )
 
-RegisterCommand("bagasi", function()
-  exports['mythic_progbar']:Progress({
-      name = "inventoryhud_trunk",
-      duration = 1000,
-      label = 'Membuka Bagasi',
-      useWhileDead = true,
-      canCancel = true,
-      controlDisables = {
-      disableMovement = true,
-      disableCarMovement = true,
-      disableMouse = false,
-      disableCombat = true,
-      },
-      animation = {
-          animDict = "mini@repair",
-          anim = "fixing_a_player",
-          flags = 49,
-      },
-  }, function(cancelled)
-      if not cancelled then
-          openmenuvehicle()
-      end
-  end)
-end)
+
 
 function getItemyWeight(item)
   local weight = 0
@@ -97,6 +74,10 @@ function VehicleInFront()
   local a, b, c, d, result = GetRaycastResult(rayHandle)
   return result
 end
+
+RegisterCommand("bagasi", function()
+  openmenuvehicle()
+end)
 
 function openmenuvehicle()
   local playerPed = GetPlayerPed(-1)
@@ -154,6 +135,7 @@ function openmenuvehicle()
 
               if globalplate ~= nil or globalplate ~= "" or globalplate ~= " " then
                 CloseToVehicle = true
+
                 exports['mythic_progbar']:Progress({
                   name = "inventoryhud_trunk",
                   duration = 1000,
@@ -173,9 +155,10 @@ function openmenuvehicle()
                   },
               }, function(cancelled)
                   if not cancelled then
-                    OpenCoffreInventoryMenu(GetVehicleNumberPlateText(vehFront), Config.VehicleLimit[class], myVeh)    
+                    OpenCoffreInventoryMenu(GetVehicleNumberPlateText(vehFront), Config.VehicleLimit[class], myVeh)        
                   end
               end)
+              
               end
             else
               exports['mythic_notify']:SendAlert('error', _U('trunk_closed'))
@@ -225,11 +208,26 @@ Citizen.CreateThread(
   function()
     while true do
       Wait(0)
-      
-      if IsDisabledControlPressed(0, Config.OpenKey) and IsDisabledControlJustReleased(1, Config.OpenKeySec) then 
-      --if IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
-        openmenuvehicle()
+
+      local playerIdx = GetPlayerFromServerId(source)
+      local ped = GetPlayerPed(playerIdx)
+      local pedInVeh = false
+
+      -- Set vehicle states
+      if IsPedInAnyVehicle(ped, false) then
+          pedInVeh = true
+      else
+          -- Reset states when not in car
+          pedInVeh = false
       end
+      
+      if not pedInVeh then
+        --if IsControlPressed(0, Config.OpenKey) then 
+        if IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
+        openmenuvehicle()
+          end
+      end
+
     end
   end
 )
@@ -301,4 +299,4 @@ function dump(o)
   end
 end
 
-RegisterKeyMapping('Bagasi', 'Tombol Bagasi Mobil', 'keyboard', 'LEFT SHIFT + Y')
+RegisterKeyMapping('Bagasi', 'Tombol Bagasi Mobil', 'keyboard', 'Y')

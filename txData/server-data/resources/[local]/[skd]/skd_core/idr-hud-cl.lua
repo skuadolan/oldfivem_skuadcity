@@ -303,7 +303,7 @@ Citizen.CreateThread(function()
 		    	opacity = opacity + 10
 		    end
 
-			if IsControlPressed(0, 249) or IsDisabledControlPressed(0, 249)  then
+			if IsControlPressed(0, 244) or IsDisabledControlPressed(0, 249)  then
 				talking = true
 			else
 				talking = false

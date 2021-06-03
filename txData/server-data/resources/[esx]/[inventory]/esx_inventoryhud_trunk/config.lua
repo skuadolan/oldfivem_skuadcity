@@ -84,8 +84,7 @@ Config.AllowPolice = true -- If true, police will be able to search players' tru
 
 Config.Locale = 'en'
 
-Config.OpenKey = 21 --LEFT SHIFT
-Config.OpenKeySec = 246 --Y
+Config.OpenKey = 246 --Y
 
 -- Limit, unit can be whatever you want. Originally grams (as average people can hold 25kg)
 Config.Limit = 25000

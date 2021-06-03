@@ -281,7 +281,11 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Wait(0)
-		DrawMarker(36, 409.96, -1622.75, 29.29, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, 191, 255, 100, false, true, 2, false, false, false, false)
+		DrawMarker(36, Impound.RetrieveLocation.X, Impound.RetrieveLocation.Y, Impound.RetrieveLocation.Z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, 191, 255, 100, false, true, 2, false, false, false, false)
+		DrawMarker(36, Impound.StoreLocation.X, Impound.StoreLocation.Y, Impound.StoreLocation.Z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, 191, 255, 100, false, true, 2, false, false, false, false)
+		for i, location in ipairs(Impound.AdminTerminalLocations) do
+		DrawMarker(36, location.x, location.y, location.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, 191, 255, 100, false, true, 2, false, false, false, false)
+		end
 	end
 end)
 ----------------------------------------------------------------------------------------------------

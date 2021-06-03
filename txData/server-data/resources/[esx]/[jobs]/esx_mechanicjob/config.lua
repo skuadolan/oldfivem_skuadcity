@@ -38,7 +38,7 @@ Config.Zones = {
 	},
 
 	VehicleSpawnPoint = {
-		Pos   = { x = -320.54, y = -159.86, z = 36.21 },
+		Pos   = { x = -372.25, y = -107.19, z = 38.8 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Type  = -1
 	},

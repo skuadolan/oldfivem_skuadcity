@@ -13,10 +13,10 @@ Config.GiveSocietyMoney = false -- true = Gives money to society_mechanic. Note:
 Config.ShowVehicleLocation = true -- true = Will show Location of Vehicles in the Garage Menus.
 Config.ShowSpacers = true -- true = Shows Spacers in Menus.
 
-Config.PointMarker = {Type = 1, r = 0, g = 255, b = 0, x = 1.5, y = 1.5, z = 1.0} -- Green Color / Standard Size Circle.
-Config.DeleteMarker = {Type = 1, r = 255, g = 0, b = 0, x = 5.0, y = 5.0, z = 1.0} -- Red Color / Big Size Circle.
-Config.PoundMarker = {Type = 1, r = 0, g = 0, b = 100, x = 1.5, y = 1.5, z = 1.0} -- Blue Color / Standard Size Circle.
-Config.JPoundMarker = {Type = 1, r = 255, g = 0, b = 0, x = 1.5, y = 1.5, z = 1.0} -- Red Color / Standard Size Circle.
+Config.PointMarker = {Type = 21, r = 0, g = 255, b = 0, x = 0.45, y = 0.45, z = 0.45} -- Green Color / Standard Size Circle.
+Config.DeleteMarker = {Type = 1, r = 255, g = 0, b = 0, x = 3.45, y = 3.45, z = 1.45} -- Red Color / Big Size Circle.
+Config.PoundMarker = {Type = 1, r = 255, g = 0, b = 0, x = 3.45, y = 3.45, z = 1.45} -- Blue Color / Standard Size Circle.
+Config.JPoundMarker = {Type = 1, r = 255, g = 0, b = 0, x = 3.45, y = 3.45, z = 1.45} -- Red Color / Standard Size Circle.
 
 Config.GarageBlip = {Sprite = 290, Color = 38, Display = 2, Scale = 1.0} -- Public Garage Blip.
 Config.PGarageBlip = {Sprite = 290, Color = 53, Display = 2, Scale = 1.0} -- Private Garage Blip.
@@ -39,13 +39,13 @@ Config.DamageMult = 5 -- Higher Number = Higher Repair Price.
 Config.UsingAdvancedVehicleShop = false -- Set to true if using esx_advancedvehicleshop
 
 Config.UseAmbulanceGarages = false -- true = Allows use of Ambulance Garages.
-Config.UseAmbulancePounds = false -- true = Allows use of Ambulance Pounds.
-Config.UseAmbulanceBlips = false -- true = Use Ambulance Blips.
+Config.UseAmbulancePounds = true -- true = Allows use of Ambulance Pounds.
+Config.UseAmbulanceBlips = true -- true = Use Ambulance Blips.
 Config.AmbulancePoundPrice = 80 -- How much it Costs to get Vehicle from Ambulance Pound.
 
 Config.UsePoliceGarages = false -- true = Allows use of Police Garages.
-Config.UsePolicePounds = false -- true = Allows use of Police Pounds.
-Config.UsePoliceBlips = false -- true = Use Police Blips.
+Config.UsePolicePounds = true -- true = Allows use of Police Pounds.
+Config.UsePoliceBlips = true -- true = Use Police Blips.
 Config.PolicePoundPrice = 80 -- How much it Costs to get Vehicle from Police Pound.
 
 Config.UseAircraftGarages = false -- true = Allows use of Aircraft Garages.
@@ -60,7 +60,7 @@ Config.UseCarGarages = true -- true = Allows use of Car Garages.
 Config.UseCarBlips = true-- true = Use Car Blips.
 Config.CarPoundPrice = 300 -- How much it Costs to get Vehicle from Car Pound.
 
-Config.UsePrivateCarGarages = false -- true = Allows use of Private Car Garages.
+Config.UsePrivateCarGarages = true -- true = Allows use of Private Car Garages.
 
 -- Marker = Enter Location | Spawner = Spawn Location | Spawner2 = Job Aircraft Spawn Location | Deleter = Delete Location
 -- Deleter2 = Job Aircraft Delete Location | Heading = Spawn Heading | Heading2 = Job Aircraft Spawn Heading
@@ -217,7 +217,7 @@ Config.CarPounds = {
 		Spawner = vector3(405.64, -1643.4, 27.61),
 		Heading = 229.54
 	},
-	--[[Sandy_Shores = {
+	Sandy_Shores = {
 		Marker = vector3(1651.38, 3804.84, 37.65),
 		Spawner = vector3(1627.84, 3788.45, 33.77),
 		Heading = 308.53
@@ -226,7 +226,7 @@ Config.CarPounds = {
 		Marker = vector3(-234.82, 6198.65, 30.94),
 		Spawner = vector3(-230.08, 6190.24, 30.49),
 		Heading = 140.24
-	}]]
+	}
 }
 -- End of Cars
 

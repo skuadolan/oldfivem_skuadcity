@@ -45,17 +45,18 @@ function notifyAlertSMS (number, alert, listSrc)
 end
 
 AddEventHandler('esx_phone:registerNumber', function(number, type, sharePos, hasDispatch, hideNumber, hidePosIfAnon)
-  print('= INFO = Registered number for ' .. number .. ' => ' .. type)
 	local hideNumber    = hideNumber    or false
 	local hidePosIfAnon = hidePosIfAnon or false
 
 	PhoneNumbers[number] = {
 		type          = type,
-    sources       = {},
-    alerts        = {}
+		sharePos      = sharePos,
+		hasDispatch   = (hasDispatch or false),
+		hideNumber    = hideNumber,
+		hidePosIfAnon = hidePosIfAnon,
+		sources       = {}
 	}
 end)
-
 
 AddEventHandler('esx:setJob', function(source, job, lastJob)
   if PhoneNumbers[lastJob.name] ~= nil then

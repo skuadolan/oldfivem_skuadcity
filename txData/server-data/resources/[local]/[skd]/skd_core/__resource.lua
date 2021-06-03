@@ -25,7 +25,7 @@ client_script {
     'watermark-cl.lua',
     'clip-cl.lua',
     'nonpc/main.lua',
-    
+    'surrender/client.lua',
     
 }
 
@@ -36,6 +36,7 @@ server_script {
     'sv_carry.lua',
     'armor-sv.lua',
     'sv_piggyback.lua',
-    'sv_takehostage.lua'
+    'sv_takehostage.lua',
+    'surrender/server.lua'
 
 }

@@ -17,10 +17,6 @@ AddEventHandler(
     end
 )
 
-RegisterCommand('dashboardmobil', function()
-	openGloveboxInventory()
-end)
-
 RegisterNetEvent("esx_inventoryhud:refreshGloveboxInventory")
 AddEventHandler(
     "esx_inventoryhud:refreshGloveboxInventory",

@@ -3,6 +3,7 @@ local CurrentAction, CurrentActionMsg, CurrentActionData = nil, '', {}
 local CurrentlyTowedVehicle, Blips, NPCOnJob, NPCTargetTowable, NPCTargetTowableZone = nil, {}, false, nil, nil
 local NPCHasSpawnedTowable, NPCLastCancel, NPCHasBeenNextToTowable, NPCTargetDeleterZone = false, GetGameTimer() - 5 * 60000, false, false
 local isDead, isBusy = false, false
+local derekStatus = false
 ESX = nil
 
 Citizen.CreateThread(function()
@@ -123,7 +124,7 @@ function OpenMechanicActionsMenu()
 
 				local elements = {
 					{label = _U('flat_bed'),  value = 'flatbed'},
-					{label = _U('tow_truck'), value = 'towtruck2'}
+					--{label = _U('tow_truck'), value = 'towtruck2'}
 				}
 
 				if Config.EnablePlayerManagement and ESX.PlayerData.job and (ESX.PlayerData.job.grade_name == 'boss' or ESX.PlayerData.job.grade_name == 'chief' or ESX.PlayerData.job.grade_name == 'experimente') then
@@ -268,18 +269,27 @@ end
 function OpenMobileMechanicActionsMenu()
 	ESX.UI.Menu.CloseAll()
 
+	local eleme = {
+		{label = _U('billing'),       value = 'billing'},
+		--{label = _U('hijack'),        value = 'hijack_vehicle'},
+		--{label = _U('repair'),        value = 'fix_vehicle'},
+		{label = _U('clean'),         value = 'clean_vehicle'},
+		--{label = _U('imp_veh'),       value = 'del_vehicle'},
+		--{label = _U('flat_bed'),      value = 'dep_vehicle'},
+		{label = _U('place_objects'), value = 'object_spawner'}
+	}
+
+	if derekStatus then
+		table.insert(eleme, {label =  _U('unflat_bed'), value = 'dep_vehicle'})
+	else
+		table.insert(eleme, {label =  _U('flat_bed'), value = 'dep_vehicle'})
+	end
+
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions', {
 		title    = _U('mechanic'),
 		align    = 'top-right',
-		elements = {
-			{label = _U('billing'),       value = 'billing'},
-			--{label = _U('hijack'),        value = 'hijack_vehicle'},
-			--{label = _U('repair'),        value = 'fix_vehicle'},
-			{label = _U('clean'),         value = 'clean_vehicle'},
-			--{label = _U('imp_veh'),       value = 'del_vehicle'},
-			{label = _U('flat_bed'),      value = 'dep_vehicle'},
-			{label = _U('place_objects'), value = 'object_spawner'}
-	}}, function(data, menu)
+		elements = eleme
+	}, function(data, menu)
 		if isBusy then return end
 
 		if data.current.value == 'billing' then
@@ -417,7 +427,8 @@ function OpenMobileMechanicActionsMenu()
 					if targetVehicle ~= 0 then
 						if not IsPedInAnyVehicle(playerPed, true) then
 							if vehicle ~= targetVehicle then
-								AttachEntityToEntity(targetVehicle, vehicle, 20, -0.5, -5.0, 1.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+								AttachEntityToEntity(targetVehicle, vehicle, 20, 0.0, -5.35, 0.6, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+								derekStatus = true
 								CurrentlyTowedVehicle = targetVehicle
 								ESX.ShowNotification(_U('vehicle_success_attached'))
 
@@ -443,8 +454,9 @@ function OpenMobileMechanicActionsMenu()
 						ESX.ShowNotification(_U('no_veh_att'))
 					end
 				else
-					AttachEntityToEntity(CurrentlyTowedVehicle, vehicle, 20, -0.5, -12.0, 1.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					AttachEntityToEntity(CurrentlyTowedVehicle, vehicle, 20, 0.0, -12.0, -1.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
 					DetachEntity(CurrentlyTowedVehicle, true, true)
+					derekStatus = false
 
 					if NPCOnJob then
 						if NPCTargetDeleterZone then

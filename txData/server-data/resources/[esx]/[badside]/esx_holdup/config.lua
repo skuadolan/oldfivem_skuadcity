@@ -7,8 +7,13 @@ Config.Marker = {
 	DrawDistance = 15.0, Type = 1    -- default circle type, low draw distance due to indoors area
 }
 
-Config.PoliceLojas = 2
-Config.PoliceBank = 4
+Config.PoliceLojas = 4
+Config.EMSLojas = 1
+Config.PoliceMiniBank = 6
+Config.EMSMiniBank = 2
+Config.PoliceBigBank = 8
+Config.EMSBigBank = 3
+
 Config.TimerBeforeNewRob    = 1800 -- The cooldown timer on a store after robbery was completed / canceled, in seconds
 
 Config.MaxDistance    = 45   -- max distance from the robbary, going any longer away from it will to cancel the robbary
@@ -239,7 +244,7 @@ Stores = {
 		position = { x = 254.98, y = 225.95, z = 101.88 },
 		reward = math.random(1150000,1500000),
 		nameOfStore = "BANK BESAR",
-		typeRobb = 'bank',
+		typeRobb = 'bigbank',
 		secondsRemaining = 480, -- seconds
 		lastRobbed = 0
 	}

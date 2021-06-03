@@ -48,9 +48,17 @@ AddEventHandler('esx_holdup:robberyStarted', function(currentStore)
 			end
 		end
 
+		local ems = 0
+		for i=1, #xPlayers, 1 do
+			local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+			if xPlayer.job.name == 'ambulance' then
+				ems = ems + 1
+			end
+		end
+
 		if not rob then
 			if store.typeRobb == 'warung' then 
-				if cops >= Config.PoliceLojas then
+				if cops >= Config.PoliceLojas and ems >= Config.EMSLojas then
 					rob = true
 	
 					for i=1, #xPlayers, 1 do
@@ -100,10 +108,10 @@ AddEventHandler('esx_holdup:robberyStarted', function(currentStore)
 						end
 					end)
 				else
-					TriggerClientEvent('esx:showNotification', _source, _U('min_police', Config.PoliceLojas))
+					TriggerClientEvent('esx:showNotification', _source, _U('min_police', Config.PoliceLojas, Config.EMSLojas))
 				end
-			else
-				if cops >= Config.PoliceBank then
+			elseif store.typeRobb == 'bank' then 
+				if cops >= Config.PoliceMiniBank and ems >= Config.EMSMiniBank then
 					rob = true
 	
 					for i=1, #xPlayers, 1 do
@@ -153,7 +161,60 @@ AddEventHandler('esx_holdup:robberyStarted', function(currentStore)
 						end
 					end)
 				else
-					TriggerClientEvent('esx:showNotification', _source, _U('min_police', Config.PoliceBank))
+					TriggerClientEvent('esx:showNotification', _source, _U('min_police', Config.PoliceMiniBank, Config.EMSMiniBank))
+				end
+			else 
+				if cops >= Config.PoliceBigBank and ems >= Config.EMSBigBank then
+					rob = true
+	
+					for i=1, #xPlayers, 1 do
+						local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+						--if xPlayer.job.name == 'police' then
+							TriggerClientEvent('esx:showNotification', xPlayers[i], _U('rob_in_prog', store.nameOfStore))
+							TriggerClientEvent('esx_holdup:setBlip', xPlayers[i], Stores[currentStore].position)
+						--end
+					end
+					
+					TriggerClientEvent('chat:addMessage', -1, {
+						template = '<div class="chat-message-jel"><b>BERITA | TELAH TERJADI PERAMPOKAN  DI </b> {1}</b></div>',
+						args = { "Me", store.nameOfStore}
+					})
+	
+					TriggerClientEvent('esx:showNotification', _source, _U('started_to_rob', store.nameOfStore))
+					TriggerClientEvent('esx:showNotification', _source, _U('alarm_triggered'))
+					
+					TriggerClientEvent('esx_holdup:currentlyRobbing', _source, currentStore)
+					TriggerClientEvent('esx_holdup:startTimer', _source)
+					
+					Stores[currentStore].lastRobbed = os.time()
+					robbers[_source] = currentStore
+	
+					SetTimeout(store.secondsRemaining * 1000, function()
+						if robbers[_source] then
+							rob = false
+							if xPlayer then
+								TriggerClientEvent('esx_holdup:robberyComplete', _source, store.reward)
+	
+								if Config.GiveBlackMoney then
+									xPlayer.addAccountMoney('black_money', store.reward)
+								else
+									xPlayer.addMoney(store.reward)
+								end
+								
+								local xPlayers, xPlayer = ESX.GetPlayers(), nil
+								for i=1, #xPlayers, 1 do
+									xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+	
+									if xPlayer.job.name == 'police' then
+										TriggerClientEvent('esx:showNotification', xPlayers[i], _U('robbery_complete_at', store.nameOfStore))
+										TriggerClientEvent('esx_holdup:killBlip', xPlayers[i])
+									end
+								end
+							end
+						end
+					end)
+				else
+					TriggerClientEvent('esx:showNotification', _source, _U('min_police', Config.PoliceBigBank, Config.EMSBigBank))
 				end
 			end
 		else
