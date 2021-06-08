@@ -86,3 +86,57 @@ RegisterCommand("tunjukkansenjataku", function(source, args, rawCommand)
     --ESX.ShowNotification('No players nearby')
   end
 end, false)
+
+engineoff = false
+saved = false
+controlsave_bool = false
+
+-- E N G I N E --
+IsEngineOn = true
+RegisterCommand('engine',function() 
+	local player = GetPlayerPed(-1)
+	
+	if (IsPedSittingInAnyVehicle(player)) then 
+		local vehicle = GetVehiclePedIsIn(player,false)
+		
+		if IsEngineOn == true then
+			IsEngineOn = false
+			SetVehicleEngineOn(vehicle,false,false,false)
+		else
+			IsEngineOn = true
+			SetVehicleUndriveable(vehicle,false)
+			SetVehicleEngineOn(vehicle,true,false,false)
+		end
+		
+		while (IsEngineOn == false) do
+			SetVehicleUndriveable(vehicle,true)
+			Citizen.Wait(0)
+		end
+	end
+end)
+
+RegisterCommand('engineoff',function() 
+		local player = GetPlayerPed(-1)
+
+        if (IsPedSittingInAnyVehicle(player)) then 
+            local vehicle = GetVehiclePedIsIn(player,false)
+			engineoff = true
+			ShowNotification("Engine ~r~off~s~.")
+			while (engineoff) do
+			SetVehicleEngineOn(vehicle,false,false,false)
+			SetVehicleUndriveable(vehicle,true)
+			Citizen.Wait(0)
+			end
+		end
+end)
+RegisterCommand('engineon',function() 
+    local player = GetPlayerPed(-1)
+
+        if (IsPedSittingInAnyVehicle(player)) then 
+            local vehicle = GetVehiclePedIsIn(player,false)
+			engineoff = false
+			SetVehicleUndriveable(vehicle,false)
+			SetVehicleEngineOn(vehicle,true,false,false)
+			ShowNotification("Engine ~g~on~s~.")
+	end
+end)

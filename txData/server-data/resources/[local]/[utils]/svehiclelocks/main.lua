@@ -55,7 +55,7 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(5)
-		if IsDisabledControlJustReleased(1, 303) then
+		if IsDisabledControlPressed(0, 19) and IsDisabledControlJustReleased(1, 303) then
 		    ToggleVehicleLock()
 		end
     end
@@ -134,3 +134,5 @@ function ToggleVehicleLock()
 
 	end, ESX.Math.Trim(GetVehicleNumberPlateText(vehicle)))
 end
+
+RegisterKeyMapping('Kunci Kendaraan', 'Tombol Kunci Kendaraan', 'keyboard', 'U')

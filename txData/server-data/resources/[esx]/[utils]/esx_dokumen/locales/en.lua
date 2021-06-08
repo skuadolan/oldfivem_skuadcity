@@ -1,21 +1,21 @@
 Locales['en'] = {
-    ['document_deleted'] = "Document was ~g~deleted~w~.",
-    ['document_delete_failed'] = "Document delete ~r~failed~w~.",
-    ['copy_from_player'] = "You ~g~received~w~ a form copy from a player.",
-    ['from_copied_player'] = "Form ~g~copied~w~ to player",
-    ['could_not_copy_form_player'] = "Could ~r~not~w~ copy form to player.",
-    ['document_options'] = "Document Options",
-    ['public_documents'] = "Public Documents",
-    ['job_documents'] = "Job Documents",
-    ['saved_documents'] = "Saved Documents",
-    ['close_bt'] = "Close",
-    ['no_player_found'] = "No players found",
-    ['go_back'] = "Go Back",
-    ['view_bt'] = "View",
-    ['show_bt'] = "Show",
-    ['give_copy'] = "Give Copy",
-    ['delete_bt'] = "Delete",
-    ['yes_delete'] = "Yes Delete",
+    ['document_deleted'] = "DOKUMEN TERHAPUS.",
+    ['document_delete_failed'] = "MENGHAPUS DOKUMEN GAGAL.",
+    ['copy_from_player'] = "ANDA MENERIMA SALINAN FORMULIR DARI ORANG.",
+    ['from_copied_player'] = "FORMULIR DISALIN KE ORANG",
+    ['could_not_copy_form_player'] = "TIDAK DAPAT MENYALIN FORMULIR KE ORANG.",
+    ['document_options'] = "OPSI DOKUMEN",
+    ['public_documents'] = "DOKUMEN PUBLIK",
+    ['job_documents'] = "DOKUMEN PEKERJAAN",
+    ['saved_documents'] = "DOKUMEN TERSIMPAN",
+    ['close_bt'] = "TUTUP",
+    ['no_player_found'] = "TIDAK ADA ORANG",
+    ['go_back'] = "KEMBALI",
+    ['view_bt'] = "MELIHAT",
+    ['show_bt'] = "TUNJUKKAN",
+    ['give_copy'] = "MEMBERIKAN SALINAN",
+    ['delete_bt'] = "HAPUS",
+    ['yes_delete'] = "YA HAPUS",
 }
 
 Config.Documents['en'] = {
@@ -46,17 +46,6 @@ Config.Documents['en'] = {
           }
         },
         {
-          headerTitle = "DEBT STATEMENT TOWARDS CITIZEN",
-          headerSubtitle = "Official debt statement towards another citizen.",
-          elements = {
-            { label = "CREDITOR FIRSTNAME", type = "input", value = "", can_be_emtpy = false },
-            { label = "CREDITOR LASTNAME", type = "input", value = "", can_be_emtpy = false },
-            { label = "AMOUNT DUE", type = "input", value = "", can_be_empty = false },
-            { label = "DUE DATE", type = "input", value = "", can_be_empty = false },
-            { label = "OTHER INFORMATION", type = "textarea", value = "", can_be_emtpy = true },
-          }
-        },
-        {
           headerTitle = "DEBT CLEARANCE DECLARATION",
           headerSubtitle = "Declaration of debt clearance from another citizen.",
           elements = {
@@ -69,34 +58,35 @@ Config.Documents['en'] = {
       },
       ["police"] = {
         {
-          headerTitle = "SPECIAL PARKING PERMIT",
-          headerSubtitle = "Special no-limit parking permit.",
+          headerTitle = "SURAT IZIN KERAMAIAN",
+          headerSubtitle = "SURAT IZIN KERAMAIAN",
           elements = {
-            { label = "HOLDER FIRSTNAME", type = "input", value = "", can_be_emtpy = false },
-            { label = "HOLDER LASTNAME", type = "input", value = "", can_be_emtpy = false },
-            { label = "VALID UNTIL", type = "input", value = "", can_be_empty = false },
-            { label = "INFORMATION", type = "textarea", value = "THE AFOREMENTIONED CITIZEN HAS BEEN GRANTED UNLIMITED PARKING PERMIT IN EVERY CITY ZONE AND IS VALID UNTIL THE AFOREMENTIONED EXPIRATION DATE.", can_be_emtpy = false },
+            { label = "NAMA LENGKAP", type = "input", value = "", can_be_emtpy = false },
+            { label = "ACARA", type = "input", value = "", can_be_emtpy = false },
+            { label = "MASA BERLAKU", type = "input", value = "", can_be_empty = false },
+            { label = "INFORMASI", type = "textarea", value = "", can_be_emtpy = false },
+          }       
+        },
+        {
+          headerTitle = "SURAT TANDA NOMOR KENDARAAN",
+          headerSubtitle = "SURAT TANDA NOMOR KENDARAAN",
+          elements = {
+            { label = "NAMA LENGKAP", type = "input", value = "", can_be_emtpy = false },
+            { label = "PLAT KENDARAAN", type = "input", value = "", can_be_emtpy = false },
+            { label = "MASA BERLAKU", type = "input", value = "", can_be_empty = false },
+            { label = "INFORMASI", type = "textarea", value = "", can_be_emtpy = false },
           }
         },
         {
-          headerTitle = "GUN PERMIT",
-          headerSubtitle = "Special gun permit provided by the police.",
+          headerTitle = "CATATAN KRIMINAL",
+          headerSubtitle = "CATATAN KRIMINAL",
           elements = {
-            { label = "HOLDER FIRSTNAME", type = "input", value = "", can_be_emtpy = false },
-            { label = "HOLDER LASTNAME", type = "input", value = "", can_be_emtpy = false },
-            { label = "VALID UNTIL", type = "input", value = "", can_be_empty = false },
-            { label = "INFORMATION", type = "textarea", value = "THE AFOREMENTIONED CITIZEN IS ALLOWED AND GRANTED A GUN PERMIT WHICH WILL BE VALID UNTIL THE AFOREMENTIONED EXPIRATION DATE.", can_be_emtpy = false },
+            { label = "NAMA LENGKAP", type = "input", value = "", can_be_emtpy = false },
+            { label = "NAMA PASSPORT", type = "input", value = "", can_be_emtpy = false },
+            { label = "MASA BERLAKU", type = "input", value = "", can_be_empty = false },
+            { label = "INFORMASI", type = "textarea", value = "", can_be_emtpy = false },
           }
-        },
-        {
-          headerTitle = "CLEAN CITIZEN CRIMINAL RECORD",
-          headerSubtitle = "Official clean, general purpose, citizen criminal record.",
-          elements = {
-            { label = "CITIZEN FIRSTNAME", type = "input", value = "", can_be_emtpy = false },
-            { label = "CITIZEN LASTNAME", type = "input", value = "", can_be_emtpy = false },
-            { label = "VALID UNTIL", type = "input", value = "", can_be_empty = false },
-            { label = "RECORD", type = "textarea", value = "THE POLICE HEREBY DECLARES THAT THE AFOREMENTIONED CITIZEN HOLDS A CLEAR CRIMINAL RECORD. THIS RESULT IS GENERATED FROM DATA SUBMITTED IN THE CRIMINAL RECORD SYSTEM BY THE DOCUMENT SIGN DATE.", can_be_emtpy = false, can_be_edited = false },
-          }         }
+        }
       },
       ["ambulance"] = {
         {

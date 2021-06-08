@@ -18,8 +18,8 @@ Citizen.CreateThread(function()
             -- Check if menu should be enabled
             if menuConfig:enableMenu() then
                 -- When keybind is pressed toggle UI
-                local keybindControl = menuConfig.data.keybind
-                if IsControlPressed(0, keybindControl) then
+                local keybindControl = keybindControls[menuConfig.data.keybind]
+                --[[if IsDisabledControlJustPressed(0, keybindControl) then
                     -- Init UI
                     showMenu = true
                     SendNUIMessage({
@@ -38,7 +38,24 @@ Citizen.CreateThread(function()
                     -- Prevent menu from showing again until key is released
                     while showMenu == true do Citizen.Wait(100) end
                     Citizen.Wait(100)
-                    while IsControlPressed(0, keybindControl) do Citizen.Wait(100) end
+                    --while IsDisabledControlJustReleased(0, keybindControl) do Citizen.Wait(100) end
+                end]]
+                while IsControlJustPressed(0, keybindControl) do 
+                    Citizen.Wait(100)
+                    -- Init UI
+                    showMenu = true
+                    SendNUIMessage({
+                        type = 'init',
+                        data = menuConfig.data,
+                        resourceName = GetCurrentResourceName()
+                    })
+
+                    -- Set cursor position and set focus
+                    SetCursorLocation(0.5, 0.5)
+                    SetNuiFocus(true, true)
+
+                    -- Play sound
+                    PlaySoundFrontend(-1, "NAV", "HUD_AMMO_SHOP_SOUNDSET", 1)
                 end
             end
         end
@@ -214,7 +231,7 @@ RegisterCommand("pekerjaan", function(source, args, rawCommand)
     SetNuiFocus(true, true)
 end, false)
 
---[[RegisterCommand("me123", function(source, args, rawCommand)
+RegisterCommand("me123", function(source, args, rawCommand)
     -- Wait for next frame just to be safe
     Citizen.Wait(0)
 
@@ -240,7 +257,7 @@ RegisterCommand("do123", function(source, args, rawCommand)
         resourceName = GetCurrentResourceName()
     })
     SetNuiFocus(true, true)
-end, false)]]
+end, false)
 
 RegisterCommand("pakaian", function(source, args, rawCommand)
     -- Wait for next frame just to be safe
@@ -274,4 +291,4 @@ AddEventHandler('esx:onPlayerDeath', function(data)
 	isDead = true
 end)
 
-RegisterKeyMapping('Radial Menu', 'Tombol Radial Menu', 'keyboard', '`')
+RegisterKeyMapping('Radial Menu', 'Tombol Radial Menu', 'keyboard', 'F1')

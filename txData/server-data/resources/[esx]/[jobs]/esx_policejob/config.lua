@@ -789,7 +789,7 @@ Config.Uniforms = {
 			helmet_1 = -1,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
-	},
+		},
 		female = {
 			tshirt_1 = 36,  tshirt_2 = 1,
 			torso_1 = 48,   torso_2 = 0,
@@ -828,7 +828,7 @@ Config.Uniforms = {
 		}
 	},
 
-	komjen = {
+	wakil_boss = {
 		male = {
 			tshirt_1 = 15,  tshirt_2 = 0,
 			torso_1 = 149,   torso_2 = 1,

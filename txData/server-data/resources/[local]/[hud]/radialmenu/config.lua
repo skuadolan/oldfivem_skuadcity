@@ -6,7 +6,7 @@ menuConfigs = {
             return IsPedOnFoot(player)
         end,
         data = {
-            keybind = 243, --`/~
+            keybind = "F1",
             style = {                               -- Wheel style settings
                 sizePx = 550,                       -- Wheel size in pixels
                 slices = {                          -- Slice style settings
@@ -77,7 +77,7 @@ menuConfigs = {
             return IsPedInAnyVehicle(player, false)
         end,
         data = {                                    -- Data that is passed to Javascript
-            keybind = 243,                         -- Wheel keybind to use (case sensitive, must match entry in keybindControls table)
+            keybind = "F1",                         -- Wheel keybind to use (case sensitive, must match entry in keybindControls table)
             style = {                               -- Wheel style settings
                 sizePx = 550,                       -- Wheel size in pixels
                 slices = {                          -- Slice style settings
@@ -113,7 +113,7 @@ subMenuConfigs = {
     ['pintu'] = 
     {
         data = {
-            keybind = 243,
+            keybind = "F1",
             style = {
                 sizePx = 550,
                 slices = {
@@ -145,7 +145,7 @@ subMenuConfigs = {
     ['animasi'] = 
     {
         data = {                                    -- Data that is passed to Javascript
-            keybind = 243,                         -- Wheel keybind to use (case sensitive, must match entry in keybindControls table)
+            keybind = "F1",                         -- Wheel keybind to use (case sensitive, must match entry in keybindControls table)
             style = {                               -- Wheel style settings
                 sizePx = 550,                       -- Wheel size in pixels
                 slices = {                          -- Slice style settings
@@ -184,7 +184,7 @@ subMenuConfigs = {
     ['rumah'] = 
     {
         data = {
-            keybind = 243,
+            keybind = "F1",
             style = {                               -- Wheel style settings
                 sizePx = 550,                       -- Wheel size in pixels
                 slices = {                          -- Slice style settings
@@ -216,7 +216,7 @@ subMenuConfigs = {
     ['rumahkeduagaes'] = 
     {
         data = {
-            keybind = 243,
+            keybind = "F1",
             style = {                               -- Wheel style settings
                 sizePx = 550,                       -- Wheel size in pixels
                 slices = {                          -- Slice style settings
@@ -248,7 +248,7 @@ subMenuConfigs = {
     ['idcard'] = 
     {
         data = {
-            keybind = 243,
+            keybind = "F1",
             style = {
                 sizePx = 550,
                 slices = {
@@ -280,7 +280,7 @@ subMenuConfigs = {
     ['ruwetcok'] = 
     {
         data = {
-            keybind = 243,
+            keybind = "F1",
             style = {
                 sizePx = 550,
                 slices = {
@@ -312,7 +312,7 @@ subMenuConfigs = {
     ['pakaian'] = 
     {
         data = {
-            keybind = 243,
+            keybind = "F1",
             style = {
                 sizePx = 550,
                 slices = {
@@ -383,7 +383,7 @@ subMenuConfigs = {
 	
 	['submenu6'] = {
         data = {
-            keybind = 243,
+            keybind = "F1",
             style = {
                 sizePx = 700,
                 slices = {

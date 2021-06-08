@@ -21,3 +21,7 @@ server_scripts {
 	'config.lua',
 	'server/main.lua'
 }
+
+dependencies {
+	'skd_logs'
+}

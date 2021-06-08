@@ -223,7 +223,7 @@ Citizen.CreateThread(
       
       if not pedInVeh then
         --if IsControlPressed(0, Config.OpenKey) then 
-        if IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
+        if IsDisabledControlJustReleased(0, 19) and IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
         openmenuvehicle()
           end
       end

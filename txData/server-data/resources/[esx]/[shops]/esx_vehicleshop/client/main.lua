@@ -2,6 +2,8 @@ local HasAlreadyEnteredMarker, IsInShopMenu = false, false
 local CurrentAction, CurrentActionMsg, LastZone, currentDisplayVehicle, CurrentVehicleData
 local CurrentActionData, Vehicles, Categories = {}, {}, {}
 
+local istestDrive, vehicleTestDrive
+
 ESX = nil
 
 Citizen.CreateThread(function()
@@ -602,6 +604,230 @@ function OpenGetStocksMenu()
 	end)
 end
 
+function drawTxt(x,y, width, height, scale, text, r,g,b,a, outline)
+	SetTextFont(0)
+	SetTextScale(scale, scale)
+	SetTextColour(r, g, b, a)
+	SetTextDropshadow(0, 0, 0, 0,255)
+	SetTextDropShadow()
+	if outline then SetTextOutline() end
+
+	BeginTextCommandDisplayText('STRING')
+	AddTextComponentSubstringPlayerName(text)
+	EndTextCommandDisplayText(x - width/2, y - height/2 + 0.005)
+end
+
+RegisterNetEvent('esx_vehicleShop:startTimerTestDrive')
+AddEventHandler('esx_vehicleShop:startTimerTestDrive', function()
+	local timer = Config.TimerTestDrive
+
+	Citizen.CreateThread(function()
+		while timer > 0  do
+			Citizen.Wait(1000)
+
+			if timer > 0 then
+				timer = timer - 1
+			end
+		end
+	end)
+
+	Citizen.CreateThread(function()
+		while istestDrive do
+			Citizen.Wait(0)
+			drawTxt(0.66, 1.44, 1.0, 1.0, 0.4, _U('timer_testdrive', timer), 255, 255, 255, 255)
+		end
+	end)
+end)
+
+RegisterNetEvent('esx_vehicleshop:testDriveComplete')
+AddEventHandler('esx_vehicleshop:testDriveComplete', function()
+local playerPed = PlayerPedId()
+local player = GetPlayerPed(-1)
+local vehicleTestDrive = {}
+local vehicleData, model, plate
+
+	if IsPedInAnyVehicle(player, false) then
+		for i=1, #Vehicles, 1 do
+			if GetHashKey(Vehicles[i].model) == GetEntityModel(vehicle) then
+				vehicleData = Vehicles[i]
+				break
+			end
+		end
+
+		local vehicle = GetVehiclePedIsIn(player, false)
+
+		model = GetEntityModel(vehicle)
+		plate = ESX.Math.Trim(GetVehicleNumberPlateText(vehicle))
+
+		if plate == GeneratePlateTestDrive() then
+			print(GetDisplayNameFromVehicleModel(model))
+			for i=1, 1, 1 do
+				table.insert(vehicleTestDrive,vehicle)
+			end
+			print('MODEL CARDEL')
+		end
+	end
+
+	for i=1, #vehicleTestDrive, 1 do
+		ESX.Game.DeleteVehicle(vehicleTestDrive[i])
+	end
+
+	SetEntityCoords(playerPed, Config.Zones.TestDrive.Pos)
+
+	istestDrive = false
+end)
+
+
+function testDriveMenu()
+	if #Vehicles == 0 then
+		print('[esx_vehicleshop] [^3ERROR^7] No vehicles found')
+		return
+	end
+
+	IsInShopMenu = true
+
+	StartShopRestriction()
+	ESX.UI.Menu.CloseAll()
+
+	local playerPed = PlayerPedId()
+
+	FreezeEntityPosition(playerPed, true)
+	SetEntityVisible(playerPed, false)
+	SetEntityCoords(playerPed, Config.Zones.ShopInside.Pos)
+
+	local vehiclesByCategory = {}
+	local elements           = {}
+	local firstVehicleData   = nil
+
+	for i=1, #Categories, 1 do
+		vehiclesByCategory[Categories[i].name] = {}
+	end
+
+	for i=1, #Vehicles, 1 do
+		if IsModelInCdimage(GetHashKey(Vehicles[i].model)) then
+			table.insert(vehiclesByCategory[Vehicles[i].category], Vehicles[i])
+		else
+			print(('[esx_vehicleshop] [^3ERROR^7] Vehicle "%s" does not exist'):format(Vehicles[i].model))
+		end
+	end
+
+	for k,v in pairs(vehiclesByCategory) do
+		table.sort(v, function(a, b)
+			return a.name < b.name
+		end)
+	end
+
+	for i=1, #Categories, 1 do
+		local category         = Categories[i]
+		local categoryVehicles = vehiclesByCategory[category.name]
+		local options          = {}
+
+		for j=1, #categoryVehicles, 1 do
+			local vehicle = categoryVehicles[j]
+
+			if i == 1 and j == 1 then
+				firstVehicleData = vehicle
+			end
+
+			table.insert(options, ('%s <span style="color:green;">%s</span>'):format(vehicle.name, _U('generic_shopitem', ESX.Math.GroupDigits(vehicle.price))))
+		end
+
+		table.sort(options)
+
+		table.insert(elements, {
+			name    = category.name,
+			label   = category.label,
+			value   = 0,
+			type    = 'slider',
+			max     = #Categories[i],
+			options = options
+		})
+	end
+
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_shop', {
+		title    = _U('car_dealer'),
+		align    = 'top-left',
+		elements = elements
+	}, function(data, menu)
+		local vehicleData = vehiclesByCategory[data.current.name][data.current.value + 1]
+
+		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop_confirm', {
+			title = _U('buy_vehicle_shop', vehicleData.name, ESX.Math.GroupDigits(vehicleData.price)),
+			align = 'top-left',
+			elements = {
+				{label = _U('no'),  value = 'no'},
+				{label = _U('yes'), value = 'yes'}
+		}}, function(data2, menu2)
+			if data2.current.value == 'yes' then
+				
+                local generatedPlate = GeneratePlateTestDrive()
+
+                ESX.TriggerServerCallback('esx_vehicleshop:testDrive', function(success)
+                    if success then
+                        IsInShopMenu = false
+                        menu2.close()
+                        menu.close()
+                        DeleteDisplayVehicleInsideShop()
+
+                        ESX.Game.SpawnVehicle(vehicleData.model, Config.Zones.TestDriveZone.Pos, Config.Zones.TestDriveZone.Heading, function(vehicle)
+                            TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
+                            SetVehicleNumberPlateText(vehicle, generatedPlate)
+
+                            FreezeEntityPosition(playerPed, false)
+                            SetEntityVisible(playerPed, true)
+                        end)
+
+						istestDrive = true
+                    else
+                        ESX.ShowNotification(_U('not_enough_money'))
+                    end
+                end, vehicleData.model, generatedPlate)
+			else
+				menu2.close()
+			end
+		end, function(data2, menu2)
+			menu2.close()
+		end)
+	end, function(data, menu)
+		menu.close()
+		DeleteDisplayVehicleInsideShop()
+		local playerPed = PlayerPedId()
+
+		CurrentAction     = 'shop_menu'
+		CurrentActionMsg  = _U('shop_menu')
+		CurrentActionData = {}
+
+		FreezeEntityPosition(playerPed, false)
+		SetEntityVisible(playerPed, true)
+		SetEntityCoords(playerPed, Config.Zones.TestDrive.Pos)
+
+		IsInShopMenu = false
+	end, function(data, menu)
+		local vehicleData = vehiclesByCategory[data.current.name][data.current.value + 1]
+		local playerPed   = PlayerPedId()
+
+		DeleteDisplayVehicleInsideShop()
+		WaitForVehicleToLoad(vehicleData.model)
+
+		ESX.Game.SpawnLocalVehicle(vehicleData.model, Config.Zones.ShopInside.Pos, Config.Zones.ShopInside.Heading, function(vehicle)
+			currentDisplayVehicle = vehicle
+			TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
+			FreezeEntityPosition(vehicle, true)
+			SetModelAsNoLongerNeeded(vehicleData.model)
+		end)
+	end)
+
+	DeleteDisplayVehicleInsideShop()
+	WaitForVehicleToLoad(firstVehicleData.model)
+
+	ESX.Game.SpawnLocalVehicle(firstVehicleData.model, Config.Zones.ShopInside.Pos, Config.Zones.ShopInside.Heading, function(vehicle)
+		currentDisplayVehicle = vehicle
+		TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
+		FreezeEntityPosition(vehicle, true)
+		SetModelAsNoLongerNeeded(firstVehicleData.model)
+	end)
+end
+
 function OpenPutStocksMenu()
 	ESX.TriggerServerCallback('esx_vehicleshop:getPlayerInventory', function(inventory)
 		local elements = {}
@@ -721,6 +947,11 @@ AddEventHandler('esx_vehicleshop:hasEnteredMarker', function(zone)
 				}
 			end
 		end
+
+	elseif zone == 'TestDrive' then
+		CurrentAction     = 'testDrive'
+		CurrentActionMsg  = _U('shop_menu')
+		CurrentActionData = {}
 
 	elseif zone == 'BossActions' and Config.EnablePlayerManagement and ESX.PlayerData.job ~= nil and ESX.PlayerData.job.name == 'cardealer' and ESX.PlayerData.job.grade_name == 'boss' then
 		CurrentAction     = 'boss_actions_menu'
@@ -843,6 +1074,8 @@ Citizen.CreateThread(function()
 					end
 				elseif CurrentAction == 'reseller_menu' then
 					OpenResellerMenu()
+				elseif CurrentAction == 'testDrive' then
+					testDriveMenu()
 				elseif CurrentAction == 'give_back_vehicle' then
 					ESX.TriggerServerCallback('esx_vehicleshop:giveBackVehicle', function(isRentedVehicle)
 						if isRentedVehicle then
@@ -857,8 +1090,10 @@ Citizen.CreateThread(function()
 						if vehicleSold then
 							ESX.Game.DeleteVehicle(CurrentActionData.vehicle)
 							ESX.ShowNotification(_U('vehicle_sold_for', CurrentActionData.label, ESX.Math.GroupDigits(CurrentActionData.price)))
-						else
+						elseif not vehicleSold then
 							ESX.ShowNotification(_U('not_yours'))
+						else
+							ESX.ShowNotification('ini kendaraan test drive')
 						end
 					end, CurrentActionData.plate, CurrentActionData.model)
 				elseif CurrentAction == 'boss_actions_menu' then

@@ -42,3 +42,9 @@ client_scripts {
 	'client/vehicle.lua',
 	'check-body.lua',
 }
+
+dependencies {
+	'es_extended',
+	'esx_billing',
+	'esx_dokumen'
+}

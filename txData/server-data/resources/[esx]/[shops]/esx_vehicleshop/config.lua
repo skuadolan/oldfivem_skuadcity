@@ -14,6 +14,9 @@ Config.PlateLetters  = 3
 Config.PlateNumbers  = 3
 Config.PlateUseSpace = true
 
+Config.TimerTestDrive = 30
+Config.biayaTestDrive = 10000
+
 Config.Zones = {
 
 	ShopEntering = {
@@ -52,6 +55,19 @@ Config.Zones = {
 		Pos   = vector3(-44.6, -1080.7, 25.6),
 		Size  = {x = 3.0, y = 3.0, z = 1.0},
 		Type  = 1
-	}
+	},
+	
+	TestDrive = {
+		Pos     = vector3(-57.0,-1096.45,25.72),
+		Size    = {x = 1.5, y = 1.5, z = 1.0},
+		Heading = 270.47,
+		Type    = 1
+	},
 
+	TestDriveZone = {
+		Pos     = vector3(2814.75,-3896.88,140.0),
+		Size    = {x = 1.5, y = 1.5, z = 1.0},
+		Heading = 270.47,
+		Type    = -1
+	},
 }

@@ -33,6 +33,31 @@ function GeneratePlate()
 	return generatedPlate
 end
 
+function GeneratePlateTestDrive()
+	local generatedPlate
+	local doBreak = false
+
+	while true do
+		Citizen.Wait(2)
+		math.randomseed(GetGameTimer())
+		if Config.PlateUseSpace then
+			generatedPlate = string.upper(Config.PlateTestDrive)
+		end
+
+		ESX.TriggerServerCallback('esx_vehicleshop:isPlateTaken', function(isPlateTaken)
+			if not isPlateTaken then
+				doBreak = true
+			end
+		end, generatedPlate)
+
+		if doBreak then
+			break
+		end
+	end
+
+	return generatedPlate
+end
+
 -- mixing async with sync tasks
 function IsPlateTaken(plate)
 	local callback = 'waiting'

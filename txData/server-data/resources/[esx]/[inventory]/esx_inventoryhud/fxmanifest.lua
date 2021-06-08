@@ -21,9 +21,8 @@ client_scripts {
   "client/mafia.lua",
   "client/property.lua",
   "client/player.lua",
-  "locales/cs.lua",
+  "client/weapons.lua",
   "locales/en.lua",
-  "locales/fr.lua",
   "config.lua"
 }
 
@@ -31,9 +30,7 @@ server_scripts {
   "@mysql-async/lib/MySQL.lua",
   "@es_extended/locale.lua",
   "server/main.lua",
-  "locales/cs.lua",
   "locales/en.lua",
-  "locales/fr.lua",
   "config.lua"
 }
 

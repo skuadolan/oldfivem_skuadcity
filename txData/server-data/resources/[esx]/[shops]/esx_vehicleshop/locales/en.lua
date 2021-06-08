@@ -61,4 +61,8 @@ Locales['en'] = {
   ['customer_plate']          = 'car plate',
   ['customer_soldby']         = 'sold by',
   ['customer_date']           = 'date',
+  ['test_drive']         = 'memulai test drive dan membayar ~y~%s~s~',
+  ['not_money_testDrive']         = 'uang tidak cukup untuk membayar ~y~%s~s~',
+  ['timer_testdrive'] = 'waktu test drive: ~r~%s~s~ detik lagi',
+  ['test_vehicle_shop']        = 'test %s for $%s?',
 }

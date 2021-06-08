@@ -411,6 +411,7 @@ Config.DoorList = {
 		authorizedJobs = { 'ambulance', 'offambulance'},
 		maxDistance = 2.0,
 		size = 2,
+		locked = true,
 		doors = {
 			{
 				objHash = GetHashKey('gabz_pillbox_doubledoor_l'),

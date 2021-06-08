@@ -13,7 +13,7 @@ local MENU_OPTIONS = {
     height = 0.04,
     scale = 0.4,
     font = fontId,
-    --menu_title = "Document Actions",
+    menu_title = "OPSI DOKUMEN",
     menu_subtitle = _U('document_options'),
     color_r = 0,
     color_g = 128,
@@ -58,33 +58,23 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
 
         if UI_MOUSE_FOCUS == true then
-
-            --[[
             if IsControlJustReleased(0, 142) then -- MeleeAttackAlternate
                 --SendNUIMessage({type = "click"})
-
             end
-            --]]
         end
 
         if IsControlJustReleased(0, Config.MenuKey) and GetLastInputMethod(2) then
             Menu.hidden = false
             OpenMainMenu()
-
-            --[[
-            SetNuiFocus(true, true)
-			SendNUIMessage({
-        		type = "ShowDocument",
-        		enable = true
-   			})
-            UI_MOUSE_FOCUS = true
-            --]]
-
     	end
 
         Menu.renderGUI(MENU_OPTIONS)
     end
  end)
+
+RegisterCommand('dokumen', function(source, args, raw)
+    OpenMainMenu()
+end)
 
 function OpenMainMenu()
     ClearMenu()
@@ -96,8 +86,8 @@ function OpenMainMenu()
 end
 
 function CopyFormToPlayer(aPlayer)
-    --TriggerServerEvent('esx_documents:CopyToPlayer', GetPlayerServerId(player), aDocument)
-    TriggerServerEvent('esx_documents:CopyToPlayer', aPlayer, CURRENT_DOCUMENT)
+    --TriggerServerEvent('esx_dokumen:CopyToPlayer', GetPlayerServerId(player), aDocument)
+    TriggerServerEvent('esx_dokumen:CopyToPlayer', aPlayer, CURRENT_DOCUMENT)
     CURRENT_DOCUMENT = nil;
     CloseMenu()
 end
@@ -204,7 +194,7 @@ function DeleteDocument(aDocument)
 
     local key_to_remove = nil
 
-    ESX.TriggerServerCallback('esx_documents:deleteDocument', function (cb)
+    ESX.TriggerServerCallback('esx_dokumen:deleteDocument', function (cb)
         if cb == true then
             --remove form_close
             for i=1, #USER_DOCUMENTS, 1 do
@@ -224,7 +214,7 @@ end
 function CreateNewForm(aDocument)
 
     PlayerData = ESX.GetPlayerData()
-    ESX.TriggerServerCallback('esx_documents:getPlayerDetails', function (cb_player_details)
+    ESX.TriggerServerCallback('esx_dokumen:getPlayerDetails', function (cb_player_details)
         if cb_player_details ~= nil then
             --print("Received dump : " .. dump(cb_player_details))
             SetNuiFocus(true, true)
@@ -248,13 +238,13 @@ end
 
 function ShowDocument(aPlayer)
      --   print("ssss: " .. dump(aPlayer))
-        TriggerServerEvent('esx_documents:ShowToPlayer', aPlayer, CURRENT_DOCUMENT)
+        TriggerServerEvent('esx_dokumen:ShowToPlayer', aPlayer, CURRENT_DOCUMENT)
         CURRENT_DOCUMENT = nil
         CloseMenu()
 end
 
-RegisterNetEvent('esx_documents:viewDocument')
-AddEventHandler('esx_documents:viewDocument', function( data )
+RegisterNetEvent('esx_dokumen:viewDocument')
+AddEventHandler('esx_dokumen:viewDocument', function( data )
 
     ViewDocument(data)
 end)
@@ -267,8 +257,8 @@ function ViewDocument(aDocument)
     })
 end
 
-RegisterNetEvent('esx_documents:copyForm')
-AddEventHandler('esx_documents:copyForm', function( data )
+RegisterNetEvent('esx_dokumen:copyForm')
+AddEventHandler('esx_dokumen:copyForm', function( data )
        --  print("dump: " .. dump(data))
 
     table.insert(USER_DOCUMENTS, data)
@@ -280,7 +270,7 @@ end
 
 function GetAllUserForms()
 
-    ESX.TriggerServerCallback('esx_documents:getPlayerDocuments', function (cb_forms)
+    ESX.TriggerServerCallback('esx_dokumen:getPlayerDocuments', function (cb_forms)
         if cb_forms ~= nil then
          --   print("Received dump : " .. dump(cb_forms))
             USER_DOCUMENTS = cb_forms
@@ -299,7 +289,7 @@ end)
 RegisterNUICallback('form_submit', function(data, cb)
    -- print("received: " .. dump(data))
     CloseMenu()
-    ESX.TriggerServerCallback('esx_documents:submitDocument', function (cb_form)
+    ESX.TriggerServerCallback('esx_dokumen:submitDocument', function (cb_form)
         if cb_form ~= nil then
             --print("Received dump : " .. dump(cb_form))
             table.insert(USER_DOCUMENTS, cb_form)

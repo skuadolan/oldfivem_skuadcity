@@ -18,3 +18,9 @@ server_scripts {
 	'config.lua',
 	'server/main.lua'
 }
+
+dependencies {
+	'es_extended',
+	'esx_billing',
+	'esx_dokumen'
+}

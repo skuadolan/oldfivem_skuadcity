@@ -85,7 +85,7 @@ client_script {
 	"client/app_tchat.lua",
 	"client/bank.lua",
 	"client/twitter.lua",
-	'esxaddonsgcphone-c.lua'
+	'client/esxaddonsgcphone-c.lua'
 }
 
 server_script {

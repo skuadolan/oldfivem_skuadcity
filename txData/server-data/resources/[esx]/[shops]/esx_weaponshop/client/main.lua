@@ -216,46 +216,47 @@ Citizen.CreateThread(function()
 				if CurrentAction == 'shop_menu' then
 					if Config.LicenseEnable and Config.Zones[CurrentActionData.zone].Legal then
 						--ESX.TriggerServerCallback('esx_license:checkLicense', function(hasWeaponLicense)
-							if hasWeaponLicense then
-								ESX.TriggerServerCallback("esx_inventoryhud:getPlayerInventory", function(data)
-									items = {}
-									fastItems = {}
-									inventory = data.inventory
-									local bringLicense = false
+							--[[if hasWeaponLicense then
+								
+							else
+								--OpenBuyLicenseMenu(CurrentActionData.zone)
+								
+							end]]
+							ESX.TriggerServerCallback("esx_inventoryhud:getPlayerInventory", function(data)
+								items = {}
+								fastItems = {}
+								inventory = data.inventory
+								local bringLicense = false
+								
+								if inventory ~= nil then
 									
-									if inventory ~= nil then
+									for key, value in pairs(inventory) do
+										local fnd = false
 										
-										for key, value in pairs(inventory) do
-											local fnd = false
-											
-											if fnd == false then
-												if inventory[key].count <= 0 then
-													inventory[key] = nil
-												else
-													print("Inventory"..inventory[key].name)
-													inventory[key].type = "item_standard"
-													table.insert(items, inventory[key])
+										if fnd == false then
+											if inventory[key].count <= 0 then
+												inventory[key] = nil
+											else
+												print("Inventory"..inventory[key].name)
+												inventory[key].type = "item_standard"
+												table.insert(items, inventory[key])
+
 	
-		
-													if inventory[key].name == 'lisensi_senjata' then
-														bringLicense = true
-													end
+												if inventory[key].name == 'lisensi_senjata' then
+													bringLicense = true
 												end
 											end
 										end
-
-										if bringLicense then
-											OpenShopMenu(CurrentActionData.zone)
-										else
-											ESX.ShowNotification(_U('dont_bring'))
-										end
 									end
-								end, GetPlayerServerId(PlayerId())
-								)
-							else
-								--OpenBuyLicenseMenu(CurrentActionData.zone)
-								ESX.ShowNotification(_U('not_have_license'))
-							end
+
+									if bringLicense then
+										OpenShopMenu(CurrentActionData.zone)
+									else
+										ESX.ShowNotification(_U('dont_bring'))
+									end
+								end
+							end, GetPlayerServerId(PlayerId())
+							)
 						--end, GetPlayerServerId(PlayerId()), 'weapon')
 					else
 						OpenShopMenu(CurrentActionData.zone)

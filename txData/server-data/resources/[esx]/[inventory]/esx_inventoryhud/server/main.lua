@@ -26,6 +26,42 @@ ESX.RegisterServerCallback(
 	end
 )
 
+ESX.RegisterServerCallback(
+		"esx_inventoryhud:getPlayerInventoryWeight",
+		function(source,cb)
+			local _source = source
+			local xPlayer = ESX.GetPlayerFromId(_source)
+			local playerweight = xPlayer.getWeight()
+			cb(playerweight)
+ end)
+
+
+ RegisterNetEvent("esx_inventoryhud:clearweapons")
+ AddEventHandler("esx_inventoryhud:clearweapons",
+ function(target)
+	 TriggerClientEvent('esx_inventoryhud:clearfastitems',target)
+ end)
+
+ ESX.RegisterServerCallback('esx_inventoryhud:takePlayerItem', function(source, cb, item, count)
+    local player = ESX.GetPlayerFromId(source)
+    local invItem = player.getInventoryItem(item)
+    if invItem.count - count < 0 then
+        cb(false)
+    else
+        player.removeInventoryItem(item, count)
+        cb(true)
+    end
+end)
+
+RegisterNetEvent('esx_inventoryhud:addPlayerItem')
+AddEventHandler('esx_inventoryhud:addPlayerItem', function(item, count)
+    local player = ESX.GetPlayerFromId(source)
+    local invItem = player.getInventoryItem(item)
+    if player.canCarryItem(item, count) then
+        player.addInventoryItem(item, count)
+	end
+end)
+
 RegisterServerEvent("esx_inventoryhud:tradePlayerItem")
 AddEventHandler(
 	"esx_inventoryhud:tradePlayerItem",
@@ -64,6 +100,23 @@ AddEventHandler(
 		end
 	end
 )
+
+RegisterCommand(
+	"steal",
+	function(source)
+		local _source = source
+		TriggerClientEvent('esx_inventoryhud:steal', _source)
+	end
+)
+RegisterCommand(
+		"closeinventory",
+		function(source)
+			local _source = source
+			TriggerClientEvent('esx_inventoryhud:closeinventory', _source)
+		end
+)
+
+
 
 RegisterCommand(
 	"openinventory",
@@ -573,4 +626,41 @@ AddEventHandler('esx_inventoryhud:getItemPedagang', function(type, item, count)
 			end
 		end)
 	end
+end)
+
+
+
+
+
+---UPDATE
+RegisterServerEvent('esx_inventoryhud:updateAmmoCount')
+AddEventHandler('esx_inventoryhud:updateAmmoCount', function(hash, count)
+	local player = ESX.GetPlayerFromId(source)
+	MySQL.Async.execute('UPDATE disc_ammo SET count = @count WHERE hash = @hash AND owner = @owner', {
+		['@owner'] = player.identifier,
+		['@hash'] = hash,
+		['@count'] = count
+	}, function(results)
+		if results == 0 then
+			MySQL.Async.execute('INSERT INTO disc_ammo (owner, hash, count) VALUES (@owner, @hash, @count)', {
+				['@owner'] = player.identifier,
+				['@hash'] = hash,
+				['@count'] = count
+			})
+		end
+	end)
+end)
+
+ESX.RegisterServerCallback('esx_inventoryhud:getAmmoCount', function(source, cb, hash)
+	local player = ESX.GetPlayerFromId(source)
+	MySQL.Async.fetchAll('SELECT * FROM disc_ammo WHERE owner = @owner and hash = @hash', {
+		['@owner'] = player.identifier,
+		['@hash'] = hash
+	}, function(results)
+		if #results == 0 then
+			cb(nil)
+		else
+			cb(results[1].count)
+		end
+	end)
 end)

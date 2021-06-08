@@ -211,6 +211,26 @@ ESX.RegisterServerCallback('esx_vehicleshop:buyVehicle', function(source, cb, mo
 	end
 end)
 
+ESX.RegisterServerCallback('esx_vehicleshop:testDrive', function(source, cb, model, plate)
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local biayaTestDrive = Config.biayaTestDrive
+
+	if biayaTestDrive and xPlayer.getMoney() >= biayaTestDrive then
+		xPlayer.removeMoney(biayaTestDrive)
+		xPlayer.showNotification(_U('test_drive', biayaTestDrive))
+		TriggerClientEvent('esx_vehicleShop:startTimerTestDrive', _source)
+
+		SetTimeout(Config.TimerTestDrive * 1000, function()
+			TriggerClientEvent('esx_vehicleshop:testDriveComplete', _source)
+		end)
+		cb(true)
+	else
+		xPlayer.showNotification(_U('not_money_testDrive', biayaTestDrive))
+		cb(false)
+	end
+end)
+
 ESX.RegisterServerCallback('esx_vehicleshop:getCommercialVehicles', function(source, cb)
 	MySQL.Async.fetchAll('SELECT price, vehicle FROM cardealer_vehicles ORDER BY vehicle ASC', {}, function(result)
 		cb(result)
@@ -358,6 +378,9 @@ ESX.RegisterServerCallback('esx_vehicleshop:resellVehicle', function(source, cb,
 								xPlayer.addMoney(resellPrice)
 								RemoveOwnedVehicle(plate)
 								cb(true)
+							elseif vehicle.plate == GeneratePlateTestDrive() then
+								xPlayer.showNotification('ini merupakan kendaraan test drive')
+								print('NOTIF MODEL CARDEL')
 							else
 								print(('[esx_vehicleshop] [^3WARNING^7] %s attempted to sell an vehicle with plate mismatch!'):format(xPlayer.identifier))
 								cb(false)

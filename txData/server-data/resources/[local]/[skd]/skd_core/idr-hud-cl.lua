@@ -393,30 +393,52 @@ end)
 Citizen.CreateThread(function()
 
     while true do
-		local mapsOn = false
-        Citizen.Wait(1)
-        
-		if IsPedInAnyVehicle(PlayerPedId(), false) then
-			DisplayRadar(true)
-		else
-			--[[ESX.TriggerServerCallback('skd_core:checkJobs', function(jobs)
-				if jobs == 'police' or jobs == 'ambulance' or jobs == 'mechanic' or jobs == 'pedagang' or jobs == 'taxi' then
-					mapsOn = true
-				else
-					mapsOn = false
-				end
-			end)]]
+        Citizen.Wait(0)
 
-			if mapsOn then
-				DisplayRadar(true)
-			else
-				DisplayRadar(false)
-			end
+		ESX.TriggerServerCallback("esx_inventoryhud:getPlayerInventory", function(data)
+			items = {}
+			fastItems = {}
+			inventory = data.inventory
+			local hadGPS = false
 			
-		end
-		Citizen.Wait(2000)	
+			if inventory ~= nil then
+				
+				for key, value in pairs(inventory) do
+					local fnd = false
+					
+					if fnd == false then
+						if inventory[key].count <= 0 then
+							inventory[key] = nil
+						else
+							inventory[key].type = "item_standard"
+							table.insert(items, inventory[key])
+
+
+							if inventory[key].name == 'gps' then
+								hadGPS = true
+							end
+						end
+					end
+				end
+
+				if IsPedInAnyVehicle(PlayerPedId(), false) then
+					DisplayRadar(true)
+				else
+					if hadGPS then
+						DisplayRadar(true)
+					else
+						DisplayRadar(false)
+					end
+				end
+
+			end
+		end, GetPlayerServerId(PlayerId())
+		)
+
+		Citizen.Wait(0)	
 	end
 end)
+
 
 RegisterKeyMapping('HUD', 'Tombol HUD', 'keyboard', ']')
 RegisterKeyMapping('Radio', 'Tombol Radio', 'keyboard', 'N')

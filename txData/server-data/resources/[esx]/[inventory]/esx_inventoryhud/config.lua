@@ -34,7 +34,6 @@ Config.priceItemPedagang = 250 --sementara
 Config.Map = {
     {name="Lounge",color=27, id=93, pos=vector3(-629.28, 223.93, 81.88)},
     {name="",color=1, id=52, pos=vector3(2751.0, 3471.74,  55.7)},
-    {name="",color=1, id=643, pos=vector3(962.5,-1585.5,29.6)},
 }
 
 Config.Shops = {
@@ -75,6 +74,7 @@ Config.Shops = {
             {name = 'vodka'},
             {name = 'champagne'},
             {name = 'wine'},
+            {name = 'gps'},
         }
     },
 
@@ -150,6 +150,9 @@ Config.Shops = {
             {name = 'chemicalslisence'},
             {name = 'lisensi_senjata'},
             {name = 'clip'},
+            {name = 'SmallArmor'},
+            {name = 'MedArmor'},
+            {name = 'HeavyArmor'},
         },
     },
 

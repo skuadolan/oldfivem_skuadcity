@@ -106,4 +106,5 @@ client_scripts {
 
 	-- DLC Cayo Perico
 	, "dlc_cayoperico/cayoperico.lua"
+	, "dlc_arenawars/arenawars.lua"
 }

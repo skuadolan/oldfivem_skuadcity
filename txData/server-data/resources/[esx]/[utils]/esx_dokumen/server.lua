@@ -6,7 +6,7 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 
 
-ESX.RegisterServerCallback('esx_documents:submitDocument', function(source, cb, data)
+ESX.RegisterServerCallback('esx_dokumen:submitDocument', function(source, cb, data)
 
     local xPlayer = ESX.GetPlayerFromId(source)
     local db_form = nil;
@@ -34,7 +34,7 @@ ESX.RegisterServerCallback('esx_documents:submitDocument', function(source, cb, 
         end)
 end)
 
-ESX.RegisterServerCallback('esx_documents:deleteDocument', function(source, cb, id)
+ESX.RegisterServerCallback('esx_dokumen:deleteDocument', function(source, cb, id)
 
     local db_document = nil;
     local xPlayer = ESX.GetPlayerFromId(source)
@@ -58,7 +58,7 @@ end)
 
 
 
-ESX.RegisterServerCallback('esx_documents:getPlayerDocuments', function(source, cb)
+ESX.RegisterServerCallback('esx_dokumen:getPlayerDocuments', function(source, cb)
     local xPlayer = ESX.GetPlayerFromId(source)
     local forms = {}
     if xPlayer ~= nil then
@@ -82,7 +82,7 @@ ESX.RegisterServerCallback('esx_documents:getPlayerDocuments', function(source, 
 end)
 
 
-ESX.RegisterServerCallback('esx_documents:getPlayerDetails', function(source, cb)
+ESX.RegisterServerCallback('esx_dokumen:getPlayerDetails', function(source, cb)
     local xPlayer = ESX.GetPlayerFromId(source)
     local cb_data = nil
 
@@ -100,15 +100,15 @@ ESX.RegisterServerCallback('esx_documents:getPlayerDetails', function(source, cb
 end)
 
 
-RegisterServerEvent('esx_documents:ShowToPlayer')
-AddEventHandler('esx_documents:ShowToPlayer', function(targetID, aForm)
+RegisterServerEvent('esx_dokumen:ShowToPlayer')
+AddEventHandler('esx_dokumen:ShowToPlayer', function(targetID, aForm)
 
-    TriggerClientEvent('esx_documents:viewDocument', targetID, aForm)
+    TriggerClientEvent('esx_dokumen:viewDocument', targetID, aForm)
 
 end)
 
-RegisterServerEvent('esx_documents:CopyToPlayer')
-AddEventHandler('esx_documents:CopyToPlayer', function(targetID, aForm)
+RegisterServerEvent('esx_dokumen:CopyToPlayer')
+AddEventHandler('esx_dokumen:CopyToPlayer', function(targetID, aForm)
 
     local _source   = source
     local _targetid = ESX.GetPlayerFromId(targetID).source
@@ -122,7 +122,7 @@ AddEventHandler('esx_documents:CopyToPlayer', function(targetID, aForm)
                     if(result[1] ~= nil) then
                         db_form = result[1]
                         db_form.data = json.decode(result[1].data)
-                        TriggerClientEvent('esx_documents:copyForm', _targetid, db_form)
+                        TriggerClientEvent('esx_dokumen:copyForm', _targetid, db_form)
                         TriggerClientEvent('esx:showNotification', _targetid, _U('copy_from_player'))
                         TriggerClientEvent('esx:showNotification', _source, _U('from_copied_player'))
                     else

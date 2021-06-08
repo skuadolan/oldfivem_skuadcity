@@ -10,6 +10,18 @@ local logoFont
 local onlinePlayers = 0
 local maxPlayers = GetConvar("sv_maxclients", 48)
 
+
+RegisterNetEvent('esx:playerLoaded')
+AddEventHandler('esx:playerLoaded', function(xPlayer)
+	ESX.PlayerData = xPlayer
+end)
+
+RegisterNetEvent('esx:setJob')
+AddEventHandler('esx:setJob', function(job)
+	ESX.PlayerData.job = job
+end)
+
+---------------
 -- ESX Stuff----
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -25,17 +37,7 @@ Citizen.CreateThread(function()
 	onlinePlayers = #GetActivePlayers()
 end)
 
-RegisterNetEvent('esx:playerLoaded')
-AddEventHandler('esx:playerLoaded', function(xPlayer)
-	ESX.PlayerData = xPlayer
-end)
 
-RegisterNetEvent('esx:setJob')
-AddEventHandler('esx:setJob', function(job)
-	ESX.PlayerData.job = job
-end)
-
----------------
 Citizen.CreateThread(function()
 	while true do			
 			

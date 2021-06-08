@@ -21,3 +21,7 @@ exports {
 	'GetFuel',
 	'SetFuel'
 }
+
+dependencies {
+	'SimpleCarHUD'
+}
