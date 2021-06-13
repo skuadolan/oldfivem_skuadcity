@@ -6,6 +6,7 @@ Config.Ammo = {
     {
         name = 'clip',
         weapons = {
+            `WEAPON_REVOLVER`,
             `WEAPON_PISTOL`,
             `WEAPON_APPISTOL`,
             `WEAPON_SNSPISTOL`,
@@ -36,6 +37,6 @@ Config.Ammo = {
             `WEAPON_HEAVYSNIPER`,
             `WEAPON_MARKSMANRIFLE`
         },
-        count = 75
+        count = 32
     }
 }

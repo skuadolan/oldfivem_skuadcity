@@ -251,9 +251,9 @@ Citizen.CreateThread(function()
 			if oxygenTank > 0 and IsPedSwimmingUnderWater(GetPlayerPed(-1)) then
 				SetPedDiesInWater(GetPlayerPed(-1), true)
 				if oxygenTank > 25.0 then
-					oxygenTank = oxygenTank - 0.1
+					oxygenTank = oxygenTank - 0.2
 				else
-					oxygenTank = oxygenTank - 0.0172
+					oxygenTank = oxygenTank - 0.2
 				end
 			else
 				SetPedDiesInWater(GetPlayerPed(-1), true)
@@ -394,7 +394,6 @@ Citizen.CreateThread(function()
 
     while true do
         Citizen.Wait(0)
-
 		ESX.TriggerServerCallback("esx_inventoryhud:getPlayerInventory", function(data)
 			items = {}
 			fastItems = {}

@@ -9,6 +9,19 @@ Config.OpenControl = 289 --f2 -- Key for opening inventory. Edit html/js/config.
 -- List of item names that will close ui when used
 Config.CloseUiItems = {"headbag", "fishingrod", "tunerlaptop", "binoculars", "gps", "joint", "cigarette", "cigar", "fixkit", "rollingpaper", "cocaine", "meth", "radio"}
 
+Config.Throwables = {
+    WEAPON_MOLOTOV = 615608432,
+    WEAPON_GRENADE = -1813897027,
+    WEAPON_STICKYBOMB = 741814745,
+    WEAPON_PROXMINE = -1420407917,
+    WEAPON_SMOKEGRENADE = -37975472,
+    WEAPON_PIPEBOMB = -1169823560,
+    WEAPON_FLARE = 1233104067,
+    WEAPON_SNOWBALL = 126349499
+}
+
+Config.FuelCan = 883325847
+
 Config.ShopBlipID = 52
 Config.LiquorBlipID = 52
 Config.YouToolBlipID = 402
@@ -53,28 +66,26 @@ Config.Shops = {
 			vector3(-2968.2, 390.9, 14.0),
 			vector3(1166.0, 2708.9, 37.1),
 			vector3(1392.5, 3604.6,  33.9),
-			vector3(127.8,  -1284.7, 28.2), --StripClub
-			vector3(-1393.4, -606.6, 29.3), --Tequila la
 			vector3(-559.9, 287.0, 81.1),
             vector3(-48.5,  -1757.5, 28.4),
 			vector3(1163.3, -323.8, 68.2),
 			vector3(-707.5, -914.2, 18.2),
 			vector3(-1820.5, 792.5, 137.1),
 			vector3(1698.3, 4924.4, 41.0),
+            vector3(26.25,-1347.68,29.5),
         },
         Items = {
             {name = 'air_putih'},
+            {name = 'bait'},
             {name = 'coklat'},
-            {name = 'tehkotak'},
+            {name = 'fishbait'},
+            {name = 'fishingrod'},
+            {name = 'gps'},
             {name = 'makaroni'},
             {name = 'phone'},
             {name = 'radio'},
-            {name = 'beer'},
-            {name = 'whiskey'},
-            {name = 'vodka'},
-            {name = 'champagne'},
-            {name = 'wine'},
-            {name = 'gps'},
+            {name = 'roti'},
+            {name = 'tehkotak'},
         }
     },
 
@@ -93,16 +104,21 @@ Config.Shops = {
             vector3(-629.28, 223.93, 81.88)
         },
         Items = {
+            {name = 'bait'},
+            {name = 'coklat'},
+            {name = 'fishingrod'},
+            {name = 'hamburger'},
             {name = 'kopi'},
-            {name = 'teh'},
-            {name = 'siomay'},
-            {name = 'roti'},
             {name = 'nasi_bungkus'},
             {name = 'nasi_goreng'},
+            {name = 'nori'},
             {name = 'phone'},
             {name = 'radio'},
+            {name = 'rice'},
+            {name = 'siomay'},
             {name = 'susu'},
-            {name = 'tehkotak'}
+            {name = 'teh'},
+            {name = 'tehkotak'},
         }
     },
 
@@ -111,15 +127,16 @@ Config.Shops = {
             vector3(2751.0, 3471.74,  55.7)
         },
         Items = {
-            {name = 'kertas'},
-            {name = 'gunpowder'},
+            {name = 'accu'},
             {name = 'betadine'},
-            {name = 'fixtool'},
-            {name = 'carotool'},
-            {name = 'gazbottle'},
-            {name = 'battery'},
             {name = 'bullet_casing'},
-            {name = 'bullet'}
+            {name = 'carotool'},
+            {name = 'fixtool'},
+            {name = 'gazbottle'},
+            {name = 'kertas'},
+            {name = 'rice'},
+            {name = 'roti'},
+            {name = 'vegetables'},
         }
     },
 
@@ -136,8 +153,16 @@ Config.Shops = {
 
     RobsLiquor = {
 		Locations = {
+            vector3(127.8,  -1284.7, 28.2), --StripClub
+			vector3(-1393.4, -606.6, 29.3), --Tequila la
         },
         Items = {
+            {name = 'beer'},
+            {name = 'whiskey'},
+            {name = 'vodka'},
+            {name = 'champagne'},
+            {name = 'wine'},
+            {name = 'orang_tua'},
         }
     },
 
@@ -150,8 +175,6 @@ Config.Shops = {
             {name = 'chemicalslisence'},
             {name = 'lisensi_senjata'},
             {name = 'clip'},
-            {name = 'SmallArmor'},
-            {name = 'MedArmor'},
             {name = 'HeavyArmor'},
         },
     },

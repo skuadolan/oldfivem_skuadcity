@@ -27,7 +27,6 @@ Citizen.CreateThread(function()
 --[[Citizen.CreateThread(function()
 	TriggerEvent('chat:addSuggestion', '/twt',  _U('twt_help'),  {{name = _U('generic_argument_name'), help = _U('generic_argument_help')}})
 end)
-
 AddEventHandler('onResourceStop', function(resource)
 	if resource == GetCurrentResourceName() then
 		TriggerEvent('chat:removeSuggestion', '/twt')
@@ -91,7 +90,7 @@ function DrawText3D(x,y,z, text)
 		SetTextScale(0.30, 0.40)
 		SetTextFont(4)
 		SetTextProportional(1)
-		SetTextColour(255, 255, 255, 215)
+		SetTextColour(102, 255, 51, 215)
 		SetTextEntry("STRING")
 		SetTextCentre(1)
 		AddTextComponentString(text)
@@ -143,7 +142,7 @@ local function DrawText3D(coords, text)
     --if onScreen then
 
         -- Format the text
-        SetTextColour(color.r, color.g, color.b, color.a)
+        SetTextColour(255, 51, 153, 255)
         SetTextScale(0.0, defaultScale * scale)
         SetTextDropshadow(0, 0, 0, 0, 55)
         SetTextDropShadow()
@@ -226,18 +225,3 @@ AddEventHandler('esx_rpchat:sendProximityMessage', function(playerId, title, mes
 		TriggerEvent('chat:addMessage', {args = {title, message}, color = color})
 	end
 end)
-
---[[Citizen.CreateThread(function()
-	TriggerEvent('chat:addSuggestion', '/twt',  _U('twt_help'),  {{name = _U('generic_argument_name'), help = _U('generic_argument_help')}})
-	TriggerEvent('chat:addSuggestion', '/anontwt',  _U('twtanon_help'),  {{name = _U('generic_argument_name'), help = _U('generic_argument_help')}})
-	TriggerEvent('chat:addSuggestion', '/me',   _U('me_help'),   {{name = _U('generic_argument_name'), help = _U('generic_argument_help')}})
-	TriggerEvent('chat:addSuggestion', '/do',   _U('do_help'),   {{name = _U('generic_argument_name'), help = _U('generic_argument_help')}})
-end)
-
-AddEventHandler('onResourceStop', function(resource)
-	if resource == GetCurrentResourceName() then
-		TriggerEvent('chat:removeSuggestion', '/twt')
-		TriggerEvent('chat:removeSuggestion', '/me')
-		TriggerEvent('chat:removeSuggestion', '/do')
-	end
-end)]]

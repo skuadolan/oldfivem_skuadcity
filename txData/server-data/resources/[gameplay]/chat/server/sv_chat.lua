@@ -26,9 +26,9 @@ AddEventHandler('__cfx_internal:commandFallback', function(command)
     CancelEvent()
 end)
 
-RegisterCommand('say', function(source, args, rawCommand)  
+--[[RegisterCommand('say', function(source, args, rawCommand)  
     TriggerClientEvent('chatMessage', -1, (source == 0) and 'PIRP-DEV : ' or GetPlayerName(source), { 255, 0, 0 }, rawCommand:sub(5)) 
-end)
+end)]]
 
 -- command suggestions for clients
 

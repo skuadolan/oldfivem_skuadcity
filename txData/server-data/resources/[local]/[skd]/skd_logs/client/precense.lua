@@ -41,7 +41,7 @@ end)
 Citizen.CreateThread(function()
 	while true do			
 			
-			if ESX.PlayerData.job then
+			--[[if ESX.PlayerData.job then
 			 	--Setting players image to reflect their job
 				SetDiscordRichPresenceAssetSmall(ESX.PlayerData.job.name)
 				job = ESX.PlayerData.job.label
@@ -50,7 +50,7 @@ Citizen.CreateThread(function()
 				SetDiscordRichPresenceAssetSmallText(job .. " - " .. jobGrade)	
 			else			
 				Citizen.Wait(500)
-			end	
+			end	]]
 						
 			
         --This is the Application ID (Replace this with you own)

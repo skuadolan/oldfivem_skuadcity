@@ -26,6 +26,41 @@ ESX.RegisterServerCallback(
 	end
 )
 
+RegisterServerEvent("esx_inventoryhud:updatePlayerInventory")
+AddEventHandler(
+	"esx_inventoryhud:updatePlayerInventory",
+	function(weaponInHand, ammoInHand)
+		local _source = source
+		local sourceXPlayer = ESX.GetPlayerFromId(_source)
+		local nameWeapon = ''
+		local ammoWeapon = 0
+		local tempSyntax = ''
+
+		for k,v in ipairs(sourceXPlayer.getLoadout()) do
+			nameWeapon = v.name
+			
+			if v.name == weaponInHand then
+				ammoWeapon = ammoInHand
+			else
+				ammoWeapon = v.ammo
+			end
+
+			tempSyntax = tempSyntax..'"'..nameWeapon..'":{"ammo":'..ammoWeapon..'},'
+		end
+
+		local syntaxSQL = '{'..tempSyntax..'}'
+
+		MySQL.Async.execute(
+                "UPDATE users SET loadout = @loadout WHERE identifier = @identifier",
+                {
+                  ["@identifier"] = sourceXPlayer.identifier,
+                  ["@loadout"] = syntaxSQL
+                }
+              )
+		
+	end
+)
+
 ESX.RegisterServerCallback(
 		"esx_inventoryhud:getPlayerInventoryWeight",
 		function(source,cb)
@@ -633,8 +668,8 @@ end)
 
 
 ---UPDATE
-RegisterServerEvent('esx_inventoryhud:updateAmmoCount')
-AddEventHandler('esx_inventoryhud:updateAmmoCount', function(hash, count)
+RegisterServerEvent('conde-inventoryhud:updateAmmoCount')
+AddEventHandler('conde-inventoryhud:updateAmmoCount', function(hash, count)
 	local player = ESX.GetPlayerFromId(source)
 	MySQL.Async.execute('UPDATE disc_ammo SET count = @count WHERE hash = @hash AND owner = @owner', {
 		['@owner'] = player.identifier,
@@ -651,7 +686,7 @@ AddEventHandler('esx_inventoryhud:updateAmmoCount', function(hash, count)
 	end)
 end)
 
-ESX.RegisterServerCallback('esx_inventoryhud:getAmmoCount', function(source, cb, hash)
+ESX.RegisterServerCallback('conde-inventoryhud:getAmmoCount', function(source, cb, hash)
 	local player = ESX.GetPlayerFromId(source)
 	MySQL.Async.fetchAll('SELECT * FROM disc_ammo WHERE owner = @owner and hash = @hash', {
 		['@owner'] = player.identifier,

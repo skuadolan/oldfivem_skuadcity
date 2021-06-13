@@ -41,24 +41,24 @@ Config.UsingAdvancedVehicleShop = false -- Set to true if using esx_advancedvehi
 Config.UseAmbulanceGarages = false -- true = Allows use of Ambulance Garages.
 Config.UseAmbulancePounds = true -- true = Allows use of Ambulance Pounds.
 Config.UseAmbulanceBlips = true -- true = Use Ambulance Blips.
-Config.AmbulancePoundPrice = 80 -- How much it Costs to get Vehicle from Ambulance Pound.
+Config.AmbulancePoundPrice = 10000 -- How much it Costs to get Vehicle from Ambulance Pound.
 
 Config.UsePoliceGarages = false -- true = Allows use of Police Garages.
 Config.UsePolicePounds = true -- true = Allows use of Police Pounds.
 Config.UsePoliceBlips = true -- true = Use Police Blips.
-Config.PolicePoundPrice = 80 -- How much it Costs to get Vehicle from Police Pound.
+Config.PolicePoundPrice = 10000 -- How much it Costs to get Vehicle from Police Pound.
 
 Config.UseAircraftGarages = false -- true = Allows use of Aircraft Garages.
 Config.UseAircraftBlips = false -- true = Use Aircraft Blips.
-Config.AircraftPoundPrice = 2500 -- How much it Costs to get Vehicle from Aircraft Pound.
+Config.AircraftPoundPrice = 10000 -- How much it Costs to get Vehicle from Aircraft Pound.
 
 Config.UseBoatGarages = false -- true = Allows use of Boat Garages.
 Config.UseBoatBlips = false -- true = Use Boat Blips.
-Config.BoatPoundPrice = 500 -- How much it Costs to get Vehicle from Boat Pound.
+Config.BoatPoundPrice = 10000 -- How much it Costs to get Vehicle from Boat Pound.
 
 Config.UseCarGarages = true -- true = Allows use of Car Garages.
 Config.UseCarBlips = true-- true = Use Car Blips.
-Config.CarPoundPrice = 300 -- How much it Costs to get Vehicle from Car Pound.
+Config.CarPoundPrice = 10000 -- How much it Costs to get Vehicle from Car Pound.
 
 Config.UsePrivateCarGarages = true -- true = Allows use of Private Car Garages.
 

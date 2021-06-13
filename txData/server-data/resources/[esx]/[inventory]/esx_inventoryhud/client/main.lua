@@ -543,10 +543,12 @@ RegisterNUICallback("TakeFromFast", function(data, cb)
     cb("ok")
 end)
 
+
 Citizen.CreateThread(function()
         while true do
             Citizen.Wait(0)
             if IsDisabledControlJustReleased(1, 157) then
+            --if IsDisabledControlPressed(0, 19) and IsDisabledControlJustReleased(1, 157) then
                 if fastWeapons[1] ~= nil then
                     if string.find(fastWeapons[1],"WEAPON_") then
                         if GetSelectedPedWeapon(GetPlayerPed(-1)) == GetHashKey(fastWeapons[1]) then
@@ -557,11 +559,12 @@ Citizen.CreateThread(function()
                     else
                         TriggerServerEvent("esx:useItem", fastWeapons[1])
                         Citizen.Wait(250)
-                        loadPlayerInventory()
                     end
+                    loadPlayerInventory()
                 end
             end
             if IsDisabledControlJustReleased(1, 158) then
+            --if IsDisabledControlPressed(0, 19) and IsDisabledControlJustReleased(1, 158) then
                 if fastWeapons[2] ~= nil then
                     if string.find(fastWeapons[2],"WEAPON_") then
                         if GetSelectedPedWeapon(GetPlayerPed(-1)) == GetHashKey(fastWeapons[2]) then
@@ -572,12 +575,12 @@ Citizen.CreateThread(function()
                     else
                         TriggerServerEvent("esx:useItem", fastWeapons[2])
                         Citizen.Wait(250)
-                        loadPlayerInventory()
                     end
-                    
+                    loadPlayerInventory()                    
                 end
             end
             if IsDisabledControlJustReleased(1, 160) then
+            --if IsDisabledControlPressed(0, 19) and IsDisabledControlJustReleased(1, 160) then
                 if fastWeapons[3] ~= nil then
                     if string.find(fastWeapons[3],"WEAPON_") then
                         if GetSelectedPedWeapon(GetPlayerPed(-1)) == GetHashKey(fastWeapons[3]) then
@@ -588,11 +591,12 @@ Citizen.CreateThread(function()
                     else
                         TriggerServerEvent("esx:useItem", fastWeapons[3])
                         Citizen.Wait(250)
-                        loadPlayerInventory()
                     end
+                    loadPlayerInventory()
                 end
             end
             if IsDisabledControlJustReleased(1, 164) then
+            --if IsDisabledControlPressed(0, 19) and IsDisabledControlJustReleased(1, 164) then
                 if fastWeapons[4] ~= nil then
                     if string.find(fastWeapons[4],"WEAPON_") then
                         if GetSelectedPedWeapon(GetPlayerPed(-1)) == GetHashKey(fastWeapons[4]) then
@@ -603,12 +607,12 @@ Citizen.CreateThread(function()
                     else
                         TriggerServerEvent("esx:useItem", fastWeapons[4])
                         Citizen.Wait(250)
-                        loadPlayerInventory()
                     end
-                    
+                    loadPlayerInventory()
                 end
             end
             if IsDisabledControlJustReleased(1, 165) then
+            --if IsDisabledControlPressed(0, 19) and IsDisabledControlJustReleased(1, 165) then
                 if fastWeapons[5] ~= nil then
                     if string.find(fastWeapons[5],"WEAPON_") then
                         if GetSelectedPedWeapon(GetPlayerPed(-1)) == GetHashKey(fastWeapons[5]) then
@@ -619,9 +623,8 @@ Citizen.CreateThread(function()
                     else
                         TriggerServerEvent("esx:useItem", fastWeapons[5])
                         Citizen.Wait(250)
-                        loadPlayerInventory()
                     end
-                    
+                    loadPlayerInventory()
                 end
             end
             if IsDisabledControlJustReleased(1, Keys['6']) then
@@ -635,9 +638,8 @@ Citizen.CreateThread(function()
                     else
                         TriggerServerEvent("esx:useItem", fastWeapons[6])
                         Citizen.Wait(250)
-                        loadPlayerInventory()
                     end
-                    
+                    loadPlayerInventory()
                 end
             end
         end
@@ -656,5 +658,3 @@ RegisterNetEvent('esx_inventoryhud:forcekeluar')
 AddEventHandler('esx_inventoryhud:forcekeluar', function()
   closeInventory()
 end)
-
-RegisterKeyMapping('Tas/Inventory', 'Tombol Tas/Inventory', 'keyboard', 'F2')

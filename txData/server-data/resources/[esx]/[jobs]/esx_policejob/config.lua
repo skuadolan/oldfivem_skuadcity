@@ -168,7 +168,7 @@ Config.AuthorizedWeapons = {
 		{weapon = 'WEAPON_HEAVYSNIPER', price = 100000}
 	},
 
-	komjen = {
+	wakil_boss = {
         {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
 		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
 		{weapon = 'WEAPON_SMG', price = 50000},
@@ -393,7 +393,7 @@ Config.AuthorizedVehicles = {
 			{model = '2015polstang', price = 10000}
 		},
 
-		komjen = {			
+		wakil_boss = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
 			{model = 'polb', price = 10000},
@@ -447,7 +447,7 @@ Config.AuthorizedVehicles = {
             {model = 'polmav', props = {modLivery = 0}, price = 30000}
         },
 		
-		komjen = {
+		wakil_boss = {
             {model = 'polmav', props = {modLivery = 0}, price = 30000}
         },
 
@@ -469,7 +469,7 @@ Config.CustomPeds = {
 
 	irjen = {},
 
-	komjen = {},
+	wakil_boss = {},
 
 	boss = {
 		{label = 'SWAT Ped', maleModel = 's_m_y_swat_01', femaleModel = 's_m_y_swat_01'}

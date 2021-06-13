@@ -199,8 +199,8 @@ AddEventHandler('nfw_wep:yusuf', function()
     end
 end)
 
-RegisterNetEvent('nfw_wep:SmallArmor')
-AddEventHandler('nfw_wep:SmallArmor', function()
+RegisterNetEvent('nfw_wep:HeavyArmor')
+AddEventHandler('nfw_wep:HeavyArmor', function()
     local inventory = ESX.GetPlayerData().inventory
     local ped = GetPlayerPed(-1)
     local armor = GetPedArmour(ped)
@@ -213,91 +213,9 @@ AddEventHandler('nfw_wep:SmallArmor', function()
     end
 
     TriggerEvent('mythic_progbar:client:progress', {
-        name = 'smallb_armor',
-        duration = 5000,
-        label = 'Applying Light Body Armor...',
-        useWhileDead = false,
-        canCancel = true,
-        controlDisables = {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        },
-        animation = {
-            animDict = "rcmfanatic3",
-            anim = "kneel_idle_a",
-        },
-        prop = {
-            model = "prop_bodyarmour_02",
-        }
-    }, function(status)
-        if not status then
-            SetPedComponentVariation(ped, 9, 10, 0, 0)
-            AddArmourToPed(ped, 30)
-            exports['mythic_notify']:DoHudText('inform', 'You have put on Light Body Armor.')
-        end
-    end)
-end)
-
-RegisterNetEvent('nfw_wep:MedArmor')
-AddEventHandler('nfw_wep:MedArmor', function()
-    local inventory = ESX.GetPlayerData().inventory
-    local ped = GetPlayerPed(-1)
-    local armor = GetPedArmour(ped)
-    local item = 'MedArmor'
-
-    if(armor >= 100) or (armor+30 > 100) then
-        exports['mythic_notify']:DoHudText('inform', 'Your armor is already maxed!')
-        TriggerServerEvent('returnItem', item)
-        return
-    end
-
-    TriggerEvent('mythic_progbar:client:progress', {
-        name = 'medb_armor',
-        duration = 10000,
-        label = 'Applying Medium Body Armor...',
-        useWhileDead = false,
-        canCancel = true,
-        controlDisables = {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        },
-        animation = {
-            animDict = "rcmfanatic3",
-            anim = "kneel_idle_a",
-        },
-        prop = {
-            model = "prop_bodyarmour_02",
-        }
-    }, function(status)
-        if not status then
-            SetPedComponentVariation(ped, 9, 10, 0, 0)
-            AddArmourToPed(ped, 60)
-            exports['mythic_notify']:DoHudText('inform', 'You have put on Medium Body Armor.')
-        end
-    end)
-end)
-
-RegisterNetEvent('nfw_wep:HeavyArmor')
-AddEventHandler('nfw_wep:HeavyArmor', function()
-    local inventory = ESX.GetPlayerData().inventory
-    local ped = GetPlayerPed(-1)
-    local armor = GetPedArmour(ped)
-    local item = 'HeavyArmor'
-
-    if(armor >= 100) or (armor+30 > 100) then
-        exports['mythic_notify']:DoHudText('inform', 'Your armor is already maxed!')
-        TriggerServerEvent('returnItem', item)
-        return
-    end
-
-    TriggerEvent('mythic_progbar:client:progress', {
         name = 'heavyb_armor',
-        duration = 15000,
-        label = 'Applying Heavy Body Armor...',
+        duration = 5000,
+        label = 'Memakai Body Armor...',
         useWhileDead = false,
         canCancel = true,
         controlDisables = {
@@ -305,109 +223,20 @@ AddEventHandler('nfw_wep:HeavyArmor', function()
             disableCarMovement = true,
             disableMouse = false,
             disableCombat = true,
-        },
+        },--[[
         animation = {
             animDict = "rcmfanatic3",
             anim = "kneel_idle_a",
         },
         prop = {
             model = "prop_bodyarmour_02",
-        }
+        }]]
     }, function(status)
         if not status then
-            SetPedComponentVariation(ped, 9, 10, 0, 0)
+            --SetPedComponentVariation(ped, 9, 10, 0, 0)
             AddArmourToPed(ped, 100)
-            exports['mythic_notify']:DoHudText('inform', 'You have put on Light Body Armor.')
         end
     end)
-end)
-
-RegisterNetEvent('nfw_wep:pAmmo')
-AddEventHandler('nfw_wep:pAmmo', function()
-    local ped = GetPlayerPed(-1)
-    local currentWeaponHash = GetSelectedPedWeapon(ped)
-    local ammo = GetAmmoInPedWeapon(ped, currentWeaponHash)
-    local item = "pAmmo"
-
-    if(ammo >= 250 or ammo + 50 > 250) then
-        exports['mythic_notify']:DoHudText('inform', 'Your weapon ammo is already maxed!')
-        TriggerServerEvent('returnItem', item)
-        return
-    end
-
-    if table.includes(pistol, currentWeaponHash) then
-        exports['mythic_notify']:DoHudText('inform', 'Added 50 more Pistol ammo')
-        AddAmmoToPed(ped, currentWeaponHash, 300)
-    else
-        exports['mythic_notify']:DoHudText('inform', 'This weapon is not compatible with this ammo')
-        TriggerServerEvent('returnItem', item)
-    end
-end)
-
-RegisterNetEvent('nfw_wep:mgAmmo')
-AddEventHandler('nfw_wep:mgAmmo', function()
-    local ped = GetPlayerPed(-1)
-    local currentWeaponHash = GetSelectedPedWeapon(ped)
-    local ammo = GetAmmoInPedWeapon(ped, currentWeaponHash)
-    local item = "mgAmmo"
-
-    if(ammo >= 250 or ammo + 50 > 250) then
-        exports['mythic_notify']:DoHudText('inform', 'Your weapon ammo is already maxed!')
-        TriggerServerEvent('returnItem', item)
-        return
-    end
-
-    if table.includes(mg, currentWeaponHash) then
-        exports['mythic_notify']:DoHudText('inform', 'Added 50 more Machine Gun ammo')
-        AddAmmoToPed(ped, currentWeaponHash, 300)
-    else
-        exports['mythic_notify']:DoHudText('inform', 'This weapon is not compatible with this ammo')
-        TriggerServerEvent('returnItem', item)
-    end
-end)
-
-RegisterNetEvent('nfw_wep:arAmmo')
-AddEventHandler('nfw_wep:arAmmo', function()
-    local ped = GetPlayerPed(-1)
-    local currentWeaponHash = GetSelectedPedWeapon(ped)
-    local ammo = GetAmmoInPedWeapon(ped, currentWeaponHash)
-    local item = "arAmmo"
-
-    if(ammo >= 250 or ammo + 50 > 250) then
-        exports['mythic_notify']:DoHudText('inform', 'Your weapon ammo is already maxed!')
-        TriggerServerEvent('returnItem', item)
-        return
-    end
-
-    if table.includes(ar, currentWeaponHash) then
-        exports['mythic_notify']:DoHudText('inform', 'Added 50 more Assault Rifle ammo')
-        AddAmmoToPed(ped, currentWeaponHash, 300)
-    else
-        exports['mythic_notify']:DoHudText('inform', 'This weapon is not compatible with this ammo')
-        TriggerServerEvent('returnItem', item)
-    end
-end)
-
-RegisterNetEvent('nfw_wep:sgAmmo')
-AddEventHandler('nfw_wep:sgAmmo', function()
-    local ped = GetPlayerPed(-1)
-    local currentWeaponHash = GetSelectedPedWeapon(ped)
-    local ammo = GetAmmoInPedWeapon(ped, currentWeaponHash)
-    local item = "sgAmmo"
-
-    if(ammo >= 250 or ammo + 50 > 250) then
-        exports['mythic_notify']:DoHudText('inform', 'Your weapon ammo is already maxed!')
-        TriggerServerEvent('returnItem', item)
-        return
-    end
-
-    if table.includes(sg, currentWeaponHash) then
-        exports['mythic_notify']:DoHudText('inform', 'Added 50 more Shotgun ammo')
-        AddAmmoToPed(ped, currentWeaponHash, 300)
-    else
-        exports['mythic_notify']:DoHudText('inform', 'This weapon is not compatible with this ammo')
-        TriggerServerEvent('returnItem', item)
-    end
 end)
 
 function table.includes(table, element)

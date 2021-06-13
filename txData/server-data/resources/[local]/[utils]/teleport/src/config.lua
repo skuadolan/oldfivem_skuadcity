@@ -43,4 +43,26 @@ locations = {
         scale = 0.5,
         rgba = {120, 255, 120,155}
     },
+    {
+        pos=vector3(-1388.414, -586.9714, 30.20654),
+        tpto=vector3(-1387.648, -588.1186, 30.30774),
+        submarker= {
+            marker = 21,
+            posz = 15.25,
+        },
+        marker= 21,--[[ get markers here: https://docs.fivem.net/docs/game-references/markers/ ]]
+        scale = 0.5,
+        rgba = {120, 255, 120,155}
+    },
+    {
+        pos=vector3(-1387.648, -588.1186, 30.30774),
+        tpto=vector3(-1388.414, -586.9714, 30.20654),
+        submarker= {
+            marker = 21,
+            posz = 15.25,
+        },
+        marker= 21,--[[ get markers here: https://docs.fivem.net/docs/game-references/markers/ ]]
+        scale = 0.5,
+        rgba = {120, 255, 120,155}
+    },
 }

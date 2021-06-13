@@ -22,7 +22,7 @@ ESX.RegisterUsableItem('whiskey', function(source)
 
 	xPlayer.removeInventoryItem('whiskey', 1)
 
-	TriggerClientEvent('esx_status:add', source, 'drunk', 250000)
+	TriggerClientEvent('esx_status:add', source, 'drunk', 1000000)
 	TriggerClientEvent('esx_optionalneeds:onDrink', source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_beer'))
 
@@ -34,7 +34,7 @@ ESX.RegisterUsableItem('vodka', function(source)
 
 	xPlayer.removeInventoryItem('vodka', 1)
 
-	TriggerClientEvent('esx_status:add', source, 'drunk', 250000)
+	TriggerClientEvent('esx_status:add', source, 'drunk', 1000000)
 	TriggerClientEvent('esx_optionalneeds:onDrink', source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_beer'))
 
@@ -46,7 +46,7 @@ ESX.RegisterUsableItem('champagne', function(source)
 
 	xPlayer.removeInventoryItem('champagne', 1)
 
-	TriggerClientEvent('esx_status:add', source, 'drunk', 250000)
+	TriggerClientEvent('esx_status:add', source, 'drunk', 1000000)
 	TriggerClientEvent('esx_optionalneeds:onDrink', source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_beer'))
 
@@ -59,7 +59,19 @@ ESX.RegisterUsableItem('wine', function(source)
 
 	xPlayer.removeInventoryItem('wine', 1)
 
-	TriggerClientEvent('esx_status:add', source, 'drunk', 250000)
+	TriggerClientEvent('esx_status:add', source, 'drunk', 1000000)
+	TriggerClientEvent('esx_optionalneeds:onDrink', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_beer'))
+
+end)
+
+ESX.RegisterUsableItem('orang_tua', function(source)
+
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('orang_tua', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 1000000)
 	TriggerClientEvent('esx_optionalneeds:onDrink', source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_beer'))
 

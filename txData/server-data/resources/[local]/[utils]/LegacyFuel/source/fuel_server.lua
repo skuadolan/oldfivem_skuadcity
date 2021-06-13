@@ -10,6 +10,7 @@ if Config.UseESX then
 
 		if price > 0 then
 			xPlayer.removeMoney(amount)
+			--xPlayer.addWeapon('WEAPON_PETROLCAN', 4500)
 		end
 	end)
 end

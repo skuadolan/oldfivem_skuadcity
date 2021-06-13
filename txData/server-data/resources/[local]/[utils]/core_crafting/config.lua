@@ -187,7 +187,7 @@ Config = {
 			Ingredients = { -- Ingredients needed to craft this item
 				['fixtool'] = 4,
 				['carotool'] = 2,
-				['battery'] = 1-- item name and count, adding items that dont exist in database will crash the script
+				['accu'] = 1-- item name and count, adding items that dont exist in database will crash the script
 				
 			}
 		},
