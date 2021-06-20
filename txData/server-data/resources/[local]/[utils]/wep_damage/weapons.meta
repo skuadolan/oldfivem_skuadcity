@@ -714,9 +714,9 @@
     </Item>
     <Item type="CAimingInfo">
       <Name>UNARMED_TARGETING_RESTRAINTS</Name>
-      <HeadingLimit value="30.000000" />
-      <SweepPitchMin value="-90.000000" />
-      <SweepPitchMax value="90.000000" />
+      <HeadingLimit value="00.000000" />
+      <SweepPitchMin value="00.000000" />
+      <SweepPitchMax value="00.000000" />
     </Item>
     <Item type="CAimingInfo">
       <Name>MINIGUN</Name>
@@ -2043,7 +2043,7 @@
           <AimingInfo ref="UNARMED_TARGETING_RESTRAINTS" />
           <ClipSize value="0" />
           <AccuracySpread value="0.000000" />
-          <AccurateModeAccuracyModifier value="0.500000" />
+          <AccurateModeAccuracyModifier value="0.000000" />
           <RunAndGunAccuracyModifier value="2.000000" />
           <RunAndGunAccuracyMinOverride value="-1.000000" />
           <RecoilAccuracyMax value="1.000000" />
@@ -2057,15 +2057,15 @@
           <MinHeadShotDistancePlayer value="5.000000" />
           <MaxHeadShotDistancePlayer value="40.000000" />
           <HeadShotDamageModifierPlayer value="0.000000" />
-          <Damage value="0.000000" />
+          <Damage value="-1000.000000" />
           <DamageTime value="0.000000" />
           <DamageTimeInVehicle value="0.000000" />
           <DamageTimeInVehicleHeadShot value="0.000000" />
           <HitLimbsDamageModifier value="0.500000" />
           <NetworkHitLimbsDamageModifier value="0.800000" />
           <LightlyArmouredDamageModifier value="0.750000" />
-          <Force value="225.000000" />
-          <ForceHitPed value="225.000000" />
+          <Force value="10.000000" />
+          <ForceHitPed value="10.000000" />
           <ForceHitVehicle value="225.000000" />
           <ForceHitFlyingHeli value="225.000000" />
           <OverrideForces>
@@ -2094,7 +2094,7 @@
           <Penetration value="0.000000" />
           <VerticalLaunchAdjustment value="0.000000" />
           <DropForwardVelocity value="0.000000" />
-          <Speed value="2000.000000" />
+          <Speed value="750.000000" />
           <BulletsInBatch value="1" />
           <BatchSpread value="0.000000" />
           <ReloadTimeMP value="-1.000000" />
@@ -8642,9 +8642,9 @@
           <MaxHeadShotDistancePlayer value="40.000000" />
           <HeadShotDamageModifierPlayer value="18.000000" />
           <Damage value="0.000000" />
-          <DamageTime value="0.000001" />
-          <DamageTimeInVehicle value="0.000010" />
-          <DamageTimeInVehicleHeadShot value="0.000100" />
+          <DamageTime value="0.000000" />
+          <DamageTimeInVehicle value="0.000000" />
+          <DamageTimeInVehicleHeadShot value="0.000000" />
           <HitLimbsDamageModifier value="0.500000" />
           <NetworkHitLimbsDamageModifier value="0.800000" />
           <LightlyArmouredDamageModifier value="0.750000" />
@@ -21785,8 +21785,8 @@
           <NetworkHitLimbsDamageModifier value="0.850000" />
           <LightlyArmouredDamageModifier value="0.750000" />
           <VehicleDamageModifier value="1.600000" />
-          <Force value="150.000000" />
-          <ForceHitPed value="175.000000" />
+          <Force value="37.000000" />
+          <ForceHitPed value="37.000000" />
           <ForceHitVehicle value="2000.000000" />
           <ForceHitFlyingHeli value="650.000000" />
           <OverrideForces>
@@ -22030,7 +22030,7 @@
           </AttachPoints>
           <GunFeedBone />
           <TargetSequenceGroup />
-          <WeaponFlags>CarriedInHand Gun CanLockonOnFoot CanLockonInVehicle CanFreeAim AnimReload AnimCrouchFire UsableOnFoot UsableClimbing UsableInCover OnlyFireOneShotPerTriggerPress AllowCloseQuarterKills NeedsGunCockingInCover HasLowCoverReloads HasLowCoverSwaps QuitTransitionToIdleIntroOnWeaponChange DisableLeftHandIkWhenOnFoot TorsoIKForWeaponBlock DisableIdleAnimationFilter UseFPSAimIK UseFPSSecondaryMotion DisableIdleAnimationFilterWhenReloading BlockFirstPersonStateTransitionWhileFiring UseRevolverBehaviour UseSingleActionBehaviour</WeaponFlags>
+          <WeaponFlags>CarriedInHand Gun CanLockonOnFoot CanLockonInVehicle CanFreeAim AnimReload AnimCrouchFire UsableOnFoot UsableClimbing UsableInCover OnlyFireOneShotPerTriggerPress NeedsGunCockingInCover HasLowCoverReloads HasLowCoverSwaps QuitTransitionToIdleIntroOnWeaponChange DisableLeftHandIkWhenOnFoot TorsoIKForWeaponBlock DisableIdleAnimationFilter UseFPSAimIK UseFPSSecondaryMotion DisableIdleAnimationFilterWhenReloading BlockFirstPersonStateTransitionWhileFiring UseRevolverBehaviour UseSingleActionBehaviour</WeaponFlags>
           <TintSpecValues ref="TINT_DEFAULT" />
           <FiringPatternAliases ref="FIRING_PATTERN_PISTOL" />
           <ReloadUpperBodyFixupExpressionData ref="default" />

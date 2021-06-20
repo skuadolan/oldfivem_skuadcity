@@ -44,11 +44,6 @@ Config.LicensePrice = 1000000
 
 Config.priceItemPedagang = 250 --sementara
 
-Config.Map = {
-    {name="Lounge",color=27, id=93, pos=vector3(-629.28, 223.93, 81.88)},
-    {name="",color=1, id=52, pos=vector3(2751.0, 3471.74,  55.7)},
-}
-
 Config.Shops = {
     RegularShop = {
         Locations = {

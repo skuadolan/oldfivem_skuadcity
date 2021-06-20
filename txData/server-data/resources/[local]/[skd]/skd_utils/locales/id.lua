@@ -1,0 +1,23 @@
+Locales['id'] = {
+    ['success'] = 'Success!',
+    ['error'] = 'Error!',
+    ['treasure'] = 'Harta Karun',
+    ['get_treasure'] = 'Ambil Harta Karun!',
+    ['value_treasure'] = 'Rp.',
+    ['menu_treasure'] = 'tekan ~INPUT_CONTEXT~ untuk mengambil ~y~harta karun~s~',
+    ['got_moneytreasure'] = 'uang tunai ~g~Rp.',
+    ['congrats_treasuure'] = 'selamat kamu mendapatkan ~y~harta karun~s~',
+    ['thewinner'] = 'harta karun sudah diambil oleh: ~g~',
+    ['no'] = 'tidak',
+    ['yes'] = 'iya',
+    ['claim'] = 'Claim!',
+    ['claim_starterpack'] = 'Claim Starterpack',
+    ['starterpack'] = 'Apakah anda ingin mengambil starterpack?',
+    ['press_menu'] = 'tekan ~INPUT_CONTEXT~ untuk ~y~claim starterpack~s~',
+    ['has_starterpack'] = 'anda sudah mengambil ~r~starterpack!',
+    ['got_vehicle'] = 'anda mendapatkan ~g~kendaraan',
+    ['got_money'] = 'uang tunai ~g~Rp.',
+    ['congrats'] = '~y~selamat!!~s~ anda mendapatkan ~g~starterpack',   
+    ['drawtext'] = 'TEKAN ~INPUT_CONTEXT~',
+  }
+  
