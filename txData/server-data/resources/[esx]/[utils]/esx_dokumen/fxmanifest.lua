@@ -42,3 +42,5 @@ client_scripts {
 	'GUI.lua',
 	'client.lua',
 }
+
+dependency 'es_extended'

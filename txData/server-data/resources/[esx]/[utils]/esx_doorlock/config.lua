@@ -308,6 +308,16 @@ Config.DoorList = {
 
 	{
 		objHash = GetHashKey('gabz_pillbox_singledoor'),
+		objCoords = vector3(313.1,-595.79,43.30),
+		textCoords = vector3(313.1,-595.79,43.30),
+		authorizedJobs = { 'ambulance', 'offambulance'},
+		locked = true,
+		maxDistance = 12,
+		size = 2
+	},
+
+	{
+		objHash = GetHashKey('gabz_pillbox_singledoor'),
 		objCoords = vector3(340.1134, -586.6057, 44.28398),
 		textCoords = vector3(340.1134, -586.6057, 44.28398),
 		authorizedJobs = { 'ambulance', 'offambulance'},

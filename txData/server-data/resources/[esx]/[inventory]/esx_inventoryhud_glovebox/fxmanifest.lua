@@ -25,3 +25,5 @@ client_scripts {
   "config.lua",
   "client/esx_glovebox-cl.lua"
 }
+
+dependency 'es_extended'

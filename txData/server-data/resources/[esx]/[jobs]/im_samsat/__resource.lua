@@ -19,3 +19,5 @@ files {
     'web/script.js',
     'web/style.css'
 }
+
+dependency 'es_extended'

@@ -15,3 +15,5 @@ files {
 	'html/style.css',
 	'html/listener.js'
 }
+
+dependency 'es_extended'

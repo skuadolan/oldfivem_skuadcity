@@ -7,7 +7,7 @@ Config.ExcludeAccountsList = {"bank", "cash"} -- List of accounts names to exclu
 Config.OpenControl = 289 --f2 -- Key for opening inventory. Edit html/js/config.js to change key for closing it.
 
 -- List of item names that will close ui when used
-Config.CloseUiItems = {"headbag", "fishingrod", "tunerlaptop", "binoculars", "gps", "joint", "cigarette", "cigar", "fixkit", "rollingpaper", "cocaine", "meth", "radio"}
+Config.CloseUiItems = {"bait","beer","blowpipe","carokit","champagne","clip","fishbait","fixkit","gps","orang_tua","phone","radio","vodka","whiskey","wine"}
 
 Config.Throwables = {
     WEAPON_MOLOTOV = 615608432,
@@ -43,6 +43,11 @@ Config.WeaponLiscence = {x = 12.47, y = -1105.5, z = 29.8}
 Config.LicensePrice = 1000000
 
 Config.priceItemPedagang = 250 --sementara
+
+Config.Map = {
+    {name="Lounge",color=27, id=93, pos=vector3(-629.28, 223.93, 81.88)},
+    {name="",color=1, id=52, pos=vector3(2751.0, 3471.74,  55.7)},
+}
 
 Config.Shops = {
     RegularShop = {

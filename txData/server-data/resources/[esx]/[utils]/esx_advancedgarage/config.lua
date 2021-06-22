@@ -235,437 +235,437 @@ Config.PrivateCarGarages = {
 	-- Maze Bank Building Garages
 	MazeBankBuilding_Main = {
 		Private = "MazeBankBuilding",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	MazeBankBuilding_OldSpiceWarm = {
 		Private = "OldSpiceWarm",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	MazeBankBuilding_OldSpiceClassical = {
 		Private = "OldSpiceClassical",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	MazeBankBuilding_OldSpiceVintage = {
 		Private = "OldSpiceVintage",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	MazeBankBuilding_ExecutiveRich = {
 		Private = "ExecutiveRich",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	MazeBankBuilding_ExecutiveCool = {
 		Private = "ExecutiveCool",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	MazeBankBuilding_ExecutiveContrast = {
 		Private = "ExecutiveContrast",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	MazeBankBuilding_PowerBrokerIce = {
 		Private = "PowerBrokerIce",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	MazeBankBuilding_PowerBrokerConservative = {
 		Private = "PowerBrokerConservative",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	MazeBankBuilding_PowerBrokerPolished = {
 		Private = "PowerBrokerPolished",
-		Marker = vector3(-60.38, -790.31, 43.23),
-		Spawner = vector3(-44.03, -787.36, 43.19),
-		Deleter = vector3(-58.88, -778.63, 43.18),
-		Heading = 254.322
+		Marker = vector3(-76.44,-796.34,44.23),
+		Spawner = vector3(-54.64,-783.39,43.45),
+		Deleter = vector3(-59.69,-774.58,43.59),
+		Heading = 229.04
 	},
 	-- End of Maze Bank Building Garages
 	-- Start of Lom Bank Garages
 	LomBank_Main = {
 		Private = "LomBank",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	LomBank_LBOldSpiceWarm = {
 		Private = "LBOldSpiceWarm",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	LomBank_LBOldSpiceClassical = {
 		Private = "LBOldSpiceClassical",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	LomBank_LBOldSpiceVintage = {
 		Private = "LBOldSpiceVintage",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	LomBank_LBExecutiveRich = {
 		Private = "LBExecutiveRich",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	LomBank_LBExecutiveCool = {
 		Private = "LBExecutiveCool",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	LomBank_LBExecutiveContrast = {
 		Private = "LBExecutiveContrast",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	LomBank_LBPowerBrokerIce = {
 		Private = "LBPowerBrokerIce",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	LomBank_LBPowerBrokerConservative = {
 		Private = "LBPowerBrokerConservative",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	LomBank_LBPowerBrokerPolished = {
 		Private = "LBPowerBrokerPolished",
-		Marker = vector3(-1545.17, -566.24, 24.85),
-		Spawner = vector3(-1551.88, -581.38, 24.71),
-		Deleter = vector3(-1538.56, -576.05, 24.71),
-		Heading = 331.176
+		Marker = vector3(-1545.17,-566.24,25.85),
+		Spawner = vector3(-1544.12,-563.29,25.04),
+		Deleter = vector3(-1549.47,-565.19,25.04),
+		Heading = 34.63
 	},
 	-- End of Lom Bank Garages
 	-- Start of Maze Bank West Garages
 	MazeBankWest_Main = {
 		Private = "MazeBankWest",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	MazeBankWest_MBWOldSpiceWarm = {
 		Private = "MBWOldSpiceWarm",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	MazeBankWest_MBWOldSpiceClassical = {
 		Private = "MBWOldSpiceClassical",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	MazeBankWest_MBWOldSpiceVintage = {
 		Private = "MBWOldSpiceVintage",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	MazeBankWest_MBWExecutiveRich = {
 		Private = "MBWExecutiveRich",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	MazeBankWest_MBWExecutiveCool = {
 		Private = "MBWExecutiveCool",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	MazeBankWest_MBWExecutiveContrast = {
 		Private = "MBWExecutiveContrast",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	MazeBankWest_MBWPowerBrokerIce = {
 		Private = "MBWPowerBrokerIce",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	MazeBankWest_MBWPowerBrokerConvservative = {
 		Private = "MBWPowerBrokerConvservative",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	MazeBankWest_MBWPowerBrokerPolished = {
 		Private = "MBWPowerBrokerPolished",
-		Marker = vector3(-1368.14, -468.01, 30.6),
-		Spawner = vector3(-1376.93, -474.32, 30.5),
-		Deleter = vector3(-1362.07, -471.98, 30.5),
-		Heading = 97.95
+		Marker = vector3(-1368.14,-468.01,31.6),
+		Spawner = vector3(-1371.34,-471.34,30.93),
+		Deleter = vector3(-1384.47,-478.15,30.93),
+		Heading = 98.91
 	},
 	-- End of Maze Bank West Garages
 	-- Start of Intergrity Way Garages
 	IntegrityWay_Main = {
 		Private = "IntegrityWay",
-		Marker = vector3(-14.1, -614.93, 34.86),
-		Spawner = vector3(-7.35, -635.1, 34.72),
-		Deleter = vector3(-37.57, -620.39, 34.07),
-		Heading = 66.632
+		Marker = vector3(-31.89,-619.15,35.24),
+		Spawner = vector3(-38.65,-620.06,34.41),
+		Deleter = vector3(-26.61,-624.38,34.83),
+		Heading = 250.89
 	},
 	IntegrityWay_IntegrityWay28 = {
 		Private = "IntegrityWay28",
-		Marker = vector3(-14.1, -614.93, 34.86),
-		Spawner = vector3(-7.35, -635.1, 34.72),
-		Deleter = vector3(-37.57, -620.39, 34.07),
-		Heading = 66.632
+		Marker = vector3(-31.89,-619.15,35.24),
+		Spawner = vector3(-38.65,-620.06,34.41),
+		Deleter = vector3(-26.61,-624.38,34.83),
+		Heading = 250.89
 	},
 	IntegrityWay_IntegrityWay30 = {
 		Private = "IntegrityWay30",
-		Marker = vector3(-14.1, -614.93, 34.86),
-		Spawner = vector3(-7.35, -635.1, 34.72),
-		Deleter = vector3(-37.57, -620.39, 34.07),
-		Heading = 66.632
+		Marker = vector3(-31.89,-619.15,35.24),
+		Spawner = vector3(-38.65,-620.06,34.41),
+		Deleter = vector3(-26.61,-624.38,34.83),
+		Heading = 250.89
 	},
 	-- End of Intergrity Way Garages
 	-- Start of Dell Perro Heights Garages
 	DellPerroHeights_Main = {
 		Private = "DellPerroHeights",
-		Marker = vector3(-1477.15, -517.17, 33.74),
-		Spawner = vector3(-1483.16, -505.1, 31.81),
-		Deleter = vector3(-1452.61, -508.78, 30.58),
-		Heading = 299.89
+		Marker = vector3(-1459.63,-506.03,32.08),
+		Spawner = vector3(-1467.13,-505.29,32.14),
+		Deleter = vector3(-1457.29,-500.92,31.48),
+		Heading = 32.55
 	},
 	DellPerroHeights_DellPerroHeightst4 = {
 		Private = "DellPerroHeightst4",
-		Marker = vector3(-1477.15, -517.17, 33.74),
-		Spawner = vector3(-1483.16, -505.1, 31.81),
-		Deleter = vector3(-1452.61, -508.78, 30.58),
-		Heading = 299.89
+		Marker = vector3(-1459.63,-506.03,32.08),
+		Spawner = vector3(-1467.13,-505.29,32.14),
+		Deleter = vector3(-1457.29,-500.92,31.48),
+		Heading = 32.55
 	},
 	DellPerroHeights_DellPerroHeightst7 = {
 		Private = "DellPerroHeightst7",
-		Marker = vector3(-1477.15, -517.17, 33.74),
-		Spawner = vector3(-1483.16, -505.1, 31.81),
-		Deleter = vector3(-1452.61, -508.78, 30.58),
-		Heading = 299.89
+		Marker = vector3(-1459.63,-506.03,32.08),
+		Spawner = vector3(-1467.13,-505.29,32.14),
+		Deleter = vector3(-1457.29,-500.92,31.48),
+		Heading = 32.55
 	},
 	-- End of Dell Perro Heights Garages
 	-- Start of Milton Drive Garages
 	MiltonDrive_Main = {
 		Private = "MiltonDrive",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Modern1Apartment = {
 		Private = "Modern1Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Modern2Apartment = {
 		Private = "Modern2Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Modern3Apartment = {
 		Private = "Modern3Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Mody1Apartment = {
 		Private = "Mody1Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Mody2Apartment = {
 		Private = "Mody2Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Mody3Apartment = {
 		Private = "Mody3Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Vibrant1Apartment = {
 		Private = "Vibrant1Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Vibrant2Apartment = {
 		Private = "Vibrant2Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Vibrant3Apartment = {
 		Private = "Vibrant3Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Sharp1Apartment = {
 		Private = "Sharp1Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Sharp2Apartment = {
 		Private = "Sharp2Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Sharp3Apartment = {
 		Private = "Sharp3Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Monochrome1Apartment = {
 		Private = "Monochrome1Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Monochrome2Apartment = {
 		Private = "Monochrome2Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Monochrome3Apartment = {
 		Private = "Monochrome3Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Seductive1Apartment = {
 		Private = "Seductive1Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Seductive2Apartment = {
 		Private = "Seductive2Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Seductive3Apartment = {
 		Private = "Seductive3Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Regal1Apartment = {
 		Private = "Regal1Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Regal2Apartment = {
 		Private = "Regal2Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Regal3Apartment = {
 		Private = "Regal3Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Aqua1Apartment = {
 		Private = "Aqua1Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Aqua2Apartment = {
 		Private = "Aqua2Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
 	},
 	MiltonDrive_Aqua3Apartment = {
 		Private = "Aqua3Apartment",
-		Marker = vector3(-795.96, 331.83, 84.5),
+		Marker = vector3(-795.95,331.83,85.7),
 		Spawner = vector3(-800.49, 333.47, 84.5),
 		Deleter = vector3(-791.75, 333.47, 84.5),
 		Heading = 180.494
@@ -674,53 +674,54 @@ Config.PrivateCarGarages = {
 	-- Start of Single Garages
 	RichardMajesticApt2_Main = {
 		Private = "RichardMajesticApt2",
-		Marker = vector3(-887.5, -349.58, 33.53),
-		Spawner = vector3(-886.03, -343.78, 33.53),
-		Deleter = vector3(-894.32, -349.33, 33.53),
-		Heading = 206.79
+		Marker = vector3(-886.12,-350.33,34.68),
+		Spawner = vector3(-888.89,-337.07,33.87),
+		Deleter = vector3(-895.31,-345.01,33.87),
+		Heading = 207.25
 	},
 	WildOatsDrive_Main = {
 		Private = "WildOatsDrive",
-		Marker = vector3(-178.65, 503.45, 135.85),
-		Spawner = vector3(-189.98, 505.8, 133.48),
-		Deleter = vector3(-189.28, 500.56, 132.93),
-		Heading = 282.62
+		Marker = vector3(-178.65,503.45,136.85),
+		Spawner = vector3(-189.95,501.57,133.78),
+		Deleter = vector3(-188.37,501.83,133.89),
+		Heading = 348.54
 	},
 	WhispymoundDrive_Main = {
 		Private = "WhispymoundDrive",
-		Marker = vector3(123.65, 565.75, 183.04),
-		Spawner = vector3(130.11, 571.47, 182.42),
-		Deleter = vector3(131.97, 566.77, 181.95),
-		Heading = 270.71
+		Marker = vector3(123.65,565.75,184.04),
+		Spawner = vector3(131.12,567.75,182.87),
+		Deleter = vector3(131.47,567.43,182.93),
+		Heading = 17.43
 	},
 	NorthConkerAvenue2044_Main = {
 		Private = "NorthConkerAvenue2044",
-		Marker = vector3(348.18, 443.01, 146.7),
-		Spawner = vector3(358.39, 437.06, 144.27),
-		Deleter = vector3(351.38, 438.86, 145.66),
-		Heading = 285.911
+		Marker = vector3(348.18,443.01,147.7),
+		Spawner = vector3(353.06,438.52,146.05),
+		Deleter = vector3(353.91,436.25,146.16),
+		Heading = 296.43
 	},
 	NorthConkerAvenue2045_Main = {
 		Private = "NorthConkerAvenue2045",
-		Marker = vector3(370.69, 430.76, 144.11),
-		Spawner = vector3(392.88, 434.54, 142.17),
-		Deleter = vector3(389.72, 429.95, 141.81),
-		Heading = 264.94
+		Marker = vector3(370.69,490.76,145.11),
+		Spawner = vector3(388.69,431.09,142.93),
+		Deleter = vector3(391.15,430.14,143.04),
+		Heading = 331.02
 	},
 	HillcrestAvenue2862_Main = {
 		Private = "HillcrestAvenue2862",
-		Marker = vector3(-688.71, 597.57, 142.64),
-		Spawner = vector3(-683.72, 609.88, 143.28),
-		Deleter = vector3(-685.26, 601.08, 142.36),
-		Heading = 338.06
+		Marker = vector3(-688.71,597.57,143.64),
+		Spawner = vector3(-684.1,603.16,143.0),
+		Deleter = vector3(-684.1,603.16,143.0),
+		Heading = 27.35
 	},
 	HillcrestAvenue2868_Main = {
 		Private = "HillcrestAvenue2868",
-		Marker = vector3(-752.75, 624.90, 141.2),
-		Spawner = vector3(-749.32, 628.61, 141.48),
-		Deleter = vector3(-754.28, 631.58, 141.2),
-		Heading = 197.14
+		Marker = vector3(-752.37,622.28,142.35),
+		Spawner = vector3(-753.61,627.74,141.93),
+		Deleter = vector3(-753.61,627.74,141.93),
+		Heading = 294.56
 	},
+	--SAMPE SINI
 	HillcrestAvenue2874_Main = {
 		Private = "HillcrestAvenue2874",
 		Marker = vector3(-859.01, 695.95, 147.93),

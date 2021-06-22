@@ -92,21 +92,23 @@ Citizen.CreateThread(function()
 end)
 
 -- blip
-function drawBlip(gps, blipData)
+function drawBlip(gps, blipData)  
+  local playerData = ESX.GetPlayerData()
   if not (blipData.name == nil) then printDebug('drawBlip: '.. blipData.name)
   else printDebug('drawBlip: market') end
-  
-  local blip = AddBlipForCoord(gps.x, gps.y, gps.z)
-  if not (blipData.sprite == nil)  then SetBlipSprite (blip, blipData.sprite)     end
-  if not (blipData.display == nil) then SetBlipDisplay(blip, blipData.display)    end
-  if not (blipData.scale == nil)   then SetBlipScale  (blip, blipData.scale)      end
-  if not (blipData.color == nil)   then SetBlipColour (blip, blipData.color)      end
-  if not (blipData.range == nil)   then SetBlipAsShortRange(blip, blipData.range) end
-  if not (blipData.route == nil)   then SetBlipRoute(blip, blipData.route)        end
-  if not (blipData.name == nil)    then
-    BeginTextCommandSetBlipName("STRING")
-    AddTextComponentString(blipData.name)
-    EndTextCommandSetBlipName(blip)
+  if playerData.job.name == Config.jobName then
+    local blip = AddBlipForCoord(gps.x, gps.y, gps.z)
+    if not (blipData.sprite == nil)  then SetBlipSprite (blip, blipData.sprite)     end
+    if not (blipData.display == nil) then SetBlipDisplay(blip, blipData.display)    end
+    if not (blipData.scale == nil)   then SetBlipScale  (blip, blipData.scale)      end
+    if not (blipData.color == nil)   then SetBlipColour (blip, blipData.color)      end
+    if not (blipData.range == nil)   then SetBlipAsShortRange(blip, blipData.range) end
+    if not (blipData.route == nil)   then SetBlipRoute(blip, blipData.route)        end
+    if not (blipData.name == nil)    then
+      BeginTextCommandSetBlipName("STRING")
+      AddTextComponentString(blipData.name)
+      EndTextCommandSetBlipName(blip)
+    end
   end
   return blip
 end

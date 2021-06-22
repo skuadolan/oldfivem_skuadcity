@@ -27,7 +27,4 @@ client_scripts {
 	'client/main.lua'
 }
 
-dependencies {
-	'es_extended',
-	'esx_property'
-}
+dependency 'es_extended'

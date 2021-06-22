@@ -404,7 +404,7 @@ Config.AuthorizedVehicles = {
 			{model = 'riota', price = 10000},
 			{model = 'insurgent2', price = 10000},
 			{model = 'polthrust', price = 10000},
-			{model = '2015polstangprice', price = 10000},
+			{model = '2015polstang', price = 10000},
 			{model = 'fbi', price = 10000}
 		},
 
@@ -419,7 +419,7 @@ Config.AuthorizedVehicles = {
 			{model = 'riota', price = 10000},
 			{model = 'insurgent2', price = 10000},
 			{model = 'polthrust', price = 10000},
-			{model = '2015polstangprice', price = 10000},
+			{model = '2015polstang', price = 10000},
 			{model = 'fbi', price = 10000}
 		}
 	},

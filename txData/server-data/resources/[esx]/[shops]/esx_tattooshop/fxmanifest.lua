@@ -29,3 +29,5 @@ client_scripts {
 	'client/tattooList.lua',
 	'client/main.lua'
 }
+
+dependency 'es_extended'

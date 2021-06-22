@@ -4,7 +4,6 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 local RegisteredSocieties = {}
 
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 local function getMoneyFromUser(id_user)
 	local xPlayer = ESX.GetPlayerFromId(id_user)
 	return xPlayer.getMoney()
@@ -148,84 +147,6 @@ AddEventHandler('chatMessage', function(playerId, playerName, message)
 	end
 end)
 
-RegisterServerEvent('3dme:shareDisplay')
-AddEventHandler('3dme:shareDisplay', function(text)
-	TriggerClientEvent('3dme:triggerDisplay', -1, text, source)
-end)
-
--- ############################################
--- --------------------------------------------
--- 3dme : /me command but its 3D printed
--- Author : Elio
--- Server side
--- --------------------------------------------
--- ############################################
-
--- --------------------------------------------
--- Functions
--- --------------------------------------------
-
--- OBJ : transform a table into a string (using spaces)
--- PARAMETERS :
---		- tab : the table to transform
-local function TableToString(tab)
-	local str = ""
-	for i = 1, #tab do
-		str = str .. " " .. tab[i]
-	end
-	return str
-end
-
--- --------------------------------------------
--- Commands
--- --------------------------------------------
-
-RegisterCommand('do', function(source, args)
-    local text = " " .. TableToString(args) .. " "
-    TriggerClientEvent('3dme:shareDisplay', -1, text, source)
-end)
-
-
-
-
---[[RegisterCommand('twt', function(playerId, args, rawCommand)
-	if playerId == 0 then
-		print('esx_rpchat: you can\'t use this command from console!')
-	else
-		args = table.concat(args, ' ')
-		local playerName = GetRealPlayerName(playerId)
-		TriggerClientEvent('chat:addMessage', -1, {args = {_U('twt_prefix', playerName), args}, color = {0, 153, 204}})
-	end
-end, false)
-RegisterCommand('anontwt', function(playerId, args, rawCommand)
-	if playerId == 0 then
-		print('esx_rpchat: you can\'t use this command from console!')
-	else
-		args = table.concat(args, ' ')
-		local playerName = GetRealPlayerName(playerId)
-		TriggerClientEvent('chat:addMessage', -1, {args = {_U('twt_prefix', "Anonymous"), args}, color = {0, 153, 204}})
-	end
-end, false)
-RegisterCommand('me', function(playerId, args, rawCommand)
-	if playerId == 0 then
-		print('esx_rpchat: you can\'t use this command from console!')
-	else
-		args = table.concat(args, ' ')
-		local playerName = GetRealPlayerName(playerId)
-		TriggerClientEvent('esx_rpchat:sendProximityMessage', -1, playerId, _U('me_prefix', playerName), args, {255, 0, 0})
-	end
-end, false)]]
-
---[[RegisterCommand('do', function(playerId, args, rawCommand)
-	if playerId == 0 then
-		print('esx_rpchat: you can\'t use this command from console!')
-	else
-		args = table.concat(args, ' ')
-		local playerName = GetRealPlayerName(playerId)
-		TriggerClientEvent('esx_rpchat:sendProximityMessage', -1, playerId, _U('do_prefix', playerName), args, {0, 0, 255})
-	end
-end, false)]]
-
 RegisterCommand('msg', function(source, args, user)
 
 	if GetPlayerName(tonumber(args[1])) then
@@ -323,3 +244,25 @@ function GetRealPlayerName(playerId)
 		return GetPlayerName(playerId)
 	end
 end
+
+
+-- /ME && /DO
+-- @desc Server-side /me handling
+-- @author Elio
+-- @version 3.0
+
+-- Pre-load the language
+-- @desc Handle /me command
+local function onMeCommand(source, args)
+    local text = "* ".. table.concat(args, " ") .. " *"
+    TriggerClientEvent('3dme:shareDisplay', -1, text, source)
+end
+
+local function onDoCommand(source, args)
+    local text = "* ".. table.concat(args, " ") .. " *"
+    TriggerClientEvent('3ddo:shareDisplay', -1, text, source)
+end
+
+-- Register the command
+RegisterCommand('me', onMeCommand)
+RegisterCommand('do', onDoCommand)

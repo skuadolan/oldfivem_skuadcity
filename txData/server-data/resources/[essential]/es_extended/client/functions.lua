@@ -1056,11 +1056,10 @@ end
 end]]
 
 ESX.Game.Utils.DrawText3D = function(coords, text, scale, font)
-	local vector = type(coords) == "vector3" and coords or vec(coords.x, coords.y, coords.z)
-	coords = vector3(coords.x, coords.y, coords.z)
+	local nowcoords = vector3(coords.x, coords.y, coords.z)
 
 	local camCoords = GetGameplayCamCoords()
-	local distance = #(coords - camCoords)
+	local distance = #(nowcoords - camCoords)
 
 	if not size then size = 1 end
 	if not font then font = 0 end
@@ -1079,7 +1078,7 @@ ESX.Game.Utils.DrawText3D = function(coords, text, scale, font)
 	SetTextProportional(1)
 	SetTextEntry('STRING')
 
-	SetDrawOrigin(coords, 0)
+	SetDrawOrigin(nowcoords, 0)
 	BeginTextCommandDisplayText('STRING')
 	AddTextComponentString(text)
 	AddTextComponentSubstringPlayerName(text)

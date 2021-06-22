@@ -43,3 +43,5 @@ files {
 	'html/scripts.js',
 	'html/debounce.min.js'
 }
+
+dependency 'es_extended'

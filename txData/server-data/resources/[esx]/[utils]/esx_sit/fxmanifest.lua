@@ -17,3 +17,5 @@ client_scripts {
 	'lists/seat.lua',
 	'client.lua'
 }
+
+dependency 'es_extended'

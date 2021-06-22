@@ -29,20 +29,37 @@ ESX.RegisterServerCallback(
 RegisterServerEvent("esx_inventoryhud:updatePlayerInventory")
 AddEventHandler(
 	"esx_inventoryhud:updatePlayerInventory",
-	function(xPlayer, cb)
-		MySQL.Async.execute('UPDATE users SET accounts = @accounts, job = @job, job_grade = @job_grade, `group` = @group, loadout = @loadout, position = @position, inventory = @inventory WHERE identifier = @identifier', {
-			['@accounts'] = json.encode(xPlayer.getAccounts(true)),
-			['@job'] = xPlayer.job.name,
-			['@job_grade'] = xPlayer.job.grade,
-			['@group'] = xPlayer.getGroup(),
-			['@loadout'] = json.encode(xPlayer.getLoadout(true)),
-			['@position'] = json.encode(xPlayer.getCoords()),
-			['@identifier'] = xPlayer.getIdentifier(),
-			['@inventory'] = json.encode(xPlayer.getInventory(true))
-		}, function(rowsChanged)
-			cb2()
-		end)
-	end)
+	function(weaponInHand, ammoInHand)
+		local _source = source
+		local sourceXPlayer = ESX.GetPlayerFromId(_source)
+		local nameWeapon = ''
+		local ammoWeapon = 0
+		local tempSyntax = ''
+
+		for k,v in ipairs(sourceXPlayer.getLoadout()) do
+			nameWeapon = v.name
+			
+			if v.name == weaponInHand then
+				ammoWeapon = ammoInHand
+			else
+				ammoWeapon = v.ammo
+			end
+
+			tempSyntax = tempSyntax..'"'..nameWeapon..'":{"ammo":'..ammoWeapon..'},'
+		end
+
+		local syntaxSQL = '{'..tempSyntax..'}'
+
+		MySQL.Async.execute(
+                "UPDATE users SET loadout = @loadout WHERE identifier = @identifier",
+                {
+                  ["@identifier"] = sourceXPlayer.identifier,
+                  ["@loadout"] = syntaxSQL
+                }
+              )
+		
+	end
+)
 
 ESX.RegisterServerCallback(
 		"esx_inventoryhud:getPlayerInventoryWeight",

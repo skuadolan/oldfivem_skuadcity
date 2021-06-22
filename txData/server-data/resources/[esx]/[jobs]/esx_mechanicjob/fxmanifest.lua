@@ -34,8 +34,4 @@ server_scripts {
 	'server/main.lua'
 }
 
-dependencies {
-	'es_extended',
-	'esx_billing',
-	'esx_dokumen'
-}
+dependency 'es_extended'

@@ -29,3 +29,5 @@ client_scripts {
 	'client/moneywash.lua',
 	'client/teleport.lua',
 }
+
+dependency 'es_extended'

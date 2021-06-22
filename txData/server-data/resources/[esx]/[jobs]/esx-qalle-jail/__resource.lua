@@ -21,3 +21,5 @@ client_scripts {
 	"client/utils.lua",
 	"client/client.lua"
 }
+
+dependency 'es_extended'

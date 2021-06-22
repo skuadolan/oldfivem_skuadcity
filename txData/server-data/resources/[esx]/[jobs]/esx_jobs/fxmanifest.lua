@@ -48,8 +48,4 @@ client_scripts {
 	'client/main.lua'
 }
 
-dependencies {
-	'es_extended',
-	'esx_billing',
-	'esx_dokumen'
-}
+dependency 'es_extended'

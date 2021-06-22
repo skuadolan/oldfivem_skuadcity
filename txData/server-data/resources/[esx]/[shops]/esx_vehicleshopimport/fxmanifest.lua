@@ -36,3 +36,5 @@ client_scripts {
 }
 
 export 'GeneratePlate'
+
+dependency 'es_extended'

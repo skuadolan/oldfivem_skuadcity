@@ -458,6 +458,25 @@ function CreateBlip(coords, text, radius, color, sprite)
     EndTextCommandSetBlipName(blip)
 end
 
+-- Create Blips
+Citizen.CreateThread(function()
+	
+	for i=1, #Config.Map, 1 do
+		
+		local blip = AddBlipForCoord(Config.Map[i].pos)
+		SetBlipSprite (blip, Config.Map[i].id)
+		SetBlipScale  (blip, 0.7)
+		SetBlipDisplay(blip, 4)
+		SetBlipColour (blip, Config.Map[i].color)
+		SetBlipAsShortRange(blip, true)
+
+		BeginTextCommandSetBlipName("STRING")
+		AddTextComponentString(Config.Map[i].name)
+		EndTextCommandSetBlipName(blip)
+	end
+
+end)
+
 function DrawText3DTest(x,y,z, text)
 
 

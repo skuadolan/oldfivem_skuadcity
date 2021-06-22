@@ -58,6 +58,13 @@ AddEventHandler('esx:onPlayerSpawn', function()
 		deadPlayers[source] = nil
 		TriggerClientEvent('esx_ambulancejob:setDeadPlayers', -1, deadPlayers)
 	end
+
+	local xPlayer = ESX.GetPlayerFromId(playerId)
+
+	if xPlayer and xPlayer.job.name == 'ambulance' then
+		Citizen.Wait(5000)
+		TriggerClientEvent('esx_ambulancejob:updateBlip', -1)
+	end
 end)
 
 AddEventHandler('esx:playerDropped', function(playerId, reason)
@@ -65,6 +72,25 @@ AddEventHandler('esx:playerDropped', function(playerId, reason)
 		deadPlayers[playerId] = nil
 		TriggerClientEvent('esx_ambulancejob:setDeadPlayers', -1, deadPlayers)
 	end
+
+	-- Save the source in case we lose it (which happens a lot)
+	local playerId = source
+
+	-- Did the player ever join?
+	if playerId then
+		local xPlayer = ESX.GetPlayerFromId(playerId)
+
+		-- Is it worth telling all clients to refresh?
+		if xPlayer and xPlayer.job.name == 'ambulance' then
+			Citizen.Wait(5000)
+			TriggerClientEvent('esx_ambulancejob:updateBlip', -1)
+		end
+	end
+end)
+
+RegisterNetEvent('esx_ambulancejob:forceBlip')
+AddEventHandler('esx_ambulancejob:forceBlip', function()
+	TriggerClientEvent('esx_ambulancejob:updateBlip', -1)
 end)
 
 RegisterNetEvent('esx_ambulancejob:heal')
@@ -326,5 +352,12 @@ AddEventHandler('esx_ambulancejob:setDeathStatus', function(isDead)
 			['@identifier'] = xPlayer.identifier,
 			['@isDead'] = isDead
 		})
+	end
+end)
+
+AddEventHandler('onResourceStart', function(resource)
+	if resource == GetCurrentResourceName() then
+		Citizen.Wait(5000)
+		TriggerClientEvent('esx_ambulancejob:updateBlip', -1)
 	end
 end)

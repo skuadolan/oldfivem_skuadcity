@@ -45,3 +45,5 @@ client_scripts {
 	'client/vehicle.lua',
 	'client/cl-borgol.lua'
 }
+
+dependency 'es_extended'

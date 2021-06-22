@@ -61,3 +61,4 @@ exports	{
 }
 
 
+dependency 'es_extended'

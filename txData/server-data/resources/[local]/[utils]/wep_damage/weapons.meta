@@ -2043,7 +2043,7 @@
           <AimingInfo ref="UNARMED_TARGETING_RESTRAINTS" />
           <ClipSize value="0" />
           <AccuracySpread value="0.000000" />
-          <AccurateModeAccuracyModifier value="0.000000" />
+          <AccurateModeAccuracyModifier value="-0.500000" />
           <RunAndGunAccuracyModifier value="2.000000" />
           <RunAndGunAccuracyMinOverride value="-1.000000" />
           <RecoilAccuracyMax value="1.000000" />
@@ -2057,7 +2057,7 @@
           <MinHeadShotDistancePlayer value="5.000000" />
           <MaxHeadShotDistancePlayer value="40.000000" />
           <HeadShotDamageModifierPlayer value="0.000000" />
-          <Damage value="-1000.000000" />
+          <Damage value="-100.000000" />
           <DamageTime value="0.000000" />
           <DamageTimeInVehicle value="0.000000" />
           <DamageTimeInVehicleHeadShot value="0.000000" />
@@ -8642,9 +8642,9 @@
           <MaxHeadShotDistancePlayer value="40.000000" />
           <HeadShotDamageModifierPlayer value="18.000000" />
           <Damage value="0.000000" />
-          <DamageTime value="0.000000" />
-          <DamageTimeInVehicle value="0.000000" />
-          <DamageTimeInVehicleHeadShot value="0.000000" />
+          <DamageTime value="-0.000001" />
+          <DamageTimeInVehicle value="-0.000010" />
+          <DamageTimeInVehicleHeadShot value="-0.000100" />
           <HitLimbsDamageModifier value="0.500000" />
           <NetworkHitLimbsDamageModifier value="0.800000" />
           <LightlyArmouredDamageModifier value="0.750000" />
