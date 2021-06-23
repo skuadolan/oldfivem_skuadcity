@@ -18,6 +18,6 @@ Locales['id'] = {
     ['got_vehicle'] = 'anda mendapatkan ~g~kendaraan',
     ['got_money'] = 'uang tunai ~g~Rp.',
     ['congrats'] = '~y~selamat!!~s~ anda mendapatkan ~g~starterpack',   
-    ['drawtext'] = 'TEKAN ~INPUT_CONTEXT~',
+    ['drawtext'] = 'TEKAN ~g~[~s~E~g~]~s~',
   }
   

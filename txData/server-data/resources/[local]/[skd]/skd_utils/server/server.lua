@@ -3,92 +3,6 @@ local status = false
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-function getStatusStarterpack(playerId, data)
-	local Identifier = ESX.GetPlayerFromId(playerId).identifier
-
-	MySQL.Async.fetchAll("SELECT starterpack FROM users WHERE identifier = @identifier", { ["@identifier"] = Identifier }, function(result)
-
-		data(result[1].starterpack)
-
-	end)
-end
-
-function updateStatusStarterpack(source)
-
-	local src = source
-
-	local xPlayer = ESX.GetPlayerFromId(src)
-	local Identifier = xPlayer.identifier
-
-	MySQL.Async.execute(
-       "UPDATE users SET starterpack = @newStatus WHERE identifier = @identifier",
-        {
-			['@identifier'] = Identifier,
-			['@newStatus'] = 1
-		}
-	)
-end
-
-ESX.RegisterServerCallback('skd_utils:getStatusUser', function(source, cb, status)
-	local _source = source
-	local xPlayer = ESX.GetPlayerFromId(_source)
-
-	getStatusStarterpack(_source, function(starterpack)
-		if starterpack == 0 then
-			status = true
-			cb(status)
-		else
-			status = false
-			cb(status)
-			xPlayer.showNotification(_U('has_starterpack'))
-		end
-	end) 
-
-	
-end)
-	
-
-ESX.RegisterServerCallback('skd_utils:getStarterpack', function(source, cb, model, plate)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	
-	if xPlayer.getMoney() then
-		MySQL.Async.execute('INSERT INTO owned_vehicles (owner, plate, vehicle) VALUES (@owner, @plate, @vehicle)', {
-			['@owner']   = xPlayer.identifier,
-			['@plate']   = plate,
-			['@vehicle'] = json.encode({model = GetHashKey(model), plate = plate})
-		}, function(rowsChanged)
-			xPlayer.showNotification(_U('got_vehicle'))
-			cb(true)
-		end)
-		xPlayer.addAccountMoney(Config.Zones.Starterpack.TypeReward, Conifg.Zones.Starterpack.NominalReward)
-		xPlayer.showNotification(_U('congrats'))
-		xPlayer.showNotification(_U('got_money')..Conifg.Zones.Starterpack.NominalReward)
-		updateStatusStarterpack(source)
-	else
-		cb(false)
-	end
-end)
-
-RegisterServerEvent('skd_utils:main')
-AddEventHandler('skd_utils:main', function()
-	local _source = source
-	local xPlayer = ESX.GetPlayerFromId(_source)
-
-	-- can the player afford this item?
-	if xPlayer.getMoney() then
-		-- can the player carry the said amount of x item?
-		getStatusStarterpack(_source, function(starterpack)
-			if starterpack == 0 then
-				status = true
-			else
-				xPlayer.showNotification(_U('has_starterpack'))
-			end
-		end) 
-	end
-end)
-
-
-
 function getTheWinnerTreasure(data)
 
 	MySQL.Async.fetchAll("SELECT theWinner FROM data_treasure", {}, function(result)
@@ -162,7 +76,7 @@ function updateStatusTreasure(source)
 	)
 end
 
-ESX.RegisterServerCallback('skd_utils:getStatusTreasure', function(source, cb)
+ESX.RegisterServerCallback('skd_treasure:getStatusTreasure', function(source, cb)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
@@ -180,17 +94,116 @@ ESX.RegisterServerCallback('skd_utils:getStatusTreasure', function(source, cb)
 	end)
 end)
 
-ESX.RegisterServerCallback('skd_utils:getTreasure', function(source, cb)
+ESX.RegisterServerCallback('skd_treasure:getTreasure', function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	
 	if xPlayer.getMoney() then
-		xPlayer.addAccountMoney(Config.Zones.Treasure.TypeReward, Config.Zones.Treasure.NominalReward)
+		xPlayer.addAccountMoney(Config.TypeMoney, Config.TreasureNominal)
 		xPlayer.showNotification(_U('congrats_treasuure'))
-		xPlayer.showNotification(_U('got_moneytreasure')..Config.Zones.Treasure.NominalReward)
+		xPlayer.showNotification(_U('got_moneytreasure')..Config.TreasureNominal)
 		cb(true)
 		updateStatusTreasure(source)
 		updateTreasure(source)
 	else
 		cb(false)
+	end
+end)
+
+ESX             = nil
+local status = false
+
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
+Citizen.CreateThread(function()
+	local char = 3
+	char = char + 3
+	if Config.PlateUseSpace then char = char + 1 end
+
+	if char > 8 then
+		print(('[skd_starterpack] [^3WARNING^7] Plate character count reached, %s/8 characters!'):format(char))
+	end
+end)
+
+function getStatusStarterpack(playerId, data)
+	local Identifier = ESX.GetPlayerFromId(playerId).identifier
+
+	MySQL.Async.fetchAll("SELECT starterpack FROM users WHERE identifier = @identifier", { ["@identifier"] = Identifier }, function(result)
+
+		data(result[1].starterpack)
+
+	end)
+end
+
+function updateStatusStarterpack(source)
+
+	local src = source
+
+	local xPlayer = ESX.GetPlayerFromId(src)
+	local Identifier = xPlayer.identifier
+
+	MySQL.Async.execute(
+       "UPDATE users SET starterpack = @newStatus WHERE identifier = @identifier",
+        {
+			['@identifier'] = Identifier,
+			['@newStatus'] = 1
+		}
+	)
+end
+
+ESX.RegisterServerCallback('skd_starterpack:getStatusUser', function(source, cb, status)
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+
+	getStatusStarterpack(_source, function(starterpack)
+		if starterpack == 0 then
+			status = true
+			cb(status)
+		else
+			status = false
+			cb(status)
+			xPlayer.showNotification(_U('has_starterpack'))
+		end
+	end) 
+
+	
+end)
+	
+
+ESX.RegisterServerCallback('skd_starterpack:getStarterpack', function(source, cb, model, plate)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	
+	if xPlayer.getMoney() then
+		MySQL.Async.execute('INSERT INTO owned_vehicles (owner, plate, vehicle) VALUES (@owner, @plate, @vehicle)', {
+			['@owner']   = xPlayer.identifier,
+			['@plate']   = plate,
+			['@vehicle'] = json.encode({model = GetHashKey(model), plate = plate})
+		}, function(rowsChanged)
+			xPlayer.showNotification(_U('got_vehicle'))
+			cb(true)
+		end)
+		xPlayer.addAccountMoney(Config.TypeMoney, Config.StarterpackNominal)
+		xPlayer.showNotification(_U('congrats'))
+		xPlayer.showNotification(_U('got_money')..Config.StarterpackNominal)
+		updateStatusStarterpack(source)
+	else
+		cb(false)
+	end
+end)
+
+RegisterServerEvent('skd_starterpack:main')
+AddEventHandler('skd_starterpack:main', function()
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+
+	-- can the player afford this item?
+	if xPlayer.getMoney() then
+		-- can the player carry the said amount of x item?
+		getStatusStarterpack(_source, function(starterpack)
+			if starterpack == 0 then
+				status = true
+			else
+				xPlayer.showNotification(_U('has_starterpack'))
+			end
+		end) 
 	end
 end)

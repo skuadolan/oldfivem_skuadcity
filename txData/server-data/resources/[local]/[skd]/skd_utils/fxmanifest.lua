@@ -10,20 +10,16 @@ version 'final'
 client_scripts {
 	'@es_extended/locale.lua',
 	'config.lua',
-	'*/id.lua',
-	'/*/id.lua',
-	'*/client.lua',
-	'/*/client.lua',
+	'locales/id.lua',
+	'client/client.lua',
 }
 
 server_scripts {
 	'@es_extended/locale.lua',
 	'@mysql-async/lib/MySQL.lua',
 	'config.lua',
-	'*/id.lua',
-	'/*/id.lua',
-	'*/server.lua',
-	'/*/server.lua',
+	'locales/id.lua',
+	'server/server.lua',
 }
 
 

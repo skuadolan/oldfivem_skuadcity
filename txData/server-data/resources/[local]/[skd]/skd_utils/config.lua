@@ -6,22 +6,21 @@ Config.Color = {r = 0, g = 128, b = 255}
 Config.Type = 21
 Config.Locale = 'id'
 
+Config.MarkerPosition = vector3(-260.88, -966.01, 31.22)
 Config.SpawnVehicle = vector3(-297.76, -990.34, 30.65)
 Config.SpawnHeading = 340.90
-Config.VehicleModel = 'cavalcade'
 
-Conifg.Zones = {
-    Starterpack = {
-        MarkerPosition = vector3(-260.88, -966.01, 31.22),
-        TypeReward = 'money',
-        NominalReward = 300000
-    },
-    Treasure = {
-        MarkerPosition = vector3(2130.2, 5768.56, 192.19),
-        TypeReward = 'money',
-        NominalReward = 750000
-    }
-}
+Config.VehicleModel = 'cavalcade'
+Config.TypeMoney = 'money' --bank/black_money/money
+Config.StarterpackNominal = 150000
+
+Config.MarkerPosition = vector3(2130.2, 5768.56, 192.19)
+Config.TypeMoney = 'money' --bank/black_money/money
+Config.TreasureNominal = 450000
+
+
+
+
 
 Config.DrawTextZones = {
     Location = {

@@ -1,5 +1,5 @@
 ESX = nil
-local hasAlreadyEnteredMarker, lastZone, zoneDoing
+local hasAlreadyEnteredMarker, lastZone
 local currentAction, currentActionMsg, currentActionData = nil, nil, {}
 local status = 0
 
@@ -11,17 +11,6 @@ Citizen.CreateThread(function()
 
 	Citizen.Wait(5000)
 
-end)
-
-AddEventHandler('skd_utils:hasEnteredMarker', function(zone, zoneDoing)
-	currentAction     = zoneDoing
-	currentActionMsg  = _U('press_menu')
-	currentActionData = {zone = zone}
-end)
-
-AddEventHandler('skd_utils:hasExitedMarker', function(zone)
-	currentAction = nil
-	ESX.UI.Menu.CloseAll()
 end)
 
 
@@ -37,8 +26,19 @@ function getTreasure()
 			end)			
 		end
 	end)
+	
 
 end
+
+
+
+
+
+
+
+
+
+
 
 function treasureMenu(zone)
 	local elements = {
@@ -76,9 +76,72 @@ function treasureMenu(zone)
 	end)
 end
 
+AddEventHandler('skd_treasure:hasEnteredMarker', function(zone)
+	currentAction     = 'treasure_menu'
+	currentActionMsg  = _U('menu_treasure')
+	currentActionData = {zone = zone}
+end)
 
+AddEventHandler('skd_treasure:hasExitedMarker', function(zone)
+	currentAction = nil
+	ESX.UI.Menu.CloseAll()
+end)
 
+-- Enter / Exit marker events
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(0)
+		local playerCoords = GetEntityCoords(PlayerPedId())
+		local isInMarker, letSleep, currentZone = false, false
+		local distance = #(playerCoords - Config.MarkerPosition)
 
+		if distance < Config.DrawDistance then
+			DrawMarker(Config.Type, Config.MarkerPosition, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, nil, nil, false)
+			letSleep = false
+
+			if distance < Config.Size.x then
+				isInMarker  = true
+				currentZone = k
+				lastZone    = k
+			end
+		end
+
+		if isInMarker and not hasAlreadyEnteredMarker then
+			hasAlreadyEnteredMarker = true
+			TriggerEvent('skd_treasure:hasEnteredMarker', currentZone)
+		end
+
+		if not isInMarker and hasAlreadyEnteredMarker then
+			hasAlreadyEnteredMarker = false
+			TriggerEvent('skd_treasure:hasExitedMarker', lastZone)
+		end
+
+		if letSleep then
+			Citizen.Wait(500)
+		end
+	end
+end)
+
+-- Key Controls
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(0)
+
+		if currentAction then
+			ESX.ShowHelpNotification(currentActionMsg)
+
+			if IsControlJustReleased(0, 38) then
+				if currentAction == 'treasure_menu' then
+					treasureMenu(currentActionData.zone)
+				end
+
+				currentAction = nil
+			end
+		else
+			Citizen.Wait(500)
+		end
+	end
+end)
 
 function getStarterpack()
 	local playerPed = PlayerPedId()
@@ -102,10 +165,20 @@ function getStarterpack()
 		end
 	end, oldstatus)
 	
+
 end
 
 
-function starterpackMenu(zone)
+
+
+
+
+
+
+
+
+
+function treasureMenu(zone)
 	local elements = {
 		{label = _U('claim'), value = 'claim'}
 	}
@@ -141,12 +214,16 @@ function starterpackMenu(zone)
 	end)
 end
 
+AddEventHandler('skd_starterpack:hasEnteredMarker', function(zone)
+	currentAction     = 'starterpack_menu'
+	currentActionMsg  = _U('press_menu')
+	currentActionData = {zone = zone}
+end)
 
-
-
-
-
-
+AddEventHandler('skd_starterpack:hasExitedMarker', function(zone)
+	currentAction = nil
+	ESX.UI.Menu.CloseAll()
+end)
 
 -- Enter / Exit marker events
 Citizen.CreateThread(function()
@@ -157,14 +234,7 @@ Citizen.CreateThread(function()
 		local distance = #(playerCoords - Config.MarkerPosition)
 
 		if distance < Config.DrawDistance then
-
-            for k,v in pairs(Conifg.Zones) do
-                if v ~= 'Treasure' then
-                    DrawMarker(Config.Type, v.MarkerPosition, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, nil, nil, false)
-                end
-            end
-
-
+			DrawMarker(Config.Type, Config.MarkerPosition, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, nil, nil, false)
 			letSleep = false
 
 			if distance < Config.Size.x then
@@ -175,20 +245,13 @@ Citizen.CreateThread(function()
 		end
 
 		if isInMarker and not hasAlreadyEnteredMarker then
-            for k,v in pairs(Conifg.Zones) do
-                if v == 'Starterpack' then
-                    zoneDoing == 'Starterpack'
-                elseif v == 'Treasure' then
-                    zoneDoing == 'Treasure'
-                end
-            end
 			hasAlreadyEnteredMarker = true
-			TriggerEvent('skd_utils:hasEnteredMarker', currentZone, zoneDoing)
+			TriggerEvent('skd_starterpack:hasEnteredMarker', currentZone)
 		end
 
 		if not isInMarker and hasAlreadyEnteredMarker then
 			hasAlreadyEnteredMarker = false
-			TriggerEvent('skd_utils:hasExitedMarker', lastZone)
+			TriggerEvent('skd_starterpack:hasExitedMarker', lastZone)
 		end
 
 		if letSleep then
@@ -206,10 +269,8 @@ Citizen.CreateThread(function()
 			ESX.ShowHelpNotification(currentActionMsg)
 
 			if IsControlJustReleased(0, 38) then
-				if currentAction == 'Starterpack' then
-					starterpackMenu(currentActionData.zone)
-                elseif currentAction == 'Treasure' then
-                    treasureMenu(currentActionData.zone)
+				if currentAction == 'starterpack_menu' then
+					treasureMenu(currentActionData.zone)
 				end
 
 				currentAction = nil
@@ -219,6 +280,9 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+
+
 
 
 
