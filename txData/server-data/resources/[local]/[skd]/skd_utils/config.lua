@@ -20,6 +20,18 @@ Config.TreasureNominal = 450000
 
 
 
+Config.Zones = {
+	Starterpack = {
+		Pos     = vector3(-260.88, -966.01, 31.22),
+	},
+
+	Treasure = {
+		Pos     = vector3(2130.2, 5768.56, 192.19),
+	},
+}
+
+
+
 
 
 Config.DrawTextZones = {

@@ -8715,13 +8715,13 @@
             <GroundDisturbFxNameWater />
             <GroundDisturbFxNameFoliage />
           </Fx>
-          <InitialRumbleDuration value="25" />
+          <InitialRumbleDuration value="10" />
           <InitialRumbleIntensity value="0.800000" />
           <InitialRumbleIntensityTrigger value="0.300000" />
-          <RumbleDuration value="25" />
+          <RumbleDuration value="10" />
           <RumbleIntensity value="0.800000" />
-          <RumbleIntensityTrigger value="0.300000" />
-          <RumbleDamageIntensity value="1.000000" />
+          <RumbleIntensityTrigger value="0.000300" />
+          <RumbleDamageIntensity value="0.000000" />
 	  <InitialRumbleDurationFps value="150" />
           <InitialRumbleIntensityFps value="1.000000" />
           <RumbleDurationFps value="95" />

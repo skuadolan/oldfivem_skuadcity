@@ -3,6 +3,7 @@ local status = false
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
+--START TRASURE
 function getTheWinnerTreasure(data)
 
 	MySQL.Async.fetchAll("SELECT theWinner FROM data_treasure", {}, function(result)
@@ -108,19 +109,17 @@ ESX.RegisterServerCallback('skd_treasure:getTreasure', function(source, cb)
 		cb(false)
 	end
 end)
+--END TREASURE
 
-ESX             = nil
-local status = false
 
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
+--START STARTERPACK
 Citizen.CreateThread(function()
 	local char = 3
 	char = char + 3
 	if Config.PlateUseSpace then char = char + 1 end
 
 	if char > 8 then
-		print(('[skd_starterpack] [^3WARNING^7] Plate character count reached, %s/8 characters!'):format(char))
+		print(('[skd_utils] [^3WARNING^7] Plate character count reached, %s/8 characters!'):format(char))
 	end
 end)
 
@@ -150,7 +149,7 @@ function updateStatusStarterpack(source)
 	)
 end
 
-ESX.RegisterServerCallback('skd_starterpack:getStatusUser', function(source, cb, status)
+ESX.RegisterServerCallback('skd_utils:getStatusUser', function(source, cb, status)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
@@ -169,7 +168,7 @@ ESX.RegisterServerCallback('skd_starterpack:getStatusUser', function(source, cb,
 end)
 	
 
-ESX.RegisterServerCallback('skd_starterpack:getStarterpack', function(source, cb, model, plate)
+ESX.RegisterServerCallback('skd_utils:getStarterpack', function(source, cb, model, plate)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	
 	if xPlayer.getMoney() then
@@ -190,8 +189,8 @@ ESX.RegisterServerCallback('skd_starterpack:getStarterpack', function(source, cb
 	end
 end)
 
-RegisterServerEvent('skd_starterpack:main')
-AddEventHandler('skd_starterpack:main', function()
+RegisterServerEvent('skd_utils:main')
+AddEventHandler('skd_utils:main', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
@@ -207,3 +206,4 @@ AddEventHandler('skd_starterpack:main', function()
 		end) 
 	end
 end)
+--END STARTERPACK

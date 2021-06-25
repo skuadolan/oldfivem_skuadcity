@@ -1,7 +1,12 @@
-ESX = nil
-local hasAlreadyEnteredMarker, lastZone
-local currentAction, currentActionMsg, currentActionData = nil, nil, {}
+local HasAlreadyEnteredMarker, IsInShopMenu = false, false
+local CurrentAction, CurrentActionMsg, LastZone, currentDisplayVehicle, CurrentVehicleData
+local CurrentActionData, Vehicles, Categories = {}, {}, {}
+
+local istestDrive, vehicleTestDrive
+
 local status = 0
+
+ESX = nil
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -14,30 +19,82 @@ Citizen.CreateThread(function()
 end)
 
 
+--STARTERPACK START
+function getStarterpack()
+	local playerPed = PlayerPedId()
+	local generatedPlate = exports['esx_vehicleshop']:GeneratePlate()
+
+	ESX.TriggerServerCallback('skd_utils:getStatusUser', function(success)
+		if success then
+			ESX.TriggerServerCallback('skd_utils:getStarterpack', function(success)
+				if success then
+					ESX.Game.SpawnVehicle(Config.VehicleModel, Config.SpawnVehicle, Config.SpawnHeading, function(vehicle)
+						TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
+						SetVehicleNumberPlateText(vehicle, generatedPlate)
+		
+						FreezeEntityPosition(playerPed, false)
+						SetEntityVisible(playerPed, true)
+					end)
+				else
+					ESX.ShowNotification(_U('error'))
+				end
+			end, Config.VehicleModel, generatedPlate)			
+		end
+	end, oldstatus)
+end
+
+function starterpackMenu(zone)
+	local elements = {
+		{label = _U('claim'), value = 'claim'}
+	}
+
+	ESX.UI.Menu.CloseAll()
+
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'general_menu', {
+		title    = _U('claim_starterpack'),
+		align    = 'bottom-right',
+		elements = elements
+	}, function(data, menu)
+		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'claim_confirm', {
+			title    = _U('starterpack'),
+			align    = 'bottom-right',
+			elements = {
+				{label = _U('no'),  value = 'no'},
+				{label = _U('yes'), value = 'yes'}
+		}}, function(data2, menu2)
+			if data2.current.value == 'yes' then
+				getStarterpack()
+			end
+
+			menu2.close()
+		end, function(data2, menu2)
+			menu2.close()
+		end)
+	end, function(data, menu)
+		menu.close()
+
+		currentAction     = 'starterpack_menu'
+		currentActionMsg  = _U('press_menu')
+		currentActionData = {zone = zone}
+	end)
+end
+--STARTERPACK END
+
+
+--TREASURE START
 function getTreasure()
 	local playerPed = PlayerPedId()
 
-	ESX.TriggerServerCallback('skd_treasure:getStatusTreasure', function(success)
+	ESX.TriggerServerCallback('skd_utils:getStatusTreasure', function(success)
 		if success then
-			ESX.TriggerServerCallback('skd_treasure:getTreasure', function(success)
+			ESX.TriggerServerCallback('skd_utils:getTreasure', function(success)
 				if success then
 					--ESX.ShowNotification(_U('success'))
 				end
 			end)			
 		end
-	end)
-	
-
+	end)	
 end
-
-
-
-
-
-
-
-
-
 
 
 function treasureMenu(zone)
@@ -75,45 +132,75 @@ function treasureMenu(zone)
 		currentActionData = {zone = zone}
 	end)
 end
+--TREASURE END
 
-AddEventHandler('skd_treasure:hasEnteredMarker', function(zone)
-	currentAction     = 'treasure_menu'
-	currentActionMsg  = _U('menu_treasure')
-	currentActionData = {zone = zone}
+
+
+
+
+AddEventHandler('skd_utils:hasEnteredMarker', function(zone)
+	if zone == 'Starterpack' then
+		CurrentAction     = 'starterpack_menu'
+		CurrentActionMsg  = _U('press_menu')
+		CurrentActionData = {}
+
+	elseif zone == 'Treasure' then
+		CurrentAction     = 'treasure_menu'
+		CurrentActionMsg  = _U('menu_treasure')
+		CurrentActionData = {}
+	end
 end)
 
-AddEventHandler('skd_treasure:hasExitedMarker', function(zone)
-	currentAction = nil
-	ESX.UI.Menu.CloseAll()
+AddEventHandler('skd_utils:hasExitedMarker', function(zone)
+	if not IsInShopMenu then
+		ESX.UI.Menu.CloseAll()
+	end
+
+	CurrentAction = nil
 end)
 
--- Enter / Exit marker events
+AddEventHandler('onResourceStop', function(resource)
+	if resource == GetCurrentResourceName() then
+		if IsInShopMenu then
+			ESX.UI.Menu.CloseAll()
+		end
+	end
+end)
+
+
+
+
+
+
+-- Enter / Exit marker events & Draw Markers
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 		local playerCoords = GetEntityCoords(PlayerPedId())
-		local isInMarker, letSleep, currentZone = false, false
-		local distance = #(playerCoords - Config.MarkerPosition)
+		local isInMarker, letSleep, currentZone = false, true
 
-		if distance < Config.DrawDistance then
-			DrawMarker(Config.Type, Config.MarkerPosition, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, nil, nil, false)
-			letSleep = false
+		for k,v in pairs(Config.Zones) do
+			local distance = #(playerCoords - v.Pos)
 
-			if distance < Config.Size.x then
-				isInMarker  = true
-				currentZone = k
-				lastZone    = k
+			if distance < Config.DrawDistance then
+				letSleep = false
+				DrawMarker(Config.Type, v.Pos, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, nil, nil, false)
+
+				if distance < Config.Size.x then
+					isInMarker, currentZone = true, k
+				end
 			end
 		end
 
-		if isInMarker and not hasAlreadyEnteredMarker then
-			hasAlreadyEnteredMarker = true
-			TriggerEvent('skd_treasure:hasEnteredMarker', currentZone)
+		if (isInMarker and not HasAlreadyEnteredMarker) or (isInMarker and LastZone ~= currentZone) then
+			HasAlreadyEnteredMarker, LastZone = true, currentZone
+			LastZone = currentZone
+			TriggerEvent('skd_utils:hasEnteredMarker', currentZone)
 		end
 
-		if not isInMarker and hasAlreadyEnteredMarker then
-			hasAlreadyEnteredMarker = false
-			TriggerEvent('skd_treasure:hasExitedMarker', lastZone)
+		if not isInMarker and HasAlreadyEnteredMarker then
+			HasAlreadyEnteredMarker = false
+			TriggerEvent('skd_utils:hasExitedMarker', LastZone)
 		end
 
 		if letSleep then
@@ -122,20 +209,22 @@ Citizen.CreateThread(function()
 	end
 end)
 
--- Key Controls
+-- Key controls
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
-		if currentAction then
-			ESX.ShowHelpNotification(currentActionMsg)
+		if CurrentAction then
+			ESX.ShowHelpNotification(CurrentActionMsg)
 
 			if IsControlJustReleased(0, 38) then
-				if currentAction == 'treasure_menu' then
-					treasureMenu(currentActionData.zone)
+				if CurrentAction == 'starterpack_menu' then
+					starterpackMenu(CurrentActionData.zone)
+				elseif CurrentAction == 'treasure_menu' then
+					treasureMenu(CurrentActionData.zone)
 				end
 
-				currentAction = nil
+				CurrentAction = nil
 			end
 		else
 			Citizen.Wait(500)
@@ -143,143 +232,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
-function getStarterpack()
-	local playerPed = PlayerPedId()
-	local generatedPlate = exports['esx_vehicleshop']:GeneratePlate()
-
-	ESX.TriggerServerCallback('skd_starterpack:getStatusUser', function(success)
-		if success then
-			ESX.TriggerServerCallback('skd_starterpack:getStarterpack', function(success)
-				if success then
-					ESX.Game.SpawnVehicle(Config.VehicleModel, Config.SpawnVehicle, Config.SpawnHeading, function(vehicle)
-						TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
-						SetVehicleNumberPlateText(vehicle, generatedPlate)
-		
-						FreezeEntityPosition(playerPed, false)
-						SetEntityVisible(playerPed, true)
-					end)
-				else
-					ESX.ShowNotification(_U('error'))
-				end
-			end, Config.VehicleModel, generatedPlate)			
-		end
-	end, oldstatus)
-	
-
-end
-
-
-
-
-
-
-
-
-
-
-
-function treasureMenu(zone)
-	local elements = {
-		{label = _U('claim'), value = 'claim'}
-	}
-
-	ESX.UI.Menu.CloseAll()
-
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'general_menu', {
-		title    = _U('claim_starterpack'),
-		align    = 'bottom-right',
-		elements = elements
-	}, function(data, menu)
-		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'claim_confirm', {
-			title    = _U('starterpack'),
-			align    = 'bottom-right',
-			elements = {
-				{label = _U('no'),  value = 'no'},
-				{label = _U('yes'), value = 'yes'}
-		}}, function(data2, menu2)
-			if data2.current.value == 'yes' then
-				getStarterpack()
-			end
-
-			menu2.close()
-		end, function(data2, menu2)
-			menu2.close()
-		end)
-	end, function(data, menu)
-		menu.close()
-
-		currentAction     = 'starterpack_menu'
-		currentActionMsg  = _U('press_menu')
-		currentActionData = {zone = zone}
-	end)
-end
-
-AddEventHandler('skd_starterpack:hasEnteredMarker', function(zone)
-	currentAction     = 'starterpack_menu'
-	currentActionMsg  = _U('press_menu')
-	currentActionData = {zone = zone}
-end)
-
-AddEventHandler('skd_starterpack:hasExitedMarker', function(zone)
-	currentAction = nil
-	ESX.UI.Menu.CloseAll()
-end)
-
--- Enter / Exit marker events
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
-		local playerCoords = GetEntityCoords(PlayerPedId())
-		local isInMarker, letSleep, currentZone = false, false
-		local distance = #(playerCoords - Config.MarkerPosition)
-
-		if distance < Config.DrawDistance then
-			DrawMarker(Config.Type, Config.MarkerPosition, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, nil, nil, false)
-			letSleep = false
-
-			if distance < Config.Size.x then
-				isInMarker  = true
-				currentZone = k
-				lastZone    = k
-			end
-		end
-
-		if isInMarker and not hasAlreadyEnteredMarker then
-			hasAlreadyEnteredMarker = true
-			TriggerEvent('skd_starterpack:hasEnteredMarker', currentZone)
-		end
-
-		if not isInMarker and hasAlreadyEnteredMarker then
-			hasAlreadyEnteredMarker = false
-			TriggerEvent('skd_starterpack:hasExitedMarker', lastZone)
-		end
-
-		if letSleep then
-			Citizen.Wait(500)
-		end
-	end
-end)
-
--- Key Controls
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
-
-		if currentAction then
-			ESX.ShowHelpNotification(currentActionMsg)
-
-			if IsControlJustReleased(0, 38) then
-				if currentAction == 'starterpack_menu' then
-					treasureMenu(currentActionData.zone)
-				end
-
-				currentAction = nil
-			end
-		else
-			Citizen.Wait(500)
-		end
-	end
-end)
 
 
 
