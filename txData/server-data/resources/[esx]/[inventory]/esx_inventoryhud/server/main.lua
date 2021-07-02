@@ -1,11 +1,6 @@
 ESX = nil
 
-TriggerEvent(
-	"esx:getSharedObject",
-	function(obj)
-		ESX = obj
-	end
-)
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 ESX.RegisterServerCallback(
 	"esx_inventoryhud:getPlayerInventory",
@@ -25,24 +20,6 @@ ESX.RegisterServerCallback(
 		end
 	end
 )
-
-RegisterServerEvent("esx_inventoryhud:updatePlayerInventory")
-AddEventHandler(
-	"esx_inventoryhud:updatePlayerInventory",
-	function(xPlayer, cb)
-		MySQL.Async.execute('UPDATE users SET accounts = @accounts, job = @job, job_grade = @job_grade, `group` = @group, loadout = @loadout, position = @position, inventory = @inventory WHERE identifier = @identifier', {
-			['@accounts'] = json.encode(xPlayer.getAccounts(true)),
-			['@job'] = xPlayer.job.name,
-			['@job_grade'] = xPlayer.job.grade,
-			['@group'] = xPlayer.getGroup(),
-			['@loadout'] = json.encode(xPlayer.getLoadout(true)),
-			['@position'] = json.encode(xPlayer.getCoords()),
-			['@identifier'] = xPlayer.getIdentifier(),
-			['@inventory'] = json.encode(xPlayer.getInventory(true))
-		}, function(rowsChanged)
-			cb2()
-		end)
-	end)
 
 ESX.RegisterServerCallback(
 		"esx_inventoryhud:getPlayerInventoryWeight",
@@ -648,37 +625,12 @@ end)
 
 
 
-
-
----UPDATE
-RegisterServerEvent('conde-inventoryhud:updateAmmoCount')
-AddEventHandler('conde-inventoryhud:updateAmmoCount', function(hash, count)
-	local player = ESX.GetPlayerFromId(source)
-	MySQL.Async.execute('UPDATE disc_ammo SET count = @count WHERE hash = @hash AND owner = @owner', {
-		['@owner'] = player.identifier,
-		['@hash'] = hash,
-		['@count'] = count
-	}, function(results)
-		if results == 0 then
-			MySQL.Async.execute('INSERT INTO disc_ammo (owner, hash, count) VALUES (@owner, @hash, @count)', {
-				['@owner'] = player.identifier,
-				['@hash'] = hash,
-				['@count'] = count
-			})
-		end
-	end)
-end)
-
-ESX.RegisterServerCallback('conde-inventoryhud:getAmmoCount', function(source, cb, hash)
-	local player = ESX.GetPlayerFromId(source)
-	MySQL.Async.fetchAll('SELECT * FROM disc_ammo WHERE owner = @owner and hash = @hash', {
-		['@owner'] = player.identifier,
-		['@hash'] = hash
-	}, function(results)
-		if #results == 0 then
-			cb(nil)
-		else
-			cb(results[1].count)
-		end
-	end)
+ESX.RegisterServerCallback('GetInventoryPlayerItem:getItemAmount', function(source, cb, item)
+	local xPlayer  = ESX.GetPlayerFromId(source)
+	local invItem = xPlayer.getInventoryItem(item).count
+    if invItem > 0 then
+        cb(true)
+    else
+        cb(false)
+    end
 end)

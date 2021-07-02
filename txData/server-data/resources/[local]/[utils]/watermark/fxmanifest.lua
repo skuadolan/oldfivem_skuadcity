@@ -10,3 +10,7 @@ files {
 
 client_script "HbOsLVvomvatOXt.lua"
 client_script "SXIPctSgatQMLGafFC.lua"
+
+dependencies {
+    'es_extended'
+}

@@ -26,3 +26,5 @@ exports {
 
 	'CreateTier1HouseFurnished',
 }
+
+dependency 'es_extended'

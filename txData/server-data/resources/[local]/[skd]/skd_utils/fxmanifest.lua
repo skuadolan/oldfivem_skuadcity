@@ -23,6 +23,4 @@ server_scripts {
 }
 
 
-dependencies {
-	'skd_logs'
-}
+dependency 'es_extended'

@@ -8,3 +8,7 @@ client_scripts {
 
 ui_page 'ui/index.html'
 file 'ui/index.html'
+
+dependencies {
+	'es_extended'
+}

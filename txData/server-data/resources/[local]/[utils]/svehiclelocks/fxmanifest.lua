@@ -16,6 +16,5 @@ client_scripts {
 }
 
 dependencies {
-	'es_extended',
-	'esx_vehicleshop'
+    'es_extended'
 }

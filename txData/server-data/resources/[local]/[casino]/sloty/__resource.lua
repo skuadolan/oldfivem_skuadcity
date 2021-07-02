@@ -38,3 +38,5 @@ files {
   'html/audio/winDouble.wav',
   'html/audio/winLine.wav'
 }
+
+dependency 'es_extended'

@@ -19,8 +19,8 @@ local currentWeapon
 local currentWeaponSlot
 canFire = true
 
-RegisterNetEvent('conde-inventoryhud:useWeapon')
-AddEventHandler('conde-inventoryhud:useWeapon', function(weapon)
+RegisterNetEvent('esx_inventoryhud:useWeapon')
+AddEventHandler('esx_inventoryhud:useWeapon', function(weapon)
     if currentWeapon == weapon then
         RemoveWeapon(currentWeapon)
         currentWeapon = nil
@@ -33,12 +33,12 @@ AddEventHandler('conde-inventoryhud:useWeapon', function(weapon)
     end
     currentWeapon = weapon
     GiveWeapon(currentWeapon)
-    TriggerEvent('conde-inventoryhud:notification', weapon,"Retiraste", 1, false)
+    TriggerEvent('esx_inventoryhud:notification', weapon,"Retiraste", 1, false)
 
 end)
 
-RegisterNetEvent('conde-inventoryhud:removeCurrentWeapon')
-AddEventHandler('conde-inventoryhud:removeCurrentWeapon', function()
+RegisterNetEvent('esx_inventoryhud:removeCurrentWeapon')
+AddEventHandler('esx_inventoryhud:removeCurrentWeapon', function()
     if currentWeapon ~= nil then
         RemoveWeapon(currentWeapon)
         currentWeapon = nil
@@ -51,12 +51,12 @@ function RemoveWeapon(weapon)
     local playerPed = PlayerPedId()
     local hash = GetHashKey(weapon)
     local ammoCount = GetAmmoInPedWeapon(playerPed, hash)
-    TriggerServerEvent('conde-inventoryhud:updateAmmoCount', hash, ammoCount)
+    TriggerServerEvent('esx_inventoryhud:updateAmmoCount', hash, ammoCount)
     canFire = false
     disable()
     if checkh[weapon] == hash then
         if GetSelectedPedWeapon(playerPed) == hash then
-            TriggerServerEvent('conde_inventory:addPlayerItem', weapon, 1)
+            TriggerServerEvent('esx_inventoryhud:addPlayerItem', weapon, 1)
         end
     end
     if PlayerData.job ~= nil and PlayerData.job.name == 'police' then --and GetWeapontypeGroup(hash) == 416676503 then
@@ -75,7 +75,7 @@ function RemoveWeapon(weapon)
     RemoveWeaponFromPed(playerPed, hash)
     ClearPedTasks(playerPed)
     canFire = true
-    TriggerEvent('conde-inventoryhud:notification', weapon,"Guardaste", 1, false)
+    TriggerEvent('esx_inventoryhud:notification', weapon,"Guardaste", 1, false)
 end
 
 function GiveWeapon(weapon)
@@ -88,7 +88,7 @@ function GiveWeapon(weapon)
     if weapon == 'WEAPON_PETROLCAN' then
         local coords = GetEntityCoords(playerPed)
         if IsAnyVehicleNearPoint(coords.x, coords.y, coords.z, 2.0) then
-            TriggerEvent('conde-inventoryhud:removeCurrentWeapon')
+            TriggerEvent('esx_inventoryhud:removeCurrentWeapon')
             TriggerEvent('joca_fuel:useJerryCan')
         else
             canFire = false
@@ -101,7 +101,7 @@ function GiveWeapon(weapon)
             canFire = true
         end
     else
-      ESX.TriggerServerCallback('conde-inventoryhud:getAmmoCount', function(ammoCount)
+      ESX.TriggerServerCallback('esx_inventoryhud:getAmmoCount', function(ammoCount)
         canFire = false
         disable()
         if PlayerData.job ~= nil and PlayerData.job.name == 'police' then --and GetWeapontypeGroup(hash) == 416676503 then
@@ -116,7 +116,7 @@ function GiveWeapon(weapon)
         end
         GiveWeaponToPed(playerPed, hash, 1, false, true)
         if checkh[weapon] == hash then
-            ESX.TriggerServerCallback('conde_inventory:takePlayerItem', function(cb)
+            ESX.TriggerServerCallback('esx_inventoryhud:takePlayerItem', function(cb)
                 SetPedAmmo(playerPed, hash, 1)
             end, weapon, 1)
         elseif Config.FuelCan == hash and ammoCount == nil then
@@ -138,9 +138,9 @@ end
             sleep = 10
             for k, v in pairs(Config.Throwables) do
                 if k == currentWeapon then
-                    ESX.TriggerServerCallback('conde_inventory:takePlayerItem', function(removed)
+                    ESX.TriggerServerCallback('esx_inventoryhud:takePlayerItem', function(removed)
                         if removed then
-                            TriggerEvent('conde-inventoryhud:removeCurrentWeapon')
+                            TriggerEvent('esx_inventoryhud:removeCurrentWeapon')
                         end
                     end, currentWeapon, 1)
                 end

@@ -5,3 +5,7 @@ author 'Deli'
 description 'FiveM drift script'
 version '1.1'
 client_script 'drift.lua'
+
+dependencies {
+    'es_extended'
+}

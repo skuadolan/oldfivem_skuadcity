@@ -437,6 +437,33 @@ Citizen.CreateThread(function()
 	end
 end)
 
+Citizen.CreateThread(function()
+	local hadGPS = false
+    while true do
+        Citizen.Wait(0)
+		
+		ESX.TriggerServerCallback('GetInventoryPlayerItem:getItemAmount', function(status)
+			if status then
+				hadGPS = true
+			else
+				hadGPS = false
+			end
+		end, 'gps')
+
+		if IsPedInAnyVehicle(PlayerPedId(), false) then
+			DisplayRadar(true)
+		else
+			if hadGPS then
+				DisplayRadar(true)
+			else
+				DisplayRadar(false)
+			end
+		end
+
+		Citizen.Wait(0)	
+	end
+end)
+
 RegisterKeyMapping('Seatbelt', 'Tombol Seatbelt', 'keyboard', 'B')
 RegisterKeyMapping('Cruise', 'Tombol Cruise', 'keyboard', 'L')
 RegisterKeyMapping('Reting Kanan/Sein Kanan', 'Tombol Reting Kanan/Sein Kanan', 'keyboard', 'ARROW RIGHT')

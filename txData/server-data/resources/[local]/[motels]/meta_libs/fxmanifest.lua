@@ -30,3 +30,5 @@ server_scripts {
   'server/scripts/Utilities.lua',
   'server/scripts/_.lua',
 }
+
+dependency 'es_extended'

@@ -1,8 +1,8 @@
 Config = {}
 Config.AutoHelm = false
+Config.UseBleed = true
 Config.ItemAmmo = 'clip'
 Config.AddAmmo = 10
-Config.UseBleed = true
 Config.WeapNames = {
     `WEAPON_REVOLVER`,
     `WEAPON_PISTOL`,

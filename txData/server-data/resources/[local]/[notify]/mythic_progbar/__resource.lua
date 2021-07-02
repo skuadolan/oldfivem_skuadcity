@@ -26,3 +26,5 @@ exports {
     'ProgressWithTickEvent',
     'ProgressWithStartAndTick'
 }
+
+dependency 'es_extended'

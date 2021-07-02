@@ -23,3 +23,5 @@ files({
 	'ui/img/horseshoe.png',
 	'ui/js/application.js'
 })
+
+dependency 'es_extended'

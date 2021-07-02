@@ -11,8 +11,8 @@ local ragdoll_chance = 0.8 -- edit this decimal value for chance of falling (e.g
 print('chance of falling set to: ' .. ragdoll_chance)
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(100) -- check every 100 ticks, performance matters
 		local ped = PlayerPedId()
+		Citizen.Wait(100) -- check every 100 ticks, performance matters
 		if IsPedOnFoot(ped) and not IsPedSwimming(ped) and (IsPedRunning(ped) or IsPedSprinting(ped)) and not IsPedClimbing(ped) and IsPedJumping(ped) and not IsPedRagdoll(ped) then
 			local chance_result = math.random()
 			print('lose grip result: ' .. chance_result)

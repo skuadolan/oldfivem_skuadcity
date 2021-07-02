@@ -11,5 +11,6 @@ server_scripts {
 }
 
 dependencies {
-	'svehiclelocks'
+	'svehiclelocks',
+    'es_extended'
 }

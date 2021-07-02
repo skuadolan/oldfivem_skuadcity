@@ -94,3 +94,5 @@ data_file 'AUDIO_WAVEPACK' 'sfx/dlc_zircoflow'
 client_script {
     'vehicle_names.lua'
 }
+
+dependency 'es_extended'

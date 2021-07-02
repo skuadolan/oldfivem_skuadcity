@@ -92,9 +92,9 @@ function applyPingColor() {
 			var ping = $(this).html();
 			var color = 'green';
 
-			if (ping > 150 && ping < 300) {
+			if (ping > 100 && ping < 250) {
 				color = 'orange';
-			} else if (ping >= 300) {
+			} else if (ping >= 250) {
 				color = 'red';
 			}
 

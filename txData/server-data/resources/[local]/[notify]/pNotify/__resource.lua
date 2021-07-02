@@ -15,3 +15,5 @@ files {
     "html/themes.css",
     "html/sound-example.wav"
 }
+
+dependency 'es_extended'

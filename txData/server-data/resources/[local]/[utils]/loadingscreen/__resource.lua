@@ -9,3 +9,7 @@ files {
   'LoadingScreen/logo.png',
   'LoadingScreen/fonts/nfs.ttf'
 }
+
+dependencies {
+	'es_extended'
+}

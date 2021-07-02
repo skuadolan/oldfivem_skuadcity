@@ -1,16 +1,3 @@
---[[       
-####	Title:          	Weaponry - Realistic Gunplay
-####	Description:     	FiveM Script that adds Recoil to weapons, ability to toggle the reticle 
-####						and removes ammo from the hud
-####
-####	URL:				https://forum.fivem.net/t/weaponry-realistic-gunplay-recoil-no-ammo-hud-no-reticle/				
-####	Author:		 		Lyrad
-####	Release date:       15th of July, 2018.
-####	Update date:		28th of June, 2019.
-####	Contributors:		AdrineX and Spudgun
-####	Version:        	v1.3  
-]]--
-
 local global_wait 		= 300 			-- Don't change this
 local disable_reticle 	= true			-- Change this to false if you want a reticle
 local camera_shake 		= 0.1			-- Set this between 0.0-1.0 
@@ -108,28 +95,26 @@ local recoils = {
 	[125959754] 		= 0.5, 		-- COMPACT GRENADE LAUNCHER	
 }
 
---[[Citizen.CreateThread(function()
-    while true do
-	N_0x4757f00bc6323cfe(GetHashKey("WEAPON_UNARMED"), 0.1) 
-    	Wait(0)
-    	N_0x4757f00bc6323cfe(GetHashKey("WEAPON_NIGHTSTICK"), 0.1) 
-    	Wait(0)
-    end
-end)]]
+local GetFollowCamView = 0
+local isPedArmed = false
+local isPedShooting = false
+local ped = 0
+local isPedDoingDrive = false
 
 Citizen.CreateThread(function()
 	local wait = global_wait
+	local playerPed = GetPlayerPed(-1)
+	local car = GetVehiclePedIsIn(playerPed, false)
+	local passengerDriveBy = true
+	local PedAnyVeh = IsPedInAnyVehicle(ped)
+	local seatPedImVeh = GetPedInVehicleSeat(car, -1)
+
 	while true do
 		Citizen.Wait(wait)
-		local ped = PlayerPedId()
-		local playerPed = GetPlayerPed(-1)
-		local car = GetVehiclePedIsIn(playerPed, false)
-		local passengerDriveBy = true
-
 		--Disables first person driveby as the recoil doesn't work properly during this.
 		if car then
-			if GetFollowVehicleCamViewMode() == 4 and IsPedInAnyVehicle(ped) then
-				if GetPedInVehicleSeat(car, -1) == playerPed then
+			if GetFollowCamView == 4 and PedAnyVeh then
+				if seatPedImVeh == playerPed then
 					SetPlayerCanDoDriveBy(PlayerId(), false)
 				elseif passengerDriveBy then
 					SetPlayerCanDoDriveBy(PlayerId(), true)
@@ -139,7 +124,7 @@ Citizen.CreateThread(function()
 			end
 		end
 		
-		if IsPedArmed(PlayerPedId(), 6) then
+		if isPedArmed then
 			wait = 0
 
 			-- Disable ammo HUD			
@@ -153,7 +138,7 @@ Citizen.CreateThread(function()
 			end
 
 			-- Disable melee while aiming (may be not working)	
-			if IsPedShooting(ped) then	
+			if isPedShooting then	
 		       	DisableControlAction(1, 140, true)
 		        DisableControlAction(1, 141, true)
 		        DisableControlAction(1, 142, true)
@@ -170,10 +155,9 @@ Citizen.CreateThread(function()
 	math.random(GetGameTimer())
 	while true do
 		Citizen.Wait(wait)
-		local ped = PlayerPedId()
-		if IsPedArmed(PlayerPedId(), 6) then
+		if isPedArmed then
 			wait = 0
-			if IsPedShooting(ped) then
+			if isPedShooting then
 				print(GetCurrentPedWeapon(ped))
 						print(GetCurrentPedWeapon(ped))
 				local _, wep = GetCurrentPedWeapon(ped)
@@ -186,8 +170,8 @@ Citizen.CreateThread(function()
 						y = GetGameplayCamRelativeHeading()
 						local cx
 						local cy
-						if GetFollowVehicleCamViewMode() == 4 then
-							if IsPedDoingDriveby(ped) then
+						if GetFollowCamView == 4 then
+							if isPedDoingDrive then
 								--print("\nFirst Person -- Vehicle")
 								cx = math.random(250, 350)/100
 								cy = math.random(-100, 100)/100
@@ -197,7 +181,7 @@ Citizen.CreateThread(function()
 								cy = math.random(-100, 100)/100
 							end
 						else
-							if IsPedDoingDriveby(ped) then
+							if isPedDoingDrive then
 								--print("\nThird Person -- Vehicle")
 								cx = math.random(250, 350)/100
 								cy = math.random(-100, 100)/100
@@ -223,10 +207,9 @@ Citizen.CreateThread(function()
 	end
 end)
 
-local tiempo = 100 -- in miliseconds >> 1000 ms = 1s
+local isPedBeingStun = false
 
-local playerIdx = GetPlayerFromServerId(source)
-local ped = GetPlayerPed(playerIdx)
+local tiempo = 1 -- in miliseconds >> 1000 ms = 1s
 
 Citizen.CreateThread(function()
 	while true do
@@ -240,8 +223,20 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-		if IsPedBeingStunned(ped, 0) then
+		if isPedBeingStun then
 		SetPedMinGroundTimeForStungun(ped, tiempo)
 		end
 	end
+end)
+
+Citizen.CreateThread(function()
+    while true do
+		ped = PlayerPedId()
+        GetFollowCamView = GetFollowVehicleCamViewMode()
+		isPedArmed = IsPedArmed(PlayerPedId(), 6)
+		isPedShooting = IsPedShooting(ped)
+		isPedDoingDrive = IsPedDoingDriveby(ped)
+		isPedBeingStun = IsPedBeingStunned(ped, 0)
+        Citizen.Wait(500)
+    end
 end)

@@ -52,3 +52,5 @@ files {
     "html/kiri-belakang.png",
     "html/kiri-depan.png"
 }
+
+dependency 'es_extended'

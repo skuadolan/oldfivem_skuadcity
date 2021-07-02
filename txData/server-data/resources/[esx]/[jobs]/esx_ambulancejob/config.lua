@@ -6,7 +6,7 @@ Config.Marker                     = {type = 1, x = 1.5, y = 1.5, z = 0.5, r = 10
 
 Config.ReviveReward               = 700  -- Revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = false -- Enable anti-combat logging? (Removes Items when a player logs back after intentionally logging out while dead.)
-Config.LoadIpl                    = true -- Disable if you're using fivem-ipl or other IPL loaders
+Config.LoadIpl                    = false -- Disable if you're using fivem-ipl or other IPL loaders
 
 Config.Locale                     = 'en'
 

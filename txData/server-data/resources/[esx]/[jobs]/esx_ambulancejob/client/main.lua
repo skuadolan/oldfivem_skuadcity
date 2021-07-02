@@ -11,7 +11,6 @@ Keys = {
 }
 
 local FirstSpawn, PlayerLoaded = true, false
-local blipsCops = {}
 
 IsDead = false
 ESX = nil
@@ -39,9 +38,6 @@ end)
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
 	ESX.PlayerData.job = job
-
-	Citizen.Wait(5000)
-	TriggerServerEvent('esx_ambulancejob:forceBlip')
 end)
 
 AddEventHandler('playerSpawned', function()
@@ -489,63 +485,3 @@ if Config.LoadIpl then
 		RequestIpl('Coroner_Int_on') -- Morgue
 	end)
 end
-
-
--- Create blip for colleagues
-function createBlip(id)
-	local ped = GetPlayerPed(id)
-	local blip = GetBlipFromEntity(ped)
-
-	if not DoesBlipExist(blip) then -- Add blip and create head display on player
-		blip = AddBlipForEntity(ped)
-		SetBlipSprite(blip, 1)
-		ShowHeadingIndicatorOnBlip(blip, true) -- Player Blip indicator
-		SetBlipRotation(blip, math.ceil(GetEntityHeading(ped))) -- update rotation
-		SetBlipNameToPlayerName(blip, id) -- update blip name
-		SetBlipScale(blip, 0.85) -- set scale
-		SetBlipAsShortRange(blip, true)
-		DisplayRadar(true)
-
-		table.insert(blipsCops, blip) -- add blip to array so we can remove it later
-	end
-end
-
-
-
-
-RegisterNetEvent('esx_ambulancejob:updateBlip')
-AddEventHandler('esx_ambulancejob:updateBlip', function()
-
-	-- Refresh all blips
-	for k, existingBlip in pairs(blipsCops) do
-		RemoveBlip(existingBlip)
-	end
-
-	-- Clean the blip table
-	blipsCops = {}
-
-	-- Enable blip?
-	if Config.EnableESXService and not playerInService then
-		return
-	end
-
-	if not Config.EnableJobBlip then
-		return
-	end
-
-	-- Is the player a cop? In that case show all the blips for other cops
-	if ESX.PlayerData.job and ESX.PlayerData.job.name == 'ambulance' then
-		ESX.TriggerServerCallback('esx_society:getOnlinePlayers', function(players)
-			for i=1, #players, 1 do
-				if players[i].job.name == 'ambulance' then
-					local id = GetPlayerFromServerId(players[i].source)
-					if NetworkIsPlayerActive(id) and GetPlayerPed(id) ~= PlayerPedId() then
-						DisplayRadar(true)
-						createBlip(id)
-					end
-				end
-			end
-		end)
-	end
-
-end)

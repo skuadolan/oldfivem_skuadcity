@@ -3,23 +3,23 @@ local effect = false
 
 Citizen.CreateThread(function()
     while true do
+        local ped = GetPlayerPed(-1)
+        local healthPlayer = GetEntityHealth(ped)
         Wait(0)
 
-        local ped = GetPlayerPed(-1)
-
-        if GetEntityHealth(ped) <= 75 then
+        if healthPlayer <= 100 then
             setHurt()
             
-        elseif hurt and GetEntityHealth(ped) > 100 then
+        elseif hurt and healthPlayer > 100 then
             setNotHurt()
             
         end
         
         
         if Config.UseBleed then
-            if GetEntityHealth(ped) <= 75 then
+            if healthPlayer <= 100 then
                 setBleedingOn(ped)
-            elseif GetEntityHealth(ped) > 100 then
+            elseif healthPlayer > 100 then
                 setBleedingOff(ped)
             end                        
         end
@@ -40,7 +40,7 @@ function setNotHurt()
 end
 
 function setBleedingOn(ped)
-    SetEntityHealth(ped,GetEntityHealth(ped) - 1 )
+    SetEntityHealth(ped,healthPlayer - 1 )
 
     ShakeGameplayCam("SMALL_EXPLOSION_SHAKE", 0.1)
     exports['mythic_notify']:SendAlert('error', 'Kamu mengalami pendarahan, segera kerumah sakit')

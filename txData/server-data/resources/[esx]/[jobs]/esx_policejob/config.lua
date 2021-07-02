@@ -194,13 +194,14 @@ Config.AuthorizedWeapons = {
 Config.AuthorizedVehicles = {
 	car = {
 		tamtama = {
-			{model = 'police', price = 10000}
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000}
 		},
 
 		bripda = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -214,7 +215,7 @@ Config.AuthorizedVehicles = {
 		briptu = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -228,7 +229,7 @@ Config.AuthorizedVehicles = {
 		brigpol = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -242,7 +243,7 @@ Config.AuthorizedVehicles = {
 		bripka = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -256,7 +257,7 @@ Config.AuthorizedVehicles = {
 		aipda = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -270,7 +271,7 @@ Config.AuthorizedVehicles = {
 		aiptu = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -284,7 +285,7 @@ Config.AuthorizedVehicles = {
 		ipda = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -298,7 +299,7 @@ Config.AuthorizedVehicles = {
 		iptu = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -312,7 +313,7 @@ Config.AuthorizedVehicles = {
 		akp = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -326,7 +327,7 @@ Config.AuthorizedVehicles = {
 		kompol = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -340,7 +341,7 @@ Config.AuthorizedVehicles = {
 		kombes = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -354,7 +355,7 @@ Config.AuthorizedVehicles = {
 		akbp = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -368,7 +369,7 @@ Config.AuthorizedVehicles = {
 		brigjen = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -382,7 +383,7 @@ Config.AuthorizedVehicles = {
 		irjen = {
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -396,7 +397,7 @@ Config.AuthorizedVehicles = {
 		wakil_boss = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -411,7 +412,7 @@ Config.AuthorizedVehicles = {
 		boss = {			
 			{model = 'police', price = 10000},
 			{model = 'police2', price = 10000},
-			{model = 'polb', price = 10000},
+			{model = 'barracuda-j', price = 10000},
 			{model = 'sheriff', price = 10000},
 			{model = 'sheriff2', price = 10000},
 			{model = 'sanchezpol', price = 10000},
@@ -440,19 +441,19 @@ Config.AuthorizedVehicles = {
 		kombes = {},
 
 		brigjen = {
-            {model = 'polmav', props = {modLivery = 0}, price = 30000}
+            {model = 'BO105', props = {modLivery = 0}, price = 30000}
 		},
 
 		irjen = {
-            {model = 'polmav', props = {modLivery = 0}, price = 30000}
+            {model = 'BO105', props = {modLivery = 0}, price = 30000}
         },
 		
 		wakil_boss = {
-            {model = 'polmav', props = {modLivery = 0}, price = 30000}
+            {model = 'BO105', props = {modLivery = 0}, price = 30000}
         },
 
 		boss = {
-			{model = 'polmav', props = {modLivery = 0}, price = 30000}
+			{model = 'BO105', props = {modLivery = 0}, price = 30000}
 		}
 	}
 }

@@ -29,7 +29,7 @@ Citizen.CreateThread(function()
                     DetachEntity(PlayerPedId(), true, true)
                     SetEntityVisible(PlayerPedId(), true, false)
                     ClearPedTasks(PlayerPedId())
-                    SetEntityCoords(PlayerPedId(), GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, -0.5, -0.75))
+                    SetEntityCoords(PlayerPedId(), GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, -1.0, -0.75))
                     Wait(250)
                     SetVehicleDoorShut(vehicle, 5)
                 end

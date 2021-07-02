@@ -251,7 +251,7 @@ Citizen.CreateThread(function()
 			if oxygenTank > 0 and IsPedSwimmingUnderWater(GetPlayerPed(-1)) then
 				SetPedDiesInWater(GetPlayerPed(-1), true)
 				if oxygenTank > 25.0 then
-					oxygenTank = oxygenTank - 0.2
+					oxygenTank = oxygenTank - 1.0
 				else
 					oxygenTank = oxygenTank - 0.2
 				end
@@ -387,54 +387,6 @@ Citizen.CreateThread(function()
 				veh_body_health = 0
 			end
 		end
-	end
-end)
-
-Citizen.CreateThread(function()
-
-    while true do
-        Citizen.Wait(0)
-		ESX.TriggerServerCallback("esx_inventoryhud:getPlayerInventory", function(data)
-			items = {}
-			fastItems = {}
-			inventory = data.inventory
-			local hadGPS = false
-			
-			if inventory ~= nil then
-				
-				for key, value in pairs(inventory) do
-					local fnd = false
-					
-					if fnd == false then
-						if inventory[key].count <= 0 then
-							inventory[key] = nil
-						else
-							inventory[key].type = "item_standard"
-							table.insert(items, inventory[key])
-
-
-							if inventory[key].name == 'gps' then
-								hadGPS = true
-							end
-						end
-					end
-				end
-
-				if IsPedInAnyVehicle(PlayerPedId(), false) then
-					DisplayRadar(true)
-				else
-					if hadGPS then
-						DisplayRadar(true)
-					else
-						DisplayRadar(false)
-					end
-				end
-
-			end
-		end, GetPlayerServerId(PlayerId())
-		)
-
-		Citizen.Wait(0)	
 	end
 end)
 

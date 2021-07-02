@@ -82,12 +82,12 @@ Locales['en'] = {
   -- Death
   ['respawn_available_in'] = 'respawn available in ~b~%s minutes %s seconds~s~',
   ['respawn_bleedout_in'] = 'you will bleed out in ~b~%s minutes %s seconds~s~\n',
-  ['respawn_bleedout_prompt'] = 'hold [~b~E~s~] to respawn',
-  ['respawn_bleedout_fine'] = 'hold [~b~E~s~] to respawn for ~g~$%s~s~',
-  ['respawn_bleedout_fine_msg'] = 'you paid ~r~$%s~s~ to respawn.',
+  ['respawn_bleedout_prompt'] = 'tekan [~b~E~s~] untuk respawn',
+  ['respawn_bleedout_fine'] = 'tekan [~b~E~s~] untuk respawn bayar ~g~$%s~s~ dari ~b~bank~s~',
+  ['respawn_bleedout_fine_msg'] = 'membayar ~r~$%s~s~ untuk respawn.',
   ['reset_body'] = 'Tekan [~b~H~s~] jika tidak terlihat',
-  ['distress_send'] = 'press [~b~G~s~] to send distress signal',
-  ['distress_sent'] = 'distress signal has been sent to available units!',
+  ['distress_send'] = 'tekan [~b~G~s~] mengirim sinyal ke ~g~EMS~s~',
+  ['distress_sent'] = 'sinyal terkirim ke ~g~EMS~s~',
   ['combatlog_message'] = 'you have been force-respawned because you\'ve previously left the server when dead.',
   -- Revive
   ['revive_help'] = 'menyembuhkan warga',

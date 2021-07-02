@@ -29,3 +29,5 @@ exports {
     'RemovePlayerRadioChannel',
     'SetRadioTowers'
 }
+
+dependency 'es_extended'

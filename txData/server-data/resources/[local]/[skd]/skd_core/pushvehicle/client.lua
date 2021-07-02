@@ -31,11 +31,11 @@ local Second = vector3(5.0, 5.0, 5.0)
 local Vehicle = {Coords = nil, Vehicle = nil, Dimension = nil, IsInFront = false, Distance = nil}
 Citizen.CreateThread(function()
     Citizen.Wait(200)
+    local ped = PlayerPedId()
+    local closestVehicle, Distance = ESX.Game.GetClosestVehicle()
+    local vehicleCoords = GetEntityCoords(closestVehicle)
+    local dimension = GetModelDimensions(GetEntityModel(closestVehicle), First, Second)
     while true do
-        local ped = PlayerPedId()
-        local closestVehicle, Distance = ESX.Game.GetClosestVehicle()
-        local vehicleCoords = GetEntityCoords(closestVehicle)
-        local dimension = GetModelDimensions(GetEntityModel(closestVehicle), First, Second)
         if Distance < 6.0  and not IsPedInAnyVehicle(ped, false) then
             Vehicle.Coords = vehicleCoords
             Vehicle.Dimensions = dimension
@@ -55,9 +55,9 @@ end)
 
 
 Citizen.CreateThread(function()
+    local ped = PlayerPedId()
     while true do 
         Citizen.Wait(5)
-        local ped = PlayerPedId()
         if Vehicle.Vehicle ~= nil then
  
                 if IsVehicleSeatFree(Vehicle.Vehicle, -1) and GetVehicleEngineHealth(Vehicle.Vehicle) then

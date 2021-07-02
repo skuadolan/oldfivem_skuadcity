@@ -23,5 +23,6 @@ exports {
 }
 
 dependencies {
-	'SimpleCarHUD'
+	'SimpleCarHUD',
+	'es_extended'
 }

@@ -1,7 +1,7 @@
 Citizen.CreateThread( function()
-    SetPedHelmet(GetPlayerPed(-1), false)
     while true do
         Citizen.Wait(0)
+        SetPedHelmet(GetPlayerPed(-1), Config.AutoHelm)
         local playerPed = GetPlayerPed(-1)
         local playerVeh = GetVehiclePedIsUsing(playerPed)
 

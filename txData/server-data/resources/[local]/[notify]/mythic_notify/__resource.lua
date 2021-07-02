@@ -23,3 +23,5 @@ exports {
 	'SendUniqueAlert',
 	'PersistentAlert',
 }
+
+dependency 'es_extended'

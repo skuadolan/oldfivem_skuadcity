@@ -7,3 +7,7 @@ client_scripts {
 server_scripts {
     'vs_server.lua',
 }
+
+dependencies {
+    'es_extended'
+}

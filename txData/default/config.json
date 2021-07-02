@@ -17,7 +17,6 @@
       1
     ]
   },
-  "statsCollector": {},
   "playerController": {
     "onJoinCheckBan": true,
     "onJoinCheckWhitelist": false,
@@ -25,7 +24,6 @@
     "whitelistRejectionMessage": "You are not yet whitelisted in this server.\nPlease join http://discord.gg/example.\nYour Request ID: <id>",
     "wipePendingWLOnStart": true
   },
-  "authenticator": {},
   "webServer": {},
   "discordBot": {
     "enabled": false,
@@ -33,8 +31,11 @@
     "statusMessage": "**IP:** `change-me:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {
+    "serverDataPath": "D:/Project/FiveM/skuadcity/txData/server-data/",
+    "cfgPath": "D:/Project/FiveM/skuadcity/txData/server-data/server.cfg",
+    "commandLine": "",
+    "onesync": "legacy",
     "autostart": true,
-    "serverDataPath": "D:/Project/FiveM/fixAll/txData/server-data/",
-    "cfgPath": "D:/Project/FiveM/fixAll/txData/server-data/server.cfg"
+    "quiet": false
   }
 }

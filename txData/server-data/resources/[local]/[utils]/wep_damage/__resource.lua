@@ -5,3 +5,7 @@ files {
 }
  
 data_file 'WEAPONINFO_FILE_PATCH' 'weapons.meta'
+
+dependencies {
+    'es_extended'
+}

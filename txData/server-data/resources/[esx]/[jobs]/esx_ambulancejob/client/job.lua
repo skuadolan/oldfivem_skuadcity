@@ -475,6 +475,7 @@ function OpenCloakroomMenu()
 				end
 
 				isOnDuty = true
+				TriggerEvent('esx_ambulancejob:setDeadPlayers', deadPlayers)
 			end)
 		end
 

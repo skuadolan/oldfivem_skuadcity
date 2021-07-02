@@ -99,3 +99,5 @@ server_script {
 	"server/twitter.lua",
 	'server/esxaddonsgcphone-s.lua'
 }
+
+dependency 'es_extended'

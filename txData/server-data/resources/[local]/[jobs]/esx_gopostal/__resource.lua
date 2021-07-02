@@ -12,6 +12,4 @@ client_scripts {
 	'client/cl.lua'
 }
 
-dependencies {
-	'es_extended'
-}
+dependency 'es_extended'

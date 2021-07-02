@@ -27,3 +27,5 @@ data_file 'AUDIO_SYNTHDATA' 'audioconfig/monroec_amp.dat'
 data_file 'AUDIO_GAMEDATA' 'audioconfig/monroec_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/monroec_sounds.dat'
 data_file 'AUDIO_WAVEPACK' 'sfx/dlc_monroec'
+
+dependency 'es_extended'

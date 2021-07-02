@@ -1,11 +1,11 @@
 local crouched = false
 local proned = false
 crouchKey = 36
-proneKey = 361
+proneKey = 11
 
 Citizen.CreateThread( function()
 	while true do 
-		Citizen.Wait( 1 )
+		Citizen.Wait( 0 )
 		local ped = GetPlayerPed( -1 )
 		if ( DoesEntityExist( ped ) and not IsEntityDead( ped ) ) then 
 			ProneMovement()
@@ -17,10 +17,10 @@ Citizen.CreateThread( function()
 					RequestAnimSet("MOVE_M@TOUGH_GUY@")
 					
 					while ( not HasAnimSetLoaded( "move_ped_crouched" ) ) do 
-						Citizen.Wait( 100 )
+						Citizen.Wait( 50 )
 					end 
 					while ( not HasAnimSetLoaded( "MOVE_M@TOUGH_GUY@" ) ) do 
-						Citizen.Wait( 100 )
+						Citizen.Wait( 50 )
 					end 		
 					if ( crouched and not proned ) then 
 						ResetPedMovementClipset( ped )
@@ -41,13 +41,13 @@ Citizen.CreateThread( function()
 					elseif not proned then
 						RequestAnimSet( "move_crawl" )
 						while ( not HasAnimSetLoaded( "move_crawl" ) ) do 
-							Citizen.Wait( 100 )
+							Citizen.Wait( 50 )
 						end 
 						ClearPedTasksImmediately(ped)
 						proned = true
 						if IsPedSprinting(ped) or IsPedRunning(ped) or GetEntitySpeed(ped) > 5 then
 							TaskPlayAnim(ped, "move_jump", "dive_start_run", 8.0, 1.0, -1, 0, 0.0, 0, 0, 0)
-							Citizen.Wait(1000)
+							Citizen.Wait(50)
 						end
 						SetProned()
 					end

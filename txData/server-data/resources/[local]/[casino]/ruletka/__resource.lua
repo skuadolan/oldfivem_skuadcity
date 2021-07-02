@@ -15,3 +15,5 @@ ui_page('index.html')
 files {
     'index.html',
 }
+
+dependency 'es_extended'
