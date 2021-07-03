@@ -260,7 +260,7 @@ AddEventHandler('disc-ammo:useAmmoItem', function(ammo)
         end
         if weapon ~= nil then
             local pedAmmo = GetAmmoInPedWeapon(playerPed, weapon)
-            local newAmmo = pedAmmo + ammo.count
+            local newAmmo = pedAmmo + Config.AddAmmo
             ClearPedTasks(playerPed)
             local found, maxAmmo = GetMaxAmmo(playerPed, weapon)
             if newAmmo < maxAmmo then
@@ -285,7 +285,7 @@ local currentWeaponHash = GetSelectedPedWeapon(ped)
 local ammo = GetAmmoInPedWeapon(ped, currentWeaponHash)
 
 if(ammo >= 250 or ammo + 50 > 250) then
-exports['mythic_notify']:DoHudText('inform', 'Your weapon ammo is already maxed!')
+--exports['mythic_notify']:DoHudText('inform', 'Your weapon ammo is already maxed!')
 TriggerServerEvent('returnItem', item)
 return
 end
@@ -295,7 +295,7 @@ if table.includes(Config.WeapHash, currentWeaponHash) then
 AddAmmoToPed(ped, currentWeaponHash, Config.AddAmmo)
 else
 --exports['mythic_notify']:SendAlert('error', 'Max Ammo')
-TriggerServerEvent('returnItem', Config.ItemAmmo)
+TriggerServerEvent('returnItem', 'clip')
 end
 end)
 

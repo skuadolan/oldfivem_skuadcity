@@ -41,7 +41,7 @@ RegisterNetEvent('returnItem')
 AddEventHandler('returnItem', function(item)
     local xPlayer = ESX.GetPlayerFromId(source)
 
-    xPlayer.addInventoryItem(item, 1)
+    --xPlayer.addInventoryItem(item, 1)
 end)
 
 
@@ -59,5 +59,5 @@ end)
 RegisterServerEvent('disc-ammo:removeAmmoItem')
 AddEventHandler('disc-ammo:removeAmmoItem', function(ammo)
     local player = ESX.GetPlayerFromId(source)
-    player.removeInventoryItem(ammo.name, 1)
+    player.removeInventoryItem(ammo, 1)
 end)
