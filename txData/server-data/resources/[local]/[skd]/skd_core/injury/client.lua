@@ -1,13 +1,14 @@
 local hurt = false
 local effect = false
+local healthPlayer = GetEntityHealth(ped)
 
 Citizen.CreateThread(function()
     while true do
         local ped = GetPlayerPed(-1)
-        local healthPlayer = GetEntityHealth(ped)
+        healthPlayer = GetEntityHealth(ped)
         Wait(0)
 
-        if healthPlayer <= 100 then
+        if healthPlayer < 75 then
             setHurt()
             
         elseif hurt and healthPlayer > 100 then
@@ -17,7 +18,7 @@ Citizen.CreateThread(function()
         
         
         if Config.UseBleed then
-            if healthPlayer <= 100 then
+            if healthPlayer < 75 then
                 setBleedingOn(ped)
             elseif healthPlayer > 100 then
                 setBleedingOff(ped)

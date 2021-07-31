@@ -248,7 +248,7 @@ Config = {
 	
 	Workbenches = { -- Every workbench location, leave {} for jobs if you want everybody to access
 	
-			{coords = vector3(101.26113891602,6615.810546875,33.58126831054), jobs = {}, blip = true, recipes = {}, radius = 3.0 }
+			{coords = vector3(101.4726, 6616.194, 32.43078), jobs = {}, blip = true, recipes = {}, radius = 3.0 }
 	
 	},
 	

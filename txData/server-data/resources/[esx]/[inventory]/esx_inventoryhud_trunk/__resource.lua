@@ -8,9 +8,7 @@ server_scripts {
   "@async/async.lua",
   "@mysql-async/lib/MySQL.lua",
   "@es_extended/locale.lua",
-  "locales/en.lua",
-  "locales/cs.lua",
-  "locales/fr.lua",
+  "locales/id.lua",
   "config.lua",
   "server/classes/c_trunk.lua",
   "server/trunk.lua",
@@ -19,9 +17,7 @@ server_scripts {
 
 client_scripts {
   "@es_extended/locale.lua",
-  "locales/en.lua",
-  "locales/cs.lua",
-  "locales/fr.lua",
+  "locales/id.lua",
   "config.lua",
   "client/esx_trunk-cl.lua"
 }

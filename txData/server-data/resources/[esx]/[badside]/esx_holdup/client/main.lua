@@ -26,6 +26,8 @@ end
 RegisterNetEvent('esx_holdup:currentlyRobbing')
 AddEventHandler('esx_holdup:currentlyRobbing', function(currentStore)
 	holdingUp, store = true, currentStore
+
+	StartDistressSignal(holdingUp)
 end)
 
 RegisterNetEvent('esx_holdup:killBlip')
@@ -127,3 +129,23 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+function StartDistressSignal(holdingUp)
+	Citizen.CreateThread(function()
+		if holdingUp then
+			Citizen.Wait(2)
+			SendDistressSignal()
+		end
+	end)
+end
+
+function SendDistressSignal()
+	local playerPed = PlayerPedId()
+	local coords = GetEntityCoords(playerPed)
+
+	TriggerServerEvent('esx_phone:send', 'police', _U('distress_message'), false, {
+		x = coords.x,
+		y = coords.y,
+		z = coords.z
+	})
+end

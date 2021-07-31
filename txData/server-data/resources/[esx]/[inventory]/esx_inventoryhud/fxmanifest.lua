@@ -22,7 +22,7 @@ client_scripts {
   "client/property.lua",
   "client/player.lua",
   "client/weapons.lua",
-  "locales/en.lua",
+  "locales/id.lua",
   "config.lua"
 }
 
@@ -30,7 +30,7 @@ server_scripts {
   "@mysql-async/lib/MySQL.lua",
   "@es_extended/locale.lua",
   "server/main.lua",
-  "locales/en.lua",
+  "locales/id.lua",
   "config.lua"
 }
 
@@ -45,9 +45,7 @@ files {
   "html/js/jquery-3.3.1.min.js",
   "html/js/jquery-ui.min.js",
   -- JS LOCALES
-  "html/locales/cs.js",
-  "html/locales/en.js",
-  "html/locales/fr.js",
+  "html/locales/id.js",
   -- IMAGES
   "html/img/bullet.png",
   -- ICONS

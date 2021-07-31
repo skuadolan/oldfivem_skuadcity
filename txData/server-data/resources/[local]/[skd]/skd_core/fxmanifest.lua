@@ -16,7 +16,6 @@ client_script {
     'jatuh/client.lua',
     'nonpc/client.lua',
     'piggyback/client.lua',
-    'pushvehicle/client.lua',
     'surrender/client.lua',
     'th/client.lua',
     'titlepause/client.lua',

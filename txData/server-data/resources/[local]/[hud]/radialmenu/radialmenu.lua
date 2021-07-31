@@ -19,43 +19,33 @@ Citizen.CreateThread(function()
             if menuConfig:enableMenu() then
                 -- When keybind is pressed toggle UI
                 local keybindControl = keybindControls[menuConfig.data.keybind]
-                --[[if IsDisabledControlJustPressed(0, keybindControl) then
+                if IsDisabledControlJustPressed(0, keybindControl) then
+
+                    if not showMenu then
+                        showMenu = false
+                    end
+
                     -- Init UI
                     showMenu = true
-                    SendNUIMessage({
-                        type = 'init',
-                        data = menuConfig.data,
-                        resourceName = GetCurrentResourceName()
-                    })
-
-                    -- Set cursor position and set focus
-                    SetCursorLocation(0.5, 0.5)
-                    SetNuiFocus(true, true)
 
                     -- Play sound
                     PlaySoundFrontend(-1, "NAV", "HUD_AMMO_SHOP_SOUNDSET", 1)
 
                     -- Prevent menu from showing again until key is released
-                    while showMenu == true do Citizen.Wait(100) end
+                    while showMenu do 
+                        Citizen.Wait(100) 
+                        SendNUIMessage({
+                            type = 'init',
+                            data = menuConfig.data,
+                            resourceName = GetCurrentResourceName()
+                        })
+    
+                        -- Set cursor position and set focus
+                        SetCursorLocation(0.5, 0.5)
+                        SetNuiFocus(true, true)
+                    end
                     Citizen.Wait(100)
                     --while IsDisabledControlJustReleased(0, keybindControl) do Citizen.Wait(100) end
-                end]]
-                while IsControlJustPressed(0, keybindControl) do 
-                    Citizen.Wait(100)
-                    -- Init UI
-                    showMenu = true
-                    SendNUIMessage({
-                        type = 'init',
-                        data = menuConfig.data,
-                        resourceName = GetCurrentResourceName()
-                    })
-
-                    -- Set cursor position and set focus
-                    SetCursorLocation(0.5, 0.5)
-                    SetNuiFocus(true, true)
-
-                    -- Play sound
-                    PlaySoundFrontend(-1, "NAV", "HUD_AMMO_SHOP_SOUNDSET", 1)
                 end
             end
         end

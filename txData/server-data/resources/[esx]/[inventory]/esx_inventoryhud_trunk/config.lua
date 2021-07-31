@@ -82,7 +82,7 @@ Config = {}
 Config.CheckOwnership = false -- If true, Only owner of vehicle can store items in trunk.
 Config.AllowPolice = true -- If true, police will be able to search players' trunks.
 
-Config.Locale = 'en'
+Config.Locale = 'id'
 
 Config.OpenKey = 246 --Y
 

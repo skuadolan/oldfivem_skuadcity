@@ -224,7 +224,7 @@ Citizen.CreateThread(
             for _, v in ipairs(Config.Workbenches) do
                 local dst = #(coords - v.coords)
                 if dst < 20 then
-                    DrawText3D(v.coords[1], v.coords[2], v.coords[3] - 0.8, Config.Text["workbench_hologram"])
+                    DrawText3D(v.coords, Config.Text["workbench_hologram"])
                 end
                 if dst < 2 then
                     if IsControlJustReleased(0, Keys["E"]) then

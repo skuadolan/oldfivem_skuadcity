@@ -1,0 +1,15 @@
+Locales ['id'] = {
+  ['buy_license'] = 'beli lisensi?',
+  ['yes'] = 'iya',
+  ['no'] = 'tidak',
+  ['weapon_bought'] = 'kamu membeli $%s',
+  ['not_enough_black'] = 'kamu tidak cukup memiliki ~r~uang kotor~s~',
+  ['not_enough'] = 'kamu tidak cukup uang',
+  ['already_owned'] = 'kamu sudah punya senjata!',
+  ['shop_menu_title'] = 'Toko Senjata',
+  ['shop_menu_prompt'] = 'tekan ~INPUT_CONTEXT~ untuk akses ~y~toko~s~.',
+  ['shop_menu_item'] = '$%s',
+  ['map_blip'] = 'Toko Senjata',
+  ['not_have_license'] = 'kamu tidak punya lisensi',
+  ['dont_bring'] = 'kamu tidak bawa lisensi',
+}
