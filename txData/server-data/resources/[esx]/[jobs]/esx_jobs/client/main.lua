@@ -204,7 +204,7 @@ function refreshBlips()
 					local blip = AddBlipForCoord(v.Pos.x, v.Pos.y, v.Pos.z)
 
 					SetBlipSprite  (blip, jobObject.BlipInfos.Sprite)
-					SetBlipScale   (blip, 1.2)
+					SetBlipScale   (blip, 0.75)
 					SetBlipCategory(blip, 3)
 					SetBlipColour  (blip, jobObject.BlipInfos.Color)
 					SetBlipAsShortRange(blip, true)

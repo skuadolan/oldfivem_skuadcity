@@ -21,13 +21,13 @@ Citizen.CreateThread(function()
 		local playerPed = PlayerPedId()
 		local coords = GetEntityCoords(playerPed)
 
-		if GetDistanceBetweenCoords(coords, Config.CircleZones.DrugDealer.coords, true) < 0.5 then
+		if GetDistanceBetweenCoords(coords, Config.CircleZones.Shopper.coords, true) < 0.5 then
 			if not menuOpen then
-				ESX.ShowHelpNotification(_U('dealer_prompt'))
+				ESX.ShowHelpNotification(_U('shopper_prompt'))
 
 				if IsControlJustReleased(0, 38) then
 					wasOpen = true
-					OpenDrugShop()
+					OpenShopperMenu()
 				end
 			else
 				Citizen.Wait(500)
@@ -35,25 +35,26 @@ Citizen.CreateThread(function()
 		else
 			if wasOpen then
 				wasOpen = false
+				menuOpen = false
 				ESX.UI.Menu.CloseAll()
 			end
-			menuOpen = false
+
 			Citizen.Wait(500)
 		end
 	end
 end)
 
-function OpenDrugShop()
+function OpenShopperMenu()
 	ESX.UI.Menu.CloseAll()
 	local elements = {}
 	menuOpen = true
 
 	for k, v in pairs(ESX.GetPlayerData().inventory) do
-		local price = Config.DrugDealerItems[v.name]
+		local price = Config.ShopperItems[v.name]
 
 		if price and v.count > 0 then
 			table.insert(elements, {
-				label = ('%s - <span style="color:green;">%s</span>'):format(v.label, _U('dealer_item', ESX.Math.GroupDigits(price))),
+				label = ('%s - <span style="color:green;">%s</span>'):format(v.label, _U('shopper_item', ESX.Math.GroupDigits(price))),
 				name = v.name,
 				price = price,
 
@@ -67,11 +68,11 @@ function OpenDrugShop()
 	end
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'drug_shop', {
-		title    = _U('dealer_title'),
+		title    = _U('shopper_title'),
 		align    = 'top-left',
 		elements = elements
 	}, function(data, menu)
-		TriggerServerEvent('esx_farm:sellDrug', data.current.name, data.current.value)
+		TriggerServerEvent('esx_farm:sellStuff', data.current.name, data.current.value)
 	end, function(data, menu)
 		menu.close()
 		menuOpen = false
@@ -87,18 +88,13 @@ AddEventHandler('onResourceStop', function(resource)
 end)
 
 function CreateBlipCircle(coords, text, radius, color, sprite)
-	local blip --[[= AddBlipForRadius(coords, radius)
-
-	SetBlipHighDetail(blip, true)
-	SetBlipColour(blip, 1)
-	SetBlipAlpha (blip, 128)]]
-
+	local blip
 	-- create a blip in the middle
 	blip = AddBlipForCoord(coords)
 
 	SetBlipHighDetail(blip, true)
 	SetBlipSprite (blip, sprite)
-	SetBlipScale  (blip, 1.0)
+	SetBlipScale  (blip, 0.75)
 	SetBlipColour (blip, color)
 	SetBlipAsShortRange(blip, true)
 

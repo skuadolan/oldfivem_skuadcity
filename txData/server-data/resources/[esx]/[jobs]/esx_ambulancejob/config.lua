@@ -32,7 +32,7 @@ Config.Hospitals = {
 		Blip = {
 			coords = vector3(301.42, -599.03, 42.28),
 			sprite = 61,
-			scale  = 1.2,
+			scale  = 0.75,
 			color  = 2
 		},
 
@@ -101,28 +101,23 @@ Config.AuthorizedVehicles = {
 		},
 
 		perawat = {
-			{model = 'ambulance', price = 5000},
-			{model = 'emsc', price = 10000}
+			{model = 'ambulance', price = 150}
 		},
 
 		asisten_doctor = {
-			{model = 'ambulance', price = 5000},
-			{model = 'emsc', price = 10000}
+			{model = 'ambulance', price = 150}
 		},
 
 		chief_doctor = {
-			{model = 'ambulance', price = 5000},
-			{model = 'emsc', price = 10000}
+			{model = 'ambulance', price = 150}
 		},
 
 		asisten_boss = {
-			{model = 'ambulance', price = 5000},
-			{model = 'emsc', price = 10000}
+			{model = 'ambulance', price = 150}
 		},
 
 		boss = {
-			{model = 'ambulance', price = 5000},
-			{model = 'emsc', price = 10000}
+			{model = 'ambulance', price = 150}
 		}
 	},
 
@@ -142,11 +137,11 @@ Config.AuthorizedVehicles = {
 		},
 
 		asisten_boss = {
-			{model = 'polmav', price = 3000}
+			{model = 'polmav', price = 500}
 		},
 
 		boss = {
-			{model = 'polmav', price = 2000}
+			{model = 'polmav', price = 500}
 		}
 	}
 }

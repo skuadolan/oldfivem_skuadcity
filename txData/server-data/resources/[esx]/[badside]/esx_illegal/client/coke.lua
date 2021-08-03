@@ -29,6 +29,7 @@ Citizen.CreateThread(function()
 			end
 
 			if IsControlJustReleased(0, Keys['E']) and not isProcessing then
+				isProcessing = true
 				ProcessCoke()
 			end
 		else
@@ -38,8 +39,6 @@ Citizen.CreateThread(function()
 end)
 
 function ProcessCoke()
-	isProcessing = true
-
 	exports['mythic_notify']:SendAlert('inform', 'Memproses Micin')
 	TriggerEvent("mythic_progbar:client:progress", {
 		name = "micin",

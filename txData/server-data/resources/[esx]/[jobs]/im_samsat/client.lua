@@ -35,7 +35,7 @@ end)
 
 function ActivateBlips()
 	local blip = AddBlipForCoord(Impound.RetrieveLocation.X, Impound.RetrieveLocation.Y, Impound.RetrieveLocation.Z)
-	SetBlipScale(blip, 0.7)
+	SetBlipScale(blip, 0.75)
 	SetBlipDisplay(blip, 4)
 	SetBlipSprite(blip, 524)
 	SetBlipColour(blip, 3)

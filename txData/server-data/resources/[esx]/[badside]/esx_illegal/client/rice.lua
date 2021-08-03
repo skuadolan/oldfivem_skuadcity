@@ -8,8 +8,8 @@ Citizen.CreateThread(function()
 		Citizen.Wait(10)
 		local coords = GetEntityCoords(PlayerPedId())
 
-		if GetDistanceBetweenCoords(coords, Config.CircleZones.WeedField.coords, true) < 50 then
-			SpawnWeedPlants()
+		if GetDistanceBetweenCoords(coords, Config.CircleZones.FarmField.coords, true) < 50 then
+			SpawnPadiPlants()
 			Citizen.Wait(500)
 		else
 			Citizen.Wait(500)
@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
 		local playerPed = PlayerPedId()
 		local coords = GetEntityCoords(playerPed)
 
-		if GetDistanceBetweenCoords(coords, Config.CircleZones.WeedProcessing.coords, true) < 5 then
+		if GetDistanceBetweenCoords(coords, Config.CircleZones.FarmProcess.coords, true) < 5 then
 			if not isProcessing then
 				ESX.ShowHelpNotification(_U('weed_processprompt'))
 			end
@@ -39,11 +39,11 @@ Citizen.CreateThread(function()
 end)
 
 function ProcessWeed()
-	exports['mythic_notify']:SendAlert('inform', 'Memproses Kecubung')
+	exports['mythic_notify']:SendAlert('inform', 'Memproses Padi')
 	TriggerEvent("mythic_progbar:client:progress", {
 		name = "",
 		duration = 1500,
-		label = "MEMPROSES KECUBUNG",
+		label = "MEMPROSES PADI",
 		useWhileDead = false,
 		canCancel = true,
 		controlDisables = {
@@ -64,15 +64,15 @@ function ProcessWeed()
 			-- Do Something If Event Wasn't Cancelled
 		end
 	end)
-	TriggerServerEvent('esx_illegal:processCannabis')
-	local timeLeft = Config.Delays.WeedProcessing / 1000
+	TriggerServerEvent('esx_illegal:processPadi')
+	local timeLeft = Config.Delays.FarmProcess / 1000
 	local playerPed = PlayerPedId()
 
 	while timeLeft > 0 do
 		Citizen.Wait(1000)
 		timeLeft = timeLeft - 1
 
-		if GetDistanceBetweenCoords(GetEntityCoords(playerPed), Config.CircleZones.WeedProcessing.coords, false) > 5 then
+		if GetDistanceBetweenCoords(GetEntityCoords(playerPed), Config.CircleZones.FarmProcess.coords, false) > 5 then
 			exports['mythic_notify']:SendAlert('inform', 'Gagal Memproses')
 			TriggerServerEvent('esx_illegal:cancelProcessing')
 			break
@@ -102,19 +102,17 @@ Citizen.CreateThread(function()
 			end
 
 			if IsControlJustReleased(0, Keys['E']) and not isPickingUp then
-				ESX.TriggerServerCallback('esx_illegal:getManyPolice', function(status)
-				if status then
-					isPickingUp = true
+				isPickingUp = true
 
 					ESX.TriggerServerCallback('esx_illegal:canPickUp', function(canPickUp)
 
 						if canPickUp then
-							exports['mythic_notify']:SendAlert('inform', 'Mengambil Kecubung')
+							exports['mythic_notify']:SendAlert('inform', 'Mengambil Padi')
 							TaskStartScenarioInPlace(playerPed, 'world_human_gardener_plant', 4000, false)
 							TriggerEvent("mythic_progbar:client:progress", {
 								name = "",
 								duration = 4500,
-								label = "MENGAMBIL KECUBUNG",
+								label = "MENGAMBIL PADI",
 								useWhileDead = false,
 								canCancel = true,
 								controlDisables = {
@@ -142,12 +140,12 @@ Citizen.CreateThread(function()
 			
 							ESX.Game.DeleteObject(nearbyObject)
 
-							exports['mythic_notify']:SendAlert('inform', 'Kecubung Terambil')
+							exports['mythic_notify']:SendAlert('inform', 'Padi Terambil')
 			
 							table.remove(weedPlants, nearbyID)
 							spawnedWeeds = spawnedWeeds - 1
 			
-							TriggerServerEvent('esx_illegal:pickedUpCannabis')
+							TriggerServerEvent('esx_illegal:pickedUpPadi')
 						else
 							exports['mythic_notify']:SendAlert('error', 'Inventory Full')
 						end
@@ -155,10 +153,6 @@ Citizen.CreateThread(function()
 						isPickingUp = false
 
 					end, 'kecubung')
-				else
-					ESX.ShowNotification('anda tidak bisa ~r~meladang!~s~ min ~g~2 polisi')
-				end
-			end)
 			end
 
 		else
@@ -177,12 +171,12 @@ AddEventHandler('onResourceStop', function(resource)
 	end
 end)
 
-function SpawnWeedPlants()
+function SpawnPadiPlants()
 	while spawnedWeeds < 15 do
 		Citizen.Wait(0)
 		local weedCoords = GenerateWeedCoords()
 
-		ESX.Game.SpawnLocalObject('prop_weed_02', weedCoords, function(obj)
+		ESX.Game.SpawnLocalObject('prop_veg_grass_01_a', weedCoords, function(obj)
 			PlaceObjectOnGroundProperly(obj)
 			FreezeEntityPosition(obj, true)
 
@@ -202,7 +196,7 @@ function ValidateWeedCoord(plantCoord)
 			end
 		end
 
-		if GetDistanceBetweenCoords(plantCoord, Config.CircleZones.WeedField.coords, false) > 50 then
+		if GetDistanceBetweenCoords(plantCoord, Config.CircleZones.FarmField.coords, false) > 50 then
 			validate = false
 		end
 
@@ -226,8 +220,8 @@ function GenerateWeedCoords()
 		math.randomseed(GetGameTimer())
 		local modY = math.random(-20, 20)
 
-		weedCoordX = Config.CircleZones.WeedField.coords.x + modX
-		weedCoordY = Config.CircleZones.WeedField.coords.y + modY
+		weedCoordX = Config.CircleZones.FarmField.coords.x + modX
+		weedCoordY = Config.CircleZones.FarmField.coords.y + modY
 
 		local coordZ = GetCoordZWeed(weedCoordX, weedCoordY)
 		local coord = vector3(weedCoordX, weedCoordY, coordZ)

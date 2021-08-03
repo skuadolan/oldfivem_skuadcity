@@ -16,6 +16,7 @@ Config.Delays = {
 	WeedProcessing = 400 * 4,
 	CokeProcessing = 400 * 4,
 	HeroinProcessing = 400 * 4,
+	FarmProcess = 400 * 4,
 }
 
 --Drug Dealer item Prices
@@ -23,6 +24,7 @@ Config.DrugDealerItems = {
 	psianida = 1450,
 	pmicin = 1350,
 	pkecubung = 1250,
+	rice = 20,
 }
 
 --License Shop Item Prices
@@ -90,4 +92,3 @@ Config.CircleZones = {
 	
 	--MoneyWash
 	MoneyWash = {coords = vector3(-1001.61, 4847.44, 275.01), blimpcoords = vector3(1119.87, -3195.44, -39.40), name = _U('blip_moneywash'), color = 1, sprite = 500, radius = 0.0, enabled = true},
-}

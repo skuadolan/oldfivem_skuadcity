@@ -15,6 +15,7 @@ server_scripts {
 	'server/heroin.lua',
 	'server/licenseshop.lua',
 	'server/moneywash.lua',
+	--'server/rice.lua',
 }
 
 client_scripts {
@@ -27,7 +28,7 @@ client_scripts {
 	'client/heroin.lua',
 	'client/licenseshop.lua',
 	'client/moneywash.lua',
-	'client/teleport.lua',
+	--'client/rice.lua',
 }
 
 dependency 'es_extended'

@@ -29,6 +29,7 @@ Citizen.CreateThread(function()
 			end
 
 			if IsControlJustReleased(0, Keys['E']) and not isProcessing then
+				isProcessing = true
 				ProcessHeroin()
 			end
 		else
@@ -38,8 +39,6 @@ Citizen.CreateThread(function()
 end)
 
 function ProcessHeroin()
-	isProcessing = true
-
 	exports['mythic_notify']:SendAlert('inform', 'Memproses Sianida')
 	TriggerEvent("mythic_progbar:client:progress", {
 		name = "",

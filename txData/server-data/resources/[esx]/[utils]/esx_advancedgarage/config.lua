@@ -18,11 +18,11 @@ Config.DeleteMarker = {Type = 1, r = 255, g = 0, b = 0, x = 3.45, y = 3.45, z = 
 Config.PoundMarker = {Type = 1, r = 255, g = 0, b = 0, x = 3.45, y = 3.45, z = 1.45} -- Blue Color / Standard Size Circle.
 Config.JPoundMarker = {Type = 1, r = 255, g = 0, b = 0, x = 3.45, y = 3.45, z = 1.45} -- Red Color / Standard Size Circle.
 
-Config.GarageBlip = {Sprite = 290, Color = 38, Display = 2, Scale = 1.0} -- Public Garage Blip.
-Config.PGarageBlip = {Sprite = 290, Color = 53, Display = 2, Scale = 1.0} -- Private Garage Blip.
-Config.PoundBlip = {Sprite = 67, Color = 64, Display = 2, Scale = 1.0} -- Pound Blip.
-Config.JGarageBlip = {Sprite = 290, Color = 49, Display = 2, Scale = 1.0} -- Job Garage Blip.
-Config.JPoundBlip = {Sprite = 67, Color = 49, Display = 2, Scale = 1.0} -- Job Pound Blip.
+Config.GarageBlip = {Sprite = 290, Color = 38, Display = 2, Scale = 0.75} -- Public Garage Blip.
+Config.PGarageBlip = {Sprite = 290, Color = 53, Display = 2, Scale = 0.75} -- Private Garage Blip.
+Config.PoundBlip = {Sprite = 67, Color = 64, Display = 2, Scale = 0.75} -- Pound Blip.
+Config.JGarageBlip = {Sprite = 290, Color = 49, Display = 2, Scale = 0.75} -- Job Garage Blip.
+Config.JPoundBlip = {Sprite = 67, Color = 49, Display = 2, Scale = 0.75} -- Job Pound Blip.
 
 Config.SeparateGarage = true
 Config.LegacyFuel = true

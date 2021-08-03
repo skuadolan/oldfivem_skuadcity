@@ -1,10 +1,10 @@
 
 ================================================================
-======== FXServer starting - 7/30/2021, 17:20:22
+======== FXServer starting - 8/3/2021, 14:01:08
 ================================================================
 [38;5;161m[    c-scripting-core] Creating script environments for _cfx_internal
 [38;5;73m[ citizen-server-impl] Scanning resources.
-[38;5;73m[ citizen-server-impl] Found 142 resources.
+[38;5;73m[ citizen-server-impl] Found 141 resources.
 [38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
 [38;5;73m[ citizen-server-impl]     - baseevents
 [38;5;73m[ citizen-server-impl]     - im_samsat
@@ -13,7 +13,6 @@
 [38;5;73m[ citizen-server-impl]     - pNotify
 [38;5;73m[ citizen-server-impl]     - sessionmanager
 [38;5;73m[ citizen-server-impl]     - slotmachine_1
-[38;5;73m[ citizen-server-impl]     - whitelist
 [38;5;73m[ citizen-server-impl] 
 [38;5;73m[ citizen-server-impl] Please update these resources.
 [38;5;161m[    c-scripting-core] Creating script environments for sessionmanager
@@ -179,15 +178,16 @@
 [38;5;73m[ citizen-server-impl] Started resource simpledrift
 [38;5;73m[ citizen-server-impl] Started resource radialmenu
 [38;5;161m[    c-scripting-core] Creating script environments for RealisticVehicleFailure
-[38;5;73m[ citizen-server-impl] Started resource RealisticVehicleFailure
-[38;5;161m[    c-scripting-core] Creating script environments for svehiclelocks
-[38;5;73m[ citizen-server-impl] Started resource svehiclelocks
-[38;5;161m[    c-scripting-core] Creating script environments for SimpleCarHUD
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 205 milliseconds
 [38;5;73m[ citizen-server-impl] Started resource SimpleCarHUD
 [38;5;161m[    c-scripting-core] Creating script environments for LegacyFuel
 [38;5;73m[ citizen-server-impl] Started resource LegacyFuel
 [38;5;161m[    c-scripting-core] Creating script environments for transfervehicle
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 142 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 133 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 176 milliseconds
 [38;5;73m[ citizen-server-impl] Started resource transfervehicle
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 112 milliseconds
 [38;5;73m[ citizen-server-impl] Started resource mythic_interiors
 [38;5;161m[    c-scripting-core] Creating script environments for meta_libs
 [38;5;73m[ citizen-server-impl] Started resource meta_libs
@@ -200,7 +200,15 @@
 [38;5;161m[    c-scripting-core] Creating script environments for ls-radio
 [38;5;73m[ citizen-server-impl] Started resource ls-radio
 [38;5;161m[    c-scripting-core] Creating script environments for saltychat
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 143 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 105 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 164 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 133 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 192 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 126 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 101 milliseconds
 [38;5;75m[    script:saltychat] Instantiated instance of script SaltyServer.VoiceManager.
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 128 milliseconds
 [38;5;73m[ citizen-server-impl] Started resource saltychat
 [38;5;73m[ citizen-server-impl] Started resource push_holster
 [38;5;73m[ citizen-server-impl] Started resource wep_damage
@@ -212,8 +220,10 @@
 [38;5;161m[    c-scripting-core] Creating script environments for blackjack
 [38;5;73m[ citizen-server-impl] Started resource blackjack
 [38;5;161m[    c-scripting-core] Creating script environments for ruletka
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 165 milliseconds
 [38;5;73m[ citizen-server-impl] Started resource ruletka
 [38;5;161m[    c-scripting-core] Creating script environments for sloty
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 112 milliseconds
 [38;5;73m[ citizen-server-impl] Started resource sloty
 [38;5;161m[    c-scripting-core] Creating script environments for skd_core
 [38;5;73m[ citizen-server-impl] Started resource skd_core
@@ -230,202 +240,138 @@
 [38;5;73m[ citizen-server-impl] Started resource carsounds
 [38;5;73m[ citizen-server-impl] Couldn't find resource cars.
 [38;5;73m[ citizen-server-impl] Couldn't find resource motorcycles.
-[38;5;73m[ citizen-server-impl] Asset whitelist/BO105.ytd uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset whitelist/TNILC.yft uses 28.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/TNILC.ytd uses 152.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset whitelist/TNILC_hi.yft uses 28.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/barracuda-j.ytd uses 46.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/elantrapol.yft uses 17.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/elantrapol.ytd uses 17.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/elantrapol_hi.yft uses 17.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/ems_gs1200.yft uses 17.5 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/ems_gs1200_hi.yft uses 17.5 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/emsc+hi.ytd uses 18.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/emsc.ytd uses 80.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset whitelist/emsf.yft uses 22.8 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/emsf.ytd uses 72.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset whitelist/emsf_hi.yft uses 24.0 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/emst.yft uses 18.6 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/emst.ytd uses 69.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset whitelist/evopol.ytd uses 20.2 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/fbi2+hi.ytd uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset whitelist/fbi2.ytd uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset whitelist/flatbed.ytd uses 18.5 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/hiacepol.ytd uses 32.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/insurgent2.ytd uses 32.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/lguard+hi.ytd uses 32.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/lguard.yft uses 23.0 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/lguard.ytd uses 32.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/lguard_hi.yft uses 23.0 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/mazda6.yft uses 28.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/mazda6.ytd uses 36.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/mazda6_hi.yft uses 28.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/pajeropol+hi.ytd uses 19.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/pajeropol.ytd uses 19.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/pbus+hi.ytd uses 19.5 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/pbus.ytd uses 19.5 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/polantas.yft uses 17.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/polantas.ytd uses 46.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/polantas_HI.yft uses 17.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/polhyundai.yft uses 17.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/polhyundai.ytd uses 46.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/polhyundai_HI.yft uses 17.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/police2.yft uses 17.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/police2.ytd uses 18.5 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/police2_hi.yft uses 17.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/police3+hi.ytd uses 16.5 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/police3.ytd uses 16.5 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/polmav+hi.ytd uses 20.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/polmav.ytd uses 24.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/polp1.ytd uses 40.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/psp_bmwgs.yft uses 16.8 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/psp_bmwgs_hi.yft uses 16.8 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/r1200rtp.ytd uses 44.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/sheriff.yft uses 23.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/sheriff2+hi.ytd uses 46.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/sheriff2.ytd uses 46.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/trailcat.ytd uses 160.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset whitelist/triton.ytd uses 20.8 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/wolf1.ytd uses 34.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/zr2+hi.ytd uses 20.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/zr2.yft uses 27.8 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/zr2.ytd uses 20.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset whitelist/zr2_hi.yft uses 27.8 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Started resource whitelist
+[38;5;73m[ citizen-server-impl] Couldn't find resource whitelist.
 [38;5;66m[          svadhesive] Authenticating server license key...
 [38;5;159m[  script:mysql-async] [mysql-async] [ERROR] connect ETIMEDOUT
-[38;5;84m[      script:monitor] [txAdminClient] Threads and commands set up. All Ready.
 [38;5;220m[  script:es_extended] [es_extended] [INFO] ESX developed by ESX-Org has been initialized
+[38;5;84m[      script:monitor] [txAdminClient] Threads and commands set up. All Ready.
 [38;5;79m[script:esx_advancedg] esx_advancedgarage: Parking Vehicles on restart is currently set to false.
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 306 milliseconds
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addoninventory] [252ms] SELECT * FROM items : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addonaccount] [252ms] SELECT * FROM addon_account : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [es_extended] [267ms] SELECT * FROM jobs : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [es_extended] [289ms] SELECT * FROM items : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_shops] [214ms] SELECT * FROM shops LEFT JOIN items ON items.name = shops.item : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [216ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshop] [285ms] SELECT * FROM vehicle_categories : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_joblisting] [241ms] SELECT name, label FROM jobs WHERE whitelisted = ? : [false]
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [260ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [267ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [264ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [264ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [269ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [273ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 354 milliseconds
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [es_extended] [348ms] SELECT * FROM items : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [es_extended] [356ms] SELECT * FROM jobs : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addonaccount] [354ms] SELECT * FROM addon_account : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshop] [351ms] SELECT * FROM vehicle_categories : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addoninventory] [398ms] SELECT * FROM items : []
 [38;5;133m[     script:dpemotes] 
 [38;5;133m[     script:dpemotes] dp Emotes (dpemotes) is up to date. (173)
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [305ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [311ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [311ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [312ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [312ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [317ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [318ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [323ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [325ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [328ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [382ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [383ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;66m[       script:motels] motels incorrect mysql_connection_string format. Needs 'server=myserver;uid=myuser;password=mypassword;database=mydatabase'
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [404ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_joblisting] [379ms] SELECT name, label FROM jobs WHERE whitelisted = ? : [false]
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [356ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [365ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [372ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [381ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_shops] [399ms] SELECT * FROM shops LEFT JOIN items ON items.name = shops.item : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [396ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [398ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [402ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [413ms] SELECT * FROM `vehicle_import_categories` : []
 [38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [417ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [420ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [420ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [422ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [422ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [422ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [424ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [433ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [434ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [442ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [449ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [450ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [451ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [452ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [453ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [453ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [454ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [456ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [457ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [462ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [461ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [462ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [467ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [427ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [430ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [426ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [446ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;66m[       script:motels] motels incorrect mysql_connection_string format. Needs 'server=myserver;uid=myuser;password=mypassword;database=mydatabase'
 [38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [463ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [465ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [470ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [467ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [467ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [466ms] SELECT * FROM `vehicle_import_categories` : []
 [38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [472ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_weaponshop] [458ms] SELECT * FROM weashops : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_society] [439ms] SELECT * FROM jobs : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshop] [248ms] SELECT * FROM vehicles : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [es_extended] [306ms] SELECT * FROM job_grades : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [302ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [474ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addoninventory] [412ms] SELECT * FROM addon_inventory : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [568ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [568ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [327ms] SELECT * FROM `vehicle_import_categories` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_datastore] [563ms] SELECT * FROM datastore : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addonaccount] [341ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["caution"]
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [304ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [305ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [265ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [314ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [340ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [299ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [352ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [352ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [312ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [307ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [319ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [335ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [336ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [346ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [293ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [348ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [255ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [262ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [263ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [359ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [309ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [285ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [293ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [240ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [242ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [298ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [300ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [301ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [319ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [336ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [486ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [504ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [492ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [494ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [495ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [499ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [504ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [504ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [504ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [506ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [506ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [513ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [512ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [513ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [511ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [513ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [516ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [517ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [518ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [522ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [525ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [528ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [528ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [530ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [614ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [616ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [614ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [616ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 108 milliseconds
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [622ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [617ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [618ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [623ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [624ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [630ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addonaccount] [322ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["caution"]
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshop] [342ms] SELECT * FROM vehicles : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [631ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [es_extended] [402ms] SELECT * FROM job_grades : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [284ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addoninventory] [336ms] SELECT * FROM addon_inventory : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_weaponshop] [632ms] SELECT * FROM weashops : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [286ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [286ms] SELECT * FROM `vehicles_import` : []
 [38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [288ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [293ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [298ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [302ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [308ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [302ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [308ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [313ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [314ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [313ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [316ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [318ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [342ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [344ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_society] [338ms] SELECT * FROM job_grades : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [272ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [364ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [270ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [273ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [369ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [369ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [369ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addoninventory] [272ms] SELECT * FROM addon_inventory_items WHERE inventory_name = ? : ["motels"]
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [294ms] SELECT * FROM `vehicles_import` : []
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addonaccount] [281ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["motels_bed_black_money"]
-[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [234ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [214ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [214ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [214ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [214ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_society] [609ms] SELECT * FROM jobs : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_datastore] [626ms] SELECT * FROM datastore : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [574ms] SELECT * FROM `vehicle_import_categories` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [213ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [213ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [177ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [177ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [178ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [178ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [215ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [341ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [352ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [355ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [278ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [279ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [282ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [278ms] SELECT * FROM `vehicles_import` : []
 [38;5;66m[          svadhesive] Server license key authentication succeeded. Welcome!
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [289ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [289ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [286ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [290ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [295ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [295ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [284ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [299ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [290ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [289ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [299ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [294ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [296ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [305ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [321ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [310ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [314ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [202ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [203ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [203ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [204ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [212ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [208ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [214ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [215ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [222ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [224ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_addonaccount] [155ms] SELECT * FROM addon_account_data WHERE account_name = ? : ["motels_bed_black_money"]
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [233ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [361ms] SELECT * FROM `vehicles_import` : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_society] [175ms] SELECT * FROM job_grades : []
+[38;5;159m[  script:mysql-async] [MySQL] [WARNING] [esx_vehicleshopimport] [187ms] SELECT * FROM `vehicles_import` : []
 [38;5;73m[ citizen-server-impl]         fff                          
 [38;5;73m[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
 [38;5;73m[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
@@ -438,12 +384,49 @@
 [38;5;73m[ citizen-server-impl] Monetize your server using Tebex! Visit https://tebex.io/fivem for more info.
 [38;5;73m[ citizen-server-impl] ================
 [38;5;73m[ citizen-server-impl] 
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 144 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 185 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 204 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 227 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 157 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 146 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 256 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 349 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 421 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 158 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 167 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 154 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 118 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 113 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 160 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 171 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 152 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 165 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 160 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 104 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 205 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 109 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 201 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 159 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 102 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 121 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 170 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 191 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 103 milliseconds
 [38;5;134m[      script:hardcap] Connecting: R`
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 104 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 160 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 131 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 172 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 212 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 113 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 166 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 134 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 282 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 149 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 169 milliseconds
 [38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 563 milliseconds
-[38;5;147m[script:esx_inventory] SCRIPT ERROR: @esx_inventoryhud/server/main.lua:630: attempt to index a nil value (local 'xPlayer')
-[38;5;147m[script:esx_inventory] > TriggerServerCallback (@es_extended/server/functions.lua:160)
-[38;5;147m[script:esx_inventory] > handler (@es_extended/server/common.lua:72)
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 1118 milliseconds
 [38;5;147m[script:esx_inventory] SCRIPT ERROR: @esx_inventoryhud/server/main.lua:630: attempt to index a nil value (local 'xPlayer')
 [38;5;147m[script:esx_inventory] > TriggerServerCallback (@es_extended/server/functions.lua:160)
 [38;5;147m[script:esx_inventory] > handler (@es_extended/server/common.lua:72)
@@ -476,135 +459,12 @@
 [38;5;189m[        script:sloty] > ref (@sloty/server.lua:103)
 [38;5;189m[        script:sloty] > <unknown> (@mysql-async/mysql-async.js:15543)
 [38;5;159m[  script:mysql-async] 
-[38;5;161m[    c-scripting-core] Creating script environments for esx_stores
-[38;5;73m[ citizen-server-impl] Started resource esx_stores
-[38;5;73m[ citizen-server-impl] Stopping resource esx_stores
-[38;5;161m[    c-scripting-core] Creating script environments for esx_stores
-[38;5;73m[ citizen-server-impl] Started resource esx_stores
-[38;5;73m[ citizen-server-impl] Stopping resource esx_stores
-[38;5;73m[ citizen-server-impl] Scanning resources.
-[38;5;73m[ citizen-server-impl] Found 0 resources, and refreshed 141 resources.
-[38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
-[38;5;73m[ citizen-server-impl]     - baseevents
-[38;5;73m[ citizen-server-impl]     - im_samsat
-[38;5;73m[ citizen-server-impl]     - ls-radio
-[38;5;73m[ citizen-server-impl]     - new_banking
-[38;5;73m[ citizen-server-impl]     - pNotify
-[38;5;73m[ citizen-server-impl]     - sessionmanager
-[38;5;73m[ citizen-server-impl]     - slotmachine_1
-[38;5;73m[ citizen-server-impl]     - whitelist
-[38;5;73m[ citizen-server-impl] 
-[38;5;73m[ citizen-server-impl] Please update these resources.
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 217 milliseconds
-[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;73m[ citizen-server-impl] Scanning resources.
-[38;5;73m[ citizen-server-impl] Found 1 resources, and refreshed 141 resources.
-[38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
-[38;5;73m[ citizen-server-impl]     - baseevents
-[38;5;73m[ citizen-server-impl]     - im_samsat
-[38;5;73m[ citizen-server-impl]     - ls-radio
-[38;5;73m[ citizen-server-impl]     - new_banking
-[38;5;73m[ citizen-server-impl]     - pNotify
-[38;5;73m[ citizen-server-impl]     - sessionmanager
-[38;5;73m[ citizen-server-impl]     - slotmachine_1
-[38;5;73m[ citizen-server-impl]     - whitelist
-[38;5;73m[ citizen-server-impl] 
-[38;5;73m[ citizen-server-impl] Please update these resources.
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 192 milliseconds
-[38;5;161m[    c-scripting-core] Creating script environments for el_business
-[38;5;73m[ citizen-server-impl] Started resource el_business
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 185 milliseconds
-[38;5;171m[  script:el_business] [el_business] Syncing businesses from database
-[38;5;171m[  script:el_business] [el_business] Started!
-[38;5;171m[  script:el_business] [el_business] !!WARNING!! PLEASE DON'T RESTART THIS SCRIPT, USE THE BUILTIN COMMAND /business reload TO RELOAD DATA FROM DATABASE
-[38;5;171m[  script:el_business] [el_business] Performing version check...
-[38;5;171m[  script:el_business] [el_business] Synced 2 business(es) from database
-[38;5;171m[  script:el_business] [el_business] No updates found!
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 158 milliseconds
-[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;73m[ citizen-server-impl] Stopping resource el_business
-[38;5;161m[    c-scripting-core] Creating script environments for el_business
-[38;5;73m[ citizen-server-impl] Started resource el_business
-[38;5;171m[  script:el_business] [el_business] Syncing businesses from database
-[38;5;171m[  script:el_business] [el_business] Started!
-[38;5;171m[  script:el_business] [el_business] !!WARNING!! PLEASE DON'T RESTART THIS SCRIPT, USE THE BUILTIN COMMAND /business reload TO RELOAD DATA FROM DATABASE
-[38;5;171m[  script:el_business] [el_business] Performing version check...
-[38;5;171m[  script:el_business] [el_business] Synced 2 business(es) from database
-[38;5;171m[  script:el_business] [el_business] No updates found!
-[38;5;73m[ citizen-server-impl] Stopping resource skd_core
-[38;5;161m[    c-scripting-core] Creating script environments for skd_core
-[38;5;73m[ citizen-server-impl] Started resource skd_core
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 128 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 157 milliseconds
-[38;5;73m[ citizen-server-impl] Stopping resource skd_core
-[38;5;161m[    c-scripting-core] Creating script environments for skd_core
-[38;5;73m[ citizen-server-impl] Started resource skd_core
-[38;5;73m[ citizen-server-impl] Stopping resource el_business
-[38;5;161m[    c-scripting-core] Creating script environments for el_business
-[38;5;73m[ citizen-server-impl] Started resource el_business
-[38;5;171m[  script:el_business] [el_business] Syncing businesses from database
-[38;5;171m[  script:el_business] [el_business] Started!
-[38;5;171m[  script:el_business] [el_business] !!WARNING!! PLEASE DON'T RESTART THIS SCRIPT, USE THE BUILTIN COMMAND /business reload TO RELOAD DATA FROM DATABASE
-[38;5;171m[  script:el_business] [el_business] Performing version check...
-[38;5;171m[  script:el_business] [el_business] Synced 2 business(es) from database
-[38;5;171m[  script:el_business] [el_business] No updates found!
-[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
+[38;5;161m[    c-scripting-core] Creating script environments for esx_farm
+[38;5;73m[ citizen-server-impl] Started resource esx_farm
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 178 milliseconds
 [38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
-[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
-[38;5;171m[  script:el_business] [el_business] Syncing businesses from database
-[38;5;171m[  script:el_business] [el_business] Synced 2 business(es) from database
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 126 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 154 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 161 milliseconds
 [38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;73m[ citizen-server-impl] Stopping resource el_business
-[38;5;161m[    c-scripting-core] Creating script environments for el_business
-[38;5;73m[ citizen-server-impl] Started resource el_business
-[38;5;171m[  script:el_business] [el_business] Syncing businesses from database
-[38;5;171m[  script:el_business] [el_business] Started!
-[38;5;171m[  script:el_business] [el_business] !!WARNING!! PLEASE DON'T RESTART THIS SCRIPT, USE THE BUILTIN COMMAND /business reload TO RELOAD DATA FROM DATABASE
-[38;5;171m[  script:el_business] [el_business] Performing version check...
-[38;5;171m[  script:el_business] [el_business] Synced 2 business(es) from database
-[38;5;171m[  script:el_business] [el_business] No updates found!
-[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;171m[  script:el_business] [el_business] Player steam:110000134a401f0 bought stock, delivering in: 516s
-[38;5;171m[  script:el_business] [el_business] Player steam:110000134a401f0 bought stock, delivering in: 731s
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 136 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 160 milliseconds
-[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 121 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 189 milliseconds
-[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
-[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
-[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;171m[  script:el_business] [el_business] Player steam:110000134a401f0 bought stock, delivering in: 376s
-[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 102 milliseconds
-[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;171m[  script:el_business] [el_business] Player steam:110000134a401f0 bought stock, delivering in: 351s
-[38;5;171m[  script:el_business] [el_business] Player steam:110000134a401f0 bought stock, delivering in: 830s
-[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;73m[ citizen-server-impl] Stopping resource el_business
-[38;5;161m[    c-scripting-core] Creating script environments for el_business
-[38;5;73m[ citizen-server-impl] Started resource el_business
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 157 milliseconds
-[38;5;171m[  script:el_business] [el_business] Syncing businesses from database
-[38;5;171m[  script:el_business] [el_business] Started!
-[38;5;171m[  script:el_business] [el_business] !!WARNING!! PLEASE DON'T RESTART THIS SCRIPT, USE THE BUILTIN COMMAND /business reload TO RELOAD DATA FROM DATABASE
-[38;5;171m[  script:el_business] [el_business] Performing version check...
-[38;5;171m[  script:el_business] [el_business] Synced 2 business(es) from database
-[38;5;171m[  script:el_business] [el_business] No updates found!
-[38;5;171m[  script:el_business] [el_business] Player steam:110000134a401f0 bought stock, delivering in: 692s
-[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved player "Dian Nugroho"
-[38;5;220m[  script:es_extended] [es_extended] [INFO] Saved 1 player(s)
-[38;5;73m[ citizen-server-impl] Sending heartbeat to https://servers-ingress-live.fivem.net/ingress
-[38;5;73m[ citizen-server-impl] Stopping resource el_business
-[38;5;161m[    c-scripting-core] Creating script environments for el_business
-[38;5;73m[ citizen-server-impl] Started resource el_business
-[38;5;171m[  script:el_business] [el_business] Syncing businesses from database
-[38;5;171m[  script:el_business] [el_business] Started!
-[38;5;171m[  script:el_business] [el_business] !!WARNING!! PLEASE DON'T RESTART THIS SCRIPT, USE THE BUILTIN COMMAND /business reload TO RELOAD DATA FROM DATABASE
-[38;5;171m[  script:el_business] [el_business] Performing version check...
-[38;5;171m[  script:el_business] [el_business] Synced 2 business(es) from database
-[38;5;171m[  script:el_business] [el_business] No updates found!
-[38;5;171m[  script:el_business] [el_business] Player steam:110000134a401f0 bought stock, delivering in: 1s
-[38;5;171m[  script:el_business] [el_business] Player steam:110000134a401f0 bought stock, delivering in: 1s
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 178 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 114 milliseconds
+[38;5;73m[ citizen-server-impl] sync thread hitch warning: timer interval of 129 milliseconds
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 153 milliseconds
