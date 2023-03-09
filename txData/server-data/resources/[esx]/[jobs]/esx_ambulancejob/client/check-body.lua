@@ -198,7 +198,8 @@ end
   end
   
   function Notify(message)
-	  ESX.ShowNotification(message)
+	exports['mythic_notify']:SendAlert('inform', message)
+	  --ESX.ShowNotification(message)
   end
   
   function DrawText3D(x, y, z, text, scale)

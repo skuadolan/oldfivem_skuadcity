@@ -1,6 +1,6 @@
 Locales['en'] = {
   -- regulars
-  ['press_e'] = 'Press ~INPUT_CONTEXT~ to check what the person ~r~died~s~ of',
+  ['press_e'] = 'Press ~INPUT_CONTEXT~ untuk mengecek korban',
 	['hardmeele'] = 'terbentur di kepala',
 	['bullet'] = 'peluru tajam',
 	['knifes'] = 'tertusuk',

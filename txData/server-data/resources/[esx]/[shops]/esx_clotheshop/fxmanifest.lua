@@ -4,10 +4,12 @@ game 'gta5'
 
 description 'ESX Clothes Shop'
 
-version '1.1.0'
+version '1.6.0'
+
+shared_script '@es_extended/imports.lua'
 
 server_scripts {
-	'@mysql-async/lib/MySQL.lua',
+	'@oxmysql/lib/MySQL.lua',
 	'@es_extended/locale.lua',
 	'locales/br.lua',
 	'locales/de.lua',
@@ -35,4 +37,7 @@ client_scripts {
 	'client/main.lua'
 }
 
-dependency 'es_extended'
+dependencies {
+	'es_extended',
+	'esx_skin'
+}

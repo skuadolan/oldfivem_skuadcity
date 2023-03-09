@@ -41,7 +41,7 @@ Config.Jobs.lumberjack = {
 				{
 					name = _U('lj_wood'),
 					db_name = 'wood',
-					time = 0.4,
+					time = 3,
 					max = 20,
 					add = 1,
 					remove = 1,
@@ -59,13 +59,13 @@ Config.Jobs.lumberjack = {
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
 			Blip = false,
-			Name = _U('lj_cutwood'),
+			Name = _U('lj_woodcutting'),
 			Type = 'work',
 			Item = {
 				{
 					name = _U('lj_cutwood'),
 					db_name = 'cutted_wood',
-					time = 0.4,
+					time = 5,
 					max = 20,
 					add = 1,
 					remove = 1,
@@ -89,7 +89,7 @@ Config.Jobs.lumberjack = {
 				{
 					name = _U('lj_planks'),
 					db_name = 'packaged_plank',
-					time = 0.4,
+					time = 4,
 					max = 100,
 					add = 5,
 					remove = 1,
@@ -152,10 +152,10 @@ Config.Jobs.lumberjack = {
 			Item = {
 				{
 					name = _U('delivery'),
-					time = 0.2,
+					time = 0.5,
 					remove = 1,
 					max = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 50,
+					price = 13,
 					requires = 'packaged_plank',
 					requires_name = _U('lj_planks'),
 					drop = 100

@@ -1,18 +1,18 @@
 [
   {
-    "name": "dianadi021",
+    "name": "kang_mas1",
     "master": true,
-    "password_hash": "$2a$11$oJScEyGLUl35wGhyiRoaSuDz0lDlfcA0Fju/.UET7/Feazjys.JwG",
+    "password_hash": "$2a$11$EM6ZwhmKbhHeZtMlqN9yrOLexk6so0mEUmyQHqMY6Db6EL2gfyI0O",
     "providers": {
       "citizenfx": {
-        "id": "dianadi021",
-        "identifier": "fivem:192461",
+        "id": "kang_mas1",
+        "identifier": "fivem:9534993",
         "data": {
-          "nameid": "https://forum.cfx.re/internal/user/192461",
-          "name": "dianadi021",
-          "profile": "https://forum.cfx.re/u/dianadi021",
-          "picture": "https://forum.cfx.re/user_avatar/forum.cfx.re/dianadi021/256/85195_2.png",
-          "sub": "de93da9c6bf8c015179499b45994db6ade7447e6b5dbcc3ac94771901baf2ae8"
+          "sub": "63ab2463b19f265f2487b40fc5a97260",
+          "nameid": "https://forum.cfx.re/internal/user/9534993",
+          "name": "kang_mas1",
+          "picture": "https://forum.cfx.re/user_avatar/forum.cfx.re/kang_mas1/256/3233517_2.png",
+          "profile": "https://forum.cfx.re/u/kang_mas1"
         }
       }
     },

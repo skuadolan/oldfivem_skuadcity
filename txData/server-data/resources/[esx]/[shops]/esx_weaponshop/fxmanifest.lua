@@ -4,20 +4,21 @@ game 'gta5'
 
 description 'ESX Weapon Shop'
 
-version '1.1.0'
+version '1.6.0'
+
+shared_scripts {
+	'@es_extended/imports.lua',
+	'@es_extended/locale.lua',
+	'locales/*.lua',
+	'config.lua'
+}
 
 server_scripts {
-	'@mysql-async/lib/MySQL.lua',
-	'@es_extended/locale.lua',
-	'locales/id.lua',
-	'config.lua',
+	'@oxmysql/lib/MySQL.lua',
 	'server/main.lua'
 }
 
 client_scripts {
-	'@es_extended/locale.lua',
-	'locales/id.lua',
-	'config.lua',
 	'client/main.lua'
 }
 

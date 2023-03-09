@@ -1,3 +1,4 @@
+
 fx_version 'adamant'
 
 game 'gta5'
@@ -16,7 +17,6 @@ files {
 client_scripts{
     'config.lua',
     'client/main.lua',
-	'client/HideInTrunk/client.lua'
 }
 
 server_scripts{
@@ -24,5 +24,3 @@ server_scripts{
     'config.lua',
     'server/main.lua',
 }
-
-dependency 'es_extended'

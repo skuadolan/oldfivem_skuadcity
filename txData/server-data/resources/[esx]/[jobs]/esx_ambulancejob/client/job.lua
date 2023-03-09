@@ -58,7 +58,8 @@ function OpenMobileAmbulanceActionsMenu()
 				if data.current.value == 'search' then
 					TriggerServerEvent('esx_ambulancejob:svsearch')
 				elseif closestPlayer == -1 or closestDistance > 1.0 then
-					ESX.ShowNotification(_U('no_players'))
+					exports['mythic_notify']:SendAlert('error', _U('no_players'))
+					--ESX.ShowNotification(_U('no_players'))
 				else
 					if data.current.value == 'revive' then
 						revivePlayer(closestPlayer)
@@ -72,20 +73,24 @@ function OpenMobileAmbulanceActionsMenu()
 									local playerPed = PlayerPedId()
 
 									isBusy = true
-									ESX.ShowNotification(_U('heal_inprogress'))
+									exports['mythic_notify']:SendAlert('inform', _U('heal_inprogress'))
+									--ESX.ShowNotification(_U('heal_inprogress'))
 									TaskStartScenarioInPlace(playerPed, 'CODE_HUMAN_MEDIC_TEND_TO_DEAD', 0, true)
 									Citizen.Wait(10000)
 									ClearPedTasks(playerPed)
 
 									TriggerServerEvent('esx_ambulancejob:removeItem', 'bandage')
 									TriggerServerEvent('esx_ambulancejob:heal', GetPlayerServerId(closestPlayer), 'small')
-									ESX.ShowNotification(_U('heal_complete', GetPlayerName(closestPlayer)))
+									exports['mythic_notify']:SendAlert('success', _U('heal_complete', GetPlayerName(closestPlayer)))
+									--ESX.ShowNotification(_U('heal_complete', GetPlayerName(closestPlayer)))
 									isBusy = false
 								else
-									ESX.ShowNotification(_U('player_not_conscious'))
+									exports['mythic_notify']:SendAlert('error', _U('player_not_conscious'))
+									--ESX.ShowNotification(_U('player_not_conscious'))
 								end
 							else
-								ESX.ShowNotification(_U('not_enough_bandage'))
+								exports['mythic_notify']:SendAlert('error', _U('not_enough_bandage'))
+								--ESX.ShowNotification(_U('not_enough_bandage'))
 							end
 						end, 'bandage')
 
@@ -96,16 +101,19 @@ function OpenMobileAmbulanceActionsMenu()
 								
 						local amount = tonumber(data.value)
 						if amount == nil then
-							ESX.ShowNotification(_U('amount_invalid'))
+							exports['mythic_notify']:SendAlert('error', _U('amount_invalid'))
+							--ESX.ShowNotification(_U('amount_invalid'))
 						else
 							menu.close()
 							local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 							if closestPlayer == -1 or closestDistance > 3.0 then
-								ESX.ShowNotification(_U('no_players'))
+								exports['mythic_notify']:SendAlert('error', _U('no_players'))
+								--ESX.ShowNotification(_U('no_players'))
 							else
 								TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_ambulance', 'Ambulance', amount)
 								TriggerServerEvent("esx:ambulancejob", GetPlayerName(closestPlayer), amount)
-								ESX.ShowNotification(_U('billing_sent'))
+								exports['mythic_notify']:SendAlert('inform', _U('billing_sent'))
+								--ESX.ShowNotification(_U('billing_sent'))
 							end
 						end		
 					end, function(data, menu)
@@ -123,20 +131,24 @@ function OpenMobileAmbulanceActionsMenu()
 									local playerPed = PlayerPedId()
 
 									isBusy = true
-									ESX.ShowNotification(_U('heal_inprogress'))
+									exports['mythic_notify']:SendAlert('inform', _U('heal_inprogress'))
+									--ESX.ShowNotification(_U('heal_inprogress'))
 									TaskStartScenarioInPlace(playerPed, 'CODE_HUMAN_MEDIC_TEND_TO_DEAD', 0, true)
 									Citizen.Wait(10000)
 									ClearPedTasks(playerPed)
 
 									TriggerServerEvent('esx_ambulancejob:removeItem', 'medikit')
 									TriggerServerEvent('esx_ambulancejob:heal', GetPlayerServerId(closestPlayer), 'big')
-									ESX.ShowNotification(_U('heal_complete', GetPlayerName(closestPlayer)))
+									exports['mythic_notify']:SendAlert('success', _U('heal_complete', GetPlayerName(closestPlayer)))
+									--ESX.ShowNotification(_U('heal_complete', GetPlayerName(closestPlayer)))
 									isBusy = false
 								else
-									ESX.ShowNotification(_U('player_not_conscious'))
+									exports['mythic_notify']:SendAlert('error', _U('player_not_conscious'))
+									--ESX.ShowNotification(_U('player_not_conscious'))
 								end
 							else
-								ESX.ShowNotification(_U('not_enough_medikit'))
+								exports['mythic_notify']:SendAlert('error', _U('not_enough_medikit'))
+								--ESX.ShowNotification(_U('not_enough_medikit'))
 							end
 						end, 'medikit')
 
@@ -166,7 +178,8 @@ function revivePlayer(closestPlayer)
 			if IsPedDeadOrDying(closestPlayerPed, 1) then
 				local playerPed = PlayerPedId()
 				local lib, anim = 'mini@cpr@char_a@cpr_str', 'cpr_pumpchest'
-				ESX.ShowNotification(_U('revive_inprogress'))
+				exports['mythic_notify']:SendAlert('inform', _U('revive_inprogress'))
+				--ESX.ShowNotification(_U('revive_inprogress'))
 
 				for i=1, 15 do
 					Citizen.Wait(900)
@@ -179,10 +192,12 @@ function revivePlayer(closestPlayer)
 				TriggerServerEvent('esx_ambulancejob:removeItem', 'medikit')
 				TriggerServerEvent('esx_ambulancejob:revive', GetPlayerServerId(closestPlayer))
 			else
-				ESX.ShowNotification(_U('player_not_unconscious'))
+				exports['mythic_notify']:SendAlert('error', _U('player_not_unconscious'))
+				--ESX.ShowNotification(_U('player_not_unconscious'))
 			end
 		else
-			ESX.ShowNotification(_U('not_enough_medikit'))
+			exports['mythic_notify']:SendAlert('error', _U('not_enough_medikit'))
+			--ESX.ShowNotification(_U('not_enough_medikit'))
 		end
 		isBusy = false
 	end, 'medikit')
@@ -387,7 +402,7 @@ Citizen.CreateThread(function()
 		if CurrentAction then
 			ESX.ShowHelpNotification(CurrentActionMsg)
 
-			if IsControlJustReleased(0, 38) then
+			if IsControlJustReleased(0, Config.Keys['E']) then
 				if CurrentAction == 'AmbulanceActions' then
 					OpenAmbulanceActionsMenu()
 				elseif CurrentAction == 'Pharmacy' then
@@ -403,15 +418,23 @@ Citizen.CreateThread(function()
 				CurrentAction = nil
 			end
 
-		elseif ESX.PlayerData.job and ESX.PlayerData.job.name == 'ambulance' and not isDead then
-			if IsControlJustReleased(0, 167) then
+		--[[elseif ESX.PlayerData.job and ESX.PlayerData.job.name == 'ambulance' and not isDead then
+			if IsControlJustReleased(0, Config.Keys['F1']) then
 				OpenMobileAmbulanceActionsMenu()
-			end
+			end]]
 		else
 			Citizen.Wait(500)
 		end
 	end
 end)
+
+RegisterCommand('emsMenu', function()
+	if ESX.PlayerData.job and ESX.PlayerData.job.name == 'ambulance' and not isDead then
+		OpenMobileAmbulanceActionsMenu()
+	end
+end, false)
+
+RegisterKeyMapping('emsMenu', 'open EMS menu', 'keyboard', 'F2')
 
 RegisterNetEvent('esx_ambulancejob:putInVehicle')
 AddEventHandler('esx_ambulancejob:putInVehicle', function()
@@ -515,7 +538,8 @@ AddEventHandler('esx_ambulancejob:heal', function(healType, quiet)
 	end
 
 	if not quiet then
-		ESX.ShowNotification(_U('healed'))
+		exports['mythic_notify']:SendAlert('inform', _U('healed'))
+		--ESX.ShowNotification(_U('healed'))
 	end
 end)
 

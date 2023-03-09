@@ -40,7 +40,7 @@ Config.Jobs.slaughterer = {
 				{
 					name = _U('s_alive_chicken'),
 					db_name = 'alive_chicken',
-					time = 0.3,
+					time = 3,
 					max = 20,
 					add = 1,
 					remove = 1,
@@ -64,7 +64,7 @@ Config.Jobs.slaughterer = {
 				{
 					name = _U('s_slaughtered_chicken'),
 					db_name = 'slaughtered_chicken',
-					time = 0.3,
+					time = 5,
 					max = 20,
 					add = 1,
 					remove = 1,
@@ -88,7 +88,7 @@ Config.Jobs.slaughterer = {
 				{
 					name = _U('s_packagechicken'),
 					db_name = 'packaged_chicken',
-					time = 0.3,
+					time = 4,
 					max = 100,
 					add = 5,
 					remove = 1,
@@ -151,10 +151,10 @@ Config.Jobs.slaughterer = {
 			Item = {
 				{
 					name = _U('delivery'),
-					time = 0.1,
+					time = 0.5,
 					remove = 1,
 					max = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 30,
+					price = 23,
 					requires = 'packaged_chicken',
 					requires_name = _U('s_packagechicken'),
 					drop = 100

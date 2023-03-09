@@ -1,6 +1,3 @@
--- MORE SCRIPTS AT 5MSCRIPTS.COM
--- FIVEM ESX 100% FREE SCRIPTS
-
 ESX = nil
 
 TriggerEvent(

@@ -4,7 +4,9 @@ game 'gta5'
 
 description 'ESX Shops'
 
-version '1.1.0'
+version '1.6.0'
+
+shared_script '@es_extended/imports.lua'
 
 client_scripts {
 	'@es_extended/locale.lua',
@@ -22,7 +24,7 @@ client_scripts {
 
 server_scripts {
 	'@es_extended/locale.lua',
-	'@mysql-async/lib/MySQL.lua',
+	'@oxmysql/lib/MySQL.lua',
 	'locales/de.lua',
 	'locales/br.lua',
 	'locales/en.lua',

@@ -1,15 +1,3 @@
-Keys = {
-	["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57,
-	["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177,
-	["TAB"] = 37, ["Q"] = 44, ["W"] = 32, ["E"] = 38, ["R"] = 45, ["T"] = 245, ["Y"] = 246, ["U"] = 303, ["P"] = 199, ["["] = 39, ["]"] = 40, ["ENTER"] = 18,
-	["CAPS"] = 137, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["F"] = 23, ["G"] = 47, ["H"] = 74, ["K"] = 311, ["L"] = 182,
-	["LEFTSHIFT"] = 21, ["Z"] = 20, ["X"] = 73, ["C"] = 26, ["V"] = 0, ["B"] = 29, ["N"] = 249, ["M"] = 244, [","] = 82, ["."] = 81,
-	["LEFTCTRL"] = 36, ["LEFTALT"] = 19, ["SPACE"] = 22, ["RIGHTCTRL"] = 70,
-	["HOME"] = 213, ["PAGEUP"] = 10, ["PAGEDOWN"] = 11, ["DELETE"] = 178,
-	["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
-	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
-}
-
 local FirstSpawn, PlayerLoaded = true, false
 
 IsDead = false
@@ -53,7 +41,8 @@ AddEventHandler('playerSpawned', function()
 					Citizen.Wait(1000)
 				end
 
-				ESX.ShowNotification(_U('combatlog_message'))
+				exports['mythic_notify']:SendAlert('inform', _U('combatlog_message'))
+				--ESX.ShowNotification(_U('combatlog_message'))
 				RemoveItemsAfterRPDeath()
 			end
 		end)
@@ -76,7 +65,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
-
 -- Disable most inputs when dead
 Citizen.CreateThread(function()
 	while true do
@@ -84,13 +72,12 @@ Citizen.CreateThread(function()
 
 		if IsDead then
 			DisableAllControlActions(0)
-			EnableControlAction(0, Keys['G'], true)
-			EnableControlAction(0, Keys['T'], true)
-			EnableControlAction(0, Keys['E'], true)
-			EnableControlAction(0, Keys['H'], true)
-			DisableControlAction(0,249,true) -- disable N stop speaking
-			DisableControlAction(0, Keys['LEFTSHIFT'],true) -- disable push vehicle
-			DisableControlAction(0, Keys[''],true) -- disable push vehicle
+			EnableControlAction(0, Config.Keys['G'], true)
+			EnableControlAction(0, Config.Keys['T'], true)
+			EnableControlAction(0, Config.Keys['E'], true)
+			EnableControlAction(0, Config.Keys['H'], true)
+			DisableControlAction(0,Config.Keys['N'],true) -- disable N stop speaking
+			DisableControlAction(0, Config.Keys['LEFTSHIFT'],true) -- disable push vehicle
 		else
 			Citizen.Wait(500)
 		end
@@ -105,6 +92,7 @@ function OnPlayerDeath()
 	StartDeathTimer()
 	StartDistressSignal()
 	StartRefreshBody()
+	forceReviveZeroEMS()
    
 	StartScreenEffect('DeathFailOut', 0, false)
 end
@@ -222,9 +210,9 @@ function StartRefreshBody()
 			AddTextComponentSubstringPlayerName(_U('reset_body'))
 			EndTextCommandDisplayText(0.445, 0.745)
 
-			if IsControlPressed(0, Keys['H']) then
-				RefreshBody()
+			if IsControlPressed(0, Config.Keys['H']) then
 				Citizen.Wait(1500)
+				RefreshBody()
 			end
 		end
 	end)
@@ -254,7 +242,7 @@ function StartDistressSignal()
 			AddTextComponentSubstringPlayerName(_U('distress_send'))
 			EndTextCommandDisplayText(0.445, 0.775)
 
-			if IsControlPressed(0, Keys['G']) then
+			if IsControlPressed(0, Config.Keys['G']) then
 				SendDistressSignal()
 				Citizen.Wait(60000 * 1)
 
@@ -270,11 +258,39 @@ function StartDistressSignal()
 	end)
 end
 
+function forceReviveZeroEMS()
+	Citizen.CreateThread(function()
+		while IsDead do
+			Citizen.Wait(2)
+			ESX.TriggerServerCallback('esx_scoreboard:getConnectedPlayers', function(connectedPlayers)
+				local ems = 0
+				for k,v in pairs(connectedPlayers) do
+					if v.job == 'ambulance' then
+						ems = 1
+					end
+				end
+				print("EMS di kota-"..ems)
+				if ems == 0 then
+					Citizen.Wait(5000)
+					TriggerEvent('esx_ambulancejob:heal', 'big', true)
+					TriggerServerEvent('esx_ambulance:forceReviveZeroEMS')
+					TriggerServerEvent('esx_ambulancejob:setDeathStatus', false)
+					print("Revive by system")
+				else
+					print("Has EMS in Town")
+				end
+			end)
+			break
+		end
+	end)
+end
+
 function SendDistressSignal()
 	local playerPed = PlayerPedId()
 	local coords = GetEntityCoords(playerPed)
 
-	ESX.ShowNotification(_U('distress_sent'))
+	exports['mythic_notify']:SendAlert('success', _U('distress_sent'))
+	--ESX.ShowNotification(_U('distress_sent'))
 	TriggerServerEvent('esx_phone:send', 'ambulance', _U('distress_message'), false, {
 		x = coords.x,
 		y = coords.y,
@@ -362,21 +378,21 @@ function StartDeathTimer()
 			if not Config.EarlyRespawnFine then
 				text = text .. _U('respawn_bleedout_prompt')
 
-				if IsControlPressed(0, Keys['E']) and timeHeld > 60 then
+				if IsControlPressed(0, Config.Keys['E']) and timeHeld > 60 then
 					RemoveItemsAfterRPDeath()
 					break
 				end
 			elseif Config.EarlyRespawnFine and canPayFine then
 				text = text .. _U('respawn_bleedout_fine', ESX.Math.GroupDigits(Config.EarlyRespawnFineAmount))
 
-				if IsControlPressed(0, Keys['E']) and timeHeld > 60 then
+				if IsControlPressed(0, Config.Keys['E']) and timeHeld > 60 then
 					TriggerServerEvent('esx_ambulancejob:payFine')
 					RemoveItemsAfterRPDeath()
 					break
 				end
 			end
 
-			if IsControlPressed(0, Keys['E']) then
+			if IsControlPressed(0, Config.Keys['E']) then
 				timeHeld = timeHeld + 1
 			else
 				timeHeld = 0

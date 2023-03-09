@@ -4,10 +4,10 @@ game 'gta5'
 
 description 'ESX Menu Default'
 
-version '1.0.4'
+version '1.6.0'
 
 client_scripts {
-	'@es_extended/client/wrapper.lua',
+	'@es_extended/imports.lua',
 	'client/main.lua'
 }
 
@@ -19,9 +19,9 @@ files {
 	'html/ui.html',
 	'html/css/app.css',
 	'html/js/mustache.min.js',
-	'html/js/app.js',
-	'html/fonts/pdown.ttf',
-	'html/fonts/bankgothic.ttf'
+	'html/js/app.js'
 }
 
-dependency 'es_extended'
+dependencies {
+	'es_extended'
+}

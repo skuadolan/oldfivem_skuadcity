@@ -1,7 +1,10 @@
 {
   "global": {
-    "serverName": "fixAll",
-    "language": "en"
+    "serverName": "Vanilla FreeRoam #skuadc",
+    "language": "en",
+    "menuEnabled": true,
+    "menuAlignRight": false,
+    "menuPageKey": "Tab"
   },
   "logger": {},
   "monitor": {
@@ -15,7 +18,9 @@
       3,
       2,
       1
-    ]
+    ],
+    "resourceStartingTolerance": "90",
+    "disableChatWarnings": false
   },
   "playerController": {
     "onJoinCheckBan": true,
@@ -24,17 +29,21 @@
     "whitelistRejectionMessage": "You are not yet whitelisted in this server.\nPlease join http://discord.gg/example.\nYour Request ID: <id>",
     "wipePendingWLOnStart": true
   },
-  "webServer": {},
+  "webServer": {
+    "disableNuiSourceCheck": false
+  },
   "discordBot": {
     "enabled": false,
-    "prefix": "/",
+    "token": "ODIzNTkwMzgwMTI5MDkxNjI3.GFrIXb.YPGaoTE9o9OrSWSLn36CH_3blP2k0NyXq1zhaM",
+    "announceChannel": "1079377393824825415",
+    "prefix": "!",
     "statusMessage": "**IP:** `change-me:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {
-    "serverDataPath": "D:/Project/FiveM/skuadcity/txData/server-data/",
-    "cfgPath": "D:/Project/FiveM/skuadcity/txData/server-data/server.cfg",
-    "commandLine": "",
-    "onesync": "legacy",
+    "serverDataPath": "D:/projects/game/skuadcity/txData/server-data/",
+    "cfgPath": "D:/projects/game/skuadcity/txData/server-data/server.cfg",
+    "commandLine": "+set sv_enforceGameBuild 2189",
+    "onesync": "on",
     "autostart": true,
     "quiet": false
   }

@@ -13,4 +13,11 @@ if Config.UseESX then
 			--xPlayer.addWeapon('WEAPON_PETROLCAN', 4500)
 		end
 	end)
+
+	RegisterServerEvent('fuel:givePetrol')
+	AddEventHandler('fuel:givePetrol', function()
+		local xPlayer = ESX.GetPlayerFromId(source)
+
+		xPlayer.addInventoryItem("WEAPON_PETROLCAN", 100)
+	end)
 end

@@ -1,22 +1,12 @@
 server
-/server/*
-./server/*
-server/*
-
-
-
-# Build and Release Folders
-[Oo]bj/
-[Bb]in/
-
-# Other files and folders
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+./server
+/server
+txData/default/logs
+./txData/default/logs
+/txData/default/logs
+txData/server-data/cache
+./txData/server-data/cache
+/txData/server-data/cache
+txData/server-data/db
+./txData/server-data/db
+/txData/server-data/db

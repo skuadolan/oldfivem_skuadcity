@@ -1,16 +1,12 @@
 local playersWorking = {}
 
-ESX = nil
-
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
-		Citizen.Wait(1000)
+		Wait(1000)
 		local timeNow = os.clock()
 
 		for playerId,data in pairs(playersWorking) do
-			Citizen.Wait(10)
+			Wait(0)
 			local xPlayer = ESX.GetPlayerFromId(playerId)
 
 			-- is player still online?
@@ -77,7 +73,7 @@ Citizen.CreateThread(function()
 end)
 
 RegisterServerEvent('esx_jobs:startWork')
-AddEventHandler('esx_jobs:startWork', function(zoneIndex)
+AddEventHandler('esx_jobs:startWork', function(zoneIndex, zoneKey)
 	if not playersWorking[source] then
 		local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -85,7 +81,7 @@ AddEventHandler('esx_jobs:startWork', function(zoneIndex)
 			local jobObject = Config.Jobs[xPlayer.job.name]
 
 			if jobObject then
-				local jobZone = jobObject.Zones[zoneIndex]
+				local jobZone = jobObject.Zones[zoneKey]
 
 				if jobZone and jobZone.Item then
 					playersWorking[source] = {
@@ -112,7 +108,7 @@ AddEventHandler('esx_jobs:caution', function(cautionType, cautionAmount, spawnPo
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if cautionType == 'take' then
-		if cautionAmount <= Config.MaxCaution and cautionAmount > 0 then
+		if cautionAmount <= Config.MaxCaution and cautionAmount >= 0 then
 			TriggerEvent('esx_addonaccount:getAccount', 'caution', xPlayer.identifier, function(account)
 				if xPlayer.getAccount('bank').money >= cautionAmount then
 					xPlayer.removeAccountMoney('bank', cautionAmount)

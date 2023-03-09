@@ -328,17 +328,15 @@ ESX.RegisterUsableItem('bandage', function(source)
 	end
 end)
 
+local playerIdentifierData = nil
 ESX.RegisterServerCallback('esx_ambulancejob:getDeathStatus', function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)
-
-	MySQL.Async.fetchScalar('SELECT is_dead FROM users WHERE identifier = @identifier', {
-		['@identifier'] = xPlayer.identifier
-	}, function(isDead)
-				
-		if isDead then
-			print(('[esx_ambulancejob] [^2INFO^7] "%s" attempted combat logging'):format(xPlayer.identifier))
+	MySQL.scalar('SELECT is_dead FROM users WHERE identifier = ?', {playerIdentifierData}, function(isDead)
+		local isDead = isDead
+		if type(isDead) ~= "boolean" then
+			isDead = isDead == 1 and true or false
 		end
-
+		
 		cb(isDead)
 	end)
 end)
@@ -359,5 +357,31 @@ AddEventHandler('onResourceStart', function(resource)
 	if resource == GetCurrentResourceName() then
 		Citizen.Wait(5000)
 		TriggerClientEvent('esx_ambulancejob:updateBlip', -1)
+
+		Citizen.Wait(1000)
+		AddPlayersToScoreboard()
+	end
+end)
+
+function AddPlayersToScoreboard()
+	local players = ESX.GetPlayers()
+
+	for i=1, #players, 1 do
+		local xPlayer = ESX.GetPlayerFromId(players[i])
+		AddPlayerToScoreboard(xPlayer, false)
+	end
+end
+
+function AddPlayerToScoreboard(xPlayer, update)
+	playerIdentifierData = xPlayer.identifier
+end
+
+RegisterServerEvent('esx_ambulance:forceReviveZeroEMS')
+AddEventHandler('esx_ambulance:forceReviveZeroEMS', function()
+	local source = source
+	local xPlayer = ESX.GetPlayerFromId(source)
+	if xPlayer and xPlayer.job.name ~= 'ambulance' then
+		xPlayer.triggerEvent('esx_ambulancejob:revive')
+		print("Revive by sistem")
 	end
 end)

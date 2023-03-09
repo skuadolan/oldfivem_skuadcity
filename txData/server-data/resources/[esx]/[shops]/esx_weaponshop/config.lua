@@ -1,14 +1,16 @@
 Config               = {}
 
-Config.DrawDistance  = 100
+Config.DrawDistance  = 10
 Config.Size          = { x = 1.5, y = 1.5, z = 0.5 }
 Config.Color         = { r = 0, g = 128, b = 255 }
 Config.Type          = 1
 
-Config.Locale        = 'id'
+Config.Locale        = 'en'
+
+Config.OxInventory   = ESX.GetConfig().OxInventory
 
 Config.LicenseEnable = true -- only turn this on if you are using esx_license
-Config.LicensePrice  = 2000000
+Config.LicensePrice  = 50000
 
 Config.Zones = {
 
@@ -32,7 +34,7 @@ Config.Zones = {
 		Legal = false,
 		Items = {},
 		Locations = {
-			vector3(1271.51,-1708.84,54.77)
+			vector3(-1306.2, -394.0, 35.6)
 		}
 	}
 

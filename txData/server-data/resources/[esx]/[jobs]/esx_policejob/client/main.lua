@@ -42,7 +42,8 @@ function setUniform(uniform, playerPed)
 				SetPedArmour(playerPed, 100)
 			end
 		else
-			ESX.ShowNotification(_U('no_outfit'))
+			exports['mythic_notify']:SendAlert('error', _U('no_outfit'))
+			--ESX.ShowNotification(_U('no_outfit'))
 		end
 	end)
 end
@@ -98,22 +99,22 @@ function OpenCloakroomMenu()
 
 			if Config.EnableESXService then
 				ESX.TriggerServerCallback('esx_service:isInService', function(isInService)
-					if isInService then
+					--[[if isInService then
 						playerInService = false
+					end]]
+					local notification = {
+						title    = _U('service_anonunce'),
+						subject  = '',
+						msg      = _U('service_out_announce', GetPlayerName(PlayerId())),
+						iconType = 1
+					}
 
-						local notification = {
-							title    = _U('service_anonunce'),
-							subject  = '',
-							msg      = _U('service_out_announce', GetPlayerName(PlayerId())),
-							iconType = 1
-						}
+					TriggerServerEvent('esx_service:notifyAllInService', notification, 'police')
 
-						TriggerServerEvent('esx_service:notifyAllInService', notification, 'police')
-
-						TriggerServerEvent('esx_service:disableService', 'police')
-						TriggerEvent('esx_policejob:updateBlip')
-						ESX.ShowNotification(_U('service_out'))
-					end
+					TriggerServerEvent('esx_service:disableService', 'police')
+					TriggerEvent('esx_policejob:updateBlip')
+					exports['mythic_notify']:SendAlert('error', _U('service_out'))
+					--ESX.ShowNotification(_U('service_out'))
 				end, 'police')
 			end
 		end
@@ -127,7 +128,8 @@ function OpenCloakroomMenu()
 					if Config.MaxInService == -1 then
 						ESX.TriggerServerCallback('esx_service:enableService', function(canTakeService, maxInService, inServiceCount)
 							if not canTakeService then
-								ESX.ShowNotification(_U('service_max', inServiceCount, maxInService))
+								exports['mythic_notify']:SendAlert('inform', _U('service_max', inServiceCount, maxInService))
+								--ESX.ShowNotification(_U('service_max', inServiceCount, maxInService))
 							else
 								awaitService = true
 								playerInService = true
@@ -141,7 +143,8 @@ function OpenCloakroomMenu()
 
 								TriggerServerEvent('esx_service:notifyAllInService', notification, 'police')
 								TriggerEvent('esx_policejob:updateBlip')
-								ESX.ShowNotification(_U('service_in'))
+								exports['mythic_notify']:SendAlert('inform', _U('service_in'))
+								--ESX.ShowNotification(_U('service_in'))
 							end
 						end, 'police')
 					else 
@@ -157,7 +160,8 @@ function OpenCloakroomMenu()
 
 						TriggerServerEvent('esx_service:notifyAllInService', notification, 'police')
 						TriggerEvent('esx_policejob:updateBlip')
-						ESX.ShowNotification(_U('service_in'))
+						exports['mythic_notify']:SendAlert('inform', _U('service_in'))
+						--ESX.ShowNotification(_U('service_in'))
 					end
 
 				else
@@ -379,7 +383,8 @@ function OpenPoliceActionsMenu()
 						OpenUnpaidBillsMenu(closestPlayer)
 					end
 				else
-					ESX.ShowNotification(_U('no_players_nearby'))
+					exports['mythic_notify']:SendAlert('error', _U('no_players_nearby'))
+					--ESX.ShowNotification(_U('no_players_nearby'))
 				end
 			end, function(data2, menu2)
 				menu2.close()
@@ -421,7 +426,8 @@ function OpenPoliceActionsMenu()
 
 							SetVehicleDoorsLocked(vehicle, 1)
 							SetVehicleDoorsLockedForAllPlayers(vehicle, false)
-							ESX.ShowNotification(_U('vehicle_unlocked'))
+							exports['mythic_notify']:SendAlert('success', _U('vehicle_unlocked'))
+							--ESX.ShowNotification(_U('vehicle_unlocked'))
 						end
 					elseif action == 'impound_samsat' then
 						TriggerEvent('im_samsat:ShowImpoundMenu')
@@ -448,7 +454,8 @@ function OpenPoliceActionsMenu()
 
 								vehicle = GetClosestVehicle(coords.x, coords.y, coords.z, 3.0, 0, 71)
 								if not DoesEntityExist(vehicle) and currentTask.busy then
-									ESX.ShowNotification(_U('impound_canceled_moved'))
+									exports['mythic_notify']:SendAlert('error', _U('impound_canceled_moved'))
+									--ESX.ShowNotification(_U('impound_canceled_moved'))
 									ESX.ClearTimeout(currentTask.task)
 									ClearPedTasks(playerPed)
 									currentTask.busy = false
@@ -458,7 +465,8 @@ function OpenPoliceActionsMenu()
 						end)
 					end
 				else
-					ESX.ShowNotification(_U('no_vehicles_nearby'))
+					exports['mythic_notify']:SendAlert('error', _U('no_vehicles_nearby'))
+					--ESX.ShowNotification(_U('no_vehicles_nearby'))
 				end
 
 			end, function(data2, menu2)
@@ -640,7 +648,8 @@ function LookupVehicle()
 	}, function(data, menu)
 		local length = string.len(data.value)
 		if not data.value or length < 2 or length > 8 then
-			ESX.ShowNotification(_U('search_database_error_invalid'))
+			exports['mythic_notify']:SendAlert('error', _U('search_database_error_invalid'))
+			--ESX.ShowNotification(_U('search_database_error_invalid'))
 		else
 			ESX.TriggerServerCallback('esx_policejob:getVehicleInfos', function(retrivedInfo)
 				local elements = {{label = _U('plate', retrivedInfo.plate)}}
@@ -687,7 +696,8 @@ function ShowPlayerLicense(player)
 			align    = 'top-right',
 			elements = elements,
 		}, function(data, menu)
-			ESX.ShowNotification(_U('licence_you_revoked', data.current.label, playerData.name))
+			exports['mythic_notify']:SendAlert('inform', _U('licence_you_revoked', data.current.label, playerData.name))
+			--ESX.ShowNotification(_U('licence_you_revoked', data.current.label, playerData.name))
 			TriggerServerEvent('esx_policejob:message', GetPlayerServerId(player), _U('license_revoked', data.current.label))
 
 			TriggerServerEvent('esx_license:removeLicense', GetPlayerServerId(player), data.current.type)
@@ -876,13 +886,15 @@ function OpenBuyWeaponsMenu()
 			ESX.TriggerServerCallback('esx_policejob:buyWeapon', function(bought)
 				if bought then
 					if data.current.price > 0 then
-						ESX.ShowNotification(_U('armory_bought', data.current.weaponLabel, ESX.Math.GroupDigits(data.current.price)))
+						exports['mythic_notify']:SendAlert('inform', _U('armory_bought', data.current.weaponLabel, ESX.Math.GroupDigits(data.current.price)))
+						--ESX.ShowNotification(_U('armory_bought', data.current.weaponLabel, ESX.Math.GroupDigits(data.current.price)))
 					end
 
 					menu.close()
 					OpenBuyWeaponsMenu()
 				else
-					ESX.ShowNotification(_U('armory_money'))
+					exports['mythic_notify']:SendAlert('inform', _U('armory_money'))
+					--ESX.ShowNotification(_U('armory_money'))
 				end
 			end, data.current.name, 1)
 		end
@@ -898,19 +910,22 @@ function OpenWeaponComponentShop(components, weaponName, parentShop)
 		elements = components
 	}, function(data, menu)
 		if data.current.hasComponent then
-			ESX.ShowNotification(_U('armory_hascomponent'))
+			exports['mythic_notify']:SendAlert('inform', _U('armory_hascomponent'))
+			--ESX.ShowNotification(_U('armory_hascomponent'))
 		else
 			ESX.TriggerServerCallback('esx_policejob:buyWeapon', function(bought)
 				if bought then
 					if data.current.price > 0 then
-						ESX.ShowNotification(_U('armory_bought', data.current.componentLabel, ESX.Math.GroupDigits(data.current.price)))
+						exports['mythic_notify']:SendAlert('success', _U('armory_bought', data.current.componentLabel, ESX.Math.GroupDigits(data.current.price)))
+						--ESX.ShowNotification(_U('armory_bought', data.current.componentLabel, ESX.Math.GroupDigits(data.current.price)))
 					end
 
 					menu.close()
 					parentShop.close()
 					OpenBuyWeaponsMenu()
 				else
-					ESX.ShowNotification(_U('armory_money'))
+					exports['mythic_notify']:SendAlert('inform', _U('armory_money'))
+					--ESX.ShowNotification(_U('armory_money'))
 				end
 			end, weaponName, 2, data.current.componentNum)
 		end
@@ -943,7 +958,8 @@ function OpenGetStocksMenu()
 				local count = tonumber(data2.value)
 
 				if not count then
-					ESX.ShowNotification(_U('quantity_invalid'))
+					exports['mythic_notify']:SendAlert('error', _U('quantity_invalid'))
+					--ESX.ShowNotification(_U('quantity_invalid'))
 				else
 					menu2.close()
 					menu.close()
@@ -990,7 +1006,8 @@ function OpenPutStocksMenu()
 				local count = tonumber(data2.value)
 
 				if not count then
-					ESX.ShowNotification(_U('quantity_invalid'))
+					exports['mythic_notify']:SendAlert('error', _U('quantity_invalid'))
+					--ESX.ShowNotification(_U('quantity_invalid'))
 				else
 					menu2.close()
 					menu.close()
@@ -1480,7 +1497,7 @@ Citizen.CreateThread(function()
 		if CurrentAction then
 			ESX.ShowHelpNotification(CurrentActionMsg)
 
-			if IsControlJustReleased(0, 38) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' then
+			if IsControlJustReleased(0, Config.Keys['E']) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' then
 
 				if CurrentAction == 'menu_cloakroom' then
 					OpenCloakroomMenu()
@@ -1490,7 +1507,8 @@ Citizen.CreateThread(function()
 					elseif playerInService then
 						OpenArmoryMenu(CurrentActionData.station)
 					else
-						ESX.ShowNotification(_U('service_not'))
+						exports['mythic_notify']:SendAlert('error', _U('service_not'))
+						--ESX.ShowNotification(_U('service_not'))
 					end
 				elseif CurrentAction == 'menu_vehicle_spawner' then
 					if not Config.EnableESXService then
@@ -1498,7 +1516,8 @@ Citizen.CreateThread(function()
 					elseif playerInService then
 						OpenVehicleSpawnerMenu('car', CurrentActionData.station, CurrentActionData.part, CurrentActionData.partNum)
 					else
-						ESX.ShowNotification(_U('service_not'))
+						exports['mythic_notify']:SendAlert('error', _U('service_not'))
+						--ESX.ShowNotification(_U('service_not'))
 					end
 				elseif CurrentAction == 'Helicopters' then
 					if not Config.EnableESXService then
@@ -1506,7 +1525,8 @@ Citizen.CreateThread(function()
 					elseif playerInService then
 						OpenVehicleSpawnerMenu('helicopter', CurrentActionData.station, CurrentActionData.part, CurrentActionData.partNum)
 					else
-						ESX.ShowNotification(_U('service_not'))
+						exports['mythic_notify']:SendAlert('error', _U('service_not'))
+						--ESX.ShowNotification(_U('service_not'))
 					end
 				elseif CurrentAction == 'delete_vehicle' then
 					ESX.Game.DeleteVehicle(CurrentActionData.vehicle)
@@ -1527,18 +1547,20 @@ Citizen.CreateThread(function()
 			end
 		end -- CurrentAction end
 
-		if IsControlJustReleased(0, 167) and not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') then
+		--[[if IsControlJustReleased(0, Config.Keys['F6']) and not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') then
 			if not Config.EnableESXService then
 				OpenPoliceActionsMenu()
 			elseif playerInService then
 				OpenPoliceActionsMenu()
 			else
-				ESX.ShowNotification(_U('service_not'))
+				exports['mythic_notify']:SendAlert('error', _U('service_not'))
+				--ESX.ShowNotification(_U('service_not'))
 			end
-		end
+		end]]
 
-		if IsControlJustReleased(0, 38) and currentTask.busy then
-			ESX.ShowNotification(_U('impound_canceled'))
+		if IsControlJustReleased(0, Config.Keys['E']) and currentTask.busy then
+			exports['mythic_notify']:SendAlert('error', _U('impound_canceled'))
+			--ESX.ShowNotification(_U('impound_canceled'))
 			ESX.ClearTimeout(currentTask.task)
 			ClearPedTasks(PlayerPedId())
 
@@ -1546,6 +1568,21 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+RegisterCommand('policemenu', function()
+	if not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') then
+		if not Config.EnableESXService then
+			OpenPoliceActionsMenu()
+		elseif playerInService then
+			OpenPoliceActionsMenu()
+		else
+			exports['mythic_notify']:SendAlert('error', _U('service_not'))
+			--ESX.ShowNotification(_U('service_not'))
+		end
+	end
+end, false)
+
+RegisterKeyMapping('policemenu', 'open Police Menu', 'keyboard', 'F2')
 
 -- Create blip for colleagues
 function createBlip(id)
@@ -1641,7 +1678,8 @@ function StartHandcuffTimer()
 	handcuffTimer.active = true
 
 	handcuffTimer.task = ESX.SetTimeout(Config.HandcuffTimer, function()
-		ESX.ShowNotification(_U('unrestrained_timer'))
+		exports['mythic_notify']:SendAlert('inform', _U('unrestrained_timer'))
+		--ESX.ShowNotification(_U('unrestrained_timer'))
 		TriggerEvent('esx_policejob:unrestrain')
 		handcuffTimer.active = false
 	end)
@@ -1653,6 +1691,7 @@ end
 function ImpoundVehicle(vehicle)
 	--local vehicleName = GetLabelText(GetDisplayNameFromVehicleModel(GetEntityModel(vehicle)))
 	ESX.Game.DeleteVehicle(vehicle)
-	ESX.ShowNotification(_U('impound_successful'))
+	exports['mythic_notify']:SendAlert('success', _U('impound_successful'))
+	--ESX.ShowNotification(_U('impound_successful'))
 	currentTask.busy = false
 end

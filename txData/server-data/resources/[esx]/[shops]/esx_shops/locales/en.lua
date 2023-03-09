@@ -1,6 +1,6 @@
 Locales['en'] = {
-  ['shop'] = 'warung',
-  ['shops'] = 'warung',
+  ['shop'] = 'shop',
+  ['shops'] = 'shops',
   ['press_menu'] = 'press ~INPUT_CONTEXT~ to access the ~y~store~s~.',
   ['shop_item'] = '$%s',
   ['bought'] = 'you just bought ~y~%sx~s~ ~b~%s~s~ for ~r~$%s~s~',

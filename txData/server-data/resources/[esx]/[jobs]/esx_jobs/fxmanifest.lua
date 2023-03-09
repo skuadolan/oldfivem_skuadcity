@@ -4,7 +4,9 @@ game 'gta5'
 
 description 'ESX Jobs'
 
-version '1.1.0'
+version '1.6.0'
+
+shared_script '@es_extended/imports.lua'
 
 server_scripts {
 	'@es_extended/locale.lua',
@@ -14,6 +16,8 @@ server_scripts {
 	'locales/fi.lua',
 	'locales/fr.lua',
 	'locales/sv.lua',
+	'locales/cs.lua',
+	'locales/de.lua',
 	'config.lua',
 
 	'jobs/fisherman.lua',
@@ -35,6 +39,7 @@ client_scripts {
 	'locales/es.lua',
 	'locales/fr.lua',
 	'locales/sv.lua',
+	'locales/cs.lua',
 	'config.lua',
 
 	'jobs/fisherman.lua',
@@ -48,4 +53,9 @@ client_scripts {
 	'client/main.lua'
 }
 
-dependency 'es_extended'
+dependencies {
+	'es_extended',
+	'esx_addonaccount',
+	'skinchanger',
+	'esx_skin'
+}

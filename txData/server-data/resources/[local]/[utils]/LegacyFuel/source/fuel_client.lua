@@ -244,6 +244,7 @@ Citizen.CreateThread(function()
 								GiveWeaponToPed(ped, 883325847, 4500, false, true)
 
 								TriggerServerEvent('fuel:pay', Config.JerryCanCost)
+								TriggerServerEvent('fuel:givePetrol')
 
 								currentCash = ESX.GetPlayerData().money
 							end

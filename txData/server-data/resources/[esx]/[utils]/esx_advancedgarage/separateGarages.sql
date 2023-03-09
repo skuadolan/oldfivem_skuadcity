@@ -1,1 +1,0 @@
-ALTER TABLE `owned_vehicles` ADD `garage` varchar(255);

@@ -42,7 +42,7 @@ Config.Jobs.miner = {
 				{
 					name = _U('m_rock'),
 					db_name = 'stone',
-					time = 0.4,
+					time = 3,
 					max = 7,
 					add = 1,
 					remove = 1,
@@ -67,7 +67,7 @@ Config.Jobs.miner = {
 				{
 					name = _U('m_washrock'),
 					db_name = 'washed_stone',
-					time = 0.4,
+					time = 5,
 					max = 7,
 					add = 1,
 					remove = 1,
@@ -92,7 +92,7 @@ Config.Jobs.miner = {
 				{
 					name = _U('m_copper'),
 					db_name = 'copper',
-					time = 0.4,
+					time = 4,
 					max = 56,
 					add = 8,
 					remove = 1,
@@ -119,13 +119,6 @@ Config.Jobs.miner = {
 					db_name = 'diamond',
 					max = 50,
 					add = 1,
-					drop = 5
-				},
-				{
-					name = _U('m_coal'),
-					db_name = 'coal',
-					max = 50,
-					add = 2,
 					drop = 5
 				}
 			},
@@ -186,10 +179,10 @@ Config.Jobs.miner = {
 			Item = {
 				{
 					name = _U('delivery'),
-					time = 0.1,
+					time = 0.5,
 					remove = 1,
 					max = 56, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 30,
+					price = 5,
 					requires = 'copper',
 					requires_name = _U('m_copper'),
 					drop = 100
@@ -203,7 +196,6 @@ Config.Jobs.miner = {
 			Pos = {x = -148.78, y = -1040.38, z = 26.27},
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 3.0},
-			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
 			Blip = true,
 			Name = _U('m_sell_iron'),
@@ -212,10 +204,10 @@ Config.Jobs.miner = {
 			Item = {
 				{
 					name = _U('delivery'),
-					time = 0.1,
+					time = 0.5,
 					remove = 1,
 					max = 42, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 75,
+					price = 9,
 					requires = 'iron',
 					requires_name = _U('m_iron'),
 					drop = 100
@@ -229,7 +221,6 @@ Config.Jobs.miner = {
 			Pos = {x = 261.48, y = 207.35, z = 109.28},
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 3.0},
-			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
 			Blip = true,
 			Name = _U('m_sell_gold'),
@@ -238,10 +229,10 @@ Config.Jobs.miner = {
 			Item = {
 				{
 					name = _U('delivery'),
-					time = 0.1,
+					time = 0.5,
 					remove = 1,
 					max = 21, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 180,
+					price = 25,
 					requires = 'gold',
 					requires_name = _U('m_gold'),
 					drop = 100
@@ -255,7 +246,6 @@ Config.Jobs.miner = {
 			Pos = {x = -621.04, y = -228.53, z = 37.05},
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 3.0},
-			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
 			Blip = true,
 			Name = _U('m_sell_diamond'),
@@ -264,10 +254,10 @@ Config.Jobs.miner = {
 			Item = {
 				{
 					name = _U('delivery'),
-					time = 0.1,
+					time = 0.5,
 					remove = 1,
 					max = 50, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 275,
+					price = 250,
 					requires = 'diamond',
 					requires_name = _U('m_diamond'),
 					drop = 100

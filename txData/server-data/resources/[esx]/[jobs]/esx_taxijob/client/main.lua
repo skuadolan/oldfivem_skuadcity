@@ -271,7 +271,7 @@ function OpenMobileTaxiActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_taxi_actions', {
 		title    = _U('taxi'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = {
 			{label = _U('billing'),   value = 'billing'},
 			--{label = _U('start_job'), value = 'start_job'}
@@ -734,7 +734,7 @@ Citizen.CreateThread(function()
 		if CurrentAction and not IsDead then
 			ESX.ShowHelpNotification(CurrentActionMsg)
 
-			if IsControlJustReleased(0, 38) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
+			if IsControlJustReleased(0, Config.Keys['E']) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
 				if CurrentAction == 'taxi_actions_menu' then
 					OpenTaxiActionsMenu()
 				elseif CurrentAction == 'cloakroom' then
@@ -749,11 +749,19 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		if IsControlJustReleased(0, 167) and IsInputDisabled(0) and not IsDead and Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
+		--[[if IsControlJustPressed(0, 167) and IsInputDisabled(0) and not IsDead and Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
 			OpenMobileTaxiActionsMenu()
-		end
+		end]]
 	end
 end)
+
+RegisterCommand('taximenu', function()
+	if IsInputDisabled(0) and not IsDead and Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
+		OpenMobileTaxiActionsMenu()
+	end
+end, false)
+
+RegisterKeyMapping('taximenu', 'open Taxi menu', 'keyboard', 'F2')
 
 AddEventHandler('esx:onPlayerDeath', function()
 	IsDead = true

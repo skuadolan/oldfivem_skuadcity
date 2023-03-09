@@ -1,16 +1,8 @@
-ESX = nil
-
-Citizen.CreateThread(function()
-
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
-	end
-
+CreateThread(function()
 	local MenuType    = 'list'
 	local OpenedMenus = {}
 
-	local openMenu = function(namespace, name, data)
+	local function openMenu(namespace, name, data)
 
 		OpenedMenus[namespace .. '_' .. name] = true
 
@@ -27,7 +19,7 @@ Citizen.CreateThread(function()
 
 	end
 
-	local closeMenu = function(namespace, name)
+	local function closeMenu(namespace, name)
 
 		OpenedMenus[namespace .. '_' .. name] = nil
 		local OpenedMenuCount = 0
@@ -36,7 +28,6 @@ Citizen.CreateThread(function()
 			action    = 'closeMenu',
 			namespace = namespace,
 			name      = name,
-			data      = data
 		})
 
 		for k,v in pairs(OpenedMenus) do

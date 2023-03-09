@@ -8,6 +8,7 @@ local FirstSpawn    = true
 local PlayerLoaded  = false
 local cam
 
+local spawnPos = vector3(-1044.765, -2749.886, 21.36047)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
@@ -21,6 +22,7 @@ AddEventHandler('playerSpawned', function()
         end
 
         if FirstSpawn then
+            ESX.Game.Teleport(PlayerPedId(), spawnPos)
             ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
                 if skin ~= nil then
                     pos = GetEntityCoords(PlayerPedId())
@@ -60,7 +62,7 @@ RegisterNUICallback("spawn", function(data)
         DoScreenFadeIn(500)
 
     elseif data.choice == "last" then  
-        ESX.Game.Teleport(PlayerPedId(), ESX.PlayerData.coords)
+        ESX.Game.Teleport(PlayerPedId(), ESX.GetPlayerData().coords)
         new = false
         SetNuiFocus(false)
         SendNUIMessage({ display = false })
