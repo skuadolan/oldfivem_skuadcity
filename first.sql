@@ -48,10 +48,10 @@ REPLACE INTO `addon_account` (`name`, `label`, `shared`) VALUES
 	('society_ambulance', 'EMS', 1),
 	('society_banker', 'Banker', 1),
 	('society_cardealer', 'Cardealer', 1),
-	('society_mechanic', 'Mechanic', 1),
-	('society_police', 'Police', 1),
-	('society_realestateagent', 'Agent immobilier', 1),
-	('society_taxi', 'Taxi', 1);
+	('society_mechanic', 'Mekanik', 1),
+	('society_police', 'Polisi', 1),
+	('society_realestateagent', 'Agen Properti', 1),
+	('society_taxi', 'Taksi', 1);
 
 -- Dumping structure for table skuadcity.addon_account_data
 DROP TABLE IF EXISTS `addon_account_data`;
@@ -86,12 +86,12 @@ CREATE TABLE IF NOT EXISTS `addon_inventory` (
 
 -- Dumping data for table skuadcity.addon_inventory: ~6 rows (approximately)
 REPLACE INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
-	('property', 'Property', 0),
+	('property', 'Properti', 0),
 	('society_ambulance', 'EMS', 1),
 	('society_cardealer', 'Cardealer', 1),
-	('society_mechanic', 'Mechanic', 1),
-	('society_police', 'Police', 1),
-	('society_taxi', 'Taxi', 1);
+	('society_mechanic', 'Mekanik', 1),
+	('society_police', 'Polisi', 1),
+	('society_taxi', 'Taksi', 1);
 
 -- Dumping structure for table skuadcity.addon_inventory_items
 DROP TABLE IF EXISTS `addon_inventory_items`;
@@ -147,11 +147,11 @@ CREATE TABLE IF NOT EXISTS `datastore` (
 
 -- Dumping data for table skuadcity.datastore: ~9 rows (approximately)
 REPLACE INTO `datastore` (`name`, `label`, `shared`) VALUES
-	('property', 'Property', 0),
+	('property', 'Properti', 0),
 	('society_ambulance', 'EMS', 1),
-	('society_mechanic', 'Mechanic', 1),
-	('society_police', 'Police', 1),
-	('society_taxi', 'Taxi', 1),
+	('society_mechanic', 'Mekanik', 1),
+	('society_police', 'Polisi', 1),
+	('society_taxi', 'Taksi', 1),
 	('user_ears', 'Ears', 0),
 	('user_glasses', 'Glasses', 0),
 	('user_helmet', 'Helmet', 0),
@@ -216,62 +216,87 @@ CREATE TABLE IF NOT EXISTS `fine_types` (
   `amount` int(11) DEFAULT NULL,
   `category` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table skuadcity.fine_types: ~52 rows (approximately)
+-- Dumping data for table skuadcity.fine_types: ~45 rows (approximately)
 REPLACE INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
-	(53, 'Misuse of a horn', 30, 0),
-	(54, 'Illegally Crossing a continuous Line', 40, 0),
-	(55, 'Driving on the wrong side of the road', 250, 0),
-	(56, 'Illegal U-Turn', 250, 0),
-	(57, 'Illegally Driving Off-road', 170, 0),
-	(58, 'Refusing a Lawful Command', 30, 0),
-	(59, 'Illegally Stopping a Vehicle', 150, 0),
-	(60, 'Illegal Parking', 70, 0),
-	(61, 'Failing to Yield to the right', 70, 0),
-	(62, 'Failure to comply with Vehicle Information', 90, 0),
-	(63, 'Failing to stop at a Stop Sign ', 105, 0),
-	(64, 'Failing to stop at a Red Light', 130, 0),
-	(65, 'Illegal Passing', 100, 0),
-	(66, 'Driving an illegal Vehicle', 100, 0),
-	(67, 'Driving without a License', 1500, 0),
-	(68, 'Hit and Run', 800, 0),
-	(69, 'Exceeding Speeds Over < 5 mph', 90, 0),
-	(70, 'Exceeding Speeds Over 5-15 mph', 120, 0),
-	(71, 'Exceeding Speeds Over 15-30 mph', 180, 0),
-	(72, 'Exceeding Speeds Over > 30 mph', 300, 0),
-	(73, 'Impeding traffic flow', 110, 1),
-	(74, 'Public Intoxication', 90, 1),
-	(75, 'Disorderly conduct', 90, 1),
-	(76, 'Obstruction of Justice', 130, 1),
-	(77, 'Insults towards Civilans', 75, 1),
-	(78, 'Disrespecting of an LEO', 110, 1),
-	(79, 'Verbal Threat towards a Civilan', 90, 1),
-	(80, 'Verbal Threat towards an LEO', 150, 1),
-	(81, 'Providing False Information', 250, 1),
-	(82, 'Attempt of Corruption', 1500, 1),
-	(83, 'Brandishing a weapon in city Limits', 120, 2),
-	(84, 'Brandishing a Lethal Weapon in city Limits', 300, 2),
-	(85, 'No Firearms License', 600, 2),
-	(86, 'Possession of an Illegal Weapon', 700, 2),
-	(87, 'Possession of Burglary Tools', 300, 2),
-	(88, 'Grand Theft Auto', 1800, 2),
-	(89, 'Intent to Sell/Distrube of an illegal Substance', 1500, 2),
-	(90, 'Frabrication of an Illegal Substance', 1500, 2),
-	(91, 'Possession of an Illegal Substance ', 650, 2),
-	(92, 'Kidnapping of a Civilan', 1500, 2),
-	(93, 'Kidnapping of an LEO', 2000, 2),
-	(94, 'Robbery', 650, 2),
-	(95, 'Armed Robbery of a Store', 650, 2),
-	(96, 'Armed Robbery of a Bank', 1500, 2),
-	(97, 'Assault on a Civilian', 2000, 3),
-	(98, 'Assault of an LEO', 2500, 3),
-	(99, 'Attempt of Murder of a Civilian', 3000, 3),
-	(100, 'Attempt of Murder of an LEO', 5000, 3),
-	(101, 'Murder of a Civilian', 10000, 3),
-	(102, 'Murder of an LEO', 30000, 3),
-	(103, 'Involuntary manslaughter', 1800, 3),
-	(104, 'Fraud', 2000, 2);
+	(1, 'Bermain Klakson', 3000, 0),
+	(2, 'Berlawan Arah', 4000, 0),
+	(3, 'Memutar Balik Tidak Pada Tempatnya', 2500, 0),
+	(4, 'Pengemudi Off-Road Tidak sesuai mobilnya', 1500, 0),
+	(5, 'Pelanggar Peraturan Lalu Lintas', 10000, 0),
+	(6, 'Berhenti Tidak Pada Tempatnya', 3500, 0),
+	(7, 'Parkir Sembarangan', 10000, 0),
+	(8, 'Belok Tidak Menggunakan Sein', 2000, 0),
+	(9, 'Surat Kendaraan Tidak Lengkap', 15000, 0),
+	(10, 'Melebihi Batas Garis Penyebrangan Lampu Merah', 3000, 0),
+	(11, 'Mengendarai Dalam Keadaan Mabuk', 4000, 0),
+	(12, 'Mengendarai kendaraan curian', 10000, 0),
+	(13, 'Tidak memiliki sim', 15000, 0),
+	(14, 'Tabrak Lari', 10000, 0),
+	(15, 'Melebihi batas kecepatan', 2500, 0),
+	(16, 'Merokok sembarangan', 4500, 0),
+	(17, 'Berkelahi', 3000, 0),
+	(18, 'Berkata kasar', 1000, 0),
+	(19, 'menghina orang lain', 19000, 0),
+	(20, 'memberikan ancaman terhadap warga sipil', 20000, 0),
+	(21, 'tidak menghargai petugas', 25000, 1),
+	(22, 'mengancam petugas', 25000, 1),
+	(23, 'membetikan informasi palsu', 10000, 1),
+	(24, 'upaya korupsi', 8000, 1),
+	(25, 'menembak asal-asalan dengan senjata biasa', 10000, 1),
+	(26, 'menembak asal-asalan dengan senjata berat', 20000, 1),
+	(27, 'tidak memiliki lisensi senjata', 15000, 1),
+	(28, 'kepemilkan senjata ilegal', 80000, 1),
+	(29, 'memiliki barang ilegal', 80000, 1),
+	(30, 'melakukan pencurian', 50000, 1),
+	(31, 'niat menjual obat-obatan ilegal', 25000, 2),
+	(32, 'pemrosesan obat-obatan ilegal', 25000, 2),
+	(33, 'kepemilikan obat-obatan ilegal', 25000, 2),
+	(34, 'menculik warga sipil', 70000, 2),
+	(35, 'menculik pekerja negara', 100000, 2),
+	(36, 'perampokan toko', 80000, 2),
+	(37, 'perampokan bank', 150000, 2),
+	(38, 'penyerangan terhadap warga sipil', 50000, 2),
+	(39, 'Penyerangan terhadap pekerja negara', 70000, 2),
+	(40, 'pembunuhan berencana terhadap warga sipil', 100000, 2),
+	(41, 'pembunuhan berencana terhadap pekerja negara', 130000, 2),
+	(42, 'membunuh warga sipil', 80000, 2),
+	(43, 'membunuh pekerja negara', 100000, 2),
+	(44, 'pembunuhan tidak sengaja', 60000, 2),
+	(45, 'penipuan', 15000, 3);
+
+-- Dumping structure for table skuadcity.glovebox_inventory
+DROP TABLE IF EXISTS `glovebox_inventory`;
+CREATE TABLE IF NOT EXISTS `glovebox_inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `plate` varchar(8) NOT NULL,
+  `data` text NOT NULL,
+  `owned` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `plate` (`plate`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Dumping data for table skuadcity.glovebox_inventory: ~0 rows (approximately)
+
+-- Dumping structure for table skuadcity.h_impounded_vehicles
+DROP TABLE IF EXISTS `h_impounded_vehicles`;
+CREATE TABLE IF NOT EXISTS `h_impounded_vehicles` (
+  `plate` varchar(12) NOT NULL,
+  `officer` varchar(255) DEFAULT NULL,
+  `mechanic` varchar(255) DEFAULT NULL,
+  `releasedate` varchar(25) DEFAULT NULL,
+  `fee` double NOT NULL,
+  `reason` text NOT NULL,
+  `notes` text DEFAULT NULL,
+  `vehicle` text NOT NULL,
+  `identifier` varchar(30) NOT NULL,
+  `hold_o` tinyint(1) DEFAULT 0,
+  `hold_m` tinyint(1) DEFAULT 0,
+  PRIMARY KEY (`plate`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Dumping data for table skuadcity.h_impounded_vehicles: ~0 rows (approximately)
 
 -- Dumping structure for table skuadcity.inventories
 DROP TABLE IF EXISTS `inventories`;
@@ -295,44 +320,97 @@ CREATE TABLE IF NOT EXISTS `items` (
   `weight` int(11) NOT NULL,
   `rare` int(11) NOT NULL,
   `can_remove` int(11) NOT NULL,
+  `limit` int(11) DEFAULT 10,
+  `price` int(11) DEFAULT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table skuadcity.items: ~33 rows (approximately)
-REPLACE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
-	('alive_chicken', 'Living chicken', 1, 0, 1),
-	('bandage', 'Bandage', 2, 0, 1),
-	('beer', 'Beer', 1, 0, 0),
-	('blowpipe', 'Blowtorch', 2, 0, 1),
-	('bread', 'Bread', 1, 0, 1),
-	('cannabis', 'Cannabis', 3, 0, 1),
-	('carokit', 'Body Kit', 3, 0, 1),
-	('carotool', 'Tools', 2, 0, 1),
-	('clothe', 'Cloth', 1, 0, 1),
-	('copper', 'Copper', 1, 0, 1),
-	('cutted_wood', 'Cut wood', 1, 0, 1),
-	('diamond', 'Diamond', 1, 0, 1),
-	('essence', 'Gas', 1, 0, 1),
-	('fabric', 'Fabric', 1, 0, 1),
-	('fish', 'Fish', 1, 0, 1),
-	('fixkit', 'Repair Kit', 3, 0, 1),
-	('fixtool', 'Repair Tools', 2, 0, 1),
-	('gazbottle', 'Gas Bottle', 2, 0, 1),
-	('gold', 'Gold', 1, 0, 1),
-	('iron', 'Iron', 1, 0, 1),
-	('marijuana', 'Marijuana', 2, 0, 1),
-	('medikit', 'Medikit', 2, 0, 1),
-	('packaged_chicken', 'Chicken fillet', 1, 0, 1),
-	('packaged_plank', 'Packaged wood', 1, 0, 1),
-	('petrol', 'Oil', 1, 0, 1),
-	('petrol_raffin', 'Processed oil', 1, 0, 1),
-	('phone', 'Phone', 1, 0, 1),
-	('slaughtered_chicken', 'Slaughtered chicken', 1, 0, 1),
-	('stone', 'Stone', 1, 0, 1),
-	('washed_stone', 'Washed stone', 1, 0, 1),
-	('water', 'Water', 1, 0, 1),
-	('wood', 'Wood', 1, 0, 1),
-	('wool', 'Wool', 1, 0, 1);
+-- Dumping data for table skuadcity.items: ~84 rows (approximately)
+REPLACE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`, `limit`, `price`) VALUES
+	('accu', 'Batre Accu', 1, 0, 1, 10, 75),
+	('alive_chicken', 'Ayam Hidup', 1, 0, 1, 20, 0),
+	('bait', 'Cacing', 1, 0, 1, 30, 5),
+	('bandage', 'Perban', 1, 0, 1, 10, 50),
+	('beer', 'Bir', 1, 0, 1, 5, 30),
+	('betadine', 'Obat Betadine', 1, 0, 1, 25, 30),
+	('black_money', 'Uang Kotor', 1, 0, 1, 1, 0),
+	('blackmoney', 'Uang Kotor', 1, 0, 1, 1, 0),
+	('blowpipe', 'Las', 1, 0, 1, 5, 75),
+	('bread', 'Roti', 1, 0, 1, 45, 100),
+	('bubuk_arang', 'Bubuk Arang', 1, 0, 1, 30, 45),
+	('bullet', 'Peluru', 1, 0, 1, 25, 100),
+	('bullet_casing', 'Slongsong Peluru', 1, 0, 1, 30, 75),
+	('carokit', 'Dempul Mobil', 1, 0, 1, 5, 50),
+	('carotool', 'Perkakas', 1, 0, 1, 30, 45),
+	('champagne', 'Champagne', 1, 0, 1, 5, 30),
+	('chemicalslisence', 'Lisensi Farmasi', 1, 0, 1, 1, 3000),
+	('clip', 'Ammo', 1, 0, 1, 10, 1000),
+	('clothe', 'Baju', 1, 0, 1, 40, 0),
+	('coal', 'Batu Bara', 1, 0, 1, 25, 0),
+	('coklat', 'Coklat', 1, 0, 1, 45, 30),
+	('copper', 'Tembaga', 1, 0, 1, 56, 0),
+	('cutted_wood', 'Kayu Potong', 1, 0, 1, 20, 0),
+	('diamond', 'Berlian', 1, 0, 1, 50, 0),
+	('fabric', 'Kain', 1, 0, 1, 80, 0),
+	('fish', 'Ikan', 1, 0, 1, 30, 0),
+	('fishbait', 'Ikan Palsu', 1, 0, 1, 30, 15),
+	('fishingrod', 'Fishing rod', 1, 0, 1, 5, 10),
+	('fixkit', 'Alat Perbaikan', 1, 0, 1, 10, 45),
+	('fixtool', 'Peralatan Perbaikan', 1, 0, 1, 25, 45),
+	('gazbottle', 'Botol Gas', 1, 0, 1, 10, 45),
+	('gold', 'Emas', 1, 0, 1, 21, 0),
+	('gps', 'Peta', 1, 0, 1, 5, 30),
+	('gunpowder', 'Bubuk Misiu', 1, 0, 1, 30, 45),
+	('gym_membership', 'Kartu Mambership GYM', 1, 0, 1, 1, 0),
+	('hamburger', 'Hamburger', 1, 0, 1, 45, 35),
+	('HeavyArmor', 'Heavy Body Armor', 1, 0, 1, 5, 4000),
+	('iron', 'Besi', 1, 0, 1, 42, 0),
+	('kecubung', 'Kecubung', 1, 0, 1, 90, 0),
+	('kertas', 'Kertas', 1, 0, 1, 25, 3),
+	('kopi', 'Kopi', 1, 0, 1, 45, 27),
+	('leather', 'Kulit Hewan', 1, 0, 1, 30, 0),
+	('lisensi_senjata', 'Lisensi Senjata', 1, 0, 1, 1, 1000),
+	('makaroni', 'Makaroni', 1, 0, 1, 45, 27),
+	('meat', 'Daging Mentah', 1, 0, 1, 25, 0),
+	('medikit', 'Kotak P3K', 1, 0, 1, 10, 25),
+	('micin', 'Micin', 1, 0, 1, 90, 0),
+	('money', 'Uang', 1, 0, 1, 1, 0),
+	('moneywash', 'Lisensi Cuci Uang', 1, 0, 1, 1, 2000),
+	('nasi_bungkus', 'Nasi Bungkus', 1, 0, 1, 45, 30),
+	('nasi_goreng', 'Nasi Goreng', 1, 0, 1, 45, 30),
+	('nori', 'Nori', 1, 0, 1, 25, 5),
+	('orang_tua', 'Orang Tua', 1, 0, 1, 10, 30),
+	('packaged_chicken', 'Ayam Siap Jual', 1, 0, 1, 100, 0),
+	('packaged_plank', 'Papan', 1, 0, 1, 100, 0),
+	('padi', 'Padi', 1, 0, 1, 100, 0),
+	('petrol', 'Minyak Mentah', 1, 0, 1, 24, 0),
+	('petrol_raffin', 'Minyak Bersih', 1, 0, 1, 24, 0),
+	('phone', 'Handphone', 1, 0, -1, 5, 100),
+	('pkecubung', 'Paket Kecubung', 1, 0, 1, 30, 0),
+	('pmicin', 'Paket Micin', 1, 0, 1, 30, 0),
+	('psianida', 'Paket Sianida', 1, 0, 1, 90, 0),
+	('radio', 'Radio', 1, 0, -1, 5, 75),
+	('repairkit', 'Peralatan ', 1, 0, 1, 10, 45),
+	('rice', 'Beras', 1, 0, 1, 25, 5),
+	('seaweed', 'Rumput Laut', 1, 0, 1, 30, 0),
+	('sianida', 'Sianida', 1, 0, 1, 90, 0),
+	('siomay', 'Siomay', 1, 0, 1, 45, 25),
+	('slaughtered_chicken', 'Ayam Potong', 1, 0, 1, 20, 0),
+	('stainless_steel', 'Stainless Steel', 1, 0, 1, 30, 75),
+	('stone', 'Batu', 1, 0, 1, 7, 0),
+	('susu', 'Susu', 1, 0, 1, 45, 30),
+	('teh', 'Teh', 1, 0, 1, 45, 25),
+	('tehkotak', 'Teh Kotak', 1, 0, 1, 45, 30),
+	('tuna', 'Tuna', 1, 0, 1, 30, 0),
+	('vegetables', 'Sayuran', 1, 0, 1, 10, 7),
+	('vodka', 'Vodka', 1, 0, 1, 10, 45),
+	('washed_stone', 'Batu Bersih', 1, 0, 1, 7, 0),
+	('water', 'Air Mineral', 1, 0, 1, 45, 100),
+	('whiskey', 'Whiskey', 1, 0, 1, 10, 45),
+	('wine', 'Wine', 1, 0, 1, 10, 45),
+	('wood', 'Kayu', 1, 0, 1, 20, 0),
+	('wool', 'Kain', 1, 0, 1, 40, 0),
+	('zetony', 'Chips', 0, 0, 1, 1, 0);
 
 -- Dumping structure for table skuadcity.jobs
 DROP TABLE IF EXISTS `jobs`;
@@ -343,23 +421,35 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table skuadcity.jobs: ~15 rows (approximately)
+-- Dumping data for table skuadcity.jobs: ~27 rows (approximately)
 REPLACE INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('ambulance', 'EMS', 0),
-	('banker', 'Banker', 0),
-	('cardealer', 'Cardealer', 0),
-	('fisherman', 'Fisherman', 0),
-	('fueler', 'Fueler', 0),
-	('lumberjack', 'Lumberjack', 0),
-	('mechanic', 'Mechanic', 0),
-	('miner', 'Miner', 0),
-	('police', 'LSPD', 0),
-	('realestateagent', 'Real Estate Agent', 0),
-	('reporter', 'Reporter', 0),
-	('slaughterer', 'Butcher', 0),
-	('tailor', 'Tailor', 0),
-	('taxi', 'Taxi', 0),
-	('unemployed', 'Unemployed', 0);
+	('biker', 'Biker', 0),
+	('cardealer', 'Cardealer', 1),
+	('cartel', 'Cartel', 0),
+	('fisherman', 'Nelayan', 0),
+	('fueler', 'Tukang Minyak', 0),
+	('gang', 'Gangster', 1),
+	('garbage', 'Tukang Sampah', 1),
+	('gopostal', 'Tukang Pos', 1),
+	('lumberjack', 'Tukang Kayu', 0),
+	('mafia', 'Mafia', 0),
+	('mechanic', 'Mekanik', 0),
+	('miner', 'Penambang', 0),
+	('offambulance', 'Off EMS', 1),
+	('offcardealer', 'Off Cardealer', 1),
+	('offmechanic', 'Off Mekanik', 1),
+	('offpedagang', 'Off Pedagang', 1),
+	('offpolice', 'Off Polisi', 1),
+	('offtaxi', 'Taksi', 1),
+	('pedagang', 'Pedagang', 0),
+	('police', 'Polisi', 0),
+	('reporter', 'Reporter', 1),
+	('slaughterer', 'Tukang Ayam', 0),
+	('tailor', 'Penjahit', 0),
+	('taxi', 'Taksi', 0),
+	('theb', 'The B', 1),
+	('unemployed', 'Warga', 0);
 
 -- Dumping structure for table skuadcity.job_grades
 DROP TABLE IF EXISTS `job_grades`;
@@ -428,15 +518,16 @@ CREATE TABLE IF NOT EXISTS `licenses` (
   PRIMARY KEY (`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table skuadcity.licenses: ~7 rows (approximately)
+-- Dumping data for table skuadcity.licenses: ~8 rows (approximately)
 REPLACE INTO `licenses` (`type`, `label`) VALUES
-	('boat', 'Boat License'),
-	('dmv', 'Traffic Laws'),
-	('drive', 'Drivers license'),
-	('drive_bike', 'Motorcycle licence'),
-	('drive_truck', 'Truck license'),
-	('weapon', 'Weapon License'),
-	('weed_processing', 'Weed Processing License');
+	('boat', 'SIM Kapal'),
+	('dmv', 'Ujian SIM'),
+	('drive', 'SIM Mobil'),
+	('drive_bike', 'SIM Motor'),
+	('drive_truck', 'SIM Truk'),
+	('meth_processing', 'Lisensi Obat'),
+	('weapon', 'Lisensi Senjata'),
+	('weed_processing', 'Lisensi Narkoba');
 
 -- Dumping structure for table skuadcity.migrations
 DROP TABLE IF EXISTS `migrations`;
@@ -673,15 +764,15 @@ CREATE TABLE IF NOT EXISTS `shops` (
 
 -- Dumping data for table skuadcity.shops: ~9 rows (approximately)
 REPLACE INTO `shops` (`id`, `store`, `item`, `price`) VALUES
-	(1, 'TwentyFourSeven', 'bread', 30),
-	(2, 'TwentyFourSeven', 'water', 15),
-	(3, 'RobsLiquor', 'bread', 30),
-	(4, 'RobsLiquor', 'water', 15),
-	(5, 'LTDgasoline', 'bread', 30),
-	(6, 'LTDgasoline', 'water', 15),
-	(7, 'TwentyFourSeven', 'beer', 45),
-	(8, 'RobsLiquor', 'beer', 45),
-	(9, 'LTDgasoline', 'beer', 45);
+	(1, 'TwentyFourSeven', 'bread', 100),
+	(2, 'TwentyFourSeven', 'water', 100),
+	(3, 'RobsLiquor', 'bread', 100),
+	(4, 'RobsLiquor', 'water', 100),
+	(5, 'LTDgasoline', 'bread', 100),
+	(6, 'LTDgasoline', 'water', 100),
+	(7, 'TwentyFourSeven', 'beer', 100),
+	(8, 'RobsLiquor', 'beer', 100),
+	(9, 'LTDgasoline', 'beer', 100);
 
 -- Dumping structure for table skuadcity.society_moneywash
 DROP TABLE IF EXISTS `society_moneywash`;
@@ -1097,7 +1188,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_categories` (
 REPLACE INTO `vehicle_categories` (`name`, `label`) VALUES
 	('compacts', 'Compacts'),
 	('coupes', 'Coupés'),
-	('motorcycles', 'Motos'),
+	('motorcycles', 'Motor'),
 	('muscle', 'Muscle'),
 	('offroad', 'Off Road'),
 	('sedans', 'Sedans'),

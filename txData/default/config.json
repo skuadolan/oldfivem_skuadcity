@@ -40,8 +40,8 @@
     "statusMessage": "**IP:** `change-me:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {
-    "serverDataPath": "D:/projects/game/skuadcity/txData/server-data/",
-    "cfgPath": "D:/projects/game/skuadcity/txData/server-data/server.cfg",
+    "serverDataPath": "D:/projects/game/fivem_skuadcity/txData/server-data/",
+    "cfgPath": "D:/projects/game/fivem_skuadcity/txData/server-data/server.cfg",
     "commandLine": "+set sv_enforceGameBuild 2189",
     "onesync": "on",
     "autostart": true,

@@ -260,6 +260,7 @@ Citizen.CreateThread(function()
 											TriggerServerEvent('fuel:pay', refillCost)
 
 											SetPedAmmo(ped, 883325847, 4500)
+											TriggerServerEvent('fuel:givePetrol')
 										end
 									else
 										DrawText3Ds(stringCoords.x, stringCoords.y, stringCoords.z + 1.2, Config.Strings.NotEnoughCashJerryCan)
@@ -272,6 +273,7 @@ Citizen.CreateThread(function()
 
 								if IsControlJustReleased(0, 38) then
 									SetPedAmmo(ped, 883325847, 4500)
+									TriggerServerEvent('fuel:givePetrol')
 								end
 							end
 						end

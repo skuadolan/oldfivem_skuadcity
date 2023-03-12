@@ -33,14 +33,14 @@ local soundDistanceMax = 8.0
 --  Check si le joueurs poséde un téléphone
 --  Callback true or false
 --====================================================================================
-function hasPhone (cb)
+--[[function hasPhone (cb)
   cb(true)
-end
+end]]
 --====================================================================================
 --  Que faire si le joueurs veut ouvrir sont téléphone n'est qu'il en a pas ?
 --====================================================================================
-function ShowNoPhoneWarning ()
-end
+--[[function ShowNoPhoneWarning ()
+end]]
 
 --[[
   Ouverture du téphone lié a un item
@@ -56,7 +56,7 @@ Citizen.CreateThread(function()
     Citizen.Wait(0)
   end
 end)
---[[
+
 function hasPhone (cb)
   if (ESX == nil) then return cb(0) end
   ESX.TriggerServerCallback('gcphone:getItemAmount', function(qtty)
@@ -65,8 +65,9 @@ function hasPhone (cb)
 end
 function ShowNoPhoneWarning () 
   if (ESX == nil) then return end
-  ESX.ShowNotification("Vous n'avez pas de ~r~téléphone~s~")
-end --]] 
+  exports['mythic_notify']:SendAlert('error', 'Kamu tidak punya Handphone')
+  --ESX.ShowNotification("Vous n'avez pas de ~r~téléphone~s~")
+end 
 
 AddEventHandler('esx:onPlayerDeath', function()
   if menuIsOpen then
@@ -92,7 +93,7 @@ Citizen.CreateThread(function()
       DisableControlAction(0, 288, true)
     end
     if takePhoto ~= true then
-      if IsControlJustPressed(1, Config.KeyOpenClose) then
+      --[[if IsControlJustPressed(1, Config.KeyOpenClose) then
         hasPhone(function (hasPhone)
           if hasPhone == true then
             TooglePhone()
@@ -100,7 +101,7 @@ Citizen.CreateThread(function()
             ShowNoPhoneWarning()
           end
         end)
-      end
+      end]]
       if menuIsOpen == true then
         for _, value in ipairs(KeyToucheCloseEvent) do
           if IsControlJustPressed(1, value.code) then
@@ -125,11 +126,13 @@ Citizen.CreateThread(function()
   end
 end)
 
-RegisterCommand('Handphone', function()
+RegisterCommand('phone', function()
 	if not isDead and IsInputDisabled(0) then
 		hasPhone(function (hasPhone)
       if hasPhone == true then
-        TooglePhone()
+        if menuIsOpen == false then
+          TooglePhone()
+        end
       else
         ShowNoPhoneWarning()
       end
@@ -137,7 +140,13 @@ RegisterCommand('Handphone', function()
 	end
 end, false)
 
-RegisterKeyMapping('Handphone', 'Tombol Phone', 'keyboard', '`')
+--[[RegisterCommand('phone', function(_myPhoneNumber)
+  if menuIsOpen == false then
+    TooglePhone()
+  end
+end)]]
+
+RegisterKeyMapping('phone', 'Tombol Phone', 'keyboard', '`')
 
 --====================================================================================
 --  Active ou Deactive une application (appName => config.json)
@@ -286,18 +295,19 @@ function StopSoundJS (sound)
   SendNUIMessage({ event = 'stopSound', sound = sound})
 end
 
-RegisterNetEvent("gcPhone:forceOpenPhone")
-AddEventHandler("gcPhone:forceOpenPhone", function(_myPhoneNumber)
+RegisterNetEvent('gcPhone:forceOpenPhone')
+AddEventHandler('gcPhone:forceOpenPhone', function(prop_name)
+  exports['mythic_notify']:SendAlert('inform', prop_name)
   if menuIsOpen == false then
     TooglePhone()
   end
 end)
 
-RegisterCommand('phone', function(_myPhoneNumber)
+--[[RegisterCommand('phone', function(_myPhoneNumber)
   if menuIsOpen == false then
     TooglePhone()
   end
-end)
+end)]]
  
 --====================================================================================
 --  Events
@@ -667,6 +677,13 @@ function TooglePhone()
   menuIsOpen = not menuIsOpen
   SendNUIMessage({show = menuIsOpen})
   if menuIsOpen == true then 
+    --TAB
+    DisableControlAction(0, 37)
+    DisableControlAction(0, 192)
+    DisableControlAction(0, 204)
+    DisableControlAction(0, 211)
+    DisableControlAction(0, 349)
+    
     PhonePlayIn()
     TriggerEvent('gcPhone:setMenuStatus', true)
     --SetBigmapActive(1,0)

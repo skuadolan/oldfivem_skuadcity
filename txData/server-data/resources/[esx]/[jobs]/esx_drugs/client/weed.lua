@@ -48,7 +48,8 @@ end)
 
 function ProcessWeed(xCannabis)
 	isProcessing = true
-	ESX.ShowNotification(_U('weed_processingstarted'))
+	exports['mythic_notify']:SendAlert('inform', _U('weed_processingstarted'))
+	--ESX.ShowNotification(_U('weed_processingstarted'))
   TriggerServerEvent('esx_drugs:processCannabis')
 	if(xCannabis <= 3) then
 		xCannabis = 0
@@ -61,7 +62,8 @@ function ProcessWeed(xCannabis)
 		timeLeft = timeLeft - 1
 
 		if #(GetEntityCoords(playerPed) - Config.CircleZones.WeedProcessing.coords) > 4 then
-			ESX.ShowNotification(_U('weed_processingtoofar'))
+			exports['mythic_notify']:SendAlert('inform', _U('weed_processingtoofar'))
+			--ESX.ShowNotification(_U('weed_processingtoofar'))
 			TriggerServerEvent('esx_drugs:cancelProcessing')
 			TriggerServerEvent('esx_drugs:outofbound')
 			break
@@ -118,14 +120,16 @@ CreateThread(function()
 			
 							TriggerServerEvent('esx_drugs:pickedUpCannabis')
 						else
-							ESX.ShowNotification(_U('weed_inventoryfull'))
+							exports['mythic_notify']:SendAlert('error', _U('weed_inventoryfull'))
+							--ESX.ShowNotification(_U('weed_inventoryfull'))
 						end
 	
 						isPickingUp = false
 					end, 'cannabis')
 				end
 			else
-				ESX.ShowNotification('No Police in Town')
+				exports['mythic_notify']:SendAlert('error', 'Tidak ada polisi di kota')
+				--ESX.ShowNotification('No Police in Town')
 			end
 		else
 			Wait(500)

@@ -362,7 +362,7 @@ function GetAction(data)
 end
 
 -- Blips
-CreateThread(function()
+--[[CreateThread(function()
 	for k,v in pairs(Config.Zones) do
 		local blip = AddBlipForCoord(v.Pos.x, v.Pos.y, v.Pos.z)
 
@@ -374,7 +374,7 @@ CreateThread(function()
 		AddTextComponentSubstringPlayerName(v.Name)
 		EndTextCommandSetBlipName(blip)
 	end
-end)
+end)]]
 
 -- Activate menu when player is inside marker
 CreateThread(function()

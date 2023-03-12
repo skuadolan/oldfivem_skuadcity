@@ -4,10 +4,12 @@ game 'gta5'
 
 description 'ESX Police Job'
 
-version '1.3.0'
+version '1.6.0'
+
+shared_script '@es_extended/imports.lua'
 
 server_scripts {
-	'@mysql-async/lib/MySQL.lua',
+	'@oxmysql/lib/MySQL.lua',
 	'@es_extended/locale.lua',
 	'locales/br.lua',
 	'locales/de.lua',
@@ -22,8 +24,7 @@ server_scripts {
 	'locales/nl.lua',
 	'locales/tr.lua',
 	'config.lua',
-	'server/main.lua',
-	'server/sv-borgol.lua'
+	'server/main.lua'
 }
 
 client_scripts {
@@ -42,8 +43,11 @@ client_scripts {
 	'locales/tr.lua',
 	'config.lua',
 	'client/main.lua',
-	'client/vehicle.lua',
-	'client/cl-borgol.lua'
+	'client/vehicle.lua'
 }
 
-dependency 'es_extended'
+dependencies {
+	'es_extended',
+	'esx_billing',
+	'esx_vehicleshop'
+}

@@ -130,9 +130,11 @@ function OpenBuyLicenseMenu(licenseName)
 		if data.current.value ~= 'no' then
 			ESX.TriggerServerCallback('esx_drugs:buyLicense', function(boughtLicense)
 				if boughtLicense then
-					ESX.ShowNotification(_U('license_bought', data.current.licenseName, ESX.Math.GroupDigits(data.current.price)))
+					exports['mythic_notify']:SendAlert('error', _U('license_bought', data.current.licenseName, ESX.Math.GroupDigits(data.current.price)))
+					--ESX.ShowNotification(_U('license_bought', data.current.licenseName, ESX.Math.GroupDigits(data.current.price)))
 				else
-					ESX.ShowNotification(_U('license_bought_fail', data.current.licenseName))
+					exports['mythic_notify']:SendAlert('error', _U('license_bought_fail', data.current.licenseName))
+					--ESX.ShowNotification(_U('license_bought_fail', data.current.licenseName))
 				end
 			end, data.current.value)
 		else

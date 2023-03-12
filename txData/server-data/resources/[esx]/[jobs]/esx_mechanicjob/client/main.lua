@@ -1046,7 +1046,7 @@ Citizen.CreateThread(function()
 end)
 
 RegisterCommand('mechmenu', function()
-	if not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' then
+	if not isDead and ESX.PlayerData.job.name == 'mechanic' then
 		OpenMobileMechanicActionsMenu()
 	end
 end, false)

@@ -11,8 +11,7 @@ CreateThread(function()
 		Wait(0)
 
 		if CurrentAction then
-			exports['mythic_notify']:SendAlert('inform', CurrentActionMsg)
-			--ESX.ShowHelpNotification(CurrentActionMsg)
+			ESX.ShowHelpNotification(CurrentActionMsg)
 
 			if IsControlJustReleased(0, 38) then
 				if CurrentAction == 'boat_shop' then
@@ -28,10 +27,10 @@ CreateThread(function()
 							end
 						end, GetPlayerServerId(PlayerId()), 'boat')
 					end
-				elseif CurrentAction == 'garage_out' then
+				--[[elseif CurrentAction == 'garage_out' then
 					OpenBoatGarage(Config.Zones.Garages[CurrentActionData.zoneNum])
 				elseif CurrentAction == 'garage_in' then
-					StoreBoatInGarage(CurrentActionData.vehicle, Config.Zones.Garages[CurrentActionData.zoneNum].StoreTP)
+					StoreBoatInGarage(CurrentActionData.vehicle, Config.Zones.Garages[CurrentActionData.zoneNum].StoreTP)]]
 				end
 
 				CurrentAction = nil
@@ -100,7 +99,7 @@ CreateThread(function()
 			end
 		end
 
-		for i=1, #Config.Zones.Garages, 1 do
+		--[[for i=1, #Config.Zones.Garages, 1 do
 			local distance = #(coords - Config.Zones.Garages[i].GaragePos)
 
 			if distance < Config.DrawDistance then
@@ -126,7 +125,7 @@ CreateThread(function()
 				currentZone    = 'garage_in'
 				currentZoneNum = i
 			end
-		end
+		end]]
 
 		if isInMarker and not HasAlreadyEnteredMarker or (isInMarker and (LastZone ~= currentZone or LastZoneNum ~= currentZoneNum)) then
 			if
@@ -159,7 +158,7 @@ end)
 CreateThread(function()
 	local blipList = {}
 
-	for i=1, #Config.Zones.Garages, 1 do
+	--[[for i=1, #Config.Zones.Garages, 1 do
 		table.insert(blipList, {
 			coords = Config.Zones.Garages[i].GaragePos,
 			text   = _U('blip_garage'),
@@ -167,7 +166,7 @@ CreateThread(function()
 			color  = 3,
 			scale  = 1.0
 		})
-	end
+	end]]
 
 	for i=1, #Config.Zones.BoatShops, 1 do
 		table.insert(blipList, {

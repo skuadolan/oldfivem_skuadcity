@@ -177,7 +177,7 @@ ESX.RegisterServerCallback(
         local names = {}
 
         MySQL.Async.fetchAll(
-            "SELECT * FROM items WHERE 1",
+            "SELECT * FROM items",
             {},
             function(info)
                 for _, v in ipairs(info) do

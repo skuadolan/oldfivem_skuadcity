@@ -18,6 +18,8 @@ if Config.UseESX then
 	AddEventHandler('fuel:givePetrol', function()
 		local xPlayer = ESX.GetPlayerFromId(source)
 
-		xPlayer.addInventoryItem("WEAPON_PETROLCAN", 100)
+		xPlayer.removeWeapon('WEAPON_PETROLCAN', 4500)
+		xPlayer.addWeapon('WEAPON_PETROLCAN', 4500)
+		--xPlayer.addInventoryItem("WEAPON_PETROLCAN", 100)
 	end)
 end

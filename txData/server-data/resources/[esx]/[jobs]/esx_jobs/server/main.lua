@@ -33,10 +33,12 @@ CreateThread(function()
 							end
 			
 							if v.name ~= _U('delivery') and itemQtty >= v.max then
-								xPlayer.showNotification(_U('max_limit', v.name))
+								TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', (_U('max_limit', v.name))
+								--xPlayer.showNotification(_U('max_limit', v.name))
 								playersWorking[playerId] = nil
 							elseif v.requires ~= 'nothing' and requiredItemQtty <= 0 then
-								xPlayer.showNotification(_U('not_enough', data.jobItem[1].requires_name))
+								TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('not_enough', data.jobItem[1].requires_name))
+								--xPlayer.showNotification(_U('not_enough', data.jobItem[1].requires_name))
 								playersWorking[playerId] = nil
 							else
 								if v.name ~= _U('delivery') then
@@ -113,10 +115,12 @@ AddEventHandler('esx_jobs:caution', function(cautionType, cautionAmount, spawnPo
 				if xPlayer.getAccount('bank').money >= cautionAmount then
 					xPlayer.removeAccountMoney('bank', cautionAmount)
 					account.addMoney(cautionAmount)
-					xPlayer.showNotification(_U('bank_deposit_taken', ESX.Math.GroupDigits(cautionAmount)))
+					TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('bank_deposit_taken', ESX.Math.GroupDigits(cautionAmount)))
+					--xPlayer.showNotification(_U('bank_deposit_taken', ESX.Math.GroupDigits(cautionAmount)))
 					TriggerClientEvent('esx_jobs:spawnJobVehicle', xPlayer.source, spawnPoint, vehicle)
 				else
-					xPlayer.showNotification(_U('caution_afford', ESX.Math.GroupDigits(cautionAmount)))
+					TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('caution_afford', ESX.Math.GroupDigits(cautionAmount)))
+					--xPlayer.showNotification(_U('caution_afford', ESX.Math.GroupDigits(cautionAmount)))
 				end
 			end)
 		end
@@ -128,7 +132,8 @@ AddEventHandler('esx_jobs:caution', function(cautionType, cautionAmount, spawnPo
 	
 				xPlayer.addAccountMoney('bank', toGive)
 				account.removeMoney(toGive)
-				TriggerClientEvent('esx:showNotification', source, _U('bank_deposit_returned', ESX.Math.GroupDigits(toGive)))
+				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', _U('bank_deposit_returned', ESX.Math.GroupDigits(toGive)))
+				--TriggerClientEvent('esx:showNotification', source, _U('bank_deposit_returned', ESX.Math.GroupDigits(toGive)))
 			end)
 		end
 	end

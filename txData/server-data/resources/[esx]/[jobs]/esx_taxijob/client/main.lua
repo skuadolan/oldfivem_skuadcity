@@ -159,7 +159,8 @@ function OpenVehicleSpawnerMenu()
 				elements = elements
 			}, function(data, menu)
 				if not ESX.Game.IsSpawnPointClear(Config.Zones.VehicleSpawnPoint.Pos, 5.0) then
-					ESX.ShowNotification(_U('spawnpoint_blocked'))
+					exports['mythic_notify']:SendAlert('error', _U('spawnpoint_blocked'))
+					--ESX.ShowNotification(_U('spawnpoint_blocked'))
 					return
 				end
 
@@ -190,7 +191,8 @@ function OpenVehicleSpawnerMenu()
 			elements = Config.AuthorizedVehicles
 		}, function(data, menu)
 			if not ESX.Game.IsSpawnPointClear(Config.Zones.VehicleSpawnPoint.Pos, 5.0) then
-				ESX.ShowNotification(_U('spawnpoint_blocked'))
+				exports['mythic_notify']:SendAlert('error', _U('spawnpoint_blocked'))
+				--ESX.ShowNotification(_U('spawnpoint_blocked'))
 				return
 			end
 
@@ -224,7 +226,8 @@ function DeleteJobVehicle()
 				TriggerServerEvent('esx_service:disableService', 'taxi')
 			end
 		else
-			ESX.ShowNotification(_U('only_taxi'))
+			exports['mythic_notify']:SendAlert('error', _U('only_taxi'))
+			--ESX.ShowNotification(_U('only_taxi'))
 		end
 	end
 end
@@ -281,21 +284,24 @@ function OpenMobileTaxiActionsMenu()
 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'billing', {
 				title = _U('invoice_amount')
 			}, function(data, menu)
-
+					
 				local amount = tonumber(data.value)
 				if amount == nil then
-					ESX.ShowNotification(_U('amount_invalid'))
+					exports['mythic_notify']:SendAlert('error', _U('amount_invalid'))
+					----ESX.ShowNotification(_U('amount_invalid'))
 				else
 					menu.close()
 					local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
-					if closestPlayer == -1 or closestDistance > 3.0 then
-						ESX.ShowNotification(_U('no_players_near'))
+					if closestPlayer == -1 or closestDistance > 2.0 then
+						exports['mythic_notify']:SendAlert('error', _U('no_players_near'))
+						----ESX.ShowNotification(_U('no_players'))
 					else
 						TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_taxi', 'Taxi', amount)
-						ESX.ShowNotification(_U('billing_sent'))
+						TriggerServerEvent("esx:taxijob", GetPlayerName(closestPlayer), amount)
+						exports['mythic_notify']:SendAlert('inform', _U('billing_sent'))
+						----ESX.ShowNotification(_U('billing_sent'))
 					end
-
-				end
+				end	
 
 			end, function(data, menu)
 				menu.close()
@@ -316,14 +322,17 @@ function OpenMobileTaxiActionsMenu()
 							if IsInAuthorizedVehicle() then
 								StartTaxiJob()
 							else
-								ESX.ShowNotification(_U('must_in_taxi'))
+								exports['mythic_notify']:SendAlert('error',_U('must_in_taxi'))
+								--ESX.ShowNotification(_U('must_in_taxi'))
 							end
 						end
 					else
 						if tonumber(ESX.PlayerData.job.grade) >= 3 then
-							ESX.ShowNotification(_U('must_in_vehicle'))
+							exports['mythic_notify']:SendAlert('error', _U('must_in_vehicle'))
+							--ESX.ShowNotification(_U('must_in_vehicle'))
 						else
-							ESX.ShowNotification(_U('must_in_taxi'))
+							exports['mythic_notify']:SendAlert('error', _U('must_in_taxi'))
+							--ESX.ShowNotification(_U('must_in_taxi'))
 						end
 					end
 				end
@@ -371,7 +380,8 @@ function OpenGetStocksMenu()
 				local count = tonumber(data2.value)
 
 				if count == nil then
-					ESX.ShowNotification(_U('quantity_invalid'))
+					exports['mythic_notify']:SendAlert('error', _U('quantity_invalid'))
+					--ESX.ShowNotification(_U('quantity_invalid'))
 				else
 					menu2.close()
 					menu.close()
@@ -419,7 +429,8 @@ function OpenPutStocksMenu()
 				local count = tonumber(data2.value)
 
 				if count == nil then
-					ESX.ShowNotification(_U('quantity_invalid'))
+					exports['mythic_notify']:SendAlert('error', _U('quantity_invalid'))
+					--ESX.ShowNotification(_U('quantity_invalid'))
 				else
 					menu2.close()
 					menu.close()
@@ -582,13 +593,15 @@ Citizen.CreateThread(function()
 							local standTime = GetRandomIntInRange(60000, 180000)
 							TaskStandStill(CurrentCustomer, standTime)
 
-							ESX.ShowNotification(_U('customer_found'))
+							exports['mythic_notify']:SendAlert('error', _U('customer_found'))
+							--ESX.ShowNotification(_U('customer_found'))
 						end
 					end
 				end
 			else
 				if IsPedFatallyInjured(CurrentCustomer) then
-					ESX.ShowNotification(_U('client_unconcious'))
+					exports['mythic_notify']:SendAlert('error', _U('client_unconcious'))
+					--ESX.ShowNotification(_U('client_unconcious'))
 
 					if DoesBlipExist(CurrentCustomerBlip) then
 						RemoveBlip(CurrentCustomerBlip)
@@ -616,7 +629,8 @@ Citizen.CreateThread(function()
 							if targetDistance <= 10.0 then
 								TaskLeaveVehicle(CurrentCustomer, vehicle, 0)
 
-								ESX.ShowNotification(_U('arrive_dest'))
+								exports['mythic_notify']:SendAlert('error', _U('arrive_dest'))
+								--ESX.ShowNotification(_U('arrive_dest'))
 
 								TaskGoStraightToCoord(CurrentCustomer, targetCoords.x, targetCoords.y, targetCoords.z, 1.0, -1, 0.0, 0.0)
 								SetEntityAsMissionEntity(CurrentCustomer, false, true)
@@ -658,7 +672,8 @@ Citizen.CreateThread(function()
 								msg = string.format(_U('take_me_to', GetStreetNameFromHashKey(street[1])))
 							end
 
-							ESX.ShowNotification(msg)
+							exports['mythic_notify']:SendAlert('error', msg)
+							--ESX.ShowNotification(msg)
 
 							DestinationBlip = AddBlipForCoord(targetCoords.x, targetCoords.y, targetCoords.z)
 
@@ -676,7 +691,8 @@ Citizen.CreateThread(function()
 							if customerDistance <= 40.0 then
 
 								if not IsNearCustomer then
-									ESX.ShowNotification(_U('close_to_client'))
+									exports['mythic_notify']:SendAlert('error', _U('close_to_client'))
+									--ESX.ShowNotification(_U('close_to_client'))
 									IsNearCustomer = true
 								end
 
@@ -720,7 +736,8 @@ Citizen.CreateThread(function()
 			if not IsInAuthorizedVehicle() then
 				ClearCurrentMission()
 				OnJob = false
-				ESX.ShowNotification(_U('not_in_taxi'))
+				exports['mythic_notify']:SendAlert('error', _U('not_in_taxi'))
+				--ESX.ShowNotification(_U('not_in_taxi'))
 			end
 		end
 	end
@@ -756,7 +773,7 @@ Citizen.CreateThread(function()
 end)
 
 RegisterCommand('taximenu', function()
-	if IsInputDisabled(0) and not IsDead and Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
+	if IsInputDisabled(0) and not IsDead and ESX.PlayerData.job.name == 'taxi' then
 		OpenMobileTaxiActionsMenu()
 	end
 end, false)

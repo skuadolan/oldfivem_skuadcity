@@ -33,23 +33,24 @@ function OpenBankActionsMenu()
 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'billing', {
 				title = _U('bill_amount')
 			}, function(data, menu)
-				local amount = tonumber(data.value)
-
-				if amount == nil then
-					exports['mythic_notify']:SendAlert('error', _U('invalid_amount'))
-					--ESX.ShowNotification(_U('invalid_amount'))
+					
+			local amount = tonumber(data.value)
+			if amount == nil then
+				exports['mythic_notify']:SendAlert('error', _U('amount_invalid'))
+				--ESX.ShowNotification(_U('amount_invalid'))
+			else
+				menu.close()
+				local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+				if closestPlayer == -1 or closestDistance > 2.0 then
+					exports['mythic_notify']:SendAlert('error', _U('no_player_nearby'))
+					--ESX.ShowNotification(_U('no_players'))
 				else
-					menu.close()
-
-					local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
-
-					if closestPlayer == -1 or closestDistance > 5.0 then
-						exports['mythic_notify']:SendAlert('error', _U('no_player_nearby'))
-						--ESX.ShowNotification(_U('no_player_nearby'))
-					else
-						TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_banker', 'Banque', amount)
-					end
+					TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_banker', 'Banker', amount)
+					TriggerServerEvent("esx:bankerjob", GetPlayerName(closestPlayer), amount)
+					exports['mythic_notify']:SendAlert('inform', _U('billing_sent'))
+					--ESX.ShowNotification(_U('billing_sent'))
 				end
+			end	
 			end, function(data, menu)
 				menu.close()
 			end)
