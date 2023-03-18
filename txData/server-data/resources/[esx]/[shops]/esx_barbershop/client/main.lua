@@ -100,6 +100,8 @@ CreateThread(function()
 
 		SetBlipSprite (blip, 71)
 		SetBlipColour (blip, 51)
+		SetBlipScale  (blip, 0.75)
+		
 		SetBlipAsShortRange(blip, true)
 
 		BeginTextCommandSetBlipName('STRING')

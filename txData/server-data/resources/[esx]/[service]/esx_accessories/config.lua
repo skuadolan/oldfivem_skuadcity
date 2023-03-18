@@ -6,7 +6,7 @@ Config.Price = 100
 
 Config.EnableControls = true
 
-Config.DrawDistance = 10
+Config.DrawDistance = 2
 Config.Size   = {x = 1.5, y = 1.5, z = 1.0}
 Config.Color  = {r = 102, g = 102, b = 204}
 Config.Type   = 1

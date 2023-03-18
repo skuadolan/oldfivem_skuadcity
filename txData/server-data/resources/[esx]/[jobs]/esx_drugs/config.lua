@@ -26,7 +26,7 @@ Config.CircleZones = {
 }
 
 Config.Marker = {
-	Distance = 5.0,
+	Distance = 2.0,
 	Color = {r=60,g=230,b=60,a=255},
 	Size = vector3(1.5,1.5,1.0),
 	Type = 1,

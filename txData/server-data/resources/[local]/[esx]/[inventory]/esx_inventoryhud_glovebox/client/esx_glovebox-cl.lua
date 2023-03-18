@@ -50,9 +50,9 @@ RegisterNetEvent("esx:setJob")
 AddEventHandler("esx:setJob", function(job)
 	local PlayerData = ESX.GetPlayerData()
 	if PlayerData == nil then
-		print ('Handschoenenkastje kan beroep niet synchroniseren. Dit is niet erg.') -- Cannot sync job, not bad
+		--print ('Handschoenenkastje kan beroep niet synchroniseren. Dit is niet erg.') -- Cannot sync job, not bad
 	else
-		print ('Handschoenenkastje heeft je beroep gesynchroniseerd.') -- Can sync job
+		--print ('Handschoenenkastje heeft je beroep gesynchroniseerd.') -- Can sync job
 		PlayerData.job = job
 	end
 end)

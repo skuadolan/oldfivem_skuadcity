@@ -2,7 +2,7 @@ Config = {}
 Config.Locale = 'id'
 
 Config.MenuAlign = 'top-left'
-Config.DrawDistance = 5
+Config.DrawDistance = 2
 
 Config.UseCommand = false -- Will allow players to do /getproperties instead of having to log out & back in to see Private Garages.
 Config.ParkVehicles = false -- true = Automatically Park all Vehicles in Garage on Server/Script Restart | false = Opposite of true but players will have to go to Pound to get their Vehicle Back.
@@ -41,24 +41,24 @@ Config.UsingAdvancedVehicleShop = false -- Set to true if using esx_advancedvehi
 Config.UseAmbulanceGarages = false -- true = Allows use of Ambulance Garages.
 Config.UseAmbulancePounds = true -- true = Allows use of Ambulance Pounds.
 Config.UseAmbulanceBlips = true -- true = Use Ambulance Blips.
-Config.AmbulancePoundPrice = 10000 -- How much it Costs to get Vehicle from Ambulance Pound.
+Config.AmbulancePoundPrice = 1000 -- How much it Costs to get Vehicle from Ambulance Pound.
 
 Config.UsePoliceGarages = false -- true = Allows use of Police Garages.
 Config.UsePolicePounds = true -- true = Allows use of Police Pounds.
 Config.UsePoliceBlips = true -- true = Use Police Blips.
-Config.PolicePoundPrice = 10000 -- How much it Costs to get Vehicle from Police Pound.
+Config.PolicePoundPrice = 1000 -- How much it Costs to get Vehicle from Police Pound.
 
-Config.UseAircraftGarages = false -- true = Allows use of Aircraft Garages.
-Config.UseAircraftBlips = false -- true = Use Aircraft Blips.
-Config.AircraftPoundPrice = 10000 -- How much it Costs to get Vehicle from Aircraft Pound.
+Config.UseAircraftGarages = true -- true = Allows use of Aircraft Garages.
+Config.UseAircraftBlips = true -- true = Use Aircraft Blips.
+Config.AircraftPoundPrice = 1000 -- How much it Costs to get Vehicle from Aircraft Pound.
 
 Config.UseBoatGarages = true -- true = Allows use of Boat Garages.
 Config.UseBoatBlips = true -- true = Use Boat Blips.
-Config.BoatPoundPrice = 10000 -- How much it Costs to get Vehicle from Boat Pound.
+Config.BoatPoundPrice = 1000 -- How much it Costs to get Vehicle from Boat Pound.
 
 Config.UseCarGarages = true -- true = Allows use of Car Garages.
 Config.UseCarBlips = true-- true = Use Car Blips.
-Config.CarPoundPrice = 10000 -- How much it Costs to get Vehicle from Car Pound.
+Config.CarPoundPrice = 1000 -- How much it Costs to get Vehicle from Car Pound.
 
 Config.UsePrivateCarGarages = true -- true = Allows use of Private Car Garages.
 
@@ -155,7 +155,7 @@ Config.BoatGarages = {
 		Heading = 87.0
 	},
 	Paleto_Bay_Dock = {
-		Marker = vector3(-283.74, 6629.51, 6.3),
+		Marker = vector3(-283.74, 6629.51, 7.3),
 		Spawner = vector3(-290.46, 6622.72, -0.47),
 		Deleter = vector3(-304.66, 6607.36, -0.47),
 		Heading = 52.0
@@ -164,7 +164,7 @@ Config.BoatGarages = {
 
 Config.BoatPounds = {
 	Los_Santos_Dock = {
-		Marker = vector3(-738.67, -1400.43, 4.0),
+		Marker = vector3(-738.67, -1400.43, 5.0),
 		Spawner = vector3(-738.33, -1381.51, 0.12),
 		Heading = 137.85
 	}
@@ -188,7 +188,7 @@ Config.CarGarages = {
 		---472.1 -786.98 29.55 174.74
 		Marker = vector3(216.25,-811.06,30.79),
 		Spawner = vector3(233.02,-793.36,30.57),
-		Deleter = vector3(217.09,-787.66,30.81),
+		Deleter = vector3(217.09,-787.66,29.81),
 		Heading = 159.24
 	},
 	Garasi_SandyShores = {
@@ -199,27 +199,21 @@ Config.CarGarages = {
 	},
 	Paleto_Bay = {
 		Marker = vector3(105.36, 6613.59, 32.40),
-		Spawner = vector3(128.78, 6622.99, 31.78),
-		Deleter = vector3(126.36, 6608.41, 31.86),
+		Spawner = vector3(128.78, 6622.99, 32.78),
+		Deleter = vector3(126.36, 6608.41, 32.86),
 		Heading = 315.01
-	},
-	cardealer_import = {
-		Marker = vector3(-1249.58, -396.51, 37.29),
-		Spawner = vector3(-1246.24, -388.17, 37.29),
-		Deleter = vector3(-1226.75, -374.73, 37.29),
-		Heading = 24.03
 	}
 }
 
 Config.CarPounds = {
 	Los_Santos = {
-		Marker = vector3(408.61, -1625.47, 28.29),
-		Spawner = vector3(405.64, -1643.4, 27.61),
+		Marker = vector3(408.61, -1625.47, 30.29),
+		Spawner = vector3(405.64, -1643.4, 30.61),
 		Heading = 229.54
 	},
 	Sandy_Shores = {
-		Marker = vector3(1651.38, 3804.84, 37.65),
-		Spawner = vector3(1627.84, 3788.45, 33.77),
+		Marker = vector3(1651.38, 3804.84, 38.65),
+		Spawner = vector3(1627.84, 3788.45, 34.77),
 		Heading = 308.53
 	},
 	Paleto_Bay = {

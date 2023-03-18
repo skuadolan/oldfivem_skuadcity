@@ -18,7 +18,7 @@ Locales['en'] = {
   ['spawn_veh_button'] = 'press ~INPUT_PICKUP~ to call the delivery vehicle.',
   ['spawn_truck_button'] = 'press ~INPUT_PICKUP~ to spawn the truck.',
   ['spawn_blocked'] = 'sebuah kendaraan menghalangi garasi!',
-  ['service_vh'] = 'servis kendaraan,
+  ['service_vh'] = 'servis kendaraan',
   ['return_vh'] = 'mengembalikan kendaraan',
   ['return_vh_button'] = 'press ~INPUT_PICKUP~ to return the vehicle.',
   ['delivery_point'] = 'titik tujuan',
@@ -27,7 +27,7 @@ Locales['en'] = {
   ['public_leave'] = 'press ~INPUT_PICKUP~ to go to the entrance of the building.',
 
   -- Lumber Jack job
-  ['lj_locker_room'] = 'loker tukang kayu,
+  ['lj_locker_room'] = 'loker tukang kayu',
   ['lj_mapblip'] = 'tumpukan kayu',
   ['lj_wood'] = 'kayu',
   ['lj_pickup'] = 'press ~INPUT_PICKUP~ to retrieve wood.',

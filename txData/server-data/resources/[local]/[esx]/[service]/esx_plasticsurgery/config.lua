@@ -2,7 +2,7 @@ Config = {}
 Config.Locale = 'en'
 
 Config.MarkerType   = 24
-Config.DrawDistance = 5.0
+Config.DrawDistance = 2.0
 Config.MarkerSize   = {x = 2.0, y = 2.0, z = 1.0}
 Config.MarkerColor  = {r = 255, g = 255, b = 255}
 

@@ -1,5 +1,5 @@
 Config = {}
-Config.DrawDistance = 10
+Config.DrawDistance = 2
 Config.MarkerSize = {x = 1.1, y = 1.1, z = 0.9}
 Config.MarkerType =  29
 Config.MarkerColor = {r = 102, g = 102, b = 204, a = 255}
@@ -30,7 +30,7 @@ Config.Zones = {
 			vector3(2678.9, 3280.6, 54.2),
 			vector3(1729.2, 6414.1, 34.0)
 	},
-	Size  = 1.0,
+	Size  = 0.75,
 	Type  = 59,
 	Color = 25,
 	ShowBlip = true,

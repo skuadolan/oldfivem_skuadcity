@@ -33,7 +33,7 @@ CreateThread(function()
 							end
 			
 							if v.name ~= _U('delivery') and itemQtty >= v.max then
-								TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', (_U('max_limit', v.name))
+								TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', (_U('max_limit', v.name)))
 								--xPlayer.showNotification(_U('max_limit', v.name))
 								playersWorking[playerId] = nil
 							elseif v.requires ~= 'nothing' and requiredItemQtty <= 0 then

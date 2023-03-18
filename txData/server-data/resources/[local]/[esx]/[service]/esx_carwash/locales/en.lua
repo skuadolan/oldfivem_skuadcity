@@ -5,5 +5,5 @@ Locales['en'] = {
   ['wash_failed_clean'] = 'kendaraanmu tidak butuh dicuci',
   ['wash_successful'] = 'kendaraan sudah dicuci',
   ['wash_successful_paid'] = 'biaya cucui Rp.%s',
-  ['blip_carwash'] = 'car Wash',
+  ['blip_carwash'] = 'cuci Mobil',
 }

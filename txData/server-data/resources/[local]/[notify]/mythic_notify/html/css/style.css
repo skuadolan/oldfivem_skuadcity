@@ -14,6 +14,7 @@ body {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
+    z-index: 99999;
 }
 
 .notification {

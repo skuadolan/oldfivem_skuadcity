@@ -12,7 +12,7 @@ Config.Keys = {
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 
-Config.DrawDistance               = 5.0 -- How close do you need to be for the markers to be drawn (in GTA units).
+Config.DrawDistance               = 2.0 -- How close do you need to be for the markers to be drawn (in GTA units).
 Config.MarkerType                 = {Cloakrooms = 20, Armories = 21, BossActions = 22, Vehicles = 36, Helicopters = 34}
 Config.MarkerSize                 = {x = 1.5, y = 1.5, z = 0.5}
 Config.MarkerColor                = {r = 50, g = 50, b = 204}
@@ -44,7 +44,7 @@ Config.PoliceStations = {
 			Coords  = vector3(425.1, -979.5, 30.7),
 			Sprite  = 60,
 			Display = 4,
-			Scale   = 1.2,
+			Scale   = 0.75,
 			Colour  = 29
 		},
 
@@ -97,83 +97,376 @@ Config.PoliceStations = {
 }
 
 Config.AuthorizedWeapons = {
-	recruit = {
-		{weapon = 'WEAPON_APPISTOL', components = {0, 0, 1000, 4000, nil}, price = 10000},
-		{weapon = 'WEAPON_NIGHTSTICK', price = 0},
-		{weapon = 'WEAPON_STUNGUN', price = 1500},
-		{weapon = 'WEAPON_FLASHLIGHT', price = 80}
+	tamtama = {
+		{weapon = 'WEAPON_NIGHTSTICK', price = 10000}
 	},
 
-	officer = {
-		{weapon = 'WEAPON_APPISTOL', components = {0, 0, 1000, 4000, nil}, price = 10000},
-		{weapon = 'WEAPON_ADVANCEDRIFLE', components = {0, 6000, 1000, 4000, 8000, nil}, price = 50000},
-		{weapon = 'WEAPON_NIGHTSTICK', price = 0},
-		{weapon = 'WEAPON_STUNGUN', price = 500},
-		{weapon = 'WEAPON_FLASHLIGHT', price = 0}
+	bripda = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
-	sergeant = {
-		{weapon = 'WEAPON_APPISTOL', components = {0, 0, 1000, 4000, nil}, price = 10000},
-		{weapon = 'WEAPON_ADVANCEDRIFLE', components = {0, 6000, 1000, 4000, 8000, nil}, price = 50000},
-		{weapon = 'WEAPON_PUMPSHOTGUN', components = {2000, 6000, nil}, price = 70000},
-		{weapon = 'WEAPON_NIGHTSTICK', price = 0},
-		{weapon = 'WEAPON_STUNGUN', price = 500},
-		{weapon = 'WEAPON_FLASHLIGHT', price = 0}
+	briptu = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
 	},
 
-	lieutenant = {
-		{weapon = 'WEAPON_APPISTOL', components = {0, 0, 1000, 4000, nil}, price = 10000},
-		{weapon = 'WEAPON_ADVANCEDRIFLE', components = {0, 6000, 1000, 4000, 8000, nil}, price = 50000},
-		{weapon = 'WEAPON_PUMPSHOTGUN', components = {2000, 6000, nil}, price = 70000},
-		{weapon = 'WEAPON_NIGHTSTICK', price = 0},
-		{weapon = 'WEAPON_STUNGUN', price = 500},
-		{weapon = 'WEAPON_FLASHLIGHT', price = 0}
+	brigpol = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
+	},
+
+	bripka = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
+	},
+
+	aipda = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
+	},
+
+	aiptu = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000}
+	},
+
+	ipda = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_SMG', price = 50000}
+	},
+
+	iptu = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_SMG', price = 50000}
+	},
+
+	akp = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_SMG', price = 50000}
+	},
+
+	kompol = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_SMG', price = 50000},
+		{weapon = 'WEAPON_CARBINERIFLE', price = 50000}
+	},
+
+	akbp = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_SMG', price = 50000},
+		{weapon = 'WEAPON_CARBINERIFLE', price = 50000}
+	},
+
+	brigjen = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_SMG', price = 50000},
+		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
+		{weapon = 'WEAPON_PUMPSHOTGUN', price = 75000},
+		{weapon = 'WEAPON_HEAVYSNIPER', price = 100000}
+	},
+
+	irjen = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_SMG', price = 50000},
+		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
+		{weapon = 'WEAPON_PUMPSHOTGUN', price = 75000},
+		{weapon = 'WEAPON_HEAVYSNIPER', price = 100000}
+	},
+
+	wakil_boss = {
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_SMG', price = 50000},
+		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
+		{weapon = 'WEAPON_PUMPSHOTGUN', price = 75000},
+		{weapon = 'WEAPON_REVOLVER', price = 100000},
+		{weapon = 'WEAPON_HEAVYSNIPER', price = 100000}
+
 	},
 
 	boss = {
-		{weapon = 'WEAPON_APPISTOL', components = {0, 0, 1000, 4000, nil}, price = 10000},
-		{weapon = 'WEAPON_ADVANCEDRIFLE', components = {0, 6000, 1000, 4000, 8000, nil}, price = 50000},
-		{weapon = 'WEAPON_PUMPSHOTGUN', components = {2000, 6000, nil}, price = 70000},
-		{weapon = 'WEAPON_NIGHTSTICK', price = 0},
-		{weapon = 'WEAPON_STUNGUN', price = 500},
-		{weapon = 'WEAPON_FLASHLIGHT', price = 0}
+        {weapon = 'WEAPON_NIGHTSTICK', price = 10000},
+		{weapon = 'WEAPON_COMBATPISTOL', price = 20000},
+		{weapon = 'WEAPON_SMG', price = 50000},
+		{weapon = 'WEAPON_CARBINERIFLE', price = 50000},
+		{weapon = 'WEAPON_PUMPSHOTGUN', price = 75000},
+		{weapon = 'WEAPON_REVOLVER', price = 100000},
+		{weapon = 'WEAPON_HEAVYSNIPER', price = 100000}
+
 	}
 }
 
 Config.AuthorizedVehicles = {
 	car = {
-		recruit = {},
-
-		officer = {
-			{model = 'police3', price = 20000}
+		tamtama = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000}
 		},
 
-		sergeant = {
-			{model = 'policet', price = 18500},
-			{model = 'policeb', price = 30500}
+		bripda = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
-		lieutenant = {
-			{model = 'riot', price = 70000},
-			{model = 'fbi2', price = 60000}
+		briptu = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
 		},
 
-		boss = {}
+		brigpol = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		bripka = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		aipda = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		aiptu = {			
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		ipda = {			
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		iptu = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		akp = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		kompol = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		kombes = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		akbp = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		brigjen = {			
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		irjen = {
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000}
+		},
+
+		wakil_boss = {			
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000},
+			{model = 'fbi', price = 10000}
+		},
+
+		boss = {			
+			{model = 'police', price = 10000},
+			{model = 'police2', price = 10000},
+			{model = 'barracuda-j', price = 10000},
+			{model = 'sheriff', price = 10000},
+			{model = 'sheriff2', price = 10000},
+			{model = 'sanchezpol', price = 10000},
+			{model = 'riot', price = 10000},
+			{model = 'riota', price = 10000},
+			{model = 'insurgent2', price = 10000},
+			{model = 'polthrust', price = 10000},
+			{model = '2015polstang', price = 10000},
+			{model = 'fbi', price = 10000}
+		}
 	},
 
 	helicopter = {
-		recruit = {},
+		tamtama = {},
+		bripda = {},
+		briptu = {},
+		brigpol = {},
+		bripka = {},
+		aipda = {},
+		aiptu = {},
+		ipda = {},
+		iptu = {},
+		akp = {},
+		kompol = {},
+		akbp = {},
+		kombes = {},
 
-		officer = {},
-
-		sergeant = {},
-
-		lieutenant = {
-			{model = 'polmav', props = {modLivery = 0}, price = 200000}
+		brigjen = {
+            {model = 'BO105', props = {modLivery = 0}, price = 30000}
 		},
 
+		irjen = {
+            {model = 'BO105', props = {modLivery = 0}, price = 30000}
+        },
+		
+		wakil_boss = {
+            {model = 'BO105', props = {modLivery = 0}, price = 30000}
+        },
+
 		boss = {
-			{model = 'polmav', props = {modLivery = 0}, price = 100000}
+			{model = 'BO105', props = {modLivery = 0}, price = 30000}
 		}
 	}
 }
@@ -199,15 +492,15 @@ Config.CustomPeds = {
 
 -- CHECK SKINCHANGER CLIENT MAIN.LUA for matching elements
 Config.Uniforms = {
-	recruit = {
+	tamtama = {
 		male = {
-			tshirt_1 = 59,  tshirt_2 = 1,
-			torso_1 = 55,   torso_2 = 0,
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 11,
 			decals_1 = 0,   decals_2 = 0,
-			arms = 41,
-			pants_1 = 25,   pants_2 = 0,
-			shoes_1 = 25,   shoes_2 = 0,
-			helmet_1 = 46,  helmet_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
 		},
@@ -224,76 +517,351 @@ Config.Uniforms = {
 		}
 	},
 
-	officer = {
+	bripda = {
 		male = {
-			tshirt_1 = 58,  tshirt_2 = 0,
-			torso_1 = 55,   torso_2 = 0,
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 10,
 			decals_1 = 0,   decals_2 = 0,
-			arms = 41,
-			pants_1 = 25,   pants_2 = 0,
-			shoes_1 = 25,   shoes_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
 			helmet_1 = -1,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
 		},
 		female = {
-			tshirt_1 = 35,  tshirt_2 = 0,
+			tshirt_1 = 36,  tshirt_2 = 1,
 			torso_1 = 48,   torso_2 = 0,
 			decals_1 = 0,   decals_2 = 0,
 			arms = 44,
 			pants_1 = 34,   pants_2 = 0,
 			shoes_1 = 27,   shoes_2 = 0,
-			helmet_1 = -1,  helmet_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
 		}
 	},
 
-	sergeant = {
+	briptu = {
 		male = {
-			tshirt_1 = 58,  tshirt_2 = 0,
-			torso_1 = 55,   torso_2 = 0,
-			decals_1 = 8,   decals_2 = 1,
-			arms = 41,
-			pants_1 = 25,   pants_2 = 0,
-			shoes_1 = 25,   shoes_2 = 0,
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 9,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
 			helmet_1 = -1,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
 		},
 		female = {
-			tshirt_1 = 35,  tshirt_2 = 0,
+			tshirt_1 = 36,  tshirt_2 = 1,
 			torso_1 = 48,   torso_2 = 0,
-			decals_1 = 7,   decals_2 = 1,
+			decals_1 = 0,   decals_2 = 0,
 			arms = 44,
 			pants_1 = 34,   pants_2 = 0,
 			shoes_1 = 27,   shoes_2 = 0,
-			helmet_1 = -1,  helmet_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
 		}
 	},
 
-	lieutenant = {
+	brigpol = {
 		male = {
-			tshirt_1 = 58,  tshirt_2 = 0,
-			torso_1 = 55,   torso_2 = 0,
-			decals_1 = 8,   decals_2 = 2,
-			arms = 41,
-			pants_1 = 25,   pants_2 = 0,
-			shoes_1 = 25,   shoes_2 = 0,
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 8,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
 			helmet_1 = -1,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
 		},
 		female = {
-			tshirt_1 = 35,  tshirt_2 = 0,
+			tshirt_1 = 36,  tshirt_2 = 1,
 			torso_1 = 48,   torso_2 = 0,
-			decals_1 = 7,   decals_2 = 2,
+			decals_1 = 0,   decals_2 = 0,
 			arms = 44,
 			pants_1 = 34,   pants_2 = 0,
 			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	bripka = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 7,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
 			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	aipda = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 6,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	aiptu = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 5,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	ipda = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 4,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	iptu = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 3,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	akp = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 2,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	kompol = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 1,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+	},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	akbp = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 150,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	irjen = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 149,   torso_2 = 2,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	brigjen = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 149,   torso_2 = 3,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+	},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+		}
+	},
+
+	wakil_boss = {
+		male = {
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 149,   torso_2 = 1,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
+			helmet_1 = -1,  helmet_2 = 0,
+			chain_1 = 0,    chain_2 = 0,
+			ears_1 = 2,     ears_2 = 0
+	},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1,
+			torso_1 = 48,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 44,
+			pants_1 = 34,   pants_2 = 0,
+			shoes_1 = 27,   shoes_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
 		}
@@ -301,24 +869,24 @@ Config.Uniforms = {
 
 	boss = {
 		male = {
-			tshirt_1 = 58,  tshirt_2 = 0,
-			torso_1 = 55,   torso_2 = 0,
-			decals_1 = 8,   decals_2 = 3,
-			arms = 41,
-			pants_1 = 25,   pants_2 = 0,
-			shoes_1 = 25,   shoes_2 = 0,
+			tshirt_1 = 15,  tshirt_2 = 0,
+			torso_1 = 149,   torso_2 = 0,
+			decals_1 = 0,   decals_2 = 0,
+			arms = 0,
+			pants_1 = 28,   pants_2 = 0,
+			shoes_1 = 10,   shoes_2 = 0,
 			helmet_1 = -1,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
-		},
+	},
 		female = {
-			tshirt_1 = 35,  tshirt_2 = 0,
+			tshirt_1 = 36,  tshirt_2 = 1,
 			torso_1 = 48,   torso_2 = 0,
-			decals_1 = 7,   decals_2 = 3,
+			decals_1 = 0,   decals_2 = 0,
 			arms = 44,
 			pants_1 = 34,   pants_2 = 0,
 			shoes_1 = 27,   shoes_2 = 0,
-			helmet_1 = -1,  helmet_2 = 0,
+			helmet_1 = 45,  helmet_2 = 0,
 			chain_1 = 0,    chain_2 = 0,
 			ears_1 = 2,     ears_2 = 0
 		}
@@ -326,7 +894,7 @@ Config.Uniforms = {
 
 	bullet_wear = {
 		male = {
-			bproof_1 = 11,  bproof_2 = 1
+			bproof_1 = 2,  bproof_2 = 0
 		},
 		female = {
 			bproof_1 = 13,  bproof_2 = 1
@@ -335,7 +903,16 @@ Config.Uniforms = {
 
 	gilet_wear = {
 		male = {
-			tshirt_1 = 59,  tshirt_2 = 1
+			helmet_1 = 118,  helmet_2 = 0
+		},
+		female = {
+			tshirt_1 = 36,  tshirt_2 = 1
+		}
+	},
+
+	baju_lapangan = {
+		male = {
+			helmet_1 = 118,  helmet_2 = 0
 		},
 		female = {
 			tshirt_1 = 36,  tshirt_2 = 1

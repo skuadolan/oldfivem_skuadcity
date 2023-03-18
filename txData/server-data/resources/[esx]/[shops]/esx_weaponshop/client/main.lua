@@ -132,7 +132,7 @@ AddEventHandler('onResourceStop', function(resource)
 end)
 
 -- Create Blips
-CreateThread(function()
+--[[CreateThread(function()
 	for k,v in pairs(Config.Zones) do
 		if v.Legal then
 			for i = 1, #v.Locations, 1 do
@@ -140,7 +140,7 @@ CreateThread(function()
 
 				SetBlipSprite (blip, 110)
 				SetBlipDisplay(blip, 4)
-				SetBlipScale  (blip, 1.0)
+				SetBlipScale  (blip, 0.75)
 				SetBlipColour (blip, 81)
 				SetBlipAsShortRange(blip, true)
 
@@ -150,7 +150,7 @@ CreateThread(function()
 			end
 		end
 	end
-end)
+end)]]
 
 -- Display markers
 CreateThread(function()

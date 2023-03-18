@@ -17,18 +17,22 @@ AddEventHandler('esx_ambulancejob:revive', function(playerId)
 		if xTarget then
 			if deadPlayers[playerId] then
 				if Config.ReviveReward > 0 then
-					xPlayer.showNotification(_U('revive_complete_award', xTarget.name, Config.ReviveReward))
+					TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', _U('revive_complete_award', xTarget.name, Config.ReviveReward))
+					--xPlayer.showNotification(_U('revive_complete_award', xTarget.name, Config.ReviveReward))
 					xPlayer.addMoney(Config.ReviveReward)
 					xTarget.triggerEvent('esx_ambulancejob:revive')
 				else
-					xPlayer.showNotification(_U('revive_complete', xTarget.name))
+					TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('revive_complete', xTarget.name))
+					--xPlayer.showNotification(_U('revive_complete', xTarget.name))
 					xTarget.triggerEvent('esx_ambulancejob:revive')
 				end
 			else
-				xPlayer.showNotification(_U('player_not_unconscious'))
+				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('player_not_unconscious'))
+				--xPlayer.showNotification(_U('player_not_unconscious'))
 			end
 		else
-			xPlayer.showNotification(_U('revive_fail_offline'))
+			TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('revive_fail_offline'))
+			--xPlayer.showNotification(_U('revive_fail_offline'))
 		end
 	end
 end)
@@ -180,7 +184,8 @@ if Config.EarlyRespawnFine then
 		local xPlayer = ESX.GetPlayerFromId(source)
 		local fineAmount = Config.EarlyRespawnFineAmount
 
-		xPlayer.showNotification(_U('respawn_bleedout_fine_msg', ESX.Math.GroupDigits(fineAmount)))
+		TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('respawn_bleedout_fine_msg', ESX.Math.GroupDigits(fineAmount)))
+		--xPlayer.showNotification(_U('respawn_bleedout_fine_msg', ESX.Math.GroupDigits(fineAmount)))
 		xPlayer.removeAccountMoney('bank', fineAmount)
 	end)
 end
@@ -271,9 +276,11 @@ AddEventHandler('esx_ambulancejob:removeItem', function(item)
 	xPlayer.removeInventoryItem(item, 1)
 
 	if item == 'bandage' then
-		xPlayer.showNotification(_U('used_bandage'))
+		TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('used_bandage'))
+		--xPlayer.showNotification(_U('used_bandage'))
 	elseif item == 'medikit' then
-		xPlayer.showNotification(_U('used_medikit'))
+		TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('used_medikit'))
+		--xPlayer.showNotification(_U('used_medikit'))
 	end
 end)
 
@@ -292,7 +299,8 @@ AddEventHandler('esx_ambulancejob:giveItem', function(itemName, amount)
 	if xPlayer.canCarryItem(itemName, amount) then
 		xPlayer.addInventoryItem(itemName, amount)
 	else
-		xPlayer.showNotification(_U('max_item'))
+		TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('max_item'))
+		--xPlayer.showNotification(_U('max_item'))
 	end
 end)
 
