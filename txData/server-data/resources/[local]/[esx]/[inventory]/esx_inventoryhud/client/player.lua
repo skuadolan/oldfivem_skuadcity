@@ -5,7 +5,7 @@ Citizen.CreateThread(
     function()
         TriggerEvent(
             "chat:addSuggestion",
-            "/openinventory",
+            "/tasWarga",
             _U("openinv_help"),
             {
                 {name = _U("openinv_id"), help = _U("openinv_help")}
@@ -18,7 +18,7 @@ AddEventHandler(
     "onResourceStop",
     function(resource)
         if resource == GetCurrentResourceName() then
-            TriggerEvent("chat:removeSuggestion", "/openinventory")
+            TriggerEvent("chat:removeSuggestion", "/tasWarga")
         end
     end
 )

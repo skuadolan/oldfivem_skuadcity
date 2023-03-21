@@ -8,5 +8,5 @@ Locales['en'] = {
   ['player_not_online'] = 'warga tidak di kota',
   ['no_money'] = 'kamu tidak punya cukup uang untuk membayar tagihan',
   ['target_no_money'] = 'warga tersebut tidak punya cukup uang untuk membayar!',
-  ['keymap_showbills'] = 'open tagihan menu',
+  ['keymap_showbills'] = 'Buka Tagihan Menu',
 }

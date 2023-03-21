@@ -19,10 +19,6 @@ AddEventHandler(
     end
 )
 
-RegisterCommand('openinvtrunk', function(source, args, raw)
-    OpenCoffreInventoryMenu()
-end)
-
 function setTrunkInventoryData(data, blackMoney, inventory, weapons)
     trunkData = data
 

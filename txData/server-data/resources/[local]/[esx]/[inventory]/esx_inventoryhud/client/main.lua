@@ -49,13 +49,13 @@ Citizen.CreateThread(
 
 end)]]
 
-RegisterCommand('inventoryhud', function()
+RegisterCommand('tas', function()
 	if not isDead then
 		openInventory()
 	end
 end, false)
 
-RegisterKeyMapping('inventoryhud', 'open Backpack menu', 'keyboard', 'F1')
+RegisterKeyMapping('tas', 'Buka Tas', 'keyboard', 'F1')
 
 function playAnim(animDict, animName, duration)
 	RequestAnimDict(animDict)
@@ -81,7 +81,7 @@ AddEventHandler("esx_inventoryhud:doClose", function()
     closeInventory()
 end)
 
-RegisterCommand('closeinv', function(source, args, raw)
+RegisterCommand('ttptas', function(source, args, raw)
     closeInventory()
 end)
 

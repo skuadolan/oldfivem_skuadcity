@@ -435,7 +435,7 @@ RegisterCommand('emsMenu', function()
 	end
 end, false)
 
-RegisterKeyMapping('emsMenu', 'open EMS menu', 'keyboard', 'F2')
+RegisterKeyMapping('emsMenu', 'Open EMS Menu', 'keyboard', 'F2')
 
 RegisterNetEvent('esx_ambulancejob:putInVehicle')
 AddEventHandler('esx_ambulancejob:putInVehicle', function()

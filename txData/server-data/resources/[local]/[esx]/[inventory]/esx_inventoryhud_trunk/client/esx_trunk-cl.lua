@@ -75,8 +75,8 @@ function VehicleInFront()
   return result
 end
 
-RegisterCommand("bagasi", function()
-  if not IsPedInAnyVehicle(ped) then
+RegisterCommand("bMobil", function()
+  if not IsControlJustPressed(0, Config.OpenKey) then
     openmenuvehicle()
   end
 end)

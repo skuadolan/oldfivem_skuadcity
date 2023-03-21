@@ -88,7 +88,7 @@ end)
 --====================================================================================
 Citizen.CreateThread(function()
   while true do
-    Citizen.Wait(0)
+    Citizen.Wait(30)
     if not menuIsOpen and isDead then
       DisableControlAction(0, 288, true)
     end
@@ -126,7 +126,7 @@ Citizen.CreateThread(function()
   end
 end)
 
-RegisterCommand('phone', function()
+RegisterCommand('hp', function()
 	if not isDead and IsInputDisabled(0) then
 		hasPhone(function (hasPhone)
       if hasPhone == true then
@@ -146,7 +146,7 @@ end, false)
   end
 end)]]
 
-RegisterKeyMapping('phone', 'Tombol Phone', 'keyboard', '`')
+RegisterKeyMapping('hp', 'Buka Handphone', 'keyboard', '`')
 
 --====================================================================================
 --  Active ou Deactive une application (appName => config.json)
@@ -236,6 +236,7 @@ end)
 Citizen.CreateThread(function ()
   local mod = 0
   while true do 
+    Wait(30)
     local playerPed   = PlayerPedId()
     local coords      = GetEntityCoords(playerPed)
     local inRangeToActivePhone = false

@@ -225,7 +225,7 @@ RegisterCommand('scoreboard', function()
 	end
 end, false)
 
-RegisterKeyMapping('scoreboard', 'open Scoreboard', 'keyboard', '=')
+RegisterKeyMapping('scoreboard', 'Open Scoreboard', 'keyboard', '=')
 
 -- Close scoreboard when game is paused
 Citizen.CreateThread(function()

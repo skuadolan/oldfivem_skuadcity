@@ -20,7 +20,7 @@ end
 Citizen.CreateThread(function()
 	DestroyMobilePhone()
 	while true do
-		Citizen.Wait(0)
+		Citizen.Wait(1000)
 				
 		if IsControlJustPressed(1, 177) and phone == true then -- CLOSE PHONE
 			DestroyMobilePhone()

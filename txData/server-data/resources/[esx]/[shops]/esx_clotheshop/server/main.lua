@@ -24,7 +24,8 @@ ESX.RegisterServerCallback('esx_clotheshop:buyClothes', function(source, cb)
 
 	if xPlayer.getMoney() >= Config.Price then
 		xPlayer.removeMoney(Config.Price)
-		TriggerClientEvent('esx:showNotification', source, _U('you_paid', Config.Price))
+		TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('you_paid', Config.Price))
+		--TriggerClientEvent('esx:showNotification', source, _U('you_paid', Config.Price))
 		cb(true)
 	else
 		cb(false)

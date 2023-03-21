@@ -85,7 +85,7 @@ function VehicleInFront()
   return result
 end
 
-RegisterCommand('dashboardmobil', function()
+RegisterCommand('dashMobil', function()
 	openmenuvehicle()
 end)
 
@@ -172,9 +172,11 @@ Citizen.CreateThread(
       Wait(0)
       local playerIdx = GetPlayerFromServerId(source)
       local ped = GetPlayerPed(playerIdx)
+      local vehicle = GetVehiclePedIsIn(ped);
+      local isDriver = GetPedInVehicleSeat(vehicle, -1);
 
       -- Set vehicle states
-      if (IsPedInAnyVehicle(ped)) then
+      if (IsPedInAnyVehicle(ped) and (isDriver == ped)) then
         if IsControlPressed(0, Config.firstPress) and IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
           openmenuvehicle()
           --GUI.Time = GetGameTimer()

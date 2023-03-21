@@ -45,6 +45,7 @@ local FavoriteEmote = ""
 
 Citizen.CreateThread(function()
   while true do
+    Wait(30)
     if Config.FavKeybindEnabled then
       if IsControlPressed(0, Config.FavKeybind) then
         if not IsPedSittingInAnyVehicle(PlayerPedId()) then
@@ -294,7 +295,7 @@ _menuPool:RefreshIndex()
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(0)
+        Citizen.Wait(5)
         _menuPool:ProcessMenus()
     end
 end)

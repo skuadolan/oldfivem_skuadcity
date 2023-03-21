@@ -19,7 +19,7 @@ local PtfxNoProp = false
 
 Citizen.CreateThread(function()
   while true do
-
+    Wait(30)
     if IsPedShooting(PlayerPedId()) and IsInAnimation then
       EmoteCancel()
     end
@@ -48,13 +48,14 @@ RegisterCommand('dpEmote', function()
 	end
 end, false)
 
-RegisterKeyMapping('dpEmote', 'open Emote menu', 'keyboard', 'F3')
+RegisterKeyMapping('dpEmote', 'Open Emote Menu', 'keyboard', 'F3')
 
 -----------------------------------------------------------------------------------------------------
 -- Commands / Events --------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
 Citizen.CreateThread(function()
+  Wait(30)
     TriggerEvent('chat:addSuggestion', '/e', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
     TriggerEvent('chat:addSuggestion', '/e', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
     TriggerEvent('chat:addSuggestion', '/emote', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})

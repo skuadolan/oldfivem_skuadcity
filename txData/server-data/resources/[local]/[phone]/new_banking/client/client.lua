@@ -335,9 +335,11 @@ function nearBank()
 	local playerloc = GetEntityCoords(player, 0)
 	
 	for _, search in pairs(banks) do
-		local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
+		local coords = vector3(search.x, search.y, search.z)
+		local distance = Vdist2(playerloc, coords)
+		--local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
 		
-		if distance <= 2 then
+		if distance < 1 then
 			return true
 		end
 	end
@@ -348,9 +350,11 @@ function nearATM()
 	local playerloc = GetEntityCoords(player, 0)
 	
 	for _, search in pairs(atms) do
-		local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
+		local coords = vector3(search.x, search.y, search.z)
+		local distance = Vdist2(playerloc, coords)
+		--local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
 		
-		if distance <= 1 then
+		if distance < 1 then
 			return true
 		end
 	end

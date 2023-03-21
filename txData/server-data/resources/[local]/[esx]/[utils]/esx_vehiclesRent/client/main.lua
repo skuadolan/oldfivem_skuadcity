@@ -59,7 +59,7 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		Citizen.Wait(30)
 			for i = 1, #vehiclesNeedsToCreate, 1 do
 			local playerPed = GetPlayerPed(-1)
 			local coords    = GetEntityCoords(playerPed)

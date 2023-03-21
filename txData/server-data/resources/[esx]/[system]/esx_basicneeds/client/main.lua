@@ -125,8 +125,3 @@ AddEventHandler('esx_basicneeds:onDrink', function(prop_name)
 
 	end
 end)
-
-RegisterNetEvent('esx_basicneeds:notifEatDrink')
-AddEventHandler('esx_basicneeds:notifEatDrink', function(prop_name)
-	exports['mythic_notify']:SendAlert('inform', prop_name)
-end)

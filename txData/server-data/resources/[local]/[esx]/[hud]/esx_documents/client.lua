@@ -86,13 +86,13 @@ Citizen.CreateThread(function()
     end
  end)
 
-RegisterCommand('dokumen', function()
+RegisterCommand('dMenu', function()
 	if not isDead then
 		OpenMainMenu()
 	end
 end, false)
 
-RegisterKeyMapping('dokumen', 'open Dokumen menu', 'keyboard', 'F5')
+RegisterKeyMapping('dMenu', 'Buka Dokumen Menu', 'keyboard', 'F5')
 
 function OpenMainMenu()
     ClearMenu()

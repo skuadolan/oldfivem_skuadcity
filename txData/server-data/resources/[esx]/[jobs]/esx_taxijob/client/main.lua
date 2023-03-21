@@ -772,13 +772,13 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterCommand('taximenu', function()
+RegisterCommand('mTaksi', function()
 	if IsInputDisabled(0) and not IsDead and ESX.PlayerData.job.name == 'taxi' then
 		OpenMobileTaxiActionsMenu()
 	end
 end, false)
 
-RegisterKeyMapping('taximenu', 'open Taxi menu', 'keyboard', 'F2')
+RegisterKeyMapping('mTaksi', 'Open Taxi Menu', 'keyboard', 'F2')
 
 AddEventHandler('esx:onPlayerDeath', function()
 	IsDead = true

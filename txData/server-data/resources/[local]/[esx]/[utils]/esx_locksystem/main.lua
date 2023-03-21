@@ -48,7 +48,7 @@ function StartWorkaroundTask()
 	isRunningWorkaround = false
 end
 
-RegisterCommand('kunci', function()
+RegisterCommand('kpMobil', function()
 	ToggleVehicleLock()
 end)
 
@@ -73,7 +73,8 @@ function ToggleVehicleLock()
 	end
 
 	if not DoesEntityExist(vehicle) then
-		exports.pNotify:SendNotification({text = "Tidak ada kendaraan disekitar sini!", type = "warning", timeout = math.random(1000, 10000), layout = "centerLeft", queue = "left"})
+		exports['mythic_notify']:SendAlert('error', "Tidak ada kendaraan disekitar sini!")
+		--exports.pNotify:SendNotification({text = "Tidak ada kendaraan disekitar sini!", type = "warning", timeout = math.random(1000, 10000), layout = "centerLeft", queue = "left"})
 		return
 	end
 
@@ -97,7 +98,8 @@ function ToggleVehicleLock()
 				SetVehicleLights(vehicle, 2)
 				Citizen.Wait(150)
 				SetVehicleLights(vehicle, 0)
-				exports.pNotify:SendNotification({text = "Kendaraan Terkunci", type = "error", timeout = math.random(1000, 10000), layout = "centerLeft", queue = "left"})
+				exports['mythic_notify']:SendAlert('error', "Kendaraan Terkunci")
+				--exports.pNotify:SendNotification({text = "Kendaraan Terkunci", type = "error", timeout = math.random(1000, 10000), layout = "centerLeft", queue = "left"})
 			elseif lockStatus == 2 then 
 				if not IsPedInAnyVehicle(PlayerPedId(), true) then
 					vehicleKeys = CreateObject(GetHashKey("prop_cuff_keys_01"), 0, 0, 0, true, true, true) -- creates object
@@ -114,7 +116,8 @@ function ToggleVehicleLock()
 				StartVehicleHorn(vehicle, 50, GetHashKey("HELDDOWN") , false)
 				Citizen.Wait(150)
 				SetVehicleLights(vehicle, 0)
-				exports.pNotify:SendNotification({text = "Kendaraan Terbuka", type = "success", timeout = math.random(1000, 10000), layout = "centerLeft", queue = "left"})
+				exports['mythic_notify']:SendAlert('success', "Kendaraan Terbuka")
+				--exports.pNotify:SendNotification({text = "Kendaraan Terbuka", type = "success", timeout = math.random(1000, 10000), layout = "centerLeft", queue = "left"})
 			end
 
 			if DoesEntityExist(vehicleKeys) then

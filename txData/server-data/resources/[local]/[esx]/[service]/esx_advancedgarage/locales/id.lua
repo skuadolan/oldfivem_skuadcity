@@ -23,7 +23,7 @@ Locales['id'] = {
 	['must_wait'] = 'You must Wait ~r~ %s Minutes ~w~before Accessing Impound Again!',
 	['get_properties'] = '~y~Getting Private Garages!',
 	['driver_seat'] = 'Must be in Driver Seat to Store Vehicle!',
-	['not_correct_veh'] = 'Not in Correct Vehicle for this Garage!',
+	['not_correct_veh'] = 'Bukan kendaraan kamu!',
 	['in_veh'] = 'Must be out of a Vehicle to Access this!',
 	['cant_take_out'] = 'Can\'t take Vehicle Out.',
 	-- Spacers

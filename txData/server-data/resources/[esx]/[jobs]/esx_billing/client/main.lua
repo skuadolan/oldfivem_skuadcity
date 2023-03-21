@@ -33,13 +33,13 @@ function ShowBillsMenu()
 	end)
 end
 
-RegisterCommand('showbills', function()
+RegisterCommand('bMenu', function()
 	if not isDead and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'billing') then
 		ShowBillsMenu()
 	end
 end, false)
 
-RegisterKeyMapping('showbills', _U('keymap_showbills'), 'keyboard', 'F4')
+RegisterKeyMapping('bMenu', _U('keymap_showbills'), 'keyboard', 'F4')
 
 AddEventHandler('esx:onPlayerDeath', function() isDead = true end)
 AddEventHandler('esx:onPlayerSpawn', function(spawn) isDead = false end)

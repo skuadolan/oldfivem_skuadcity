@@ -229,7 +229,7 @@ RegisterCommand('bankerMenu', function()
 	end
 end, false)
 
-RegisterKeyMapping('bankerMenu', 'open Banker menu', 'keyboard', 'F2')
+RegisterKeyMapping('bankerMenu', 'Open Banker Menu', 'keyboard', 'F2')
 
 RegisterNetEvent('esx_phone:loaded')
 AddEventHandler('esx_phone:loaded', function (phoneNumber, contacts)

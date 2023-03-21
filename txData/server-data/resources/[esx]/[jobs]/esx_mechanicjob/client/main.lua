@@ -1051,7 +1051,7 @@ RegisterCommand('mechmenu', function()
 	end
 end, false)
 
-RegisterKeyMapping('mechmenu', 'open Mechanic menu', 'keyboard', 'F2')
+RegisterKeyMapping('mechmenu', 'Open Mechanic Menu', 'keyboard', 'F2')
 
 AddEventHandler('esx:onPlayerDeath', function(data) isDead = true end)
 AddEventHandler('esx:onPlayerSpawn', function(spawn) isDead = false end)
