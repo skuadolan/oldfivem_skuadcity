@@ -66,6 +66,7 @@ function setHousingInventoryData(data)
     SendNUIMessage(
         {
             action = "setSecondInventoryItems",
+            isProperties = false,
             itemList = items
         }
     )
@@ -169,6 +170,7 @@ function setPropertyMotelData(data)
     SendNUIMessage(
         {
             action = "setSecondInventoryItems",
+            isProperties = false,
             itemList = items
         }
     )

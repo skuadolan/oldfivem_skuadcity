@@ -84,6 +84,7 @@ function setTrunkInventoryData(data, blackMoney, inventory, weapons)
     SendNUIMessage(
         {
             action = "setSecondInventoryItems",
+            isProperties = false,
             itemList = items
         }
     )

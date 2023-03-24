@@ -12,9 +12,9 @@ AddEventHandler('jsfour-idcard:open', function(ID, targetID, type)
 	MySQL.Async.fetchAll('SELECT firstname, lastname, dateofbirth, sex, height FROM users WHERE identifier = @identifier', {['@identifier'] = identifier},
 	function (user)
 		if (user[1] ~= nil) then
-			MySQL.Async.fetchAll('SELECT type FROM user_licenses WHERE owner = @identifier', {['@identifier'] = identifier},
+			MySQL.Async.fetchAll('SELECT type, expired FROM user_licenses WHERE owner = @identifier', {['@identifier'] = identifier},
 			function (licenses)
-				if type ~= nil then
+				if type ~= 'ktp' then
 					for i=1, #licenses, 1 do
 						if type == 'driver' then
 							if licenses[i].type == 'drive' or licenses[i].type == 'drive_bike' or licenses[i].type == 'drive_truck' then
@@ -30,14 +30,22 @@ AddEventHandler('jsfour-idcard:open', function(ID, targetID, type)
 					show = true
 				end
 
+				local xPlayer = ESX.GetPlayerFromId(ID)
+				local items = xPlayer.getInventoryItem(type)
+
 				if show then
-					local array = {
-						user = user,
-						licenses = licenses
-					}
-					TriggerClientEvent('jsfour-idcard:open', _source, array, type)
+					if items ~= nil then
+						local array = {
+							user = user,
+							licenses = licenses
+						}
+						TriggerClientEvent('jsfour-idcard:open', _source, array, type)
+					else
+						TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', 'Tidak bawa lisensi')
+					end
 				else
-					TriggerClientEvent('esx:showNotification', _source, "You don't have that type of license..")
+					TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', 'Kamu tidak punya lisensi')
+					--TriggerClientEvent('esx:showNotification', _source, "You don't have that type of license..")
 				end
 			end)
 		end

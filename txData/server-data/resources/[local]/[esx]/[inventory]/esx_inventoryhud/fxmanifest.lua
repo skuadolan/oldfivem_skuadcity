@@ -23,7 +23,11 @@ client_scripts {
   "client/player.lua",
   "client/weapons.lua",
   "locales/id.lua",
-  "config.lua"
+  "config.lua",
+
+  "esx_inventoryhud_glovebox/*.lua",
+  "esx_inventoryhud_glovebox/client/*.lua",
+  "esx_inventoryhud_glovebox/locales/*.lua"
 }
 
 server_scripts {
@@ -31,7 +35,11 @@ server_scripts {
   "@es_extended/locale.lua",
   "server/main.lua",
   "locales/id.lua",
-  "config.lua"
+  "config.lua",
+
+  "esx_inventoryhud_glovebox/*.lua",
+  "esx_inventoryhud_glovebox/server/*.lua",
+  "esx_inventoryhud_glovebox/server/classes/*.lua",
 }
 
 files {

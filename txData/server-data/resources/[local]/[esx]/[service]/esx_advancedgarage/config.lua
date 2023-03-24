@@ -207,8 +207,8 @@ Config.CarGarages = {
 
 Config.CarPounds = {
 	Los_Santos = {
-		Marker = vector3(408.61, -1625.47, 30.29),
-		Spawner = vector3(405.64, -1643.4, 30.61),
+		Marker = vector3(408.61, -1625.47, 29.29),
+		Spawner = vector3(405.64, -1643.4, 29.61),
 		Heading = 229.54
 	},
 	Sandy_Shores = {

@@ -86,6 +86,7 @@ function setVaultInventoryData(inventory)
     SendNUIMessage(
         {
             action = "setSecondInventoryItems",
+            isProperties = false,
             itemList = items
         }
     )

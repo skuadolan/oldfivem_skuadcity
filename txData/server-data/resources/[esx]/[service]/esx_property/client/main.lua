@@ -42,16 +42,29 @@ function CreateBlips()
 
 		if property.entering then
 			if property.label ~= 'Room' then
-				Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
+				if property.name == 'Motel' then
+					Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
 
-				SetBlipSprite (Blips[property.name], 369)
-				SetBlipDisplay(Blips[property.name], 4)
-				SetBlipScale  (Blips[property.name], 0.75)
-				SetBlipAsShortRange(Blips[property.name], true)
+					SetBlipSprite (Blips[property.name], 476)
+					SetBlipDisplay(Blips[property.name], 4)
+					SetBlipScale  (Blips[property.name], 0.75)
+					SetBlipAsShortRange(Blips[property.name], true)
 
-				BeginTextCommandSetBlipName("STRING")
-				AddTextComponentSubstringPlayerName(_U('free_prop'))
-				EndTextCommandSetBlipName(Blips[property.name])
+					BeginTextCommandSetBlipName("STRING")
+					AddTextComponentSubstringPlayerName(property.label)
+					EndTextCommandSetBlipName(Blips[property.name])
+				else
+					Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
+
+					SetBlipSprite (Blips[property.name], 369)
+					SetBlipDisplay(Blips[property.name], 4)
+					SetBlipScale  (Blips[property.name], 0.75)
+					SetBlipAsShortRange(Blips[property.name], true)
+
+					BeginTextCommandSetBlipName("STRING")
+					AddTextComponentSubstringPlayerName(_U('free_prop'))
+					EndTextCommandSetBlipName(Blips[property.name])
+				end
 			end
 		end
 	end
@@ -405,8 +418,9 @@ function OpenRoomMenu(property, owner)
 	if Config.OxInventory then
 		table.insert(elements, {label = _U('remove_object'),  value = 'room_inventory'})
 	else
-		table.insert(elements, {label = _U('remove_object'),  value = 'room_inventory'})
-		table.insert(elements, {label = _U('deposit_object'), value = 'player_inventory'})
+		--[[table.insert(elements, {label = _U('remove_object'),  value = 'room_inventory'})
+		table.insert(elements, {label = _U('deposit_object'), value = 'player_inventory'})]]
+		table.insert(elements, {label = _U('brangkas_prop'), value = 'player_inventory'})
 	end
 
 	ESX.UI.Menu.CloseAll()
@@ -501,6 +515,7 @@ function OpenRoomMenu(property, owner)
 		elseif data.current.value == 'room_inventory' then
 			OpenRoomInventoryMenu(property, owner)
 		elseif data.current.value == 'player_inventory' then
+			menu.close()
 			OpenPlayerInventoryMenu(property, owner)
 		end
 
@@ -594,7 +609,7 @@ function OpenRoomInventoryMenu(property, owner)
 end
 
 function OpenPlayerInventoryMenu(property, owner)
-	ESX.TriggerServerCallback('esx_property:getPlayerInventory', function(inventory)
+	--[[ESX.TriggerServerCallback('esx_property:getPlayerInventory', function(inventory)
 		local elements = {}
 
 		if inventory.blackMoney > 0 then
@@ -665,7 +680,10 @@ function OpenPlayerInventoryMenu(property, owner)
 		end, function(data, menu)
 			menu.close()
 		end)
-	end)
+	end)]]
+	ESX.TriggerServerCallback("esx_property:getPropertyInventory", function(inventory)
+		TriggerEvent("esx_inventoryhud:openPropertyInventory", inventory)
+	end, owner)
 end
 
 AddEventHandler('instance:loaded', function()

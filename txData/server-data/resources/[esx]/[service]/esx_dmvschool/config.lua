@@ -1,6 +1,6 @@
 Config                 = {}
-Config.DrawDistance    = 2.0
-Config.MaxErrors       = 5
+Config.DrawDistance    = 100.0
+Config.MaxErrors       = 7
 Config.SpeedMultiplier = 3.6
 Config.Locale          = 'en'
 
@@ -60,11 +60,11 @@ Config.CheckPoints = {
 	{
 		Pos = {x = 234.907, y = -1345.385, z = 29.542},
 		Action = function(playerPed, vehicle, setCurrentZoneType)
-			CreateThread(function()
+			Citizen.CreateThread(function()
 				DrawMissionText(_U('stop_for_ped'), 5000)
 				PlaySound(-1, 'RACE_PLACED', 'HUD_AWARDS', false, 0, true)
 				FreezeEntityPosition(vehicle, true)
-				Wait(4000)
+				Citizen.Wait(4000)
 
 				FreezeEntityPosition(vehicle, false)
 				DrawMissionText(_U('good_lets_cont'), 5000)
@@ -77,11 +77,11 @@ Config.CheckPoints = {
 		Action = function(playerPed, vehicle, setCurrentZoneType)
 			setCurrentZoneType('town')
 
-			CreateThread(function()
+			Citizen.CreateThread(function()
 				DrawMissionText(_U('stop_look_left', Config.SpeedLimits['town']), 5000)
 				PlaySound(-1, 'RACE_PLACED', 'HUD_AWARDS', false, 0, true)
 				FreezeEntityPosition(vehicle, true)
-				Wait(6000)
+				Citizen.Wait(6000)
 
 				FreezeEntityPosition(vehicle, false)
 				DrawMissionText(_U('good_turn_right'), 5000)
@@ -109,7 +109,7 @@ Config.CheckPoints = {
 			DrawMissionText(_U('stop_for_passing'), 5000)
 			PlaySound(-1, 'RACE_PLACED', 'HUD_AWARDS', false, 0, true)
 			FreezeEntityPosition(vehicle, true)
-			Wait(6000)
+			Citizen.Wait(6000)
 			FreezeEntityPosition(vehicle, false)
 		end
 	},

@@ -75,6 +75,7 @@ function setPropertyInventoryData(data)
     SendNUIMessage(
         {
             action = "setSecondInventoryItems",
+            isProperties = true,
             itemList = items
         }
     )

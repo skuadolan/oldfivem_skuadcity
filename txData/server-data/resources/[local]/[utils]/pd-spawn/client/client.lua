@@ -8,7 +8,7 @@ local FirstSpawn    = true
 local PlayerLoaded  = false
 local cam
 
-local spawnPos = vector3(-1044.765, -2749.886, 21.36047)
+local fristSpawn = vector4(-1045.081, -2750.611, 21.36047, 331.6535)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
@@ -22,7 +22,7 @@ AddEventHandler('playerSpawned', function()
         end
 
         if FirstSpawn then
-            ESX.Game.Teleport(PlayerPedId(), spawnPos)
+            ESX.Game.Teleport(PlayerPedId(), fristSpawn)
             ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
                 if skin ~= nil then
                     pos = GetEntityCoords(PlayerPedId())

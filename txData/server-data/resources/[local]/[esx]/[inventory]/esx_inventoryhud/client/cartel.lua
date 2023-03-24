@@ -62,6 +62,7 @@ function setCartelInventoryData(data)
     SendNUIMessage(
         {
             action = "setSecondInventoryItems",
+            isProperties = false,
             itemList = items
         }
     )

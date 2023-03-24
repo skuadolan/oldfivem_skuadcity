@@ -83,6 +83,7 @@ function setPropertyMotelDataBed(data)
     SendNUIMessage(
         {
             action = "setSecondInventoryItems",
+            isProperties = false,
             itemList = items
         }
     )

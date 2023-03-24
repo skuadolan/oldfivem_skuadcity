@@ -105,14 +105,16 @@ Citizen.CreateThread(function()
 				Aresztuje = true
 				OstatnioAresztowany = GetGameTimer()
 
-				ESX.ShowNotification("~b~Kamu memborgol warga~r~ " .. GetPlayerServerId(closestPlayer) .. "")						-- Drukuje Notyfikacje
+				exports['mythic_notify']:SendAlert('inform', 'Memborgol'..GetPlayerServerId(closestPlayer))
+				--ESX.ShowNotification("~b~Kamu memborgol warga~r~ " .. GetPlayerServerId(closestPlayer) .. "")						-- Drukuje Notyfikacje
 				TriggerServerEvent('esx_ruski_areszt:startAreszt', GetPlayerServerId(closestPlayer))									-- Rozpoczyna Funkcje na Animacje (Cala Funkcja jest Powyzej^^^)
 
 				Citizen.Wait(2100)																									-- Czeka 2.1 Sekund
 				TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 2.0, 'cuffseffect', 0.7)									-- Daje Effekt zakuwania (Wgrywasz Plik .ogg do InteractSound'a i ustawiasz nazwe "cuffseffect.ogg")
 
-				Citizen.Wait(3100)																									-- Czeka 3.1 Sekund
-				ESX.ShowNotification("~b~Kamu melepas borgol warga ~r~ " .. GetPlayerServerId(closestPlayer) .. "")					-- Drukuje Notyfikacje
+				Citizen.Wait(3100)					
+				exports['mythic_notify']:SendAlert('inform', 'Melepas borgol'..GetPlayerServerId(closestPlayer))																				-- Czeka 3.1 Sekund
+				--ESX.ShowNotification("~b~Kamu melepas borgol warga ~r~ " .. GetPlayerServerId(closestPlayer) .. "")					-- Drukuje Notyfikacje
 				TriggerServerEvent('esx_policejob:handcuff', GetPlayerServerId(closestPlayer))									-- Zakuwa Poprzez Prace esx_policejob, Mozna zmienic Funkcje na jaka kolwiek inna.
 			end
 		end

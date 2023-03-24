@@ -104,6 +104,7 @@ function setGloveboxInventoryData(data, blackMoney, cashMoney, inventory, weapon
     SendNUIMessage(
         {
             action = "setSecondInventoryItems",
+            isProperties = false,
             itemList = items
         }
     )

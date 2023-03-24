@@ -47,10 +47,12 @@ ESX.RegisterServerCallback('esx_documents:deleteDocument', function(source, cb, 
     }, function(rowsChanged)
 
         if rowsChanged >= 1 then
-            TriggerClientEvent('esx:showNotification', source, _U('document_deleted'))
+            TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('document_deleted'))
+            --TriggerClientEvent('esx:showNotification', source, _U('document_deleted'))
             cb(true)
         else
-            TriggerClientEvent('esx:showNotification', source, _U('document_delete_failed'))
+            TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('document_delete_failed'))
+            --TriggerClientEvent('esx:showNotification', source, _U('document_delete_failed'))
             cb(false)
         end
         end)
@@ -127,14 +129,20 @@ AddEventHandler('esx_documents:CopyToPlayer', function(targetID, aForm)
                         db_form = result[1]
                         db_form.data = json.decode(result[1].data)
                         TriggerClientEvent('esx_documents:copyForm', _targetid, db_form)
-                        TriggerClientEvent('esx:showNotification', _targetid, _U('copy_from_player'))
-                        TriggerClientEvent('esx:showNotification', _source, _U('from_copied_player'))
+                        if _targetid then
+                            TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', _U('copy_from_player'))
+                            --TriggerClientEvent('esx:showNotification', _targetid, _U('copy_from_player'))
+                        end
+                        TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', _U('from_copied_player'))
+                        --TriggerClientEvent('esx:showNotification', _source, _U('from_copied_player'))
                     else
-                        TriggerClientEvent('esx:showNotification', _source, _U('could_not_copy_form_player'))
+                        TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('could_not_copy_form_player'))
+                        --TriggerClientEvent('esx:showNotification', _source, _U('could_not_copy_form_player'))
                     end
                 end)
             else
-                TriggerClientEvent('esx:showNotification', _source, _U('could_not_copy_form_player'))
+                TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('could_not_copy_form_player'))
+                --TriggerClientEvent('esx:showNotification', _source, _U('could_not_copy_form_player'))
             end
     end)
 

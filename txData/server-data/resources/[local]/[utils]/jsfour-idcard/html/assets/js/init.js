@@ -7,7 +7,7 @@ $(document).ready(function(){
       var licenseData = event.data.array['licenses'];
       var sex         = userData.sex;
 
-      if ( type == 'driver' || type == null) {
+      if ( type == 'driver' || type == 'ktp') {
         $('img').show();
         $('#name').css('color', '#282828');
 
@@ -28,6 +28,7 @@ $(document).ready(function(){
           if ( licenseData != null ) {
           Object.keys(licenseData).forEach(function(key) {
             var type = licenseData[key].type;
+            var expired = licenseData[key].expired;
 
             if ( type == 'drive_bike') {
               type = 'bike';
@@ -39,12 +40,15 @@ $(document).ready(function(){
 
             if ( type == 'bike' || type == 'truck' || type == 'car' ) {
               $('#licenses').append('<p>'+ type +'</p>');
+              $('#expired').attr('style', 'display: block;');
+              $('#expired').text('Pembuatan: '+expired);
             }
           });
         }
 
           $('#id-card').css('background', 'url(assets/images/license.png)');
         } else {
+          $('#expired').attr('style', 'display: none;');
           $('#id-card').css('background', 'url(assets/images/idcard.png)');
         }
       } else if ( type == 'weapon' ) {

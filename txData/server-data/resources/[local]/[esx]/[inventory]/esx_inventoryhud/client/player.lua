@@ -132,6 +132,7 @@ function setPlayerInventoryData()
             SendNUIMessage(
                 {
                     action = "setSecondInventoryItems",
+                    isProperties = false,
                     itemList = items
                 }
             )
