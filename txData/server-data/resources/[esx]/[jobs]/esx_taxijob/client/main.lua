@@ -778,7 +778,7 @@ RegisterCommand('mTaksi', function()
 	end
 end, false)
 
-RegisterKeyMapping('mTaksi', 'Open Taxi Menu', 'keyboard', 'F2')
+RegisterKeyMapping('mTaksi', 'Open Taksi Menu', 'keyboard', 'F2')
 
 AddEventHandler('esx:onPlayerDeath', function()
 	IsDead = true

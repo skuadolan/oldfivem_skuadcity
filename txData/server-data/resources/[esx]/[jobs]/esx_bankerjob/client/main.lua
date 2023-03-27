@@ -24,7 +24,7 @@ function OpenBankActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'bank_actions', {
 		title    = _U('bank'),
-		align    = 'top-right',
+		align    = 'top-left',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'customers' then

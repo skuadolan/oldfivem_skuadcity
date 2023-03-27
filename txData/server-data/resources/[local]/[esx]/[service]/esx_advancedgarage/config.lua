@@ -110,6 +110,7 @@ Config.PolicePounds = {
 -- End of Police
 
 -- Start of Aircrafts
+Config.AircraftGaragesBlips = 90
 Config.AircraftGarages = {
 	Los_Santos_Airport = {
 		Marker = vector3(-1617.14, -3145.52, 12.99),
@@ -141,6 +142,7 @@ Config.AircraftPounds = {
 -- End of Aircrafts
 
 -- Start of Boats
+Config.BoatGaragesBlips = 427
 Config.BoatGarages = {
 	Los_Santos_Dock = {
 		Marker = vector3(-735.87, -1325.08, 0.6),

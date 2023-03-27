@@ -114,6 +114,12 @@
 	window.onload = function (e) {
 		window.addEventListener('message', (event) => {
 			onData(event.data);
+
+			if (event.data.action == true) {
+				$("#id").fadeOut();
+			} else {
+				$("#id").fadeIn();
+			}
 		});
 	};
 

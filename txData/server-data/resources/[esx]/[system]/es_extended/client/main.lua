@@ -692,3 +692,11 @@ AddEventHandler("esx:freezePlayer", function(input)
         SetPlayerInvincible(player, false)
     end
 end)
+
+local isHUDHide = false
+RegisterCommand('hideWallet', function()
+	local tempisHUDHide = not isHUDHide
+	SendNUIMessage({
+		action = tempisHUDHide;
+	})
+end)

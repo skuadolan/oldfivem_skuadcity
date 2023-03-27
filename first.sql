@@ -394,7 +394,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
 
 -- Dumping data for table skuadcity.jobs: ~27 rows (approximately)
 REPLACE INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
-	('ambulance', 'EMS', 0),
+	('ambulance', 'EMS', 1),
 	('biker', 'Biker', 1),
 	('cardealer', 'Cardealer', 1),
 	('cartel', 'Cartel', 1),
@@ -405,7 +405,7 @@ REPLACE INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('gopostal', 'Tukang Pos', 1),
 	('lumberjack', 'Tukang Kayu', 0),
 	('mafia', 'Mafia', 1),
-	('mechanic', 'Mekanik', 0),
+	('mechanic', 'Mekanik', 1),
 	('miner', 'Penambang', 0),
 	('offambulance', 'Off EMS', 1),
 	('offcardealer', 'Off Cardealer', 1),
@@ -413,12 +413,12 @@ REPLACE INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('offpedagang', 'Off Pedagang', 1),
 	('offpolice', 'Off Polisi', 1),
 	('offtaxi', 'Taksi', 1),
-	('pedagang', 'Pedagang', 0),
-	('police', 'Polisi', 0),
+	('pedagang', 'Pedagang', 1),
+	('police', 'Polisi', 1),
 	('reporter', 'Reporter', 1),
 	('slaughterer', 'Tukang Ayam', 0),
 	('tailor', 'Penjahit', 0),
-	('taxi', 'Taksi', 0),
+	('taxi', 'Taksi', 1),
 	('theb', 'The B', 1),
 	('unemployed', 'Warga', 0);
 
@@ -831,6 +831,22 @@ CREATE TABLE IF NOT EXISTS `rented_vehicles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table skuadcity.rented_vehicles: ~0 rows (approximately)
+
+-- Dumping structure for table skuadcity.sec_jobs
+DROP TABLE IF EXISTS `sec_jobs`;
+CREATE TABLE IF NOT EXISTS `sec_jobs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(50) NOT NULL,
+  `firstJob` varchar(50) DEFAULT NULL,
+  `firstJobLabel` varchar(50) DEFAULT NULL,
+  `firstGrade` int(11) DEFAULT 0,
+  `secJob` varchar(50) DEFAULT NULL,
+  `secJobLabel` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `identifier` (`identifier`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- Dumping data for table skuadcity.sec_jobs: ~0 rows (approximately)
 
 -- Dumping structure for table skuadcity.shops
 DROP TABLE IF EXISTS `shops`;

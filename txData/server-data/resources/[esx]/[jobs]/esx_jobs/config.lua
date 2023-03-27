@@ -20,7 +20,7 @@ Config.PublicZones = {
 	},
 
 	ExitBuilding = {
-		Pos   = vector3( -139.45, -617.32, 167.82),
+		Pos   = vector3(-139.45, -617.32, 167.82),
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,

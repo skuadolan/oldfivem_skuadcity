@@ -205,10 +205,12 @@ function Form (_title, _subtitle, _elements, _submittable)
 
 
 
-$(document).keyup(function(e) {
-	if (e.keyCode === 27) activeform.close();
-});
-
+window.addEventListener("keyup", function onEvent(event) {
+    // Close menu when key is released
+    if (event.key == 'F5') {
+		activeform.close()
+    }
+  });
 
 window.addEventListener('message', function(event){
 

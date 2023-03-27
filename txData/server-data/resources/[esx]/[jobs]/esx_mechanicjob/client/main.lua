@@ -86,7 +86,7 @@ function OpenMechanicActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_actions', {
 		title    = _U('mechanic'),
-		align    = 'top-right',
+		align    = 'top-left',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'vehicle_list' then
@@ -104,7 +104,7 @@ function OpenMechanicActionsMenu()
 
 					ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_spawner', {
 						title    = _U('service_vehicle'),
-						align    = 'top-right',
+						align    = 'top-left',
 						elements = elements
 					}, function(data, menu)
 						menu.close()
@@ -137,7 +137,7 @@ function OpenMechanicActionsMenu()
 
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'spawn_vehicle', {
 					title    = _U('service_vehicle'),
-					align    = 'top-right',
+					align    = 'top-left',
 					elements = elements
 				}, function(data, menu)
 					if Config.MaxInService == -1 then
@@ -210,7 +210,7 @@ function OpenMechanicHarvestMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_harvest', {
 			title    = _U('harvest'),
-			align    = 'top-right',
+			align    = 'top-left',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -246,7 +246,7 @@ function OpenMechanicCraftMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_craft', {
 			title    = _U('craft'),
-			align    = 'top-right',
+			align    = 'top-left',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -292,7 +292,7 @@ function OpenMobileMechanicActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions', {
 		title    = _U('mechanic'),
-		align    = 'top-right',
+		align    = 'top-left',
 		elements = eleme
 	}, function(data, menu)
 		if isBusy then return end
@@ -520,7 +520,7 @@ function OpenMobileMechanicActionsMenu()
 
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions_spawn', {
 				title    = _U('objects'),
-				align    = 'top-right',
+				align    = 'top-left',
 				elements = {
 					{label = _U('roadcone'), value = 'prop_roadcone02a'},
 					{label = _U('toolbox'),  value = 'prop_toolchest_01'}
@@ -562,7 +562,7 @@ function OpenGetStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('mechanic_stock'),
-			align    = 'top-right',
+			align    = 'top-left',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -610,7 +610,7 @@ function OpenPutStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('inventory'),
-			align    = 'top-right',
+			align    = 'top-left',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -1051,7 +1051,7 @@ RegisterCommand('mechmenu', function()
 	end
 end, false)
 
-RegisterKeyMapping('mechmenu', 'Open Mechanic Menu', 'keyboard', 'F2')
+RegisterKeyMapping('mechmenu', 'Open Mekanik Menu', 'keyboard', 'F2')
 
 AddEventHandler('esx:onPlayerDeath', function(data) isDead = true end)
 AddEventHandler('esx:onPlayerSpawn', function(spawn) isDead = false end)

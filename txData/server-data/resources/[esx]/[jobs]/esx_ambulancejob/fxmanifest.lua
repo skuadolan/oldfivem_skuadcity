@@ -23,5 +23,3 @@ client_scripts {
 	'client/vehicle.lua',
 	'check-body.lua',
 }
-
-dependency 'es_extended'

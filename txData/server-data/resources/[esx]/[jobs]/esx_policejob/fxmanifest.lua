@@ -45,9 +45,3 @@ client_scripts {
 	'client/main.lua',
 	'client/vehicle.lua'
 }
-
-dependencies {
-	'es_extended',
-	'esx_billing',
-	'esx_vehicleshop'
-}

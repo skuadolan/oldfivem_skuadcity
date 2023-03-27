@@ -1474,7 +1474,7 @@ CreateThread(function()
 			end
 		end -- CurrentAction end
 
-		if IsControlJustReleased(0, 167) and not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') then
+		--[[if IsControlJustReleased(0, 167) and not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') then
 			if not Config.EnableESXService then
 				OpenPoliceActionsMenu()
 			elseif playerInService then
@@ -1483,7 +1483,7 @@ CreateThread(function()
 				exports['mythic_notify']:SendAlert('error', _U('service_not'))
 				--ESX.ShowNotification(_U('service_not'))
 			end
-		end
+		end]]
 
 		if IsControlJustReleased(0, 38) and currentTask.busy then
 			exports['mythic_notify']:SendAlert('error', _U('impound_canceled'))
@@ -1495,6 +1495,14 @@ CreateThread(function()
 		end
 	end
 end)
+
+RegisterCommand('pMenu', function()
+	if not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') then
+		OpenPoliceActionsMenu()
+	end
+end, false)
+
+RegisterKeyMapping('pMenu', 'Open Polisi Menu', 'keyboard', 'F2')
 
 -- Create blip for colleagues
 function createBlip(id)

@@ -1739,7 +1739,7 @@ function CreateBlips()
 		for k,v in pairs(Config.AircraftGarages) do
 			local blip = AddBlipForCoord(v.Marker)
 
-			SetBlipSprite (blip, Config.GarageBlip.Sprite)
+			SetBlipSprite (blip, Config.AircraftGaragesBlips)
 			SetBlipColour (blip, Config.GarageBlip.Color)
 			SetBlipDisplay(blip, Config.GarageBlip.Display)
 			SetBlipScale  (blip, Config.GarageBlip.Scale)
@@ -1754,7 +1754,7 @@ function CreateBlips()
 		for k,v in pairs(Config.AircraftPounds) do
 			local blip = AddBlipForCoord(v.Marker)
 
-			SetBlipSprite (blip, Config.PoundBlip.Sprite)
+			SetBlipSprite (blip, Config.AircraftGaragesBlips)
 			SetBlipColour (blip, Config.PoundBlip.Color)
 			SetBlipDisplay(blip, Config.PoundBlip.Display)
 			SetBlipScale  (blip, Config.PoundBlip.Scale)
@@ -1771,7 +1771,7 @@ function CreateBlips()
 		for k,v in pairs(Config.BoatGarages) do
 			local blip = AddBlipForCoord(v.Marker)
 
-			SetBlipSprite (blip, Config.GarageBlip.Sprite)
+			SetBlipSprite (blip, Config.BoatGaragesBlips)
 			SetBlipColour (blip, Config.GarageBlip.Color)
 			SetBlipDisplay(blip, Config.GarageBlip.Display)
 			SetBlipScale  (blip, Config.GarageBlip.Scale)
@@ -1786,7 +1786,7 @@ function CreateBlips()
 		for k,v in pairs(Config.BoatPounds) do
 			local blip = AddBlipForCoord(v.Marker)
 
-			SetBlipSprite (blip, Config.PoundBlip.Sprite)
+			SetBlipSprite (blip, Config.BoatGaragesBlips)
 			SetBlipColour (blip, Config.PoundBlip.Color)
 			SetBlipDisplay(blip, Config.PoundBlip.Display)
 			SetBlipScale  (blip, Config.PoundBlip.Scale)
