@@ -41,7 +41,7 @@ $(document).ready(function(){
             if ( type == 'bike' || type == 'truck' || type == 'car' ) {
               $('#licenses').append('<p>'+ type +'</p>');
               $('#expired').attr('style', 'display: block;');
-              $('#expired').text('Pembuatan: '+expired);
+              $('#expired').text('Kadaluarsa: '+expired);
             }
           });
         }

@@ -152,42 +152,7 @@ ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehiclesRentrent_this_veh
 		},
 	function(data, menu)
 		if data.current.value == 'rentButton' then
-			if price and curRentPrice ~= 0 then 
-				ESX.UI.Menu.Open(
-				'default', GetCurrentResourceName(), 'vehiclesRentshop_confirm',
-				{ 
-				title = 'Konfirmasi Sewa',
-				align = 'top-left',
-				elements = {
-					{label = '<span style="color:Yellow;">Rent for</span> <span style="color:Green;">' .. curRentPrice  .. '$ ?</span>', value = 'lol'},
-					{label = '<span style="color:Green;">Confirm</span>', value = 'yes'},
-					{label = 'Назад', value = 'no'},
-				},
-				},
-				function (data2, menu2)
-					if data2.current.value == 'yes' then
-						ESX.TriggerServerCallback('esx_vehiclesRent:buyVehicle', function(isBuyed)
-							if isBuyed then 
-							rentNoJob = rentNoJob + 1
-							RentAndDespawnThisCar(vehicle, curRentPrice / price)
-							exports['mythic_notify']:SendAlert('inform', 'Memulai rental kendaraan')
-							--ESX.ShowNotification("~g~You have successfully rented a transport")
-							else 
-								exports['mythic_notify']:SendAlert('error', 'Tidak cukup uang')
-							--ESX.ShowNotification("~r~You don’t have enough money!")
-							end
-						end, vehicle)
-						end
-						if data2.current.value == 'no' then
-						menu2.close()
-						end
-					end,
-					function (data2, menu2)
-					menu2.close()
-					end
-				)
-			elseif not price then 
-
+			if curRentPrice > 0 then 
 				ESX.UI.Menu.Open(
 					'default', GetCurrentResourceName(), 'vehiclesRentshop_confirm',
 					{ 
@@ -196,7 +161,7 @@ ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehiclesRentrent_this_veh
 					elements = {
 						{label = '<span style="color:Yellow;">Ambil kendaraan?</span>', value = 'lol'},
 						{label = '<span style="color:Green;">Iya</span>', value = 'yes'},
-						{label = 'Back', value = 'no'},
+						{label = 'Kembali', value = 'no'},
 					},
 					},
 					function (data2, menu2)

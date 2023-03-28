@@ -41,7 +41,7 @@ Locales['en'] = {
   ['keymap_showinventory'] = 'Show Inventory',
 
   -- Salary related
-  ['received_salary'] = 'You have been paid: Rp.%s',
+  ['received_salary'] = 'Mendapatkan bantuan: Rp.%s',
   ['received_help'] = 'Mendapatkan bantuan dari negara sebanyak Rp.%s',
   ['company_nomoney'] = 'the company you\'re employeed at is too poor to pay out your salary',
   ['received_paycheck'] = 'received paycheck',

@@ -34,7 +34,7 @@ AddEventHandler('jsfour-idcard:open', function(ID, targetID, type)
 				local items = xPlayer.getInventoryItem(type)
 
 				if show then
-					if items ~= nil then
+					if items.count > 0 then
 						local array = {
 							user = user,
 							licenses = licenses

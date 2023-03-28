@@ -52,8 +52,8 @@ function OpenCloakroomMenu()
 
 	local elements = {
 		{label = _U('citizen_wear'), value = 'citizen_wear'},
-		{label = _U('bullet_wear'), uniform = 'bullet_wear'},
-		{label = _U('gilet_wear'), uniform = 'gilet_wear'},
+		--{label = _U('bullet_wear'), uniform = 'bullet_wear'},
+		--{label = _U('gilet_wear'), uniform = 'gilet_wear'},
 		{label = _U('police_wear'), uniform = grade}
 	}
 
@@ -275,7 +275,8 @@ function OpenPoliceActionsMenu()
 				{label = _U('put_in_vehicle'), value = 'put_in_vehicle'},
 				{label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
 				{label = _U('fine'), value = 'fine'},
-				{label = _U('unpaid_bills'), value = 'unpaid_bills'}
+				{label = _U('unpaid_bills'), value = 'unpaid_bills'},
+				{label = 'Perpanjang SIM', value = 'perpanjang_SIM'},
 			}
 
 			if Config.EnableLicenses then
@@ -288,7 +289,7 @@ function OpenPoliceActionsMenu()
 				elements = elements
 			}, function(data2, menu2)
 				local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
-				if closestPlayer ~= -1 and closestDistance <= 3.0 then
+				if closestPlayer ~= -1 and closestDistance <= 2.0 then
 					local action = data2.current.value
 
 					if action == 'identity_card' then
@@ -305,6 +306,8 @@ function OpenPoliceActionsMenu()
 						TriggerServerEvent('esx_policejob:OutVehicle', GetPlayerServerId(closestPlayer))
 					elseif action == 'fine' then
 						OpenFineMenu(closestPlayer)
+					elseif action == 'perpanjang_SIM' then
+						perpanjangSIM(closestPlayer)
 					elseif action == 'license' then
 						ShowPlayerLicense(closestPlayer)
 					elseif action == 'unpaid_bills' then
@@ -640,6 +643,69 @@ function ShowPlayerLicense(player)
 		end)
 
 	end, GetPlayerServerId(player))
+end
+
+function perpanjangSIM(closestPlayer)
+	local elements = {}
+	local curRentPrice = 0
+
+	ESX.UI.Menu.CloseAll()
+
+	table.insert(elements, {name = 'rentTime', label = 'Durasi Perpanjang (Minggu)', value = 0, type = 'slider', max = 4})
+	table.insert(elements, {label = "Konfirmasi", value = "rentButton" })
+
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehiclesRentrent_this_veh',
+			{
+				title    = "Konfirmasi Perpanjang SIM",
+				align    = 'top-left',
+				elements = elements
+			},
+		function(data, menu)
+			if data.current.value == 'rentButton' then
+				if curRentPrice > 0  then 
+					ESX.UI.Menu.Open(
+						'default', GetCurrentResourceName(), 'vehiclesRentshop_confirm',
+						{ 
+						title = 'Konfirmasi',
+						align = 'top-left',
+						elements = {
+							{label = '<span style="color:Yellow;">Lama Perpanjang '..curRentPrice..' Minggu?</span>', value = 'lol'},
+							{label = '<span style="color:Green;">Iya</span>', value = 'yes'},
+							{label = 'Kembali', value = 'no'},
+						},
+						},
+						function (data2, menu2)
+							if data2.current.value == 'yes' then
+								TriggerServerEvent('esx_license:updateLicenseExpired', closestPlayer, curRentPrice)
+								--TriggerServerEvent('esx_license:updateLicenseExpired', GetPlayerServerId(PlayerId()), curRentPrice)
+								menu2.close()
+								menu.close()
+							end
+							if data2.current.value == 'no' then
+								menu2.close()
+							end
+						end,
+						function (data2, menu2)
+							menu2.close()
+						end
+					)
+				else
+					exports['mythic_notify']:SendAlert('error', 'Tidak dapat perpanjang untuk 0 Minggu')
+					--ESX.ShowNotification("~r~Unable to rent a car for 0 minutes.")
+				end
+			end
+		
+		end, function(data, menu)
+			menu.close()
+		end, function(data, menu)
+			if type(tonumber(data.current.value)) == 'number' then 
+				if price then 
+					curRentPrice = tonumber(data.current.value)
+				else 
+					curRentPrice = tonumber(data.current.value)
+				end
+			end
+	end)
 end
 
 function OpenUnpaidBillsMenu(player)

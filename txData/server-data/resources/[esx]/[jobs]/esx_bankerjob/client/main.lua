@@ -224,9 +224,9 @@ end)]]
 end)]]
 
 RegisterCommand('bankerMenu', function()
-	if ESX.PlayerData.job and ESX.PlayerData.job.name == 'banker' and not isDead then
+	--[[if ESX.PlayerData.job and ESX.PlayerData.job.name == 'banker' and not isDead then
 		OpenBankActionsMenu()
-	end
+	end]]
 end, false)
 
 RegisterKeyMapping('bankerMenu', 'Open Banker Menu', 'keyboard', 'F2')
