@@ -33,20 +33,32 @@ AddEventHandler('jsfour-idcard:open', function(ID, targetID, type)
 				local xPlayer = ESX.GetPlayerFromId(ID)
 				local items = xPlayer.getInventoryItem(type)
 
-				if show then
-					if items.count > 0 then
-						local array = {
-							user = user,
-							licenses = licenses
-						}
-						TriggerClientEvent('jsfour-idcard:open', _source, array, type)
-					else
-						TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', 'Tidak bawa lisensi')
+				MySQL.Async.fetchAll('SELECT name FROM owned_properties WHERE owner = @identifier', {['@identifier'] = identifier},
+				function (address)
+					local tempAddress = nil
+					for i=1, #address, 1 do
+						tempAddress = address[i].name
+						break
 					end
-				else
-					TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', 'Kamu tidak punya lisensi')
-					--TriggerClientEvent('esx:showNotification', _source, "You don't have that type of license..")
-				end
+					if address ~= nil then
+						if show then
+							if items.count > 0 then
+								local array = {
+									user = user,
+									licenses = licenses,
+									address = tempAddress
+								}
+								TriggerClientEvent('jsfour-idcard:open', _source, array, type)
+							else
+								TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', 'Tidak bawa lisensi')
+							end
+						else
+							TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', 'Kamu tidak punya lisensi')
+							--TriggerClientEvent('esx:showNotification', _source, "You don't have that type of license..")
+						end
+					end
+				end)
+
 			end)
 		end
 	end)

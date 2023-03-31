@@ -863,24 +863,29 @@ CREATE TABLE IF NOT EXISTS `sec_jobs` (
 DROP TABLE IF EXISTS `shops`;
 CREATE TABLE IF NOT EXISTS `shops` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `store` varchar(100) NOT NULL,
+  `store_label` varchar(50) NOT NULL DEFAULT '0',
+  `store_location` varchar(50) NOT NULL DEFAULT '0',
+  `owner_identifier` varchar(50) DEFAULT NULL,
+  `owner_name` varchar(50) DEFAULT NULL,
   `item` varchar(100) NOT NULL,
-  `price` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `store` (`store`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `saves_location` varchar(50) NOT NULL DEFAULT '0',
+  `balance_saves` int(11) NOT NULL,
+  `price` int(11) NOT NULL DEFAULT 0,
+  `expired` varchar(50) DEFAULT NULL,
+  `isSales` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table skuadcity.shops: ~9 rows (approximately)
-REPLACE INTO `shops` (`id`, `store`, `item`, `price`) VALUES
-	(1, 'TwentyFourSeven', 'bread', 100),
-	(2, 'TwentyFourSeven', 'water', 100),
-	(3, 'RobsLiquor', 'bread', 100),
-	(4, 'RobsLiquor', 'water', 100),
-	(5, 'LTDgasoline', 'bread', 100),
-	(6, 'LTDgasoline', 'water', 100),
-	(7, 'TwentyFourSeven', 'beer', 100),
-	(8, 'RobsLiquor', 'beer', 100),
-	(9, 'LTDgasoline', 'beer', 100);
+-- Dumping data for table skuadcity.shops: ~8 rows (approximately)
+REPLACE INTO `shops` (`id`, `store_label`, `store_location`, `owner_identifier`, `owner_name`, `item`, `saves_location`, `balance_saves`, `price`, `expired`, `isSales`) VALUES
+	(1, 'TwentyFourSeven 1', '{"x":373.8, "y":325.8, "z":102.5}', NULL, NULL, '', '{"x":373.8, "y":325.8, "z":102.5}', 0, 50000, NULL, 0),
+	(2, 'TwentyFourSeven 2', '{"x":2557.4, "y":382.2, "z":107.6}', NULL, NULL, '', '{"x":2557.4, "y":382.2, "z":107.6}', 0, 50000, NULL, 0),
+	(3, 'TwentyFourSeven 3', '{"x":-3038.9, "y":585.9, "z":6.9}', NULL, NULL, '', '{"x":-3038.9, "y":585.9, "z":6.9}', 0, 50000, NULL, 0),
+	(4, 'TwentyFourSeven 4', '{"x":-3241.9, "y":1001.4, "z":11.8}', NULL, NULL, '', '{"x":-3241.9, "y":1001.4, "z":11.8}', 0, 50000, NULL, 0),
+	(5, 'TwentyFourSeven 5', '{"x":547.4, "y":2671.7, "z":41.1}', NULL, NULL, '', '{"x":547.4, "y":2671.7, "z":41.1}', 0, 50000, NULL, 0),
+	(6, 'TwentyFourSeven 6', '{"x":1961.4, "y":3740.6, "z":31.3}', NULL, NULL, '', '{"x":1961.4, "y":3740.6, "z":31.3}', 0, 50000, NULL, 0),
+	(7, 'TwentyFourSeven 7', '{"x":2678.9, "y":3280.6, "z":54.2}', NULL, NULL, '', '{"x":2678.9, "y":3280.6, "z":54.2}', 0, 50000, NULL, 0),
+	(8, 'TwentyFourSeven 8', '{"x":1729.2, "y":6414.1, "z":34.0}', NULL, NULL, '', '{"x":1729.2, "y":6414.1, "z":34.0}', 0, 50000, NULL, 0);
 
 -- Dumping structure for table skuadcity.society_moneywash
 DROP TABLE IF EXISTS `society_moneywash`;

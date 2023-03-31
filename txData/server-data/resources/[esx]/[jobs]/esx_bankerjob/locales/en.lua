@@ -6,6 +6,7 @@ Locales['en'] = {
   ['bill_amount']                       = 'biaya tagihan',
   ['billing']                           = 'tagihan',
   ['customer']                          = 'pelanggan',
+  ['freeProperties']                    = 'List Properti Dijual',
   ['customers']                         = 'pelanggan',
   ['deposit']                           = 'menyimpan',
   ['invalid_amount']                    = 'nilai tidak sesuai',

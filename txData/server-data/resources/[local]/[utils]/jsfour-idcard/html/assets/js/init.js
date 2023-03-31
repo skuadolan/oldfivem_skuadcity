@@ -22,6 +22,7 @@ $(document).ready(function(){
         $('#name').text(userData.firstname + ' ' + userData.lastname);
         $('#dob').text(userData.dateofbirth);
         $('#height').text(userData.height);
+        $('#address').text(event.data.array['address']);
         $('#signature').text(userData.firstname + ' ' + userData.lastname);
 
         if ( type == 'driver' ) {
@@ -68,6 +69,7 @@ $(document).ready(function(){
       $('#height').text('');
       $('#signature').text('');
       $('#sex').text('');
+      $('#address').text('');
       $('#id-card').hide();
       $('#licenses').html('');
     }

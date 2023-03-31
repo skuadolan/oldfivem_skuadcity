@@ -42,7 +42,7 @@ function CreateBlips()
 
 		if property.entering then
 			if property.label ~= 'Room' then
-				if property.name == 'Motel' then
+				if (string.sub(property.name, 1, 5) == 'Motel') and property.isBuilding then
 					Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
 
 					SetBlipSprite (Blips[property.name], 476)
@@ -821,11 +821,11 @@ CreateThread(function()
 				local distance = #(coords - Pos)
 
 				if distance < Config.DrawDistance then
-					if property.name ~= 'Motel' then
+					if string.sub(property.name, 1, 5) ~= 'Motel' then
 						DrawMarker(Config.MarkerType, property.entering.x, property.entering.y, property.entering.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, nil, nil, false)
 					end
 					if Config.MarkerText == true then
-						if property.name ~= 'Motel' then
+						if string.sub(property.name, 1, 5) ~= 'Motel' then
 							ESX.Game.Utils.DrawText3D(property.entering, property.name, 2)
 						end
 					end
@@ -833,7 +833,7 @@ CreateThread(function()
 				end
 
 				if distance < Config.MarkerSize.x then
-					if property.name ~= 'Motel' then
+					if string.sub(property.name, 1, 5) ~= 'Motel' then
 						isInMarker      = true
 						currentProperty = property.name
 						currentPart     = 'entering'

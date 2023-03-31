@@ -52,7 +52,7 @@ img {
 #dob {
   position: absolute;
   left: 0;
-  width: 100px;
+  width: fit-content;
 }
 #sex {
   position: absolute;
@@ -60,8 +60,13 @@ img {
 }
 #height {
   position: absolute;
-  left: 150px;
-  width: 60px;
+  left: 165px;
+  width: fit-content;
+}
+#address{
+  position: absolute;
+  left: 200px;
+  width: fit-content;
 }
 #signature {
   position: absolute;

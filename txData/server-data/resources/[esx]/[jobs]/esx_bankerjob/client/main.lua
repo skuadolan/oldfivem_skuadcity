@@ -10,9 +10,10 @@ AddEventHandler('esx:setJob', function (job)
 	ESX.PlayerData.job = job
 end)
 
-function OpenBankActionsMenu()
+function OpenBankActionsMenu(tempopen)
 	local elements = {
 		{label = _U('customers'), value = 'customers'},
+		{label = _U('freeProperties'), value = 'freeProperties'},
 		{label = _U('billing'),   value = 'billing'}
 	}
 
@@ -29,6 +30,8 @@ function OpenBankActionsMenu()
 	}, function(data, menu)
 		if data.current.value == 'customers' then
 			OpenCustomersMenu()
+		elseif data.current.value == 'freeProperties' then
+			freeProperties(tempopen)
 		elseif data.current.value == 'billing' then
 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'billing', {
 				title = _U('bill_amount')
@@ -223,9 +226,59 @@ end)]]
 	end
 end)]]
 
+RegisterNetEvent('esx_bankerjob:sendProperties')
+AddEventHandler('esx_bankerjob:sendProperties', function(properties)
+	Config.Properties = properties
+end)
+
+local open = false
+function freeProperties(tempopen)
+	ESX.UI.Menu.CloseAll()
+	ESX.TriggerServerCallback('esx_bankerjob:getFreeProperties', function(hasProp, isEmpty)
+		local haveFreeProperties = {}
+		for i=1, #hasProp, 1 do
+			table.insert(haveFreeProperties, {
+				store_label = hasProp[i].store_label,
+				store_location = hasProp[i].store_location,
+				owner_identifier = hasProp[i].owner_identifier,
+				owner_name = hasProp[i].owner_name,
+				price = hasProp[i].price,
+				expired = hasProp[i].expired,
+				isSales = hasProp[i].isSales,
+			})
+		end
+
+		SendNUIMessage({
+			action = tempopen;
+			lengthProperties = #hasProp;
+			freeProperties = haveFreeProperties;
+		})
+		
+		if tempopen then
+			SetNuiFocus(true, true)
+		else
+			SetNuiFocus(false, false)
+		end
+	end)
+end
+
+RegisterNUICallback('cJobs', function(data, cb)
+    -- Clear focus and destroy UI
+    open = false
+	SendNUIMessage({
+		action = open;
+	})
+	freeProperties(open)
+end)
+
 RegisterCommand('bankerMenu', function()
-	--[[if ESX.PlayerData.job and ESX.PlayerData.job.name == 'banker' and not isDead then
-		OpenBankActionsMenu()
+	if ESX.PlayerData.job and ESX.PlayerData.job.name == 'banker' and not isDead then
+		local tempopen = not open
+		OpenBankActionsMenu(tempopen)
+	end
+	--[[if not isDead then
+		open = not open
+		OpenBankerMenu(open)
 	end]]
 end, false)
 

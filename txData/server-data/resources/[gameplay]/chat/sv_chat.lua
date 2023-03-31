@@ -243,6 +243,7 @@ AddEventHandler('playerDropped', function(reason)
         return
     end
 
+    TriggerClientEvent('esx_duty:playerDropped', source)
     TriggerEvent('skd_rpchat:postToDCDisconnect', source, reason)
     --TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) ..' left (' .. reason .. ')')
 end)
