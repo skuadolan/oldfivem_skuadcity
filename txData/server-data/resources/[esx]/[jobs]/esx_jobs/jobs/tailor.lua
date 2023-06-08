@@ -19,7 +19,7 @@ Config.Jobs.tailor = {
 	Zones = {
 
 		CloakRoom = {
-			Pos = {x = 706.73, y = -960.90, z = 29.39},
+			Pos = vector3(706.73, -960.90, 29.39),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -27,11 +27,11 @@ Config.Jobs.tailor = {
 			Name = _U('dd_dress_locker'),
 			Type = 'cloakroom',
 			Hint = _U('cloak_change'),
-			GPS = {x = 740.80, y = -970.06, z = 23.46}
+			GPS = vector3(740.80, -970.06, 23.46)
 		},
 
 		Wool = {
-			Pos = {x = 1978.92, y = 5171.70, z = 46.63},
+			Pos = vector3(1978.92, 5171.70, 46.63),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -52,11 +52,11 @@ Config.Jobs.tailor = {
 				}
 			},
 			Hint = _U('dd_pickup'),
-			GPS = {x = 715.95, y = -959.63, z = 29.39}
+			GPS = vector3(715.95, -959.63, 29.39)
 		},
 
 		Fabric = {
-			Pos = {x = 715.95, y = -959.63, z = 29.39},
+			Pos = vector3(715.95, -959.63, 29.39),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -77,11 +77,11 @@ Config.Jobs.tailor = {
 				}
 			},
 			Hint = _U('dd_makefabric'),
-			GPS = {x = 712.92, y = -970.58, z = 29.39}
+			GPS = vector3(712.92, -970.58, 29.39)
 		},
 
 		Clothe = {
-			Pos = {x = 712.92, y = -970.58, z = 29.39},
+			Pos = vector3(712.92, -970.58, 29.39),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -102,11 +102,11 @@ Config.Jobs.tailor = {
 				}
 			},
 			Hint = _U('dd_makeclothing'),
-			GPS = {x = 429.59, y = -807.34, z = 28.49}
+			GPS = vector3(429.59, -807.34, 28.49)
 		},
 
 		VehicleSpawner = {
-			Pos = {x = 740.80, y = -970.06, z = 23.46},
+			Pos = vector3(740.80, -970.06, 23.46),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -116,11 +116,11 @@ Config.Jobs.tailor = {
 			Spawner = 1,
 			Hint = _U('spawn_veh_button'),
 			Caution = 2000,
-			GPS = {x = 1978.92, y = 5171.70, z = 46.63}
+			GPS = vector3(1978.92, 5171.70, 46.63)
 		},
 
 		VehicleSpawnPoint = {
-			Pos = {x = 747.31, y = -966.23, z = 23.70},
+			Pos = vector3(747.31, -966.23, 23.70),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = -1,
 			Blip = false,
@@ -132,7 +132,7 @@ Config.Jobs.tailor = {
 		},
 
 		VehicleDeletePoint = {
-			Pos = {x = 693.79, y = -963.01, z = 22.82},
+			Pos = vector3(693.79, -963.01, 22.82),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 255, g = 0, b = 0},
 			Marker = 1,
@@ -147,7 +147,7 @@ Config.Jobs.tailor = {
 		},
 
 		Delivery = {
-			Pos = {x = 429.59, y = -807.34, z = 28.49},
+			Pos = vector3(429.59, -807.34, 28.49),
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 3.0},
 			Marker = 1,
@@ -168,7 +168,7 @@ Config.Jobs.tailor = {
 				}
 			},
 			Hint = _U('dd_deliver_clothes'),
-			GPS = {x = 1978.92, y = 5171.70, z = 46.63}
+			GPS = vector3(1978.92, 5171.70, 46.63)
 		}
 	}
 }

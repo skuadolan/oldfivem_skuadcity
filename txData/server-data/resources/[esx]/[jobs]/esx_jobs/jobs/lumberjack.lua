@@ -19,7 +19,7 @@ Config.Jobs.lumberjack = {
 	Zones = {
 
 		CloakRoom = {
-			Pos = {x = 1200.63, y = -1276.87, z = 34.38},
+			Pos = vector3(1200.63, -1276.87, 34.38),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -30,7 +30,7 @@ Config.Jobs.lumberjack = {
 		},
 
 		Wood = {
-			Pos = {x = -534.32, y = 5373.79, z = 69.50},
+			Pos = vector3(-534.32, 5373.79, 69.50),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -54,7 +54,7 @@ Config.Jobs.lumberjack = {
 		},
 
 		CuttedWood = {
-			Pos = {x = -552.21, y = 5326.90, z = 72.59},
+			Pos = vector3(-552.21, 5326.90, 72.59),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -78,7 +78,7 @@ Config.Jobs.lumberjack = {
 		},
 
 		Planks = {
-			Pos = {x = -501.38, y = 5280.53, z = 79.61},
+			Pos = vector3(-501.38, 5280.53, 79.61),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -102,7 +102,7 @@ Config.Jobs.lumberjack = {
 		},
 
 		VehicleSpawner = {
-			Pos = {x = 1191.96, y = -1261.77, z = 34.17},
+			Pos = vector3(1191.96, -1261.77, 34.17),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -115,7 +115,7 @@ Config.Jobs.lumberjack = {
 		},
 
 		VehicleSpawnPoint = {
-			Pos = {x = 1194.62, y = -1286.95, z = 34.12},
+			Pos = vector3(1194.62, -1286.95, 34.12),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = -1,
 			Blip = false,
@@ -126,7 +126,7 @@ Config.Jobs.lumberjack = {
 		},
 
 		VehicleDeletePoint = {
-			Pos = {x = 1216.89, y = -1229.23, z = 34.40},
+			Pos = vector3(1216.89, -1229.23, 34.40),
 			Size = {x = 5.0, y = 5.0, z = 1.0},
 			Color = {r = 255, g = 0, b = 0},
 			Marker = 1,
@@ -141,7 +141,7 @@ Config.Jobs.lumberjack = {
 		},
 
 		Delivery = {
-			Pos = {x = 1201.35, y = -1327.51, z = 34.22},
+			Pos = vector3(1201.35, -1327.51, 34.22),
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 3.0},
 			Marker = 1,

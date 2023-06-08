@@ -77,8 +77,7 @@ AddEventHandler('esx_jobs:action', function(job, zone, zoneKey)
 		local playerPed = PlayerPedId()
 
 		if IsPedInAnyVehicle(playerPed, false) then
-			exports['mythic_notify']:SendAlert('inform', _U('foot_work'))
-			--ESX.ShowNotification(_U('foot_work'))
+			ESX.ShowNotification(_U('foot_work'))
 		else
 			TriggerServerEvent('esx_jobs:startWork', zone.Item, zoneKey)
 		end
@@ -106,8 +105,7 @@ AddEventHandler('esx_jobs:action', function(job, zone, zoneKey)
 		if ESX.Game.IsSpawnPointClear(spawnPoint.Pos, 5.0) then
 			spawnVehicle(spawnPoint, vehicle, zone.Caution)
 		else
-			exports['mythic_notify']:SendAlert('error', _U('spawn_blocked'))
-			--ESX.ShowNotification(_U('spawn_blocked'))
+			ESX.ShowNotification(_U('spawn_blocked'))
 		end
 
 	elseif zone.Type == "vehdelete" then
@@ -155,8 +153,7 @@ AddEventHandler('esx_jobs:action', function(job, zone, zoneKey)
 								end
 
 							else
-								exports['mythic_notify']:SendAlert('error', _U('not_your_vehicle'))
-								--ESX.ShowNotification(_U('not_your_vehicle'))
+								ESX.ShowNotification(_U('not_your_vehicle'))
 							end
 
 						end
@@ -196,8 +193,7 @@ function nextStep(gps)
 
 		Blips['delivery'] = AddBlipForCoord(gps.x, gps.y, gps.z)
 		SetBlipRoute(Blips['delivery'], true)
-		exports['mythic_notify']:SendAlert('inform', _U('next_point'))
-		--ESX.ShowNotification(_U('next_point'))
+		ESX.ShowNotification(_U('next_point'))
 	end
 end
 
@@ -253,7 +249,7 @@ function refreshBlips()
 						local blip = AddBlipForCoord(_Pos.x, _Pos.y, _Pos.z)
 						SetBlipSprite  (blip, jobValues.BlipInfos.Sprite)
 						SetBlipDisplay (blip, 4)
-						SetBlipScale   (blip, 0.75)
+						SetBlipScale   (blip, 1.2)
 						SetBlipCategory(blip, 3)
 						SetBlipColour  (blip, jobValues.BlipInfos.Color)
 						SetBlipAsShortRange(blip, true)

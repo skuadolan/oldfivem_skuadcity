@@ -19,7 +19,7 @@ Config.Jobs.miner = {
 	Zones = {
 
 		CloakRoom = {
-			Pos = {x = 892.35, y = -2172.77, z = 31.28},
+			Pos = vector3(892.35, -2172.77, 31.28),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -27,11 +27,11 @@ Config.Jobs.miner = {
 			Name = _U('m_miner_locker'),
 			Type = 'cloakroom',
 			Hint = _U('cloak_change'),
-			GPS = {x = 884.86, y = -2176.51, z = 29.51}
+			GPS = vector3(884.86, -2176.51, 29.51)
 		},
 
 		Mine = {
-			Pos = {x = 2962.40, y = 2746.20, z = 42.39},
+			Pos = vector3(2962.40, 2746.20, 42.39),
 			Size = {x = 5.0, y = 5.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -52,11 +52,11 @@ Config.Jobs.miner = {
 				}
 			},
 			Hint = _U('m_pickrocks'),
-			GPS = {x = 289.24, y = 2862.90, z = 42.64}
+			GPS = vector3(289.24, 2862.90, 42.64)
 		},
 
 		StoneWash = {
-			Pos = {x = 289.24, y = 2862.90, z = 42.64},
+			Pos = vector3(289.24, 2862.90, 42.64),
 			Size = {x = 5.0, y = 5.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -77,11 +77,11 @@ Config.Jobs.miner = {
 				}
 			},
 			Hint = _U('m_rock_button'),
-			GPS = {x = 1109.14, y = -2007.87, z = 30.01}
+			GPS = vector3(1109.14, -2007.87, 30.01)
 		},
 
 		Foundry = {
-			Pos = {x = 1109.14, y = -2007.87, z = 30.01},
+			Pos = vector3(1109.14, -2007.87, 30.01),
 			Size = {x = 5.0, y = 5.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -123,11 +123,11 @@ Config.Jobs.miner = {
 				}
 			},
 			Hint = _U('m_melt_button'),
-			GPS = {x = -169.48, y = -2659.16, z = 5.00}
+			GPS = vector3(-169.48, -2659.16, 5.00)
 		},
 
 		VehicleSpawner = {
-			Pos = {x = 884.86, y = -2176.51, z = 29.51},
+			Pos = vector3(884.86, -2176.51, 29.51),
 			Size = {x = 5.0, y = 5.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -137,11 +137,11 @@ Config.Jobs.miner = {
 			Spawner = 1,
 			Hint = _U('spawn_veh_button'),
 			Caution = 2000,
-			GPS = {x = 2962.40, y = 2746.20, z = 42.39}
+			GPS = vector3(2962.40, 2746.20, 42.39)
 		},
 
 		VehicleSpawnPoint = {
-			Pos = {x = 879.55, y = -2189.79, z = 29.51},
+			Pos = vector3(879.55, -2189.79, 29.51),
 			Size = {x = 5.0, y = 5.0, z = 1.0},
 			Marker = -1,
 			Blip = false,
@@ -153,7 +153,7 @@ Config.Jobs.miner = {
 		},
 
 		VehicleDeletePoint = {
-			Pos = {x = 881.93, y = -2198.01, z = 29.51},
+			Pos = vector3(881.93, -2198.01, 29.51),
 			Size = {x = 5.0, y = 5.0, z = 1.0},
 			Color = {r = 255, g = 0, b = 0},
 			Marker = 1,
@@ -168,7 +168,7 @@ Config.Jobs.miner = {
 		},
 
 		CopperDelivery = {
-			Pos = {x = -169.481, y = -2659.16, z = 5.00103},
+			Pos = vector3(-169.481, -2659.16, 5.00103),
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 3.0},
 			Marker = 1,
@@ -189,11 +189,11 @@ Config.Jobs.miner = {
 				}
 			},
 			Hint = _U('m_deliver_copper'),
-			GPS = {x = -148.78, y = -1040.38, z = 26.27}
+			GPS = vector3(-148.78, -1040.38, 26.27)
 		},
 
 		IronDelivery = {
-			Pos = {x = -148.78, y = -1040.38, z = 26.27},
+			Pos = vector3(-148.78, -1040.38, 26.27),
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 3.0},
 			Marker = 1,
@@ -214,11 +214,11 @@ Config.Jobs.miner = {
 				}
 			},
 			Hint = _U('m_deliver_iron'),
-			GPS = {x = 261.48, y = 207.35, z = 109.28}
+			GPS = vector3(261.48, 207.35, 109.28)
 		},
 
 		GoldDelivery = {
-			Pos = {x = 261.48, y = 207.35, z = 109.28},
+			Pos = vector3(261.48, 207.35, 109.28),
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 3.0},
 			Marker = 1,
@@ -239,11 +239,11 @@ Config.Jobs.miner = {
 				}
 			},
 			Hint = _U('m_deliver_gold'),
-			GPS = {x = -621.04, y = -228.53, z = 37.05}
+			GPS = vector3(-621.04, -228.53, 37.05)
 		},
 
 		DiamondDelivery = {
-			Pos = {x = -621.04, y = -228.53, z = 37.05},
+			Pos = vector3(-621.04, -228.53, 37.05),
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 3.0},
 			Marker = 1,
@@ -264,7 +264,7 @@ Config.Jobs.miner = {
 				}
 			},
 			Hint = _U('m_deliver_diamond'),
-			GPS = {x = 2962.40, y = 2746.20, z = 42.39}
+			GPS = vector3(2962.40, 2746.20, 42.39)
 		}
 
 	}

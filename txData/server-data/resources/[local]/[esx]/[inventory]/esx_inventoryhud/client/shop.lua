@@ -135,7 +135,7 @@ end)
 
 RegisterNetEvent("esx_inventoryhud:openShopInventory")
 AddEventHandler("esx_inventoryhud:openShopInventory", function(data, inventory)
-        setShopInventoryData(data, inventory, weapons)
+        setShopInventoryData(data, inventory)
         openShopInventory()
 end)
 

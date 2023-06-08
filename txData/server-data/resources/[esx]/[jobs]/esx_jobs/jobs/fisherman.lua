@@ -26,7 +26,7 @@ Config.Jobs.fisherman = {
 	Zones = {
 
 		CloakRoom = {
-			Pos   = {x = 868.39, y = -1639.75, z = 29.33},
+			Pos   = vector3(868.39, -1639.75, 29.33),
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker= 1,
@@ -34,11 +34,11 @@ Config.Jobs.fisherman = {
 			Name  = _U('fm_fish_locker'),
 			Type  = 'cloakroom',
 			Hint  = _U('cloak_change'),
-			GPS = {x = 880.74, y = -1663.96, z = 29.37}
+			GPS = vector3(880.74, -1663.96, 29.37),
 		},
 
 		FishingSpot = {
-			Pos   = {x = 4435.21, y = 4829.60, z = 0.34},
+			Pos   = vector3(4435.21, 4829.60, 0.34),
 			Color = {r = 204, g = 204, b = 0},
 			Size  = {x = 110.0, y = 110.0, z = 10.0},
 			Marker= 1,
@@ -46,7 +46,7 @@ Config.Jobs.fisherman = {
 			Name  = _U('fm_fish_area'),
 			Type  = 'work',
 			Hint  = _U('fm_fish_button'),
-			GPS   = {x = 3859.43, y = 4448.83, z = 0.39},
+			GPS   = vector3(3859.43, 4448.83, 0.39),
 			Item = {
 				{
 					name   = _U('fm_fish'),
@@ -64,7 +64,7 @@ Config.Jobs.fisherman = {
 		},
 
 		BoatSpawner = {
-			Pos   = {x = 3867.44, y = 4463.62, z = 1.72},
+			Pos   = vector3(3867.44, 4463.62, 1.72),
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker= 1,
@@ -74,11 +74,11 @@ Config.Jobs.fisherman = {
 			Spawner = 2,
 			Hint  = _U('fm_spawnboat'),
 			Caution = 0,
-			GPS = {x = 4435.21, y = 4829.60, z = 0.34}
+			GPS = vector3(4435.21, 4829.60, 0.34),
 		},
 
 		BoatSpawnPoint = {
-			Pos   = {x = 3888.3, y = 4468.09, z = 0.0},
+			Pos   = vector3(3888.3, 4468.09, 0.0),
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Marker= -1,
 			Blip  = false,
@@ -90,7 +90,7 @@ Config.Jobs.fisherman = {
 		},
 
 		BoatDeletePoint = {
-			Pos   = {x = 3859.43, y = 4448.83, z = 0.39},
+			Pos   = vector3(3859.43, 4448.83, 0.39),
 			Size  = {x = 10.0, y = 10.0, z = 1.0},
 			Color = {r = 255, g = 0, b = 0},
 			Marker= 1,
@@ -100,12 +100,12 @@ Config.Jobs.fisherman = {
 			Hint  = _U('fm_boat_return_button'),
 			Spawner = 2,
 			Caution = 0,
-			GPS = {x = -1012.64, y = -1354.62, z = 5.54},
-			Teleport = {x = 3867.44, y = 4463.62, z = 1.72}
+			GPS = vector3(-1012.64, -1354.62, 5.54),
+			Teleport = vector3(3867.44, 4463.62, 1.72)
 		},
 
 		VehicleSpawner = {
-			Pos   = {x = 880.74, y = -1663.96, z = 29.37},
+			Pos   = vector3(880.74, -1663.96, 29.37),
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker= 1,
@@ -115,11 +115,11 @@ Config.Jobs.fisherman = {
 			Spawner = 1,
 			Hint  = _U('spawn_veh_button'),
 			Caution = 2000,
-			GPS = {x = 3867.44, y = 4463.62, z = 1.72}
+			GPS = vector3(3867.44, 4463.62, 1.72),
 		},
 
 		VehicleSpawnPoint = {
-			Pos   = {x = 859.35, y = -1656.21, z = 29.56},
+			Pos   = vector3(859.35, -1656.21, 29.56),
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Marker= -1,
 			Blip  = false,
@@ -131,7 +131,7 @@ Config.Jobs.fisherman = {
 		},
 
 		VehicleDeletePoint = {
-			Pos   = {x = 863.23, y = -1718.28, z = 28.63},
+			Pos   = vector3(863.23, -1718.28, 28.63),
 			Size  = {x = 5.0, y = 5.0, z = 1.0},
 			Color = {r = 255, g = 0, b = 0},
 			Marker= 1,
@@ -146,7 +146,7 @@ Config.Jobs.fisherman = {
 		},
 
 		Delivery = {
-			Pos   = {x = -1012.64, y = -1354.62, z = 5.54},
+			Pos   = vector3(-1012.64, -1354.62, 5.54),
 			Color = {r = 204, g = 204, b = 0},
 			Size  = {x = 5.0, y = 5.0, z = 3.0},
 			Marker= 1,
@@ -155,7 +155,7 @@ Config.Jobs.fisherman = {
 			Type  = 'delivery',
 			Spawner = 2,
 			Hint  = _U('fm_deliver_fish'),
-			GPS   = {x = 3867.44, y = 4463.62, z = 1.72},
+			GPS   = vector3(3867.44, 4463.62, 1.72),
 			Item = {
 				{
 				name   = _U('delivery'),

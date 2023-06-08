@@ -18,7 +18,7 @@ Config.Jobs.slaughterer = {
 	Zones = {
 
 		CloakRoom = {
-			Pos = {x = -1071.13, y = -2003.78, z = 14.78},
+			Pos = vector3(-1071.13, -2003.78, 14.78),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -29,7 +29,7 @@ Config.Jobs.slaughterer = {
 		},
 
 		AliveChicken = {
-			Pos = {x = -62.90, y = 6241.46, z = 30.09},
+			Pos = vector3(-62.90, 6241.46, 30.09),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -53,7 +53,7 @@ Config.Jobs.slaughterer = {
 		},
 
 		SlaughterHouse = {
-			Pos = {x = -77.99, y = 6229.06, z = 30.09},
+			Pos = vector3(-77.99, 6229.06, 30.09),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -77,7 +77,7 @@ Config.Jobs.slaughterer = {
 		},
 
 		Packaging = {
-			Pos = {x = -101.97, y = 6208.79, z = 30.02},
+			Pos = vector3(-101.97, 6208.79, 30.02),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -101,7 +101,7 @@ Config.Jobs.slaughterer = {
 		},
 
 		VehicleSpawner = {
-			Pos = {x = -1042.94, y = -2023.25, z = 12.16},
+			Pos = vector3(-1042.94, -2023.25, 12.16),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Marker = 1,
@@ -114,7 +114,7 @@ Config.Jobs.slaughterer = {
 		},
 
 		VehicleSpawnPoint = {
-			Pos = {x = -1048.85, y = -2025.32, z = 12.16},
+			Pos = vector3(-1048.85, -2025.32, 12.16),
 			Size = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = -1,
 			Blip = false,
@@ -125,7 +125,7 @@ Config.Jobs.slaughterer = {
 		},
 
 		VehicleDeletePoint = {
-			Pos = {x = -1061.51, y = -2008.35, z = 12.16},
+			Pos = vector3(-1061.51, -2008.35, 12.16),
 			Size = {x = 5.0, y = 5.0, z = 1.0},
 			Color = {r = 255, g = 0, b = 0},
 			Marker = 1,
@@ -140,7 +140,7 @@ Config.Jobs.slaughterer = {
 		},
 
 		Delivery = {
-			Pos = {x = -596.15, y = -889.32, z = 24.50},
+			Pos = vector3(-596.15, -889.32, 24.50),
 			Color = {r = 204, g = 204, b = 0},
 			Size = {x = 5.0, y = 5.0, z = 1.0},
 			Marker = 1,
