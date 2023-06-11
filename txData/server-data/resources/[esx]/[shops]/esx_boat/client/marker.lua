@@ -174,7 +174,7 @@ CreateThread(function()
 			text   = _U('blip_shop'),
 			sprite = 427,
 			color  = 3,
-			scale  = 1.0
+			scale  = 0.5
 		})
 	end
 

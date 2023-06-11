@@ -49,8 +49,14 @@ Citizen.CreateThread(
 
 end)]]
 
+local isPause = false
 RegisterCommand('tas', function()
-	if not isDead then
+    if IsPauseMenuActive() and not isPause then
+        isPause = true;
+    elseif not IsPauseMenuActive() and isPause then
+        isPause = false;
+    end
+	if not IsPauseMenuActive() then
 		openInventory()
 	end
 end, false)

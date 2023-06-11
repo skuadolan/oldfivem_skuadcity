@@ -76,7 +76,12 @@ function VehicleInFront()
 end
 
 RegisterCommand("bMobil", function()
-  if not IsControlJustPressed(0, Config.OpenKey) then
+  if IsPauseMenuActive() and not isPause then
+    isPause = true;
+  elseif not IsPauseMenuActive() and isPause then
+      isPause = false;
+  end
+  if not IsControlJustPressed(0, Config.OpenKey) and not IsPauseMenuActive() then
     openmenuvehicle()
   end
 end)
@@ -185,6 +190,7 @@ end
 local count = 0
 
 -- Key controls
+local isPause = false
 Citizen.CreateThread(
   function()
     while true do
@@ -194,8 +200,14 @@ Citizen.CreateThread(
       local ped = GetPlayerPed(playerIdx)
       local pedInVeh = false
 
+      if IsPauseMenuActive() and not isPause then
+        isPause = true;
+      elseif not IsPauseMenuActive() and isPause then
+          isPause = false;
+      end
+
       -- Set vehicle states
-      if not IsPedInAnyVehicle(ped) then
+      if not IsPauseMenuActive() and not IsPedInAnyVehicle(ped) then
         if IsControlPressed(0, Config.firstKey) and IsControlJustPressed(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
           openmenuvehicle()
         end

@@ -612,6 +612,20 @@ CREATE TABLE IF NOT EXISTS `owned_properties` (
 
 -- Dumping data for table skuadcity.owned_properties: ~0 rows (approximately)
 
+-- Dumping structure for table skuadcity.owned_shops
+DROP TABLE IF EXISTS `owned_shops`;
+CREATE TABLE IF NOT EXISTS `owned_shops` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `owner` varchar(255) DEFAULT NULL,
+  `store_label` varchar(255) DEFAULT NULL,
+  `items` varchar(255) DEFAULT NULL,
+  `balance_saves` int(11) DEFAULT 0,
+  `zone` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table skuadcity.owned_shops: ~0 rows (approximately)
+
 -- Dumping structure for table skuadcity.owned_vehicles
 DROP TABLE IF EXISTS `owned_vehicles`;
 CREATE TABLE IF NOT EXISTS `owned_vehicles` (
@@ -863,29 +877,26 @@ CREATE TABLE IF NOT EXISTS `sec_jobs` (
 DROP TABLE IF EXISTS `shops`;
 CREATE TABLE IF NOT EXISTS `shops` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `store_label` varchar(50) NOT NULL DEFAULT '0',
-  `store_location` varchar(50) NOT NULL DEFAULT '0',
-  `owner_identifier` varchar(50) DEFAULT NULL,
-  `owner_name` varchar(50) DEFAULT NULL,
-  `item` varchar(100) NOT NULL,
-  `saves_location` varchar(50) NOT NULL DEFAULT '0',
-  `balance_saves` int(11) NOT NULL,
+  `owner` varchar(255) DEFAULT NULL,
+  `store_label` varchar(255) NOT NULL DEFAULT '0',
+  `store_location` varchar(255) NOT NULL DEFAULT '0',
+  `saves_location` varchar(255) NOT NULL DEFAULT '0',
   `price` int(11) NOT NULL DEFAULT 0,
-  `expired` varchar(50) DEFAULT NULL,
+  `expired` varchar(255) DEFAULT NULL,
   `isSales` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table skuadcity.shops: ~8 rows (approximately)
-REPLACE INTO `shops` (`id`, `store_label`, `store_location`, `owner_identifier`, `owner_name`, `item`, `saves_location`, `balance_saves`, `price`, `expired`, `isSales`) VALUES
-	(1, 'TwentyFourSeven 1', '{"x":373.8, "y":325.8, "z":102.5}', NULL, NULL, '', '{"x":373.8, "y":325.8, "z":102.5}', 0, 50000, NULL, 0),
-	(2, 'TwentyFourSeven 2', '{"x":2557.4, "y":382.2, "z":107.6}', NULL, NULL, '', '{"x":2557.4, "y":382.2, "z":107.6}', 0, 50000, NULL, 0),
-	(3, 'TwentyFourSeven 3', '{"x":-3038.9, "y":585.9, "z":6.9}', NULL, NULL, '', '{"x":-3038.9, "y":585.9, "z":6.9}', 0, 50000, NULL, 0),
-	(4, 'TwentyFourSeven 4', '{"x":-3241.9, "y":1001.4, "z":11.8}', NULL, NULL, '', '{"x":-3241.9, "y":1001.4, "z":11.8}', 0, 50000, NULL, 0),
-	(5, 'TwentyFourSeven 5', '{"x":547.4, "y":2671.7, "z":41.1}', NULL, NULL, '', '{"x":547.4, "y":2671.7, "z":41.1}', 0, 50000, NULL, 0),
-	(6, 'TwentyFourSeven 6', '{"x":1961.4, "y":3740.6, "z":31.3}', NULL, NULL, '', '{"x":1961.4, "y":3740.6, "z":31.3}', 0, 50000, NULL, 0),
-	(7, 'TwentyFourSeven 7', '{"x":2678.9, "y":3280.6, "z":54.2}', NULL, NULL, '', '{"x":2678.9, "y":3280.6, "z":54.2}', 0, 50000, NULL, 0),
-	(8, 'TwentyFourSeven 8', '{"x":1729.2, "y":6414.1, "z":34.0}', NULL, NULL, '', '{"x":1729.2, "y":6414.1, "z":34.0}', 0, 50000, NULL, 0);
+REPLACE INTO `shops` (`id`, `owner`, `store_label`, `store_location`, `saves_location`, `price`, `expired`, `isSales`) VALUES
+	(1, '{"identifier":"steam:","name":"Pemerintah"}', 'TwentyFourSeven 1', '{"x":373.8, "y":325.8, "z":102.5}', '{"x":373.8, "y":325.8, "z":102.5}', 50000, NULL, 0),
+	(2, '{"identifier":"steam:","name":"Pemerintah"}', 'TwentyFourSeven 2', '{"x":2557.4, "y":382.2, "z":107.6}', '{"x":2557.4, "y":382.2, "z":107.6}', 50000, NULL, 0),
+	(3, '{"identifier":"steam:","name":"Pemerintah"}', 'TwentyFourSeven 3', '{"x":-3038.9, "y":585.9, "z":6.9}', '{"x":-3038.9, "y":585.9, "z":6.9}', 50000, NULL, 0),
+	(4, '{"identifier":"steam:","name":"Pemerintah"}', 'TwentyFourSeven 4', '{"x":-3241.9, "y":1001.4, "z":11.8}', '{"x":-3241.9, "y":1001.4, "z":11.8}', 50000, NULL, 0),
+	(5, '{"identifier":"steam:","name":"Pemerintah"}', 'TwentyFourSeven 5', '{"x":547.4, "y":2671.7, "z":41.1}', '{"x":547.4, "y":2671.7, "z":41.1}', 50000, NULL, 0),
+	(6, '{"identifier":"steam:","name":"Pemerintah"}', 'TwentyFourSeven 6', '{"x":1961.4, "y":3740.6, "z":31.3}', '{"x":1961.4, "y":3740.6, "z":31.3}', 50000, NULL, 0),
+	(7, '{"identifier":"steam:","name":"Pemerintah"}', 'TwentyFourSeven 7', '{"x":2678.9, "y":3280.6, "z":54.2}', '{"x":2678.9, "y":3280.6, "z":54.2}', 50000, NULL, 0),
+	(8, '{"identifier":"steam:","name":"Pemerintah"}', 'TwentyFourSeven 8', '{"x":1729.2, "y":6414.1, "z":34.0}', '{"x":1729.2, "y":6414.1, "z":34.0}', 50000, NULL, 0);
 
 -- Dumping structure for table skuadcity.society_moneywash
 DROP TABLE IF EXISTS `society_moneywash`;

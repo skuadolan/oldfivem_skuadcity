@@ -86,7 +86,14 @@ function VehicleInFront()
 end
 
 RegisterCommand('dashMobil', function()
-	openmenuvehicle()
+  if IsPauseMenuActive() and not isPause then
+    isPause = true;
+  elseif not IsPauseMenuActive() and isPause then
+      isPause = false;
+  end
+  if not IsPauseMenuActive() then
+		openmenuvehicle()
+	end
 end)
 
 function openmenuvehicle()
@@ -166,6 +173,7 @@ end
 local count = 0
 
 -- Key controls
+local isPause = false
 Citizen.CreateThread(
   function()
     while true do
@@ -175,9 +183,15 @@ Citizen.CreateThread(
       local vehicle = GetVehiclePedIsIn(ped);
       local isDriver = GetPedInVehicleSeat(vehicle, -1);
 
+      if IsPauseMenuActive() and not isPause then
+        isPause = true;
+      elseif not IsPauseMenuActive() and isPause then
+          isPause = false;
+      end
+
       -- Set vehicle states
       if (IsPedInAnyVehicle(ped) and (isDriver == ped)) then
-        if IsControlPressed(0, Config.firstPress) and IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
+        if not IsPauseMenuActive() and IsControlPressed(0, Config.firstPress) and IsControlJustReleased(0, Config.OpenKey) and (GetGameTimer() - GUI.Time) > 1000 then
           openmenuvehicle()
           --GUI.Time = GetGameTimer()
         end

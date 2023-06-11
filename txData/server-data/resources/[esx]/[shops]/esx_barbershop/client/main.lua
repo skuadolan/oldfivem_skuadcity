@@ -100,7 +100,7 @@ CreateThread(function()
 
 		SetBlipSprite (blip, 71)
 		SetBlipColour (blip, 51)
-		SetBlipScale  (blip, 0.75)
+		SetBlipScale  (blip, 0.5)
 		
 		SetBlipAsShortRange(blip, true)
 

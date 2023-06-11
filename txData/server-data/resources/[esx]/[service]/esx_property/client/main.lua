@@ -42,23 +42,20 @@ function CreateBlips()
 
 		if property.entering then
 			if property.label ~= 'Room' then
+				Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
 				if (string.sub(property.name, 1, 5) == 'Motel') and property.isBuilding then
-					Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
-
 					SetBlipSprite (Blips[property.name], 476)
 					SetBlipDisplay(Blips[property.name], 4)
-					SetBlipScale  (Blips[property.name], 0.75)
+					SetBlipScale  (Blips[property.name], 0.5)
 					SetBlipAsShortRange(Blips[property.name], true)
 
 					BeginTextCommandSetBlipName("STRING")
 					AddTextComponentSubstringPlayerName(property.label)
 					EndTextCommandSetBlipName(Blips[property.name])
 				else
-					Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
-
 					SetBlipSprite (Blips[property.name], 369)
 					SetBlipDisplay(Blips[property.name], 4)
-					SetBlipScale  (Blips[property.name], 0.75)
+					SetBlipScale  (Blips[property.name], 0.5)
 					SetBlipAsShortRange(Blips[property.name], true)
 
 					BeginTextCommandSetBlipName("STRING")
