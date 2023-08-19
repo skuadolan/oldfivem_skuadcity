@@ -10,7 +10,7 @@ body {
     width: 20%;
     position: absolute;
     bottom: 15%;
-    right: 0;
+    right: 50%;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;

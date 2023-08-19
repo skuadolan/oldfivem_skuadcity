@@ -101,7 +101,7 @@ Citizen.CreateThread(
             end
         )
 
-        --[[for _, v in ipairs(Config.Workbenches) do
+        for _, v in ipairs(Config.Workbenches) do
             if v.blip then
                 local blip = AddBlipForCoord(v.coords)
 
@@ -114,7 +114,7 @@ Citizen.CreateThread(
                 AddTextComponentString(Config.BlipText)
                 EndTextCommandSetBlipName(blip)
             end
-        end]]
+        end
     end
 )
 
@@ -224,7 +224,8 @@ Citizen.CreateThread(
             for _, v in ipairs(Config.Workbenches) do
                 local dst = #(coords - v.coords)
                 if dst < 2 then
-                    DrawText3D(v.coords[1], v.coords[2], v.coords[3] - 0.8, Config.Text["workbench_hologram"])
+                    local locationCrafting = vector3(v.coords[1], v.coords[2], v.coords[3])
+                    DrawMarker(Config.MarkerType, locationCrafting, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, nil, nil, false)
                 end
                 if dst < 2 then
                     if IsControlJustReleased(0, Keys["E"]) then
@@ -296,29 +297,4 @@ RegisterNUICallback(
     end
 )
 
-function DrawText3D(x, y, z, text)
-    local onScreen, _x, _y = World3dToScreen2d(x, y, z)
-    local px, py, pz = table.unpack(GetGameplayCamCoord())
-    local dist = GetDistanceBetweenCoords(px, py, pz, x, y, z, 1)
 
-    local scale = ((1 / dist) * 2) * (1 / GetGameplayCamFov()) * 100
-
-    if onScreen then
-        SetTextColour(255, 255, 255, 255)
-        SetTextScale(0.0 * scale, 0.35 * scale)
-        SetTextFont(4)
-        SetTextProportional(1)
-        SetTextCentre(true)
-
-        SetTextDropshadow(1, 1, 1, 1, 255)
-
-        BeginTextCommandWidth("STRING")
-        AddTextComponentString(text)
-        local height = GetTextScaleHeight(0.55 * scale, 4)
-        local width = EndTextCommandGetWidth(4)
-
-        SetTextEntry("STRING")
-        AddTextComponentString(text)
-        EndTextCommandDisplayText(_x, _y)
-    end
-end

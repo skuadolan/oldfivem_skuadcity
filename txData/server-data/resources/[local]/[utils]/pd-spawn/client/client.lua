@@ -8,7 +8,7 @@ local FirstSpawn    = true
 local PlayerLoaded  = false
 local cam
 
-local fristSpawn = vector4(-1045.081, -2750.611, 21.36047, 331.6535)
+local fristSpawn = vector4(-1044.949, -2750.439, 21.36047, 334.4882)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
@@ -35,6 +35,7 @@ AddEventHandler('playerSpawned', function()
                     SetNuiFocus(true, true)
                     SendNUIMessage({ display = true })
                 else
+                    TriggerServerEvent('skd_send:welcomer')
                     print("first-spawn , not displaying spawner choice")
                 end
             end)

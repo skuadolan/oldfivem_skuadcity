@@ -25,7 +25,7 @@ function OpenBankActionsMenu(tempopen)
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'bank_actions', {
 		title    = _U('bank'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'customers' then
@@ -272,7 +272,7 @@ RegisterNUICallback('cJobs', function(data, cb)
 end)
 
 RegisterCommand('bankerMenu', function()
-	if ESX.PlayerData.job and ESX.PlayerData.job.name == 'banker' and not isDead then
+	if ESX.PlayerData.job.name == 'banker' and not isDead then
 		local tempopen = not open
 		OpenBankActionsMenu(tempopen)
 	end

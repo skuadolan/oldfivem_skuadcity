@@ -1,12 +1,4 @@
-ESX                = nil
-PlayersHarvesting  = {}
-PlayersHarvesting2 = {}
-PlayersHarvesting3 = {}
-PlayersCrafting    = {}
-PlayersCrafting2   = {}
-PlayersCrafting3   = {}
-
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+local PlayersHarvesting, PlayersHarvesting2, PlayersHarvesting3, PlayersCrafting, PlayersCrafting2, PlayersCrafting3  = {}, {}, {}, {}, {}, {}
 
 if Config.MaxInService ~= -1 then
 	TriggerEvent('esx_service:activateService', 'mechanic', Config.MaxInService)
@@ -24,7 +16,6 @@ local function Harvest(source)
 
 			if GazBottleQuantity >= 5 then
 				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error',  _U('you_do_not_room'))
-				--TriggerClientEvent('esx:showNotification', source, _U('you_do_not_room'))
 			else
 				xPlayer.addInventoryItem('gazbottle', 1)
 				Harvest(source)
@@ -36,17 +27,16 @@ end
 
 RegisterServerEvent('esx_mechanicjob:startHarvest')
 AddEventHandler('esx_mechanicjob:startHarvest', function()
-	local _source = source
-	PlayersHarvesting[_source] = true
+	local source = source
+	PlayersHarvesting[source] = true
 	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', _U('recovery_gas_can'))
-	--TriggerClientEvent('esx:showNotification', _source, _U('recovery_gas_can'))
 	Harvest(source)
 end)
 
 RegisterServerEvent('esx_mechanicjob:stopHarvest')
 AddEventHandler('esx_mechanicjob:stopHarvest', function()
-	local _source = source
-	PlayersHarvesting[_source] = false
+	local source = source
+	PlayersHarvesting[source] = false
 end)
 
 local function Harvest2(source)
@@ -58,7 +48,6 @@ local function Harvest2(source)
 
 			if FixToolQuantity >= 5 then
 				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error',  _U('you_do_not_room'))
-				--TriggerClientEvent('esx:showNotification', source, _U('you_do_not_room'))
 			else
 				xPlayer.addInventoryItem('fixtool', 1)
 				Harvest2(source)
@@ -70,17 +59,16 @@ end
 
 RegisterServerEvent('esx_mechanicjob:startHarvest2')
 AddEventHandler('esx_mechanicjob:startHarvest2', function()
-	local _source = source
-	PlayersHarvesting2[_source] = true
+	local source = source
+	PlayersHarvesting2[source] = true
 	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', _U('recovery_repair_tools'))
-	--TriggerClientEvent('esx:showNotification', _source, _U('recovery_repair_tools'))
-	Harvest2(_source)
+	Harvest2(source)
 end)
 
 RegisterServerEvent('esx_mechanicjob:stopHarvest2')
 AddEventHandler('esx_mechanicjob:stopHarvest2', function()
-	local _source = source
-	PlayersHarvesting2[_source] = false
+	local source = source
+	PlayersHarvesting2[source] = false
 end)
 
 local function Harvest3(source)
@@ -91,7 +79,6 @@ local function Harvest3(source)
 			local CaroToolQuantity = xPlayer.getInventoryItem('carotool').count
 			if CaroToolQuantity >= 5 then
 				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('you_do_not_room'))
-				--TriggerClientEvent('esx:showNotification', source, _U('you_do_not_room'))
 			else
 				xPlayer.addInventoryItem('carotool', 1)
 				Harvest3(source)
@@ -103,17 +90,16 @@ end
 
 RegisterServerEvent('esx_mechanicjob:startHarvest3')
 AddEventHandler('esx_mechanicjob:startHarvest3', function()
-	local _source = source
-	PlayersHarvesting3[_source] = true
-	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('you_do_not_room'))
-	--TriggerClientEvent('esx:showNotification', _source, _U('recovery_body_tools'))
-	Harvest3(_source)
+	local source = source
+	PlayersHarvesting3[source] = true
+	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('recovery_body_tools'))
+	Harvest3(source)
 end)
 
 RegisterServerEvent('esx_mechanicjob:stopHarvest3')
 AddEventHandler('esx_mechanicjob:stopHarvest3', function()
-	local _source = source
-	PlayersHarvesting3[_source] = false
+	local source = source
+	PlayersHarvesting3[source] = false
 end)
 
 local function Craft(source)
@@ -125,7 +111,6 @@ local function Craft(source)
 
 			if GazBottleQuantity <= 0 then
 				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('not_enough_gas_can'))
-				--TriggerClientEvent('esx:showNotification', source, _U('not_enough_gas_can'))
 			else
 				xPlayer.removeInventoryItem('gazbottle', 1)
 				xPlayer.addInventoryItem('blowpipe', 1)
@@ -138,17 +123,16 @@ end
 
 RegisterServerEvent('esx_mechanicjob:startCraft')
 AddEventHandler('esx_mechanicjob:startCraft', function()
-	local _source = source
-	PlayersCrafting[_source] = true
+	local source = source
+	PlayersCrafting[source] = true
 	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', _U('assembling_blowtorch'))
-	--TriggerClientEvent('esx:showNotification', _source, _U('assembling_blowtorch'))
-	Craft(_source)
+	Craft(source)
 end)
 
 RegisterServerEvent('esx_mechanicjob:stopCraft')
 AddEventHandler('esx_mechanicjob:stopCraft', function()
-	local _source = source
-	PlayersCrafting[_source] = false
+	local source = source
+	PlayersCrafting[source] = false
 end)
 
 local function Craft2(source)
@@ -160,7 +144,6 @@ local function Craft2(source)
 
 			if FixToolQuantity <= 0 then
 				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('not_enough_repair_tools'))
-				--TriggerClientEvent('esx:showNotification', source, _U('not_enough_repair_tools'))
 			else
 				xPlayer.removeInventoryItem('fixtool', 1)
 				xPlayer.addInventoryItem('fixkit', 1)
@@ -173,17 +156,16 @@ end
 
 RegisterServerEvent('esx_mechanicjob:startCraft2')
 AddEventHandler('esx_mechanicjob:startCraft2', function()
-	local _source = source
-	PlayersCrafting2[_source] = true
+	local source = source
+	PlayersCrafting2[source] = true
 	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', __U('assembling_repair_kit'))
-	--TriggerClientEvent('esx:showNotification', _source, _U('assembling_repair_kit'))
-	Craft2(_source)
+	Craft2(source)
 end)
 
 RegisterServerEvent('esx_mechanicjob:stopCraft2')
 AddEventHandler('esx_mechanicjob:stopCraft2', function()
-	local _source = source
-	PlayersCrafting2[_source] = false
+	local source = source
+	PlayersCrafting2[source] = false
 end)
 
 local function Craft3(source)
@@ -194,8 +176,7 @@ local function Craft3(source)
 			local CaroToolQuantity = xPlayer.getInventoryItem('carotool').count
 
 			if CaroToolQuantity <= 0 then
-				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', _U('assembling_repair_kit'))
-				--TriggerClientEvent('esx:showNotification', source, _U('not_enough_body_tools'))
+				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('not_enough_body_tools'))
 			else
 				xPlayer.removeInventoryItem('carotool', 1)
 				xPlayer.addInventoryItem('carokit', 1)
@@ -208,23 +189,22 @@ end
 
 RegisterServerEvent('esx_mechanicjob:startCraft3')
 AddEventHandler('esx_mechanicjob:startCraft3', function()
-	local _source = source
-	PlayersCrafting3[_source] = true
+	local source = source
+	PlayersCrafting3[source] = true
 	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', __U('assembling_body_kit'))
-	--TriggerClientEvent('esx:showNotification', _source, _U('assembling_body_kit'))
-	Craft3(_source)
+	Craft3(source)
 end)
 
 RegisterServerEvent('esx_mechanicjob:stopCraft3')
 AddEventHandler('esx_mechanicjob:stopCraft3', function()
-	local _source = source
-	PlayersCrafting3[_source] = false
+	local source = source
+	PlayersCrafting3[source] = false
 end)
 
 RegisterServerEvent('esx_mechanicjob:onNPCJobMissionCompleted')
 AddEventHandler('esx_mechanicjob:onNPCJobMissionCompleted', function()
-	local _source = source
-	local xPlayer = ESX.GetPlayerFromId(_source)
+	local source = source
+	local xPlayer = ESX.GetPlayerFromId(source)
 	local total   = math.random(Config.NPCJobEarnings.min, Config.NPCJobEarnings.max);
 
 	if xPlayer.job.grade >= 3 then
@@ -236,40 +216,36 @@ AddEventHandler('esx_mechanicjob:onNPCJobMissionCompleted', function()
 	end)
 
 	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform',  _U('your_comp_earned').. total)
-	--TriggerClientEvent("esx:showNotification", _source, _U('your_comp_earned').. total)
 end)
 
 ESX.RegisterUsableItem('blowpipe', function(source)
-	local _source = source
+	local source = source
 	local xPlayer  = ESX.GetPlayerFromId(source)
 
 	xPlayer.removeInventoryItem('blowpipe', 1)
 
-	TriggerClientEvent('esx_mechanicjob:onHijack', _source)
+	TriggerClientEvent('esx_mechanicjob:onHijack', source)
 	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('you_used_blowtorch'))
-	--TriggerClientEvent('esx:showNotification', _source, _U('you_used_blowtorch'))
 end)
 
 ESX.RegisterUsableItem('fixkit', function(source)
-	local _source = source
+	local source = source
 	local xPlayer  = ESX.GetPlayerFromId(source)
 
 	xPlayer.removeInventoryItem('fixkit', 1)
 
-	TriggerClientEvent('esx_mechanicjob:onFixkit', _source)
-	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success',_U('you_used_repair_kit'))
-	--TriggerClientEvent('esx:showNotification', _source, _U('you_used_repair_kit'))
+	TriggerClientEvent('esx_mechanicjob:onFixkit', source)
+	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('you_used_repair_kit'))
 end)
 
 ESX.RegisterUsableItem('carokit', function(source)
-	local _source = source
+	local source = source
 	local xPlayer  = ESX.GetPlayerFromId(source)
 
 	xPlayer.removeInventoryItem('carokit', 1)
 
-	TriggerClientEvent('esx_mechanicjob:onCarokit', _source)
+	TriggerClientEvent('esx_mechanicjob:onCarokit', source)
 	TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('you_used_body_kit'))
-	--TriggerClientEvent('esx:showNotification', _source, _U('you_used_body_kit'))
 end)
 
 RegisterServerEvent('esx_mechanicjob:getStockItem')
@@ -287,14 +263,11 @@ AddEventHandler('esx_mechanicjob:getStockItem', function(itemName, count)
 				inventory.removeItem(itemName, count)
 				xPlayer.addInventoryItem(itemName, count)
 				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'success', _U('have_withdrawn', count, item.label))
-				--xPlayer.showNotification(_U('have_withdrawn', count, item.label))
 			else
 				TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('player_cannot_hold'))
-				--xPlayer.showNotification(_U('player_cannot_hold'))
 			end
 		else
 			TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('invalid_quantity'))
-			--xPlayer.showNotification(_U('invalid_quantity'))
 		end
 	end)
 end)
@@ -318,11 +291,9 @@ AddEventHandler('esx_mechanicjob:putStockItems', function(itemName, count)
 			inventory.addItem(itemName, count)
 		else
 			TriggerClientEvent('skd_cSide:forServerNotify', -1, 'error', _U('invalid_quantity'))
-			--xPlayer.showNotification(_U('invalid_quantity'))
 		end
 
 		TriggerClientEvent('skd_cSide:forServerNotify', -1, 'inform', _U('have_deposited', count, item.label))
-		--xPlayer.showNotification(_U('have_deposited', count, item.label))
 	end)
 end)
 

@@ -14,7 +14,7 @@ function OpenAmbulanceActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'ambulance_actions', {
 		title    = _U('ambulance'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'cloakroom' then
@@ -34,7 +34,7 @@ function OpenMobileAmbulanceActionsMenu()
 
 	--[[ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_ambulance_actions', {
 		title    = _U('ambulance'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = {
 			{label = _U('ems_menu'), value = 'citizen_interaction'}
 	}}, function(data, menu)
@@ -47,7 +47,7 @@ function OpenMobileAmbulanceActionsMenu()
 	end)]]
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_ambulance_actions', {
 		title    = _U('ems_menu_title'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = {
 			{label = _U('billing'),   value = 'billing'},
 			{label = _U('ems_menu_revive'), value = 'revive'},
@@ -430,7 +430,7 @@ Citizen.CreateThread(function()
 end)
 
 RegisterCommand('emsMenu', function()
-	if ESX.PlayerData.job and ESX.PlayerData.job.name == 'ambulance' and not isDead then
+	if ESX.PlayerData.job.name == 'ambulance' and not isDead then
 		OpenMobileAmbulanceActionsMenu()
 	end
 end, false)
@@ -475,7 +475,7 @@ end)
 function OpenCloakroomMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom', {
 		title    = _U('cloakroom'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = {
 			{label = _U('ems_clothes_civil'), value = 'citizen_wear'},
 			{label = _U('ems_clothes_ems'), value = 'ambulance_wear'},
@@ -514,7 +514,7 @@ function OpenPharmacyMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'pharmacy', {
 		title    = _U('pharmacy_menu_title'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = {
 			{label = _U('pharmacy_take', _U('medikit')), item = 'medikit', type = 'slider', value = 1, min = 1, max = 100},
 			{label = _U('pharmacy_take', _U('bandage')), item = 'bandage', type = 'slider', value = 1, min = 1, max = 100}

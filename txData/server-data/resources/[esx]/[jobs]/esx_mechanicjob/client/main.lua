@@ -3,21 +3,6 @@ local CurrentAction, CurrentActionMsg, CurrentActionData = nil, '', {}
 local CurrentlyTowedVehicle, Blips, NPCOnJob, NPCTargetTowable, NPCTargetTowableZone = nil, {}, false, nil, nil
 local NPCHasSpawnedTowable, NPCLastCancel, NPCHasBeenNextToTowable, NPCTargetDeleterZone = false, GetGameTimer() - 5 * 60000, false, false
 local isDead, isBusy = false, false
-local derekStatus = false
-ESX = nil
-
-Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
-	end
-
-	while ESX.GetPlayerData().job == nil do
-		Citizen.Wait(10)
-	end
-
-	ESX.PlayerData = ESX.GetPlayerData()
-end)
 
 function SelectRandomTowable()
 	local index = GetRandomIntInRange(1,  #Config.Towables)
@@ -39,7 +24,6 @@ function StartNPCJob()
 	SetBlipRoute(Blips['NPCTargetTowableZone'], true)
 
 	exports['mythic_notify']:SendAlert('inform', _U('drive_to_indicated'))
-	--ESX.ShowNotification(_U('drive_to_indicated'))
 end
 
 function StopNPCJob(cancel)
@@ -63,7 +47,6 @@ function StopNPCJob(cancel)
 
 	if cancel then
 		exports['mythic_notify']:SendAlert('error', _U('mission_canceled'))
-		--ESX.ShowNotification(_U('mission_canceled'))
 	else
 		--TriggerServerEvent('esx_mechanicjob:onNPCJobCompleted')
 	end
@@ -78,7 +61,7 @@ function OpenMechanicActionsMenu()
 		{label = _U('withdraw_stock'), value = 'get_stock'}
 	}
 
-	if Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.grade_name == 'boss' or ESX.PlayerData.job.grade_name == 'wakil_boss' then
+	if Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.grade_name == 'boss' then
 		table.insert(elements, {label = _U('boss_actions'), value = 'boss_actions'})
 	end
 
@@ -86,7 +69,7 @@ function OpenMechanicActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_actions', {
 		title    = _U('mechanic'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'vehicle_list' then
@@ -104,7 +87,7 @@ function OpenMechanicActionsMenu()
 
 					ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_spawner', {
 						title    = _U('service_vehicle'),
-						align    = 'top-left',
+						align    = 'bottom-right',
 						elements = elements
 					}, function(data, menu)
 						menu.close()
@@ -126,7 +109,7 @@ function OpenMechanicActionsMenu()
 
 				local elements = {
 					{label = _U('flat_bed'),  value = 'flatbed'},
-					--{label = _U('tow_truck'), value = 'towtruck2'}
+					{label = _U('tow_truck'), value = 'towtruck2'}
 				}
 
 				if Config.EnablePlayerManagement and ESX.PlayerData.job and (ESX.PlayerData.job.grade_name == 'boss' or ESX.PlayerData.job.grade_name == 'chief' or ESX.PlayerData.job.grade_name == 'experimente') then
@@ -137,7 +120,7 @@ function OpenMechanicActionsMenu()
 
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'spawn_vehicle', {
 					title    = _U('service_vehicle'),
-					align    = 'top-left',
+					align    = 'bottom-right',
 					elements = elements
 				}, function(data, menu)
 					if Config.MaxInService == -1 then
@@ -154,7 +137,6 @@ function OpenMechanicActionsMenu()
 								end)
 							else
 								exports['mythic_notify']:SendAlert('error', _U('service_full') .. inServiceCount .. '/' .. maxInService)
-								--ESX.ShowNotification(_U('service_full') .. inServiceCount .. '/' .. maxInService)
 							end
 						end, 'mechanic')
 					end
@@ -180,6 +162,10 @@ function OpenMechanicActionsMenu()
 			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
 				TriggerEvent('skinchanger:loadSkin', skin)
 			end)
+
+		elseif Config.OxInventory and (data.current.value == 'put_stock' or data.current.value == 'get_stock') then
+			exports.ox_inventory:openInventory('stash', 'society_mechanic')
+			return ESX.UI.Menu.CloseAll()
 		elseif data.current.value == 'put_stock' then
 			OpenPutStocksMenu()
 		elseif data.current.value == 'get_stock' then
@@ -187,7 +173,7 @@ function OpenMechanicActionsMenu()
 		elseif data.current.value == 'boss_actions' then
 			TriggerEvent('esx_society:openBossMenu', 'mechanic', function(data, menu)
 				menu.close()
-			end, { wash = false, grades = false })
+			end)
 		end
 	end, function(data, menu)
 		menu.close()
@@ -210,7 +196,7 @@ function OpenMechanicHarvestMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_harvest', {
 			title    = _U('harvest'),
-			align    = 'top-left',
+			align    = 'bottom-right',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -230,7 +216,6 @@ function OpenMechanicHarvestMenu()
 		end)
 	else
 		exports['mythic_notify']:SendAlert('error', _U('not_experienced_enough'))
-		--ESX.ShowNotification(_U('not_experienced_enough'))
 	end
 end
 
@@ -246,7 +231,7 @@ function OpenMechanicCraftMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mechanic_craft', {
 			title    = _U('craft'),
-			align    = 'top-left',
+			align    = 'bottom-right',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -267,34 +252,24 @@ function OpenMechanicCraftMenu()
 		end)
 	else
 		exports['mythic_notify']:SendAlert('error', _U('not_experienced_enough'))
-		--ESX.ShowNotification(_U('not_experienced_enough'))
 	end
 end
 
 function OpenMobileMechanicActionsMenu()
 	ESX.UI.Menu.CloseAll()
 
-	local eleme = {
-		{label = _U('billing'),       value = 'billing'},
-		--{label = _U('hijack'),        value = 'hijack_vehicle'},
-		--{label = _U('repair'),        value = 'fix_vehicle'},
-		{label = _U('clean'),         value = 'clean_vehicle'},
-		--{label = _U('imp_veh'),       value = 'del_vehicle'},
-		--{label = _U('flat_bed'),      value = 'dep_vehicle'},
-		{label = _U('place_objects'), value = 'object_spawner'}
-	}
-
-	if derekStatus then
-		table.insert(eleme, {label =  _U('unflat_bed'), value = 'dep_vehicle'})
-	else
-		table.insert(eleme, {label =  _U('flat_bed'), value = 'dep_vehicle'})
-	end
-
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions', {
 		title    = _U('mechanic'),
-		align    = 'top-left',
-		elements = eleme
-	}, function(data, menu)
+		align    = 'bottom-right',
+		elements = {
+			{label = _U('billing'),       value = 'billing'},
+			--{label = _U('hijack'),        value = 'hijack_vehicle'},
+			--{label = _U('repair'),        value = 'fix_vehicle'},
+			--{label = _U('clean'),         value = 'clean_vehicle'},
+			--{label = _U('imp_veh'),       value = 'del_vehicle'},
+			{label = _U('flat_bed'),      value = 'dep_vehicle'},
+			--{label = _U('place_objects'), value = 'object_spawner'}
+	}}, function(data, menu)
 		if isBusy then return end
 
 		if data.current.value == 'billing' then
@@ -305,12 +280,10 @@ function OpenMobileMechanicActionsMenu()
 
 				if amount == nil or amount < 0 then
 					exports['mythic_notify']:SendAlert('error', _U('amount_invalid'))
-					--ESX.ShowNotification(_U('amount_invalid'))
 				else
 					local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 					if closestPlayer == -1 or closestDistance > 3.0 then
 						exports['mythic_notify']:SendAlert('error', _U('no_players_nearby'))
-						--ESX.ShowNotification(_U('no_players_nearby'))
 					else
 						menu.close()
 						TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_mechanic', _U('mechanic'), amount)
@@ -326,27 +299,24 @@ function OpenMobileMechanicActionsMenu()
 
 			if IsPedSittingInAnyVehicle(playerPed) then
 				exports['mythic_notify']:SendAlert('inform', _U('inside_vehicle'))
-				--ESX.ShowNotification(_U('inside_vehicle'))
 				return
 			end
 
 			if DoesEntityExist(vehicle) then
 				isBusy = true
 				TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_WELDING', 0, true)
-				Citizen.CreateThread(function()
-					Citizen.Wait(10000)
+				CreateThread(function()
+					Wait(10000)
 
 					SetVehicleDoorsLocked(vehicle, 1)
 					SetVehicleDoorsLockedForAllPlayers(vehicle, false)
 					ClearPedTasksImmediately(playerPed)
 
 					exports['mythic_notify']:SendAlert('inform', _U('vehicle_unlocked'))
-					--ESX.ShowNotification(_U('vehicle_unlocked'))
 					isBusy = false
 				end)
 			else
 				exports['mythic_notify']:SendAlert('error', _U('no_vehicle_nearby'))
-				--ESX.ShowNotification(_U('no_vehicle_nearby'))
 			end
 		elseif data.current.value == 'fix_vehicle' then
 			local playerPed = PlayerPedId()
@@ -355,15 +325,14 @@ function OpenMobileMechanicActionsMenu()
 
 			if IsPedSittingInAnyVehicle(playerPed) then
 				exports['mythic_notify']:SendAlert('inform', _U('inside_vehicle'))
-				--ESX.ShowNotification(_U('inside_vehicle'))
 				return
 			end
 
 			if DoesEntityExist(vehicle) then
 				isBusy = true
 				TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
-				Citizen.CreateThread(function()
-					Citizen.Wait(20000)
+				CreateThread(function()
+					Wait(20000)
 
 					SetVehicleFixed(vehicle)
 					SetVehicleDeformationFixed(vehicle)
@@ -372,12 +341,10 @@ function OpenMobileMechanicActionsMenu()
 					ClearPedTasksImmediately(playerPed)
 
 					exports['mythic_notify']:SendAlert('success', _U('vehicle_repaired'))
-					--ESX.ShowNotification(_U('vehicle_repaired'))
 					isBusy = false
 				end)
 			else
 				exports['mythic_notify']:SendAlert('error', _U('no_vehicle_nearby'))
-				--ESX.ShowNotification(_U('no_vehicle_nearby'))
 			end
 		elseif data.current.value == 'clean_vehicle' then
 			local playerPed = PlayerPedId()
@@ -385,27 +352,24 @@ function OpenMobileMechanicActionsMenu()
 			local coords    = GetEntityCoords(playerPed)
 
 			if IsPedSittingInAnyVehicle(playerPed) then
-				exports['mythic_notify']:SendAlert('inform', _U('inside_vehicle'))
-				--ESX.ShowNotification(_U('inside_vehicle'))
+				exports['mythic_notify']:SendAlert('error', _U('no_vehicle_nearby'))
 				return
 			end
 
 			if DoesEntityExist(vehicle) then
 				isBusy = true
 				TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_MAID_CLEAN', 0, true)
-				Citizen.CreateThread(function()
-					Citizen.Wait(10000)
+				CreateThread(function()
+					Wait(10000)
 
 					SetVehicleDirtLevel(vehicle, 0)
 					ClearPedTasksImmediately(playerPed)
 
-					exports['mythic_notify']:SendAlert('success', _U('vehicle_cleaned'))
-					--ESX.ShowNotification(_U('vehicle_cleaned'))
+					exports['mythic_notify']:SendAlert('inform', _U('inside_vehicle'))
 					isBusy = false
 				end)
 			else
 				exports['mythic_notify']:SendAlert('error', _U('no_vehicle_nearby'))
-				--ESX.ShowNotification(_U('no_vehicle_nearby'))
 			end
 		elseif data.current.value == 'del_vehicle' then
 			local playerPed = PlayerPedId()
@@ -415,29 +379,25 @@ function OpenMobileMechanicActionsMenu()
 
 				if GetPedInVehicleSeat(vehicle, -1) == playerPed then
 					exports['mythic_notify']:SendAlert('inform', _U('vehicle_impounded'))
-					--ESX.ShowNotification(_U('vehicle_impounded'))
 					ESX.Game.DeleteVehicle(vehicle)
 				else
 					exports['mythic_notify']:SendAlert('inform', _U('must_seat_driver'))
-					--ESX.ShowNotification(_U('must_seat_driver'))
 				end
 			else
 				local vehicle = ESX.Game.GetVehicleInDirection()
 
 				if DoesEntityExist(vehicle) then
 					exports['mythic_notify']:SendAlert('inform', _U('vehicle_impounded'))
-					--ESX.ShowNotification(_U('vehicle_impounded'))
 					ESX.Game.DeleteVehicle(vehicle)
 				else
 					exports['mythic_notify']:SendAlert('error', _U('must_near'))
-					--ESX.ShowNotification(_U('must_near'))
 				end
 			end
 		elseif data.current.value == 'dep_vehicle' then
 			local playerPed = PlayerPedId()
 			local vehicle = GetVehiclePedIsIn(playerPed, true)
 
-			local towmodel = GetHashKey('flatbed')
+			local towmodel = GetHashKey("flatbed")
 			local isVehicleTow = IsVehicleModel(vehicle, towmodel)
 
 			if isVehicleTow then
@@ -447,16 +407,13 @@ function OpenMobileMechanicActionsMenu()
 					if targetVehicle ~= 0 then
 						if not IsPedInAnyVehicle(playerPed, true) then
 							if vehicle ~= targetVehicle then
-								AttachEntityToEntity(targetVehicle, vehicle, 20, 0.0, -5.35, 0.6, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
-								derekStatus = true
+								AttachEntityToEntity(targetVehicle, vehicle, 20, -0.5, -5.0, 1.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
 								CurrentlyTowedVehicle = targetVehicle
 								exports['mythic_notify']:SendAlert('success', _U('vehicle_success_attached'))
-								--ESX.ShowNotification(_U('vehicle_success_attached'))
 
 								if NPCOnJob then
 									if NPCTargetTowable == targetVehicle then
 										exports['mythic_notify']:SendAlert('error', _U('please_drop_off'))
-										--ESX.ShowNotification(_U('please_drop_off'))
 										Config.Zones.VehicleDelivery.Type = 1
 
 										if Blips['NPCTargetTowableZone'] then
@@ -470,17 +427,14 @@ function OpenMobileMechanicActionsMenu()
 								end
 							else
 								exports['mythic_notify']:SendAlert('error', _U('cant_attach_own_tt'))
-								--ESX.ShowNotification(_U('cant_attach_own_tt'))
 							end
 						end
 					else
 						exports['mythic_notify']:SendAlert('error', _U('no_veh_att'))
-						--ESX.ShowNotification(_U('no_veh_att'))
 					end
 				else
-					AttachEntityToEntity(CurrentlyTowedVehicle, vehicle, 20, 0.0, -12.0, -1.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
+					AttachEntityToEntity(CurrentlyTowedVehicle, vehicle, 20, -0.5, -12.0, 1.0, 0.0, 0.0, 0.0, false, false, false, false, 20, true)
 					DetachEntity(CurrentlyTowedVehicle, true, true)
-					derekStatus = false
 
 					if NPCOnJob then
 						if NPCTargetDeleterZone then
@@ -492,35 +446,30 @@ function OpenMobileMechanicActionsMenu()
 								NPCTargetDeleterZone = false
 							else
 								exports['mythic_notify']:SendAlert('error', _U('not_right_veh'))
-								--ESX.ShowNotification(_U('not_right_veh'))
 							end
 
 						else
 							exports['mythic_notify']:SendAlert('error', _U('not_right_place'))
-							--ESX.ShowNotification(_U('not_right_place'))
 						end
 					end
 
 					CurrentlyTowedVehicle = nil
 					exports['mythic_notify']:SendAlert('success', _U('veh_det_succ'))
-					--ESX.ShowNotification(_U('veh_det_succ'))
 				end
 			else
 				exports['mythic_notify']:SendAlert('success', _U('imp_flatbed'))
-				--ESX.ShowNotification(_U('imp_flatbed'))
 			end
 		elseif data.current.value == 'object_spawner' then
 			local playerPed = PlayerPedId()
 
 			if IsPedSittingInAnyVehicle(playerPed) then
 				exports['mythic_notify']:SendAlert('inform', _U('inside_vehicle'))
-				--ESX.ShowNotification(_U('inside_vehicle'))
 				return
 			end
 
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions_spawn', {
 				title    = _U('objects'),
-				align    = 'top-left',
+				align    = 'bottom-right',
 				elements = {
 					{label = _U('roadcone'), value = 'prop_roadcone02a'},
 					{label = _U('toolbox'),  value = 'prop_toolchest_01'}
@@ -562,7 +511,7 @@ function OpenGetStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('mechanic_stock'),
-			align    = 'top-left',
+			align    = 'bottom-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -574,13 +523,12 @@ function OpenGetStocksMenu()
 
 				if count == nil then
 					exports['mythic_notify']:SendAlert('error', _U('invalid_quantity'))
-					--ESX.ShowNotification(_U('invalid_quantity'))
 				else
 					menu2.close()
 					menu.close()
 					TriggerServerEvent('esx_mechanicjob:getStockItem', itemName, count)
 
-					Citizen.Wait(1000)
+					Wait(1000)
 					OpenGetStocksMenu()
 				end
 			end, function(data2, menu2)
@@ -610,7 +558,7 @@ function OpenPutStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('inventory'),
-			align    = 'top-left',
+			align    = 'bottom-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -622,13 +570,12 @@ function OpenPutStocksMenu()
 
 				if count == nil then
 					exports['mythic_notify']:SendAlert('error', _U('invalid_quantity'))
-					--ESX.ShowNotification(_U('invalid_quantity'))
 				else
 					menu2.close()
 					menu.close()
 					TriggerServerEvent('esx_mechanicjob:putStockItems', itemName, count)
 
-					Citizen.Wait(1000)
+					Wait(1000)
 					OpenPutStocksMenu()
 				end
 			end, function(data2, menu2)
@@ -665,17 +612,15 @@ AddEventHandler('esx_mechanicjob:onHijack', function()
 
 			TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_WELDING', 0, true)
 
-			Citizen.CreateThread(function()
-				Citizen.Wait(10000)
+			CreateThread(function()
+				Wait(10000)
 				if chance <= 66 then
 					SetVehicleDoorsLocked(vehicle, 1)
 					SetVehicleDoorsLockedForAllPlayers(vehicle, false)
 					ClearPedTasksImmediately(playerPed)
 					exports['mythic_notify']:SendAlert('inform', _U('veh_unlocked'))
-					--ESX.ShowNotification(_U('veh_unlocked'))
 				else
 					exports['mythic_notify']:SendAlert('error', _U('hijack_failed'))
-					--ESX.ShowNotification(_U('hijack_failed'))
 					ClearPedTasksImmediately(playerPed)
 				end
 			end)
@@ -699,13 +644,12 @@ AddEventHandler('esx_mechanicjob:onCarokit', function()
 
 		if DoesEntityExist(vehicle) then
 			TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_HAMMERING', 0, true)
-			Citizen.CreateThread(function()
-				Citizen.Wait(10000)
+			CreateThread(function()
+				Wait(10000)
 				SetVehicleFixed(vehicle)
 				SetVehicleDeformationFixed(vehicle)
 				ClearPedTasksImmediately(playerPed)
 				exports['mythic_notify']:SendAlert('success', _U('body_repaired'))
-				--ESX.ShowNotification(_U('body_repaired'))
 			end)
 		end
 	end
@@ -727,14 +671,13 @@ AddEventHandler('esx_mechanicjob:onFixkit', function()
 
 		if DoesEntityExist(vehicle) then
 			TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
-			Citizen.CreateThread(function()
-				Citizen.Wait(20000)
+			CreateThread(function()
+				Wait(20000)
 				SetVehicleFixed(vehicle)
 				SetVehicleDeformationFixed(vehicle)
 				SetVehicleUndriveable(vehicle, false)
 				ClearPedTasksImmediately(playerPed)
 				exports['mythic_notify']:SendAlert('success', _U('veh_repaired'))
-				--ESX.ShowNotification(_U('veh_repaired'))
 			end)
 		end
 	end
@@ -743,6 +686,7 @@ end)
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
 	ESX.PlayerData = xPlayer
+	ESX.PlayerLoaded = true
 end)
 
 RegisterNetEvent('esx:setJob')
@@ -825,15 +769,15 @@ AddEventHandler('esx_phone:loaded', function(phoneNumber, contacts)
 end)
 
 -- Pop NPC mission vehicle when inside area
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
-		Citizen.Wait(10)
+		Wait(0)
 
 		if NPCTargetTowableZone and not NPCHasSpawnedTowable then
 			local coords = GetEntityCoords(PlayerPedId())
 			local zone   = Config.Zones[NPCTargetTowableZone]
 
-			if GetDistanceBetweenCoords(coords, zone.Pos.x, zone.Pos.y, zone.Pos.z, true) < Config.NPCSpawnDistance then
+			if #(coords - zone.Pos) < Config.NPCSpawnDistance then
 				local model = Config.Vehicles[GetRandomIntInRange(1,  #Config.Vehicles)]
 
 				ESX.Game.SpawnVehicle(model, zone.Pos, 0, function(vehicle)
@@ -848,9 +792,8 @@ Citizen.CreateThread(function()
 			local coords = GetEntityCoords(PlayerPedId())
 			local zone   = Config.Zones[NPCTargetTowableZone]
 
-			if GetDistanceBetweenCoords(coords, zone.Pos.x, zone.Pos.y, zone.Pos.z, true) < Config.NPCNextToDistance then
+			if #(coords - zone.Pos) < Config.NPCNextToDistance then
 				exports['mythic_notify']:SendAlert('error', _U('please_tow'))
-				--ESX.ShowNotification(_U('please_tow'))
 				NPCHasBeenNextToTowable = true
 			end
 		end
@@ -858,12 +801,12 @@ Citizen.CreateThread(function()
 end)
 
 -- Create Blips
-Citizen.CreateThread(function()
+CreateThread(function()
 	local blip = AddBlipForCoord(Config.Zones.MechanicActions.Pos.x, Config.Zones.MechanicActions.Pos.y, Config.Zones.MechanicActions.Pos.z)
 
 	SetBlipSprite (blip, 446)
 	SetBlipDisplay(blip, 4)
-	SetBlipScale  (blip, 0.75)
+	SetBlipScale  (blip, 1.0)
 	SetBlipColour (blip, 5)
 	SetBlipAsShortRange(blip, true)
 
@@ -873,33 +816,33 @@ Citizen.CreateThread(function()
 end)
 
 -- Display markers
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		Wait(0)
 
 		if ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' then
 			local coords, letSleep = GetEntityCoords(PlayerPedId()), true
 
 			for k,v in pairs(Config.Zones) do
-				if v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance then
-					DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z-1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, nil, nil, false)
+				if v.Type ~= -1 and #(coords - v.Pos) < Config.DrawDistance then
+					DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, nil, nil, false)
 					letSleep = false
 				end
 			end
 
 			if letSleep then
-				Citizen.Wait(500)
+				Wait(500)
 			end
 		else
-			Citizen.Wait(500)
+			Wait(500)
 		end
 	end
 end)
 
 -- Enter / Exit marker events
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
-		Citizen.Wait(10)
+		Wait(0)
 
 		if ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' then
 
@@ -908,7 +851,7 @@ Citizen.CreateThread(function()
 			local currentZone = nil
 
 			for k,v in pairs(Config.Zones) do
-				if(GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < v.Size.x) then
+				if(#(coords - v.Pos) < v.Size.x) then
 					isInMarker  = true
 					currentZone = k
 				end
@@ -929,14 +872,14 @@ Citizen.CreateThread(function()
 	end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	local trackedEntities = {
 		'prop_roadcone02a',
 		'prop_toolchest_01'
 	}
 
 	while true do
-		Citizen.Wait(500)
+		Wait(500)
 
 		local playerPed = PlayerPedId()
 		local coords = GetEntityCoords(playerPed)
@@ -949,7 +892,7 @@ Citizen.CreateThread(function()
 
 			if DoesEntityExist(object) then
 				local objCoords = GetEntityCoords(object)
-				local distance  = GetDistanceBetweenCoords(coords, objCoords, true)
+				local distance  = #(coords - objCoords)
 
 				if closestDistance == -1 or closestDistance > distance then
 					closestDistance = distance
@@ -973,21 +916,21 @@ Citizen.CreateThread(function()
 end)
 
 -- Key Controls
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		Wait(0)
 
 		if CurrentAction then
 			ESX.ShowHelpNotification(CurrentActionMsg)
 
-			if IsControlJustReleased(0, Config.Keys['E']) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' then
+			if IsControlJustReleased(0, 38) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' then
 
 				if CurrentAction == 'mechanic_actions_menu' then
 					OpenMechanicActionsMenu()
-				elseif CurrentAction == 'mechanic_harvest_menu' then
-					OpenMechanicHarvestMenu()
-				elseif CurrentAction == 'mechanic_craft_menu' then
-					OpenMechanicCraftMenu()
+				--elseif CurrentAction == 'mechanic_harvest_menu' then
+					--OpenMechanicHarvestMenu()
+				--elseif CurrentAction == 'mechanic_craft_menu' then
+					--OpenMechanicCraftMenu()
 				elseif CurrentAction == 'delete_vehicle' then
 
 					if Config.EnableSocietyOwnedVehicles then
@@ -996,11 +939,12 @@ Citizen.CreateThread(function()
 						TriggerServerEvent('esx_society:putVehicleInGarage', 'mechanic', vehicleProps)
 
 					else
+						local entityModel = GetEntityModel(CurrentActionData.vehicle)
 
 						if
-							GetEntityModel(vehicle) == GetHashKey('flatbed')   or
-							GetEntityModel(vehicle) == GetHashKey('towtruck2') or
-							GetEntityModel(vehicle) == GetHashKey('slamvan3')
+							entityModel == GetHashKey("flatbed") or
+							entityModel == GetHashKey("towtruck2") or
+							entityModel == GetHashKey("slamvan3")
 						then
 							TriggerServerEvent('esx_service:disableService', 'mechanic')
 						end
@@ -1017,18 +961,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		--[[if IsControlJustReleased(0, Config.Keys['F1']) and not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' then
-			OpenMobileMechanicActionsMenu()
-		end]]
-
-		if IsControlJustReleased(0, Config.Keys['DELETE']) and not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' then
+		if IsControlJustReleased(0, 178) and not isDead and ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' then
 			if NPCOnJob then
 				if GetGameTimer() - NPCLastCancel > 5 * 60000 then
 					StopNPCJob(true)
 					NPCLastCancel = GetGameTimer()
 				else
 					exports['mythic_notify']:SendAlert('inform', _U('wait_five'))
-					--ESX.ShowNotification(_U('wait_five'))
 				end
 			else
 				local playerPed = PlayerPedId()
@@ -1037,7 +976,6 @@ Citizen.CreateThread(function()
 					StartNPCJob()
 				else
 					exports['mythic_notify']:SendAlert('error', _U('must_in_flatbed'))
-					--ESX.ShowNotification(_U('must_in_flatbed'))
 				end
 			end
 		end

@@ -110,7 +110,7 @@ function OpenCloakroom()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'taxi_cloakroom', {
 		title    = _U('cloakroom_menu'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = {
 			{label = _U('wear_citizen'), value = 'wear_citizen'},
 			{label = _U('wear_work'),    value = 'wear_work'}
@@ -155,7 +155,7 @@ function OpenVehicleSpawnerMenu()
 
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_spawner', {
 				title    = _U('spawn_veh'),
-				align    = 'top-left',
+				align    = 'bottom-right',
 				elements = elements
 			}, function(data, menu)
 				if not ESX.Game.IsSpawnPointClear(Config.Zones.VehicleSpawnPoint.Pos, 5.0) then
@@ -187,7 +187,7 @@ function OpenVehicleSpawnerMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_spawner', {
 			title    = _U('spawn_veh'),
-			align    = 'top-left',
+			align    = 'bottom-right',
 			elements = Config.AuthorizedVehicles
 		}, function(data, menu)
 			if not ESX.Game.IsSpawnPointClear(Config.Zones.VehicleSpawnPoint.Pos, 5.0) then
@@ -246,7 +246,7 @@ function OpenTaxiActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'taxi_actions', {
 		title    = _U('taxi'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = elements
 	}, function(data, menu)
 
@@ -369,7 +369,7 @@ function OpenGetStocksMenu()
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('taxi_stock'),
-			align    = 'top-left',
+			align    = 'bottom-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -418,7 +418,7 @@ function OpenPutStocksMenu()
         
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu', {
 			title    = _U('inventory'),
-			align    = 'top-left',
+			align    = 'bottom-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -773,7 +773,7 @@ Citizen.CreateThread(function()
 end)
 
 RegisterCommand('mTaksi', function()
-	if IsInputDisabled(0) and not IsDead and ESX.PlayerData.job.name == 'taxi' then
+	if not IsDead and ESX.PlayerData.job.name == 'taxi' then
 		OpenMobileTaxiActionsMenu()
 	end
 end, false)
