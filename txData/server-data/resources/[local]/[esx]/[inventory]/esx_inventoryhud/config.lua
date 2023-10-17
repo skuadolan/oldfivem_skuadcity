@@ -90,8 +90,6 @@ Config.Shops = {
             --vector3(311.72, -562.65, 43.28)
         },
         Items = {
-            {name = 'bandage'},
-            {name = 'medikit'},
         }
     },
     
@@ -100,21 +98,6 @@ Config.Shops = {
             --vector3(-629.28, 223.93, 81.88)
         },
         Items = {
-            {name = 'bait'},
-            {name = 'coklat'},
-            {name = 'fishingrod'},
-            {name = 'hamburger'},
-            {name = 'kopi'},
-            {name = 'nasi_bungkus'},
-            {name = 'nasi_goreng'},
-            {name = 'nori'},
-            {name = 'phone'},
-            {name = 'radio'},
-            {name = 'rice'},
-            {name = 'siomay'},
-            {name = 'susu'},
-            {name = 'teh'},
-            {name = 'tehkotak'},
         }
     },
 
@@ -123,16 +106,6 @@ Config.Shops = {
             --vector3(2751.0, 3471.74,  55.7)
         },
         Items = {
-            {name = 'accu'},
-            {name = 'betadine'},
-            {name = 'bullet_casing'},
-            {name = 'carotool'},
-            {name = 'fixtool'},
-            {name = 'gazbottle'},
-            {name = 'kertas'},
-            {name = 'rice'},
-            {name = 'roti'},
-            {name = 'vegetables'},
         }
     },
 
@@ -141,9 +114,6 @@ Config.Shops = {
             --vector3(-310.8, -137.55, 39.01)
         },
         Items = {
-            {name = 'fixkit'},
-            {name = 'carokit'},
-            {name = 'blowpipe'}
         }
     },
 
@@ -153,12 +123,6 @@ Config.Shops = {
 			vector3(-1393.4, -606.6, 29.3), --Tequila la]]
         },
         Items = {
-            {name = 'beer'},
-            {name = 'whiskey'},
-            {name = 'vodka'},
-            {name = 'champagne'},
-            {name = 'wine'},
-            {name = 'orang_tua'},
         }
     },
 
@@ -167,11 +131,6 @@ Config.Shops = {
             --vector3(1272.85, -1711.89,54.77), --blackmarket
         },
         Items = {
-            {name = 'moneywash'},
-            {name = 'chemicalslisence'},
-            {name = 'lisensi_senjata'},
-            {name = 'clip'},
-            {name = 'HeavyArmor'},
         },
     },
 
