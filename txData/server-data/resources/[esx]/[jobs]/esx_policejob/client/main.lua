@@ -1024,6 +1024,11 @@ end
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
 	ESX.PlayerData.job = job
+
+	if ESX.PlayerData.job.name == 'police' then
+		RegisterKeyMapping('pMenu', 'Open Polisi Menu', 'keyboard', 'F2')
+	end
+	
 	if job.name == 'police' then
 		Wait(1000)
 		TriggerServerEvent('esx_policejob:forceBlip')
@@ -1567,8 +1572,6 @@ RegisterCommand('pMenu', function()
 		OpenPoliceActionsMenu()
 	end
 end, false)
-
-RegisterKeyMapping('pMenu', 'Open Polisi Menu', 'keyboard', 'F2')
 
 -- Create blip for colleagues
 function createBlip(id)

@@ -88,6 +88,18 @@ function OnPlayerDeath()
 	IsDead = true
 	ESX.UI.Menu.CloseAll()
 	TriggerServerEvent('esx_ambulancejob:setDeathStatus', true)
+
+	local playerPed = PlayerPedId()
+	local coords = GetEntityCoords(playerPed)
+	local formattedCoords = {
+		x = ESX.Math.Round(coords.x, 1),
+		y = ESX.Math.Round(coords.y, 1),
+		z = ESX.Math.Round(coords.z, 1)
+	}
+
+	ESX.SetPlayerData('lastPosition', formattedCoords)
+
+	TriggerServerEvent('esx:updateLastPosition', formattedCoords)
    
 	StartDeathTimer()
 	StartDistressSignal()
@@ -272,6 +284,7 @@ function forceReviveZeroEMS()
 				print("EMS di kota-"..ems)
 				if ems == 0 then
 					Citizen.Wait(5000)
+
 					TriggerEvent('esx_ambulancejob:heal', 'big', true)
 					TriggerServerEvent('esx_ambulance:forceReviveZeroEMS')
 					TriggerServerEvent('esx_ambulancejob:setDeathStatus', false)

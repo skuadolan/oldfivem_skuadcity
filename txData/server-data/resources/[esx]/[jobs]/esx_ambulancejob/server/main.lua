@@ -92,9 +92,12 @@ AddEventHandler('esx:playerDropped', function(playerId, reason)
 	end
 end)
 
+
 RegisterNetEvent('esx_ambulancejob:forceBlip')
 AddEventHandler('esx_ambulancejob:forceBlip', function()
-	TriggerClientEvent('esx_ambulancejob:updateBlip', -1)
+	for _, xPlayer in pairs(ESX.GetExtendedPlayers('job', 'ambulance')) do
+		TriggerClientEvent('esx_ambulancejob:updateBlip', xPlayer.source)
+	end
 end)
 
 RegisterNetEvent('esx_ambulancejob:heal')

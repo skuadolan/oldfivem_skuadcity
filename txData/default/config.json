@@ -1,6 +1,6 @@
 {
   "global": {
-    "serverName": "Vanilla FreeRoam #skuadc",
+    "serverName": "Vanilla #skuadcity",
     "language": "en",
     "menuEnabled": true,
     "menuAlignRight": false,
@@ -37,9 +37,9 @@
   "fxRunner": {
     "serverDataPath": "D:/projects/game/fivem_skuadcity/txData/server-data/",
     "cfgPath": "D:/projects/game/fivem_skuadcity/txData/server-data/server.cfg",
-    "commandLine": "+set sv_enforceGameBuild 2189",
+    "commandLine": "+set sv_enforceGameBuild 2944",
     "onesync": "on",
     "autostart": true,
-    "quiet": false
+    "quiet": true
   }
 }

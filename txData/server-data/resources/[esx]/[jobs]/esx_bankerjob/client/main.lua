@@ -8,6 +8,10 @@ end)
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function (job)
 	ESX.PlayerData.job = job
+
+	if ESX.PlayerData.job.name == 'banker' then
+		RegisterKeyMapping('bankerMenu', 'Open Banker Menu', 'keyboard', 'F2')
+	end
 end)
 
 function OpenBankActionsMenu(tempopen)
@@ -282,7 +286,7 @@ RegisterCommand('bankerMenu', function()
 	end]]
 end, false)
 
-RegisterKeyMapping('bankerMenu', 'Open Banker Menu', 'keyboard', 'F2')
+
 
 RegisterNetEvent('esx_phone:loaded')
 AddEventHandler('esx_phone:loaded', function (phoneNumber, contacts)

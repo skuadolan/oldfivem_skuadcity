@@ -1,0 +1,158 @@
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css" type="text/css">
+	<!-- JQUERY v3.6.3-->
+    <!--<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>-->
+</head>
+
+<body>
+	<div class="full-screen">
+		<div class="question-container">
+			<!-- header -->
+			<div class="header">
+				<h1>Pendaftaran Warga Kota</h1>
+			</div>
+			<!-- home -->
+			<div class="body home">
+				<div class="content">
+					<!-- ICI BREVE PRESENTATION -->
+					<center>
+						<img src="dmv.png" class="logo">
+						<br>
+						<p class="bold-text">Selamat Datang di Kota #SKUADCITY
+					</center>
+					<br>
+					<center>*Harap dibaca dengan teliti!!<br>
+						<p>
+							Pada tahap ini para warga diharapkan dapat menjawab seluruh pertanyaan yang tersedia. Jawaban dari pertanyaan terdapat pada text-channel <a href="discord://https://discord.com/channels/1075430586648363131/1076219624812716107" target="_blank" rel="noopener noreferrer">#about</a> dan <a href="discord://https://discord.com/channels/1075430586648363131/1076219732908318913" target="_blank" rel="noopener noreferrer">#rules</a> di server Discord #SKUADCITY.
+							Jawablah pertanyaan dengan cermat dan teliti, karena pertanyaan tidak bisa diulang ke pertanyaan sebelumnya. Akhir dari sesi ini akan mendapatkan hadiah yang berguna untuk membantu permainan di kota.
+						</p>
+					</center>
+				</div>
+				<div class="buttonspot">
+					<a href="#" class="button btnQuestion">Start</a>
+				</div>
+				<div class="barre-progression">
+					<h2>Progress</h2>
+					<progress class="progression" value="0" max="10">
+				</div>
+			</div>
+			<!-- Question-->
+			<div class="body questionnaire-container">
+				<div class="content">
+					<h2 id="questionNumero"></h2>
+					<p id="question"></p>
+					<form class="form" id="question-form">
+						<div>
+							<input type="radio" name="question" id="answerA" value="A">
+							<label class="answerA"></label>
+						</div>
+						<div>
+							<input type="radio" name="question" id="answerB" value="B">
+							<label class="answerB"></label>
+						</div>
+						<div>
+							<input type="radio" name="question" id="answerC" value="C">
+							<label class="answerC"></label>
+						</div>
+						<div>
+							<input type="radio" name="question" id="answerD" value="D">
+							<label class="answerD"></label>
+						</div>
+						<button type="submit" id="submit" class="submit">Next question</button>
+					</form>
+				</div>
+				<div class="barre-progression">
+					<h2>Progress</h2>
+					<progress class="progression" value="0" max="10">
+				</div>
+			</div>
+			<!-- Kritik dan Saran-->
+			<div class="body QnA-container">
+				<div class="content">
+					<center>
+						<p class="bold-text">Kritik & Saran</p>
+						<br>
+						<li>Warga hanya diperbolahkan memilih 1 (satu) hadiah dari pilihan yang tersedia.</li>
+						<li>Warga hanya dapat menerima 1 (satu) hadiah untuk selamanya.</li>
+						<li>Warga diperbolehkan tidak mengisi kolom kritik & saran.</li>
+						<br>
+						<p>
+							Untuk sesi pertanyaan "Kritik & Saran" jika warga dapat menjawab dengan memberikan 
+							kata - kata yang dinilai inovatif, kreatif, dapat membuat kota menjadi lebih baik dan tidak tercantum pada text-channel 
+							<a href="discord://https://discord.com/channels/1075430586648363131/1079374528561549442" target="_blank" rel="noopener noreferrer">#on-dev</a>, 
+							maka akan berkesempatan mendapatkan hadiah tambahan.
+						</p>
+						<br>
+						<form class="form" id="QnA-form">
+							<div>
+								<input type="radio" name="cGiveaway" id="aGiveaway" value="A">
+								<label class="aGiveaway">Rp.25,000</label>
+							</div>
+							<div>
+								<input type="radio" name="cGiveaway" id="bGiveaway" value="B">
+								<label class="bGiveaway">Mobil + Rp.5,000</label>
+							</div>
+							<div>
+								<input type="radio" name="cGiveaway" id="cGiveaway" value="C">
+								<label class="bGiveaway">Motor + Rp.10,000</label>
+							</div>
+							<div>
+								<textarea name="QnA_input" id="QnA_input" style="resize: none; width: 888px; height: 174px;" cols="30" rows="10"></textarea>
+							</div>
+							<button type="submit" id="sendGiveaway" class="submit button sendGiveaway">Next question</button>
+						</form>
+				</div>
+			</div>
+			<!-- Results -->
+			<div class="body resultGood">
+				<div class="content">
+					<center>
+						<p class="bold-text">Kerja bagus!</p>
+						<br>
+						<p>
+							Bersikap baiklah kepada warga yang lain, dilarang keras untuk menghina RAS, SUKU, AGAMA dan lain - lain yang dapat menyebabkan
+							warga lain tidak nyaman. Peraturan didalam kota sama isinya dengan peraturan yang tersedia pada text-channel 
+							<a href="discord://https://discord.com/channels/1075430586648363131/1076219732908318913" target="_blank" rel="noopener noreferrer">#rules</a> 
+							pada server Discord #SKUADCTY.
+						</p>
+						<br>
+						<br>Selamat menikmati permainan di kota #SKUADCITY
+					</center>
+				</div>
+				<div class="buttonspot">
+					<a href="#" class="button btnClose">Next</a>
+				</div>
+				<div class="barre-progression">
+					<h2>Progress</h2>
+					<progress class="progression" value="10" max="10">
+				</div>
+			</div>
+			<div class="body resultBad">
+				<div class="content">
+					<center>
+						<p class="bold-text">Kamu gagal</p>
+						<br>
+						<br>
+						<br>Nampaknya kamu kurang membaca, cobalagi dan carilah wawasan ya...
+						<br>
+						<br>
+					</center>
+				</div>
+				<div class="buttonspot">
+					<a href="#" class="button btnKick">Close</a>
+				</div>
+				<div class="barre-progression">
+					<h2>Progress</h2>
+					<progress class="progression" value="10" max="10">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script src="questions.js" type="text/javascript"></script>
+	<script src="scripts.js" type="text/javascript"></script>
+	<script src="debounce.min.js" type="text/javascript"></script>
+
+</body>

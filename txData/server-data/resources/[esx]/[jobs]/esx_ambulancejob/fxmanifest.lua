@@ -21,5 +21,5 @@ client_scripts {
 	'client/main.lua',
 	'client/job.lua',
 	'client/vehicle.lua',
-	'check-body.lua',
+	'client/check-body.lua',
 }

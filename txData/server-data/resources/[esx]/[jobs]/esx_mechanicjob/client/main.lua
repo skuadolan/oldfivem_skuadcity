@@ -692,6 +692,10 @@ end)
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
 	ESX.PlayerData.job = job
+
+	if ESX.PlayerData.job.name == 'mechanic' then
+		RegisterKeyMapping('mechmenu', 'Open Mekanik Menu', 'keyboard', 'F2')
+	end
 end)
 
 AddEventHandler('esx_mechanicjob:hasEnteredMarker', function(zone)
@@ -988,8 +992,6 @@ RegisterCommand('mechmenu', function()
 		OpenMobileMechanicActionsMenu()
 	end
 end, false)
-
-RegisterKeyMapping('mechmenu', 'Open Mekanik Menu', 'keyboard', 'F2')
 
 AddEventHandler('esx:onPlayerDeath', function(data) isDead = true end)
 AddEventHandler('esx:onPlayerSpawn', function(spawn) isDead = false end)
