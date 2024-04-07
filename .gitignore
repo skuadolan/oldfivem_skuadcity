@@ -1,6 +1,5 @@
-server
-./server
-/server
+/server/
+*.dll
 txData/default/logs
 ./txData/default/logs
 /txData/default/logs

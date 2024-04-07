@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Server version:               10.4.27-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
--- HeidiSQL Version:             12.3.0.6589
+-- HeidiSQL Version:             12.6.0.6765
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,6 +16,7 @@
 
 
 -- Dumping database structure for skuadcity
+DROP DATABASE IF EXISTS `skuadcity`;
 CREATE DATABASE IF NOT EXISTS `skuadcity` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci */;
 USE `skuadcity`;
 
@@ -995,6 +996,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `status` longtext DEFAULT NULL,
   `jail` int(11) NOT NULL DEFAULT 0,
   `starterpack` int(1) NOT NULL DEFAULT 0,
+  `rp_xp` int(11) NOT NULL DEFAULT 0,
+  `rp_rank` int(11) NOT NULL DEFAULT 1,
   PRIMARY KEY (`identifier`),
   UNIQUE KEY `index_users_phone_number` (`phone_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
