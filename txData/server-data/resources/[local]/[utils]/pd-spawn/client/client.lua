@@ -8,7 +8,7 @@ local FirstSpawn    = true
 local PlayerLoaded  = false
 local cam
 
-local fristSpawn = vector4(-1044.949, -2750.439, 21.36047, 334.4882)
+local fristSpawn = vector4(-1044.527, -2749.78, 21.36047, 325.9843)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)

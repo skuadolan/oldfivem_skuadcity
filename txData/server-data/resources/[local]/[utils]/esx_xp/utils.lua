@@ -68,7 +68,7 @@ end
 
 function GetRankFromXP(_xp)
     local len = #Config.Ranks
-    for rank = 1, len do
+    for rank = 0, len do
         if rank < len then
             if Config.Ranks[rank + 1].XP > tonumber(_xp) then
                 return rank

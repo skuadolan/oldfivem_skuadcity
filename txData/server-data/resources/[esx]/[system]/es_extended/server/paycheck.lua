@@ -36,7 +36,7 @@ function StartPayCheck()
 					end
 				end
 
-				-- TriggerServerEvent('esxp_give:freeXP', xPlayer.source, Config.FreeXPCrafting)
+				TriggerServerEvent('esxp_give:freeXP', xPlayer.source, Config.FreeXPCrafting)
 			end
 			local adstext = 'Jika Anda bersedia memberikan sumbangan, Setiap sumbangan yang Anda berikan sangat berarti bagi kami. Kami membutuhkan kontribusi Anda untuk keberlangsungan kota ini. Terimakasih.'
 			TriggerClientEvent('chat:addMessage', -1, {template = '<div id="chat-message-ads"><i class="fa-solid fa-bullhorn"></i><b>SYSTEM: </b>'..adstext..' </div>'})

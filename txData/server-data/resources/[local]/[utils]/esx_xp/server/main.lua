@@ -97,7 +97,7 @@ function UpdatePlayer(playerId, xp)
         MySQL.Async.execute('UPDATE users SET rp_xp = @xp, rp_rank = @rank, crafting_level = @rank WHERE identifier = @identifier', {
             ['@identifier'] = xPlayer.identifier,
             ['@xp'] = goalXP,
-            ['@rank'] = goalRank
+            ['@rank'] = goalRank - 1
         }, function(result)
             xPlayer.set("xp", goalXP)
             xPlayer.set("rank", goalRank)
@@ -223,7 +223,7 @@ RegisterServerEvent('esxp_give:freeXP')
 AddEventHandler('esxp_give:freeXP', function(source, xp)
     local playerId = source
 
-    UpdatePlayer(playerId, tonumber(xPlayer.get("xp")) + xp)
+    UpdatePlayer(playerId, tonumber(xPlayer.get("xp")) + tonumber(xp))
 end)
 
 RegisterCommand("esxp_give", function(source, args, rawCommand)
@@ -291,11 +291,11 @@ RegisterCommand("esxp_rank", function(source, args, rawCommand)
         return DisplayError(source, _('err_invalid_type', "Rank", 'integer'))
     end
 
-    if goalRank < 1 or goalRank > #Config.Ranks then
+    if goalRank < 0 or goalRank > #Config.Ranks then
         return DisplayError(source, _('err_invalid_rank', #Config.Ranks))
     end
 
-    local xp = Config.Ranks[goalRank].XP
+    local xp = Config.Ranks[goalRank+1].XP
 
     UpdatePlayer(playerId, xp)
 end, true)
