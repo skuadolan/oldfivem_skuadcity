@@ -35,8 +35,8 @@ function StartPayCheck()
 						TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
 					end
 				end
-
-				TriggerServerEvent('esxp_give:freeXP', xPlayer.source, Config.FreeXPCrafting)
+				
+				TriggerEvent("esxp_give:freeXP", xPlayer.source, Config.FreeXP)
 			end
 			local adstext = 'Jika Anda bersedia memberikan sumbangan, Setiap sumbangan yang Anda berikan sangat berarti bagi kami. Kami membutuhkan kontribusi Anda untuk keberlangsungan kota ini. Terimakasih.'
 			TriggerClientEvent('chat:addMessage', -1, {template = '<div id="chat-message-ads"><i class="fa-solid fa-bullhorn"></i><b>SYSTEM: </b>'..adstext..' </div>'})

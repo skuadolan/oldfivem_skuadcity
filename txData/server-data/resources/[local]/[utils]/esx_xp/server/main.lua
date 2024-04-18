@@ -146,6 +146,14 @@ AddEventHandler("esx_xp:load", function()
     end
 end)
 
+RegisterNetEvent('esxp_give:freeXP')
+AddEventHandler('esxp_give:freeXP', function(source, xp)
+    local _source = source
+    local xPlayer = ESX.GetPlayerFromId(_source)
+
+    UpdatePlayer(_source, tonumber(xPlayer.get("xp")) + tonumber(xp))
+end)
+
 -- Set the current player XP
 RegisterNetEvent("esx_xp:setXP")
 AddEventHandler("esx_xp:setXP", function(xp)
@@ -218,13 +226,6 @@ function DisplayError(playerId, message)
         args = { "esx_xp", message }
     })    
 end
- 
-RegisterServerEvent('esxp_give:freeXP')
-AddEventHandler('esxp_give:freeXP', function(source, xp)
-    local playerId = source
-
-    UpdatePlayer(playerId, tonumber(xPlayer.get("xp")) + tonumber(xp))
-end)
 
 RegisterCommand("esxp_give", function(source, args, rawCommand)
     local playerId = tonumber(args[1])
