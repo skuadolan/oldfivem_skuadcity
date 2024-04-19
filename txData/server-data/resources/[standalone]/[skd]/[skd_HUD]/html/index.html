@@ -1,0 +1,177 @@
+<!-- @format -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link
+    href="https://www.dafontfree.net/embed/YWtyb2JhdC1ib2xkJmRhdGEvODQvYS8xNjU1OTgvQWtyb2JhdC1Cb2xkLm90Zg"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://www.dafontfree.net/embed/YWtyb2JhdC1leHRyYWxpZ2h0JmRhdGEvODQvYS8xNjU2MDAvQWtyb2JhdC1FeHRyYUxpZ2h0Lm90Zg"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <script src="https://kit.fontawesome.com/16546c175c.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.3.3/howler.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!--RADIALMENU-->
+  <script type="text/javascript" src="nui://game/ui/jquery.js"></script>
+  <script type="text/javascript" src="js/raphael.min.js"></script>
+  <script type="text/javascript" src="js/wheelnav.min.js"></script>
+  <script type="text/javascript" src="js/radialmenu.js"></script>
+  
+</head>
+<body id="background-grid-line">
+  <div id="container-panel">
+    <div class="controller">
+      <div id="top-container-panel">
+        <div class="toggle" id="all-display">
+          <label>All Display</label>
+          <input type="checkbox" id="display-all" class="custom-switch" checked />
+        </div>
+      </div>
+      <div id="main-controller-panel">
+        <div class="toggle" id="health-toggle">
+          <label>Health</label>
+          <label for="rotate-health">Rotate</label>
+          <input type="checkbox" id="rotate-health" class="custom-switch" />
+          <label for="display-health">Display</label>
+          <input type="checkbox" id="display-health" class="custom-switch" checked />
+        </div>
+        <div class="toggle" id="armour-toggle">
+          <label>Armour</label>
+          <label for="rotate-armour">Rotate</label>
+          <input type="checkbox" id="rotate-armour" class="custom-switch" />
+          <label for="display-armour">Display</label>
+          <input type="checkbox" id="display-armour" class="custom-switch" checked />
+        </div>
+        <div class="toggle" id="hunger-toggle">
+          <label>Hunger</label>
+          <label for="rotate-hunger">Rotate</label>
+          <input type="checkbox" id="rotate-hunger" class="custom-switch" />
+          <label for="display-hunger">Display</label>
+          <input type="checkbox" id="display-hunger" class="custom-switch" checked />
+        </div>
+        <div class="toggle" id="thirsty-toggle">
+          <label>Thirsty</label>
+          <label for="rotate-thirsty">Rotate</label>
+          <input type="checkbox" id="rotate-thirsty" class="custom-switch" />
+          <label for="display-thirsty">Display</label>
+          <input type="checkbox" id="display-thirsty" class="custom-switch" checked />
+        </div>
+        <div class="toggle" id="id-player-toggle">
+          <label>ID</label>
+          <label for="display-id-player">Display</label>
+          <input type="checkbox" id="display-id-player" class="custom-switch" checked />
+        </div>
+        <div class="toggle" id="biodata-player-toggle">
+          <label>Bio</label>
+          <label for="display-biodata-player">Display</label>
+          <input type="checkbox" id="display-biodata-player" class="custom-switch" checked />
+        </div>
+        <div class="toggle" id="player-job-toggle">
+          <label>Job</label>
+          <label for="display-thirsty">Display</label>
+          <input type="checkbox" id="display-player-job" class="custom-switch" checked />
+        </div>
+        <div class="toggle" id="player-money-toggle">
+          <label>Money</label>
+          <label for="display-thirsty">Display</label>
+          <input type="checkbox" id="display-player-money" class="custom-switch" checked />
+        </div>
+        <div class="toggle" id="player-bank-toggle">
+          <label>Bank</label>
+          <label for="display-thirsty">Display</label>
+          <input type="checkbox" id="display-player-bank" class="custom-switch" checked />
+        </div>
+      </div>
+      <div id="bottom-controller-panel">
+        <div class="buttons">
+          <button id="save-button">Save</button>
+          <button id="reset-button">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="container-skd_HUD">
+    <div id="draggable-health">
+      <div class="container-progress-bar">
+        <div class="progress-bar-container">
+          <div id="health-status-bar" class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div id="draggable-armour">
+      <div class="container-progress-bar">
+        <div class="progress-bar-container">
+          <div id="armour-status-bar" class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div id="draggable-hunger">
+      <div class="container-progress-bar">
+        <div class="progress-bar-container">
+          <div id="hunger-status-bar" class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div id="draggable-thirsty">
+      <div class="container-progress-bar">
+        <div class="progress-bar-container">
+          <div id="thirsty-status-bar" class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div id="draggable-id-player" class="flex-container-information">
+      <div class="container-progress-bar">
+        <div id="icon"><i class="fa-solid fa-hashtag"></i></div>
+        <div class="progress-bar-container">IDS</div>
+      </div>
+    </div>
+    <div id="draggable-biodata-player" class="flex-container-information">
+      <div class="container-progress-bar">
+        <div id="icon"><i class="fa-solid fa-user"></i></div>
+        <div class="progress-bar-container">BIODATA</div>
+      </div>
+    </div>
+    <div id="draggable-player-job" class="flex-container-information">
+      <div class="container-progress-bar">
+        <div id="icon"><i class="fa-solid fa-briefcase"></i></div>
+        <div class="progress-bar-container">JOBS</div>
+      </div>
+    </div>
+    <div id="draggable-player-money" class="flex-container-information">
+      <div class="container-progress-bar">
+        <div id="icon"><i class="fa-solid fa-money-bill"></i></div>
+        <div class="progress-bar-container">MONEY</div>
+      </div>
+    </div>
+    <div id="draggable-player-bank" class="flex-container-information">
+      <div class="container-progress-bar">
+        <div id="icon"><i class="fa-solid fa-building-columns"></i></div>
+        <div class="progress-bar-container">BANK</div>
+      </div>
+    </div>
+  </div>
+  <!-- CONTAINER SPEED METER -->
+  <div id="container-radialmenu">
+    <div id="container">
+      <div id="wheelDiv" data-wheelnav></div>
+    </div>
+  </div>
+
+  <script src="js/draggable.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/dom.js"></script>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/app.js" type="text/javascript"></script>
+  <script src="js/debounce.min.js" type="text/javascript"></script>
+</body>
