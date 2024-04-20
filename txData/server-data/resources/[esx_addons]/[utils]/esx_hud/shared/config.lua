@@ -41,20 +41,20 @@ Config = {
         },
     },
     Disable = {
-        Status = true,
+        Status = false,
         Vehicle = false,
         Weapon = false,
         Position = false,
         Voice = false,
-        Money = true,
-        Info = true,
+        Money = false,
+        Info = false,
         IndicatorSound = false,         --vehicle index sound
         IndicatorSeatbeltSound = false, --seatbelt sound
         VehicleHandlers = false,        -- Engine toggle, Indicator lights
-        MinimapOnFoot = true,
-        Needle = true,
-        StatusPercent = true,
-        CenterStatuses = true,
+        MinimapOnFoot = false,
+        Needle = false,
+        StatusPercent = false,
+        CenterStatuses = false,
     },
     Default = {
         ServerLogo = "https://esx.s3.fr-par.scw.cloud/blanc-800x800.png",
